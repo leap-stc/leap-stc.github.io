@@ -1,0 +1,15 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+- caption: Policies
+  chapters:
+  - file: code_policy
+  - file: data_policy
+  - file: infrastructure_policy
+- caption: LEAP-Pangeo
+  chapters:
+  - file: LEAP_Pangeo_architecture
+  - file: LEAP_Pangeo_implementation
