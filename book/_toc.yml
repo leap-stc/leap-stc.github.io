@@ -6,10 +6,10 @@ root: intro
 parts:
 - caption: Policies
   chapters:
-  - file: code_policy
-  - file: data_policy
-  - file: infrastructure_policy
+  - file: policies/code_policy
+  - file: policies/data_policy
+  - file: policies/infrastructure_policy
 - caption: LEAP-Pangeo
   chapters:
-  - file: LEAP_Pangeo_architecture
-  - file: LEAP_Pangeo_implementation
+  - file: leap-pangeo/architecture
+  - file: leap-pangeo/implementation
