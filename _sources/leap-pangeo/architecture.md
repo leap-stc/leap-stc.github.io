@@ -80,6 +80,7 @@ Jupyter supports combining rich text, code, and generated outputs (e.g. figures)
 JupyterHub is a multi-user Jupyter notebook / lab environment that runs on a server.
 Running in the cloud, JupyterHub provides a gateway to highly customized software environments backed by dedicated computing with specified resources (CPU, RAM, GPU, etc.)
 
+![JupyterLab Preview](https://jupyter.org/assets/labpreview.png)
 
 Our JupyterHub will be the virtual "water cooler" of LEAP.
 By providing all participants with a common computing environment, we will facilitate seamless collaboration between team members.

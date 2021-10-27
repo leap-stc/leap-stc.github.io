@@ -7,51 +7,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LEAP-Pangeo Implementation Plan &#8212; Technical Documentation</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="LEAP-Pangeo Architecture" href="LEAP_Pangeo_architecture.html" />
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="LEAP-Pangeo Architecture" href="architecture.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -68,26 +68,26 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+    <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
       
       
-      <img src="_static/LEAP_logo.png" class="logo" alt="logo">
+      <img src="../_static/LEAP_logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Technical Documentation</h1>
       
     </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
+  <a class="reference internal" href="../intro.html">
    LEAP Technical Documentation
   </a>
  </li>
@@ -99,17 +99,17 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="code_policy.html">
+  <a class="reference internal" href="../policies/code_policy.html">
    Code Policy
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="data_policy.html">
+  <a class="reference internal" href="../policies/data_policy.html">
    Data Policy
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="infrastructure_policy.html">
+  <a class="reference internal" href="../policies/infrastructure_policy.html">
    Infrastructure Policy
   </a>
  </li>
@@ -121,7 +121,7 @@
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="LEAP_Pangeo_architecture.html">
+  <a class="reference internal" href="architecture.html">
    LEAP-Pangeo Architecture
   </a>
  </li>
@@ -171,7 +171,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/LEAP_Pangeo_implementation.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/leap-pangeo/implementation.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -191,7 +191,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/leap-stc/leap-stc.github.io/issues/new?title=Issue%20on%20page%20%2FLEAP_Pangeo_implementation.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/leap-stc/leap-stc.github.io/issues/new?title=Issue%20on%20page%20%2Fleap-pangeo/implementation.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -221,6 +221,35 @@
   <a class="reference internal nav-link" href="#roles">
    Roles
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-engineering">
+     Data Engineering
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#devops-for-cloud-hub">
+     DevOps for Cloud Hub
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#full-stack-web-development">
+     Full-Stack Web Development
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#education-and-training">
+       Education and Training
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#contractors-vs-employees">
+     Contractors vs. Employees
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#timeline">
@@ -248,6 +277,18 @@
     <a class="reference internal nav-link" href="#spring-2021">
      Spring 2021
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Activities
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Milestones
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#summer-2021">
@@ -272,6 +313,80 @@
 <p>The different elements of the project can be implemented in parallel and gradually connected together.</p>
 <div class="section" id="roles">
 <h2>Roles<a class="headerlink" href="#roles" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-decision-needed admonition">
+<p class="admonition-title">Decision Needed</p>
+<p>An open question for LEAP-Pangeo is whether to develop and maintain our infrastructure
+via subcontracts or via Columbia employees whom we hire.
+Below the roles are enumerated in a generic way according to the needed expertise.</p>
+</div>
+<div class="section" id="data-engineering">
+<h3>Data Engineering<a class="headerlink" href="#data-engineering" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="architecture.html"><span class="doc">LEAP-Pangeo Architecture</span></a>, particularly the Data Library, will require
+expertise in modern data engineering, including the following areas:</p>
+<ul class="simple">
+<li><p>Geospatial data formats and metadata standards, including modern cloud-optimized
+formats such as Parquet and Zarr</p></li>
+<li><p>Geospatial data catalogs and APIs</p></li>
+<li><p>Cloud object storage</p></li>
+<li><p>Cloud automation and data pipelines</p></li>
+<li><p>Distributed computing frameworks for data science (e.g. Dask, Prefect, Apache Beam)</p></li>
+<li><p>GitHub workflows</p></li>
+<li><p>Continuous integration and agile development</p></li>
+<li><p>Track record of contribution to multi-stakeholder open-source software</p></li>
+</ul>
+<p>Possible contractors who fit this role:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://developmentseed.org/">Development Seed</a></p></li>
+<li><p><a class="reference external" href="https://www.element84.com/">Element 84</a></p></li>
+<li><p><a class="reference external" href="https://www.azavea.com/">Azavea</a></p></li>
+<li><p><a class="reference external" href="https://www.radiant.earth/">Radiant Earth</a></p></li>
+</ul>
+</div>
+<div class="section" id="devops-for-cloud-hub">
+<h3>DevOps for Cloud Hub<a class="headerlink" href="#devops-for-cloud-hub" title="Permalink to this headline">¶</a></h3>
+<p>Developing and operating the LEAP-Pangeo JupyterHub will require the following expertise:</p>
+<ul class="simple">
+<li><p>Strong experience with Docker and containerization of workflows</p></li>
+<li><p>Deploying cloud-native applications (particularly <a class="reference external" href="https://zero-to-jupyterhub.readthedocs.io/en/latest/">JupyterHub</a>)
+using Kubernetes and Helm</p></li>
+<li><p>Continuous deployment using GitHub workflows</p></li>
+<li><p>Monitoring and optimizing cloud costs in multi-user JupyterHub environments</p></li>
+<li><p>Building machine-learning environments for Python and R users with tools such as
+Conda, Conda Forge, and repo2docker.</p></li>
+<li><p>Continuous integration and agile development</p></li>
+<li><p>Track record of contribution to multi-stakeholder open-source software</p></li>
+</ul>
+<p>Possible contractors who fit this role:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://2i2c.org/">2i2c</a></p></li>
+<li><p><a class="reference external" href="https://www.quansight.com/">Quansight</a></p></li>
+</ul>
+</div>
+<div class="section" id="full-stack-web-development">
+<h3>Full-Stack Web Development<a class="headerlink" href="#full-stack-web-development" title="Permalink to this headline">¶</a></h3>
+<p>Developing the LEAP Knowledge Graph, including the library of open-source code
+and machine-learning models, will require a mix of skills commonly referred to as
+“full-stack web development”.</p>
+<ul class="simple">
+<li><p>Front-end web development using HTML, CSS, and modern Javascript frameworks (e.g. React, Vue, etc.)</p></li>
+<li><p>Development and deployment of REST API endpoints for backend services</p></li>
+<li><p>Consumption of data from third-party APIs (e.g. GitHub API)</p></li>
+<li><p>Familiarity with Jupyter Notebook format</p></li>
+<li><p>Continuous integration and agile development</p></li>
+<li><p>Track record of contribution to multi-stakeholder open-source software</p></li>
+</ul>
+<div class="section" id="education-and-training">
+<h4>Education and Training<a class="headerlink" href="#education-and-training" title="Permalink to this headline">¶</a></h4>
+<div class="admonition-decision-needed admonition">
+<p class="admonition-title">Decision Needed</p>
+<p>What is the scope of LEAP-Pangeo training? How much should we expect trainees to learn?
+What is the intersection with other educational activities, including for-credit courses?</p>
+</div>
+</div>
+</div>
+<div class="section" id="contractors-vs-employees">
+<h3>Contractors vs. Employees<a class="headerlink" href="#contractors-vs-employees" title="Permalink to this headline">¶</a></h3>
+</div>
 </div>
 <div class="section" id="timeline">
 <h2>Timeline<a class="headerlink" href="#timeline" title="Permalink to this headline">¶</a></h2>
@@ -280,23 +395,32 @@
 <div class="section" id="activities">
 <h4>Activities<a class="headerlink" href="#activities" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li><p>Deploy generic Pangeo JupyterHub on Google Cloud using supported credits.</p></li>
-<li><p>Provide bare-bones documentation for using the Hub.</p></li>
+<li><p>📍 Deploy generic Pangeo JupyterHub on Google Cloud using supported credits.</p></li>
+<li><p>📍 Provide basic end-user documentation for using the Hub
+(comparable to <a class="reference external" href="https://pangeo.io/cloud.html">Pangeo Cloud docs</a>).</p></li>
 </ul>
 </div>
 <div class="section" id="milestones">
 <h4>Milestones<a class="headerlink" href="#milestones" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li><p>[ ] LEAP members log into the hub and run their first code against existing cloud data.</p></li>
+<li><p>✅ LEAP members log into the hub and run their first code against existing cloud data.</p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="spring-2021">
 <h3>Spring 2021<a class="headerlink" href="#spring-2021" title="Permalink to this headline">¶</a></h3>
-<p>Milestones</p>
+<div class="section" id="id1">
+<h4>Activities<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li><p>[ ] LEAP researchers ingest first datasets into cloud data library.</p></li>
+<li><p>📍 Conduct data survey to assess data needs of research, education, and outreach activities.</p></li>
 </ul>
+</div>
+<div class="section" id="id2">
+<h4>Milestones<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>✅ LEAP researchers ingest first datasets into cloud data library.</p></li>
+</ul>
+</div>
 </div>
 <div class="section" id="summer-2021">
 <h3>Summer 2021<a class="headerlink" href="#summer-2021" title="Permalink to this headline">¶</a></h3>
@@ -318,7 +442,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./."
+            path: "./leap-pangeo"
         },
         predefinedOutput: true
     }
@@ -335,7 +459,7 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="LEAP_Pangeo_architecture.html" title="previous page">
+        <a class="left-prev" href="architecture.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
@@ -364,7 +488,7 @@
       </div>
     </div>
   
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
   
   </body>
