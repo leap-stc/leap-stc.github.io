@@ -106,7 +106,7 @@ Alternative storage solutions include:
 
 ```{figure} https://raw.githubusercontent.com/pangeo-forge/flow-charts/main/renders/architecture.png
 ---
-width: 400px
+width: 600px
 name: pangeo-forge-flow
 ---
 Pangeo Forge high-level workflow. Diagram from https://github.com/pangeo-forge/flow-charts
@@ -215,4 +215,3 @@ By also tracking participations (i.e. humans), we will build a novel and inspiri
 This is the most open-ended aspect of our infrastructure.
 Organizing and displaying this information effectively is a challenging problem in
 information architecture and systems design.
- 
