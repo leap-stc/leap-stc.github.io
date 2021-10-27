@@ -53,7 +53,7 @@ Possible contractors who fit this role:
 
 ### Full-Stack Web Development
 
-Developing the LEAP Knowledge Graph, including the library of open-source code
+Developing the LEAP Knowledge Graph, including the library of papers, open-source code
 and machine-learning models, will require a mix of skills commonly referred to as
 "full-stack web development".
 
@@ -71,9 +71,20 @@ What is the scope of LEAP-Pangeo training? How much should we expect trainees to
 What is the intersection with other educational activities, including for-credit courses?
 :::
 
+Training participants in using LEAP-Pangeo will require expertise in research computing pedagogy
+and state-of-the-art knowledge of best practices in scientific computing, machine learning,
+and cloud computing.
+
 ### Contractors vs. Employees
 
+| | Pros | Cons |
+| -- | -- | -- |
+| **Employees** | Longer-term commitment to project. Better integration with on-campus activities. | Slow hiring. Recruiting challenges. Uncertainty they can deliver needed results. |
+| **Contractors** | Can spin up rapidly. Proven track records. Connection to broader ecosystems. Don't have to deal with hiring. Acccess to top technical talent. | Potentially less integrated into project. |
+
 ## Timeline
+
+What follows is a possible timeline for implementation.
 
 ### Fall 2021
 
@@ -91,12 +102,24 @@ What is the intersection with other educational activities, including for-credit
 #### Activities
 
 - 📍 Conduct data survey to assess data needs of research, education, and outreach activities.
+- 📍 Data engineers work with researchers on data ingestion.
+- 📍 Refine Hub environment based on initial feedback.
 
 
 #### Milestones
 
 - ✅ LEAP researchers ingest first datasets into cloud data library.
+- ✅ LEAP seminar uses LEAP-Pangeo data science environments for teaching.
 
 ### Summer 2021
 
-Milestones
+#### Activities
+
+- 📍 Launch initial data catalog
+- 📍 Begin training program
+
+#### Milestones
+
+- ✅ Perform first LEAP-Pangeo training for participations
+- ✅ LEAP REU interns successfully use LEAP-Pangeo for projects.
+- ✅ First LEAP publications are added to the knowledge graph, along with supporting data and code

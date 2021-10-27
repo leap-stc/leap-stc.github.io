@@ -13,3 +13,6 @@ parts:
   chapters:
   - file: leap-pangeo/architecture
   - file: leap-pangeo/implementation
+- caption: Miscellaneous
+  chapters:
+  - file: references
