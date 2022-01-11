@@ -144,7 +144,7 @@ The [Radiant Earth MLHub](https://mlhub.earth/) is a great reference for how we 
 
 ### The Hub
 
-```{figure} https://jupyter.org/assets/labpreview.png
+```{figure} https://jupyter.org/assets/homepage/labpreview.webp
 ---
 width: 400px
 name: jupyterlab-preview
