@@ -9,6 +9,7 @@ parts:
   - file: policies/code_policy
   - file: policies/data_policy
   - file: policies/infrastructure_policy
+  - file: policies/users_roles
 - caption: LEAP-Pangeo
   chapters:
   - file: leap-pangeo/architecture
