@@ -87,20 +87,10 @@ The underlying technology for the LEAP Data catalog will be cloud object storage
 which enables high throughput concurrent access to many simultaneous users over the public internet.
 Cloud Object Storage is the most performant, cost-effective, and simple way to serve such large volumes of data.
 
-:::{admonition} Decision Needed
-What object storage service should LEAP-Pangeo use?
-
-The data need to be "close" to the Hub in terms of network throughput and latency.
-But they don't necessarily need to live _inside_ Google Cloud.
-That is both expensive to store (\$250 / TB / year) and requires egress fees (\$100 / TB)
-to allow the data to _leave_ the cloud.
-That could create a barrier for partners to use the data.
-
-Alternative storage solutions include:
-
-- [Open Storage Network](https://www.openstoragenetwork.org/) - Requires hardware purchase
-- [CloudFlare R2](https://blog.cloudflare.com/introducing-r2-object-storage/) - Cheaper, no egress
-:::
+Initially, the LEAP data will be stored in Google Cloud Storage, in the same cloud region
+as the JupyterHub.
+Going forward, we will work with NCAR to obtain an [Open Storage Network](https://www.openstoragenetwork.org/)
+pod which allows data to be accessible from both Google Cloud and NCAR's computing system.
 
 #### Pangeo Forge
 
@@ -176,16 +166,9 @@ with full-featured Python software environments for environmental data science.
 These environments will be the starting point for LEAP environments.
 They may be augmented as LEAP evolves with more specific software as needed by research projects.
 
-:::{admonition} Decision Needed
-Who should be the "identity provider" for the LEAP-Pangeo Hub?
-We cannot rely on Columbia UNIs because not all partners are Columbia affiliates.
-Some options:
-
-- Google ID
-- GitHub
-- Globus
-- ORCID
-:::
+Use management and access control for the Hub are described in {doc}`/policies/users_roles`.
+We use GitHub for identity management, in order to make it easy to include participants
+from any partner institution..
 
 ### The Knowledge Graph
 

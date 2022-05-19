@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="LEAP-Pangeo Implementation Plan" href="implementation.html" />
-    <link rel="prev" title="Users and Categories" href="../policies/users_roles.html" />
+    <link rel="prev" title="LEAP-Pangeo JupyterHub" href="jupyterhub.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -131,6 +131,11 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="jupyterhub.html">
+   LEAP-Pangeo JupyterHub
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    LEAP-Pangeo Architecture
@@ -463,20 +468,10 @@ for use by industry partners for business strategy and decision making.</p></li>
 <p>The underlying technology for the LEAP Data catalog will be cloud object storage (e.g. Amazon S3),
 which enables high throughput concurrent access to many simultaneous users over the public internet.
 Cloud Object Storage is the most performant, cost-effective, and simple way to serve such large volumes of data.</p>
-<div class="admonition-decision-needed admonition">
-<p class="admonition-title">Decision Needed</p>
-<p>What object storage service should LEAP-Pangeo use?</p>
-<p>The data need to be “close” to the Hub in terms of network throughput and latency.
-But they don’t necessarily need to live <em>inside</em> Google Cloud.
-That is both expensive to store ($250 / TB / year) and requires egress fees ($100 / TB)
-to allow the data to <em>leave</em> the cloud.
-That could create a barrier for partners to use the data.</p>
-<p>Alternative storage solutions include:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.openstoragenetwork.org/">Open Storage Network</a> - Requires hardware purchase</p></li>
-<li><p><a class="reference external" href="https://blog.cloudflare.com/introducing-r2-object-storage/">CloudFlare R2</a> - Cheaper, no egress</p></li>
-</ul>
-</div>
+<p>Initially, the LEAP data will be stored in Google Cloud Storage, in the same cloud region
+as the JupyterHub.
+Going forward, we will work with NCAR to obtain an <a class="reference external" href="https://www.openstoragenetwork.org/">Open Storage Network</a>
+pod which allows data to be accessible from both Google Cloud and NCAR’s computing system.</p>
 <div class="section" id="pangeo-forge">
 <h4>Pangeo Forge<a class="headerlink" href="#pangeo-forge" title="Permalink to this headline">¶</a></h4>
 <div class="figure align-default" id="pangeo-forge-flow">
@@ -535,18 +530,9 @@ In addition to Jupyter Notebook / Lab, JupyterHub also supports launching <a cla
 with full-featured Python software environments for environmental data science.
 These environments will be the starting point for LEAP environments.
 They may be augmented as LEAP evolves with more specific software as needed by research projects.</p>
-<div class="admonition-decision-needed admonition">
-<p class="admonition-title">Decision Needed</p>
-<p>Who should be the “identity provider” for the LEAP-Pangeo Hub?
-We cannot rely on Columbia UNIs because not all partners are Columbia affiliates.
-Some options:</p>
-<ul class="simple">
-<li><p>Google ID</p></li>
-<li><p>GitHub</p></li>
-<li><p>Globus</p></li>
-<li><p>ORCID</p></li>
-</ul>
-</div>
+<p>Use management and access control for the Hub are described in <a class="reference internal" href="../policies/users_roles.html"><span class="doc">Users and Categories</span></a>.
+We use GitHub for identity management, in order to make it easy to include participants
+from any partner institution..</p>
 </div>
 <div class="section" id="the-knowledge-graph">
 <h3>The Knowledge Graph<a class="headerlink" href="#the-knowledge-graph" title="Permalink to this headline">¶</a></h3>
@@ -599,11 +585,11 @@ information architecture and systems design.</p>
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../policies/users_roles.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="jupyterhub.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Users and Categories</p>
+            <p class="prev-next-title">LEAP-Pangeo JupyterHub</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="implementation.html" title="next page">
