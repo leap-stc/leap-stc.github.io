@@ -12,6 +12,7 @@ parts:
   - file: policies/users_roles
 - caption: LEAP-Pangeo
   chapters:
+  - file: leap-pangeo/jupyterhub.md
   - file: leap-pangeo/architecture
   - file: leap-pangeo/implementation
 - caption: Miscellaneous
