@@ -9,6 +9,16 @@ in the [leap-stc](https://github.com/orgs/leap-stc/teams) GitHub organization.
 
 Here we define those roles and map them to GitHub teams.
 
+:::{warning}
+We have discovered a technical issue which affects some of the policies here.
+It turns out that GitHub sub-teams don't appear as part of parent teams.
+This means that the strategies described here for using sub-teams don't quite  work.
+The issue is being tracked by 2i2c in <https://github.com/2i2c-org/infrastructure/issues/1311>.
+
+The short term resolution is to _manually add users to both the parent team and sub-team_.
+This is annoying, and we hope to have a better solution soon.
+:::
+
 ## Code of Conduct
 
 All users of LEAP-Pangeo must abide by the LEAP Code of Conduct:
