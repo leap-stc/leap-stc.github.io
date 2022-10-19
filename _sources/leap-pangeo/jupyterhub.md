@@ -11,6 +11,12 @@ For information who can access the hub with which privileges, please refer to
 | **Hub Operator**| [2i2c](https://2i2c.org/) |
 | **Hub Configuration** | https://github.com/2i2c-org/infrastructure/tree/master/config/clusters/leap |
 
+## Getting Started
+
+To get started using the hub, check out this video by [James Munroe](https://github.com/jmunroe) from [2i2c](https://2i2c.org) explaining the architecture.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RKXWxtNqWKw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Getting Help
 
 For questions about how to use the Hub, please use the LEAP-Pangeo discussion forum:
