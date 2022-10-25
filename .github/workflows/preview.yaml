@@ -84,13 +84,13 @@ jobs:
         uses: dawidd6/action-download-artifact@v2.14.1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          workflow: deploy.yml
+          workflow: deploy.yaml
           run_id: ${{ github.event.workflow_run.id }}
           name: book-zip
 
       - name: Unzip site
         run: |
-          rm -rf ./_build/html
+          rm -rf book/_build/html
           unzip book.zip
           rm -f book.zip
 
@@ -99,7 +99,7 @@ jobs:
         id: netlify
         uses: nwtgck/actions-netlify@v1.2
         with:
-          publish-dir: ./_build/html
+          publish-dir: book/_build/html
           production-deploy: false
           github-token: ${{ secrets.GITHUB_TOKEN }}
           enable-commit-comment: false
