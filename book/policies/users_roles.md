@@ -1,8 +1,7 @@
 # Users and Categories
 
-**Version 1 - 2022-05-09**
-
-Access to the LEAP-Pangeo Hub will be categoryed based on roles in LEAP.
+**Version 2 - 2022-10-25**
+Access to the LEAP-Pangeo Hub will depend on the [LEAP Membership Structure](https://leap.columbia.edu/wp-content/uploads/2022/09/LEAP-Membership-and-Space-Policy-Sept-2022.pdf).
 Membership in a particular category will be implemented via
 [GitHub Teams](https://docs.github.com/en/organizations/organizing-members-into-teams)
 in the [leap-stc](https://github.com/orgs/leap-stc/teams) GitHub organization.
