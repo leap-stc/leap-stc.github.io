@@ -29,6 +29,8 @@ All users of LEAP-Pangeo must abide by the LEAP Code of Conduct:
 
 Any LEAP affiliate may access the community category.
 
+## A dummy section
+
 Members of the Community Category may access to `Small` and `Medium` JupyterHub servers
 in the LEAP-Pangeo Hub.
 
