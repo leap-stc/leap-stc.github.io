@@ -33,6 +33,22 @@ jobs:
     - name: Build the book
       run: |
         jupyter-book build book
+    
+    # Zip the book for artifact upload
+    - name: Zip-book
+      run: |
+        set -x
+        set -e
+        if [ -f book.zip ]; then
+            rm -rf book.zip
+        fi
+        zip -r book.zip book/_build/html
+    
+    # Upload zipped book for preview action
+    - uses: actions/upload-artifact@v3
+      with:
+        name: book-zip
+        path: ./book.zip
 
     # Deploy the book's html to earth-env-data-science.github.io
     - name: GitHub Pages action
