@@ -42,7 +42,7 @@ jobs:
         if [ -f book.zip ]; then
             rm -rf book.zip
         fi
-        zip -r book.zip ./_build/html
+        zip -r book.zip book/_build/html
     
     # Upload zipped book for preview action
     - uses: actions/upload-artifact@v3
