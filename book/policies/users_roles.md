@@ -1,8 +1,9 @@
 # Users and Categories
 
 **Version 2 - 2022-10-25**
-Access to the LEAP-Pangeo Hub will depend on the [LEAP Membership Structure](https://leap.columbia.edu/wp-content/uploads/2022/09/LEAP-Membership-and-Space-Policy-Sept-2022.pdf).
-Membership in a particular category will be implemented via
+
+Access to the LEAP-Pangeo Hub will depend on the [LEAP Membership Structure](https://leap.columbia.edu/wp-content/uploads/2022/09/LEAP-Membership-and-Space-Policy-Sept-2022.pdf) (see links in this document to apply for membership).
+Membership in a particular tier will be implemented via
 [GitHub Teams](https://docs.github.com/en/organizations/organizing-members-into-teams)
 in the [leap-stc](https://github.com/orgs/leap-stc/teams) GitHub organization.
 
@@ -24,22 +25,41 @@ All users of LEAP-Pangeo must abide by the LEAP Code of Conduct:
 
 - https://docs.google.com/document/d/1eE-aYrsf_k5Ep8GB-n8hmqM_LVW-U3uzYKHJBZMvYWU
 
-## Community Category
-
-Any LEAP affiliate may access the community category.
-
-Members of the Community Category may access to `Small` and `Medium` JupyterHub servers
-in the LEAP-Pangeo Hub.
-
-Membership in the Community Category is granted by adding the user to the
-[`leap-pangeo-community`](https://github.com/orgs/leap-stc/teams/leap-pangeo-community)
-GitHub Team.
-
 :::{note}
-The LEAP executive committee has not yet defined a process by which affiliate
-status is conferred and removed.
+The LEAP executive committee has not yet defined a process by which membership status is conferred and removed.
 Once this is decided, we will provide instructions on how to add / remove affiliates.
 :::
+
+## Tier 1 Members
+
+Tier 1 members may access to `Small` and `Medium` JupyterHub servers
+in the LEAP-Pangeo Hub.
+
+Tier 1 membership is granted by adding the user to the
+[`leap-pangeo-tier1`](https://github.com/orgs/leap-stc/teams/leap-pangeo-tier1)
+GitHub Team.
+
+## Tier 2 Members
+Tier 2 membership requires an application reviewed by LEAP’s Convergence Subcommittee. [Application Form](https://docs.google.com/forms/d/e/1FAIpQLSf_-vvkU__-rnaQimXRxAN_xGdQlqLulbBUistmetrhQtTjHg/viewform)
+
+Tier 2 members involved in LEAP research and community, have access to computing resources and storage on LEAPangeo.
+In addition to the Tier 1 JupyterHub servers, members may access `Large` and `Huge` JupyterHub servers, plus GPU access.
+
+Tier 2 membership also provides swipe access at Innovation Hub (for Columbia affiliates). Members can apply to attend LEAP’s Annual Meeting and to be part of focus groups.
+
+Tier 2 membership is granted by adding the user to the
+[`leap-pangeo-tier2`](https://github.com/orgs/leap-stc/teams/leap-pangeo-tier2)
+GitHub Team.
+
+## Tier 3 Members
+
+Tier 3 membership is reserved for individuals supported by LEAP funding as a Request for Proposal (RFP) PI, Co-PI, researcher, student, or postdoc.
+
+Tier 3 members currently have identical access to LEAP pangeo computing resources and storage as Tier 2 members.
+
+Tier 3 membership is granted by adding the user to the
+[`leap-pangeo-tier3`](https://github.com/orgs/leap-stc/teams/leap-pangeo-tier3)
+GitHub Team.
 
 ## Education Category
 
@@ -90,32 +110,6 @@ team for the course and add the instructor as a "Maintainer".
 It is the instructor's responsibility to add the course's users to this team
 and remove them when the course has been concluded.
 
-## Research Category
-
-The education category is intended for _long-term access_ to LEAP-Pangeo resources associated
-with research activities.
-
-There are two levels to the Research Category:
-- **Entry-level**: involved in LEAP research and community, have access to computing resources and storage on LEAPangeo.
-Members of this Community Tier may access  `Large` JupyterHub servers
-Office Space. Admission based on paragraph sent to Office Space committee.
-Membership in the entry-level research category corresponds to the
-[`leap-pangeo-research-entry-level`](https://github.com/orgs/leap-stc/teams/leap-pangeo-research-entry-level)
-GitHub team.
-- **Advanced**: RFP or supported researcher, student, postdoc, invited to annual meeting, swipe access for LEAP.
-Members of this Community Tier may access `Large` and `Huge` JupyterHub servers, plus GPU access.
-Membership in the entry-level research category corresponds to the
-[`leap-pangeo-research-advanced`](https://github.com/orgs/leap-stc/teams/leap-pangeo-research-entry-level)
-GitHub team.
-
-### Eligibility
-
-Anyone participating in a LEAP-sponsored research project is eligible to participate
-in the Research Category.
-A LEAP administrator will create a GitHub sub-team within the
-[`leap-pangeo-research`](https://github.com/orgs/leap-stc/teams/leap-pangeo-research)
-team for each research project and add the project PIs as "maintainer".
-It is the PIs' responsibility to add and remove members from their team.
 
 ## Administrator and Developer Category
 
