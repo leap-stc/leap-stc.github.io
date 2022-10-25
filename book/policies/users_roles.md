@@ -1,6 +1,6 @@
 # Users and Categories
 
-**Version 1 - 2022-05-09**
+**Version 2 - 2022-10-25**
 
 Access to the LEAP-Pangeo Hub will be categoryed based on roles in LEAP.
 Membership in a particular category will be implemented via
