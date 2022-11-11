@@ -113,7 +113,7 @@ The "Killed Worker" message in dask can result due to a variety of reasons. Here
 The default dask worker configuration can deal well with dataset chunk sizes of ~100MB. If the chunks of your data are significantly larger, your worker might crash just upon loading a few of these chunks into memory.
 
 **Solution**
-You can change the configuration of your dask workers and increase the memory each worker has to deal with larger chunks. You can adjust the memory by passing additional [options] to the dask-gatway cluster upon creation:
+You can change the configuration of your dask workers and increase the memory each worker has to deal with larger chunks. You can adjust the memory by passing additional [options](https://gateway.dask.org/cluster-options.html) to the dask-gatway cluster upon creation:
 ```python
 from dask_gateway import Gateway
 gateway = Gateway()
