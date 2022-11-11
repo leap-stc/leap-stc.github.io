@@ -13,7 +13,6 @@ parts:
 - caption: LEAP-Pangeo
   chapters:
   - file: leap-pangeo/jupyterhub.md
-    maxdepth: 4
   - file: leap-pangeo/architecture
   - file: leap-pangeo/implementation
 - caption: Miscellaneous
