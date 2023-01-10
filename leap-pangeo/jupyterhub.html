@@ -290,6 +290,11 @@ const thebe_selector_output = ".output, .cell_output"
      Dask
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gpus">
+     GPUs
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -355,6 +360,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#dask">
      Dask
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gpus">
+     GPUs
     </a>
    </li>
   </ul>
@@ -475,6 +485,25 @@ For a quick guide on how to start a Dask Cluster, consult this page from the Pan
 <li><p><a class="reference external" href="https://pangeo.io/cloud.html#dask">https://pangeo.io/cloud.html#dask</a></p></li>
 </ul>
 <p>[More info to be added soon]</p>
+</div>
+<div class="section" id="gpus">
+<h3>GPUs<a class="headerlink" href="#gpus" title="Permalink to this headline">¶</a></h3>
+<p>Tier2 and Tier3 members (see <a class="reference internal" href="../policies/users_roles.html"><span class="doc std std-doc">Users and Categories</span></a>) have access to a ‘Large’ Server instance with GPU. Currently the GPUs are <a class="reference external" href="https://www.nvidia.com/en-us/data-center/tesla-t4/">Nvidia T4</a> models. To check what GPU is available on your server you can use <a class="reference external" href="https://developer.nvidia.com/nvidia-system-management-interface"><code class="docutils literal notranslate"><span class="pre">nvidia-smi</span></code></a> in the terminal window. You should get output similar to this:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">   </span>nvidia-smi
+<span class="w">   </span>
+<span class="w">   </span>+-----------------------------------------------------------------------------+
+<span class="w">   </span><span class="p">|</span><span class="w"> </span>NVIDIA-SMI<span class="w"> </span><span class="m">510</span>.47.03<span class="w">    </span>Driver<span class="w"> </span>Version:<span class="w"> </span><span class="m">510</span>.47.03<span class="w">    </span>CUDA<span class="w"> </span>Version:<span class="w"> </span><span class="m">11</span>.6<span class="w">     </span><span class="p">|</span>
+<span class="w">   </span><span class="p">|</span>-------------------------------+----------------------+----------------------+
+<span class="w">   </span><span class="p">|</span><span class="w"> </span>GPU<span class="w">  </span>Name<span class="w">        </span>Persistence-M<span class="p">|</span><span class="w"> </span>Bus-Id<span class="w">        </span>Disp.A<span class="w"> </span><span class="p">|</span><span class="w"> </span>Volatile<span class="w"> </span>Uncorr.<span class="w"> </span>ECC<span class="w"> </span><span class="p">|</span>
+<span class="w">   </span><span class="p">|</span><span class="w"> </span>Fan<span class="w">  </span>Temp<span class="w">  </span>Perf<span class="w">  </span>Pwr:Usage/Cap<span class="p">|</span><span class="w">         </span>Memory-Usage<span class="w"> </span><span class="p">|</span><span class="w"> </span>GPU-Util<span class="w">  </span>Compute<span class="w"> </span>M.<span class="w"> </span><span class="p">|</span>
+<span class="w">   </span><span class="p">|</span><span class="w">                               </span><span class="p">|</span><span class="w">                      </span><span class="p">|</span><span class="w">               </span>MIG<span class="w"> </span>M.<span class="w"> </span><span class="p">|</span>
+<span class="w">   </span><span class="p">|</span><span class="o">===============================</span>+<span class="o">======================</span>+<span class="o">======================</span><span class="p">|</span>
+<span class="w">   </span><span class="p">|</span><span class="w">   </span><span class="m">0</span><span class="w">  </span>Tesla<span class="w"> </span>T4<span class="w">            </span>Off<span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="m">00000000</span>:00:04.0<span class="w"> </span>Off<span class="w"> </span><span class="p">|</span><span class="w">                    </span><span class="m">0</span><span class="w"> </span><span class="p">|</span>
+<span class="w">   </span><span class="p">|</span><span class="w"> </span>N/A<span class="w">   </span>41C<span class="w">    </span>P8<span class="w">    </span>11W<span class="w"> </span>/<span class="w">  </span>70W<span class="w"> </span><span class="p">|</span><span class="w">      </span>0MiB<span class="w"> </span>/<span class="w"> </span>15360MiB<span class="w"> </span><span class="p">|</span><span class="w">      </span><span class="m">0</span>%<span class="w">      </span>Default<span class="w"> </span><span class="p">|</span>
+<span class="w">   </span><span class="p">|</span><span class="w">                               </span><span class="p">|</span><span class="w">                      </span><span class="p">|</span><span class="w">                  </span>N/A<span class="w"> </span><span class="p">|</span>
+<span class="w">   </span>+-------------------------------+----------------------+----------------------+
+</pre></div>
+</div>
 </div>
 </div>
 </div>
