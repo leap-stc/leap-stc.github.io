@@ -102,7 +102,7 @@ For a quick guide on how to start a Dask Cluster, consult this page from the Pan
 
 Tier2 and Tier3 members (see [Users and Categories](../../policies/users_roles.md)) have access to a 'Large' Server instance with GPU. Currently the GPUs are [Nvidia T4](https://www.nvidia.com/en-us/data-center/tesla-t4/) models. To check what GPU is available on your server you can use [`nvidia-smi`](https://developer.nvidia.com/nvidia-system-management-interface) in the terminal window. You should get output similar to this:
 
-.. code-block::
+```shell
 
    nvidia-smi
    
@@ -117,4 +117,4 @@ Tier2 and Tier3 members (see [Users and Categories](../../policies/users_roles.m
    | N/A   41C    P8    11W /  70W |      0MiB / 15360MiB |      0%      Default |
    |                               |                      |                  N/A |
    +-------------------------------+----------------------+----------------------+
-
+```
