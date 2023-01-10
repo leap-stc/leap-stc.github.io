@@ -104,7 +104,7 @@ Tier2 and Tier3 members (see [Users and Categories](../../policies/users_roles.m
 
 .. code-block:: console
 
-   Tue Jan 10 19:54:12 2023       
+   Tue Jan 10 19:54:12 2023
    +-----------------------------------------------------------------------------+
    | NVIDIA-SMI 510.47.03    Driver Version: 510.47.03    CUDA Version: 11.6     |
    |-------------------------------+----------------------+----------------------+
