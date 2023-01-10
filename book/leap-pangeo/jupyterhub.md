@@ -97,3 +97,30 @@ For a quick guide on how to start a Dask Cluster, consult this page from the Pan
 - https://pangeo.io/cloud.html#dask
 
 [More info to be added soon]
+
+### GPUs
+
+Tier2 and Tier3 members (see [Users and Categories](../../policies/users_roles.md)) have access to a 'Large' Server instance with GPU. Currently the GPUs are [Nvidia T4]() models. To check what GPU is available on your server you can use `nvidia-smi` in the terminal window. You should get output similar to this:
+
+.. code-block:: bash
+
+   Tue Jan 10 19:54:12 2023       
+   +-----------------------------------------------------------------------------+
+   | NVIDIA-SMI 510.47.03    Driver Version: 510.47.03    CUDA Version: 11.6     |
+   |-------------------------------+----------------------+----------------------+
+   | GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+   | Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+   |                               |                      |               MIG M. |
+   |===============================+======================+======================|
+   |   0  Tesla T4            Off  | 00000000:00:04.0 Off |                    0 |
+   | N/A   41C    P8    11W /  70W |      0MiB / 15360MiB |      0%      Default |
+   |                               |                      |                  N/A |
+   +-------------------------------+----------------------+----------------------+
+
+   +-----------------------------------------------------------------------------+
+   | Processes:                                                                  |
+   |  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+   |        ID   ID                                                   Usage      |
+   |=============================================================================|
+   |  No running processes found                                                 |
+   +-----------------------------------------------------------------------------+
