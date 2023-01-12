@@ -94,13 +94,13 @@ and remove them when the course has been concluded.
 ### "Where is my invite?"
 
 Please check your email account (**the one you used to sign up for github** - this is independent of the email you use for LEAP) for an invite that will look similar to this:
-![LEAPPangeo email invite](../../images/email_org_invite.png)
+![LEAPPangeo email invite](../images/email_org_invite.png)
 Click the link and accept all invites.
 
 Alternatively you can log into your github account, and should see a notification in the top right menu under the "Organizations" tab.
-![LEAPPangeo gh invite](../../images/gh_org_invite_1.png)
+![LEAPPangeo gh invite](../images/gh_org_invite_1.png)
 You can follow that and accept the invitation there aswell.
-![LEAPPangeo gh invite2](../../images/gh_org_invite_2.png)
+![LEAPPangeo gh invite2](../images/gh_org_invite_2.png)
 
 
 ## Research Category
