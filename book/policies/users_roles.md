@@ -91,6 +91,25 @@ team for the course and add the instructor as a "Maintainer".
 It is the instructor's responsibility to add the course's users to this team
 and remove them when the course has been concluded.
 
+### "Where is my invite?"
+
+Please check your email account (**the one you used to sign up for github** - this is independent of the email you use for LEAP) for an invite that will look similar to this:
+
+
+<img src="../images/email_org_invite.png" alt="LEAPPangeo email invite" height="300"/>
+
+
+Click the link and accept all invites.
+
+Alternatively you can log into your github account, and should see a notification in the top right menu under the "Organizations" tab.
+
+<img src="../images/gh_org_invite_1.png" alt="LEAPPangeo gh invite" height="300"/>
+
+You can follow that and accept the invitation there aswell.
+
+<img src="../images/gh_org_invite_2.png" alt="LEAPPangeo gh invite2" height="150"/>
+
+
 ## Research Category
 
 The education category is intended for _long-term access_ to LEAP-Pangeo resources associated
@@ -139,3 +158,5 @@ Removing a user from the `leap-pangeo-users` group entirely will disable their a
 completely.
 An automated process will delete user data from the hub one month after a user
 is removed from the `leap-pangeo-users` group.
+
+## How can I get access to the Hub
