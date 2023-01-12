@@ -95,10 +95,8 @@ and remove them when the course has been concluded.
 
 Please check your email account (**the one you used to sign up for github** - this is independent of the email you use for LEAP) for an invite that will look similar to this:
 
-:::{figure-md} markdown-fig
-<img src="../images/email_org_invite.png" alt="LEAPPangeo email invite" height="300"/>
-:::
 
+<img src="../images/email_org_invite.png" alt="LEAPPangeo email invite" height="300"/>
 
 
 Click the link and accept all invites.
