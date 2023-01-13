@@ -56,6 +56,7 @@ jobs:
             let pullRequestNumber = ''
             let pullRequestHeadSHA = ''
             core.info('Finding pull request...')
+            
             const pullRequests = await github.pulls.list({owner: context.repo.owner, repo: context.repo.repo})
             for (let pullRequest of pullRequests.data) {
               if(pullRequest.head.sha === context.payload.workflow_run.head_commit.id) {
@@ -74,6 +75,7 @@ jobs:
             else{
               core.info(`Found pull request ${pullRequestNumber}, with head sha: ${pullRequestHeadSHA}`)
             }
+  
       - name: Find Comment
         uses: peter-evans/find-comment@v1
         if: steps.find-pull-request.outputs.number != ''
