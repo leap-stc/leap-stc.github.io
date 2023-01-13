@@ -37,7 +37,7 @@ jobs:
   
   # preview the book (depends on build)
   preview:
-    if: github.event_name == 'pull_request'
+    #if: github.event_name == 'pull_request'
     needs: build 
     runs-on: ubuntu-latest
     defaults:
