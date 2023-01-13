@@ -9,9 +9,9 @@ on:
     branches:
     - main
 
-# This job installs dependencies, builds the book, and deploys the html
+# This job installs dependencies, builds the book, and zips the html for upload
 jobs:
-  build-and-deploy-book:
+  build-book:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
