@@ -107,7 +107,7 @@ Alternatively you can log into your github account, and should see a notificatio
 
 You can follow that and accept the invitation there aswell.
 
-<img src="../images/gh_org_invite_2.png" alt="LEAPPangeo gh invite2" height="150"/>
+<img src="../images/gh_org_invite_2.png" alt="LEAPPangeo gh invite2" height="120"/>
 
 
 ## Research Category
