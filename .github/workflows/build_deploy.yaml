@@ -1,0 +1,154 @@
+name: book-deployment
+
+# Trigger the workflow on push to main branch and PRs
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+# This workflow contains three jobs for building, previewing and deploying the book
+
+jobs:
+  build:
+    # Check that we are in the right repo
+    if: github.repository == 'leap-stc/leap-stc.github.io'
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        python-version: [3.8]
+    steps:
+    - uses: actions/checkout@v2
+
+    # Install dependencies
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v1
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+    # Build the book
+    - name: Build the book
+      run: |
+        jupyter-book build book
+  
+  # preview the book (depends on build)
+  preview:
+    if: github.event_name == 'pull_request'
+    needs: build 
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set message value
+        run: |
+          echo "comment_message=This pull request is being automatically built with [GitHub Actions](https://github.com/features/actions) and [Netlify](https://www.netlify.com/). To see the status of your deployment, click below." >> $GITHUB_ENV
+      - name: Find Pull Request
+        uses: actions/github-script@v4
+        id: find-pull-request
+        with:
+          script: |
+            let pullRequestNumber = ''
+            let pullRequestHeadSHA = ''
+            core.info('Finding pull request...')
+            const pullRequests = await github.pulls.list({owner: context.repo.owner, repo: context.repo.repo})
+            for (let pullRequest of pullRequests.data) {
+              if(pullRequest.head.sha === context.payload.workflow_run.head_commit.id) {
+                  pullRequestHeadSHA = pullRequest.head.sha
+                  pullRequestNumber = pullRequest.number
+                  break
+              }
+            }
+            core.setOutput('number', pullRequestNumber)
+            core.setOutput('sha', pullRequestHeadSHA)
+            if(pullRequestNumber === '') {
+              core.info(
+                 `No pull request associated with git commit SHA: ${context.payload.workflow_run.head_commit.id}`
+              )
+            }
+            else{
+              core.info(`Found pull request ${pullRequestNumber}, with head sha: ${pullRequestHeadSHA}`)
+            }
+      - name: Find Comment
+        uses: peter-evans/find-comment@v1
+        if: steps.find-pull-request.outputs.number != ''
+        id: fc
+        with:
+          issue-number: '${{ steps.find-pull-request.outputs.number }}'
+          comment-author: 'github-actions[bot]'
+          body-includes: '${{ env.comment_message }}'
+
+      - name: Create comment
+        if: |
+          github.event.workflow_run.conclusion != 'success'
+          && steps.find-pull-request.outputs.number != ''
+          && steps.fc.outputs.comment-id == ''
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          issue-number: ${{ steps.find-pull-request.outputs.number }}
+          body: |
+            ${{ env.comment_message }}
+            🚧 Deployment in progress for git commit SHA: ${{ steps.find-pull-request.outputs.sha }}
+      - name: Update comment
+        if: |
+          github.event.workflow_run.conclusion != 'success'
+          && steps.find-pull-request.outputs.number != ''
+          && steps.fc.outputs.comment-id != ''
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          edit-mode: replace
+          body: |
+            ${{ env.comment_message }}
+            🚧 Deployment in progress for git commit SHA: ${{ steps.find-pull-request.outputs.sha }}
+    # Push the site's HTML to Netlify and get the preview URL
+      - name: Deploy to Netlify
+        id: netlify
+        uses: nwtgck/actions-netlify@v1.2
+        with:
+          publish-dir: book/_build/html
+          production-deploy: false
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          enable-commit-comment: false
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        timeout-minutes: 5
+
+      - name: Update site Preview comment
+        if: |
+          github.event.workflow_run.conclusion == 'success'
+          && steps.find-pull-request.outputs.number != ''
+          && steps.fc.outputs.comment-id != ''
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          edit-mode: replace
+          body: |
+            ${{ env.comment_message }}
+            🔍 Git commit SHA:  ${{ steps.find-pull-request.outputs.sha }}
+            ✅ Deployment Preview URL: ${{ steps.netlify.outputs.deploy-url }}
+  # preview the book (depends on build)
+  deploy:
+    needs: build
+    # only run this when pushed to main
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+    # Deploy the book's html to github pages
+    - name: GitHub Pages action
+      # Double Check that this is the correct repo
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        publish_branch: gh-pages
+        publish_dir: book/_build/html
+        full_commit_message: "GitHub action book deploy"
+        github_token: ${{ secrets.GITHUB_TOKEN }}
