@@ -93,7 +93,7 @@ and remove them when the course has been concluded.
 
 ### "Where is my invite?"
 
-Please check your email account (**the one you used to sign up for github** - this is independent of the email you use for LEAP) for an invite that will look similar to this:
+Please check your email account (**the one you used to sign up for Github** - this is independent of the email you use for LEAP) for an invite that will look similar to this:
 
 
 <img src="../images/email_org_invite.png" alt="LEAPPangeo email invite" height="300"/>
