@@ -52,3 +52,4 @@ coverage.xml
 
 book/_build/
 
+.DS_Store
