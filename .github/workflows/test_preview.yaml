@@ -92,7 +92,7 @@ jobs:
           github.event.workflow_run.conclusion == 'success'
           && steps.find-pull-request.outputs.number != ''
           && steps.fc.outputs.comment-id != ''
-        run: run: |
+        run: |
           rm -rf book/_build/html
           unzip book.zip
           rm -f book.zip
