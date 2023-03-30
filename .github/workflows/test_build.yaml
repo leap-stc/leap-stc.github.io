@@ -26,29 +26,28 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-    - name: Build the book
+      - name: Build the book
         run: |
           jupyter-book build book
-    - name: Zip files for upload
-      run: |
-        set -x
-        set -e
-        if [ -f book.zip ]; then
-            rm -rf book.zip
-        fi
-        zip -r book.zip book/_build/html
-    - name: # Upload zipped book for preview action
-      uses: actions/upload-artifact@v3
-      with:
-        name: book-zip
-        path: ./book.zip
-    
-    - name: Deploy to GH Pages
-      # only run this when pushed to main
-      if: github.ref == 'refs/heads/main'
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        publish_branch: gh-pages
-        publish_dir: book/_build/html
-        full_commit_message: "GitHub action book deploy"
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Zip files for upload
+        run: |
+          set -x
+          set -e
+          if [ -f book.zip ]; then
+              rm -rf book.zip
+          fi
+          zip -r book.zip book/_build/html
+      - name: # Upload zipped book for preview action
+        uses: actions/upload-artifact@v3
+        with:
+          name: book-zip
+          path: ./book.zip
+      - name: Deploy to GH Pages
+        # only run this when pushed to main
+        if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_branch: gh-pages
+          publish_dir: book/_build/html
+          full_commit_message: "GitHub action book deploy"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
