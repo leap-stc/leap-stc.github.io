@@ -20,13 +20,18 @@ jobs:
     steps:
     
     # download the artifact
-    - name: Download Artifact site
-      uses: dawidd6/action-download-artifact@v2.14.1
+    # - name: Download Artifact site
+    #   uses: dawidd6/action-download-artifact@v2.14.1
+    #   with:
+    #       github_token: ${{ secrets.GITHUB_TOKEN }}
+    #       workflow: build.yaml
+    #       run_id: ${{ github.event.workflow_run.id }}
+    #       name: book-zip
+    - name: Download artifact
+      uses: actions/download-artifact@v3
       with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          workflow: build.yaml
-          run_id: ${{ github.event.workflow_run.id }}s
-          name: book-zip
+        name: book-zip
+        run_id: ${{ github.event.workflow_run.id }}
     
     # Download the artifact (zipped html output)
     - name: Unzip site

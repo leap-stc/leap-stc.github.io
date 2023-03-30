@@ -6,7 +6,7 @@ on:
     types:
       - completed
 jobs:
-  deploy:
+  preview:
     if: github.repository == 'leap-stc/leap-stc.github.io'
     runs-on: ubuntu-latest
     defaults:
@@ -25,7 +25,6 @@ jobs:
             let pullRequestNumber = ''
             let pullRequestHeadSHA = ''
             core.info('Finding pull request...')
-
             const pullRequests = await github.rest.pulls.list({owner: context.repo.owner, repo: context.repo.repo})
             for (let pullRequest of pullRequests.data) {
               if(pullRequest.head.sha === context.payload.workflow_run.head_commit.id) {
