@@ -52,11 +52,10 @@ jobs:
         uses: actions/github-script@v6
         id: find-pull-request
         with:
-          script: |
+          script:  |
             let pullRequestNumber = ''
             let pullRequestHeadSHA = ''
             core.info('Finding pull request...')
-            
             const pullRequests = await github.rest.pulls.list({owner: context.repo.owner, repo: context.repo.repo})
             for (let pullRequest of pullRequests.data) {
               if(pullRequest.head.sha === context.payload.workflow_run.head_commit.id) {
