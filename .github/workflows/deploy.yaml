@@ -25,7 +25,7 @@ jobs:
       with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           workflow: build.yaml
-          run_id: ${{ github.event.workflow_run.id }}s
+          run_id: ${{ github.event.workflow_run.id }}
           name: book-zip
     
     # Download the artifact (zipped html output)
