@@ -17,8 +17,6 @@ jobs:
 
   deploy:
     needs: build
-    # uses: ProjectPythia/cookbook-actions/.github/workflows/deploy-book.yaml@main
-    # for testing
     uses: ./.github/workflows/deploy-book.yaml #hack until https://github.com/leap-stc/leap-stc.github.io/issues/41 is fixed, or https://github.com/ProjectPythia/cookbook-actions/pull/45 is merged. 
     with:
       publish_dir: "book/_build/html"
