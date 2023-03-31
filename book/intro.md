@@ -1,4 +1,4 @@
-# LEAP Technical Documentation
+# LEAP Technical Documentation 💥 🙈
 
 This website is the home for all technical documentation related to LEAP and LEAP-Pangeo.
 
