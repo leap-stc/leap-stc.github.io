@@ -1,7 +1,6 @@
 name: trigger-book-build
 on:
   pull_request:
-  workflow_dispatch: # for testing
 
 jobs:
   build:
