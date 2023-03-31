@@ -11,4 +11,5 @@ jobs:
       environment_file: environment.yaml
       artifact_name: book-zip-${{ github.event.number }}
       build_command: 'jupyter-book build book'
+      path_to_notebooks: 'book'
       # Other input options are possible, see ProjectPythia/cookbook-actions/.github/workflows/build-book.yaml
