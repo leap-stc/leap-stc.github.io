@@ -65,7 +65,7 @@ jobs:
           && inputs.cname == 'None')
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: {{ inputs.publish_dir }}
+          publish_dir: ${{ inputs.publish_dir }}
           enable_jekyll: false
           keep_files: true  # This preserves existing previews from open PRs
           destination_dir: ${{ inputs.destination_dir }}
@@ -77,7 +77,7 @@ jobs:
           && inputs.cname != 'None')
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: {{ inputs.publish_dir }}
+          publish_dir: ${{ inputs.publish_dir }}
           enable_jekyll: false
           keep_files: true  # This preserves existing previews from open PRs
           destination_dir: ${{ inputs.destination_dir }}
