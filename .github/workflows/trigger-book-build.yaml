@@ -8,5 +8,6 @@ jobs:
     with:
       environment_name: leap-docs-env
       artifact_name: book-zip-${{ github.event.number }}
-      path_to_notebooks: 'book' 
+      path_to_notebooks: 'book'
+      build_command: 'jupyter-book build . --path-output ../' #hack until https://github.com/leap-stc/leap-stc.github.io/issues/41 is fixed, or https://github.com/ProjectPythia/cookbook-actions/pull/45 is merged. 
       # Other input options are possible, see ProjectPythia/cookbook-actions/.github/workflows/build-book.yaml
