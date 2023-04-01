@@ -24,7 +24,7 @@ jobs:
   preview-comment:
     needs: find-pull-request
     # uses: ProjectPythia/cookbook-actions/.github/workflows/preview-comment.yaml@main
-    uses: jbusecke/cookbook-actions/.github/workflows/preview-comment.yaml@patch-2
+    uses: ./.github/workflows/preview-comment.yaml
     with:
       pull_request_number: ${{ needs.find-pull-request.outputs.number }}
       sha: ${{ needs.find-pull-request.outputs.sha }}
