@@ -69,4 +69,5 @@ jobs:
           body: |
             ${{ env.comment_message }}
             🔍 Git commit SHA: ${{ inputs.sha }}
-            ✅ Deployment Preview URL: https://${{ steps.repo-name.outputs.value }}/_preview/${{ inputs.pull_request_number }}/ #hardcoded fix for https://github.com/leap-stc/leap-stc.github.io/issues/54. Need to discuss upstream
+            ✅ Deployment Preview URL: https://${{ steps.repo-name.outputs.value }}/_preview/${{ inputs.pull_request_number }}
+          #hardcoded fix for https://github.com/leap-stc/leap-stc.github.io/issues/54. Need to discuss upstream
