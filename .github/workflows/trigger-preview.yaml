@@ -13,7 +13,7 @@ jobs:
   deploy-preview:
     needs: find-pull-request
     if: github.event.workflow_run.conclusion == 'success'
-    uses: ./.github/workflows/deploy-book.yaml #hack until https://github.com/leap-stc/leap-stc.github.io/issues/41 is fixed, or https://github.com/ProjectPythia/cookbook-actions/pull/45 is merged. 
+    uses: jbusecke/cookbook-actions/.github/workflows/deploy-book.yaml@patch-3 #hack until https://github.com/ProjectPythia/cookbook-actions/pull/45 is merged. 
     with:
       artifact_name: book-zip-${{ needs.find-pull-request.outputs.number }}
       destination_dir: _preview/${{ needs.find-pull-request.outputs.number }} # deploy to subdirectory labeled with PR number
@@ -23,7 +23,8 @@ jobs:
 
   preview-comment:
     needs: find-pull-request
-    uses: ProjectPythia/cookbook-actions/.github/workflows/preview-comment.yaml@main
+    # uses: ProjectPythia/cookbook-actions/.github/workflows/preview-comment.yaml@main
+    uses: jbusecke/cookbook-actions/.github/workflows/preview-comment.yaml@patch-2
     with:
       pull_request_number: ${{ needs.find-pull-request.outputs.number }}
       sha: ${{ needs.find-pull-request.outputs.sha }}
