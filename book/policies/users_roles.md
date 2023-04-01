@@ -7,7 +7,7 @@ Membership in a particular category will be implemented via
 [GitHub Teams](https://docs.github.com/en/organizations/organizing-members-into-teams)
 in the [leap-stc](https://github.com/orgs/leap-stc/teams) GitHub organization.
 
-Here we define those roles and map them to GitHub teams.
+Here we define those roles and map them to GitHub teams. 
 
 :::{warning}
 We have discovered a technical issue which affects some of the policies here.
