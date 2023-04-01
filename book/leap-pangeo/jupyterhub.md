@@ -1,4 +1,4 @@
-# LEAP-Pangeo JupyterHub 🚀
+# LEAP-Pangeo JupyterHub
 
 Our team has a cloud-based [JupyterHub](https://jupyter.org/hub).
 For information who can access the hub with which privileges, please refer to
