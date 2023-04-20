@@ -89,6 +89,20 @@ To help onboard you to this new way of working, we have written a guide to Files
 
 We recommend you read this thoroughly, especially the part about Git and GitHub.
 
+#### How can I get my data to the LEAP cloud buckets?
+
+In order to collaboratively work on large datasets, we need to upload datasets to the cloud buckets in an ARCO (Analysis-Ready Cloud-Optimized) format like e.g. zarr (for n-dimensional arrays). 
+
+##### Uploading data from an HPC system
+
+A commong scenario is the following: A researcher/student has run a simulation on a High Performance Computer (HPC) at their institution, but now wants to collaboratively work on the analysis or train a machine learning model with this data. For this they need to potentially convert the data, and upload it to the cloud storage.
+
+The following steps can be used as a guideline, but might have to be slightly modified depending on the actual setup of the users HPC
+
+###### Prerequisites
+- Make sure to install the [Google Cloud SDK]() in both your HPC environment, and your local computer that can open a web browser (e.g. your laptop).
+- We manage access rights through [Google Groups](https://groups.google.com). In 
+
 ### Dask
 
 To help you scale up calculations using a cluster, the Hub is configured with Dask Gateway.
