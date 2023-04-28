@@ -547,9 +547,32 @@ Make sure that your data is lazily loaded and the <code class="docutils literal 
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gcloud</span> <span class="n">auth</span> <span class="n">application</span><span class="o">-</span><span class="n">default</span> <span class="n">login</span> <span class="o">--</span><span class="n">scopes</span><span class="o">=</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">googleapis</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">auth</span><span class="o">/</span><span class="n">devstorage</span><span class="o">.</span><span class="n">read_write</span><span class="p">,</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">googleapis</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">auth</span><span class="o">/</span><span class="n">iam</span><span class="o">.</span><span class="n">test</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">browser</span>
 </pre></div>
 </div>
+<blockquote>
+<div><p>🚨 It is very important to include the <code class="docutils literal notranslate"><span class="pre">--scopes=</span></code> argument for security reasons. Do not run this command without it!</p>
+</div></blockquote>
 </li>
-<li></li>
+<li><p>Follow the onscreen prompt and paste the command into a <span style="color:#22B401">local machine terminal.</span></p></li>
+<li><p><span style="color:#22B401">This will open a browser window. Authenticate with the gmail account that was added to the google group. </span></p></li>
+<li><p><span style="color:#22B401">Go back to the terminal and follow the onscreen instructions.</span> Copy the text from the command line and <span style="color:#9301B4">paste the command in the open dialog on the remote machine.</span></p></li>
+<li><p><span style="color:#9301B4">Make sure to note the path to the auth json!</span> It will be something like <code class="docutils literal notranslate"><span class="pre">.../.config/gcloud/....json</span></code>.</p></li>
 </ol>
+<p>Try with the json file in python (needs <code class="docutils literal notranslate"><span class="pre">google-auth,</span> <span class="pre">xarray,</span> <span class="pre">gcsfs,</span> <span class="pre">zarr</span></code> installed)
+🚨 make sure to replace the path to the <code class="docutils literal notranslate"><span class="pre">.json</span></code> file and use your username in the path.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">import</span> <span class="nn">gcsfs</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;your_auth_file.json&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+	<span class="n">token</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="c1"># test write a small dummy xarray dataset to zarr</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span><span class="o">.</span><span class="n">to_dataset</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">)</span>
+
+<span class="n">fs</span> <span class="o">=</span> <span class="n">gcsfs</span><span class="o">.</span><span class="n">GCSFileSystem</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
+<span class="n">mapper</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">get_mapper</span><span class="p">(</span><span class="s2">&quot;gs://leap-persistent/&lt;username&gt;/testing/demo_write_from_remote.zarr&quot;</span><span class="p">)</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">to_zarr</span><span class="p">(</span><span class="n">mapper</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
