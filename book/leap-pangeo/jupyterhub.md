@@ -133,7 +133,31 @@ Before we are able to set up authentication we need to make sure our HPC and loc
    ```
    gcloud auth application-default login --scopes=https://www.googleapis.com/auth/devstorage.read_write,https://www.googleapis.com/auth/iam.test --no-browser
    ```
-4. 
+   > 🚨 It is very important to include the `--scopes=` argument for security reasons. Do not run this command without it!
+4. Follow the onscreen prompt and paste the command into a <span style="color:#22B401">local machine terminal.</span>
+5. <span style="color:#22B401">This will open a browser window. Authenticate with the gmail account that was added to the google group. </span>
+6. <span style="color:#22B401">Go back to the terminal and follow the onscreen instructions.</span> Copy the text from the command line and <span style="color:#9301B4">paste the command in the open dialog on the remote machine.</span>
+7. <span style="color:#9301B4">Make sure to note the path to the auth json!</span> It will be something like `.../.config/gcloud/....json`.
+
+
+Try with the json file in python (needs `google-auth, xarray, gcsfs, zarr` installed)
+🚨 make sure to replace the path to the `.json` file and use your username in the path.
+```
+import xarray as xr
+import gcsfs
+import json
+
+with open("your_auth_file.json") as f:
+	token=json.load(f)
+
+# test write a small dummy xarray dataset to zarr
+ds = xr.DataArray([1, 4, 6]).to_dataset(name='data')
+
+fs = gcsfs.GCSFileSystem(token=token)
+mapper = fs.get_mapper("gs://leap-persistent/<username>/testing/demo_write_from_remote.zarr")
+ds.to_zarr(mapper)
+```
+
 
 ### Dask
 
