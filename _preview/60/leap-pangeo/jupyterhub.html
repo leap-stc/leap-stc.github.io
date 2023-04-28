@@ -296,8 +296,18 @@ const thebe_selector_output = ".output, .cell_output"
         </a>
         <ul class="nav section-nav flex-column">
          <li class="toc-h6 nav-item toc-entry">
-          <a class="reference internal nav-link" href="#prerequisites">
-           Prerequisites
+          <a class="reference internal nav-link" href="#conversion-script-notebook">
+           Conversion Script/Notebook
+          </a>
+         </li>
+         <li class="toc-h6 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#upload-prerequisites">
+           Upload Prerequisites
+          </a>
+         </li>
+         <li class="toc-h6 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#steps">
+           Steps
           </a>
          </li>
         </ul>
@@ -389,8 +399,18 @@ const thebe_selector_output = ".output, .cell_output"
         </a>
         <ul class="nav section-nav flex-column">
          <li class="toc-h6 nav-item toc-entry">
-          <a class="reference internal nav-link" href="#prerequisites">
-           Prerequisites
+          <a class="reference internal nav-link" href="#conversion-script-notebook">
+           Conversion Script/Notebook
+          </a>
+         </li>
+         <li class="toc-h6 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#upload-prerequisites">
+           Upload Prerequisites
+          </a>
+         </li>
+         <li class="toc-h6 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#steps">
+           Steps
           </a>
          </li>
         </ul>
@@ -525,12 +545,41 @@ To help onboard you to this new way of working, we have written a guide to Files
 <h5>Uploading data from an HPC system<a class="headerlink" href="#uploading-data-from-an-hpc-system" title="Permalink to this headline">¶</a></h5>
 <p>A commong scenario is the following: A researcher/student has run a simulation on a High Performance Computer (HPC) at their institution, but now wants to collaboratively work on the analysis or train a machine learning model with this data. For this they need to potentially convert the data, and upload it to the cloud storage.</p>
 <p>The following steps can be used as a guideline, but might have to be slightly modified depending on the actual setup of the users HPC</p>
-<div class="section" id="prerequisites">
-<h6>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h6>
+<p>Steps executed on your <span style="color:#22B401">”local” computer (e.g. laptop)</span> will be colored in green and steps on your <span style="color:#9301B4">”remote” computer (e.g. HPC)</span> in purple.</p>
+<div class="section" id="conversion-script-notebook">
+<h6>Conversion Script/Notebook<a class="headerlink" href="#conversion-script-notebook" title="Permalink to this headline">¶</a></h6>
+<p>In most cases you do not just want to upload the data in its current form (e.g. many netcdf files).</p>
+<!-- TODO: Add an example of why this is bad for performance -->
+<p>Instead we will load the data into an <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.Dataset.html"><code class="docutils literal notranslate"><span class="pre">xarray.Dataset</span></code></a> and then write that Dataset object directly to a zarr store in the cloud.
+<strong>This is the step where your expertise on the dataset is crucial</strong></p>
+<ol>
+<li><p>Spend some time to set up a python script/jupyter notebook that opens your files and combines them in to one or more xarray.Datasets (combine as many files as sensible into a single dataset).
+Make sure that your data is lazily loaded and the <code class="docutils literal notranslate"><span class="pre">Dataset.data</span></code> is a <span class="xref myst">dask array</span></p></li>
+<li><p>Make sure that the dataset looks ‘right’. For example:</p>
 <ul class="simple">
-<li><p>Make sure to install the <span class="xref myst">Google Cloud SDK</span> in both your HPC environment, and your local computer that can open a web browser (e.g. your laptop).</p></li>
-<li><p>We manage access rights through <a class="reference external" href="https://groups.google.com">Google Groups</a>. In</p></li>
+<li><p>Check that the metadata is correct. Add missing information</p></li>
+<li><p>Check that all the variables/dimensions are in the dataset</p></li>
+<li><p>Check the dask chunksize. A general rule is to aim for around 100MB size, but the size and structure of chunking that is optimal depends heavily on the later use case.</p></li>
 </ul>
+<!-- Some more info on chunking? -->
+</li>
+<li><p>Try to write out a subset of the data locally by calling the <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.Dataset.to_zarr.html"><code class="docutils literal notranslate"><span class="pre">.to_zarr</span></code></a> method on the dataset.</p></li>
+</ol>
+<!-- TODO: Warn not to write out the full dataset -->
+</div>
+<div class="section" id="upload-prerequisites">
+<h6>Upload Prerequisites<a class="headerlink" href="#upload-prerequisites" title="Permalink to this headline">¶</a></h6>
+<p>Before we are able to set up authentication we need to make sure our HPC and local computer (required) are set up correctly.</p>
+<ul class="simple">
+<li><p>We manage access rights through <a class="reference external" href="https://groups.google.com">Google Groups</a>. Please contact Julius Busecke on <a class="reference external" href="https://leap-nsf-stc.slack.com/team/U03MSCLCTRA">Slack</a> to get added to the appropriate group (a gmail address is required for this).</p></li>
+<li><p>Make sure to install the <a class="reference external" href="https://cloud.google.com/sdk/docs/install">Google Cloud SDK</a> in both your HPC environment, and your local computer that can open a web browser (e.g. your laptop).</p></li>
+</ul>
+</div>
+<div class="section" id="steps">
+<h6>Steps<a class="headerlink" href="#steps" title="Permalink to this headline">¶</a></h6>
+<p><span style="color:#22B401">a</span>
+<span style="color:#9301B4">b</span> in purple.
+1.</p>
 </div>
 </div>
 </div>

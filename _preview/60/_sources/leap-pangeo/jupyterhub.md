@@ -99,9 +99,34 @@ A commong scenario is the following: A researcher/student has run a simulation o
 
 The following steps can be used as a guideline, but might have to be slightly modified depending on the actual setup of the users HPC
 
-###### Prerequisites
-- Make sure to install the [Google Cloud SDK]() in both your HPC environment, and your local computer that can open a web browser (e.g. your laptop).
-- We manage access rights through [Google Groups](https://groups.google.com). In 
+Steps executed on your <span style="color:#22B401">"local" computer (e.g. laptop)</span> will be colored in green and steps on your <span style="color:#9301B4">"remote" computer (e.g. HPC)</span> in purple.
+
+###### Conversion Script/Notebook
+
+In most cases you do not just want to upload the data in its current form (e.g. many netcdf files).  
+<!-- TODO: Add an example of why this is bad for performance -->
+Instead we will load the data into an [`xarray.Dataset`](https://docs.xarray.dev/en/stable/generated/xarray.Dataset.html) and then write that Dataset object directly to a zarr store in the cloud. 
+**This is the step where your expertise on the dataset is crucial**
+
+1. Spend some time to set up a python script/jupyter notebook that opens your files and combines them in to one or more xarray.Datasets (combine as many files as sensible into a single dataset).
+Make sure that your data is lazily loaded and the `Dataset.data` is a [dask array]()
+2. Make sure that the dataset looks 'right'. For example:
+   - Check that the metadata is correct. Add missing information
+   - Check that all the variables/dimensions are in the dataset
+   - Check the dask chunksize. A general rule is to aim for around 100MB size, but the size and structure of chunking that is optimal depends heavily on the later use case. 
+   <!-- Some more info on chunking? -->
+3. Try to write out a subset of the data locally by calling the [`.to_zarr`](https://docs.xarray.dev/en/stable/generated/xarray.Dataset.to_zarr.html) method on the dataset. 
+<!-- TODO: Warn not to write out the full dataset -->
+
+###### Upload Prerequisites
+Before we are able to set up authentication we need to make sure our HPC and local computer (required) are set up correctly.
+- We manage access rights through [Google Groups](https://groups.google.com). Please contact Julius Busecke on [Slack](https://leap-nsf-stc.slack.com/team/U03MSCLCTRA) to get added to the appropriate group (a gmail address is required for this).
+- Make sure to install the [Google Cloud SDK](https://cloud.google.com/sdk/docs/install) in both your HPC environment, and your local computer that can open a web browser (e.g. your laptop).
+
+###### Steps
+<span style="color:#22B401">a</span> 
+<span style="color:#9301B4">b</span> in purple.
+1. 
 
 ### Dask
 
