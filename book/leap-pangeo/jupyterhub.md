@@ -95,11 +95,9 @@ In order to collaboratively work on large datasets, we need to upload datasets t
 
 ##### Uploading data from an HPC system
 
-A commong scenario is the following: A researcher/student has run a simulation on a High Performance Computer (HPC) at their institution, but now wants to collaboratively work on the analysis or train a machine learning model with this data. For this they need to potentially convert the data, and upload it to the cloud storage.
+A commong scenario is the following: A researcher/student has run a simulation on a High Performance Computer (HPC) at their institution, but now wants to collaboratively work on the analysis or train a machine learning model with this data. For this they need to upload it to the cloud storage.
 
-The following steps can be used as a guideline, but might have to be slightly modified depending on the actual setup of the users HPC
-
-Steps executed on your <span style="color:#22B401">"local" computer (e.g. laptop)</span> will be colored in green and steps on your <span style="color:#9301B4">"remote" computer (e.g. HPC)</span> in purple.
+The following steps will guide you through the steps needed to authenticate and upload data to the cloud, but might have to be slightly modified depending on the actual setup of the users HPC.
 
 **Conversion Script/Notebook**
 
@@ -107,10 +105,10 @@ In most cases you do not just want to upload the data in its current form (e.g. 
 <!-- TODO: Add an example of why this is bad for performance -->
 Instead we will load the data into an [`xarray.Dataset`](https://docs.xarray.dev/en/stable/generated/xarray.Dataset.html) and then write that Dataset object directly to a zarr store in the cloud. For this you need a python environment with `xarray, gcsfs, zarr` installed (you might need additional dependencies for your particular use case).
 
-1. Spend some time to set up a python script/jupyter notebook that opens your files and combines them in to one or more xarray.Datasets (combine as many files as sensible into a single dataset). Make sure that your data is lazily loaded and the `Dataset.data` is a [dask array](https://docs.dask.org/en/stable/array.html)
+1. Spend some time to set up a python script/jupyter notebook on the HPC system that opens your files and combines them in to one or more xarray.Datasets (combine as many files as sensible into a single dataset). Make sure that your data is lazily loaded and the `Dataset.data` is a [dask array](https://docs.dask.org/en/stable/array.html)
 
-2. Make sure that the dataset looks 'right'. For example:
-   - Check that the metadata is correct. Add missing information
+2. Check your dataset:
+   - Check that the metadata is correct.
    - Check that all the variables/dimensions are in the dataset
    - Check the dask chunksize. A general rule is to aim for around 100MB size, but the size and structure of chunking that is optimal depends heavily on the later use case. 
    <!-- Some more info on chunking? -->
@@ -123,11 +121,11 @@ Once that works we can move on to the authentication.
 
 Before we are able to set up authentication we need to make sure our HPC and local computer (required) are set up correctly.
 - We manage access rights through [Google Groups](https://groups.google.com). Please contact Julius Busecke on [Slack](https://leap-nsf-stc.slack.com/team/U03MSCLCTRA) to get added to the appropriate group (a gmail address is required for this).
-- Make sure to install the [Google Cloud SDK](https://cloud.google.com/sdk/docs/install) in both your HPC environment, and your local computer that can open a web browser (e.g. your laptop).
+- Make sure to install the [Google Cloud SDK](https://cloud.google.com/sdk/docs/install) in both your <span style="color:#9301B4">HPC environment</span>, and your local computer that can open a web browser (e.g. your laptop).
 
-** Steps **
-<span style="color:#22B401">a</span> 
-<span style="color:#9301B4">b</span> in purple.
+**Steps**
+Steps executed on your <span style="color:#22B401">"local" computer (e.g. laptop)</span> will be colored in green and steps on your <span style="color:#9301B4">"remote" computer (e.g. HPC)</span> in purple.
+
 1. SSH into the HPC
 2. <span style="color:#9301B4">Check that you have an internet connection with `ping www.google.com`</span>
 3. <span style="color:#9301B4">Request no browser authentication: </span>
@@ -135,14 +133,16 @@ Before we are able to set up authentication we need to make sure our HPC and loc
    gcloud auth application-default login --scopes=https://www.googleapis.com/auth/devstorage.read_write,https://www.googleapis.com/auth/iam.test --no-browser
    ```
    > 🚨 It is very important to include the `--scopes=` argument for security reasons. Do not run this command without it!
-4. Follow the onscreen prompt and paste the command into a <span style="color:#22B401">local machine terminal.</span>
+4. Follow the onscreen prompt and paste the command into a terminal on your local machine.
 5. <span style="color:#22B401">This will open a browser window. Authenticate with the gmail account that was added to the google group. </span>
 6. <span style="color:#22B401">Go back to the terminal and follow the onscreen instructions.</span> Copy the text from the command line and <span style="color:#9301B4">paste the command in the open dialog on the remote machine.</span>
-7. <span style="color:#9301B4">Make sure to note the path to the auth json!</span> It will be something like `.../.config/gcloud/....json`.
+7. <span style="color:#9301B4">Make sure to note the path to the auth json!</span> It will be something like `.../.config/gcloud/....json`.</span>
 
 Now you are have everything you need to authenticate.
 
 Lets verify that you can write a small dummy dataset to the cloud. In your notebook/script run the following (make sure to replace the filename and your username as instructed).
+
+Your dataset should now be available for all LEAP members 🎉🚀
 
 ```python
 import xarray as xr
