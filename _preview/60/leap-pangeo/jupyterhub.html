@@ -512,14 +512,12 @@ To help onboard you to this new way of working, we have written a guide to Files
 <p>A commong scenario is the following: A researcher/student has run a simulation on a High Performance Computer (HPC) at their institution, but now wants to collaboratively work on the analysis or train a machine learning model with this data. For this they need to potentially convert the data, and upload it to the cloud storage.</p>
 <p>The following steps can be used as a guideline, but might have to be slightly modified depending on the actual setup of the users HPC</p>
 <p>Steps executed on your <span style="color:#22B401">”local” computer (e.g. laptop)</span> will be colored in green and steps on your <span style="color:#9301B4">”remote” computer (e.g. HPC)</span> in purple.</p>
-<p>** Conversion Script/Notebook**</p>
+<p><strong>Conversion Script/Notebook</strong></p>
 <p>In most cases you do not just want to upload the data in its current form (e.g. many netcdf files).</p>
 <!-- TODO: Add an example of why this is bad for performance -->
-<p>Instead we will load the data into an <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.Dataset.html"><code class="docutils literal notranslate"><span class="pre">xarray.Dataset</span></code></a> and then write that Dataset object directly to a zarr store in the cloud.
-<strong>This is the step where your expertise on the dataset is crucial</strong></p>
+<p>Instead we will load the data into an <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.Dataset.html"><code class="docutils literal notranslate"><span class="pre">xarray.Dataset</span></code></a> and then write that Dataset object directly to a zarr store in the cloud. For this you need a python environment with <code class="docutils literal notranslate"><span class="pre">xarray,</span> <span class="pre">gcsfs,</span> <span class="pre">zarr</span></code> installed (you might need additional dependencies for your particular use case).</p>
 <ol>
-<li><p>Spend some time to set up a python script/jupyter notebook that opens your files and combines them in to one or more xarray.Datasets (combine as many files as sensible into a single dataset).
-Make sure that your data is lazily loaded and the <code class="docutils literal notranslate"><span class="pre">Dataset.data</span></code> is a <span class="xref myst">dask array</span></p></li>
+<li><p>Spend some time to set up a python script/jupyter notebook that opens your files and combines them in to one or more xarray.Datasets (combine as many files as sensible into a single dataset). Make sure that your data is lazily loaded and the <code class="docutils literal notranslate"><span class="pre">Dataset.data</span></code> is a <a class="reference external" href="https://docs.dask.org/en/stable/array.html">dask array</a></p></li>
 <li><p>Make sure that the dataset looks ‘right’. For example:</p>
 <ul class="simple">
 <li><p>Check that the metadata is correct. Add missing information</p></li>
@@ -531,7 +529,8 @@ Make sure that your data is lazily loaded and the <code class="docutils literal 
 <li><p>Try to write out a subset of the data locally by calling the <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.Dataset.to_zarr.html"><code class="docutils literal notranslate"><span class="pre">.to_zarr</span></code></a> method on the dataset.</p></li>
 </ol>
 <!-- TODO: Warn not to write out the full dataset -->
-<p>** Upload Prerequisites**</p>
+<p>Once that works we can move on to the authentication.</p>
+<p><strong>Upload Prerequisites</strong></p>
 <p>Before we are able to set up authentication we need to make sure our HPC and local computer (required) are set up correctly.</p>
 <ul class="simple">
 <li><p>We manage access rights through <a class="reference external" href="https://groups.google.com">Google Groups</a>. Please contact Julius Busecke on <a class="reference external" href="https://leap-nsf-stc.slack.com/team/U03MSCLCTRA">Slack</a> to get added to the appropriate group (a gmail address is required for this).</p></li>
@@ -556,23 +555,32 @@ Make sure that your data is lazily loaded and the <code class="docutils literal 
 <li><p><span style="color:#22B401">Go back to the terminal and follow the onscreen instructions.</span> Copy the text from the command line and <span style="color:#9301B4">paste the command in the open dialog on the remote machine.</span></p></li>
 <li><p><span style="color:#9301B4">Make sure to note the path to the auth json!</span> It will be something like <code class="docutils literal notranslate"><span class="pre">.../.config/gcloud/....json</span></code>.</p></li>
 </ol>
-<p>Try with the json file in python (needs <code class="docutils literal notranslate"><span class="pre">google-auth,</span> <span class="pre">xarray,</span> <span class="pre">gcsfs,</span> <span class="pre">zarr</span></code> installed)
-🚨 make sure to replace the path to the <code class="docutils literal notranslate"><span class="pre">.json</span></code> file and use your username in the path.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<p>Now you are have everything you need to authenticate.</p>
+<p>Lets verify that you can write a small dummy dataset to the cloud. In your notebook/script run the following (make sure to replace the filename and your username as instructed).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
 <span class="kn">import</span> <span class="nn">gcsfs</span>
 <span class="kn">import</span> <span class="nn">json</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;your_auth_file.json&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;your_auth_file.json&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span> <span class="c1">#🚨 make sure to enter the `.json` file from step 7</span>
 	<span class="n">token</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 
 <span class="c1"># test write a small dummy xarray dataset to zarr</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span><span class="o">.</span><span class="n">to_dataset</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span><span class="o">.</span><span class="n">to_dataset</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">)</span> 
+<span class="c1"># Once you have confirmed </span>
 
 <span class="n">fs</span> <span class="o">=</span> <span class="n">gcsfs</span><span class="o">.</span><span class="n">GCSFileSystem</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
-<span class="n">mapper</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">get_mapper</span><span class="p">(</span><span class="s2">&quot;gs://leap-persistent/&lt;username&gt;/testing/demo_write_from_remote.zarr&quot;</span><span class="p">)</span>
+<span class="n">mapper</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">get_mapper</span><span class="p">(</span><span class="s2">&quot;gs://leap-persistent/&lt;username&gt;/testing/demo_write_from_remote.zarr&quot;</span><span class="p">)</span> <span class="c1">#🚨 enter your leap (github) username here</span>
 <span class="n">ds</span><span class="o">.</span><span class="n">to_zarr</span><span class="p">(</span><span class="n">mapper</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>Now you can repeat the same steps but replace your dataset with the full dataset from above and leave your python code running until the upload has finished. Depending on the internet connection speed and the size of the full dataset, this can take a while.</p>
+<p>If you want to see a progress bar, you can wrap the call to <code class="docutils literal notranslate"><span class="pre">.to_zarr</span></code> with a <a class="reference external" href="https://docs.dask.org/en/stable/diagnostics-local.html#progress-bar">dask progress bar</a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dask.diagnostics</span> <span class="kn">import</span> <span class="n">ProgressBar</span>
+<span class="k">with</span> <span class="n">ProgressBar</span><span class="p">():</span>
+   <span class="n">ds</span><span class="o">.</span><span class="n">to_zarr</span><span class="p">(</span><span class="n">mapper</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Once the data has been uploaded, make sure to erase the <code class="docutils literal notranslate"><span class="pre">.../.config/gcloud/....json</span></code> file from step 7, and ask to be removed from the Google Group.</p>
 </div>
 </div>
 </div>
