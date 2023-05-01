@@ -39,7 +39,7 @@ jobs:
         if: |
           github.event.workflow_run.conclusion != 'success'
           && steps.fc.outputs.comment-id == ''
-        uses: peter-evans/create-or-update-comment@v2
+        uses: peter-evans/create-or-update-comment@v3
         with:
           issue-number: ${{ inputs.pull_request_number }}
           body: |
@@ -50,7 +50,7 @@ jobs:
         if: |
           github.event.workflow_run.conclusion != 'success'
           && steps.fc.outputs.comment-id != ''
-        uses: peter-evans/create-or-update-comment@v2
+        uses: peter-evans/create-or-update-comment@v3
         with:
           comment-id: ${{ steps.fc.outputs.comment-id }}
           edit-mode: replace
@@ -62,7 +62,7 @@ jobs:
         if: |
           github.event.workflow_run.conclusion == 'success'
           && steps.fc.outputs.comment-id != ''
-        uses: peter-evans/create-or-update-comment@v2
+        uses: peter-evans/create-or-update-comment@v3
         with:
           comment-id: ${{ steps.fc.outputs.comment-id }}
           edit-mode: replace
