@@ -509,18 +509,17 @@ To help onboard you to this new way of working, we have written a guide to Files
 <p>In order to collaboratively work on large datasets, we need to upload datasets to the cloud buckets in an ARCO (Analysis-Ready Cloud-Optimized) format like e.g. zarr (for n-dimensional arrays).</p>
 <div class="section" id="uploading-data-from-an-hpc-system">
 <h5>Uploading data from an HPC system<a class="headerlink" href="#uploading-data-from-an-hpc-system" title="Permalink to this headline">¶</a></h5>
-<p>A commong scenario is the following: A researcher/student has run a simulation on a High Performance Computer (HPC) at their institution, but now wants to collaboratively work on the analysis or train a machine learning model with this data. For this they need to potentially convert the data, and upload it to the cloud storage.</p>
-<p>The following steps can be used as a guideline, but might have to be slightly modified depending on the actual setup of the users HPC</p>
-<p>Steps executed on your <span style="color:#22B401">”local” computer (e.g. laptop)</span> will be colored in green and steps on your <span style="color:#9301B4">”remote” computer (e.g. HPC)</span> in purple.</p>
+<p>A commong scenario is the following: A researcher/student has run a simulation on a High Performance Computer (HPC) at their institution, but now wants to collaboratively work on the analysis or train a machine learning model with this data. For this they need to upload it to the cloud storage.</p>
+<p>The following steps will guide you through the steps needed to authenticate and upload data to the cloud, but might have to be slightly modified depending on the actual setup of the users HPC.</p>
 <p><strong>Conversion Script/Notebook</strong></p>
 <p>In most cases you do not just want to upload the data in its current form (e.g. many netcdf files).</p>
 <!-- TODO: Add an example of why this is bad for performance -->
 <p>Instead we will load the data into an <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.Dataset.html"><code class="docutils literal notranslate"><span class="pre">xarray.Dataset</span></code></a> and then write that Dataset object directly to a zarr store in the cloud. For this you need a python environment with <code class="docutils literal notranslate"><span class="pre">xarray,</span> <span class="pre">gcsfs,</span> <span class="pre">zarr</span></code> installed (you might need additional dependencies for your particular use case).</p>
 <ol>
-<li><p>Spend some time to set up a python script/jupyter notebook that opens your files and combines them in to one or more xarray.Datasets (combine as many files as sensible into a single dataset). Make sure that your data is lazily loaded and the <code class="docutils literal notranslate"><span class="pre">Dataset.data</span></code> is a <a class="reference external" href="https://docs.dask.org/en/stable/array.html">dask array</a></p></li>
-<li><p>Make sure that the dataset looks ‘right’. For example:</p>
+<li><p>Spend some time to set up a python script/jupyter notebook on the HPC system that opens your files and combines them in to one or more xarray.Datasets (combine as many files as sensible into a single dataset). Make sure that your data is lazily loaded and the <code class="docutils literal notranslate"><span class="pre">Dataset.data</span></code> is a <a class="reference external" href="https://docs.dask.org/en/stable/array.html">dask array</a></p></li>
+<li><p>Check your dataset:</p>
 <ul class="simple">
-<li><p>Check that the metadata is correct. Add missing information</p></li>
+<li><p>Check that the metadata is correct.</p></li>
 <li><p>Check that all the variables/dimensions are in the dataset</p></li>
 <li><p>Check the dask chunksize. A general rule is to aim for around 100MB size, but the size and structure of chunking that is optimal depends heavily on the later use case.</p></li>
 </ul>
@@ -534,11 +533,10 @@ To help onboard you to this new way of working, we have written a guide to Files
 <p>Before we are able to set up authentication we need to make sure our HPC and local computer (required) are set up correctly.</p>
 <ul class="simple">
 <li><p>We manage access rights through <a class="reference external" href="https://groups.google.com">Google Groups</a>. Please contact Julius Busecke on <a class="reference external" href="https://leap-nsf-stc.slack.com/team/U03MSCLCTRA">Slack</a> to get added to the appropriate group (a gmail address is required for this).</p></li>
-<li><p>Make sure to install the <a class="reference external" href="https://cloud.google.com/sdk/docs/install">Google Cloud SDK</a> in both your HPC environment, and your local computer that can open a web browser (e.g. your laptop).</p></li>
+<li><p>Make sure to install the <a class="reference external" href="https://cloud.google.com/sdk/docs/install">Google Cloud SDK</a> in both your <span style="color:#9301B4">HPC environment</span>, and your local computer that can open a web browser (e.g. your laptop).</p></li>
 </ul>
-<p>** Steps **
-<span style="color:#22B401">a</span>
-<span style="color:#9301B4">b</span> in purple.</p>
+<p><strong>Steps</strong>
+Steps executed on your <span style="color:#22B401">”local” computer (e.g. laptop)</span> will be colored in green and steps on your <span style="color:#9301B4">”remote” computer (e.g. HPC)</span> in purple.</p>
 <ol>
 <li><p>SSH into the HPC</p></li>
 <li><p><span style="color:#9301B4">Check that you have an internet connection with <code class="docutils literal notranslate"><span class="pre">ping</span> <span class="pre">www.google.com</span></code></span></p></li>
@@ -550,13 +548,14 @@ To help onboard you to this new way of working, we have written a guide to Files
 <div><p>🚨 It is very important to include the <code class="docutils literal notranslate"><span class="pre">--scopes=</span></code> argument for security reasons. Do not run this command without it!</p>
 </div></blockquote>
 </li>
-<li><p>Follow the onscreen prompt and paste the command into a <span style="color:#22B401">local machine terminal.</span></p></li>
+<li><p>Follow the onscreen prompt and paste the command into a terminal on your local machine.</p></li>
 <li><p><span style="color:#22B401">This will open a browser window. Authenticate with the gmail account that was added to the google group. </span></p></li>
 <li><p><span style="color:#22B401">Go back to the terminal and follow the onscreen instructions.</span> Copy the text from the command line and <span style="color:#9301B4">paste the command in the open dialog on the remote machine.</span></p></li>
-<li><p><span style="color:#9301B4">Make sure to note the path to the auth json!</span> It will be something like <code class="docutils literal notranslate"><span class="pre">.../.config/gcloud/....json</span></code>.</p></li>
+<li><p><span style="color:#9301B4">Make sure to note the path to the auth json!</span> It will be something like <code class="docutils literal notranslate"><span class="pre">.../.config/gcloud/....json</span></code>.</span></p></li>
 </ol>
 <p>Now you are have everything you need to authenticate.</p>
 <p>Lets verify that you can write a small dummy dataset to the cloud. In your notebook/script run the following (make sure to replace the filename and your username as instructed).</p>
+<p>Your dataset should now be available for all LEAP members 🎉🚀</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
 <span class="kn">import</span> <span class="nn">gcsfs</span>
 <span class="kn">import</span> <span class="nn">json</span>
