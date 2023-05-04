@@ -89,7 +89,9 @@ To help onboard you to this new way of working, we have written a guide to Files
 
 We recommend you read this thoroughly, especially the part about Git and GitHub.
 
-
+:::{warning}
+Please do not store large files in your user directory `/home/jovyan`. Your home directory is intended only for notebooks, analysis scripts, and small datasets (< 1 GB). It is not an appropriate place to store large datasets.
+:::
 
 #### How can I get my data to the LEAP cloud buckets?
 
