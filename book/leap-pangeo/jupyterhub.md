@@ -82,12 +82,16 @@ However, these will disappear when your server shuts down.
 
 ### Files and Data
 
-Data and files work differently in the cloud.
+Data and files work differently in the cloud. 
 To help onboard you to this new way of working, we have written a guide to Files and Data in the Cloud:
 
-- https://docs.2i2c.org/en/latest/user/storage.html
+- [2i2c Docs: Data and Filesystem](https://docs.2i2c.org/data/index.html#data-and-filesystem)
 
 We recommend you read this thoroughly, especially the part about Git and GitHub.
+
+:::{warning}
+Please do not store large files in your user directory `/home/jovyan`. Your home directory is intended only for notebooks, analysis scripts, and small datasets (< 1 GB). It is not an appropriate place to store large datasets.
+:::
 
 #### How can I get my data to the LEAP cloud buckets?
 
