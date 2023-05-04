@@ -501,9 +501,13 @@ However, these will disappear when your server shuts down.</p>
 <p>Data and files work differently in the cloud.
 To help onboard you to this new way of working, we have written a guide to Files and Data in the Cloud:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://docs.2i2c.org/en/latest/user/storage.html">https://docs.2i2c.org/en/latest/user/storage.html</a></p></li>
+<li><p><a class="reference external" href="https://docs.2i2c.org/data/index.html#data-and-filesystem">2i2c Docs: Data and Filesystem</a></p></li>
 </ul>
 <p>We recommend you read this thoroughly, especially the part about Git and GitHub.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Please do not store large files in your user directory <code class="docutils literal notranslate"><span class="pre">/home/jovyan</span></code>. Your home directory is intended only for notebooks, analysis scripts, and small datasets (&lt; 1 GB). It is not an appropriate place to store large datasets.</p>
+</div>
 <div class="section" id="how-can-i-get-my-data-to-the-leap-cloud-buckets">
 <h4>How can I get my data to the LEAP cloud buckets?<a class="headerlink" href="#how-can-i-get-my-data-to-the-leap-cloud-buckets" title="Permalink to this headline">¶</a></h4>
 <p>In order to collaboratively work on large datasets, we need to upload datasets to the cloud buckets in an ARCO (Analysis-Ready Cloud-Optimized) format like e.g. zarr (for n-dimensional arrays).</p>
