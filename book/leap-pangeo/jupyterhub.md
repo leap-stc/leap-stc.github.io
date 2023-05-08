@@ -26,7 +26,7 @@ For questions about how to use the Hub, please use the LEAP-Pangeo discussion fo
 ### Office Hours
 
 We also offer in-person and virtual Office Hours on Thursdays for questions about LEAP-Pangeo.
-You can reserve an appointment [here](https://app.reclaim.ai/m/leap-office-hours).
+You can reserve an appointment [here](https://app.reclaim.ai/m/leap-pangeo-office-hours).
 
 ## Hub Usage
 
