@@ -97,6 +97,16 @@ Please do not store large files in your user directory `/home/jovyan`. Your home
 
 In order to collaboratively work on large datasets, we need to upload datasets to the cloud buckets in an ARCO (Analysis-Ready Cloud-Optimized) format like e.g. zarr (for n-dimensional arrays). 
 
+If you would like to add a new dataset to the LEAP Data Library, please first raise an issue [here](https://github.com/leap-stc/data-management/issues/new?assignees=&labels=dataset&template=new_dataset.yaml&title=New+Dataset+%5BDataset+Name%5D). This enables us to track detailed information about proposed datasets and have an open discussion about how to upload it to the cloud. 
+
+Below you can find instructions for different use cases:
+
+
+##### Transform and Upload archived data to an ARCO format (with Pangeo Forge)
+
+Coming Soon
+
+
 ##### Uploading data from an HPC system
 
 A commong scenario is the following: A researcher/student has run a simulation on a High Performance Computer (HPC) at their institution, but now wants to collaboratively work on the analysis or train a machine learning model with this data. For this they need to upload it to the cloud storage.
