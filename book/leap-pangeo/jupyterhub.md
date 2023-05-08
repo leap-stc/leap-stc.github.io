@@ -23,7 +23,10 @@ For questions about how to use the Hub, please use the LEAP-Pangeo discussion fo
 
 - https://github.com/leap-stc/leap-stc.github.io/discussions
 
-Someone respond to your post and decide whether to refer it to 2i2c for technical support.
+### Office Hours
+
+We also offer in-person and virtual Office Hours on Thursdays for questions about LEAP-Pangeo.
+You can reserve an appointment [here](https://app.reclaim.ai/m/leap-office-hours).
 
 ## Hub Usage
 
