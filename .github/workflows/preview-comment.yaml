@@ -39,7 +39,7 @@ jobs:
         if: |
           github.event.workflow_run.conclusion != 'success'
           && steps.fc.outputs.comment-id == ''
-        uses: peter-evans/create-or-update-comment@v2
+        uses: peter-evans/create-or-update-comment@v3
         with:
           issue-number: ${{ inputs.pull_request_number }}
           body: |
@@ -50,7 +50,7 @@ jobs:
         if: |
           github.event.workflow_run.conclusion != 'success'
           && steps.fc.outputs.comment-id != ''
-        uses: peter-evans/create-or-update-comment@v2
+        uses: peter-evans/create-or-update-comment@v3
         with:
           comment-id: ${{ steps.fc.outputs.comment-id }}
           edit-mode: replace
@@ -62,11 +62,12 @@ jobs:
         if: |
           github.event.workflow_run.conclusion == 'success'
           && steps.fc.outputs.comment-id != ''
-        uses: peter-evans/create-or-update-comment@v2
+        uses: peter-evans/create-or-update-comment@v3
         with:
           comment-id: ${{ steps.fc.outputs.comment-id }}
           edit-mode: replace
           body: |
             ${{ env.comment_message }}
             🔍 Git commit SHA: ${{ inputs.sha }}
-            ✅ Deployment Preview URL: https://${{ github.repository_owner }}.github.io/${{ steps.repo-name.outputs.value }}/_preview/${{ inputs.pull_request_number }}/
+            ✅ Deployment Preview URL: https://${{ steps.repo-name.outputs.value }}/_preview/${{ inputs.pull_request_number }}
+          #hardcoded fix for https://github.com/leap-stc/leap-stc.github.io/issues/54. Need to discuss upstream

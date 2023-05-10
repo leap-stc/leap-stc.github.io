@@ -46,7 +46,7 @@ jobs:
       # because the artifact is created by a different workflow
       - name: Download preview artifact
         if: inputs.is_preview == 'true'
-        uses: dawidd6/action-download-artifact@v2.26.0
+        uses: dawidd6/action-download-artifact@v2.27.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           workflow: build-book.yaml
@@ -59,7 +59,7 @@ jobs:
           unzip book.zip
           rm -f book.zip
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3.9.2
+        uses: peaceiris/actions-gh-pages@v3.9.3
         if: |
           (github.ref == 'refs/heads/main'
           && inputs.cname == 'None')
@@ -71,7 +71,7 @@ jobs:
           destination_dir: ${{ inputs.destination_dir }}
 
       - name: Deploy to GitHub Pages with custom domain
-        uses: peaceiris/actions-gh-pages@v3.9.2
+        uses: peaceiris/actions-gh-pages@v3.9.3
         if: |
           (github.ref == 'refs/heads/main'
           && inputs.cname != 'None')
