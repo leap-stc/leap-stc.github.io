@@ -106,7 +106,7 @@ LEAP-Pangeo provides users two cloud buckets to store data
 Files stored on each of those buckets can be accessed by any LEAP member, so be concious in the way you use these.
 
 - **Do not put sensitive information (passwords, keys, personal data) into these buckets!**
-- **When writing to buckets only ever write to your personal folder!** Your personal folder is a combination of the bucketname and your github username (e.g. `gs://leap-persistent/some-really-funky-user/').
+- **When writing to buckets only ever write to your personal folder!** Your personal folder is a combination of the bucketname and your github username (e.g. `gs://leap-persistent/funky-user/').
 
 #### Inspecting contents of the bucket
 
@@ -116,7 +116,7 @@ You can e.g. list the contents of your personal folder with
 ```python
 import gcsfs
 fs = gcsfs.GCSFileSystem() # equivalent to fsspec.fs('gs')
-fs.ls('leap-persistent/octocat')
+fs.ls('leap-persistent/funky-user')
 ```
 
 #### Basic writing to and reading from cloud buckets
@@ -129,7 +129,7 @@ Xarray provides a method to stream results of a computation to zarr
 ```python
 ds = ...
 ds_processed = ds.mean(...).resample(...)
-user_path = "gs://leap-scratch/some-really-funky-user" # 👀 make sure to prepend `gs://` to the path or xarray will interpret this as a local path
+user_path = "gs://leap-scratch/funky-user" # 👀 make sure to prepend `gs://` to the path or xarray will interpret this as a local path
 store_name = "processed_store.zarr"
 ds_processed.to_zarr(f'{user_path}/{store_name}')
 ```
@@ -138,7 +138,7 @@ This will write a zarr store to the scratch bucket.
 You can read it back into an xarray dataset with this snippet:
 ```python
 import xarray as xr
-ds = xr.open_dataset('gs://leap-scratch/some-really-funky-user/processed_store.zarr', engine='zarr', chunks={}) #
+ds = xr.open_dataset('gs://leap-scratch/funky-user/processed_store.zarr', engine='zarr', chunks={}) #
 ```
 ... and you can give this to any other registered LEAP user and they can load it exactly like you can!  
 
