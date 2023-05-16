@@ -96,21 +96,65 @@ We recommend you read this thoroughly, especially the part about Git and GitHub.
 Please do not store large files in your user directory `/home/jovyan`. Your home directory is intended only for notebooks, analysis scripts, and small datasets (< 1 GB). It is not an appropriate place to store large datasets.
 :::
 
-#### How can I get my data to the LEAP cloud buckets?
+#### LEAP-Pangeo Buckets
 
-In order to collaboratively work on large datasets, we need to upload datasets to the cloud buckets in an ARCO (Analysis-Ready Cloud-Optimized) format like e.g. zarr (for n-dimensional arrays). 
+LEAP-Pangeo provides users two cloud buckets to store data
+
+- `gs://leap-scratch/` - Temporary Storage deleted after 7 days. Use this bucket for testing and storing large intermediate results. [More info](https://docs.2i2c.org/data/cloud/#scratch-bucket)
+- `gs://leap-persistent` - Persistent Storage. Use this bucket for storing results you want to share with other members. 
+
+Files stored on each of those buckets can be accessed by any LEAP member, so be concious in the way you use these.
+
+- **Do not put sensitive information (passwords, keys, personal data) into these buckets!**
+- **When writing to buckets only ever write to your personal folder!** Your personal folder is a combination of the bucketname and your github username (e.g. `gs://leap-persistent/some-really-funky-user/').
+
+#### Inspecting contents of the bucket
+
+We recommend using [gcsfs](https://gcsfs.readthedocs.io/en/latest/) or [fsspec](https://filesystem-spec.readthedocs.io/en/latest/) which provide a filesytem-like interface for python.
+
+You can e.g. list the contents of your personal folder with 
+```python
+import gcsfs
+fs = gcsfs.GCSFileSystem() # equivalent to fsspec.fs('gs')
+fs.ls('leap-persistent/octocat')
+```
+
+#### Basic writing to and reading from cloud buckets
+
+We do not recommend uploading large files (e.g. netcdf) directly to the bucket. Instead we recommend to write data as ARCO (Analysis-Ready Cloud-Optimized) formats like [zarr](https://zarr.dev)(for n-dimensional arrays) and [parquet](https://parquet.apache.org)(for tabular data) (read more [here](https://ieeexplore.ieee.org/document/9354557) why we recommend ARCO formats).
+
+If you work with xarray Datasets switching the storage format is as easy as swapping out a single line when reading/writing data:
+
+Xarray provides a method to stream results of a computation to zarr
+```python
+ds = ...
+ds_processed = ds.mean(...).resample(...)
+user_path = "gs://leap-scratch/some-really-funky-user" # 👀 make sure to prepend `gs://` to the path or xarray will interpret this as a local path
+store_name = "processed_store.zarr"
+ds_processed.to_zarr(f'{user_path}/{store_name}')
+```
+This will write a zarr store to the scratch bucket. 
+
+You can read it back into an xarray dataset with this snippet:
+```python
+import xarray as xr
+ds = xr.open_dataset('gs://leap-scratch/some-really-funky-user/processed_store.zarr', engine='zarr', chunks={}) #
+```
+... and you can give this to any other registered LEAP user and they can load it exactly like you can!  
+
+
+#### I have a dataset and want to work with it on the hub. How do I upload it?
 
 If you would like to add a new dataset to the LEAP Data Library, please first raise an issue [here](https://github.com/leap-stc/data-management/issues/new?assignees=&labels=dataset&template=new_dataset.yaml&title=New+Dataset+%5BDataset+Name%5D). This enables us to track detailed information about proposed datasets and have an open discussion about how to upload it to the cloud. 
 
 Below you can find instructions for different use cases:
-
 
 ##### Transform and Upload archived data to an ARCO format (with Pangeo Forge)
 
 Coming Soon
 
 
-##### Uploading data from an HPC system
+##### Uploading data from an HPC system 
 
 A commong scenario is the following: A researcher/student has run a simulation on a High Performance Computer (HPC) at their institution, but now wants to collaboratively work on the analysis or train a machine learning model with this data. For this they need to upload it to the cloud storage.
 
