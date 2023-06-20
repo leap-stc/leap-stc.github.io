@@ -96,12 +96,14 @@ We recommend you read this thoroughly, especially the part about Git and GitHub.
 Please do not store large files in your user directory `/home/jovyan`. Your home directory is intended only for notebooks, analysis scripts, and small datasets (< 1 GB). It is not an appropriate place to store large datasets.
 :::
 
+(hub:data:buckets)=
 #### LEAP-Pangeo Buckets
 
 LEAP-Pangeo provides users two cloud buckets to store data
 
 - `gs://leap-scratch/` - Temporary Storage deleted after 7 days. Use this bucket for testing and storing large intermediate results. [More info](https://docs.2i2c.org/data/cloud/#scratch-bucket)
-- `gs://leap-persistent` - Persistent Storage. Use this bucket for storing results you want to share with other members. 
+- `gs://leap-persistent` - Persistent Storage. Use this bucket for storing results you want to share with other members.
+- `gs://leap-persistent-ro` - Persistent Storage with read-only access for most users. To upload data to this bucket you need to use [this](hub:data:upload_hpc) method below.
 
 Files stored on each of those buckets can be accessed by any LEAP member, so be concious in the way you use these.
 
@@ -119,6 +121,7 @@ fs = gcsfs.GCSFileSystem() # equivalent to fsspec.fs('gs')
 fs.ls('leap-persistent/funky-user')
 ```
 
+(hub:data:read_write)=
 #### Basic writing to and reading from cloud buckets
 
 We do not recommend uploading large files (e.g. netcdf) directly to the bucket. Instead we recommend to write data as ARCO (Analysis-Ready Cloud-Optimized) formats like [zarr](https://zarr.dev)(for n-dimensional arrays) and [parquet](https://parquet.apache.org)(for tabular data) (read more [here](https://ieeexplore.ieee.org/document/9354557) why we recommend ARCO formats).
@@ -147,14 +150,72 @@ ds = xr.open_dataset('gs://leap-scratch/funky-user/processed_store.zarr', engine
 
 If you would like to add a new dataset to the LEAP Data Library, please first raise an issue [here](https://github.com/leap-stc/data-management/issues/new?assignees=&labels=dataset&template=new_dataset.yaml&title=New+Dataset+%5BDataset+Name%5D). This enables us to track detailed information about proposed datasets and have an open discussion about how to upload it to the cloud. 
 
-Below you can find instructions for different use cases:
+We distinguish between two primary *types* of data to upload: "Original" and "Published" data.
 
-##### Transform and Upload archived data to an ARCO format (with Pangeo Forge)
+- **Published Data** has been published and archived in a publically accessible location (e.g. a data repository like [zenodo](https://zenodo.org) or [figshare](https://figshare.com)). We do not recommend uploading this data to the cloud directly, but instead use [Pangeo Forge](https://pangeo-forge.readthedocs.io/en/latest/) to transform and upload it to the cloud. This ensures that the data is stored in an ARCO format and can be easily accessed by other LEAP members.
+- **Original Data** is any dataset that is produced by researchers at LEAP and has not been published yet. The main use case for this data is to share it with other LEAP members and collaborate on it. For original data we support direct uploaded to the cloud. *Be aware that original data could change rapidly as the data producer is iterating on their code*. We encourage all datasets to be archived and published before using them in scientific publications.  
+
+##### Transform and Upload published data to an ARCO format (with Pangeo Forge)
 
 Coming Soon
 
+##### Upload medium sized original data from your local machine
 
-##### Uploading data from an HPC system 
+For medium sized datasets, that can be uploaded within an hour, you can use a temporary access token generated on the JupyterHub to upload data to the cloud.
+
+1. Set up a new environment on your local machine (e.g. laptop)
+```shell
+mamba env create --name leap_pange_transfer python=3.9 google-auth gcsfs jupyterlab xarray zarr dask #add any other dependencies (e.g. netcdf4) that you need to read your data
+```
+2. Activate the environment
+```shell
+conda activate leap_pange_transfer
+```
+and set up a jupyter notbook (or a pure python script) that loads your data in as few xarray datasets as possible. For instance, if you have one dataset that consists of many files split in time, you should set your notebook up to read all the files using xarray into a single dataset, and then try to write out a small part of the dataset to a zarr store.
+3. Now start up a [LEAP-Pangeo server](leap.2i2c.cloud) and open a terminal. Install the [Google Cloud SDK](https://cloud.google.com/sdk/docs/install) using mamba
+```shell
+mamba install google-cloud-sdk
+```
+Now you can generate a temporary token (valid for 1 hour) that allows you to upload data to the cloud. 
+```shell
+gcloud auth print-access-token
+```
+Copy the resulting token into a plain text file `token.txt` in a convenient location on your **local machine**.
+4. Now start a JupyterLab notebook and paste the following code into a cell:
+```python
+import gcsfs
+import xarray as xr
+from google.cloud import storage
+from google.oauth2.credentials import Credentials
+
+# import an access token
+# - option 1: read an access token from a file
+with open("path/to/your/token.txt") as f:
+    access_token = f.read().strip()
+
+# setup a storage client using credentials
+credentials = Credentials(access_token)
+fs = gcsfs.GCSFileSystem(token=credentials)
+```
+> Make sure to replace the `path/to/your/token.txt` with the actual path to your token file.
+
+Try to write a small dataset to the cloud:
+```python
+ds = xr.DataArray([1]).to_dataset(name='test')
+ds.to_zarr('gs://leap-scratch/<your_username>/test_offsite_upload.zarr') #adding the 'gs://' prefix makes this just work with xarray!
+```
+>  Replace `<your_username>` with your actual username on the hub.
+
+5. Make sure that you can read the test dataset from within the hub (go back to [Basic writing to and reading from cloud buckets](hub:data:read_write)).
+
+6. Now the last step is to paste the code to load your actual dataset into the notebook and use `.to_zarr` to upload it.
+
+> Make sure to give the store a meaningful name, and raise an issue in the [data-management repo](https://github.com/leap-stc/data-management/issues) to get the dataset added to the LEAP Data Library.
+
+> Make sure to use a different bucket than `leap-scratch`, since that will be deleted every 7 days! For more info refer to the available [storage buckets](hub:data:buckets).
+
+(hub:data:upload_hpc)=
+##### Uploading large original data from an HPC system (no browser access on the system available) 
 
 A commong scenario is the following: A researcher/student has run a simulation on a High Performance Computer (HPC) at their institution, but now wants to collaboratively work on the analysis or train a machine learning model with this data. For this they need to upload it to the cloud storage.
 
