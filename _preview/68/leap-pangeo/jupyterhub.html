@@ -635,20 +635,22 @@ To help onboard you to this new way of working, we have written a guide to Files
 <div class="section" id="upload-medium-sized-original-data-from-your-local-machine">
 <h5>Upload medium sized original data from your local machine<a class="headerlink" href="#upload-medium-sized-original-data-from-your-local-machine" title="Permalink to this headline">¶</a></h5>
 <p>For medium sized datasets, that can be uploaded within an hour, you can use a temporary access token generated on the JupyterHub to upload data to the cloud.</p>
-<ol class="simple">
+<ul class="simple">
 <li><p>Set up a new environment on your local machine (e.g. laptop)</p></li>
-</ol>
+</ul>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>leap_pange_transfer<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9<span class="w"> </span>google-auth<span class="w"> </span>gcsfs<span class="w"> </span>jupyterlab<span class="w"> </span>xarray<span class="w"> </span>zarr<span class="w"> </span>dask<span class="w"> </span><span class="c1">#add any other dependencies (e.g. netcdf4) that you need to read your data</span>
 </pre></div>
 </div>
-<ol class="simple">
+<ul class="simple">
 <li><p>Activate the environment</p></li>
-</ol>
+</ul>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>leap_pange_transfer
 </pre></div>
 </div>
-<p>and set up a jupyter notbook (or a pure python script) that loads your data in as few xarray datasets as possible. For instance, if you have one dataset that consists of many files split in time, you should set your notebook up to read all the files using xarray into a single dataset, and then try to write out a small part of the dataset to a zarr store.
-3. Now start up a <span class="xref myst">LEAP-Pangeo server</span> and open a terminal. Install the <a class="reference external" href="https://cloud.google.com/sdk/docs/install">Google Cloud SDK</a> using mamba</p>
+<p>and set up a jupyter notbook (or a pure python script) that loads your data in as few xarray datasets as possible. For instance, if you have one dataset that consists of many files split in time, you should set your notebook up to read all the files using xarray into a single dataset, and then try to write out a small part of the dataset to a zarr store.</p>
+<ul class="simple">
+<li><p>Now start up a <span class="xref myst">LEAP-Pangeo server</span> and open a terminal. Install the <a class="reference external" href="https://cloud.google.com/sdk/docs/install">Google Cloud SDK</a> using mamba</p></li>
+</ul>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>install<span class="w"> </span>google-cloud-sdk
 </pre></div>
 </div>
@@ -656,8 +658,10 @@ To help onboard you to this new way of working, we have written a guide to Files
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>gcloud<span class="w"> </span>auth<span class="w"> </span>print-access-token
 </pre></div>
 </div>
-<p>Copy the resulting token into a plain text file <code class="docutils literal notranslate"><span class="pre">token.txt</span></code> in a convenient location on your <strong>local machine</strong>.
-4. Now start a JupyterLab notebook and paste the following code into a cell:</p>
+<p>Copy the resulting token into a plain text file <code class="docutils literal notranslate"><span class="pre">token.txt</span></code> in a convenient location on your <strong>local machine</strong>.</p>
+<ul class="simple">
+<li><p>Now start a JupyterLab notebook and paste the following code into a cell:</p></li>
+</ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gcsfs</span>
 <span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
 <span class="kn">from</span> <span class="nn">google.cloud</span> <span class="kn">import</span> <span class="n">storage</span>
@@ -684,10 +688,10 @@ To help onboard you to this new way of working, we have written a guide to Files
 <blockquote>
 <div><p>Replace <code class="docutils literal notranslate"><span class="pre">&lt;your_username&gt;</span></code> with your actual username on the hub.</p>
 </div></blockquote>
-<ol class="simple">
+<ul class="simple">
 <li><p>Make sure that you can read the test dataset from within the hub (go back to <a class="reference internal" href="#hub-data-read-write"><span class="std std-ref">Basic writing to and reading from cloud buckets</span></a>).</p></li>
 <li><p>Now the last step is to paste the code to load your actual dataset into the notebook and use <code class="docutils literal notranslate"><span class="pre">.to_zarr</span></code> to upload it.</p></li>
-</ol>
+</ul>
 <blockquote>
 <div><p>Make sure to give the store a meaningful name, and raise an issue in the <a class="reference external" href="https://github.com/leap-stc/data-management/issues">data-management repo</a> to get the dataset added to the LEAP Data Library.</p>
 </div></blockquote>
