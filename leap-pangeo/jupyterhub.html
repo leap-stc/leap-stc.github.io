@@ -293,18 +293,38 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#how-can-i-get-my-data-to-the-leap-cloud-buckets">
-       How can I get my data to the LEAP cloud buckets?
+      <a class="reference internal nav-link" href="#leap-pangeo-buckets">
+       LEAP-Pangeo Buckets
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#inspecting-contents-of-the-bucket">
+       Inspecting contents of the bucket
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#basic-writing-to-and-reading-from-cloud-buckets">
+       Basic writing to and reading from cloud buckets
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#i-have-a-dataset-and-want-to-work-with-it-on-the-hub-how-do-i-upload-it">
+       I have a dataset and want to work with it on the hub. How do I upload it?
       </a>
       <ul class="nav section-nav flex-column">
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#transform-and-upload-archived-data-to-an-arco-format-with-pangeo-forge">
-         Transform and Upload archived data to an ARCO format (with Pangeo Forge)
+        <a class="reference internal nav-link" href="#transform-and-upload-published-data-to-an-arco-format-with-pangeo-forge">
+         Transform and Upload published data to an ARCO format (with Pangeo Forge)
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#uploading-data-from-an-hpc-system">
-         Uploading data from an HPC system
+        <a class="reference internal nav-link" href="#upload-medium-sized-original-data-from-your-local-machine">
+         Upload medium sized original data from your local machine
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#uploading-large-original-data-from-an-hpc-system-no-browser-access-on-the-system-available">
+         Uploading large original data from an HPC system (no browser access on the system available)
         </a>
        </li>
       </ul>
@@ -391,18 +411,38 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#how-can-i-get-my-data-to-the-leap-cloud-buckets">
-       How can I get my data to the LEAP cloud buckets?
+      <a class="reference internal nav-link" href="#leap-pangeo-buckets">
+       LEAP-Pangeo Buckets
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#inspecting-contents-of-the-bucket">
+       Inspecting contents of the bucket
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#basic-writing-to-and-reading-from-cloud-buckets">
+       Basic writing to and reading from cloud buckets
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#i-have-a-dataset-and-want-to-work-with-it-on-the-hub-how-do-i-upload-it">
+       I have a dataset and want to work with it on the hub. How do I upload it?
       </a>
       <ul class="nav section-nav flex-column">
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#transform-and-upload-archived-data-to-an-arco-format-with-pangeo-forge">
-         Transform and Upload archived data to an ARCO format (with Pangeo Forge)
+        <a class="reference internal nav-link" href="#transform-and-upload-published-data-to-an-arco-format-with-pangeo-forge">
+         Transform and Upload published data to an ARCO format (with Pangeo Forge)
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#uploading-data-from-an-hpc-system">
-         Uploading data from an HPC system
+        <a class="reference internal nav-link" href="#upload-medium-sized-original-data-from-your-local-machine">
+         Upload medium sized original data from your local machine
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#uploading-large-original-data-from-an-hpc-system-no-browser-access-on-the-system-available">
+         Uploading large original data from an HPC system (no browser access on the system available)
         </a>
        </li>
       </ul>
@@ -536,17 +576,131 @@ To help onboard you to this new way of working, we have written a guide to Files
 <p class="admonition-title">Warning</p>
 <p>Please do not store large files in your user directory <code class="docutils literal notranslate"><span class="pre">/home/jovyan</span></code>. Your home directory is intended only for notebooks, analysis scripts, and small datasets (&lt; 1 GB). It is not an appropriate place to store large datasets.</p>
 </div>
-<div class="section" id="how-can-i-get-my-data-to-the-leap-cloud-buckets">
-<h4>How can I get my data to the LEAP cloud buckets?<a class="headerlink" href="#how-can-i-get-my-data-to-the-leap-cloud-buckets" title="Permalink to this headline">¶</a></h4>
-<p>In order to collaboratively work on large datasets, we need to upload datasets to the cloud buckets in an ARCO (Analysis-Ready Cloud-Optimized) format like e.g. zarr (for n-dimensional arrays).</p>
+<div class="section" id="leap-pangeo-buckets">
+<span id="hub-data-buckets"></span><h4>LEAP-Pangeo Buckets<a class="headerlink" href="#leap-pangeo-buckets" title="Permalink to this headline">¶</a></h4>
+<p>LEAP-Pangeo provides users two cloud buckets to store data</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">gs://leap-scratch/</span></code> - Temporary Storage deleted after 7 days. Use this bucket for testing and storing large intermediate results. <a class="reference external" href="https://docs.2i2c.org/data/cloud/#scratch-bucket">More info</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gs://leap-persistent</span></code> - Persistent Storage. Use this bucket for storing results you want to share with other members.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gs://leap-persistent-ro</span></code> - Persistent Storage with read-only access for most users. To upload data to this bucket you need to use <a class="reference internal" href="#hub-data-upload-hpc"><span class="std std-ref">this</span></a> method below.</p></li>
+</ul>
+<p>Files stored on each of those buckets can be accessed by any LEAP member, so be concious in the way you use these.</p>
+<ul class="simple">
+<li><p><strong>Do not put sensitive information (passwords, keys, personal data) into these buckets!</strong></p></li>
+<li><p><strong>When writing to buckets only ever write to your personal folder!</strong> Your personal folder is a combination of the bucketname and your github username (e.g. `gs://leap-persistent/funky-user/’).</p></li>
+</ul>
+</div>
+<div class="section" id="inspecting-contents-of-the-bucket">
+<h4>Inspecting contents of the bucket<a class="headerlink" href="#inspecting-contents-of-the-bucket" title="Permalink to this headline">¶</a></h4>
+<p>We recommend using <a class="reference external" href="https://gcsfs.readthedocs.io/en/latest/">gcsfs</a> or <a class="reference external" href="https://filesystem-spec.readthedocs.io/en/latest/">fsspec</a> which provide a filesytem-like interface for python.</p>
+<p>You can e.g. list the contents of your personal folder with</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gcsfs</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="n">gcsfs</span><span class="o">.</span><span class="n">GCSFileSystem</span><span class="p">()</span> <span class="c1"># equivalent to fsspec.fs(&#39;gs&#39;)</span>
+<span class="n">fs</span><span class="o">.</span><span class="n">ls</span><span class="p">(</span><span class="s1">&#39;leap-persistent/funky-user&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="basic-writing-to-and-reading-from-cloud-buckets">
+<span id="hub-data-read-write"></span><h4>Basic writing to and reading from cloud buckets<a class="headerlink" href="#basic-writing-to-and-reading-from-cloud-buckets" title="Permalink to this headline">¶</a></h4>
+<p>We do not recommend uploading large files (e.g. netcdf) directly to the bucket. Instead we recommend to write data as ARCO (Analysis-Ready Cloud-Optimized) formats like <a class="reference external" href="https://zarr.dev">zarr</a>(for n-dimensional arrays) and <a class="reference external" href="https://parquet.apache.org">parquet</a>(for tabular data) (read more <a class="reference external" href="https://ieeexplore.ieee.org/document/9354557">here</a> why we recommend ARCO formats).</p>
+<p>If you work with xarray Datasets switching the storage format is as easy as swapping out a single line when reading/writing data:</p>
+<p>Xarray provides a method to stream results of a computation to zarr</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="o">...</span>
+<span class="n">ds_processed</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="o">...</span><span class="p">)</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="n">user_path</span> <span class="o">=</span> <span class="s2">&quot;gs://leap-scratch/funky-user&quot;</span> <span class="c1"># 👀 make sure to prepend `gs://` to the path or xarray will interpret this as a local path</span>
+<span class="n">store_name</span> <span class="o">=</span> <span class="s2">&quot;processed_store.zarr&quot;</span>
+<span class="n">ds_processed</span><span class="o">.</span><span class="n">to_zarr</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">user_path</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">store_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This will write a zarr store to the scratch bucket.</p>
+<p>You can read it back into an xarray dataset with this snippet:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;gs://leap-scratch/funky-user/processed_store.zarr&#39;</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s1">&#39;zarr&#39;</span><span class="p">,</span> <span class="n">chunks</span><span class="o">=</span><span class="p">{})</span> <span class="c1">#</span>
+</pre></div>
+</div>
+<p>… and you can give this to any other registered LEAP user and they can load it exactly like you can!</p>
+</div>
+<div class="section" id="i-have-a-dataset-and-want-to-work-with-it-on-the-hub-how-do-i-upload-it">
+<h4>I have a dataset and want to work with it on the hub. How do I upload it?<a class="headerlink" href="#i-have-a-dataset-and-want-to-work-with-it-on-the-hub-how-do-i-upload-it" title="Permalink to this headline">¶</a></h4>
 <p>If you would like to add a new dataset to the LEAP Data Library, please first raise an issue <a class="reference external" href="https://github.com/leap-stc/data-management/issues/new?assignees=&amp;labels=dataset&amp;template=new_dataset.yaml&amp;title=New+Dataset+%5BDataset+Name%5D">here</a>. This enables us to track detailed information about proposed datasets and have an open discussion about how to upload it to the cloud.</p>
-<p>Below you can find instructions for different use cases:</p>
-<div class="section" id="transform-and-upload-archived-data-to-an-arco-format-with-pangeo-forge">
-<h5>Transform and Upload archived data to an ARCO format (with Pangeo Forge)<a class="headerlink" href="#transform-and-upload-archived-data-to-an-arco-format-with-pangeo-forge" title="Permalink to this headline">¶</a></h5>
+<p>We distinguish between two primary <em>types</em> of data to upload: “Original” and “Published” data.</p>
+<ul class="simple">
+<li><p><strong>Published Data</strong> has been published and archived in a publically accessible location (e.g. a data repository like <a class="reference external" href="https://zenodo.org">zenodo</a> or <a class="reference external" href="https://figshare.com">figshare</a>). We do not recommend uploading this data to the cloud directly, but instead use <a class="reference external" href="https://pangeo-forge.readthedocs.io/en/latest/">Pangeo Forge</a> to transform and upload it to the cloud. This ensures that the data is stored in an ARCO format and can be easily accessed by other LEAP members.</p></li>
+<li><p><strong>Original Data</strong> is any dataset that is produced by researchers at LEAP and has not been published yet. The main use case for this data is to share it with other LEAP members and collaborate on it. For original data we support direct uploaded to the cloud. <em>Be aware that original data could change rapidly as the data producer is iterating on their code</em>. We encourage all datasets to be archived and published before using them in scientific publications.</p></li>
+</ul>
+<div class="section" id="transform-and-upload-published-data-to-an-arco-format-with-pangeo-forge">
+<h5>Transform and Upload published data to an ARCO format (with Pangeo Forge)<a class="headerlink" href="#transform-and-upload-published-data-to-an-arco-format-with-pangeo-forge" title="Permalink to this headline">¶</a></h5>
 <p>Coming Soon</p>
 </div>
-<div class="section" id="uploading-data-from-an-hpc-system">
-<h5>Uploading data from an HPC system<a class="headerlink" href="#uploading-data-from-an-hpc-system" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="upload-medium-sized-original-data-from-your-local-machine">
+<h5>Upload medium sized original data from your local machine<a class="headerlink" href="#upload-medium-sized-original-data-from-your-local-machine" title="Permalink to this headline">¶</a></h5>
+<p>For medium sized datasets, that can be uploaded within an hour, you can use a temporary access token generated on the JupyterHub to upload data to the cloud.</p>
+<ul class="simple">
+<li><p>Set up a new environment on your local machine (e.g. laptop)</p></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>leap_pange_transfer<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9<span class="w"> </span>google-auth<span class="w"> </span>gcsfs<span class="w"> </span>jupyterlab<span class="w"> </span>xarray<span class="w"> </span>zarr<span class="w"> </span>dask<span class="w"> </span><span class="c1">#add any other dependencies (e.g. netcdf4) that you need to read your data</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Activate the environment</p></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>leap_pange_transfer
+</pre></div>
+</div>
+<p>and set up a jupyter notbook (or a pure python script) that loads your data in as few xarray datasets as possible. For instance, if you have one dataset that consists of many files split in time, you should set your notebook up to read all the files using xarray into a single dataset, and then try to write out a small part of the dataset to a zarr store.</p>
+<ul class="simple">
+<li><p>Now start up a <span class="xref myst">LEAP-Pangeo server</span> and open a terminal. Install the <a class="reference external" href="https://cloud.google.com/sdk/docs/install">Google Cloud SDK</a> using mamba</p></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>install<span class="w"> </span>google-cloud-sdk
+</pre></div>
+</div>
+<p>Now you can generate a temporary token (valid for 1 hour) that allows you to upload data to the cloud.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>gcloud<span class="w"> </span>auth<span class="w"> </span>print-access-token
+</pre></div>
+</div>
+<p>Copy the resulting token into a plain text file <code class="docutils literal notranslate"><span class="pre">token.txt</span></code> in a convenient location on your <strong>local machine</strong>.</p>
+<ul class="simple">
+<li><p>Now start a JupyterLab notebook and paste the following code into a cell:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gcsfs</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">from</span> <span class="nn">google.cloud</span> <span class="kn">import</span> <span class="n">storage</span>
+<span class="kn">from</span> <span class="nn">google.oauth2.credentials</span> <span class="kn">import</span> <span class="n">Credentials</span>
+
+<span class="c1"># import an access token</span>
+<span class="c1"># - option 1: read an access token from a file</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;path/to/your/token.txt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">access_token</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+<span class="c1"># setup a storage client using credentials</span>
+<span class="n">credentials</span> <span class="o">=</span> <span class="n">Credentials</span><span class="p">(</span><span class="n">access_token</span><span class="p">)</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="n">gcsfs</span><span class="o">.</span><span class="n">GCSFileSystem</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="n">credentials</span><span class="p">)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Make sure to replace the <code class="docutils literal notranslate"><span class="pre">path/to/your/token.txt</span></code> with the actual path to your token file.</p>
+</div></blockquote>
+<p>Try to write a small dataset to the cloud:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">to_dataset</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">to_zarr</span><span class="p">(</span><span class="s1">&#39;gs://leap-scratch/&lt;your_username&gt;/test_offsite_upload.zarr&#39;</span><span class="p">)</span> <span class="c1">#adding the &#39;gs://&#39; prefix makes this just work with xarray!</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Replace <code class="docutils literal notranslate"><span class="pre">&lt;your_username&gt;</span></code> with your actual username on the hub.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Make sure that you can read the test dataset from within the hub (go back to <a class="reference internal" href="#hub-data-read-write"><span class="std std-ref">Basic writing to and reading from cloud buckets</span></a>).</p></li>
+<li><p>Now the last step is to paste the code to load your actual dataset into the notebook and use <code class="docutils literal notranslate"><span class="pre">.to_zarr</span></code> to upload it.</p></li>
+</ul>
+<blockquote>
+<div><p>Make sure to give the store a meaningful name, and raise an issue in the <a class="reference external" href="https://github.com/leap-stc/data-management/issues">data-management repo</a> to get the dataset added to the LEAP Data Library.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Make sure to use a different bucket than <code class="docutils literal notranslate"><span class="pre">leap-scratch</span></code>, since that will be deleted every 7 days! For more info refer to the available <a class="reference internal" href="#hub-data-buckets"><span class="std std-ref">storage buckets</span></a>.</p>
+</div></blockquote>
+</div>
+<div class="section" id="uploading-large-original-data-from-an-hpc-system-no-browser-access-on-the-system-available">
+<span id="hub-data-upload-hpc"></span><h5>Uploading large original data from an HPC system (no browser access on the system available)<a class="headerlink" href="#uploading-large-original-data-from-an-hpc-system-no-browser-access-on-the-system-available" title="Permalink to this headline">¶</a></h5>
 <p>A commong scenario is the following: A researcher/student has run a simulation on a High Performance Computer (HPC) at their institution, but now wants to collaboratively work on the analysis or train a machine learning model with this data. For this they need to upload it to the cloud storage.</p>
 <p>The following steps will guide you through the steps needed to authenticate and upload data to the cloud, but might have to be slightly modified depending on the actual setup of the users HPC.</p>
 <p><strong>Conversion Script/Notebook</strong></p>
