@@ -18,3 +18,4 @@ parts:
 - caption: Miscellaneous
   chapters:
   - file: references
+  - file: how_to_cite
