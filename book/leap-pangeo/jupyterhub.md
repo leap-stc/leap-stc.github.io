@@ -110,6 +110,7 @@ Files stored on each of those buckets can be accessed by any LEAP member, so be 
 - **Do not put sensitive information (passwords, keys, personal data) into these buckets!**
 - **When writing to buckets only ever write to your personal folder!** Your personal folder is a combination of the bucketname and your github username (e.g. `gs://leap-persistent/funky-user/').
 
+(hub:data:list)=
 #### Inspecting contents of the bucket
 
 We recommend using [gcsfs](https://gcsfs.readthedocs.io/en/latest/) or [fsspec](https://filesystem-spec.readthedocs.io/en/latest/) which provide a filesytem-like interface for python.
@@ -143,7 +144,30 @@ You can read it back into an xarray dataset with this snippet:
 import xarray as xr
 ds = xr.open_dataset('gs://leap-scratch/funky-user/processed_store.zarr', engine='zarr', chunks={}) #
 ```
-... and you can give this to any other registered LEAP user and they can load it exactly like you can!  
+... and you can give this to any other registered LEAP user and they can load it exactly like you can! 
+
+#### Deleting from cloud buckets
+:::{warning}
+Depending on which cloud bucket you are working, make sure to double check which files you are deleting by [inspecting the contents](hub:data:list) and only working in a subdirectory with your username (e.g. `gs://<leap-bucket>/<your-username>/some/project/structure`.
+:::
+
+You can remove single files by using a gcsfs/fsspec filessytem as above
+```python
+import gcsfs
+fs = gcsfs.GCSFileSystem() # equivalent to fsspec.fs('gs')
+fs.rm('leap-persistent/funky-user/file_to_delete.nc')
+```
+
+If you want to remove zarr stores (which are an 'exploded' data format, and thus represented by a folder structure) you have to recursively delete the store. 
+:::{warning}
+The warning from above is even more important here! Make sure that the folder you are deleting does not contain any data you do not want to delete!
+:::
+```python
+fs.rm('leap-scratch/funky-user/processed_store.zarr', recursive=True)
+```
+
+
+
 
 
 #### I have a dataset and want to work with it on the hub. How do I upload it?
