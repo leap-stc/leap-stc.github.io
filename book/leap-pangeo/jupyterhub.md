@@ -146,6 +146,12 @@ ds = xr.open_dataset('gs://leap-scratch/funky-user/processed_store.zarr', engine
 ```
 ... and you can give this to any other registered LEAP user and they can load it exactly like you can! 
 
+You can also write other files directly to the bucket by using [`fsspec.open`](https://filesystem-spec.readthedocs.io/en/latest/api.html#fsspec.open) similarly to the python builtin [`open`](https://docs.python.org/3/library/functions.html#open)
+```python
+with fsspec.open('gs://leap-scratch/funky-user/test.txt', mode='w') as f:
+    f.write('hello world')
+```
+
 #### Deleting from cloud buckets
 :::{warning}
 Depending on which cloud bucket you are working, make sure to double check which files you are deleting by [inspecting the contents](hub:data:list) and only working in a subdirectory with your username (e.g. `gs://<leap-bucket>/<your-username>/some/project/structure`.
