@@ -34,19 +34,26 @@ This is a rough and ready guide to using the Hub.
 This documentation will be expanded as we learn and evolve.
 Feel free to [edit it yourself](https://github.com/leap-stc/leap-stc.github.io/blob/main/book/leap-pangeo/jupyterhub.md) if you have suggetions for improvement!
 
+(hub:server:login)=
 ### Logging In
 
 1. 👀 Navigate to https://leap.2i2c.cloud/ and click the big orange button that says "Log in to continue"
 2. 🔐 You will be prompted to authorize a GitHub application. Say "yes" to everything.
    Note you must belong to the appropriate GitHub team in order to access the hub.
    See {doc}`/policies/users_roles`  for more information.
-3. 📠 You will redirect to a screen with the following options. Choose which machine type you want to use.
+3. 📠 You will redirect to a screen with the following options.
 
-   <img width="410" alt="image" src="https://user-images.githubusercontent.com/1197350/167696045-d3c660c2-94d9-4a32-a8ad-61f340101ad5.png">
+<img width="410" alt="image" src="https://github.com/leap-stc/leap-stc.github.io/assets/14314623/088946a1-896f-4ff8-af91-8107c9f14cfd">
 
-   You should try to use the smallest image you need.
-   The GPU images should be used only when needed to accelerate model training.
-4. 🕥 Wait for your server to start up. It's normal for this to take a few minutes.
+> Note: Depending on your [membership]() you might see additional options (e.g. for GPU machines)
+
+You have to make 3 choices here:
+- The machine type (Choose between "CPU only" or "GPU" if available)
+  **⚠️The GPU images should be used only when needed to accelerate model training.**
+- The software environment ("Image"). Find more info in the [Software Environment Section](hub:image) below.
+- The node share. These are shared resources, and you should try to use the smallest image you need. You can easily start up a new server with a larger share if you find your work to be limited by CPU/RAM
+   
+4. 🕥 Wait for your server to start up. It can take up to few minutes.
 
 ### Using JupyterLab
 
@@ -64,24 +71,44 @@ To shut it down, go to https://leap.2i2c.cloud/hub/home and click the big red bu
 
 You can also navigate to this page from JupyterLab by clicking the `File` menu and going to `Hub Control Panel`.
 
-### The Python Environment
+(hub:image)=
+### The Software Environment
+The software environment you encounter on the Hub is based upon [docker images](https://www.digitalocean.com/community/tutorials/the-docker-ecosystem-an-introduction-to-common-components) which you can run on other machines (like your laptop or an HPC cluster) for better reproducibility.
 
-The Hub environment contains a full-featured, up-to-date Python environment.
-The environments are maintained by Pangeo. You can read all about them at the following URL:
+Upon start up you can choose between
+- A list of preselected images
+- The option of passing a custom docker image via the `"Other..."` option.
+
+#### Preselected Images
+LEAP-Pangeo uses several full-featured, up-to-date Python environments maintained by Pangeo. You can read all about them at the following URL:
 
 - https://github.com/pangeo-data/pangeo-docker-images/
 
-These are Docker images which you can also run on your own computer.
+There are separate images for pytorch and tensorflow which are available in a drop-down panel when starting up your server.
 The Hub contains a specific version of the image which can be found [here](https://github.com/2i2c-org/infrastructure/blob/master/config/clusters/leap/common.values.yaml).
+
 For example, at the time of writing, the version of `pangeo-notebook` is `2022.05.10`.
 A complete list of all packages installed in this environment is located at:
 
 - https://github.com/pangeo-data/pangeo-docker-images/blob/2022.05.10/pangeo-notebook/packages.txt
 
-There are separate images for pytorch and tensorflow.
+:::{attention}
+We regularly update the version of the images provided in the drop-down menu. 
+
+To ensure full reproducibility you should save the full info of the image you worked with (this is stored in the environment variable `JUPYTER_IMAGE_SPEC`) with your work. You can then use that string with the [Custom Images](hub:image:custom) to reproduce your work with exactly the same environment.
+:::
+
+(hub:image:custom)=
+#### Custom Images
+
+If you select the `Image > Other...` Option during [server login](hub:server:login) you can paste an arbitrary reference in the form of `docker_registry/organization/image_name:image_version`. As an example we can get the `2023.05.08` version of the pangeo tensorflow notebook by pasting `quay.io/pangeo/ml-notebook:2023.05.08`.
+
+#### Installing additonal packages
 
 You can install additional packages using `pip` and `conda`.
-However, these will disappear when your server shuts down.
+However, these will disappear when your server shuts down. 
+
+For a more permanent solution we recommend building project specific dockerfiles and using those as [custom images](hub:image:custom).
 
 ### Files and Data
 
@@ -337,3 +364,4 @@ Tier2 and Tier3 members (see [Users and Categories](../../policies/users_roles.m
    |                               |                      |                  N/A |
    +-------------------------------+----------------------+----------------------+
 ```
+
