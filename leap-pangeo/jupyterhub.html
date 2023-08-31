@@ -313,6 +313,11 @@ const thebe_selector_output = ".output, .cell_output"
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#deleting-from-cloud-buckets">
+       Deleting from cloud buckets
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#i-have-a-dataset-and-want-to-work-with-it-on-the-hub-how-do-i-upload-it">
        I have a dataset and want to work with it on the hub. How do I upload it?
       </a>
@@ -428,6 +433,11 @@ const thebe_selector_output = ".output, .cell_output"
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#basic-writing-to-and-reading-from-cloud-buckets">
        Basic writing to and reading from cloud buckets
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#deleting-from-cloud-buckets">
+       Deleting from cloud buckets
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
@@ -596,7 +606,7 @@ To help onboard you to this new way of working, we have written a guide to Files
 </ul>
 </div>
 <div class="section" id="inspecting-contents-of-the-bucket">
-<h4>Inspecting contents of the bucket<a class="headerlink" href="#inspecting-contents-of-the-bucket" title="Permalink to this headline">¶</a></h4>
+<span id="hub-data-list"></span><h4>Inspecting contents of the bucket<a class="headerlink" href="#inspecting-contents-of-the-bucket" title="Permalink to this headline">¶</a></h4>
 <p>We recommend using <a class="reference external" href="https://gcsfs.readthedocs.io/en/latest/">gcsfs</a> or <a class="reference external" href="https://filesystem-spec.readthedocs.io/en/latest/">fsspec</a> which provide a filesytem-like interface for python.</p>
 <p>You can e.g. list the contents of your personal folder with</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gcsfs</span>
@@ -624,6 +634,32 @@ To help onboard you to this new way of working, we have written a guide to Files
 </pre></div>
 </div>
 <p>… and you can give this to any other registered LEAP user and they can load it exactly like you can!</p>
+<p>You can also write other files directly to the bucket by using <a class="reference external" href="https://filesystem-spec.readthedocs.io/en/latest/api.html#fsspec.open"><code class="docutils literal notranslate"><span class="pre">fsspec.open</span></code></a> similarly to the python builtin <a class="reference external" href="https://docs.python.org/3/library/functions.html#open"><code class="docutils literal notranslate"><span class="pre">open</span></code></a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;gs://leap-scratch/funky-user/test.txt&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;hello world&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="deleting-from-cloud-buckets">
+<h4>Deleting from cloud buckets<a class="headerlink" href="#deleting-from-cloud-buckets" title="Permalink to this headline">¶</a></h4>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Depending on which cloud bucket you are working, make sure to double check which files you are deleting by <a class="reference internal" href="#hub-data-list"><span class="std std-ref">inspecting the contents</span></a> and only working in a subdirectory with your username (e.g. <code class="docutils literal notranslate"><span class="pre">gs://&lt;leap-bucket&gt;/&lt;your-username&gt;/some/project/structure</span></code>.</p>
+</div>
+<p>You can remove single files by using a gcsfs/fsspec filessytem as above</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gcsfs</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="n">gcsfs</span><span class="o">.</span><span class="n">GCSFileSystem</span><span class="p">()</span> <span class="c1"># equivalent to fsspec.fs(&#39;gs&#39;)</span>
+<span class="n">fs</span><span class="o">.</span><span class="n">rm</span><span class="p">(</span><span class="s1">&#39;leap-persistent/funky-user/file_to_delete.nc&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you want to remove zarr stores (which are an ‘exploded’ data format, and thus represented by a folder structure) you have to recursively delete the store.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The warning from above is even more important here! Make sure that the folder you are deleting does not contain any data you do not want to delete!</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fs</span><span class="o">.</span><span class="n">rm</span><span class="p">(</span><span class="s1">&#39;leap-scratch/funky-user/processed_store.zarr&#39;</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="i-have-a-dataset-and-want-to-work-with-it-on-the-hub-how-do-i-upload-it">
 <h4>I have a dataset and want to work with it on the hub. How do I upload it?<a class="headerlink" href="#i-have-a-dataset-and-want-to-work-with-it-on-the-hub-how-do-i-upload-it" title="Permalink to this headline">¶</a></h4>
