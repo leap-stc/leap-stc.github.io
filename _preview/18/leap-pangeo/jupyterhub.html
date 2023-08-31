@@ -146,6 +146,11 @@ const thebe_selector_output = ".output, .cell_output"
    LEAP-Pangeo Implementation Plan
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="solutions.html">
+   Common Problems (with Solutions)
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -250,143 +255,103 @@ const thebe_selector_output = ".output, .cell_output"
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   LEAP-Pangeo JupyterHub
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-started">
+   Getting Started
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#getting-started">
-     Getting Started
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-help">
+   Getting Help
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#office-hours">
+     Office Hours
     </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#getting-help">
-     Getting Help
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#office-hours">
-       Office Hours
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#hub-usage">
-     Hub Usage
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#logging-in">
-       Logging In
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#using-jupyterlab">
-       Using JupyterLab
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#shutting-down-your-server">
-       Shutting Down Your Server
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#the-python-environment">
-       The Python Environment
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#files-and-data">
-       Files and Data
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#leap-pangeo-buckets">
-         LEAP-Pangeo Buckets
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#inspecting-contents-of-the-bucket">
-         Inspecting contents of the bucket
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#basic-writing-to-and-reading-from-cloud-buckets">
-         Basic writing to and reading from cloud buckets
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#deleting-from-cloud-buckets">
-         Deleting from cloud buckets
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#i-have-a-dataset-and-want-to-work-with-it-on-the-hub-how-do-i-upload-it">
-         I have a dataset and want to work with it on the hub. How do I upload it?
-        </a>
-        <ul class="nav section-nav flex-column">
-         <li class="toc-h5 nav-item toc-entry">
-          <a class="reference internal nav-link" href="#transform-and-upload-published-data-to-an-arco-format-with-pangeo-forge">
-           Transform and Upload published data to an ARCO format (with Pangeo Forge)
-          </a>
-         </li>
-         <li class="toc-h5 nav-item toc-entry">
-          <a class="reference internal nav-link" href="#upload-medium-sized-original-data-from-your-local-machine">
-           Upload medium sized original data from your local machine
-          </a>
-         </li>
-         <li class="toc-h5 nav-item toc-entry">
-          <a class="reference internal nav-link" href="#uploading-large-original-data-from-an-hpc-system-no-browser-access-on-the-system-available">
-           Uploading large original data from an HPC system (no browser access on the system available)
-          </a>
-         </li>
-        </ul>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#dask">
-       Dask
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#common-problems-with-solutions">
-       Common Problems (with Solutions)
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id1">
-         Dask
-        </a>
-        <ul class="nav section-nav flex-column">
-         <li class="toc-h5 nav-item toc-entry">
-          <a class="reference internal nav-link" href="#killed-workers">
-           “Killed Workers”
-          </a>
-          <ul class="nav section-nav flex-column">
-           <li class="toc-h6 nav-item toc-entry">
-            <a class="reference internal nav-link" href="#datasets-chunks-too-large">
-             Datasets Chunks too large
-            </a>
-           </li>
-          </ul>
-         </li>
-        </ul>
-       </li>
-      </ul>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example-with-solution">
-   Example with Solution
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hub-usage">
+   Hub Usage
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logging-in">
+     Logging In
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-jupyterlab">
+     Using JupyterLab
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#shutting-down-your-server">
+     Shutting Down Your Server
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-python-environment">
+     The Python Environment
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#files-and-data">
+     Files and Data
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#leap-pangeo-buckets">
+       LEAP-Pangeo Buckets
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#inspecting-contents-of-the-bucket">
+       Inspecting contents of the bucket
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#basic-writing-to-and-reading-from-cloud-buckets">
+       Basic writing to and reading from cloud buckets
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#deleting-from-cloud-buckets">
+       Deleting from cloud buckets
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#i-have-a-dataset-and-want-to-work-with-it-on-the-hub-how-do-i-upload-it">
+       I have a dataset and want to work with it on the hub. How do I upload it?
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#transform-and-upload-published-data-to-an-arco-format-with-pangeo-forge">
+         Transform and Upload published data to an ARCO format (with Pangeo Forge)
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#upload-medium-sized-original-data-from-your-local-machine">
+         Upload medium sized original data from your local machine
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#uploading-large-original-data-from-an-hpc-system-no-browser-access-on-the-system-available">
+         Uploading large original data from an HPC system (no browser access on the system available)
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dask">
+     Dask
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#gpus">
      GPUs
     </a>
@@ -413,143 +378,103 @@ const thebe_selector_output = ".output, .cell_output"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   LEAP-Pangeo JupyterHub
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-started">
+   Getting Started
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#getting-started">
-     Getting Started
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-help">
+   Getting Help
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#office-hours">
+     Office Hours
     </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#getting-help">
-     Getting Help
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#office-hours">
-       Office Hours
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#hub-usage">
-     Hub Usage
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#logging-in">
-       Logging In
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#using-jupyterlab">
-       Using JupyterLab
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#shutting-down-your-server">
-       Shutting Down Your Server
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#the-python-environment">
-       The Python Environment
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#files-and-data">
-       Files and Data
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#leap-pangeo-buckets">
-         LEAP-Pangeo Buckets
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#inspecting-contents-of-the-bucket">
-         Inspecting contents of the bucket
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#basic-writing-to-and-reading-from-cloud-buckets">
-         Basic writing to and reading from cloud buckets
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#deleting-from-cloud-buckets">
-         Deleting from cloud buckets
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#i-have-a-dataset-and-want-to-work-with-it-on-the-hub-how-do-i-upload-it">
-         I have a dataset and want to work with it on the hub. How do I upload it?
-        </a>
-        <ul class="nav section-nav flex-column">
-         <li class="toc-h5 nav-item toc-entry">
-          <a class="reference internal nav-link" href="#transform-and-upload-published-data-to-an-arco-format-with-pangeo-forge">
-           Transform and Upload published data to an ARCO format (with Pangeo Forge)
-          </a>
-         </li>
-         <li class="toc-h5 nav-item toc-entry">
-          <a class="reference internal nav-link" href="#upload-medium-sized-original-data-from-your-local-machine">
-           Upload medium sized original data from your local machine
-          </a>
-         </li>
-         <li class="toc-h5 nav-item toc-entry">
-          <a class="reference internal nav-link" href="#uploading-large-original-data-from-an-hpc-system-no-browser-access-on-the-system-available">
-           Uploading large original data from an HPC system (no browser access on the system available)
-          </a>
-         </li>
-        </ul>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#dask">
-       Dask
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#common-problems-with-solutions">
-       Common Problems (with Solutions)
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id1">
-         Dask
-        </a>
-        <ul class="nav section-nav flex-column">
-         <li class="toc-h5 nav-item toc-entry">
-          <a class="reference internal nav-link" href="#killed-workers">
-           “Killed Workers”
-          </a>
-          <ul class="nav section-nav flex-column">
-           <li class="toc-h6 nav-item toc-entry">
-            <a class="reference internal nav-link" href="#datasets-chunks-too-large">
-             Datasets Chunks too large
-            </a>
-           </li>
-          </ul>
-         </li>
-        </ul>
-       </li>
-      </ul>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example-with-solution">
-   Example with Solution
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hub-usage">
+   Hub Usage
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logging-in">
+     Logging In
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-jupyterlab">
+     Using JupyterLab
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#shutting-down-your-server">
+     Shutting Down Your Server
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-python-environment">
+     The Python Environment
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#files-and-data">
+     Files and Data
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#leap-pangeo-buckets">
+       LEAP-Pangeo Buckets
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#inspecting-contents-of-the-bucket">
+       Inspecting contents of the bucket
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#basic-writing-to-and-reading-from-cloud-buckets">
+       Basic writing to and reading from cloud buckets
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#deleting-from-cloud-buckets">
+       Deleting from cloud buckets
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#i-have-a-dataset-and-want-to-work-with-it-on-the-hub-how-do-i-upload-it">
+       I have a dataset and want to work with it on the hub. How do I upload it?
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#transform-and-upload-published-data-to-an-arco-format-with-pangeo-forge">
+         Transform and Upload published data to an ARCO format (with Pangeo Forge)
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#upload-medium-sized-original-data-from-your-local-machine">
+         Upload medium sized original data from your local machine
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#uploading-large-original-data-from-an-hpc-system-no-browser-access-on-the-system-available">
+         Uploading large original data from an HPC system (no browser access on the system available)
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dask">
+     Dask
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#gpus">
      GPUs
     </a>
@@ -904,42 +829,8 @@ For a quick guide on how to start a Dask Cluster, consult this page from the Pan
 <li><p><a class="reference external" href="https://pangeo.io/cloud.html#dask">https://pangeo.io/cloud.html#dask</a></p></li>
 </ul>
 </div>
-<div class="section" id="common-problems-with-solutions">
-<h3>Common Problems (with Solutions)<a class="headerlink" href="#common-problems-with-solutions" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id1">
-<h4>Dask<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="section" id="killed-workers">
-<h5>“Killed Workers”<a class="headerlink" href="#killed-workers" title="Permalink to this headline">¶</a></h5>
-<p>The “Killed Worker” message in dask can result due to a variety of reasons. Here are some of the common reasons why you might see such an error message</p>
-<div class="section" id="datasets-chunks-too-large">
-<h6>Datasets Chunks too large<a class="headerlink" href="#datasets-chunks-too-large" title="Permalink to this headline">¶</a></h6>
-<p><strong>Issue</strong>
-The default dask worker configuration can deal well with dataset chunk sizes of ~100MB. If the chunks of your data are significantly larger, your worker might crash just upon loading a few of these chunks into memory.</p>
-<p><strong>Solution</strong>
-You can change the configuration of your dask workers and increase the memory each worker has to deal with larger chunks. You can adjust the memory by passing additional <a class="reference external" href="https://gateway.dask.org/cluster-options.html">options</a> to the dask-gatway cluster upon creation:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dask_gateway</span> <span class="kn">import</span> <span class="n">Gateway</span>
-<span class="n">gateway</span> <span class="o">=</span> <span class="n">Gateway</span><span class="p">()</span>
-<span class="n">options</span> <span class="o">=</span> <span class="n">gateway</span><span class="o">.</span><span class="n">cluster_options</span><span class="p">()</span>
-
-<span class="n">options</span><span class="o">.</span><span class="n">worker_memory</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># 10 GB of memory per worker.</span>
-
-<span class="c1"># Create a cluster with those options</span>
-<span class="n">cluster</span> <span class="o">=</span> <span class="n">gateway</span><span class="o">.</span><span class="n">new_cluster</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
-<span class="n">cluster</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="n">client</span> <span class="o">=</span> <span class="n">cluster</span><span class="o">.</span><span class="n">get_client</span><span class="p">()</span>
-</pre></div>
-</div>
-<!-- TODO: Add example how to change this in HTML repr -->
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="example-with-solution">
-<h1><a class="reference external" href="https://notebooksharing.space/view/2b6753a5ffe8ddfae1da3b8e2b5507e617de47eb25f758a20c92b62e7e650fd7#displayOptions=">Example with Solution</a><a class="headerlink" href="#example-with-solution" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="gpus">
-<h2>GPUs<a class="headerlink" href="#gpus" title="Permalink to this headline">¶</a></h2>
+<h3>GPUs<a class="headerlink" href="#gpus" title="Permalink to this headline">¶</a></h3>
 <p>Tier2 and Tier3 members (see <a class="reference internal" href="../policies/users_roles.html"><span class="doc std std-doc">Users and Categories</span></a>) have access to a ‘Large’ Server instance with GPU. Currently the GPUs are <a class="reference external" href="https://www.nvidia.com/en-us/data-center/tesla-t4/">Nvidia T4</a> models. To check what GPU is available on your server you can use <a class="reference external" href="https://developer.nvidia.com/nvidia-system-management-interface"><code class="docutils literal notranslate"><span class="pre">nvidia-smi</span></code></a> in the terminal window. You should get output similar to this:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">   </span>nvidia-smi
 <span class="w">   </span>
@@ -955,6 +846,7 @@ You can change the configuration of your dask workers and increase the memory ea
 <span class="w">   </span><span class="p">|</span><span class="w">                               </span><span class="p">|</span><span class="w">                      </span><span class="p">|</span><span class="w">                  </span>N/A<span class="w"> </span><span class="p">|</span>
 <span class="w">   </span>+-------------------------------+----------------------+----------------------+
 </pre></div>
+</div>
 </div>
 </div>
 </div>

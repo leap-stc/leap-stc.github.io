@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Infrastructure Policy &#8212; Technical Documentation</title>
+    <title>Common Problems (with Solutions) &#8212; Technical Documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Users and Categories" href="users_roles.html" />
-    <link rel="prev" title="Data Policy" href="data_policy.html" />
+    <link rel="next" title="References" href="../references.html" />
+    <link rel="prev" title="LEAP-Pangeo Implementation Plan" href="implementation.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -103,24 +103,24 @@ const thebe_selector_output = ".output, .cell_output"
   Policies
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="code_policy.html">
+  <a class="reference internal" href="../policies/code_policy.html">
    Code Policy
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="data_policy.html">
+  <a class="reference internal" href="../policies/data_policy.html">
    Data Policy
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../policies/infrastructure_policy.html">
    Infrastructure Policy
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="users_roles.html">
+  <a class="reference internal" href="../policies/users_roles.html">
    Users and Categories
   </a>
  </li>
@@ -130,24 +130,24 @@ const thebe_selector_output = ".output, .cell_output"
   LEAP-Pangeo
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../leap-pangeo/jupyterhub.html">
+  <a class="reference internal" href="jupyterhub.html">
    LEAP-Pangeo JupyterHub
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../leap-pangeo/architecture.html">
+  <a class="reference internal" href="architecture.html">
    LEAP-Pangeo Architecture
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../leap-pangeo/implementation.html">
+  <a class="reference internal" href="implementation.html">
    LEAP-Pangeo Implementation Plan
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../leap-pangeo/solutions.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Common Problems (with Solutions)
   </a>
  </li>
@@ -209,7 +209,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/policies/infrastructure_policy.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/leap-pangeo/solutions.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -229,7 +229,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/leap-stc/leap-stc.github.io/issues/new?title=Issue%20on%20page%20%2Fpolicies/infrastructure_policy.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/leap-stc/leap-stc.github.io/issues/new?title=Issue%20on%20page%20%2Fleap-pangeo/solutions.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -250,6 +250,33 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dask">
+   Dask
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#killed-workers">
+     “Killed Workers”
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#datasets-chunks-too-large">
+       Datasets Chunks too large
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -257,19 +284,74 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Infrastructure Policy</h1>
+                <h1>Common Problems (with Solutions)</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dask">
+   Dask
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#killed-workers">
+     “Killed Workers”
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#datasets-chunks-too-large">
+       Datasets Chunks too large
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="infrastructure-policy">
-<h1>Infrastructure Policy<a class="headerlink" href="#infrastructure-policy" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="common-problems-with-solutions">
+<h1>Common Problems (with Solutions)<a class="headerlink" href="#common-problems-with-solutions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="dask">
+<h2>Dask<a class="headerlink" href="#dask" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="killed-workers">
+<h3>“Killed Workers”<a class="headerlink" href="#killed-workers" title="Permalink to this headline">¶</a></h3>
+<p>The “Killed Worker” message in dask can result due to a variety of reasons. Here are some of the common reasons why you might see such an error message</p>
+<div class="section" id="datasets-chunks-too-large">
+<h4>Datasets Chunks too large<a class="headerlink" href="#datasets-chunks-too-large" title="Permalink to this headline">¶</a></h4>
+<p><strong>Issue</strong>
+The default dask worker configuration can deal well with dataset chunk sizes of ~100MB. If the chunks of your data are significantly larger, your worker might crash just upon loading a few of these chunks into memory.</p>
+<p><strong>Solution</strong>
+You can change the configuration of your dask workers and increase the memory each worker has to deal with larger chunks. You can adjust the memory by passing additional <a class="reference external" href="https://gateway.dask.org/cluster-options.html">options</a> to the dask-gatway cluster upon creation:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dask_gateway</span> <span class="kn">import</span> <span class="n">Gateway</span>
+<span class="n">gateway</span> <span class="o">=</span> <span class="n">Gateway</span><span class="p">()</span>
+<span class="n">options</span> <span class="o">=</span> <span class="n">gateway</span><span class="o">.</span><span class="n">cluster_options</span><span class="p">()</span>
+
+<span class="n">options</span><span class="o">.</span><span class="n">worker_memory</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># 10 GB of memory per worker.</span>
+
+<span class="c1"># Create a cluster with those options</span>
+<span class="n">cluster</span> <span class="o">=</span> <span class="n">gateway</span><span class="o">.</span><span class="n">new_cluster</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+<span class="n">cluster</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">cluster</span><span class="o">.</span><span class="n">get_client</span><span class="p">()</span>
+</pre></div>
+</div>
+<!-- TODO: Add example how to change this in HTML repr -->
+<p><a class="reference external" href="https://notebooksharing.space/view/2b6753a5ffe8ddfae1da3b8e2b5507e617de47eb25f758a20c92b62e7e650fd7#displayOptions=">Example with Solution</a></p>
+</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -285,7 +367,7 @@ const thebe_selector_output = ".output, .cell_output"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./policies"
+            path: "./leap-pangeo"
         },
         predefinedOutput: true
     }
@@ -297,17 +379,17 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="data_policy.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="implementation.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Data Policy</p>
+            <p class="prev-next-title">LEAP-Pangeo Implementation Plan</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="users_roles.html" title="next page">
+    <a class='right-next' id="next-link" href="../references.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Users and Categories</p>
+        <p class="prev-next-title">References</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
