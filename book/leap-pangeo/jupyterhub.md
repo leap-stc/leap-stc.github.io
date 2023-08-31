@@ -95,7 +95,7 @@ A complete list of all packages installed in this environment is located at:
 :::{attention}
 We regularly update the version of the images provided in the drop-down menu. 
 
-To ensure full reproducibility you should save the full info of the image you worked with (this is stored in the environment variable `JUPYTER_IMAGE_SPEC`) with your work. You can then use that string with the [Custom Images](hub:image:custom) to reproduce your work with exactly the same environment.
+To ensure full reproducibility you should save the full info of the image you worked with (this is stored in the environment variable `JUPYTER_IMAGE_SPEC`) with your work. You can then use that string with the [custom images](hub:image:custom) to reproduce your work with exactly the same environment.
 :::
 
 (hub:image:custom)=
