@@ -15,6 +15,7 @@ parts:
   - file: leap-pangeo/jupyterhub.md
   - file: leap-pangeo/architecture
   - file: leap-pangeo/implementation
+  - file: leap-pangeo/solutions
 - caption: Miscellaneous
   chapters:
   - file: references
