@@ -293,9 +293,26 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-python-environment">
-     The Python Environment
+    <a class="reference internal nav-link" href="#the-software-environment">
+     The Software Environment
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#preselected-images">
+       Preselected Images
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#custom-images">
+       Custom Images
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#installing-additonal-packages">
+       Installing additonal packages
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#files-and-data">
@@ -416,9 +433,26 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-python-environment">
-     The Python Environment
+    <a class="reference internal nav-link" href="#the-software-environment">
+     The Software Environment
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#preselected-images">
+       Preselected Images
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#custom-images">
+       Custom Images
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#installing-additonal-packages">
+       Installing additonal packages
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#files-and-data">
@@ -539,18 +573,27 @@ You can reserve an appointment <a class="reference external" href="https://app.r
 This documentation will be expanded as we learn and evolve.
 Feel free to <a class="reference external" href="https://github.com/leap-stc/leap-stc.github.io/blob/main/book/leap-pangeo/jupyterhub.md">edit it yourself</a> if you have suggetions for improvement!</p>
 <div class="section" id="logging-in">
-<h3>Logging In<a class="headerlink" href="#logging-in" title="Permalink to this headline">¶</a></h3>
-<ol>
+<span id="hub-server-login"></span><h3>Logging In<a class="headerlink" href="#logging-in" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
 <li><p>👀 Navigate to <a class="reference external" href="https://leap.2i2c.cloud/">https://leap.2i2c.cloud/</a> and click the big orange button that says “Log in to continue”</p></li>
 <li><p>🔐 You will be prompted to authorize a GitHub application. Say “yes” to everything.
 Note you must belong to the appropriate GitHub team in order to access the hub.
 See <a class="reference internal" href="../policies/users_roles.html"><span class="doc">Users and Categories</span></a>  for more information.</p></li>
-<li><p>📠 You will redirect to a screen with the following options. Choose which machine type you want to use.</p>
-<a class="reference internal image-reference" href="https://user-images.githubusercontent.com/1197350/167696045-d3c660c2-94d9-4a32-a8ad-61f340101ad5.png"><img alt="image" src="https://user-images.githubusercontent.com/1197350/167696045-d3c660c2-94d9-4a32-a8ad-61f340101ad5.png" style="width: 410px;" /></a>
-<p>You should try to use the smallest image you need.
-The GPU images should be used only when needed to accelerate model training.</p>
-</li>
-<li><p>🕥 Wait for your server to start up. It’s normal for this to take a few minutes.</p></li>
+<li><p>📠 You will redirect to a screen with the following options.</p></li>
+</ol>
+<a class="reference internal image-reference" href="https://github.com/leap-stc/leap-stc.github.io/assets/14314623/088946a1-896f-4ff8-af91-8107c9f14cfd"><img alt="image" src="https://github.com/leap-stc/leap-stc.github.io/assets/14314623/088946a1-896f-4ff8-af91-8107c9f14cfd" style="width: 410px;" /></a>
+<blockquote>
+<div><p>Note: Depending on your <span class="xref myst">membership</span> you might see additional options (e.g. for GPU machines)</p>
+</div></blockquote>
+<p>You have to make 3 choices here:</p>
+<ul class="simple">
+<li><p>The machine type (Choose between “CPU only” or “GPU” if available)
+<strong>⚠️The GPU images should be used only when needed to accelerate model training.</strong></p></li>
+<li><p>The software environment (“Image”). Find more info in the <a class="reference internal" href="#hub-image"><span class="std std-ref">Software Environment Section</span></a> below.</p></li>
+<li><p>The node share. These are shared resources, and you should try to use the smallest image you need. You can easily start up a new server with a larger share if you find your work to be limited by CPU/RAM</p></li>
+</ul>
+<ol class="simple">
+<li><p>🕥 Wait for your server to start up. It can take up to few minutes.</p></li>
 </ol>
 </div>
 <div class="section" id="using-jupyterlab">
@@ -566,23 +609,43 @@ To shut it down, go to <a class="reference external" href="https://leap.2i2c.clo
 <a class="reference internal image-reference" href="https://user-images.githubusercontent.com/1197350/167768526-7742a260-d353-4bdb-b9d0-36e9cc17aba1.png"><img alt="image" src="https://user-images.githubusercontent.com/1197350/167768526-7742a260-d353-4bdb-b9d0-36e9cc17aba1.png" style="width: 800px;" /></a>
 <p>You can also navigate to this page from JupyterLab by clicking the <code class="docutils literal notranslate"><span class="pre">File</span></code> menu and going to <code class="docutils literal notranslate"><span class="pre">Hub</span> <span class="pre">Control</span> <span class="pre">Panel</span></code>.</p>
 </div>
-<div class="section" id="the-python-environment">
-<h3>The Python Environment<a class="headerlink" href="#the-python-environment" title="Permalink to this headline">¶</a></h3>
-<p>The Hub environment contains a full-featured, up-to-date Python environment.
-The environments are maintained by Pangeo. You can read all about them at the following URL:</p>
+<div class="section" id="the-software-environment">
+<span id="hub-image"></span><h3>The Software Environment<a class="headerlink" href="#the-software-environment" title="Permalink to this headline">¶</a></h3>
+<p>The software environment you encounter on the Hub is based upon <a class="reference external" href="https://www.digitalocean.com/community/tutorials/the-docker-ecosystem-an-introduction-to-common-components">docker images</a> which you can run on other machines (like your laptop or an HPC cluster) for better reproducibility.</p>
+<p>Upon start up you can choose between</p>
+<ul class="simple">
+<li><p>A list of preselected images</p></li>
+<li><p>The option of passing a custom docker image via the <code class="docutils literal notranslate"><span class="pre">&quot;Other...&quot;</span></code> option.</p></li>
+</ul>
+<div class="section" id="preselected-images">
+<h4>Preselected Images<a class="headerlink" href="#preselected-images" title="Permalink to this headline">¶</a></h4>
+<p>LEAP-Pangeo uses several full-featured, up-to-date Python environments maintained by Pangeo. You can read all about them at the following URL:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/pangeo-data/pangeo-docker-images/">https://github.com/pangeo-data/pangeo-docker-images/</a></p></li>
 </ul>
-<p>These are Docker images which you can also run on your own computer.
-The Hub contains a specific version of the image which can be found <a class="reference external" href="https://github.com/2i2c-org/infrastructure/blob/master/config/clusters/leap/common.values.yaml">here</a>.
-For example, at the time of writing, the version of <code class="docutils literal notranslate"><span class="pre">pangeo-notebook</span></code> is <code class="docutils literal notranslate"><span class="pre">2022.05.10</span></code>.
+<p>There are separate images for pytorch and tensorflow which are available in a drop-down panel when starting up your server.
+The Hub contains a specific version of the image which can be found <a class="reference external" href="https://github.com/2i2c-org/infrastructure/blob/master/config/clusters/leap/common.values.yaml">here</a>.</p>
+<p>For example, at the time of writing, the version of <code class="docutils literal notranslate"><span class="pre">pangeo-notebook</span></code> is <code class="docutils literal notranslate"><span class="pre">2022.05.10</span></code>.
 A complete list of all packages installed in this environment is located at:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/pangeo-data/pangeo-docker-images/blob/2022.05.10/pangeo-notebook/packages.txt">https://github.com/pangeo-data/pangeo-docker-images/blob/2022.05.10/pangeo-notebook/packages.txt</a></p></li>
 </ul>
-<p>There are separate images for pytorch and tensorflow.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>We regularly update the version of the images provided in the drop-down menu.</p>
+<p>To ensure full reproducibility you should save the full info of the image you worked with (this is stored in the environment variable <code class="docutils literal notranslate"><span class="pre">JUPYTER_IMAGE_SPEC</span></code>) with your work. You can then use that string with the <a class="reference internal" href="#hub-image-custom"><span class="std std-ref">custom images</span></a> to reproduce your work with exactly the same environment.</p>
+</div>
+</div>
+<div class="section" id="custom-images">
+<span id="hub-image-custom"></span><h4>Custom Images<a class="headerlink" href="#custom-images" title="Permalink to this headline">¶</a></h4>
+<p>If you select the <code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">&gt;</span> <span class="pre">Other...</span></code> Option during <a class="reference internal" href="#hub-server-login"><span class="std std-ref">server login</span></a> you can paste an arbitrary reference in the form of <code class="docutils literal notranslate"><span class="pre">docker_registry/organization/image_name:image_version</span></code>. As an example we can get the <code class="docutils literal notranslate"><span class="pre">2023.05.08</span></code> version of the pangeo tensorflow notebook by pasting <code class="docutils literal notranslate"><span class="pre">quay.io/pangeo/ml-notebook:2023.05.08</span></code>.</p>
+</div>
+<div class="section" id="installing-additonal-packages">
+<h4>Installing additonal packages<a class="headerlink" href="#installing-additonal-packages" title="Permalink to this headline">¶</a></h4>
 <p>You can install additional packages using <code class="docutils literal notranslate"><span class="pre">pip</span></code> and <code class="docutils literal notranslate"><span class="pre">conda</span></code>.
 However, these will disappear when your server shuts down.</p>
+<p>For a more permanent solution we recommend building project specific dockerfiles and using those as <a class="reference internal" href="#hub-image-custom"><span class="std std-ref">custom images</span></a>.</p>
+</div>
 </div>
 <div class="section" id="files-and-data">
 <h3>Files and Data<a class="headerlink" href="#files-and-data" title="Permalink to this headline">¶</a></h3>
