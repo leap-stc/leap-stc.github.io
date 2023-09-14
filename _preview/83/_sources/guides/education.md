@@ -15,18 +15,15 @@ Students should be signed up to the appropriate user [categories](users.categori
 
 Check if the students are part of the [appropriate github teams](users:categories). 
 
-| left | center  |
-| :---: | :----: |
-| - a   | b      |
-|   - b | c      |
+If they **are not** follow these steps:
+- [ ] Did the student [sign up for LEAP membership]()?
+- [ ] Did the student receive a github invite? [Here](users.invite) is how to check for that.  
+- [ ] Check again if they are part of the [appropriate github teams](users:categories).
+- If these steps do not work, please reach out to [](contact.data_compute_manager).
 
-- If they are, ask them to try the following steps:
-  - [ ] Refresh the browser cache
-  - [ ] Try a different browser
-  - [ ] Restart the computer
-  - If these steps do not work, please reach out to [](contact.data_compute_manager).
-- If they aren't follow these steps:
-  - [ ] Did the student [sign up for LEAP membership]()?
-  - [ ] Did the student receive a github invite? [Here](users.invite) is how to check for that.  
-  - [ ] Check again if they are part of the [appropriate github teams](users:categories).
-  - If these steps do not work, please reach out to [](contact.data_compute_manager).
+If they **are**, ask them to try the following steps:
+- [ ] Refresh the browser cache
+- [ ] Try a different browser
+- [ ] Restart the computer
+- If these steps do not work, please reach out to [](contact.data_compute_manager).
+
