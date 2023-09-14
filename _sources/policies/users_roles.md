@@ -40,7 +40,7 @@ Tier 1 membership is granted by adding the user to the [`leap-pangeo-base-access
 
 ## Tier 2 Members
 
-Tier 2 members involved in LEAP research and community, have access to computing resources  and storage on LEAPangeo. In addition to the CPU computing resources, Tier 2 members get GPU access.
+Tier 2 members involved in LEAP research and community, have access to all computing resources and storage on LEAPangeo. In addition to the CPU computing resources, Tier 2 members get GPU access.
 
 Tier 2 membership is granted by adding the user to the [`leap-pangeo-full-access`](https://github.com/orgs/leap-stc/teams/leap-pangeo-full-access) GitHub Team.
 
