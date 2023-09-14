@@ -1,3 +1,4 @@
+(users:categories)=
 # Users and Categories
 
 **Version 2 - 2022-10-25**
@@ -32,24 +33,20 @@ Once this is decided, we will provide instructions on how to add / remove affili
 
 ## Tier 1 Members
 
-Tier 1 members may access to `Small` and `Medium` JupyterHub servers
+Tier 1 members have access to [storage](hub:data:buckets) and computing resource up to 4 cores and 32GB RAM on JupyterHub servers
 in the LEAP-Pangeo Hub.
 
-Tier 1 membership is granted by adding the user to the
-[`leap-pangeo-tier1`](https://github.com/orgs/leap-stc/teams/leap-pangeo-tier1)
-GitHub Team.
+Tier 1 membership is granted by adding the user to the [`leap-pangeo-base-access`](https://github.com/orgs/leap-stc/teams/leap-pangeo-base-access) GitHub Team.
 
 ## Tier 2 Members
+
+Tier 2 members involved in LEAP research and community, have access to computing resources  and storage on LEAPangeo. In addition to the CPU computing resources, Tier 2 members get GPU access.
+
+Tier 2 membership is granted by adding the user to the [`leap-pangeo-full-access`](https://github.com/orgs/leap-stc/teams/leap-pangeo-full-access) GitHub Team.
+
 Tier 2 membership requires an application reviewed by LEAP’s Convergence Subcommittee. [Application Form](https://docs.google.com/forms/d/e/1FAIpQLSf_-vvkU__-rnaQimXRxAN_xGdQlqLulbBUistmetrhQtTjHg/viewform)
 
-Tier 2 members involved in LEAP research and community, have access to computing resources and storage on LEAPangeo.
-In addition to the Tier 1 JupyterHub servers, members may access `Large` and `Huge` JupyterHub servers, plus GPU access.
-
 Tier 2 membership also provides swipe access at Innovation Hub (for Columbia affiliates). Members can apply to attend LEAP’s Annual Meeting and to be part of focus groups.
-
-Tier 2 membership is granted by adding the user to the
-[`leap-pangeo-tier2`](https://github.com/orgs/leap-stc/teams/leap-pangeo-tier2)
-GitHub Team.
 
 ## Tier 3 Members
 
@@ -57,9 +54,7 @@ Tier 3 membership is reserved for individuals supported by LEAP funding as a Req
 
 Tier 3 members currently have identical access to LEAP pangeo computing resources and storage as Tier 2 members.
 
-Tier 3 membership is granted by adding the user to the
-[`leap-pangeo-tier3`](https://github.com/orgs/leap-stc/teams/leap-pangeo-tier3)
-GitHub Team.
+Tier 3 membership is granted by adding the user to the [`leap-pangeo-full-access`](https://github.com/orgs/leap-stc/teams/leap-pangeo-full-access) GitHub Team.
 
 ## Education Category
 
