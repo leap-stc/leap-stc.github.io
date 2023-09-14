@@ -16,7 +16,11 @@ parts:
   - file: leap-pangeo/architecture
   - file: leap-pangeo/implementation
   - file: leap-pangeo/solutions
+- caption: Guides
+  chapters:
+  - file: guides/education
 - caption: Miscellaneous
   chapters:
+  - file: contact
   - file: references
   - file: how_to_cite
