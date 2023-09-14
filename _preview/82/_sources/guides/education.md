@@ -2,9 +2,7 @@
 
 ## Running classes on the JupyterHub
 
-Coming soon ...
-
-If you are a LEAP educator and want to run your class on the hub, please reach out to [](contact.data_compute_manager).
+🚧 Full Guide coming soon ... If you are a LEAP educator and want to run your class on the hub, please reach out to [](contact.data_compute_manager).
 
 (education:sing_up)=
 ### How to sign up students
