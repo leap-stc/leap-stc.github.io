@@ -1,0 +1,22 @@
+
+name: publish-book
+
+on:
+  # Trigger the workflow on push to main branch
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: ProjectPythia/cookbook-actions/.github/workflows/build-book.yaml@main
+    with:
+      environment_name: leap-docs-env
+      path_to_notebooks: 'book'
+
+  deploy:
+    needs: build
+    uses: ./.github/workflows/deploy-book.yaml #hack until https://github.com/ProjectPythia/cookbook-actions/pull/45 is merged. 
+    with:
+      publish_dir: "book/_build/html"

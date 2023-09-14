@@ -106,10 +106,56 @@ It is the instructor's responsibility to add the course's users to this team
 and remove them when the course has been concluded.
 
 
+### "Where is my invite?"
+
+Please check your email account (**the one you used to sign up for Github** - this is independent of the email you use for LEAP) for an invite that will look similar to this:
+
+
+<img src="../images/email_org_invite.png" alt="LEAPPangeo email invite" height="300"/>
+
+
+Click the link and accept all invites.
+
+Alternatively you can log into your github account, and should see a notification in the top right menu under the "Organizations" tab.
+
+<img src="../images/gh_org_invite_1.png" alt="LEAPPangeo gh invite" height="300"/>
+
+You can follow that and accept the invitation there aswell.
+
+<img src="../images/gh_org_invite_2.png" alt="LEAPPangeo gh invite2" height="150"/>
+
+
+## Research Category
+
+The education category is intended for _long-term access_ to LEAP-Pangeo resources associated
+with research activities.
+
+There are two levels to the Research Category:
+- **Entry-level**: involved in LEAP research and community, have access to computing resources and storage on LEAPangeo.
+Members of this Community Tier may access  `Large` JupyterHub servers
+Office Space. Admission based on paragraph sent to Office Space committee.
+Membership in the entry-level research category corresponds to the
+[`leap-pangeo-research-entry-level`](https://github.com/orgs/leap-stc/teams/leap-pangeo-research-entry-level)
+GitHub team.
+- **Advanced**: RFP or supported researcher, student, postdoc, invited to annual meeting, swipe access for LEAP.
+Members of this Community Tier may access `Large` and `Huge` JupyterHub servers, plus GPU access.
+Membership in the entry-level research category corresponds to the
+[`leap-pangeo-research-advanced`](https://github.com/orgs/leap-stc/teams/leap-pangeo-research-entry-level)
+GitHub team.
+
+### Eligibility
+
+Anyone participating in a LEAP-sponsored research project is eligible to participate
+in the Research Category.
+A LEAP administrator will create a GitHub sub-team within the
+[`leap-pangeo-research`](https://github.com/orgs/leap-stc/teams/leap-pangeo-research)
+team for each research project and add the project PIs as "maintainer".
+It is the PIs' responsibility to add and remove members from their team.
+
 ## Administrator and Developer Category
 
-The LEAP Director of Data and Computing may grant access to other participants for
-the purposes of technical development, debugging, and evaluation of the platform.
+The LEAP Director of Data and Computing or the LEAP Manager of Data and Computing may grant access to other participants for
+the purposes of technical development, debugging, and evaluation of the platform. These members will be added to the [`leap-pangeo-full-access`](https://github.com/orgs/leap-stc/teams/leap-pangeo-full-access) team to have full access to all resources.
 
 ## Termination of Access
 
@@ -127,3 +173,5 @@ Removing a user from the `leap-pangeo-users` group entirely will disable their a
 completely.
 An automated process will delete user data from the hub one month after a user
 is removed from the `leap-pangeo-users` group.
+
+## How can I get access to the Hub

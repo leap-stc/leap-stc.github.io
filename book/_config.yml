@@ -33,3 +33,12 @@ bibtex_bibfiles:
 sphinx:
   config:
     bibtex_reference_style: author_year
+
+parse:
+  myst_enable_extensions:  #extensions to enable in the myst parser. See https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html
+    - colon_fence
+    - dollarmath
+    - html_image
+    - linkify
+    - substitution
+    - tasklist
