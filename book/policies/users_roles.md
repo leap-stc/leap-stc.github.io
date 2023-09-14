@@ -105,7 +105,7 @@ team for the course and add the instructor as a "Maintainer".
 It is the instructor's responsibility to add the course's users to this team
 and remove them when the course has been concluded.
 
-
+(users.invite)=
 ### "Where is my invite?"
 
 Please check your email account (**the one you used to sign up for Github** - this is independent of the email you use for LEAP) for an invite that will look similar to this:
