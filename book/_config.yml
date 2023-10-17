@@ -37,10 +37,20 @@ sphinx:
   config:
     bibtex_reference_style: author_year
     jinja_contexts:
-      first_ctx:
-        topics:
-          a: b
-          c: d
+      team-data:
+        people:
+          - name: Julius Busecke
+            role: Manager, Data and Computation
+            teams: [data-and-compute, leap-pangeo]
+            institution: Columbia University
+            pronouns: he / him
+            pic: julius.jpg
+            github: jbusecke
+            website: http://www.juliusbusecke.com
+            slack: Julius Busecke
+
+          - name: Some Body-Else
+            pronouns: they / them
 
 parse:
   myst_enable_extensions: #extensions to enable in the myst parser. See https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html

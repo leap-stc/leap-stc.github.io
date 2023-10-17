@@ -1,7 +1,11 @@
-.. jinja:: first_ctx
+Support
+=======
 
-    {% for k, v in topics.items() %}
-    {{k}}
+.. jinja:: team-data
+
+    {% for person in people %}
+    {{person.name}}
     ~~~~~
-    {{v}}
+    {{person.role}}
+    
     {% endfor %}
