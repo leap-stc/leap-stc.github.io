@@ -314,7 +314,7 @@ Once that works we can move on to the authentication.
 **Upload Prerequisites**
 
 Before we are able to set up authentication we need to make sure our HPC and local computer (required) are set up correctly.
-- We manage access rights through [Google Groups](https://groups.google.com). Please contact [LEAP's manager for Data and Computer](contact.data_compute_manager) to get added to the appropriate group (a gmail address is required for this).
+- We manage access rights through [Google Groups](https://groups.google.com). Please contact the [](support.data_compute_team) to get added to the appropriate group (a gmail address is required for this).
 - Make sure to install the [Google Cloud SDK](https://cloud.google.com/sdk/docs/install) in both your <span style="color:#9301B4">HPC environment</span>, and your local computer that can open a web browser (e.g. your laptop).
 
 **Steps**
