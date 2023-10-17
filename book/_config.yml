@@ -18,8 +18,8 @@ latex:
 # Information about where the book exists on the web
 repository:
   url: https://github.com/leap-stc/leap-stc.github.io # Online location of your book
-  path_to_book: book  # Optional path to your book, relative to the repository root
-  branch: main  # Which branch of the repository should be used when creating links (optional)
+  path_to_book: book # Optional path to your book, relative to the repository root
+  branch: main # Which branch of the repository should be used when creating links (optional)
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
@@ -28,14 +28,22 @@ html:
   use_repository_button: true
 
 bibtex_bibfiles:
-    - references.bib
+  - references.bib
 
 sphinx:
+  recursive_update: true
+  extra_extensions:
+    - sphinx_jinja
   config:
     bibtex_reference_style: author_year
+    jinja_contexts:
+      first_ctx:
+        topics:
+          a: b
+          c: d
 
 parse:
-  myst_enable_extensions:  #extensions to enable in the myst parser. See https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html
+  myst_enable_extensions: #extensions to enable in the myst parser. See https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html
     - colon_fence
     - dollarmath
     - html_image
