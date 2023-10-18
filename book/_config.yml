@@ -36,21 +36,18 @@ sphinx:
     - sphinx_jinja
   config:
     bibtex_reference_style: author_year
-    jinja_contexts:
+    jinja_contexts: # super weird to enter all this data here. Waiting on https://github.com/executablebooks/jupyter-book/issues/858#issuecomment-1767368922 to see if there is a better way.
       team-data:
         people:
           - name: Julius Busecke
             role: Manager, Data and Computation
             teams: [data-and-compute, leap-pangeo]
-            institution: Columbia University
+            org: Columbia University
             pronouns: he / him
             pic: julius.jpg
             github: jbusecke
             website: http://www.juliusbusecke.com
-            slack: Julius Busecke
-
-          - name: Some Body-Else
-            pronouns: they / them
+            slack_id: U03MSCLCTRA # https://slack.com/help/articles/360003827751-Create-a-link-to-a-members-profile-
 
 parse:
   myst_enable_extensions: #extensions to enable in the myst parser. See https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html

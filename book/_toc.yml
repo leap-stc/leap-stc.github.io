@@ -4,23 +4,23 @@
 format: jb-book
 root: intro
 parts:
-- caption: Policies
-  chapters:
-  - file: policies/code_policy
-  - file: policies/data_policy
-  - file: policies/infrastructure_policy
-  - file: policies/users_roles
-- caption: LEAP-Pangeo
-  chapters:
-  - file: leap-pangeo/jupyterhub.md
-  - file: leap-pangeo/architecture
-  - file: leap-pangeo/implementation
-  - file: leap-pangeo/solutions
-- caption: Guides
-  chapters:
-  - file: guides/education
-- caption: Miscellaneous
-  chapters:
-  - file: contact
-  - file: references
-  - file: how_to_cite
+  - caption: Policies
+    chapters:
+      - file: policies/code_policy
+      - file: policies/data_policy
+      - file: policies/infrastructure_policy
+      - file: policies/users_roles
+  - caption: LEAP-Pangeo
+    chapters:
+      - file: leap-pangeo/jupyterhub.md
+      - file: leap-pangeo/architecture
+      - file: leap-pangeo/implementation
+      - file: leap-pangeo/solutions
+  - caption: Guides
+    chapters:
+      - file: guides/education
+  - caption: Miscellaneous
+    chapters:
+      - file: support
+      - file: how_to_cite
+      - file: references
