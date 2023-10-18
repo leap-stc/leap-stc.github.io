@@ -7,6 +7,7 @@ jobs:
     uses: ProjectPythia/cookbook-actions/.github/workflows/build-book.yaml@main
     with:
       environment_name: leap-docs-env
+      use_cached_environment: false
       artifact_name: book-zip-${{ github.event.number }}
-      path_to_notebooks: 'book'
+      path_to_notebooks: "book"
       # Other input options are possible, see ProjectPythia/cookbook-actions/.github/workflows/build-book.yaml
