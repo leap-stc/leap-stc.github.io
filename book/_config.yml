@@ -46,7 +46,7 @@ sphinx:
             pronouns: he / him
             pic: julius.jpg
             github: jbusecke
-            website: http://www.juliusbusecke.com
+            website: "https://jbusecke.github.io"
             slack_id: U03MSCLCTRA # https://slack.com/help/articles/360003827751-Create-a-link-to-a-members-profile-
 
 parse:
