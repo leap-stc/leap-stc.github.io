@@ -3,7 +3,7 @@ Support
 
 .. _support.data_compute_team:
 
-Data and Compute Team
+Data and Computation Team
 ~~~~~~~~~~~~~~~~~~~~~
 
 .. jinja:: team-data
