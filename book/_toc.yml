@@ -19,6 +19,7 @@ parts:
   - caption: Guides
     chapters:
       - file: guides/education
+      - file: guides/team_docs
   - caption: Miscellaneous
     chapters:
       - file: support
