@@ -22,5 +22,6 @@ parts:
   - caption: Miscellaneous
     chapters:
       - file: support
+      - file: team_docs
       - file: how_to_cite
       - file: references
