@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Common Problems (with Solutions) &#8212; Technical Documentation</title>
+    <title>Onboarding Guide for Data and Computation Team Members &#8212; Technical Documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="LEAP-Pangeo for Education" href="../guides/education.html" />
-    <link rel="prev" title="LEAP-Pangeo Implementation Plan" href="implementation.html" />
+    <link rel="next" title="Support" href="../support.html" />
+    <link rel="prev" title="LEAP-Pangeo for Education" href="education.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -131,24 +131,24 @@ const thebe_selector_output = ".output, .cell_output"
   LEAP-Pangeo
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="jupyterhub.html">
+  <a class="reference internal" href="../leap-pangeo/jupyterhub.html">
    LEAP-Pangeo JupyterHub
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="architecture.html">
+  <a class="reference internal" href="../leap-pangeo/architecture.html">
    LEAP-Pangeo Architecture
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="implementation.html">
+  <a class="reference internal" href="../leap-pangeo/implementation.html">
    LEAP-Pangeo Implementation Plan
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../leap-pangeo/solutions.html">
    Common Problems (with Solutions)
   </a>
  </li>
@@ -158,14 +158,14 @@ const thebe_selector_output = ".output, .cell_output"
   Guides
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../guides/education.html">
+  <a class="reference internal" href="education.html">
    LEAP-Pangeo for Education
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../guides/team_docs.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Onboarding Guide for Data and Computation Team Members
   </a>
  </li>
@@ -232,7 +232,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/leap-pangeo/solutions.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/guides/team_docs.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -252,7 +252,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/leap-stc/leap-stc.github.io/issues/new?title=Issue%20on%20page%20%2Fleap-pangeo/solutions.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/leap-stc/leap-stc.github.io/issues/new?title=Issue%20on%20page%20%2Fguides/team_docs.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -279,23 +279,19 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dask">
-   Dask
+  <a class="reference internal nav-link" href="#checklist-for-new-members">
+   Checklist for new members
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#killed-workers">
-     “Killed Workers”
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#datasets-chunks-too-large">
-       Datasets Chunks too large
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#relevant-channels">
+   Relevant channels
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#relevant-github-repos">
+   Relevant github repos
+  </a>
  </li>
 </ul>
 
@@ -307,7 +303,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Common Problems (with Solutions)</h1>
+                <h1>Onboarding Guide for Data and Computation Team Members</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -318,23 +314,19 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dask">
-   Dask
+  <a class="reference internal nav-link" href="#checklist-for-new-members">
+   Checklist for new members
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#killed-workers">
-     “Killed Workers”
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#datasets-chunks-too-large">
-       Datasets Chunks too large
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#relevant-channels">
+   Relevant channels
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#relevant-github-repos">
+   Relevant github repos
+  </a>
  </li>
 </ul>
 
@@ -345,35 +337,30 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="common-problems-with-solutions">
-<h1>Common Problems (with Solutions)<a class="headerlink" href="#common-problems-with-solutions" title="Permalink to this headline">¶</a></h1>
-<section id="dask">
-<h2>Dask<a class="headerlink" href="#dask" title="Permalink to this headline">¶</a></h2>
-<section id="killed-workers">
-<h3>“Killed Workers”<a class="headerlink" href="#killed-workers" title="Permalink to this headline">¶</a></h3>
-<p>The “Killed Worker” message in dask can result due to a variety of reasons. Here are some of the common reasons why you might see such an error message</p>
-<section id="datasets-chunks-too-large">
-<h4>Datasets Chunks too large<a class="headerlink" href="#datasets-chunks-too-large" title="Permalink to this headline">¶</a></h4>
-<p><strong>Issue</strong>
-The default dask worker configuration can deal well with dataset chunk sizes of ~100MB. If the chunks of your data are significantly larger, your worker might crash just upon loading a few of these chunks into memory.</p>
-<p><strong>Solution</strong>
-You can change the configuration of your dask workers and increase the memory each worker has to deal with larger chunks. You can adjust the memory by passing additional <a class="reference external" href="https://gateway.dask.org/cluster-options.html">options</a> to the dask-gatway cluster upon creation:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dask_gateway</span> <span class="kn">import</span> <span class="n">Gateway</span>
-<span class="n">gateway</span> <span class="o">=</span> <span class="n">Gateway</span><span class="p">()</span>
-<span class="n">options</span> <span class="o">=</span> <span class="n">gateway</span><span class="o">.</span><span class="n">cluster_options</span><span class="p">()</span>
-
-<span class="n">options</span><span class="o">.</span><span class="n">worker_memory</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># 10 GB of memory per worker.</span>
-
-<span class="c1"># Create a cluster with those options</span>
-<span class="n">cluster</span> <span class="o">=</span> <span class="n">gateway</span><span class="o">.</span><span class="n">new_cluster</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
-<span class="n">cluster</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="n">client</span> <span class="o">=</span> <span class="n">cluster</span><span class="o">.</span><span class="n">get_client</span><span class="p">()</span>
-</pre></div>
-</div>
-<!-- TODO: Add example how to change this in HTML repr -->
-<p><a class="reference external" href="https://notebooksharing.space/view/2b6753a5ffe8ddfae1da3b8e2b5507e617de47eb25f758a20c92b62e7e650fd7#displayOptions=">Example with Solution</a></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="onboarding-guide-for-data-and-computation-team-members">
+<h1>Onboarding Guide for Data and Computation Team Members<a class="headerlink" href="#onboarding-guide-for-data-and-computation-team-members" title="Permalink to this headline">¶</a></h1>
+<p>This is a short write up facilitate the spin up of new team members for the Data and Computation Team.</p>
+<section id="checklist-for-new-members">
+<h2>Checklist for new members<a class="headerlink" href="#checklist-for-new-members" title="Permalink to this headline">¶</a></h2>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Subscribe to <a class="reference internal" href="#onboarding-slack"><span class="std std-ref">Relevant channels</span></a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Consider enabling notifications for <a class="reference internal" href="#onboarding-github"><span class="std std-ref">Relevant github repos</span></a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Make a PR to the <code class="docutils literal notranslate"><span class="pre">_config.yaml</span></code> file <a class="reference external" href="https://github.com/leap-stc/leap-stc.github.io/blob/fd69890ffc2f1871968e39b1c460370a0b3f98b3/book/_config.yml#L40-L51">here</a> in a PR. to add a picture and your personal data to the webpage.</p></li>
+</ul>
 </section>
+<section id="relevant-channels">
+<span id="onboarding-slack"></span><h2>Relevant channels<a class="headerlink" href="#relevant-channels" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://leap-nsf-stc.slack.com/archives/C065KPT1S4Q"><code class="docutils literal notranslate"><span class="pre">data-and-computation-team</span></code></a>: Private channel for internal discussions, please contact the Manager for Data and Computing to be added.</p></li>
+<li><p><a class="reference external" href="https://leap-nsf-stc.slack.com/archives/C02KB0DDB6E"><code class="docutils literal notranslate"><span class="pre">leap-pangeo</span></code></a>: Community wide channel where LEAP-Pangeo users can ask questions. Members of the team should join the channel and regularly engage with issues raised.</p></li>
+</ul>
 </section>
+<section id="relevant-github-repos">
+<span id="onboarding-github"></span><h2>Relevant github repos<a class="headerlink" href="#relevant-github-repos" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/leap-stc/leap-stc.github.io"><code class="docutils literal notranslate"><span class="pre">leap-stc.github.io</span></code></a>: The source for the <a class="reference external" href="https://leap-stc.github.io/intro.html">LEAP-Pangeo technical documentation</a>. This also contains <a class="reference external" href="https://github.com/leap-stc/leap-stc.github.io/discussions">LEAP-Pangeo Discussion Forum</a></p></li>
+<li><p><a class="reference external" href="https://github.com/leap-stc/data-management"><code class="docutils literal notranslate"><span class="pre">data-management</span></code></a>: Contains all the <a class="reference external" href="https://pangeo-forge.readthedocs.io/en/latest/">pangeo-forge</a> based code/automation to ingest new datasets. Point users to the <a class="reference external" href="https://github.com/leap-stc/data-management/issues/new/choose">issue tracker</a> to request new datasets.</p></li>
+</ul>
 </section>
 </section>
 
@@ -390,7 +377,7 @@ You can change the configuration of your dask workers and increase the memory ea
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./leap-pangeo"
+            path: "./guides"
         },
         predefinedOutput: true
     }
@@ -402,17 +389,17 @@ You can change the configuration of your dask workers and increase the memory ea
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="implementation.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="education.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">LEAP-Pangeo Implementation Plan</p>
+            <p class="prev-next-title">LEAP-Pangeo for Education</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../guides/education.html" title="next page">
+    <a class='right-next' id="next-link" href="../support.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">LEAP-Pangeo for Education</p>
+        <p class="prev-next-title">Support</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
