@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Common Problems (with Solutions) &#8212; Technical Documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
@@ -171,18 +172,18 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../contact.html">
-   Contact Us
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../references.html">
-   References
+  <a class="reference internal" href="../support.html">
+   Support
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../how_to_cite.html">
    How to cite LEAP-Pangeo
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   References
   </a>
  </li>
 </ul>
@@ -339,14 +340,14 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="common-problems-with-solutions">
+  <section class="tex2jax_ignore mathjax_ignore" id="common-problems-with-solutions">
 <h1>Common Problems (with Solutions)<a class="headerlink" href="#common-problems-with-solutions" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="dask">
+<section id="dask">
 <h2>Dask<a class="headerlink" href="#dask" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="killed-workers">
+<section id="killed-workers">
 <h3>“Killed Workers”<a class="headerlink" href="#killed-workers" title="Permalink to this headline">¶</a></h3>
 <p>The “Killed Worker” message in dask can result due to a variety of reasons. Here are some of the common reasons why you might see such an error message</p>
-<div class="section" id="datasets-chunks-too-large">
+<section id="datasets-chunks-too-large">
 <h4>Datasets Chunks too large<a class="headerlink" href="#datasets-chunks-too-large" title="Permalink to this headline">¶</a></h4>
 <p><strong>Issue</strong>
 The default dask worker configuration can deal well with dataset chunk sizes of ~100MB. If the chunks of your data are significantly larger, your worker might crash just upon loading a few of these chunks into memory.</p>
@@ -366,10 +367,10 @@ You can change the configuration of your dask workers and increase the memory ea
 </div>
 <!-- TODO: Add example how to change this in HTML repr -->
 <p><a class="reference external" href="https://notebooksharing.space/view/2b6753a5ffe8ddfae1da3b8e2b5507e617de47eb25f758a20c92b62e7e650fd7#displayOptions=">Example with Solution</a></p>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
