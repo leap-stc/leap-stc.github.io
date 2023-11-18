@@ -56,6 +56,14 @@ sphinx:
             pic: sammy.png
             github: SammyAgrawal
             slack_id: U05364D6MLL
+          - name: Raphael Hagen
+            role: Pangeo-Forge Recipe Development
+            teams: [data-and-compute, leap-pangeo]
+            org: CarbonPlan
+            pronouns: he / him
+            pic: raphael.png
+            github: norlandrhagen
+            slack_id: U05NKVACXB9 
 
 parse:
   myst_enable_extensions: #extensions to enable in the myst parser. See https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html
