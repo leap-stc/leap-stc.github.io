@@ -123,6 +123,8 @@ We recommend you read this thoroughly, especially the part about Git and GitHub.
 
 :::{warning}
 Please do not store large files in your user directory `/home/jovyan`. Your home directory is intended only for notebooks, analysis scripts, and small datasets (< 1 GB). It is not an appropriate place to store large datasets.
+
+To check how much space you are using in your home directory open a terminal window on the hub and run `du -h --max-depth=1 ~/ | sort -h`.
 :::
 
 (hub:data:buckets)=
