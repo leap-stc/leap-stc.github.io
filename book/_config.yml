@@ -48,7 +48,14 @@ sphinx:
             github: jbusecke
             website: "https://jbusecke.github.io"
             slack_id: U03MSCLCTRA # https://slack.com/help/articles/360003827751-Create-a-link-to-a-members-profile-
-         
+          - name: Sammy Agrawal
+            role: Leap Pangeo Intern
+            teams: [data-and-compute, leap-pangeo]
+            org: Columbia University
+            pronouns: he / him
+            pic: sammy.png
+            github: SammyAgrawal
+            slack_id: U05364D6MLL
           - name: Raphael Hagen
             role: Pangeo-Forge Recipe Development
             teams: [data-and-compute, leap-pangeo]
