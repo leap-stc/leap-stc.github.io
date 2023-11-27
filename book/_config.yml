@@ -53,7 +53,7 @@ sphinx:
             teams: [data-and-compute, leap-pangeo]
             org: Columbia University
             pronouns: he / him
-            pic: Sammy.PNG
+            pic: sammy.png
             github: SammyAgrawal
             slack_id: U05364D6MLL
           - name: Raphael Hagen
