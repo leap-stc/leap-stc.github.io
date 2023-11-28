@@ -203,14 +203,12 @@ fs.rm('leap-persistent/funky-user/file_to_delete.nc')
 ```
 
 If you want to remove zarr stores (which are an 'exploded' data format, and thus represented by a folder structure) you have to recursively delete the store. 
-:::{warning}
-The warning from above is even more important here! Make sure that the folder you are deleting does not contain any data you do not want to delete!
-:::
 ```python
 fs.rm('leap-scratch/funky-user/processed_store.zarr', recursive=True)
 ```
-
-
+:::{warning}
+The warning from above is even more important here! Make sure that the folder you are deleting does not contain any data you do not want to delete!
+:::
 
 #### I have a dataset and want to work with it on the hub. How do I upload it?
 
