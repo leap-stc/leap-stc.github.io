@@ -772,13 +772,16 @@ To help onboard you to this new way of working, we have written a guide to Files
 <ul class="simple">
 <li><p>Set up a new environment on your local machine (e.g. laptop)</p></li>
 </ul>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>leap_pange_transfer<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9<span class="w"> </span>google-auth<span class="w"> </span>gcsfs<span class="w"> </span>jupyterlab<span class="w"> </span>xarray<span class="w"> </span>zarr<span class="w"> </span>dask<span class="w"> </span><span class="c1">#add any other dependencies (e.g. netcdf4) that you need to read your data</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>leap_pangeo_transfer<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9<span class="w"> </span>google-auth<span class="w"> </span>gcsfs<span class="w"> </span>jupyterlab<span class="w"> </span>xarray<span class="w"> </span>zarr<span class="w"> </span>dask
 </pre></div>
 </div>
+<blockquote>
+<div><p>add any other dependencies (e.g. netcdf4) that you need to read your data</p>
+</div></blockquote>
 <ul class="simple">
 <li><p>Activate the environment</p></li>
 </ul>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>leap_pange_transfer
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>leap_pangeo_transfer
 </pre></div>
 </div>
 <p>and set up a jupyter notbook (or a pure python script) that loads your data in as few xarray datasets as possible. For instance, if you have one dataset that consists of many files split in time, you should set your notebook up to read all the files using xarray into a single dataset, and then try to write out a small part of the dataset to a zarr store.</p>
