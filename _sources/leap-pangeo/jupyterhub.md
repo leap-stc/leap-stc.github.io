@@ -168,7 +168,9 @@ user_path = "gs://leap-scratch/funky-user" # 👀 make sure to prepend `gs://` t
 store_name = "processed_store.zarr"
 ds_processed.to_zarr(f'{user_path}/{store_name}')
 ```
-This will write a zarr store to the scratch bucket. 
+This will write a zarr store to the scratch bucket.
+
+
 
 You can read it back into an xarray dataset with this snippet:
 ```python
@@ -176,6 +178,11 @@ import xarray as xr
 ds = xr.open_dataset('gs://leap-scratch/funky-user/processed_store.zarr', engine='zarr', chunks={}) #
 ```
 ... and you can give this to any other registered LEAP user and they can load it exactly like you can! 
+
+:::{note}
+Note that providing the url starting with `gs://...` is assumes that you have appropriate credentials set up in your environment to read/write to that bucket. On the hub these are already set up for you to work with the [](hub:data:buckets), but if you are trying to interact with non-public buckets you need to authenticate yourself. Check out the sections [below](hub:data:upload_manual) to see an example how to do that.
+:::
+
 
 You can also write other files directly to the bucket by using [`fsspec.open`](https://filesystem-spec.readthedocs.io/en/latest/api.html#fsspec.open) similarly to the python builtin [`open`](https://docs.python.org/3/library/functions.html#open)
 ```python
@@ -218,6 +225,7 @@ We distinguish between two primary *types* of data to upload: "Original" and "Pu
 
 Coming Soon
 
+(hub:data:upload_manual)=
 ##### Upload medium sized original data from your local machine
 
 For medium sized datasets, that can be uploaded within an hour, you can use a temporary access token generated on the JupyterHub to upload data to the cloud.
@@ -274,7 +282,8 @@ Try to write a small dataset to the cloud:
 
 ```python
 ds = xr.DataArray([1]).to_dataset(name='test')
-ds.to_zarr('gs://leap-scratch/<your_username>/test_offsite_upload.zarr') #adding the 'gs://' prefix makes this just work with xarray!
+mapper = fs.get_mapper('gs://leap-scratch/<your_username>/test_offsite_upload.zarr')
+ds.to_zarr(mapper)
 ```
 
 > Replace `<your_username>` with your actual username on the hub.

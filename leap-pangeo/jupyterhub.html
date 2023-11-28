@@ -727,6 +727,10 @@ To help onboard you to this new way of working, we have written a guide to Files
 </pre></div>
 </div>
 <p>… and you can give this to any other registered LEAP user and they can load it exactly like you can!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that providing the url starting with <code class="docutils literal notranslate"><span class="pre">gs://...</span></code> is assumes that you have appropriate credentials set up in your environment to read/write to that bucket. On the hub these are already set up for you to work with the <a class="reference internal" href="#hub-data-buckets"><span class="std std-ref">LEAP-Pangeo Buckets</span></a>, but if you are trying to interact with non-public buckets you need to authenticate yourself. Check out the sections <a class="reference internal" href="#hub-data-upload-manual"><span class="std std-ref">below</span></a> to see an example how to do that.</p>
+</div>
 <p>You can also write other files directly to the bucket by using <a class="reference external" href="https://filesystem-spec.readthedocs.io/en/latest/api.html#fsspec.open"><code class="docutils literal notranslate"><span class="pre">fsspec.open</span></code></a> similarly to the python builtin <a class="reference external" href="https://docs.python.org/3/library/functions.html#open"><code class="docutils literal notranslate"><span class="pre">open</span></code></a></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;gs://leap-scratch/funky-user/test.txt&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;hello world&#39;</span><span class="p">)</span>
@@ -767,7 +771,7 @@ To help onboard you to this new way of working, we have written a guide to Files
 <p>Coming Soon</p>
 </section>
 <section id="upload-medium-sized-original-data-from-your-local-machine">
-<h5>Upload medium sized original data from your local machine<a class="headerlink" href="#upload-medium-sized-original-data-from-your-local-machine" title="Permalink to this headline">¶</a></h5>
+<span id="hub-data-upload-manual"></span><h5>Upload medium sized original data from your local machine<a class="headerlink" href="#upload-medium-sized-original-data-from-your-local-machine" title="Permalink to this headline">¶</a></h5>
 <p>For medium sized datasets, that can be uploaded within an hour, you can use a temporary access token generated on the JupyterHub to upload data to the cloud.</p>
 <ul class="simple">
 <li><p>Set up a new environment on your local machine (e.g. laptop)</p></li>
@@ -819,7 +823,8 @@ To help onboard you to this new way of working, we have written a guide to Files
 </div></blockquote>
 <p>Try to write a small dataset to the cloud:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">to_dataset</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">to_zarr</span><span class="p">(</span><span class="s1">&#39;gs://leap-scratch/&lt;your_username&gt;/test_offsite_upload.zarr&#39;</span><span class="p">)</span> <span class="c1">#adding the &#39;gs://&#39; prefix makes this just work with xarray!</span>
+<span class="n">mapper</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">get_mapper</span><span class="p">(</span><span class="s1">&#39;gs://leap-scratch/&lt;your_username&gt;/test_offsite_upload.zarr&#39;</span><span class="p">)</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">to_zarr</span><span class="p">(</span><span class="n">mapper</span><span class="p">)</span>
 </pre></div>
 </div>
 <blockquote>
