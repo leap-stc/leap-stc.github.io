@@ -117,7 +117,7 @@ For a more permanent solution we recommend building project specific dockerfiles
 Data and files work differently in the cloud. 
 To help onboard you to this new way of working, we have written a guide to Files and Data in the Cloud:
 
-- [2i2c Docs: Data and Filesystem](https://docs.2i2c.org/data/index.html#data-and-filesystem)
+- [2i2c Docs: Data and Filesystem](https://docs.2i2c.org/user/topics/data/filesystem/)
 
 We recommend you read this thoroughly, especially the part about Git and GitHub.
 
@@ -132,7 +132,7 @@ To check how much space you are using in your home directory open a terminal win
 
 LEAP-Pangeo provides users two cloud buckets to store data
 
-- `gs://leap-scratch/` - Temporary Storage deleted after 7 days. Use this bucket for testing and storing large intermediate results. [More info](https://docs.2i2c.org/data/cloud/#scratch-bucket)
+- `gs://leap-scratch/` - Temporary Storage deleted after 7 days. Use this bucket for testing and storing large intermediate results. [More info](https://docs.2i2c.org/user/topics/data/cloud/#scratch-bucket) 
 - `gs://leap-persistent` - Persistent Storage. Use this bucket for storing results you want to share with other members.
 - `gs://leap-persistent-ro` - Persistent Storage with read-only access for most users. To upload data to this bucket you need to use [this](hub:data:upload_hpc) method below.
 
