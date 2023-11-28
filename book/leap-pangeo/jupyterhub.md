@@ -225,14 +225,14 @@ For medium sized datasets, that can be uploaded within an hour, you can use a te
 - Set up a new environment on your local machine (e.g. laptop)
 
 ```shell
-mamba create --name leap_pange_transfer python=3.9 google-auth gcsfs jupyterlab xarray zarr dask
+mamba create --name leap_pangeo_transfer python=3.9 google-auth gcsfs jupyterlab xarray zarr dask
 ```
 > add any other dependencies (e.g. netcdf4) that you need to read your data
 
 - Activate the environment
 
 ```shell
-conda activate leap_pange_transfer
+conda activate leap_pangeo_transfer
 ```
 
 and set up a jupyter notbook (or a pure python script) that loads your data in as few xarray datasets as possible. For instance, if you have one dataset that consists of many files split in time, you should set your notebook up to read all the files using xarray into a single dataset, and then try to write out a small part of the dataset to a zarr store.
