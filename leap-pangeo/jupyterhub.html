@@ -750,12 +750,12 @@ To help onboard you to this new way of working, we have written a guide to Files
 </pre></div>
 </div>
 <p>If you want to remove zarr stores (which are an ‘exploded’ data format, and thus represented by a folder structure) you have to recursively delete the store.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fs</span><span class="o">.</span><span class="n">rm</span><span class="p">(</span><span class="s1">&#39;leap-scratch/funky-user/processed_store.zarr&#39;</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The warning from above is even more important here! Make sure that the folder you are deleting does not contain any data you do not want to delete!</p>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fs</span><span class="o">.</span><span class="n">rm</span><span class="p">(</span><span class="s1">&#39;leap-scratch/funky-user/processed_store.zarr&#39;</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
 </div>
 </section>
 <section id="i-have-a-dataset-and-want-to-work-with-it-on-the-hub-how-do-i-upload-it">
