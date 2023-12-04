@@ -13,8 +13,8 @@ This website is the home for all technical documentation related to LEAP and LEA
 The motivation and justification for developing LEAP-Pangeo are laid out in several recent peer-reviewed publications: {cite}`AbernatheyEtAl2021` and {cite}`GentemannEtAl2021`.
 To summarize these arguments, a shared data and computing platform will:
 - *Facilitate seamless collaboration between project members around data-intensive science, accelerating research progress.*
-- *Empower LEAP participants with instant access to high-performance computing and analysis-ready data in order to support ambitious research objectives.* This access is provided through our [JupyterHub platform](https://leap-stc.github.io/leap-pangeo/jupyterhub.html). 
-- *Place actionable data in the hands of LEAP partners to support knowledge transfer.* Our data catalog can be found [here](https://leap-data-catalog.vercel.app/). See [here](https://leap-stc.github.io/leap-pangeo/jupyterhub.html#i-have-a-dataset-and-want-to-work-with-it-on-the-hub-how-do-i-upload-it) to learn how to upload your data to the hub. 
+- *Empower LEAP participants with instant access to high-performance computing and analysis-ready data in order to support ambitious research objectives.* This access is provided through our [JupyterHub platform](leap-pangeo/jupyterhub.md). 
+- *Place actionable data in the hands of LEAP partners to support knowledge transfer.* Our data catalog can be found [here](https://leap-data-catalog.vercel.app/). See [here](guides/hub_guides.md) to learn how to upload your data to the hub. 
 - *Enable rich data-driven classroom experiences for learners, helping them transition successfully from coursework to research.* 
 
 ## Contents

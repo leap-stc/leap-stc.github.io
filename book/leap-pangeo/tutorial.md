@@ -70,4 +70,4 @@ You can also navigate to this page from JupyterLab by clicking the `File` menu a
 
 (hub:image)=
 
-For more information on specific use cases or workflows that might arise while using the Hub, please refer to our [Guides](hub_guides.md).
+For more information on specific use cases or workflows that might arise while using the Hub, please refer to our [Guides](../guides/hub_guides.md).
