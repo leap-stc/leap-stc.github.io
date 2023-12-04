@@ -17,17 +17,6 @@ To get started using the hub, check out this video by [James Munroe](https://git
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/RKXWxtNqWKw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Getting Help
-
-For questions about how to use the Hub, please use the LEAP-Pangeo discussion forum:
-
-- https://github.com/leap-stc/leap-stc.github.io/discussions
-
-### Office Hours
-
-We also offer in-person and virtual Office Hours on Thursdays for questions about LEAP-Pangeo.
-You can reserve an appointment [here](https://app.reclaim.ai/m/leap-pangeo-office-hours).
-
 ## Hub Usage
 
 This is a rough and ready guide to using the Hub.
