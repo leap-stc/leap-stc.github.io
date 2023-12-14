@@ -343,6 +343,11 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#your-user-directory">
+       Your User Directory
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#leap-pangeo-buckets">
        LEAP-Pangeo Buckets
       </a>
@@ -482,6 +487,11 @@ const thebe_selector_output = ".output, .cell_output"
      Files and Data
     </a>
     <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#your-user-directory">
+       Your User Directory
+      </a>
+     </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#leap-pangeo-buckets">
        LEAP-Pangeo Buckets
@@ -679,11 +689,23 @@ To help onboard you to this new way of working, we have written a guide to Files
 <li><p><a class="reference external" href="https://docs.2i2c.org/user/topics/data/filesystem/">2i2c Docs: Data and Filesystem</a></p></li>
 </ul>
 <p>We recommend you read this thoroughly, especially the part about Git and GitHub.</p>
+<section id="your-user-directory">
+<span id="hub-data-user-dir"></span><h4>Your User Directory<a class="headerlink" href="#your-user-directory" title="Permalink to this headline">¶</a></h4>
+<p>When you open your hub, you can navigate to the “File Browser” and see all the files in your User Directory
+<a class="reference internal" href="https://github.com/leap-stc/leap-stc.github.io/assets/14314623/3ba6b45a-a077-4824-b0ec-9c111af50c33"><img alt="image" src="https://github.com/leap-stc/leap-stc.github.io/assets/14314623/3ba6b45a-a077-4824-b0ec-9c111af50c33" style="width: 442px;" /></a></p>
+<p>Your User Directory behaves very similar to a filestystem on your computer. If you save a file from a notebook, you will see it appear in the File Browser (you might have to wait a few seconds or press refresh) and you can use a terminal to navigate the terminal as you would on a UNIX machine:</p>
+<a class="reference internal image-reference" href="https://github.com/leap-stc/leap-stc.github.io/assets/14314623/a84c12e2-9f8a-4de1-a3e3-feff1bf59061"><img alt="image" src="https://github.com/leap-stc/leap-stc.github.io/assets/14314623/a84c12e2-9f8a-4de1-a3e3-feff1bf59061" style="width: 357px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As shown in the picture above, every user will see <code class="docutils literal notranslate"><span class="pre">'/home/jovyan'</span></code> as their root directory. This is different from many HPC accounts where your home directory will point to a directory with your username. But the functionality is similar. These are <em>your own files</em> and they cannot be seen/modified by other users (except admins).</p>
+</div>
+<p>The primary purpose of this directory is to store small files, like github repositories and other code.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Please do not store large files in your user directory <code class="docutils literal notranslate"><span class="pre">/home/jovyan</span></code>. Your home directory is intended only for notebooks, analysis scripts, and small datasets (&lt; 1 GB). It is not an appropriate place to store large datasets.</p>
 <p>To check how much space you are using in your home directory open a terminal window on the hub and run <code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">-h</span> <span class="pre">--max-depth=1</span> <span class="pre">~/</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-h</span></code>.</p>
 </div>
+</section>
 <section id="leap-pangeo-buckets">
 <span id="hub-data-buckets"></span><h4>LEAP-Pangeo Buckets<a class="headerlink" href="#leap-pangeo-buckets" title="Permalink to this headline">¶</a></h4>
 <p>LEAP-Pangeo provides users two cloud buckets to store data</p>
