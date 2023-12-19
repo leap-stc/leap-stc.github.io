@@ -1,6 +1,6 @@
 # Onboarding Guide for Data and Computation Team Members
 
-This is a short write up facilitate the spin up of new team members for the Data and Computation Team.
+
 
 ## Checklist for new members
 - [ ] Ask to be added to the [Data and Computation Github team](https://github.com/orgs/leap-stc/teams/data-team/members)
