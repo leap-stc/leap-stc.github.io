@@ -139,7 +139,7 @@ It is the PIs' responsibility to add and remove members from their team.
 The LEAP Director of Data and Computing or the LEAP Manager of Data and Computing may grant access to other participants for
 the purposes of technical development, debugging, and evaluation of the platform. These members will be added to the [`leap-pangeo-full-access`](https://github.com/orgs/leap-stc/teams/leap-pangeo-full-access) team to have full access to all resources.
 
-(users.membership.apply)
+(users.membership.apply)=
 ### Applying for membership
 
 To become a LEAP member please refer to the [Research Membership Structure](https://leap.columbia.edu/about/policies2/) on the LEAP website.
