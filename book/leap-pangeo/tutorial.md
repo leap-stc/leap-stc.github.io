@@ -6,7 +6,7 @@ To get started using the hub, check out this video by [James Munroe](https://git
 
 
 ## How can I get access to the Hub
-Only LEAP members will be able to access the hub. Please [become a member](users:membership:apply) and make sure you accept the [invitation on github](users:membership:invite) before proceeding
+Only LEAP members will be able to access the hub. Please [become a member](users.membership.apply) and make sure you accept the [invitation on github](users.membership.invite) before proceeding
 
 ## Hub Usage
 
@@ -25,7 +25,7 @@ Feel free to [edit it yourself](https://github.com/leap-stc/leap-stc.github.io/b
 
 <img width="410" alt="image" src="https://github.com/leap-stc/leap-stc.github.io/assets/14314623/088946a1-896f-4ff8-af91-8107c9f14cfd">
 
-> Note: Depending on your [membership]() you might see additional options (e.g. for GPU machines)
+> Note: Depending on your [membership](users.membership) you might see additional options (e.g. for GPU machines)
 
 You have to make 3 choices here:
 - The machine type (Choose between "CPU only" or "GPU" if available)

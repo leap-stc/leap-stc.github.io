@@ -1,5 +1,5 @@
 Getting Help
-=======
+============
 
 For questions about how to use the Hub, please use the LEAP-Pangeo discussion forum:
 
@@ -13,7 +13,7 @@ You can reserve an appointment `here <https://app.reclaim.ai/m/leap-pangeo-offic
 .. _support.data_compute_team:
 
 Data and Computation Team
-------------
+-------------------------
 
 .. jinja:: team-data
 
@@ -30,7 +30,7 @@ Data and Computation Team
     .. image:: https://img.shields.io/static/v1?label=&message=Slack&color=0077B5&style=flat-square&logo=slack
         :alt: Slack DM
         :target: https://leap-nsf-stc.slack.com/team/{{ person.slack_id }}
-    |
+    
     {% endif %}
 
     {% if person.pic %}
@@ -40,7 +40,7 @@ Data and Computation Team
        :class: biopic
     {% endif %}
 
-    |{% if person.pronouns %}
+    {% if person.pronouns %}
     .. image:: https://img.shields.io/static/v1?label=pronouns&message={{ person.pronouns }}&color=red&style=flat-square
        :alt: Pronouns
     {% endif %}
