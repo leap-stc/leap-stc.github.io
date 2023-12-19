@@ -26,19 +26,18 @@ All users of LEAP-Pangeo must abide by the LEAP Code of Conduct:
 
 - https://docs.google.com/document/d/1eE-aYrsf_k5Ep8GB-n8hmqM_LVW-U3uzYKHJBZMvYWU
 
-:::{note}
-The LEAP executive committee has not yet defined a process by which membership status is conferred and removed.
-Once this is decided, we will provide instructions on how to add / remove affiliates.
-:::
+## Membership
 
-## Tier 1 Members
+LEAP members are grouped into the following member tiers.
+
+### Tier 1 Members
 
 Tier 1 members have access to [storage](hub:data:buckets) and computing resource up to 4 cores and 32GB RAM on JupyterHub servers
 in the LEAP-Pangeo Hub.
 
 Tier 1 membership is granted by adding the user to the [`leap-pangeo-base-access`](https://github.com/orgs/leap-stc/teams/leap-pangeo-base-access) GitHub Team.
 
-## Tier 2 Members
+### Tier 2 Members
 
 Tier 2 members involved in LEAP research and community, have access to all computing resources and storage on LEAPangeo. In addition to the CPU computing resources, Tier 2 members get GPU access.
 
@@ -48,7 +47,7 @@ Tier 2 membership requires an application reviewed by LEAP’s Convergence Subco
 
 Tier 2 membership also provides swipe access at Innovation Hub (for Columbia affiliates). Members can apply to attend LEAP’s Annual Meeting and to be part of focus groups.
 
-## Tier 3 Members
+### Tier 3 Members
 
 Tier 3 membership is reserved for individuals supported by LEAP funding as a Request for Proposal (RFP) PI, Co-PI, researcher, student, or postdoc.
 
@@ -56,7 +55,7 @@ Tier 3 members currently have identical access to LEAP pangeo computing resource
 
 Tier 3 membership is granted by adding the user to the [`leap-pangeo-full-access`](https://github.com/orgs/leap-stc/teams/leap-pangeo-full-access) GitHub Team.
 
-## Education Category
+### Education Category
 
 The education category is intended for _termed access_ to LEAP-Pangeo Hub resources associated
 with educational activities. Examples of educational activities include:
@@ -73,7 +72,7 @@ GitHub Team.
 Additional sub-teams will be created within this team to organize students into
 specific courses, bootcamps, etc.
 
-### Eligibility
+#### Eligibility
 
 Course instructors who meet one of the following criteria are eligible to request
 access for their class (including self, co-instructor(s), TAs, students, evaluators, etc):
@@ -81,7 +80,7 @@ access for their class (including self, co-instructor(s), TAs, students, evaluat
 - Full-time faculty at LEAP Institution (Columbia, NYU, UMN, UCI)
 - Full-time faculty who participated in a LEAP’s "train the trainer" workshop
 
-### Proposal Process
+#### Proposal Process
 
 Course instructors may propose to the LEAP-Pangeo Hub for their upcoming course by submitting
 a short proposal to the LEAP’s Convergence Subcommittee.
@@ -105,27 +104,10 @@ team for the course and add the instructor as a "Maintainer".
 It is the instructor's responsibility to add the course's users to this team
 and remove them when the course has been concluded.
 
-(users.invite)=
-### "Where is my invite?"
-
-Please check your email account (**the one you used to sign up for Github** - this is independent of the email you use for LEAP) for an invite that will look similar to this:
 
 
-<img src="../images/email_org_invite.png" alt="LEAPPangeo email invite" height="300"/>
 
-
-Click the link and accept all invites.
-
-Alternatively you can log into your github account, and should see a notification in the top right menu under the "Organizations" tab.
-
-<img src="../images/gh_org_invite_1.png" alt="LEAPPangeo gh invite" height="300"/>
-
-You can follow that and accept the invitation there aswell.
-
-<img src="../images/gh_org_invite_2.png" alt="LEAPPangeo gh invite2" height="150"/>
-
-
-## Research Category
+### Research Category
 
 The education category is intended for _long-term access_ to LEAP-Pangeo resources associated
 with research activities.
@@ -152,18 +134,42 @@ A LEAP administrator will create a GitHub sub-team within the
 team for each research project and add the project PIs as "maintainer".
 It is the PIs' responsibility to add and remove members from their team.
 
-## Administrator and Developer Category
+### Administrator and Developer Category
 
 The LEAP Director of Data and Computing or the LEAP Manager of Data and Computing may grant access to other participants for
 the purposes of technical development, debugging, and evaluation of the platform. These members will be added to the [`leap-pangeo-full-access`](https://github.com/orgs/leap-stc/teams/leap-pangeo-full-access) team to have full access to all resources.
 
-## Termination of Access
+(users.membership.apply)
+### Applying for membership
+
+To become a LEAP member please refer to the [Research Membership Structure](https://leap.columbia.edu/about/policies2/) on the LEAP website.
+
+(users.membership.invite)=
+### "Where is my invite?"
+
+Please check your email account (**the one you used to sign up for Github** - this is independent of the email you use for LEAP) for an invite that will look similar to this:
+
+
+<img src="../images/email_org_invite.png" alt="LEAPPangeo email invite" height="300"/>
+
+
+Click the link and accept all invites.
+
+Alternatively you can log into your github account, and should see a notification in the top right menu under the "Organizations" tab.
+
+<img src="../images/gh_org_invite_1.png" alt="LEAPPangeo gh invite" height="300"/>
+
+You can follow that and accept the invitation there aswell.
+
+<img src="../images/gh_org_invite_2.png" alt="LEAPPangeo gh invite2" height="150"/>
+
+### Termination of Access
 
 Users who violate usage policies will have their access suspended pending investigation.
 The LEAP Director of Data and Computing decides if a policy has been violated and
 may suspend or terminate access to LEAP-Pangeo at any time.
 
-## Offboarding Process
+### Offboarding Process
 
 Users may also be transferred from e.g. the Education Category to the Community Category
 when their termed access ends.
