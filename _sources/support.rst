@@ -1,10 +1,19 @@
-Support
+Getting Help
 =======
+
+For questions about how to use the Hub, please use the LEAP-Pangeo discussion forum:
+
+- `LEAP-Pangeo Discussion Forum <https://github.com/leap-stc/leap-stc.github.io/discussions>`_
+
+Office Hours
+~~~~~~~~~~~~
+We also offer in-person and virtual Office Hours on Thursdays for questions about LEAP-Pangeo.
+You can reserve an appointment `here <https://app.reclaim.ai/m/leap-pangeo-office-hours>`_.
 
 .. _support.data_compute_team:
 
 Data and Computation Team
-~~~~~~~~~~~~~~~~~~~~~
+------------
 
 .. jinja:: team-data
 

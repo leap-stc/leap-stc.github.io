@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Code Policy" href="policies/code_policy.html" />
+    <link rel="next" title="LEAP-Pangeo JupyterHub" href="leap-pangeo/jupyterhub.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -100,6 +100,60 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  LEAP-Pangeo
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="leap-pangeo/jupyterhub.html">
+   LEAP-Pangeo JupyterHub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="leap-pangeo/tutorial.html">
+   Getting Started
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="leap-pangeo/architecture.html">
+   LEAP-Pangeo Architecture
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="leap-pangeo/implementation.html">
+   LEAP-Pangeo Implementation Plan
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Guides
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="guides/hub_guides.html">
+   How-To Guides for Using the Hub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="leap-pangeo/solutions.html">
+   Common Problems (with Solutions)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="guides/education.html">
+   LEAP-Pangeo for Education
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="guides/team_docs.html">
+   Onboarding Guide for Data and Computation Team Members
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Policies
  </span>
 </p>
@@ -127,57 +181,13 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  LEAP-Pangeo
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="leap-pangeo/jupyterhub.html">
-   LEAP-Pangeo JupyterHub
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="leap-pangeo/architecture.html">
-   LEAP-Pangeo Architecture
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="leap-pangeo/implementation.html">
-   LEAP-Pangeo Implementation Plan
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="leap-pangeo/solutions.html">
-   Common Problems (with Solutions)
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Guides
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="guides/education.html">
-   LEAP-Pangeo for Education
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="guides/team_docs.html">
-   Onboarding Guide for Data and Computation Team Members
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   Miscellaneous
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="support.html">
-   Support
+   Getting Help
   </a>
  </li>
  <li class="toctree-l1">
@@ -283,6 +293,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#motivation">
+   Motivation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#contents">
    Contents
   </a>
@@ -312,6 +327,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dashboard">
    Dashboard
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#motivation">
+   Motivation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -350,8 +370,37 @@ const thebe_selector_output = ".output, .cell_output"
 </tbody>
 </table>
 </section>
+<section id="motivation">
+<h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h2>
+<p>The motivation and justification for developing LEAP-Pangeo are laid out in several recent peer-reviewed publications: <span id="id1">[<a class="reference internal" href="references.html#id2" title="Ryan P. Abernathey, Tom Augspurger, Anderson Banihirwe, Charles C. Blackmon-Luca, Timothy J. Crone, Chelle L. Gentemann, Joseph J. Hamman, Naomi Henderson, Chiara Lepore, Theo A. McCaie, Niall H. Robinson, and Richard P. Signell. Cloud-native repositories for big scientific data. Computing in Science Engineering, 23(2):26-35, 2021. doi:10.1109/MCSE.2021.3059437.">Abernathey <em>et al.</em>, 2021</a>]</span> and <span id="id2">[<a class="reference internal" href="references.html#id3" title="C. L. Gentemann, C. Holdgraf, R. Abernathey, D. Crichton, J. Colliander, E. J. Kearns, Y. Panda, and R. P. Signell. Science storms the cloud. AGU Advances, 2(2):e2020AV000354, 2021. e2020AV000354 2020AV000354. URL: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2020AV000354, arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2020AV000354, doi:https://doi.org/10.1029/2020AV000354.">Gentemann <em>et al.</em>, 2021</a>]</span>.
+To summarize these arguments, a shared data and computing platform will:</p>
+<ul class="simple">
+<li><p><em>Facilitate seamless collaboration between project members around data-intensive science, accelerating research progress.</em></p></li>
+<li><p><em>Empower LEAP participants with instant access to high-performance computing and analysis-ready data in order to support ambitious research objectives.</em> This access is provided through our <a class="reference internal" href="leap-pangeo/jupyterhub.html"><span class="doc std std-doc">JupyterHub platform</span></a>.</p></li>
+<li><p><em>Place actionable data in the hands of LEAP partners to support knowledge transfer.</em> Our data catalog can be found <a class="reference external" href="https://leap-data-catalog.vercel.app/">here</a>. See <a class="reference internal" href="guides/hub_guides.html"><span class="doc std std-doc">here</span></a> to learn how to upload your data to the hub.</p></li>
+<li><p><em>Enable rich data-driven classroom experiences for learners, helping them transition successfully from coursework to research.</em></p></li>
+</ul>
+</section>
 <section id="contents">
 <h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">LEAP-Pangeo</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="leap-pangeo/jupyterhub.html">LEAP-Pangeo JupyterHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="leap-pangeo/tutorial.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="leap-pangeo/architecture.html">LEAP-Pangeo Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="leap-pangeo/implementation.html">LEAP-Pangeo Implementation Plan</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guides/hub_guides.html">How-To Guides for Using the Hub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="leap-pangeo/solutions.html">Common Problems (with Solutions)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/education.html">LEAP-Pangeo for Education</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/team_docs.html">Onboarding Guide for Data and Computation Team Members</a></li>
+</ul>
+</div>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Policies</span></p>
 <ul>
@@ -362,25 +411,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">LEAP-Pangeo</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="leap-pangeo/jupyterhub.html">LEAP-Pangeo JupyterHub</a></li>
-<li class="toctree-l1"><a class="reference internal" href="leap-pangeo/architecture.html">LEAP-Pangeo Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="leap-pangeo/implementation.html">LEAP-Pangeo Implementation Plan</a></li>
-<li class="toctree-l1"><a class="reference internal" href="leap-pangeo/solutions.html">Common Problems (with Solutions)</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="guides/education.html">LEAP-Pangeo for Education</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guides/team_docs.html">Onboarding Guide for Data and Computation Team Members</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Getting Help</a></li>
 <li class="toctree-l1"><a class="reference internal" href="how_to_cite.html">How to cite LEAP-Pangeo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
 </ul>
@@ -413,10 +446,10 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="policies/code_policy.html" title="next page">
+    <a class='right-next' id="next-link" href="leap-pangeo/jupyterhub.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Code Policy</p>
+        <p class="prev-next-title">LEAP-Pangeo JupyterHub</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
