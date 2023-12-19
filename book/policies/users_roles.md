@@ -173,5 +173,3 @@ Removing a user from the `leap-pangeo-users` group entirely will disable their a
 completely.
 An automated process will delete user data from the hub one month after a user
 is removed from the `leap-pangeo-users` group.
-
-## How can I get access to the Hub
