@@ -63,6 +63,22 @@ To help onboard you to this new way of working, we have written a guide to Files
 
 We recommend you read this thoroughly, especially the part about Git and GitHub.
 
+(hub:data:user_dir)=
+#### Your User Directory
+
+When you open your hub, you can navigate to the "File Browser" and see all the files in your User Directory
+<img width="442" alt="image" src="https://github.com/leap-stc/leap-stc.github.io/assets/14314623/3ba6b45a-a077-4824-b0ec-9c111af50c33">
+
+Your User Directory behaves very similar to a filestystem on your computer. If you save a file from a notebook, you will see it appear in the File Browser (you might have to wait a few seconds or press refresh) and you can use a terminal to navigate the terminal as you would on a UNIX machine:
+
+<img width="357" alt="image" src="https://github.com/leap-stc/leap-stc.github.io/assets/14314623/a84c12e2-9f8a-4de1-a3e3-feff1bf59061">
+
+:::{note}
+As shown in the picture above, every user will see `'/home/jovyan'` as their root directory. This is different from many HPC accounts where your home directory will point to a directory with your username. But the functionality is similar. These are *your own files* and they cannot be seen/modified by other users (except admins).
+:::
+
+The primary purpose of this directory is to store small files, like github repositories and other code.
+
 :::{warning}
 Please do not store large files in your user directory `/home/jovyan`. Your home directory is intended only for notebooks, analysis scripts, and small datasets (< 1 GB). It is not an appropriate place to store large datasets.
 
@@ -110,7 +126,9 @@ user_path = "gs://leap-scratch/funky-user" # 👀 make sure to prepend `gs://` t
 store_name = "processed_store.zarr"
 ds_processed.to_zarr(f'{user_path}/{store_name}')
 ```
-This will write a zarr store to the scratch bucket. 
+This will write a zarr store to the scratch bucket.
+
+
 
 You can read it back into an xarray dataset with this snippet:
 ```python
@@ -118,6 +136,11 @@ import xarray as xr
 ds = xr.open_dataset('gs://leap-scratch/funky-user/processed_store.zarr', engine='zarr', chunks={}) #
 ```
 ... and you can give this to any other registered LEAP user and they can load it exactly like you can! 
+
+:::{note}
+Note that providing the url starting with `gs://...` is assumes that you have appropriate credentials set up in your environment to read/write to that bucket. On the hub these are already set up for you to work with the [](hub:data:buckets), but if you are trying to interact with non-public buckets you need to authenticate yourself. Check out the sections [below](hub:data:upload_manual) to see an example how to do that.
+:::
+
 
 You can also write other files directly to the bucket by using [`fsspec.open`](https://filesystem-spec.readthedocs.io/en/latest/api.html#fsspec.open) similarly to the python builtin [`open`](https://docs.python.org/3/library/functions.html#open)
 ```python
@@ -138,12 +161,6 @@ fs.rm('leap-persistent/funky-user/file_to_delete.nc')
 ```
 
 If you want to remove zarr stores (which are an 'exploded' data format, and thus represented by a folder structure) you have to recursively delete the store. 
-:::{warning}
-The warning from above is even more important here! Make sure that the folder you are deleting does not contain any data you do not want to delete!
-:::
 ```python
 fs.rm('leap-scratch/funky-user/processed_store.zarr', recursive=True)
 ```
-
-
-
