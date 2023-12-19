@@ -4,6 +4,10 @@ To get started using the hub, check out this video by [James Munroe](https://git
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/RKXWxtNqWKw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+
+## How can I get access to the Hub
+Only LEAP members will be able to access the hub. Please [become a member](users.membership.apply) and make sure you accept the [invitation on github](users.membership.invite) before proceeding
+
 ## Hub Usage
 
 This is a rough and ready guide to using the Hub.
