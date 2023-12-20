@@ -89,6 +89,7 @@ What follows is a possible timeline for implementation.
 ### Fall 2021
 
 #### Activities
+
 - 📍 Deploy generic Pangeo JupyterHub on Google Cloud using supported credits.
 - 📍 Provide basic end-user documentation for using the Hub
   (comparable to [Pangeo Cloud docs](https://pangeo.io/cloud.html)).
@@ -104,7 +105,6 @@ What follows is a possible timeline for implementation.
 - 📍 Conduct data survey to assess data needs of research, education, and outreach activities.
 - 📍 Data engineers work with researchers on data ingestion.
 - 📍 Refine Hub environment based on initial feedback.
-
 
 #### Milestones
 

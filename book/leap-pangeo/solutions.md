@@ -13,6 +13,7 @@ The default dask worker configuration can deal well with dataset chunk sizes of 
 
 **Solution**
 You can change the configuration of your dask workers and increase the memory each worker has to deal with larger chunks. You can adjust the memory by passing additional [options](https://gateway.dask.org/cluster-options.html) to the dask-gatway cluster upon creation:
+
 ```python
 from dask_gateway import Gateway
 gateway = Gateway()
