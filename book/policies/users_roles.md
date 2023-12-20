@@ -1,4 +1,4 @@
-(users:categories)=
+(users.categories)=
 # Users and Categories
 
 **Version 2 - 2022-10-25**
@@ -26,13 +26,14 @@ All users of LEAP-Pangeo must abide by the LEAP Code of Conduct:
 
 - https://docs.google.com/document/d/1eE-aYrsf_k5Ep8GB-n8hmqM_LVW-U3uzYKHJBZMvYWU
 
+(users.membership)=
 ## Membership
 
 LEAP members are grouped into the following member tiers.
 
 ### Tier 1 Members
 
-Tier 1 members have access to [storage](hub:data:buckets) and computing resource up to 4 cores and 32GB RAM on JupyterHub servers
+Tier 1 members have access to [storage](hub.data.buckets) and computing resource up to 4 cores and 32GB RAM on JupyterHub servers
 in the LEAP-Pangeo Hub.
 
 Tier 1 membership is granted by adding the user to the [`leap-pangeo-base-access`](https://github.com/orgs/leap-stc/teams/leap-pangeo-base-access) GitHub Team.
@@ -104,9 +105,6 @@ team for the course and add the instructor as a "Maintainer".
 It is the instructor's responsibility to add the course's users to this team
 and remove them when the course has been concluded.
 
-
-
-
 ### Research Category
 
 The education category is intended for _long-term access_ to LEAP-Pangeo resources associated
@@ -139,12 +137,12 @@ It is the PIs' responsibility to add and remove members from their team.
 The LEAP Director of Data and Computing or the LEAP Manager of Data and Computing may grant access to other participants for
 the purposes of technical development, debugging, and evaluation of the platform. These members will be added to the [`leap-pangeo-full-access`](https://github.com/orgs/leap-stc/teams/leap-pangeo-full-access) team to have full access to all resources.
 
-(users:membership:apply)=
+(users.membership.apply)=
 ### Applying for membership
 
 To become a LEAP member please refer to the [Research Membership Structure](https://leap.columbia.edu/about/policies2/) on the LEAP website.
 
-(users:membership:invite)=
+(users.membership.invite)=
 ### "Where is my invite?"
 
 Please check your email account (**the one you used to sign up for Github** - this is independent of the email you use for LEAP) for an invite that will look similar to this:
