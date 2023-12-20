@@ -101,6 +101,60 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  LEAP-Pangeo
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorial.html">
+   Getting Started
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="jupyterhub.html">
+   LEAP-Pangeo JupyterHub
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   LEAP-Pangeo Architecture
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="implementation.html">
+   LEAP-Pangeo Implementation Plan
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Guides
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../guides/hub_guides.html">
+   How-To Guides for Using the Hub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="solutions.html">
+   Common Problems (with Solutions)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../guides/education.html">
+   LEAP-Pangeo for Education
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../guides/team_docs.html">
+   Onboarding Guide for Data and Computation Team Members
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Policies
  </span>
 </p>
@@ -128,57 +182,13 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  LEAP-Pangeo
- </span>
-</p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="jupyterhub.html">
-   LEAP-Pangeo JupyterHub
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   LEAP-Pangeo Architecture
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="implementation.html">
-   LEAP-Pangeo Implementation Plan
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="solutions.html">
-   Common Problems (with Solutions)
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Guides
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../guides/education.html">
-   LEAP-Pangeo for Education
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../guides/team_docs.html">
-   Onboarding Guide for Data and Computation Team Members
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   Miscellaneous
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../support.html">
-   Support
+   Getting Help
   </a>
  </li>
  <li class="toctree-l1">
@@ -279,18 +289,8 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#motivation">
-   Motivation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#design-principles">
    Design Principles
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#related-tools-and-platforms">
-   Related Tools and Platforms
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -331,6 +331,11 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#related-tools-and-platforms">
+   Related Tools and Platforms
+  </a>
  </li>
 </ul>
 
@@ -353,18 +358,8 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#motivation">
-   Motivation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#design-principles">
    Design Principles
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#related-tools-and-platforms">
-   Related Tools and Platforms
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -406,6 +401,11 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#related-tools-and-platforms">
+   Related Tools and Platforms
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -418,17 +418,6 @@ const thebe_selector_output = ".output, .cell_output"
   <section class="tex2jax_ignore mathjax_ignore" id="leap-pangeo-architecture">
 <h1>LEAP-Pangeo Architecture<a class="headerlink" href="#leap-pangeo-architecture" title="Permalink to this headline">¶</a></h1>
 <p>LEAP-Pangeo is a cloud-based data and computing platform that will be used to support research, education, and knowledge transfer within the LEAP program.</p>
-<section id="motivation">
-<h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h2>
-<p>The motivation and justification for developing LEAP-Pangeo are laid out in several recent peer-reviewed publications: <span id="id1">[<a class="reference internal" href="../references.html#id2" title="Ryan P. Abernathey, Tom Augspurger, Anderson Banihirwe, Charles C. Blackmon-Luca, Timothy J. Crone, Chelle L. Gentemann, Joseph J. Hamman, Naomi Henderson, Chiara Lepore, Theo A. McCaie, Niall H. Robinson, and Richard P. Signell. Cloud-native repositories for big scientific data. Computing in Science Engineering, 23(2):26-35, 2021. doi:10.1109/MCSE.2021.3059437.">Abernathey <em>et al.</em>, 2021</a>]</span> and <span id="id2">[<a class="reference internal" href="../references.html#id3" title="C. L. Gentemann, C. Holdgraf, R. Abernathey, D. Crichton, J. Colliander, E. J. Kearns, Y. Panda, and R. P. Signell. Science storms the cloud. AGU Advances, 2(2):e2020AV000354, 2021. e2020AV000354 2020AV000354. URL: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2020AV000354, arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2020AV000354, doi:https://doi.org/10.1029/2020AV000354.">Gentemann <em>et al.</em>, 2021</a>]</span>.
-To summarize these arguments, a shared data and computing platform will:</p>
-<ul class="simple">
-<li><p>Empower LEAP participants with instant access to high-performance computing and analysis-ready data in order to support ambitious research objectives</p></li>
-<li><p>Facilitate seamless collaboration between project members around data-intensive science, accelerating research progress</p></li>
-<li><p>Enable rich data-driven classroom experiences for learners, helping them transition successfully from coursework to research</p></li>
-<li><p>Place actionable data in the hands of LEAP partners to support knowledge transfer</p></li>
-</ul>
-</section>
 <section id="design-principles">
 <h2>Design Principles<a class="headerlink" href="#design-principles" title="Permalink to this headline">¶</a></h2>
 <p>In the proposal, we committed to building this in a way that enables the tools and infrastructure to be reused and remixed.
@@ -443,34 +432,6 @@ We committed to following the following design principles:</p>
 (rather than development of new stuff just for the sake of it).
 This is a key part of our sustainability plan.</p></li>
 </ul>
-</section>
-<section id="related-tools-and-platforms">
-<h2>Related Tools and Platforms<a class="headerlink" href="#related-tools-and-platforms" title="Permalink to this headline">¶</a></h2>
-<p>It’s useful to understand the recent history and related efforts in this space.</p>
-<ul class="simple">
-<li><p><strong><a class="reference external" href="https://research.google.com/colaboratory/faq.html">Google Colab</a></strong> is a free notebook-in-the-cloud service run by Google.
-It is built around the open source Jupyter project, but with advanced notebook sharing capabilities (like Google Docs).</p></li>
-<li><p><strong><a class="reference external" href="https://earthengine.google.org/">Google Earth Engine</a></strong> is a reference point for all cloud geospatial analytics platforms.
-It’s actually a standalone application that is separate from Google Cloud, the single instance of a highly customized, black box (i.e. not open source)  application that enables parallel computing on distributed data.
-It’s very good at what it was designed for (analyzing satellite images), but isn’t easily adapted to other applications, such as machine learning.</p></li>
-<li><p><strong><a class="reference external" href="https://iridl.ldeo.columbia.edu/index.html">Columbia IRI Data Library</a></strong> is a powerful and freely accessible online data repository and analysis tool that allows a user to view, analyze, and download hundreds of terabytes of climate-related data through a standard web browser.
-Due to its somewhat outdated architecture, IRI data library cannot easily be updated or adapted to new projects.</p></li>
-<li><p><strong><a class="reference external" href="http://pangeo.io/">Pangeo</a></strong> is an open science community oriented around open-source python tools for big-data geoscience.
-It is a loose ecosystem of interoperable python packages including <a class="reference external" href="https://jupyter.org/">Jupyter</a>, <a class="reference external" href="http://xarray.pydata.org/">Xarray</a>, <a class="reference external" href="http://dask.pydata.org/">Dask</a>, and <a class="reference external" href="https://zarr.readthedocs.io/">Zarr</a>.
-The Pangeo tools have been deployed in nearly all commercial clouds (AWS, GCP, Azure) as well as HPC environments.
-<a class="reference external" href="https://pangeo.io/cloud.html">Pangeo Cloud</a> is a publicly accessible data-proximate computing environment based on Pangeo tools.
-Pangeo is used heavily within NCAR.</p></li>
-<li><p><strong><a class="reference external" href="https://planetarycomputer.microsoft.com/">Microsoft Planetary Computer</a></strong> is a collection of datasets and computational tools hosted by Microsoft in the Azure cloud.
-It combines Pangeo-style computing environments with a data library based on <a class="reference external" href="https://stacspec.org/">SpatioTemporal Asset Catalog</a></p></li>
-<li><p><strong><a class="reference external" href="https://www.radiant.earth/mlhub/">Radiant Earth ML Hub</a></strong> is a cloud-based open library dedicated to Earth observation training data for use with machine learning algorithms.
-It focuses mostly on data access and curation.
-Data are cataloged using STAC.</p></li>
-<li><p><strong><a class="reference external" href="https://pangeo-forge.org/">Pangeo Forge</a></strong> is a new initiative, funded by the NSF EarthCube program, to build a platform for
-“crowdsourcing” the production of analysis-ready, cloud-optimized data.
-Once operational, Pangeo Forge will be a useful tool for many different projects which need data in the cloud.</p></li>
-</ul>
-<p>Of these different tools, we opt to build on Pangeo because of its open-source, grassroots
-foundations in the climate data science community, strong uptake within NCAR, and track-record of support from NSF.</p>
 </section>
 <section id="design-and-architecture">
 <h2>Design and Architecture<a class="headerlink" href="#design-and-architecture" title="Permalink to this headline">¶</a></h2>
@@ -600,6 +561,34 @@ By also tracking participations (i.e. humans), we will build a novel and inspiri
 Organizing and displaying this information effectively is a challenging problem in
 information architecture and systems design.</p>
 </section>
+</section>
+<section id="related-tools-and-platforms">
+<h2>Related Tools and Platforms<a class="headerlink" href="#related-tools-and-platforms" title="Permalink to this headline">¶</a></h2>
+<p>It’s useful to understand the recent history and related efforts in this space.</p>
+<ul class="simple">
+<li><p><strong><a class="reference external" href="https://research.google.com/colaboratory/faq.html">Google Colab</a></strong> is a free notebook-in-the-cloud service run by Google.
+It is built around the open source Jupyter project, but with advanced notebook sharing capabilities (like Google Docs).</p></li>
+<li><p><strong><a class="reference external" href="https://earthengine.google.org/">Google Earth Engine</a></strong> is a reference point for all cloud geospatial analytics platforms.
+It’s actually a standalone application that is separate from Google Cloud, the single instance of a highly customized, black box (i.e. not open source)  application that enables parallel computing on distributed data.
+It’s very good at what it was designed for (analyzing satellite images), but isn’t easily adapted to other applications, such as machine learning.</p></li>
+<li><p><strong><a class="reference external" href="https://iridl.ldeo.columbia.edu/index.html">Columbia IRI Data Library</a></strong> is a powerful and freely accessible online data repository and analysis tool that allows a user to view, analyze, and download hundreds of terabytes of climate-related data through a standard web browser.
+Due to its somewhat outdated architecture, IRI data library cannot easily be updated or adapted to new projects.</p></li>
+<li><p><strong><a class="reference external" href="http://pangeo.io/">Pangeo</a></strong> is an open science community oriented around open-source python tools for big-data geoscience.
+It is a loose ecosystem of interoperable python packages including <a class="reference external" href="https://jupyter.org/">Jupyter</a>, <a class="reference external" href="http://xarray.pydata.org/">Xarray</a>, <a class="reference external" href="http://dask.pydata.org/">Dask</a>, and <a class="reference external" href="https://zarr.readthedocs.io/">Zarr</a>.
+The Pangeo tools have been deployed in nearly all commercial clouds (AWS, GCP, Azure) as well as HPC environments.
+<a class="reference external" href="https://pangeo.io/cloud.html">Pangeo Cloud</a> is a publicly accessible data-proximate computing environment based on Pangeo tools.
+Pangeo is used heavily within NCAR.</p></li>
+<li><p><strong><a class="reference external" href="https://planetarycomputer.microsoft.com/">Microsoft Planetary Computer</a></strong> is a collection of datasets and computational tools hosted by Microsoft in the Azure cloud.
+It combines Pangeo-style computing environments with a data library based on <a class="reference external" href="https://stacspec.org/">SpatioTemporal Asset Catalog</a></p></li>
+<li><p><strong><a class="reference external" href="https://www.radiant.earth/mlhub/">Radiant Earth ML Hub</a></strong> is a cloud-based open library dedicated to Earth observation training data for use with machine learning algorithms.
+It focuses mostly on data access and curation.
+Data are cataloged using STAC.</p></li>
+<li><p><strong><a class="reference external" href="https://pangeo-forge.org/">Pangeo Forge</a></strong> is a new initiative, funded by the NSF EarthCube program, to build a platform for
+“crowdsourcing” the production of analysis-ready, cloud-optimized data.
+Once operational, Pangeo Forge will be a useful tool for many different projects which need data in the cloud.</p></li>
+</ul>
+<p>Of these different tools, we opt to build on Pangeo because of its open-source, grassroots
+foundations in the climate data science community, strong uptake within NCAR, and track-record of support from NSF.</p>
 </section>
 </section>
 

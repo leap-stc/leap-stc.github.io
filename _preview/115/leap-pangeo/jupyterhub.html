@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="LEAP-Pangeo Architecture" href="architecture.html" />
-    <link rel="prev" title="Users and Categories" href="../policies/users_roles.html" />
+    <link rel="prev" title="Getting Started" href="tutorial.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -101,6 +101,60 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  LEAP-Pangeo
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorial.html">
+   Getting Started
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   LEAP-Pangeo JupyterHub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="architecture.html">
+   LEAP-Pangeo Architecture
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="implementation.html">
+   LEAP-Pangeo Implementation Plan
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Guides
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../guides/hub_guides.html">
+   How-To Guides for Using the Hub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="solutions.html">
+   Common Problems (with Solutions)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../guides/education.html">
+   LEAP-Pangeo for Education
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../guides/team_docs.html">
+   Onboarding Guide for Data and Computation Team Members
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Policies
  </span>
 </p>
@@ -128,57 +182,13 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  LEAP-Pangeo
- </span>
-</p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   LEAP-Pangeo JupyterHub
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="architecture.html">
-   LEAP-Pangeo Architecture
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="implementation.html">
-   LEAP-Pangeo Implementation Plan
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="solutions.html">
-   Common Problems (with Solutions)
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Guides
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../guides/education.html">
-   LEAP-Pangeo for Education
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../guides/team_docs.html">
-   Onboarding Guide for Data and Computation Team Members
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   Miscellaneous
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../support.html">
-   Support
+   Getting Help
   </a>
  </li>
  <li class="toctree-l1">
@@ -279,127 +289,58 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#getting-started">
-   Getting Started
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#getting-help">
-   Getting Help
+  <a class="reference internal nav-link" href="#the-software-environment">
+   The Software Environment
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#office-hours">
-     Office Hours
+    <a class="reference internal nav-link" href="#preselected-images">
+     Preselected Images
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#custom-images">
+     Custom Images
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installing-additonal-packages">
+     Installing additonal packages
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#hub-usage">
-   Hub Usage
+  <a class="reference internal nav-link" href="#files-and-data">
+   Files and Data
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#logging-in">
-     Logging In
+    <a class="reference internal nav-link" href="#your-user-directory">
+     Your User Directory
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-jupyterlab">
-     Using JupyterLab
+    <a class="reference internal nav-link" href="#leap-pangeo-buckets">
+     LEAP-Pangeo Buckets
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#shutting-down-your-server">
-     Shutting Down Your Server
+    <a class="reference internal nav-link" href="#inspecting-contents-of-the-bucket">
+     Inspecting contents of the bucket
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-software-environment">
-     The Software Environment
+    <a class="reference internal nav-link" href="#basic-writing-to-and-reading-from-cloud-buckets">
+     Basic writing to and reading from cloud buckets
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#preselected-images">
-       Preselected Images
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#custom-images">
-       Custom Images
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#installing-additonal-packages">
-       Installing additonal packages
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#files-and-data">
-     Files and Data
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#your-user-directory">
-       Your User Directory
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#leap-pangeo-buckets">
-       LEAP-Pangeo Buckets
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#inspecting-contents-of-the-bucket">
-       Inspecting contents of the bucket
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#basic-writing-to-and-reading-from-cloud-buckets">
-       Basic writing to and reading from cloud buckets
-      </a>
-     </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#deleting-from-cloud-buckets">
        Deleting from cloud buckets
       </a>
      </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#i-have-a-dataset-and-want-to-work-with-it-on-the-hub-how-do-i-upload-it">
-       I have a dataset and want to work with it on the hub. How do I upload it?
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#transform-and-upload-published-data-to-an-arco-format-with-pangeo-forge">
-         Transform and Upload published data to an ARCO format (with Pangeo Forge)
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#upload-medium-sized-original-data-from-your-local-machine">
-         Upload medium sized original data from your local machine
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#uploading-large-original-data-from-an-hpc-system-no-browser-access-on-the-system-available">
-         Uploading large original data from an HPC system (no browser access on the system available)
-        </a>
-       </li>
-      </ul>
-     </li>
     </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dask">
-     Dask
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#gpus">
-     GPUs
-    </a>
    </li>
   </ul>
  </li>
@@ -424,127 +365,58 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#getting-started">
-   Getting Started
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#getting-help">
-   Getting Help
+  <a class="reference internal nav-link" href="#the-software-environment">
+   The Software Environment
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#office-hours">
-     Office Hours
+    <a class="reference internal nav-link" href="#preselected-images">
+     Preselected Images
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#custom-images">
+     Custom Images
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installing-additonal-packages">
+     Installing additonal packages
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#hub-usage">
-   Hub Usage
+  <a class="reference internal nav-link" href="#files-and-data">
+   Files and Data
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#logging-in">
-     Logging In
+    <a class="reference internal nav-link" href="#your-user-directory">
+     Your User Directory
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-jupyterlab">
-     Using JupyterLab
+    <a class="reference internal nav-link" href="#leap-pangeo-buckets">
+     LEAP-Pangeo Buckets
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#shutting-down-your-server">
-     Shutting Down Your Server
+    <a class="reference internal nav-link" href="#inspecting-contents-of-the-bucket">
+     Inspecting contents of the bucket
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-software-environment">
-     The Software Environment
+    <a class="reference internal nav-link" href="#basic-writing-to-and-reading-from-cloud-buckets">
+     Basic writing to and reading from cloud buckets
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#preselected-images">
-       Preselected Images
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#custom-images">
-       Custom Images
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#installing-additonal-packages">
-       Installing additonal packages
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#files-and-data">
-     Files and Data
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#your-user-directory">
-       Your User Directory
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#leap-pangeo-buckets">
-       LEAP-Pangeo Buckets
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#inspecting-contents-of-the-bucket">
-       Inspecting contents of the bucket
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#basic-writing-to-and-reading-from-cloud-buckets">
-       Basic writing to and reading from cloud buckets
-      </a>
-     </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#deleting-from-cloud-buckets">
        Deleting from cloud buckets
       </a>
      </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#i-have-a-dataset-and-want-to-work-with-it-on-the-hub-how-do-i-upload-it">
-       I have a dataset and want to work with it on the hub. How do I upload it?
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#transform-and-upload-published-data-to-an-arco-format-with-pangeo-forge">
-         Transform and Upload published data to an ARCO format (with Pangeo Forge)
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#upload-medium-sized-original-data-from-your-local-machine">
-         Upload medium sized original data from your local machine
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#uploading-large-original-data-from-an-hpc-system-no-browser-access-on-the-system-available">
-         Uploading large original data from an HPC system (no browser access on the system available)
-        </a>
-       </li>
-      </ul>
-     </li>
     </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dask">
-     Dask
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#gpus">
-     GPUs
-    </a>
    </li>
   </ul>
  </li>
@@ -583,67 +455,13 @@ For information who can access the hub with which privileges, please refer to
 </tr>
 </tbody>
 </table>
-<section id="getting-started">
-<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
-<p>To get started using the hub, check out this video by <a class="reference external" href="https://github.com/jmunroe">James Munroe</a> from <a class="reference external" href="https://2i2c.org">2i2c</a> explaining the architecture.</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/RKXWxtNqWKw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</section>
-<section id="getting-help">
-<h2>Getting Help<a class="headerlink" href="#getting-help" title="Permalink to this headline">¶</a></h2>
-<p>For questions about how to use the Hub, please use the LEAP-Pangeo discussion forum:</p>
+<p>This document goes over the primary technical details of the JupyterHub.</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/leap-stc/leap-stc.github.io/discussions">https://github.com/leap-stc/leap-stc.github.io/discussions</a></p></li>
+<li><p>For a quick tutorial on basic usage, please see <a class="reference internal" href="tutorial.html"><span class="doc std std-doc">Getting Started</span></a>.</p></li>
+<li><p>To get an in-depth overview of the LEAP Pangeo Architecture and how the JupyterHub fits into it, please see the <a class="reference internal" href="architecture.html"><span class="doc std std-doc">Architecture</span></a> page.</p></li>
 </ul>
-<section id="office-hours">
-<h3>Office Hours<a class="headerlink" href="#office-hours" title="Permalink to this headline">¶</a></h3>
-<p>We also offer in-person and virtual Office Hours on Thursdays for questions about LEAP-Pangeo.
-You can reserve an appointment <a class="reference external" href="https://app.reclaim.ai/m/leap-pangeo-office-hours">here</a>.</p>
-</section>
-</section>
-<section id="hub-usage">
-<h2>Hub Usage<a class="headerlink" href="#hub-usage" title="Permalink to this headline">¶</a></h2>
-<p>This is a rough and ready guide to using the Hub.
-This documentation will be expanded as we learn and evolve.
-Feel free to <a class="reference external" href="https://github.com/leap-stc/leap-stc.github.io/blob/main/book/leap-pangeo/jupyterhub.md">edit it yourself</a> if you have suggetions for improvement!</p>
-<section id="logging-in">
-<span id="hub-server-login"></span><h3>Logging In<a class="headerlink" href="#logging-in" title="Permalink to this headline">¶</a></h3>
-<ol class="simple">
-<li><p>👀 Navigate to <a class="reference external" href="https://leap.2i2c.cloud/">https://leap.2i2c.cloud/</a> and click the big orange button that says “Log in to continue”</p></li>
-<li><p>🔐 You will be prompted to authorize a GitHub application. Say “yes” to everything.
-Note you must belong to the appropriate GitHub team in order to access the hub.
-See <a class="reference internal" href="../policies/users_roles.html"><span class="doc">Users and Categories</span></a>  for more information.</p></li>
-<li><p>📠 You will redirect to a screen with the following options.</p></li>
-</ol>
-<a class="reference internal image-reference" href="https://github.com/leap-stc/leap-stc.github.io/assets/14314623/088946a1-896f-4ff8-af91-8107c9f14cfd"><img alt="image" src="https://github.com/leap-stc/leap-stc.github.io/assets/14314623/088946a1-896f-4ff8-af91-8107c9f14cfd" style="width: 410px;" /></a>
-<blockquote>
-<div><p>Note: Depending on your <span class="xref myst">membership</span> you might see additional options (e.g. for GPU machines)</p>
-</div></blockquote>
-<p>You have to make 3 choices here:</p>
-<ul class="simple">
-<li><p>The machine type (Choose between “CPU only” or “GPU” if available)
-<strong>⚠️The GPU images should be used only when needed to accelerate model training.</strong></p></li>
-<li><p>The software environment (“Image”). Find more info in the <a class="reference internal" href="#hub-image"><span class="std std-ref">Software Environment Section</span></a> below.</p></li>
-<li><p>The node share. These are shared resources, and you should try to use the smallest image you need. You can easily start up a new server with a larger share if you find your work to be limited by CPU/RAM</p></li>
-</ul>
-<ol class="simple">
-<li><p>🕥 Wait for your server to start up. It can take up to few minutes.</p></li>
-</ol>
-</section>
-<section id="using-jupyterlab">
-<h3>Using JupyterLab<a class="headerlink" href="#using-jupyterlab" title="Permalink to this headline">¶</a></h3>
-<p>After your server fires up, you will be dropped into a JupyterLab environment.</p>
-<p>If you are new to JupyterLab, you might want to peruse the <a class="reference external" href="https://jupyterlab.readthedocs.io/en/stable/user/interface.html">user guide</a>.</p>
-</section>
-<section id="shutting-down-your-server">
-<h3>Shutting Down Your Server<a class="headerlink" href="#shutting-down-your-server" title="Permalink to this headline">¶</a></h3>
-<p>Your server will shut down automatically after a period of inactivity.
-However, if you know you are done working, it’s best to shut it down directly.
-To shut it down, go to <a class="reference external" href="https://leap.2i2c.cloud/hub/home">https://leap.2i2c.cloud/hub/home</a> and click the big red button that says “Stop My Server”</p>
-<a class="reference internal image-reference" href="https://user-images.githubusercontent.com/1197350/167768526-7742a260-d353-4bdb-b9d0-36e9cc17aba1.png"><img alt="image" src="https://user-images.githubusercontent.com/1197350/167768526-7742a260-d353-4bdb-b9d0-36e9cc17aba1.png" style="width: 800px;" /></a>
-<p>You can also navigate to this page from JupyterLab by clicking the <code class="docutils literal notranslate"><span class="pre">File</span></code> menu and going to <code class="docutils literal notranslate"><span class="pre">Hub</span> <span class="pre">Control</span> <span class="pre">Panel</span></code>.</p>
-</section>
 <section id="the-software-environment">
-<span id="hub-image"></span><h3>The Software Environment<a class="headerlink" href="#the-software-environment" title="Permalink to this headline">¶</a></h3>
+<h2>The Software Environment<a class="headerlink" href="#the-software-environment" title="Permalink to this headline">¶</a></h2>
 <p>The software environment you encounter on the Hub is based upon <a class="reference external" href="https://www.digitalocean.com/community/tutorials/the-docker-ecosystem-an-introduction-to-common-components">docker images</a> which you can run on other machines (like your laptop or an HPC cluster) for better reproducibility.</p>
 <p>Upon start up you can choose between</p>
 <ul class="simple">
@@ -651,7 +469,7 @@ To shut it down, go to <a class="reference external" href="https://leap.2i2c.clo
 <li><p>The option of passing a custom docker image via the <code class="docutils literal notranslate"><span class="pre">&quot;Other...&quot;</span></code> option.</p></li>
 </ul>
 <section id="preselected-images">
-<h4>Preselected Images<a class="headerlink" href="#preselected-images" title="Permalink to this headline">¶</a></h4>
+<h3>Preselected Images<a class="headerlink" href="#preselected-images" title="Permalink to this headline">¶</a></h3>
 <p>LEAP-Pangeo uses several full-featured, up-to-date Python environments maintained by Pangeo. You can read all about them at the following URL:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/pangeo-data/pangeo-docker-images/">https://github.com/pangeo-data/pangeo-docker-images/</a></p></li>
@@ -670,19 +488,19 @@ A complete list of all packages installed in this environment is located at:</p>
 </div>
 </section>
 <section id="custom-images">
-<span id="hub-image-custom"></span><h4>Custom Images<a class="headerlink" href="#custom-images" title="Permalink to this headline">¶</a></h4>
-<p>If you select the <code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">&gt;</span> <span class="pre">Other...</span></code> Option during <a class="reference internal" href="#hub-server-login"><span class="std std-ref">server login</span></a> you can paste an arbitrary reference in the form of <code class="docutils literal notranslate"><span class="pre">docker_registry/organization/image_name:image_version</span></code>. As an example we can get the <code class="docutils literal notranslate"><span class="pre">2023.05.08</span></code> version of the pangeo tensorflow notebook by pasting <code class="docutils literal notranslate"><span class="pre">quay.io/pangeo/ml-notebook:2023.05.08</span></code>.</p>
+<span id="hub-image-custom"></span><h3>Custom Images<a class="headerlink" href="#custom-images" title="Permalink to this headline">¶</a></h3>
+<p>If you select the <code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">&gt;</span> <span class="pre">Other...</span></code> Option during <a class="reference internal" href="tutorial.html#hub-server-login"><span class="std std-ref">server login</span></a> you can paste an arbitrary reference in the form of <code class="docutils literal notranslate"><span class="pre">docker_registry/organization/image_name:image_version</span></code>. As an example we can get the <code class="docutils literal notranslate"><span class="pre">2023.05.08</span></code> version of the pangeo tensorflow notebook by pasting <code class="docutils literal notranslate"><span class="pre">quay.io/pangeo/ml-notebook:2023.05.08</span></code>.</p>
 <p>If you want to build your own docker image for your project, take a look at <a class="reference external" href="https://github.com/2i2c-org/hub-user-image-template">this template</a> and the instructions to learn how to use <a class="reference external" href="https://github.com/jupyterhub/repo2docker">repo2docker</a> to set up CI workflows to automatically build docker images from your repository.</p>
 </section>
 <section id="installing-additonal-packages">
-<h4>Installing additonal packages<a class="headerlink" href="#installing-additonal-packages" title="Permalink to this headline">¶</a></h4>
+<h3>Installing additonal packages<a class="headerlink" href="#installing-additonal-packages" title="Permalink to this headline">¶</a></h3>
 <p>You can install additional packages using <code class="docutils literal notranslate"><span class="pre">pip</span></code> and <code class="docutils literal notranslate"><span class="pre">conda</span></code>.
 However, these will disappear when your server shuts down.</p>
 <p>For a more permanent solution we recommend building project specific dockerfiles and using those as <a class="reference internal" href="#hub-image-custom"><span class="std std-ref">custom images</span></a>.</p>
 </section>
 </section>
 <section id="files-and-data">
-<h3>Files and Data<a class="headerlink" href="#files-and-data" title="Permalink to this headline">¶</a></h3>
+<h2>Files and Data<a class="headerlink" href="#files-and-data" title="Permalink to this headline">¶</a></h2>
 <p>Data and files work differently in the cloud.
 To help onboard you to this new way of working, we have written a guide to Files and Data in the Cloud:</p>
 <ul class="simple">
@@ -690,7 +508,7 @@ To help onboard you to this new way of working, we have written a guide to Files
 </ul>
 <p>We recommend you read this thoroughly, especially the part about Git and GitHub.</p>
 <section id="your-user-directory">
-<span id="hub-data-user-dir"></span><h4>Your User Directory<a class="headerlink" href="#your-user-directory" title="Permalink to this headline">¶</a></h4>
+<span id="hub-guide-data-user-dir"></span><h3>Your User Directory<a class="headerlink" href="#your-user-directory" title="Permalink to this headline">¶</a></h3>
 <p>When you open your hub, you can navigate to the “File Browser” and see all the files in your User Directory
 <a class="reference internal" href="https://github.com/leap-stc/leap-stc.github.io/assets/14314623/3ba6b45a-a077-4824-b0ec-9c111af50c33"><img alt="image" src="https://github.com/leap-stc/leap-stc.github.io/assets/14314623/3ba6b45a-a077-4824-b0ec-9c111af50c33" style="width: 442px;" /></a></p>
 <p>Your User Directory behaves very similar to a filestystem on your computer. If you save a file from a notebook, you will see it appear in the File Browser (you might have to wait a few seconds or press refresh) and you can use a terminal to navigate the terminal as you would on a UNIX machine:</p>
@@ -707,12 +525,12 @@ To help onboard you to this new way of working, we have written a guide to Files
 </div>
 </section>
 <section id="leap-pangeo-buckets">
-<span id="hub-data-buckets"></span><h4>LEAP-Pangeo Buckets<a class="headerlink" href="#leap-pangeo-buckets" title="Permalink to this headline">¶</a></h4>
+<span id="hub-data-buckets"></span><h3>LEAP-Pangeo Buckets<a class="headerlink" href="#leap-pangeo-buckets" title="Permalink to this headline">¶</a></h3>
 <p>LEAP-Pangeo provides users two cloud buckets to store data</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">gs://leap-scratch/</span></code> - Temporary Storage deleted after 7 days. Use this bucket for testing and storing large intermediate results. <a class="reference external" href="https://docs.2i2c.org/user/topics/data/cloud/#scratch-bucket">More info</a></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">gs://leap-persistent</span></code> - Persistent Storage. Use this bucket for storing results you want to share with other members.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">gs://leap-persistent-ro</span></code> - Persistent Storage with read-only access for most users. To upload data to this bucket you need to use <a class="reference internal" href="#hub-data-upload-hpc"><span class="std std-ref">this</span></a> method below.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gs://leap-persistent-ro</span></code> - Persistent Storage with read-only access for most users. To upload data to this bucket you need to use <a class="reference internal" href="../guides/hub_guides.html#hub-data-upload-hpc"><span class="std std-ref">this</span></a> method below.</p></li>
 </ul>
 <p>Files stored on each of those buckets can be accessed by any LEAP member, so be concious in the way you use these.</p>
 <ul class="simple">
@@ -721,7 +539,7 @@ To help onboard you to this new way of working, we have written a guide to Files
 </ul>
 </section>
 <section id="inspecting-contents-of-the-bucket">
-<span id="hub-data-list"></span><h4>Inspecting contents of the bucket<a class="headerlink" href="#inspecting-contents-of-the-bucket" title="Permalink to this headline">¶</a></h4>
+<span id="hub-data-list"></span><h3>Inspecting contents of the bucket<a class="headerlink" href="#inspecting-contents-of-the-bucket" title="Permalink to this headline">¶</a></h3>
 <p>We recommend using <a class="reference external" href="https://gcsfs.readthedocs.io/en/latest/">gcsfs</a> or <a class="reference external" href="https://filesystem-spec.readthedocs.io/en/latest/">fsspec</a> which provide a filesytem-like interface for python.</p>
 <p>You can e.g. list the contents of your personal folder with</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gcsfs</span>
@@ -731,7 +549,7 @@ To help onboard you to this new way of working, we have written a guide to Files
 </div>
 </section>
 <section id="basic-writing-to-and-reading-from-cloud-buckets">
-<span id="hub-data-read-write"></span><h4>Basic writing to and reading from cloud buckets<a class="headerlink" href="#basic-writing-to-and-reading-from-cloud-buckets" title="Permalink to this headline">¶</a></h4>
+<span id="hub-data-read-write"></span><h3>Basic writing to and reading from cloud buckets<a class="headerlink" href="#basic-writing-to-and-reading-from-cloud-buckets" title="Permalink to this headline">¶</a></h3>
 <p>We do not recommend uploading large files (e.g. netcdf) directly to the bucket. Instead we recommend to write data as ARCO (Analysis-Ready Cloud-Optimized) formats like <a class="reference external" href="https://zarr.dev">zarr</a>(for n-dimensional arrays) and <a class="reference external" href="https://parquet.apache.org">parquet</a>(for tabular data) (read more <a class="reference external" href="https://ieeexplore.ieee.org/document/9354557">here</a> why we recommend ARCO formats).</p>
 <p>If you work with xarray Datasets switching the storage format is as easy as swapping out a single line when reading/writing data:</p>
 <p>Xarray provides a method to stream results of a computation to zarr</p>
@@ -751,7 +569,7 @@ To help onboard you to this new way of working, we have written a guide to Files
 <p>… and you can give this to any other registered LEAP user and they can load it exactly like you can!</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Note that providing the url starting with <code class="docutils literal notranslate"><span class="pre">gs://...</span></code> is assumes that you have appropriate credentials set up in your environment to read/write to that bucket. On the hub these are already set up for you to work with the <a class="reference internal" href="#hub-data-buckets"><span class="std std-ref">LEAP-Pangeo Buckets</span></a>, but if you are trying to interact with non-public buckets you need to authenticate yourself. Check out the sections <a class="reference internal" href="#hub-data-upload-manual"><span class="std std-ref">below</span></a> to see an example how to do that.</p>
+<p>Note that providing the url starting with <code class="docutils literal notranslate"><span class="pre">gs://...</span></code> is assumes that you have appropriate credentials set up in your environment to read/write to that bucket. On the hub these are already set up for you to work with the <a class="reference internal" href="#hub-data-buckets"><span class="std std-ref">LEAP-Pangeo Buckets</span></a>, but if you are trying to interact with non-public buckets you need to authenticate yourself. Check out the sections <a class="reference internal" href="../guides/hub_guides.html#hub-guide-data-upload-manual"><span class="std std-ref">below</span></a> to see an example how to do that.</p>
 </div>
 <p>You can also write other files directly to the bucket by using <a class="reference external" href="https://filesystem-spec.readthedocs.io/en/latest/api.html#fsspec.open"><code class="docutils literal notranslate"><span class="pre">fsspec.open</span></code></a> similarly to the python builtin <a class="reference external" href="https://docs.python.org/3/library/functions.html#open"><code class="docutils literal notranslate"><span class="pre">open</span></code></a></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;gs://leap-scratch/funky-user/test.txt&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -783,7 +601,6 @@ To help onboard you to this new way of working, we have written a guide to Files
 <blockquote>
 <div><p>Make sure to specify <code class="docutils literal notranslate"><span class="pre">mode='rb'</span></code> or <code class="docutils literal notranslate"><span class="pre">move='wb'</span></code> for binary files.</p>
 </div></blockquote>
-</section>
 <section id="deleting-from-cloud-buckets">
 <h4>Deleting from cloud buckets<a class="headerlink" href="#deleting-from-cloud-buckets" title="Permalink to this headline">¶</a></h4>
 <div class="admonition warning">
@@ -800,196 +617,7 @@ To help onboard you to this new way of working, we have written a guide to Files
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fs</span><span class="o">.</span><span class="n">rm</span><span class="p">(</span><span class="s1">&#39;leap-scratch/funky-user/processed_store.zarr&#39;</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The warning from above is even more important here! Make sure that the folder you are deleting does not contain any data you do not want to delete!</p>
-</div>
 </section>
-<section id="i-have-a-dataset-and-want-to-work-with-it-on-the-hub-how-do-i-upload-it">
-<h4>I have a dataset and want to work with it on the hub. How do I upload it?<a class="headerlink" href="#i-have-a-dataset-and-want-to-work-with-it-on-the-hub-how-do-i-upload-it" title="Permalink to this headline">¶</a></h4>
-<p>If you would like to add a new dataset to the LEAP Data Library, please first raise an issue <a class="reference external" href="https://github.com/leap-stc/data-management/issues/new?assignees=&amp;labels=dataset&amp;template=new_dataset.yaml&amp;title=New+Dataset+%5BDataset+Name%5D">here</a>. This enables us to track detailed information about proposed datasets and have an open discussion about how to upload it to the cloud.</p>
-<p>We distinguish between two primary <em>types</em> of data to upload: “Original” and “Published” data.</p>
-<ul class="simple">
-<li><p><strong>Published Data</strong> has been published and archived in a publically accessible location (e.g. a data repository like <a class="reference external" href="https://zenodo.org">zenodo</a> or <a class="reference external" href="https://figshare.com">figshare</a>). We do not recommend uploading this data to the cloud directly, but instead use <a class="reference external" href="https://pangeo-forge.readthedocs.io/en/latest/">Pangeo Forge</a> to transform and upload it to the cloud. This ensures that the data is stored in an ARCO format and can be easily accessed by other LEAP members.</p></li>
-<li><p><strong>Original Data</strong> is any dataset that is produced by researchers at LEAP and has not been published yet. The main use case for this data is to share it with other LEAP members and collaborate on it. For original data we support direct uploaded to the cloud. <em>Be aware that original data could change rapidly as the data producer is iterating on their code</em>. We encourage all datasets to be archived and published before using them in scientific publications.</p></li>
-</ul>
-<section id="transform-and-upload-published-data-to-an-arco-format-with-pangeo-forge">
-<h5>Transform and Upload published data to an ARCO format (with Pangeo Forge)<a class="headerlink" href="#transform-and-upload-published-data-to-an-arco-format-with-pangeo-forge" title="Permalink to this headline">¶</a></h5>
-<p>Coming Soon</p>
-</section>
-<section id="upload-medium-sized-original-data-from-your-local-machine">
-<span id="hub-data-upload-manual"></span><h5>Upload medium sized original data from your local machine<a class="headerlink" href="#upload-medium-sized-original-data-from-your-local-machine" title="Permalink to this headline">¶</a></h5>
-<p>For medium sized datasets, that can be uploaded within an hour, you can use a temporary access token generated on the JupyterHub to upload data to the cloud.</p>
-<ul class="simple">
-<li><p>Set up a new environment on your local machine (e.g. laptop)</p></li>
-</ul>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>leap_pangeo_transfer<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9<span class="w"> </span>google-auth<span class="w"> </span>gcsfs<span class="w"> </span>jupyterlab<span class="w"> </span>xarray<span class="w"> </span>zarr<span class="w"> </span>dask
-</pre></div>
-</div>
-<blockquote>
-<div><p>add any other dependencies (e.g. netcdf4) that you need to read your data</p>
-</div></blockquote>
-<ul class="simple">
-<li><p>Activate the environment</p></li>
-</ul>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>leap_pangeo_transfer
-</pre></div>
-</div>
-<p>and set up a jupyter notbook (or a pure python script) that loads your data in as few xarray datasets as possible. For instance, if you have one dataset that consists of many files split in time, you should set your notebook up to read all the files using xarray into a single dataset, and then try to write out a small part of the dataset to a zarr store.</p>
-<ul class="simple">
-<li><p>Now start up a <span class="xref myst">LEAP-Pangeo server</span> and open a terminal. Install the <a class="reference external" href="https://cloud.google.com/sdk/docs/install">Google Cloud SDK</a> using mamba</p></li>
-</ul>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>install<span class="w"> </span>google-cloud-sdk
-</pre></div>
-</div>
-<p>Now you can generate a temporary token (valid for 1 hour) that allows you to upload data to the cloud.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>gcloud<span class="w"> </span>auth<span class="w"> </span>print-access-token
-</pre></div>
-</div>
-<p>Copy the resulting token into a plain text file <code class="docutils literal notranslate"><span class="pre">token.txt</span></code> in a convenient location on your <strong>local machine</strong>.</p>
-<ul class="simple">
-<li><p>Now start a JupyterLab notebook and paste the following code into a cell:</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gcsfs</span>
-<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
-<span class="kn">from</span> <span class="nn">google.cloud</span> <span class="kn">import</span> <span class="n">storage</span>
-<span class="kn">from</span> <span class="nn">google.oauth2.credentials</span> <span class="kn">import</span> <span class="n">Credentials</span>
-
-<span class="c1"># import an access token</span>
-<span class="c1"># - option 1: read an access token from a file</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;path/to/your/token.txt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">access_token</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-
-<span class="c1"># setup a storage client using credentials</span>
-<span class="n">credentials</span> <span class="o">=</span> <span class="n">Credentials</span><span class="p">(</span><span class="n">access_token</span><span class="p">)</span>
-<span class="n">fs</span> <span class="o">=</span> <span class="n">gcsfs</span><span class="o">.</span><span class="n">GCSFileSystem</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="n">credentials</span><span class="p">)</span>
-</pre></div>
-</div>
-<blockquote>
-<div><p>Make sure to replace the <code class="docutils literal notranslate"><span class="pre">path/to/your/token.txt</span></code> with the actual path to your token file.</p>
-</div></blockquote>
-<p>Try to write a small dataset to the cloud:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">to_dataset</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
-<span class="n">mapper</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">get_mapper</span><span class="p">(</span><span class="s1">&#39;gs://leap-scratch/&lt;your_username&gt;/test_offsite_upload.zarr&#39;</span><span class="p">)</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">to_zarr</span><span class="p">(</span><span class="n">mapper</span><span class="p">)</span>
-</pre></div>
-</div>
-<blockquote>
-<div><p>Replace <code class="docutils literal notranslate"><span class="pre">&lt;your_username&gt;</span></code> with your actual username on the hub.</p>
-</div></blockquote>
-<ul class="simple">
-<li><p>Make sure that you can read the test dataset from within the hub (go back to <a class="reference internal" href="#hub-data-read-write"><span class="std std-ref">Basic writing to and reading from cloud buckets</span></a>).</p></li>
-<li><p>Now the last step is to paste the code to load your actual dataset into the notebook and use <code class="docutils literal notranslate"><span class="pre">.to_zarr</span></code> to upload it.</p></li>
-</ul>
-<blockquote>
-<div><p>Make sure to give the store a meaningful name, and raise an issue in the <a class="reference external" href="https://github.com/leap-stc/data-management/issues">data-management repo</a> to get the dataset added to the LEAP Data Library.</p>
-</div></blockquote>
-<blockquote>
-<div><p>Make sure to use a different bucket than <code class="docutils literal notranslate"><span class="pre">leap-scratch</span></code>, since that will be deleted every 7 days! For more info refer to the available <a class="reference internal" href="#hub-data-buckets"><span class="std std-ref">storage buckets</span></a>.</p>
-</div></blockquote>
-</section>
-<section id="uploading-large-original-data-from-an-hpc-system-no-browser-access-on-the-system-available">
-<span id="hub-data-upload-hpc"></span><h5>Uploading large original data from an HPC system (no browser access on the system available)<a class="headerlink" href="#uploading-large-original-data-from-an-hpc-system-no-browser-access-on-the-system-available" title="Permalink to this headline">¶</a></h5>
-<p>A commong scenario is the following: A researcher/student has run a simulation on a High Performance Computer (HPC) at their institution, but now wants to collaboratively work on the analysis or train a machine learning model with this data. For this they need to upload it to the cloud storage.</p>
-<p>The following steps will guide you through the steps needed to authenticate and upload data to the cloud, but might have to be slightly modified depending on the actual setup of the users HPC.</p>
-<p><strong>Conversion Script/Notebook</strong></p>
-<p>In most cases you do not just want to upload the data in its current form (e.g. many netcdf files).</p>
-<!-- TODO: Add an example of why this is bad for performance -->
-<p>Instead we will load the data into an <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.Dataset.html"><code class="docutils literal notranslate"><span class="pre">xarray.Dataset</span></code></a> and then write that Dataset object directly to a zarr store in the cloud. For this you need a python environment with <code class="docutils literal notranslate"><span class="pre">xarray,</span> <span class="pre">gcsfs,</span> <span class="pre">zarr</span></code> installed (you might need additional dependencies for your particular use case).</p>
-<ol>
-<li><p>Spend some time to set up a python script/jupyter notebook on the HPC system that opens your files and combines them in to one or more xarray.Datasets (combine as many files as sensible into a single dataset). Make sure that your data is lazily loaded and the <code class="docutils literal notranslate"><span class="pre">Dataset.data</span></code> is a <a class="reference external" href="https://docs.dask.org/en/stable/array.html">dask array</a></p></li>
-<li><p>Check your dataset:</p>
-<ul class="simple">
-<li><p>Check that the metadata is correct.</p></li>
-<li><p>Check that all the variables/dimensions are in the dataset</p></li>
-<li><p>Check the dask chunksize. A general rule is to aim for around 100MB size, but the size and structure of chunking that is optimal depends heavily on the later use case.</p></li>
-</ul>
-<!-- Some more info on chunking? -->
-</li>
-<li><p>Try to write out a subset of the data locally by calling the <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.Dataset.to_zarr.html"><code class="docutils literal notranslate"><span class="pre">.to_zarr</span></code></a> method on the dataset.</p></li>
-</ol>
-<!-- TODO: Warn not to write out the full dataset -->
-<p>Once that works we can move on to the authentication.</p>
-<p><strong>Upload Prerequisites</strong></p>
-<p>Before we are able to set up authentication we need to make sure our HPC and local computer (required) are set up correctly.</p>
-<ul class="simple">
-<li><p>We manage access rights through <a class="reference external" href="https://groups.google.com">Google Groups</a>. Please contact the <a class="reference internal" href="../support.html#support-data-compute-team"><span class="std std-ref">Data and Computation Team</span></a> to get added to the appropriate group (a gmail address is required for this).</p></li>
-<li><p>Make sure to install the <a class="reference external" href="https://cloud.google.com/sdk/docs/install">Google Cloud SDK</a> in both your <span style="color:#9301B4">HPC environment</span>, and your local computer that can open a web browser (e.g. your laptop).</p></li>
-</ul>
-<p><strong>Steps</strong>
-Steps executed on your <span style="color:#22B401">”local” computer (e.g. laptop)</span> will be colored in green and steps on your <span style="color:#9301B4">”remote” computer (e.g. HPC)</span> in purple.</p>
-<ol>
-<li><p>SSH into the HPC</p></li>
-<li><p><span style="color:#9301B4">Check that you have an internet connection with <code class="docutils literal notranslate"><span class="pre">ping</span> <span class="pre">www.google.com</span></code></span></p></li>
-<li><p><span style="color:#9301B4">Request no browser authentication: </span></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gcloud</span> <span class="n">auth</span> <span class="n">application</span><span class="o">-</span><span class="n">default</span> <span class="n">login</span> <span class="o">--</span><span class="n">scopes</span><span class="o">=</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">googleapis</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">auth</span><span class="o">/</span><span class="n">devstorage</span><span class="o">.</span><span class="n">read_write</span><span class="p">,</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">googleapis</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">auth</span><span class="o">/</span><span class="n">iam</span><span class="o">.</span><span class="n">test</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">browser</span>
-</pre></div>
-</div>
-<blockquote>
-<div><p>🚨 It is very important to include the <code class="docutils literal notranslate"><span class="pre">--scopes=</span></code> argument for security reasons. Do not run this command without it!</p>
-</div></blockquote>
-</li>
-<li><p>Follow the onscreen prompt and paste the command into a terminal on your local machine.</p></li>
-<li><p><span style="color:#22B401">This will open a browser window. Authenticate with the gmail account that was added to the google group. </span></p></li>
-<li><p><span style="color:#22B401">Go back to the terminal and follow the onscreen instructions.</span> Copy the text from the command line and <span style="color:#9301B4">paste the command in the open dialog on the remote machine.</span></p></li>
-<li><p><span style="color:#9301B4">Make sure to note the path to the auth json!</span> It will be something like <code class="docutils literal notranslate"><span class="pre">.../.config/gcloud/....json</span></code>.</span></p></li>
-</ol>
-<p>Now you are have everything you need to authenticate.</p>
-<p>Lets verify that you can write a small dummy dataset to the cloud. In your notebook/script run the following (make sure to replace the filename and your username as instructed).</p>
-<p>Your dataset should now be available for all LEAP members 🎉🚀</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
-<span class="kn">import</span> <span class="nn">gcsfs</span>
-<span class="kn">import</span> <span class="nn">json</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;your_auth_file.json&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span> <span class="c1">#🚨 make sure to enter the `.json` file from step 7</span>
-	<span class="n">token</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-
-<span class="c1"># test write a small dummy xarray dataset to zarr</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span><span class="o">.</span><span class="n">to_dataset</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">)</span> 
-<span class="c1"># Once you have confirmed </span>
-
-<span class="n">fs</span> <span class="o">=</span> <span class="n">gcsfs</span><span class="o">.</span><span class="n">GCSFileSystem</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
-<span class="n">mapper</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">get_mapper</span><span class="p">(</span><span class="s2">&quot;gs://leap-persistent/&lt;username&gt;/testing/demo_write_from_remote.zarr&quot;</span><span class="p">)</span> <span class="c1">#🚨 enter your leap (github) username here</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">to_zarr</span><span class="p">(</span><span class="n">mapper</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Now you can repeat the same steps but replace your dataset with the full dataset from above and leave your python code running until the upload has finished. Depending on the internet connection speed and the size of the full dataset, this can take a while.</p>
-<p>If you want to see a progress bar, you can wrap the call to <code class="docutils literal notranslate"><span class="pre">.to_zarr</span></code> with a <a class="reference external" href="https://docs.dask.org/en/stable/diagnostics-local.html#progress-bar">dask progress bar</a></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dask.diagnostics</span> <span class="kn">import</span> <span class="n">ProgressBar</span>
-<span class="k">with</span> <span class="n">ProgressBar</span><span class="p">():</span>
-   <span class="n">ds</span><span class="o">.</span><span class="n">to_zarr</span><span class="p">(</span><span class="n">mapper</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Once the data has been uploaded, make sure to erase the <code class="docutils literal notranslate"><span class="pre">.../.config/gcloud/....json</span></code> file from step 7, and ask to be removed from the Google Group.</p>
-</section>
-</section>
-</section>
-<section id="dask">
-<h3>Dask<a class="headerlink" href="#dask" title="Permalink to this headline">¶</a></h3>
-<p>To help you scale up calculations using a cluster, the Hub is configured with Dask Gateway.
-For a quick guide on how to start a Dask Cluster, consult this page from the Pangeo docs:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://pangeo.io/cloud.html#dask">https://pangeo.io/cloud.html#dask</a></p></li>
-</ul>
-</section>
-<section id="gpus">
-<h3>GPUs<a class="headerlink" href="#gpus" title="Permalink to this headline">¶</a></h3>
-<p>Tier2 and Tier3 members (see <a class="reference internal" href="../policies/users_roles.html"><span class="doc std std-doc">Users and Categories</span></a>) have access to a ‘Large’ Server instance with GPU. Currently the GPUs are <a class="reference external" href="https://www.nvidia.com/en-us/data-center/tesla-t4/">Nvidia T4</a> models. To check what GPU is available on your server you can use <a class="reference external" href="https://developer.nvidia.com/nvidia-system-management-interface"><code class="docutils literal notranslate"><span class="pre">nvidia-smi</span></code></a> in the terminal window. You should get output similar to this:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">   </span>nvidia-smi
-<span class="w">   </span>
-<span class="w">   </span>+-----------------------------------------------------------------------------+
-<span class="w">   </span><span class="p">|</span><span class="w"> </span>NVIDIA-SMI<span class="w"> </span><span class="m">510</span>.47.03<span class="w">    </span>Driver<span class="w"> </span>Version:<span class="w"> </span><span class="m">510</span>.47.03<span class="w">    </span>CUDA<span class="w"> </span>Version:<span class="w"> </span><span class="m">11</span>.6<span class="w">     </span><span class="p">|</span>
-<span class="w">   </span><span class="p">|</span>-------------------------------+----------------------+----------------------+
-<span class="w">   </span><span class="p">|</span><span class="w"> </span>GPU<span class="w">  </span>Name<span class="w">        </span>Persistence-M<span class="p">|</span><span class="w"> </span>Bus-Id<span class="w">        </span>Disp.A<span class="w"> </span><span class="p">|</span><span class="w"> </span>Volatile<span class="w"> </span>Uncorr.<span class="w"> </span>ECC<span class="w"> </span><span class="p">|</span>
-<span class="w">   </span><span class="p">|</span><span class="w"> </span>Fan<span class="w">  </span>Temp<span class="w">  </span>Perf<span class="w">  </span>Pwr:Usage/Cap<span class="p">|</span><span class="w">         </span>Memory-Usage<span class="w"> </span><span class="p">|</span><span class="w"> </span>GPU-Util<span class="w">  </span>Compute<span class="w"> </span>M.<span class="w"> </span><span class="p">|</span>
-<span class="w">   </span><span class="p">|</span><span class="w">                               </span><span class="p">|</span><span class="w">                      </span><span class="p">|</span><span class="w">               </span>MIG<span class="w"> </span>M.<span class="w"> </span><span class="p">|</span>
-<span class="w">   </span><span class="p">|</span><span class="o">===============================</span>+<span class="o">======================</span>+<span class="o">======================</span><span class="p">|</span>
-<span class="w">   </span><span class="p">|</span><span class="w">   </span><span class="m">0</span><span class="w">  </span>Tesla<span class="w"> </span>T4<span class="w">            </span>Off<span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="m">00000000</span>:00:04.0<span class="w"> </span>Off<span class="w"> </span><span class="p">|</span><span class="w">                    </span><span class="m">0</span><span class="w"> </span><span class="p">|</span>
-<span class="w">   </span><span class="p">|</span><span class="w"> </span>N/A<span class="w">   </span>41C<span class="w">    </span>P8<span class="w">    </span>11W<span class="w"> </span>/<span class="w">  </span>70W<span class="w"> </span><span class="p">|</span><span class="w">      </span>0MiB<span class="w"> </span>/<span class="w"> </span>15360MiB<span class="w"> </span><span class="p">|</span><span class="w">      </span><span class="m">0</span>%<span class="w">      </span>Default<span class="w"> </span><span class="p">|</span>
-<span class="w">   </span><span class="p">|</span><span class="w">                               </span><span class="p">|</span><span class="w">                      </span><span class="p">|</span><span class="w">                  </span>N/A<span class="w"> </span><span class="p">|</span>
-<span class="w">   </span>+-------------------------------+----------------------+----------------------+
-</pre></div>
-</div>
 </section>
 </section>
 </section>
@@ -1019,11 +647,11 @@ For a quick guide on how to start a Dask Cluster, consult this page from the Pan
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../policies/users_roles.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="tutorial.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Users and Categories</p>
+            <p class="prev-next-title">Getting Started</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="architecture.html" title="next page">

@@ -2,7 +2,7 @@
 
 If you use any of the LEAP resources, please follow these guidlines to recognize our work.
 
-## Add your publication to our [LEAP publication tracker]()
+## Add your publication to our [LEAP publication tracker](https://docs.google.com/spreadsheets/d/1zVfivXK-GKLEma_uc-SAIRs7OP_qfTUmsypAQeVqstI/edit#gid=645657151)
 
 ## Cite LEAP-Pangeo Platform
 If you used the JupyterHub platform to perform analysis, please add a statement similar to this to your acknowledgment section of the paper:

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Common Problems (with Solutions) &#8212; Technical Documentation</title>
+    <title>Getting Started &#8212; Technical Documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="LEAP-Pangeo for Education" href="../guides/education.html" />
-    <link rel="prev" title="How-To Guides for Using the Hub" href="../guides/hub_guides.html" />
+    <link rel="next" title="LEAP-Pangeo JupyterHub" href="jupyterhub.html" />
+    <link rel="prev" title="LEAP Technical Documentation" href="../intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -104,9 +104,9 @@ const thebe_selector_output = ".output, .cell_output"
   LEAP-Pangeo
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="tutorial.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Getting Started
   </a>
  </li>
@@ -131,14 +131,14 @@ const thebe_selector_output = ".output, .cell_output"
   Guides
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../guides/hub_guides.html">
    How-To Guides for Using the Hub
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="solutions.html">
    Common Problems (with Solutions)
   </a>
  </li>
@@ -242,7 +242,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/leap-pangeo/solutions.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/leap-pangeo/tutorial.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -262,7 +262,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/leap-stc/leap-stc.github.io/issues/new?title=Issue%20on%20page%20%2Fleap-pangeo/solutions.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/leap-stc/leap-stc.github.io/issues/new?title=Issue%20on%20page%20%2Fleap-pangeo/tutorial.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -289,21 +289,36 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dask">
-   Dask
+  <a class="reference internal nav-link" href="#how-can-i-get-access-to-the-hub">
+   How can I get access to the Hub
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hub-usage">
+   Hub Usage
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#killed-workers">
-     “Killed Workers”
+    <a class="reference internal nav-link" href="#logging-in">
+     Logging In
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#datasets-chunks-too-large">
-       Datasets Chunks too large
+      <a class="reference internal nav-link" href="#gpus">
+       GPUs
       </a>
      </li>
     </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-jupyterlab">
+     Using JupyterLab
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#shutting-down-your-server">
+     Shutting Down Your Server
+    </a>
    </li>
   </ul>
  </li>
@@ -317,7 +332,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Common Problems (with Solutions)</h1>
+                <h1>Getting Started</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -328,21 +343,36 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dask">
-   Dask
+  <a class="reference internal nav-link" href="#how-can-i-get-access-to-the-hub">
+   How can I get access to the Hub
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hub-usage">
+   Hub Usage
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#killed-workers">
-     “Killed Workers”
+    <a class="reference internal nav-link" href="#logging-in">
+     Logging In
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#datasets-chunks-too-large">
-       Datasets Chunks too large
+      <a class="reference internal nav-link" href="#gpus">
+       GPUs
       </a>
      </li>
     </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-jupyterlab">
+     Using JupyterLab
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#shutting-down-your-server">
+     Shutting Down Your Server
+    </a>
    </li>
   </ul>
  </li>
@@ -355,34 +385,75 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="common-problems-with-solutions">
-<h1>Common Problems (with Solutions)<a class="headerlink" href="#common-problems-with-solutions" title="Permalink to this headline">¶</a></h1>
-<section id="dask">
-<h2>Dask<a class="headerlink" href="#dask" title="Permalink to this headline">¶</a></h2>
-<section id="killed-workers">
-<h3>“Killed Workers”<a class="headerlink" href="#killed-workers" title="Permalink to this headline">¶</a></h3>
-<p>The “Killed Worker” message in dask can result due to a variety of reasons. Here are some of the common reasons why you might see such an error message</p>
-<section id="datasets-chunks-too-large">
-<h4>Datasets Chunks too large<a class="headerlink" href="#datasets-chunks-too-large" title="Permalink to this headline">¶</a></h4>
-<p><strong>Issue</strong>
-The default dask worker configuration can deal well with dataset chunk sizes of ~100MB. If the chunks of your data are significantly larger, your worker might crash just upon loading a few of these chunks into memory.</p>
-<p><strong>Solution</strong>
-You can change the configuration of your dask workers and increase the memory each worker has to deal with larger chunks. You can adjust the memory by passing additional <a class="reference external" href="https://gateway.dask.org/cluster-options.html">options</a> to the dask-gatway cluster upon creation:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dask_gateway</span> <span class="kn">import</span> <span class="n">Gateway</span>
-<span class="n">gateway</span> <span class="o">=</span> <span class="n">Gateway</span><span class="p">()</span>
-<span class="n">options</span> <span class="o">=</span> <span class="n">gateway</span><span class="o">.</span><span class="n">cluster_options</span><span class="p">()</span>
-
-<span class="n">options</span><span class="o">.</span><span class="n">worker_memory</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># 10 GB of memory per worker.</span>
-
-<span class="c1"># Create a cluster with those options</span>
-<span class="n">cluster</span> <span class="o">=</span> <span class="n">gateway</span><span class="o">.</span><span class="n">new_cluster</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
-<span class="n">cluster</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="n">client</span> <span class="o">=</span> <span class="n">cluster</span><span class="o">.</span><span class="n">get_client</span><span class="p">()</span>
+  <section class="tex2jax_ignore mathjax_ignore" id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<p>To get started using the hub, check out this video by <a class="reference external" href="https://github.com/jmunroe">James Munroe</a> from <a class="reference external" href="https://2i2c.org">2i2c</a> explaining the architecture.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RKXWxtNqWKw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<section id="how-can-i-get-access-to-the-hub">
+<h2>How can I get access to the Hub<a class="headerlink" href="#how-can-i-get-access-to-the-hub" title="Permalink to this headline">¶</a></h2>
+<p>Only LEAP members will be able to access the hub. Please <a class="reference internal" href="../policies/users_roles.html#users-membership-apply"><span class="std std-ref">become a member</span></a> and make sure you accept the <a class="reference internal" href="../policies/users_roles.html#users-membership-invite"><span class="std std-ref">invitation on github</span></a> before proceeding</p>
+</section>
+<section id="hub-usage">
+<h2>Hub Usage<a class="headerlink" href="#hub-usage" title="Permalink to this headline">¶</a></h2>
+<p>This is a rough and ready guide to using the Hub.
+This documentation will be expanded as we learn and evolve.
+Feel free to <a class="reference external" href="https://github.com/leap-stc/leap-stc.github.io/blob/main/book/leap-pangeo/jupyterhub.md">edit it yourself</a> if you have suggetions for improvement!</p>
+<section id="logging-in">
+<span id="hub-server-login"></span><h3>Logging In<a class="headerlink" href="#logging-in" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>👀 Navigate to <a class="reference external" href="https://leap.2i2c.cloud/">https://leap.2i2c.cloud/</a> and click the big orange button that says “Log in to continue”</p></li>
+<li><p>🔐 You will be prompted to authorize a GitHub application. Say “yes” to everything.
+Note you must belong to the appropriate GitHub team in order to access the hub.
+See <a class="reference internal" href="../policies/users_roles.html"><span class="doc">Users and Categories</span></a>  for more information.</p></li>
+<li><p>📠 You will redirect to a screen with the following options.</p></li>
+</ol>
+<a class="reference internal image-reference" href="https://github.com/leap-stc/leap-stc.github.io/assets/14314623/088946a1-896f-4ff8-af91-8107c9f14cfd"><img alt="image" src="https://github.com/leap-stc/leap-stc.github.io/assets/14314623/088946a1-896f-4ff8-af91-8107c9f14cfd" style="width: 410px;" /></a>
+<blockquote>
+<div><p>Note: Depending on your <a class="reference internal" href="../policies/users_roles.html#users-membership"><span class="std std-ref">membership</span></a> you might see additional options (e.g. for GPU machines)</p>
+</div></blockquote>
+<p>You have to make 3 choices here:</p>
+<ul class="simple">
+<li><p>The machine type (Choose between “CPU only” or “GPU” if available)
+<strong>⚠️The GPU images should be used only when needed to accelerate model training.</strong></p></li>
+<li><p>The software environment (“Image”). Find more info in the <a class="reference internal" href="#hub-image"><span class="std std-ref">Software Environment Section</span></a> below.</p></li>
+<li><p>The node share. These are shared resources, and you should try to use the smallest image you need. You can easily start up a new server with a larger share if you find your work to be limited by CPU/RAM</p></li>
+</ul>
+<ol class="simple">
+<li><p>🕥 Wait for your server to start up. It can take up to few minutes.</p></li>
+</ol>
+<section id="gpus">
+<h4>GPUs<a class="headerlink" href="#gpus" title="Permalink to this headline">¶</a></h4>
+<p>Tier2 and Tier3 members (see <a class="reference internal" href="../policies/users_roles.html"><span class="doc std std-doc">Users and Categories</span></a>) have access to a ‘Large’ Server instance with GPU. Currently the GPUs are <a class="reference external" href="https://www.nvidia.com/en-us/data-center/tesla-t4/">Nvidia T4</a> models. To check what GPU is available on your server you can use <a class="reference external" href="https://developer.nvidia.com/nvidia-system-management-interface"><code class="docutils literal notranslate"><span class="pre">nvidia-smi</span></code></a> in the terminal window. You should get output similar to this:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">   </span>nvidia-smi
+<span class="w">   </span>
+<span class="w">   </span>+-----------------------------------------------------------------------------+
+<span class="w">   </span><span class="p">|</span><span class="w"> </span>NVIDIA-SMI<span class="w"> </span><span class="m">510</span>.47.03<span class="w">    </span>Driver<span class="w"> </span>Version:<span class="w"> </span><span class="m">510</span>.47.03<span class="w">    </span>CUDA<span class="w"> </span>Version:<span class="w"> </span><span class="m">11</span>.6<span class="w">     </span><span class="p">|</span>
+<span class="w">   </span><span class="p">|</span>-------------------------------+----------------------+----------------------+
+<span class="w">   </span><span class="p">|</span><span class="w"> </span>GPU<span class="w">  </span>Name<span class="w">        </span>Persistence-M<span class="p">|</span><span class="w"> </span>Bus-Id<span class="w">        </span>Disp.A<span class="w"> </span><span class="p">|</span><span class="w"> </span>Volatile<span class="w"> </span>Uncorr.<span class="w"> </span>ECC<span class="w"> </span><span class="p">|</span>
+<span class="w">   </span><span class="p">|</span><span class="w"> </span>Fan<span class="w">  </span>Temp<span class="w">  </span>Perf<span class="w">  </span>Pwr:Usage/Cap<span class="p">|</span><span class="w">         </span>Memory-Usage<span class="w"> </span><span class="p">|</span><span class="w"> </span>GPU-Util<span class="w">  </span>Compute<span class="w"> </span>M.<span class="w"> </span><span class="p">|</span>
+<span class="w">   </span><span class="p">|</span><span class="w">                               </span><span class="p">|</span><span class="w">                      </span><span class="p">|</span><span class="w">               </span>MIG<span class="w"> </span>M.<span class="w"> </span><span class="p">|</span>
+<span class="w">   </span><span class="p">|</span><span class="o">===============================</span>+<span class="o">======================</span>+<span class="o">======================</span><span class="p">|</span>
+<span class="w">   </span><span class="p">|</span><span class="w">   </span><span class="m">0</span><span class="w">  </span>Tesla<span class="w"> </span>T4<span class="w">            </span>Off<span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="m">00000000</span>:00:04.0<span class="w"> </span>Off<span class="w"> </span><span class="p">|</span><span class="w">                    </span><span class="m">0</span><span class="w"> </span><span class="p">|</span>
+<span class="w">   </span><span class="p">|</span><span class="w"> </span>N/A<span class="w">   </span>41C<span class="w">    </span>P8<span class="w">    </span>11W<span class="w"> </span>/<span class="w">  </span>70W<span class="w"> </span><span class="p">|</span><span class="w">      </span>0MiB<span class="w"> </span>/<span class="w"> </span>15360MiB<span class="w"> </span><span class="p">|</span><span class="w">      </span><span class="m">0</span>%<span class="w">      </span>Default<span class="w"> </span><span class="p">|</span>
+<span class="w">   </span><span class="p">|</span><span class="w">                               </span><span class="p">|</span><span class="w">                      </span><span class="p">|</span><span class="w">                  </span>N/A<span class="w"> </span><span class="p">|</span>
+<span class="w">   </span>+-------------------------------+----------------------+----------------------+
 </pre></div>
 </div>
-<!-- TODO: Add example how to change this in HTML repr -->
-<p><a class="reference external" href="https://notebooksharing.space/view/2b6753a5ffe8ddfae1da3b8e2b5507e617de47eb25f758a20c92b62e7e650fd7#displayOptions=">Example with Solution</a></p>
 </section>
+</section>
+<section id="using-jupyterlab">
+<h3>Using JupyterLab<a class="headerlink" href="#using-jupyterlab" title="Permalink to this headline">¶</a></h3>
+<p>After your server fires up, you will be dropped into a JupyterLab environment.</p>
+<p>If you are new to JupyterLab, you might want to peruse the <a class="reference external" href="https://jupyterlab.readthedocs.io/en/stable/user/interface.html">user guide</a>.</p>
+</section>
+<section id="shutting-down-your-server">
+<h3>Shutting Down Your Server<a class="headerlink" href="#shutting-down-your-server" title="Permalink to this headline">¶</a></h3>
+<p>Your server will shut down automatically after a period of inactivity.
+However, if you know you are done working, it’s best to shut it down directly.
+To shut it down, go to <a class="reference external" href="https://leap.2i2c.cloud/hub/home">https://leap.2i2c.cloud/hub/home</a> and click the big red button that says “Stop My Server”</p>
+<a class="reference internal image-reference" href="https://user-images.githubusercontent.com/1197350/167768526-7742a260-d353-4bdb-b9d0-36e9cc17aba1.png"><img alt="image" src="https://user-images.githubusercontent.com/1197350/167768526-7742a260-d353-4bdb-b9d0-36e9cc17aba1.png" style="width: 800px;" /></a>
+<p>You can also navigate to this page from JupyterLab by clicking the <code class="docutils literal notranslate"><span class="pre">File</span></code> menu and going to <code class="docutils literal notranslate"><span class="pre">Hub</span> <span class="pre">Control</span> <span class="pre">Panel</span></code>.</p>
+<p id="hub-image">For more information on specific use cases or workflows that might arise while using the Hub, please refer to our <a class="reference internal" href="../guides/hub_guides.html"><span class="doc std std-doc">Guides</span></a>.</p>
 </section>
 </section>
 </section>
@@ -412,17 +483,17 @@ You can change the configuration of your dask workers and increase the memory ea
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../guides/hub_guides.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">How-To Guides for Using the Hub</p>
+            <p class="prev-next-title">LEAP Technical Documentation</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../guides/education.html" title="next page">
+    <a class='right-next' id="next-link" href="jupyterhub.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">LEAP-Pangeo for Education</p>
+        <p class="prev-next-title">LEAP-Pangeo JupyterHub</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
