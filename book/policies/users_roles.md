@@ -3,7 +3,7 @@
 
 **Version 2 - 2022-10-25**
 
-Access to the LEAP-Pangeo Hub will depend on the [LEAP Membership Structure](https://leap.columbia.edu/wp-content/uploads/2022/09/LEAP-Membership-and-Space-Policy-Sept-2022.pdf) (see links in this document to apply for membership).
+Access to the LEAP-Pangeo Hub will depend on the [LEAP Membership Structure](https://leap.columbia.edu/about/policies2/) (see links in this document to apply for membership).
 Membership in a particular tier will be implemented via
 [GitHub Teams](https://docs.github.com/en/organizations/organizing-members-into-teams)
 in the [leap-stc](https://github.com/orgs/leap-stc/teams) GitHub organization.
