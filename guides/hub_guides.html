@@ -319,11 +319,13 @@ const thebe_selector_output = ".output, .cell_output"
       <a class="reference internal nav-link" href="#upload-medium-sized-original-data-from-your-local-machine">
        Upload medium sized original data from your local machine
       </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#uploading-large-original-data-from-an-hpc-system-no-browser-access-on-the-system-available">
-       Uploading large original data from an HPC system (no browser access on the system available)
-      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#uploading-large-original-data-from-an-hpc-system-no-browser-access-on-the-system-available">
+         Uploading large original data from an HPC system (no browser access on the system available)
+        </a>
+       </li>
+      </ul>
      </li>
     </ul>
    </li>
@@ -380,11 +382,13 @@ const thebe_selector_output = ".output, .cell_output"
       <a class="reference internal nav-link" href="#upload-medium-sized-original-data-from-your-local-machine">
        Upload medium sized original data from your local machine
       </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#uploading-large-original-data-from-an-hpc-system-no-browser-access-on-the-system-available">
-       Uploading large original data from an HPC system (no browser access on the system available)
-      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#uploading-large-original-data-from-an-hpc-system-no-browser-access-on-the-system-available">
+         Uploading large original data from an HPC system (no browser access on the system available)
+        </a>
+       </li>
+      </ul>
      </li>
     </ul>
    </li>
@@ -428,7 +432,7 @@ For a quick guide on how to start a Dask Cluster, consult this page from the Pan
 <p>Coming Soon</p>
 </section>
 <section id="upload-medium-sized-original-data-from-your-local-machine">
-<h4>Upload medium sized original data from your local machine<a class="headerlink" href="#upload-medium-sized-original-data-from-your-local-machine" title="Permalink to this headline">¶</a></h4>
+<span id="hub-guide-data-upload-manual"></span><h4>Upload medium sized original data from your local machine<a class="headerlink" href="#upload-medium-sized-original-data-from-your-local-machine" title="Permalink to this headline">¶</a></h4>
 <p>For medium sized datasets, that can be uploaded within an hour, you can use a temporary access token generated on the JupyterHub to upload data to the cloud.</p>
 <ul class="simple">
 <li><p>Set up a new environment on your local machine (e.g. laptop)</p></li>
@@ -444,7 +448,7 @@ For a quick guide on how to start a Dask Cluster, consult this page from the Pan
 </div>
 <p>and set up a jupyter notbook (or a pure python script) that loads your data in as few xarray datasets as possible. For instance, if you have one dataset that consists of many files split in time, you should set your notebook up to read all the files using xarray into a single dataset, and then try to write out a small part of the dataset to a zarr store.</p>
 <ul class="simple">
-<li><p>Now start up a <span class="xref myst">LEAP-Pangeo server</span> and open a terminal. Install the <a class="reference external" href="https://cloud.google.com/sdk/docs/install">Google Cloud SDK</a> using mamba</p></li>
+<li><p>Now start up a <a class="reference external" href="https://leap.2i2c.cloud">LEAP-Pangeo server</a> and open a terminal. Install the <a class="reference external" href="https://cloud.google.com/sdk/docs/install">Google Cloud SDK</a> using mamba</p></li>
 </ul>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>install<span class="w"> </span>google-cloud-sdk
 </pre></div>
@@ -493,9 +497,8 @@ For a quick guide on how to start a Dask Cluster, consult this page from the Pan
 <blockquote>
 <div><p>Make sure to use a different bucket than <code class="docutils literal notranslate"><span class="pre">leap-scratch</span></code>, since that will be deleted every 7 days! For more info refer to the available <a class="reference internal" href="../leap-pangeo/jupyterhub.html#hub-data-buckets"><span class="std std-ref">storage buckets</span></a>.</p>
 </div></blockquote>
-</section>
 <section id="uploading-large-original-data-from-an-hpc-system-no-browser-access-on-the-system-available">
-<h4>Uploading large original data from an HPC system (no browser access on the system available)<a class="headerlink" href="#uploading-large-original-data-from-an-hpc-system-no-browser-access-on-the-system-available" title="Permalink to this headline">¶</a></h4>
+<span id="hub-data-upload-hpc"></span><h5>Uploading large original data from an HPC system (no browser access on the system available)<a class="headerlink" href="#uploading-large-original-data-from-an-hpc-system-no-browser-access-on-the-system-available" title="Permalink to this headline">¶</a></h5>
 <p>A commong scenario is the following: A researcher/student has run a simulation on a High Performance Computer (HPC) at their institution, but now wants to collaboratively work on the analysis or train a machine learning model with this data. For this they need to upload it to the cloud storage.</p>
 <p>The following steps will guide you through the steps needed to authenticate and upload data to the cloud, but might have to be slightly modified depending on the actual setup of the users HPC.</p>
 <p><strong>Conversion Script/Notebook</strong></p>
@@ -567,6 +570,7 @@ Steps executed on your <span style="color:#22B401">”local” computer (e.g. la
 </pre></div>
 </div>
 <p>Once the data has been uploaded, make sure to erase the <code class="docutils literal notranslate"><span class="pre">.../.config/gcloud/....json</span></code> file from step 7, and ask to be removed from the Google Group.</p>
+</section>
 </section>
 </section>
 </section>
