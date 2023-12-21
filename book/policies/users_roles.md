@@ -22,9 +22,7 @@ This is annoying, and we hope to have a better solution soon.
 
 ## Code of Conduct
 
-All users of LEAP-Pangeo must abide by the LEAP Code of Conduct:
-
-- https://docs.google.com/document/d/1eE-aYrsf_k5Ep8GB-n8hmqM_LVW-U3uzYKHJBZMvYWU
+All users of LEAP-Pangeo must abide by the [LEAP Code of Conduct](https://leap.columbia.edu/wp-content/uploads/2023/05/LEAP-Code-of-Conduct_V1_October-2022.pdf).
 
 (users.membership)=
 ## Membership
