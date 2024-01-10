@@ -11,19 +11,6 @@ Students should be signed up to the appropriate user [categories](users.categori
 
 #### Troubleshooting
 
-**Students cannot sign on**
+##### Students cannot sign on
 
-Check if the students are part of the [appropriate github teams](users.categories). 
-
-If they **are not** follow these steps:
-- [ ] Did the student [sign up for LEAP membership](users.membership.apply)?
-- [ ] Did the student receive a github invite? [Here](users.membership.invite) is how to check for that.  
-- [ ] Check again if they are part of the [appropriate github teams](users.categories).
-- If these steps do not work, please reach out to the [](support.data_compute_team).
-
-If they **are**, ask them to try the following steps:
-- [ ] Refresh the browser cache
-- [ ] Try a different browser
-- [ ] Restart the computer
-- If these steps do not work, please reach out to the [](support.data_compute_team).
-
+Please refer to the [FAQ](faq.cannot-log-into-hub) for troubleshooting steps.
