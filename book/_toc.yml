@@ -15,6 +15,7 @@ parts:
       - file: guides/hub_guides
       - file: leap-pangeo/solutions
       - file: guides/education
+      - file: guides/bootcamp
       - file: guides/team_docs
       - file: guides/faq
   - caption: Policies
