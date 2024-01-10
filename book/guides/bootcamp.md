@@ -2,8 +2,23 @@
 
 We collect all bootcamp materials in the [LEAP-Pangeo bootcamp repository](https://github.com/leap-stc/LEAP-bootcamps).
 
-## Preparing for the bootcamp
+## Preparing the bootcamp
+We encourage you to reuse materials from past bootcamps and adapt them to your needs. **Past event have suggested that it is extremely helpful to have the instructor write down code live, so participants can follow along.**
+This ensures the following:
+- The lecturer substantially more time to write live, ensuring that others can follow along
+- It also demonstrates that the lecturer is not a superhuman, but also makes mistakes and has to debug code. This is a very important lesson for students to learn, as it is a very common part of the coding process and often not shown in lectures.
+- It also allows the lecturer to explain the code as they write it, which is a very important part of the learning process.
 
+Ideally you will use the same materials as the participants (see below for how to organize them), and clear all outputs prior to starting the lecture by right clicking on the notebook and selecting "Clear All Outputs". 
+
+> **Of course you are not expected to remember all the code. Ideally you have a second laptop/tablet to use as a cheat sheet during the presentation.**
+
+```{admonition} Pretty please
+:class: tip
+It would be great if you can commit your filled notebooks after the lecture, so participants can access them later. See below for where to commit them.
+```
+
+## Materials for the bootcamp
 You can reuse the materials for your own bootcamps or modify them to your needs. Please do not change the past materials, and instead create new folders/entries in the following places:
 - Create a new folder in the "Codes" and "Lectures" folders and add your materials there. *If you are giving the same material as a previous bootcamp, please copy them.*
     - ⚠️If you are using materials from other sources, like the [An Introduction to Earth and Environmental Data Science](https://earth-env-data-science.github.io/intro.html) book. Please just follow the past events structure and link to the original materials. 
