@@ -1,4 +1,4 @@
-# Frequently asked questions
+# FAQs
 
 (faq.cannot-log-into-hub)=
 ## I cannot log into the hub 😱
