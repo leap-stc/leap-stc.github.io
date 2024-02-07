@@ -490,7 +490,8 @@ For a quick guide on how to start a Dask Cluster, consult this page from the Pan
 </div></blockquote>
 <p>Try to write a small dataset to the cloud:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">to_dataset</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">to_zarr</span><span class="p">(</span><span class="s1">&#39;gs://leap-scratch/&lt;your_username&gt;/test_offsite_upload.zarr&#39;</span><span class="p">)</span> <span class="c1">#adding the &#39;gs://&#39; prefix makes this just work with xarray!</span>
+<span class="n">mapper</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">get_mapper</span><span class="p">(</span><span class="s1">&#39;gs://leap-scratch/&lt;your_username&gt;/test_offsite_upload.zarr&#39;</span><span class="p">)</span> <span class="c1"># This additional step is necessary to have the correct authentication set</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">to_zarr</span><span class="p">(</span><span class="n">mapper</span><span class="p">)</span>
 </pre></div>
 </div>
 <blockquote>
