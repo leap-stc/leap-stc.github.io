@@ -78,7 +78,8 @@ Try to write a small dataset to the cloud:
 
 ```python
 ds = xr.DataArray([1]).to_dataset(name='test')
-ds.to_zarr('gs://leap-scratch/<your_username>/test_offsite_upload.zarr') #adding the 'gs://' prefix makes this just work with xarray!
+mapper = fs.get_mapper('gs://leap-scratch/<your_username>/test_offsite_upload.zarr') # This additional step is necessary to have the correct authentication set
+ds.to_zarr(mapper)
 ```
 
 > Replace `<your_username>` with your actual username on the hub.
