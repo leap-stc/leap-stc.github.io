@@ -5,14 +5,14 @@ abbreviations:
 
 # Data Policy
 
-## Glossary
-
 ### LEAP produced vs LEAP ingested
 
 We distinguish between data that was **produced** by LEAP vs **ingested** by LEAP
 
-> [!NOTE]- LEAP produced
-> Data that has been created or modified by LEAP researchers.
+:::{admonition} LEAP produced
+:class: dropdown
+Data that has been created or modified by LEAP researchers.
+:::
 
 :::{admonition} LEAP ingested
 :class: dropdown
