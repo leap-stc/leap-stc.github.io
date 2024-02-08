@@ -11,12 +11,10 @@ abbreviations:
 
 We distinguish between data that was **produced** by LEAP vs **ingested** by LEAP
 
-:::{note} LEAP produced
-:class: dropdown
-Data that has been created or modified by LEAP researchers.
-:::
+> [!NOTE]- LEAP produced
+> Data that has been created or modified by LEAP researchers.
 
-:::{note} LEAP ingested
+:::{admonition} LEAP ingested
 :class: dropdown
-Data that is already publically available but has been ingested into cloud storage in {abbr}`ARCO` formats.
+Data that is already publically available but has been ingested into cloud storage in {abbr}`ARCO` formats. The actual data/metadata has not been modified from the original.
 :::
