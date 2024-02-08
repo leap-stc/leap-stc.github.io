@@ -5,7 +5,7 @@ abbreviations:
 
 # Data Policy
 
-### LEAP produced vs LEAP ingested
+## LEAP produced vs LEAP ingested
 
 We distinguish between data that was **produced** by LEAP vs **ingested** by LEAP
 
