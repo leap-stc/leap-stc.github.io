@@ -9,7 +9,7 @@ For questions about how to use the Hub, please choose from the following resourc
 
 - Join the LEAP Slack and post an issue in the `#leap-pangeo` channel.
 
-- Reach out to the :ref:`_support.data_compute_team` by mentioning @data-and-compute on the LEAP slack channel
+- Reach out to the :ref:`support.data_compute_team` by mentioning @data-and-compute on the LEAP slack channel
 
 Office Hours
 ~~~~~~~~~~~~
