@@ -19,7 +19,7 @@ You can reserve an appointment `here <https://app.reclaim.ai/m/leap-pangeo-offic
 
 LEAP Pangeo Community Hours
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-We run a monthly LEAP Pangeo community event, where we'll work together on everything LEAP Pangeo! This event is open to all, and is currently in-person only (with virtual options in development).
+We run a monthly LEAP Pangeo community event, where we'll work together on everything LEAP Pangeo! This event is open to all, and is currently in-person only (with virtual options in development). Watch out for dates in the regular LEAP emails.
 
 If you have a problem with the hub, want to learn how to make your workflow more efficient, or just take an hour to connect with other LEAP folks and code together, bring your laptop and come by! 
 
