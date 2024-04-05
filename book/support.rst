@@ -1,9 +1,20 @@
 Getting Help
 ============
 
-For questions about how to use the Hub, please use the LEAP-Pangeo discussion forum:
+For questions about how to use the Hub, please choose from the following resources
 
-- `LEAP-Pangeo Discussion Forum <https://github.com/leap-stc/leap-stc.github.io/discussions>`_
+- Always check the :doc:`FAQ page <../guides/faq>` first
+
+- Use the `LEAP-Pangeo Discussion Forum <https://github.com/leap-stc/leap-stc.github.io/discussions>`_ to search for previous topics or post new ones
+
+- Join the LEAP Slack and post an issue in the `#leap-pangeo` channel.
+
+- Reach out to the `<_support.data_compute_team>_ by mentioning @data-and-compute on the LEAP slack channel
+
+Office Hours
+~~~~~~~~~~~~
+We also offer in-person and virtual Office Hours on Thursdays for questions about LEAP-Pangeo.
+You can reserve an appointment `here <https://app.reclaim.ai/m/leap-pangeo-office-hours>`_.
 
 Office Hours
 ~~~~~~~~~~~~
