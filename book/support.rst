@@ -23,7 +23,9 @@ We run a monthly LEAP Pangeo community event, where we'll work together on every
 
 If you have a problem with the hub, want to learn how to make your workflow more efficient, or just take an hour to connect with other LEAP folks and code together, bring your laptop and come by! 
 
-This event is open to all skill levels — we aim to make it a fun, collaborative and no-stress event. We’ll have snacks, too!
+This event is open to all skill levels — we aim to make it a fun, collaborative and no-stress event. We’ll have snacks, too! 
+
+👀 **Keep an eye out for upcoming dates in the email newsletter** 🗞️
 
 .. _support.data_compute_team:
 
