@@ -9,6 +9,22 @@ For a quick guide on how to start a Dask Cluster, consult this page from the Pan
 - https://pangeo.io/cloud.html#dask
 
 ## Data
+
+### I want to upload some data, where should I do it?
+
+```{mermaid}
+flowchart LR
+  A[Jupyter Notebook] --> C
+  B[MyST Markdown] --> C
+  C(mystmd) --> D{AST}
+  D <--> E[LaTeX]
+  E --> F[PDF]
+  D --> G[Word]
+  D --> H[React]
+  D --> I[HTML]
+  D <--> J[JATS]
+```
+
 ### I have a dataset and want to work with it on the hub. How do I upload it?
 
 If you would like to add a new dataset to the LEAP Data Library, please first raise an issue [here](https://github.com/leap-stc/data-management/issues/new?assignees=&labels=dataset&template=new_dataset.yaml&title=New+Dataset+%5BDataset+Name%5D). This enables us to track detailed information about proposed datasets and have an open discussion about how to upload it to the cloud. 
