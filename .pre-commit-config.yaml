@@ -17,3 +17,4 @@ repos:
         - mdformat-myst
         - mdformat-black
         - mdformat-config
+        - mdformat-tables
