@@ -19,10 +19,10 @@ Feel free to [edit it yourself](https://github.com/leap-stc/leap-stc.github.io/b
 ### Logging In
 
 1. 👀 Navigate to <https://leap.2i2c.cloud/> and click the big orange button that says "Log in to continue"
-2. 🔐 You will be prompted to authorize a GitHub application. Say "yes" to everything.
+1. 🔐 You will be prompted to authorize a GitHub application. Say "yes" to everything.
    Note you must belong to the appropriate GitHub team in order to access the hub.
    See {doc}`/policies/users_roles`  for more information.
-3. 📠 You will redirect to a screen with the following options.
+1. 📠 You will redirect to a screen with the following options.
 
 <img width="410" alt="image" src="https://github.com/leap-stc/leap-stc.github.io/assets/14314623/088946a1-896f-4ff8-af91-8107c9f14cfd">
 

@@ -117,16 +117,16 @@ with research activities.
 There are two levels to the Research Category:
 
 - **Entry-level**: involved in LEAP research and community, have access to computing resources and storage on LEAPangeo.
-Members of this Community Tier may access  `Large` JupyterHub servers
-Office Space. Admission based on paragraph sent to Office Space committee.
-Membership in the entry-level research category corresponds to the
-[`leap-pangeo-research-entry-level`](https://github.com/orgs/leap-stc/teams/leap-pangeo-research-entry-level)
-GitHub team.
+  Members of this Community Tier may access  `Large` JupyterHub servers
+  Office Space. Admission based on paragraph sent to Office Space committee.
+  Membership in the entry-level research category corresponds to the
+  [`leap-pangeo-research-entry-level`](https://github.com/orgs/leap-stc/teams/leap-pangeo-research-entry-level)
+  GitHub team.
 - **Advanced**: RFP or supported researcher, student, postdoc, invited to annual meeting, swipe access for LEAP.
-Members of this Community Tier may access `Large` and `Huge` JupyterHub servers, plus GPU access.
-Membership in the entry-level research category corresponds to the
-[`leap-pangeo-research-advanced`](https://github.com/orgs/leap-stc/teams/leap-pangeo-research-entry-level)
-GitHub team.
+  Members of this Community Tier may access `Large` and `Huge` JupyterHub servers, plus GPU access.
+  Membership in the entry-level research category corresponds to the
+  [`leap-pangeo-research-advanced`](https://github.com/orgs/leap-stc/teams/leap-pangeo-research-entry-level)
+  GitHub team.
 
 ### Eligibility
 

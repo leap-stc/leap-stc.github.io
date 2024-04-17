@@ -1,7 +1,6 @@
----
-abbreviations:
-  ARCO: Analysis-Ready Cloud-Optimized
----
+______________________________________________________________________
+
+## abbreviations: ARCO: Analysis-Ready Cloud-Optimized
 
 # Data Policy
 

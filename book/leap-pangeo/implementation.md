@@ -77,10 +77,10 @@ and cloud computing.
 
 ### Contractors vs. Employees
 
-| | Pros | Cons |
-| -- | -- | -- |
-| **Employees** | Longer-term commitment to project. Better integration with on-campus activities. | Slow hiring. Recruiting challenges. Uncertainty they can deliver needed results. |
-| **Contractors** | Can spin up rapidly. Proven track records. Connection to broader ecosystems. Don't have to deal with hiring. Acccess to top technical talent. | Potentially less integrated into project. |
+|                 | Pros                                                                                                                                          | Cons                                                                             |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| **Employees**   | Longer-term commitment to project. Better integration with on-campus activities.                                                              | Slow hiring. Recruiting challenges. Uncertainty they can deliver needed results. |
+| **Contractors** | Can spin up rapidly. Proven track records. Connection to broader ecosystems. Don't have to deal with hiring. Acccess to top technical talent. | Potentially less integrated into project.                                        |
 
 ## Timeline
 
