@@ -11,7 +11,7 @@ in the [leap-stc](https://github.com/orgs/leap-stc/teams) GitHub organization.
 
 Here we define those roles and map them to GitHub teams.
 
-:::{warning}
+:::\{warning}
 We have discovered a technical issue which affects some of the policies here.
 It turns out that GitHub sub-teams don't appear as part of parent teams.
 This means that the strategies described here for using sub-teams don't quite  work.

@@ -6,12 +6,12 @@ This is a short write up facilitate the spin up of new team members for the Data
 
 ### Checklist for new members
 
-- [ ] Ask to be added to the [Data and Computation Github team](https://github.com/orgs/leap-stc/teams/data-team/members)
-- [ ] Ask to be added to the `@data-and-compute` Slack user group
-- [ ] Subscribe to [](onboarding.slack)
-- [ ] Consider enabling notifications for [](onboarding.github)
-- [ ] Make a PR to the `_config.yaml` file [here](https://github.com/leap-stc/leap-stc.github.io/blob/fd69890ffc2f1871968e39b1c460370a0b3f98b3/book/_config.yml#L40-L51) in a PR. to add a picture and your personal data to the webpage.
-- [ ] Get access to the [Grafana Dashboard](https://grafana.leap.2i2c.cloud)
+- \[ \] Ask to be added to the [Data and Computation Github team](https://github.com/orgs/leap-stc/teams/data-team/members)
+- \[ \] Ask to be added to the `@data-and-compute` Slack user group
+- \[ \] Subscribe to [](onboarding.slack)
+- \[ \] Consider enabling notifications for [](onboarding.github)
+- \[ \] Make a PR to the `_config.yaml` file [here](https://github.com/leap-stc/leap-stc.github.io/blob/fd69890ffc2f1871968e39b1c460370a0b3f98b3/book/_config.yml#L40-L51) in a PR. to add a picture and your personal data to the webpage.
+- \[ \] Get access to the [Grafana Dashboard](https://grafana.leap.2i2c.cloud)
 
 (onboarding.slack)=
 

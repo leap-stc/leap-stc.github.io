@@ -39,7 +39,7 @@ A complete list of all packages installed in this environment is located at:
 
 - <https://github.com/pangeo-data/pangeo-docker-images/blob/2022.05.10/pangeo-notebook/packages.txt>
 
-:::{attention}
+:::\{attention}
 We regularly update the version of the images provided in the drop-down menu.
 
 To ensure full reproducibility you should save the full info of the image you worked with (this is stored in the environment variable `JUPYTER_IMAGE_SPEC`) with your work. You could for example print the following in the first cell of a notebook:
@@ -88,13 +88,13 @@ Your User Directory behaves very similar to a filestystem on your computer. If y
 
 <img width="357" alt="image" src="https://github.com/leap-stc/leap-stc.github.io/assets/14314623/a84c12e2-9f8a-4de1-a3e3-feff1bf59061">
 
-:::{note}
+:::\{note}
 As shown in the picture above, every user will see `'/home/jovyan'` as their root directory. This is different from many HPC accounts where your home directory will point to a directory with your username. But the functionality is similar. These are *your own files* and they cannot be seen/modified by other users (except admins).
 :::
 
 The primary purpose of this directory is to store small files, like github repositories and other code.
 
-:::{warning}
+:::\{warning}
 Please do not store large files in your user directory `/home/jovyan`. Your home directory is intended only for notebooks, analysis scripts, and small datasets (\< 1 GB). It is not an appropriate place to store large datasets.
 
 To check how much space you are using in your home directory open a terminal window on the hub and run `du -h --max-depth=1 ~/ | sort -h`.
@@ -162,7 +162,7 @@ ds = xr.open_dataset(
 
 ... and you can give this to any other registered LEAP user and they can load it exactly like you can!
 
-:::{note}
+:::\{note}
 Note that providing the url starting with `gs://...` is assumes that you have appropriate credentials set up in your environment to read/write to that bucket. On the hub these are already set up for you to work with the [](hub.data.buckets), but if you are trying to interact with non-public buckets you need to authenticate yourself. Check out the sections [below](hub.guide.data.upload_manual) to see an example how to do that.
 :::
 
@@ -175,7 +175,7 @@ with fsspec.open("gs://leap-scratch/funky-user/test.txt", mode="w") as f:
 
 ### Deleting from cloud buckets
 
-:::{warning}
+:::\{warning}
 Depending on which cloud bucket you are working, make sure to double check which files you are deleting by [inspecting the contents](hub.data.list) and only working in a subdirectory with your username (e.g. `gs://<leap-bucket>/<your-username>/some/project/structure`.
 :::
 

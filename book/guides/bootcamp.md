@@ -16,7 +16,9 @@ Ideally you will use the same materials as the participants (see below for how t
 > **Of course you are not expected to remember all the code. Ideally you have a second laptop/tablet to use as a cheat sheet during the presentation.**
 
 ```{admonition} Pretty please
-:class: important
+---
+class: important
+---
 It would be great if you can commit your filled notebooks after the lecture, so participants can access them later. See below for where to commit them.
 ```
 
