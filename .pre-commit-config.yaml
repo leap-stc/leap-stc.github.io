@@ -14,5 +14,5 @@ repos:
       - id: mdformat
         # Optionally add plugins
         additional_dependencies:
-        - mdformat-gfm
+        - mdformat-myst
         - mdformat-black
