@@ -4,12 +4,12 @@ Our team has a cloud-based [JupyterHub](https://jupyter.org/hub).
 For information who can access the hub with which privileges, please refer to
 {doc}`/policies/users_roles`
 
-|  |  |
-|--|--|
-| **Hub Address** | <https://leap.2i2c.cloud/> |
-| **Hub Location** | [Google Cloud `us-central1`](https://cloud.google.com/compute/docs/regions-zones) |
-| **Hub Operator**| [2i2c](https://2i2c.org/) |
-| **Hub Configuration** | <https://github.com/2i2c-org/infrastructure/tree/master/config/clusters/leap> |
+|                       |                                                                                   |
+| --------------------- | --------------------------------------------------------------------------------- |
+| **Hub Address**       | <https://leap.2i2c.cloud/>                                                        |
+| **Hub Location**      | [Google Cloud `us-central1`](https://cloud.google.com/compute/docs/regions-zones) |
+| **Hub Operator**      | [2i2c](https://2i2c.org/)                                                         |
+| **Hub Configuration** | <https://github.com/2i2c-org/infrastructure/tree/master/config/clusters/leap>     |
 
 This document goes over the primary technical details of the JupyterHub.
 
@@ -42,7 +42,15 @@ A complete list of all packages installed in this environment is located at:
 :::{attention}
 We regularly update the version of the images provided in the drop-down menu.
 
-To ensure full reproducibility you should save the full info of the image you worked with (this is stored in the environment variable `JUPYTER_IMAGE_SPEC`) with your work. You can then use that string with the [custom images](hub.image.custom) to reproduce your work with exactly the same environment.
+To ensure full reproducibility you should save the full info of the image you worked with (this is stored in the environment variable `JUPYTER_IMAGE_SPEC`) with your work. You could for example print the following in the first cell of a notebook:
+
+```python
+import os
+
+print(os.environ["JUPYTER_IMAGE_SPEC"])
+```
+
+You can then use that string with the [custom images](hub.image.custom) to reproduce your work with exactly the same environment.
 :::
 
 (hub.image.custom)=
@@ -87,7 +95,7 @@ As shown in the picture above, every user will see `'/home/jovyan'` as their roo
 The primary purpose of this directory is to store small files, like github repositories and other code.
 
 :::{warning}
-Please do not store large files in your user directory `/home/jovyan`. Your home directory is intended only for notebooks, analysis scripts, and small datasets (< 1 GB). It is not an appropriate place to store large datasets.
+Please do not store large files in your user directory `/home/jovyan`. Your home directory is intended only for notebooks, analysis scripts, and small datasets (\< 1 GB). It is not an appropriate place to store large datasets.
 
 To check how much space you are using in your home directory open a terminal window on the hub and run `du -h --max-depth=1 ~/ | sort -h`.
 :::
@@ -105,7 +113,7 @@ LEAP-Pangeo provides users two cloud buckets to store data
 Files stored on each of those buckets can be accessed by any LEAP member, so be concious in the way you use these.
 
 - **Do not put sensitive information (passwords, keys, personal data) into these buckets!**
-- **When writing to buckets only ever write to your personal folder!** Your personal folder is a combination of the bucketname and your github username (e.g. `gs://leap-persistent/funky-user/').
+- **When writing to buckets only ever write to your personal folder!** Your personal folder is a combination of the bucketname and your github username (e.g. \`gs://leap-persistent/funky-user/').
 
 (hub.data.list)=
 
@@ -117,8 +125,9 @@ You can e.g. list the contents of your personal folder with
 
 ```python
 import gcsfs
-fs = gcsfs.GCSFileSystem() # equivalent to fsspec.fs('gs')
-fs.ls('leap-persistent/funky-user')
+
+fs = gcsfs.GCSFileSystem()  # equivalent to fsspec.fs('gs')
+fs.ls("leap-persistent/funky-user")
 ```
 
 (hub.data.read_write)=
@@ -134,9 +143,9 @@ Xarray provides a method to stream results of a computation to zarr
 ```python
 ds = ...
 ds_processed = ds.mean(...).resample(...)
-user_path = "gs://leap-scratch/funky-user" # 👀 make sure to prepend `gs://` to the path or xarray will interpret this as a local path
+user_path = "gs://leap-scratch/funky-user"  # 👀 make sure to prepend `gs://` to the path or xarray will interpret this as a local path
 store_name = "processed_store.zarr"
-ds_processed.to_zarr(f'{user_path}/{store_name}')
+ds_processed.to_zarr(f"{user_path}/{store_name}")
 ```
 
 This will write a zarr store to the scratch bucket.
@@ -145,7 +154,10 @@ You can read it back into an xarray dataset with this snippet:
 
 ```python
 import xarray as xr
-ds = xr.open_dataset('gs://leap-scratch/funky-user/processed_store.zarr', engine='zarr', chunks={}) #
+
+ds = xr.open_dataset(
+    "gs://leap-scratch/funky-user/processed_store.zarr", engine="zarr", chunks={}
+)  #
 ```
 
 ... and you can give this to any other registered LEAP user and they can load it exactly like you can!
@@ -157,8 +169,8 @@ Note that providing the url starting with `gs://...` is assumes that you have ap
 You can also write other files directly to the bucket by using [`fsspec.open`](https://filesystem-spec.readthedocs.io/en/latest/api.html#fsspec.open) similarly to the python builtin [`open`](https://docs.python.org/3/library/functions.html#open)
 
 ```python
-with fsspec.open('gs://leap-scratch/funky-user/test.txt', mode='w') as f:
-    f.write('hello world')
+with fsspec.open("gs://leap-scratch/funky-user/test.txt", mode="w") as f:
+    f.write("hello world")
 ```
 
 ### Deleting from cloud buckets
@@ -171,12 +183,13 @@ You can remove single files by using a gcsfs/fsspec filessytem as above
 
 ```python
 import gcsfs
-fs = gcsfs.GCSFileSystem() # equivalent to fsspec.fs('gs')
-fs.rm('leap-persistent/funky-user/file_to_delete.nc')
+
+fs = gcsfs.GCSFileSystem()  # equivalent to fsspec.fs('gs')
+fs.rm("leap-persistent/funky-user/file_to_delete.nc")
 ```
 
 If you want to remove zarr stores (which are an 'exploded' data format, and thus represented by a folder structure) you have to recursively delete the store.
 
 ```python
-fs.rm('leap-scratch/funky-user/processed_store.zarr', recursive=True)
+fs.rm("leap-scratch/funky-user/processed_store.zarr", recursive=True)
 ```
