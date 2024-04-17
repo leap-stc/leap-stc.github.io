@@ -16,3 +16,4 @@ repos:
         additional_dependencies:
         - mdformat-myst
         - mdformat-black
+        - mdformat-config
