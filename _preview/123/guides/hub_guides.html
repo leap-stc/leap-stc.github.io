@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>How-To Guides for Using the Hub &#8212; Technical Documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
@@ -148,8 +147,18 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="bootcamp.html">
+   Running LEAP bootcamps
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="team_docs.html">
-   Onboarding Guide for Data and Computation Team Members
+   Guide for Data and Computation Team Members
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="faq.html">
+   FAQs
   </a>
  </li>
 </ul>
@@ -403,23 +412,23 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="how-to-guides-for-using-the-hub">
+  <div class="tex2jax_ignore mathjax_ignore section" id="how-to-guides-for-using-the-hub">
 <h1>How-To Guides for Using the Hub<a class="headerlink" href="#how-to-guides-for-using-the-hub" title="Permalink to this headline">¶</a></h1>
 <p>These are a set of guides for using the JupyterHub Compute Environment effectively.</p>
-<section id="compute">
+<div class="section" id="compute">
 <h2>Compute<a class="headerlink" href="#compute" title="Permalink to this headline">¶</a></h2>
-<section id="dask">
+<div class="section" id="dask">
 <h3>Dask<a class="headerlink" href="#dask" title="Permalink to this headline">¶</a></h3>
 <p>To help you scale up calculations using a cluster, the Hub is configured with Dask Gateway.
 For a quick guide on how to start a Dask Cluster, consult this page from the Pangeo docs:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://pangeo.io/cloud.html#dask">https://pangeo.io/cloud.html#dask</a></p></li>
 </ul>
-</section>
-</section>
-<section id="data">
+</div>
+</div>
+<div class="section" id="data">
 <h2>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h2>
-<section id="i-have-a-dataset-and-want-to-work-with-it-on-the-hub-how-do-i-upload-it">
+<div class="section" id="i-have-a-dataset-and-want-to-work-with-it-on-the-hub-how-do-i-upload-it">
 <h3>I have a dataset and want to work with it on the hub. How do I upload it?<a class="headerlink" href="#i-have-a-dataset-and-want-to-work-with-it-on-the-hub-how-do-i-upload-it" title="Permalink to this headline">¶</a></h3>
 <p>If you would like to add a new dataset to the LEAP Data Library, please first raise an issue <a class="reference external" href="https://github.com/leap-stc/data-management/issues/new?assignees=&amp;labels=dataset&amp;template=new_dataset.yaml&amp;title=New+Dataset+%5BDataset+Name%5D">here</a>. This enables us to track detailed information about proposed datasets and have an open discussion about how to upload it to the cloud.</p>
 <p>We distinguish between two primary <em>types</em> of data to upload: “Original” and “Published” data.</p>
@@ -427,11 +436,11 @@ For a quick guide on how to start a Dask Cluster, consult this page from the Pan
 <li><p><strong>Published Data</strong> has been published and archived in a publically accessible location (e.g. a data repository like <a class="reference external" href="https://zenodo.org">zenodo</a> or <a class="reference external" href="https://figshare.com">figshare</a>). We do not recommend uploading this data to the cloud directly, but instead use <a class="reference external" href="https://pangeo-forge.readthedocs.io/en/latest/">Pangeo Forge</a> to transform and upload it to the cloud. This ensures that the data is stored in an ARCO format and can be easily accessed by other LEAP members.</p></li>
 <li><p><strong>Original Data</strong> is any dataset that is produced by researchers at LEAP and has not been published yet. The main use case for this data is to share it with other LEAP members and collaborate on it. For original data we support direct uploaded to the cloud. <em>Be aware that original data could change rapidly as the data producer is iterating on their code</em>. We encourage all datasets to be archived and published before using them in scientific publications.</p></li>
 </ul>
-<section id="transform-and-upload-published-data-to-an-arco-format-with-pangeo-forge">
+<div class="section" id="transform-and-upload-published-data-to-an-arco-format-with-pangeo-forge">
 <h4>Transform and Upload published data to an ARCO format (with Pangeo Forge)<a class="headerlink" href="#transform-and-upload-published-data-to-an-arco-format-with-pangeo-forge" title="Permalink to this headline">¶</a></h4>
 <p>Coming Soon</p>
-</section>
-<section id="upload-medium-sized-original-data-from-your-local-machine">
+</div>
+<div class="section" id="upload-medium-sized-original-data-from-your-local-machine">
 <span id="hub-guide-data-upload-manual"></span><h4>Upload medium sized original data from your local machine<a class="headerlink" href="#upload-medium-sized-original-data-from-your-local-machine" title="Permalink to this headline">¶</a></h4>
 <p>For medium sized datasets, that can be uploaded within an hour, you can use a temporary access token generated on the JupyterHub to upload data to the cloud.</p>
 <ul class="simple">
@@ -480,8 +489,11 @@ For a quick guide on how to start a Dask Cluster, consult this page from the Pan
 <div><p>Make sure to replace the <code class="docutils literal notranslate"><span class="pre">path/to/your/token.txt</span></code> with the actual path to your token file.</p>
 </div></blockquote>
 <p>Try to write a small dataset to the cloud:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">to_dataset</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">to_zarr</span><span class="p">(</span><span class="s1">&#39;gs://leap-scratch/&lt;your_username&gt;/test_offsite_upload.zarr&#39;</span><span class="p">)</span> <span class="c1">#adding the &#39;gs://&#39; prefix makes this just work with xarray!</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">to_dataset</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">)</span>
+<span class="n">mapper</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">get_mapper</span><span class="p">(</span>
+    <span class="s2">&quot;gs://leap-scratch/&lt;your_username&gt;/test_offsite_upload.zarr&quot;</span>
+<span class="p">)</span>  <span class="c1"># This additional step is necessary to have the correct authentication set</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">to_zarr</span><span class="p">(</span><span class="n">mapper</span><span class="p">)</span>
 </pre></div>
 </div>
 <blockquote>
@@ -497,7 +509,7 @@ For a quick guide on how to start a Dask Cluster, consult this page from the Pan
 <blockquote>
 <div><p>Make sure to use a different bucket than <code class="docutils literal notranslate"><span class="pre">leap-scratch</span></code>, since that will be deleted every 7 days! For more info refer to the available <a class="reference internal" href="../leap-pangeo/jupyterhub.html#hub-data-buckets"><span class="std std-ref">storage buckets</span></a>.</p>
 </div></blockquote>
-<section id="uploading-large-original-data-from-an-hpc-system-no-browser-access-on-the-system-available">
+<div class="section" id="uploading-large-original-data-from-an-hpc-system-no-browser-access-on-the-system-available">
 <span id="hub-data-upload-hpc"></span><h5>Uploading large original data from an HPC system (no browser access on the system available)<a class="headerlink" href="#uploading-large-original-data-from-an-hpc-system-no-browser-access-on-the-system-available" title="Permalink to this headline">¶</a></h5>
 <p>A commong scenario is the following: A researcher/student has run a simulation on a High Performance Computer (HPC) at their institution, but now wants to collaboratively work on the analysis or train a machine learning model with this data. For this they need to upload it to the cloud storage.</p>
 <p>The following steps will guide you through the steps needed to authenticate and upload data to the cloud, but might have to be slightly modified depending on the actual setup of the users HPC.</p>
@@ -550,31 +562,36 @@ Steps executed on your <span style="color:#22B401">”local” computer (e.g. la
 <span class="kn">import</span> <span class="nn">gcsfs</span>
 <span class="kn">import</span> <span class="nn">json</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;your_auth_file.json&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span> <span class="c1">#🚨 make sure to enter the `.json` file from step 7</span>
- <span class="n">token</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span>
+    <span class="s2">&quot;your_auth_file.json&quot;</span>
+<span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>  <span class="c1"># 🚨 make sure to enter the `.json` file from step 7</span>
+    <span class="n">token</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 
 <span class="c1"># test write a small dummy xarray dataset to zarr</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span><span class="o">.</span><span class="n">to_dataset</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">)</span> 
-<span class="c1"># Once you have confirmed </span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span><span class="o">.</span><span class="n">to_dataset</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">)</span>
+<span class="c1"># Once you have confirmed</span>
 
 <span class="n">fs</span> <span class="o">=</span> <span class="n">gcsfs</span><span class="o">.</span><span class="n">GCSFileSystem</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
-<span class="n">mapper</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">get_mapper</span><span class="p">(</span><span class="s2">&quot;gs://leap-persistent/&lt;username&gt;/testing/demo_write_from_remote.zarr&quot;</span><span class="p">)</span> <span class="c1">#🚨 enter your leap (github) username here</span>
+<span class="n">mapper</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">get_mapper</span><span class="p">(</span>
+    <span class="s2">&quot;gs://leap-persistent/&lt;username&gt;/testing/demo_write_from_remote.zarr&quot;</span>
+<span class="p">)</span>  <span class="c1"># 🚨 enter your leap (github) username here</span>
 <span class="n">ds</span><span class="o">.</span><span class="n">to_zarr</span><span class="p">(</span><span class="n">mapper</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Now you can repeat the same steps but replace your dataset with the full dataset from above and leave your python code running until the upload has finished. Depending on the internet connection speed and the size of the full dataset, this can take a while.</p>
 <p>If you want to see a progress bar, you can wrap the call to <code class="docutils literal notranslate"><span class="pre">.to_zarr</span></code> with a <a class="reference external" href="https://docs.dask.org/en/stable/diagnostics-local.html#progress-bar">dask progress bar</a></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dask.diagnostics</span> <span class="kn">import</span> <span class="n">ProgressBar</span>
+
 <span class="k">with</span> <span class="n">ProgressBar</span><span class="p">():</span>
-   <span class="n">ds</span><span class="o">.</span><span class="n">to_zarr</span><span class="p">(</span><span class="n">mapper</span><span class="p">)</span>
+    <span class="n">ds</span><span class="o">.</span><span class="n">to_zarr</span><span class="p">(</span><span class="n">mapper</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Once the data has been uploaded, make sure to erase the <code class="docutils literal notranslate"><span class="pre">.../.config/gcloud/....json</span></code> file from step 7, and ask to be removed from the Google Group.</p>
-</section>
-</section>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

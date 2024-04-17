@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LEAP-Pangeo JupyterHub &#8212; Technical Documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
@@ -148,8 +147,18 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../guides/bootcamp.html">
+   Running LEAP bootcamps
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../guides/team_docs.html">
-   Onboarding Guide for Data and Computation Team Members
+   Guide for Data and Computation Team Members
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../guides/faq.html">
+   FAQs
   </a>
  </li>
 </ul>
@@ -425,7 +434,7 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="leap-pangeo-jupyterhub">
+  <div class="tex2jax_ignore mathjax_ignore section" id="leap-pangeo-jupyterhub">
 <h1>LEAP-Pangeo JupyterHub<a class="headerlink" href="#leap-pangeo-jupyterhub" title="Permalink to this headline">¶</a></h1>
 <p>Our team has a cloud-based <a class="reference external" href="https://jupyter.org/hub">JupyterHub</a>.
 For information who can access the hub with which privileges, please refer to
@@ -456,7 +465,7 @@ For information who can access the hub with which privileges, please refer to
 <li><p>For a quick tutorial on basic usage, please see <a class="reference internal" href="tutorial.html"><span class="doc std std-doc">Getting Started</span></a>.</p></li>
 <li><p>To get an in-depth overview of the LEAP Pangeo Architecture and how the JupyterHub fits into it, please see the <a class="reference internal" href="architecture.html"><span class="doc std std-doc">Architecture</span></a> page.</p></li>
 </ul>
-<section id="the-software-environment">
+<div class="section" id="the-software-environment">
 <h2>The Software Environment<a class="headerlink" href="#the-software-environment" title="Permalink to this headline">¶</a></h2>
 <p>The software environment you encounter on the Hub is based upon <a class="reference external" href="https://www.digitalocean.com/community/tutorials/the-docker-ecosystem-an-introduction-to-common-components">docker images</a> which you can run on other machines (like your laptop or an HPC cluster) for better reproducibility.</p>
 <p>Upon start up you can choose between</p>
@@ -464,7 +473,7 @@ For information who can access the hub with which privileges, please refer to
 <li><p>A list of preselected images</p></li>
 <li><p>The option of passing a custom docker image via the <code class="docutils literal notranslate"><span class="pre">&quot;Other...&quot;</span></code> option.</p></li>
 </ul>
-<section id="preselected-images">
+<div class="section" id="preselected-images">
 <h3>Preselected Images<a class="headerlink" href="#preselected-images" title="Permalink to this headline">¶</a></h3>
 <p>LEAP-Pangeo uses several full-featured, up-to-date Python environments maintained by Pangeo. You can read all about them at the following URL:</p>
 <ul class="simple">
@@ -480,22 +489,28 @@ A complete list of all packages installed in this environment is located at:</p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p>We regularly update the version of the images provided in the drop-down menu.</p>
-<p>To ensure full reproducibility you should save the full info of the image you worked with (this is stored in the environment variable <code class="docutils literal notranslate"><span class="pre">JUPYTER_IMAGE_SPEC</span></code>) with your work. You can then use that string with the <a class="reference internal" href="#hub-image-custom"><span class="std std-ref">custom images</span></a> to reproduce your work with exactly the same environment.</p>
+<p>To ensure full reproducibility you should save the full info of the image you worked with (this is stored in the environment variable <code class="docutils literal notranslate"><span class="pre">JUPYTER_IMAGE_SPEC</span></code>) with your work. You could for example print the following in the first cell of a notebook:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;JUPYTER_IMAGE_SPEC&quot;</span><span class="p">])</span>
+</pre></div>
 </div>
-</section>
-<section id="custom-images">
+<p>You can then use that string with the <a class="reference internal" href="#hub-image-custom"><span class="std std-ref">custom images</span></a> to reproduce your work with exactly the same environment.</p>
+</div>
+</div>
+<div class="section" id="custom-images">
 <span id="hub-image-custom"></span><h3>Custom Images<a class="headerlink" href="#custom-images" title="Permalink to this headline">¶</a></h3>
 <p>If you select the <code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">&gt;</span> <span class="pre">Other...</span></code> Option during <a class="reference internal" href="tutorial.html#hub-server-login"><span class="std std-ref">server login</span></a> you can paste an arbitrary reference in the form of <code class="docutils literal notranslate"><span class="pre">docker_registry/organization/image_name:image_version</span></code>. As an example we can get the <code class="docutils literal notranslate"><span class="pre">2023.05.08</span></code> version of the pangeo tensorflow notebook by pasting <code class="docutils literal notranslate"><span class="pre">quay.io/pangeo/ml-notebook:2023.05.08</span></code>.</p>
 <p>If you want to build your own docker image for your project, take a look at <a class="reference external" href="https://github.com/2i2c-org/hub-user-image-template">this template</a> and the instructions to learn how to use <a class="reference external" href="https://github.com/jupyterhub/repo2docker">repo2docker</a> to set up CI workflows to automatically build docker images from your repository.</p>
-</section>
-<section id="installing-additonal-packages">
+</div>
+<div class="section" id="installing-additonal-packages">
 <h3>Installing additonal packages<a class="headerlink" href="#installing-additonal-packages" title="Permalink to this headline">¶</a></h3>
 <p>You can install additional packages using <code class="docutils literal notranslate"><span class="pre">pip</span></code> and <code class="docutils literal notranslate"><span class="pre">conda</span></code>.
 However, these will disappear when your server shuts down.</p>
 <p>For a more permanent solution we recommend building project specific dockerfiles and using those as <a class="reference internal" href="#hub-image-custom"><span class="std std-ref">custom images</span></a>.</p>
-</section>
-</section>
-<section id="files-and-data">
+</div>
+</div>
+<div class="section" id="files-and-data">
 <h2>Files and Data<a class="headerlink" href="#files-and-data" title="Permalink to this headline">¶</a></h2>
 <p>Data and files work differently in the cloud.
 To help onboard you to this new way of working, we have written a guide to Files and Data in the Cloud:</p>
@@ -503,7 +518,7 @@ To help onboard you to this new way of working, we have written a guide to Files
 <li><p><a class="reference external" href="https://docs.2i2c.org/user/topics/data/filesystem/">2i2c Docs: Data and Filesystem</a></p></li>
 </ul>
 <p>We recommend you read this thoroughly, especially the part about Git and GitHub.</p>
-<section id="your-user-directory">
+<div class="section" id="your-user-directory">
 <span id="hub-guide-data-user-dir"></span><h3>Your User Directory<a class="headerlink" href="#your-user-directory" title="Permalink to this headline">¶</a></h3>
 <p>When you open your hub, you can navigate to the “File Browser” and see all the files in your User Directory
 <a class="reference internal" href="https://github.com/leap-stc/leap-stc.github.io/assets/14314623/3ba6b45a-a077-4824-b0ec-9c111af50c33"><img alt="image" src="https://github.com/leap-stc/leap-stc.github.io/assets/14314623/3ba6b45a-a077-4824-b0ec-9c111af50c33" style="width: 442px;" /></a></p>
@@ -519,8 +534,8 @@ To help onboard you to this new way of working, we have written a guide to Files
 <p>Please do not store large files in your user directory <code class="docutils literal notranslate"><span class="pre">/home/jovyan</span></code>. Your home directory is intended only for notebooks, analysis scripts, and small datasets (&lt; 1 GB). It is not an appropriate place to store large datasets.</p>
 <p>To check how much space you are using in your home directory open a terminal window on the hub and run <code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">-h</span> <span class="pre">--max-depth=1</span> <span class="pre">~/</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-h</span></code>.</p>
 </div>
-</section>
-<section id="leap-pangeo-buckets">
+</div>
+<div class="section" id="leap-pangeo-buckets">
 <span id="hub-data-buckets"></span><h3>LEAP-Pangeo Buckets<a class="headerlink" href="#leap-pangeo-buckets" title="Permalink to this headline">¶</a></h3>
 <p>LEAP-Pangeo provides users two cloud buckets to store data</p>
 <ul class="simple">
@@ -533,33 +548,37 @@ To help onboard you to this new way of working, we have written a guide to Files
 <li><p><strong>Do not put sensitive information (passwords, keys, personal data) into these buckets!</strong></p></li>
 <li><p><strong>When writing to buckets only ever write to your personal folder!</strong> Your personal folder is a combination of the bucketname and your github username (e.g. `gs://leap-persistent/funky-user/’).</p></li>
 </ul>
-</section>
-<section id="inspecting-contents-of-the-bucket">
+</div>
+<div class="section" id="inspecting-contents-of-the-bucket">
 <span id="hub-data-list"></span><h3>Inspecting contents of the bucket<a class="headerlink" href="#inspecting-contents-of-the-bucket" title="Permalink to this headline">¶</a></h3>
 <p>We recommend using <a class="reference external" href="https://gcsfs.readthedocs.io/en/latest/">gcsfs</a> or <a class="reference external" href="https://filesystem-spec.readthedocs.io/en/latest/">fsspec</a> which provide a filesytem-like interface for python.</p>
 <p>You can e.g. list the contents of your personal folder with</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gcsfs</span>
-<span class="n">fs</span> <span class="o">=</span> <span class="n">gcsfs</span><span class="o">.</span><span class="n">GCSFileSystem</span><span class="p">()</span> <span class="c1"># equivalent to fsspec.fs(&#39;gs&#39;)</span>
-<span class="n">fs</span><span class="o">.</span><span class="n">ls</span><span class="p">(</span><span class="s1">&#39;leap-persistent/funky-user&#39;</span><span class="p">)</span>
+
+<span class="n">fs</span> <span class="o">=</span> <span class="n">gcsfs</span><span class="o">.</span><span class="n">GCSFileSystem</span><span class="p">()</span>  <span class="c1"># equivalent to fsspec.fs(&#39;gs&#39;)</span>
+<span class="n">fs</span><span class="o">.</span><span class="n">ls</span><span class="p">(</span><span class="s2">&quot;leap-persistent/funky-user&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="basic-writing-to-and-reading-from-cloud-buckets">
+</div>
+<div class="section" id="basic-writing-to-and-reading-from-cloud-buckets">
 <span id="hub-data-read-write"></span><h3>Basic writing to and reading from cloud buckets<a class="headerlink" href="#basic-writing-to-and-reading-from-cloud-buckets" title="Permalink to this headline">¶</a></h3>
 <p>We do not recommend uploading large files (e.g. netcdf) directly to the bucket. Instead we recommend to write data as ARCO (Analysis-Ready Cloud-Optimized) formats like <a class="reference external" href="https://zarr.dev">zarr</a>(for n-dimensional arrays) and <a class="reference external" href="https://parquet.apache.org">parquet</a>(for tabular data) (read more <a class="reference external" href="https://ieeexplore.ieee.org/document/9354557">here</a> why we recommend ARCO formats).</p>
 <p>If you work with xarray Datasets switching the storage format is as easy as swapping out a single line when reading/writing data:</p>
 <p>Xarray provides a method to stream results of a computation to zarr</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="o">...</span>
 <span class="n">ds_processed</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="o">...</span><span class="p">)</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="n">user_path</span> <span class="o">=</span> <span class="s2">&quot;gs://leap-scratch/funky-user&quot;</span> <span class="c1"># 👀 make sure to prepend `gs://` to the path or xarray will interpret this as a local path</span>
+<span class="n">user_path</span> <span class="o">=</span> <span class="s2">&quot;gs://leap-scratch/funky-user&quot;</span>  <span class="c1"># 👀 make sure to prepend `gs://` to the path or xarray will interpret this as a local path</span>
 <span class="n">store_name</span> <span class="o">=</span> <span class="s2">&quot;processed_store.zarr&quot;</span>
-<span class="n">ds_processed</span><span class="o">.</span><span class="n">to_zarr</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">user_path</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">store_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">ds_processed</span><span class="o">.</span><span class="n">to_zarr</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">user_path</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">store_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>This will write a zarr store to the scratch bucket.</p>
 <p>You can read it back into an xarray dataset with this snippet:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;gs://leap-scratch/funky-user/processed_store.zarr&#39;</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s1">&#39;zarr&#39;</span><span class="p">,</span> <span class="n">chunks</span><span class="o">=</span><span class="p">{})</span> <span class="c1">#</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span>
+    <span class="s2">&quot;gs://leap-scratch/funky-user/processed_store.zarr&quot;</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;zarr&quot;</span><span class="p">,</span> <span class="n">chunks</span><span class="o">=</span><span class="p">{}</span>
+<span class="p">)</span>  <span class="c1">#</span>
 </pre></div>
 </div>
 <p>… and you can give this to any other registered LEAP user and they can load it exactly like you can!</p>
@@ -568,12 +587,12 @@ To help onboard you to this new way of working, we have written a guide to Files
 <p>Note that providing the url starting with <code class="docutils literal notranslate"><span class="pre">gs://...</span></code> is assumes that you have appropriate credentials set up in your environment to read/write to that bucket. On the hub these are already set up for you to work with the <a class="reference internal" href="#hub-data-buckets"><span class="std std-ref">LEAP-Pangeo Buckets</span></a>, but if you are trying to interact with non-public buckets you need to authenticate yourself. Check out the sections <a class="reference internal" href="../guides/hub_guides.html#hub-guide-data-upload-manual"><span class="std std-ref">below</span></a> to see an example how to do that.</p>
 </div>
 <p>You can also write other files directly to the bucket by using <a class="reference external" href="https://filesystem-spec.readthedocs.io/en/latest/api.html#fsspec.open"><code class="docutils literal notranslate"><span class="pre">fsspec.open</span></code></a> similarly to the python builtin <a class="reference external" href="https://docs.python.org/3/library/functions.html#open"><code class="docutils literal notranslate"><span class="pre">open</span></code></a></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;gs://leap-scratch/funky-user/test.txt&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;hello world&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;gs://leap-scratch/funky-user/test.txt&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;hello world&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="deleting-from-cloud-buckets">
+</div>
+<div class="section" id="deleting-from-cloud-buckets">
 <h3>Deleting from cloud buckets<a class="headerlink" href="#deleting-from-cloud-buckets" title="Permalink to this headline">¶</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -581,17 +600,18 @@ To help onboard you to this new way of working, we have written a guide to Files
 </div>
 <p>You can remove single files by using a gcsfs/fsspec filessytem as above</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gcsfs</span>
-<span class="n">fs</span> <span class="o">=</span> <span class="n">gcsfs</span><span class="o">.</span><span class="n">GCSFileSystem</span><span class="p">()</span> <span class="c1"># equivalent to fsspec.fs(&#39;gs&#39;)</span>
-<span class="n">fs</span><span class="o">.</span><span class="n">rm</span><span class="p">(</span><span class="s1">&#39;leap-persistent/funky-user/file_to_delete.nc&#39;</span><span class="p">)</span>
+
+<span class="n">fs</span> <span class="o">=</span> <span class="n">gcsfs</span><span class="o">.</span><span class="n">GCSFileSystem</span><span class="p">()</span>  <span class="c1"># equivalent to fsspec.fs(&#39;gs&#39;)</span>
+<span class="n">fs</span><span class="o">.</span><span class="n">rm</span><span class="p">(</span><span class="s2">&quot;leap-persistent/funky-user/file_to_delete.nc&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>If you want to remove zarr stores (which are an ‘exploded’ data format, and thus represented by a folder structure) you have to recursively delete the store.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fs</span><span class="o">.</span><span class="n">rm</span><span class="p">(</span><span class="s1">&#39;leap-scratch/funky-user/processed_store.zarr&#39;</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fs</span><span class="o">.</span><span class="n">rm</span><span class="p">(</span><span class="s2">&quot;leap-scratch/funky-user/processed_store.zarr&quot;</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
