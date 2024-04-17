@@ -172,7 +172,7 @@ It’s useful to understand the recent history and related efforts in this space
 - **[Google Earth Engine](https://earthengine.google.org/)** is a reference point for all cloud geospatial analytics platforms.
   It’s actually a standalone application that is separate from Google Cloud, the single instance of a highly customized, black box (i.e. not open source)  application that enables parallel computing on distributed data.
   It’s very good at what it was designed for (analyzing satellite images), but isn’t easily adapted to other applications, such as machine learning.
-- **[Columbia IRI Data Library](https://iridl.ldeo.columbia.edu/index.html)** is a powerful and freely accessible online data repository and analysis tool that allows a user to view, analyze, and download hundreds of terabytes of climate-related data through a standard web browser.
+- **[Columbia IRI Data Library](https://iridl.ldeo.columbia.edu/)** is a powerful and freely accessible online data repository and analysis tool that allows a user to view, analyze, and download hundreds of terabytes of climate-related data through a standard web browser.
   Due to its somewhat outdated architecture, IRI data library cannot easily be updated or adapted to new projects.
 - **[Pangeo](http://pangeo.io/)** is an open science community oriented around open-source python tools for big-data geoscience.
   It is a loose ecosystem of interoperable python packages including [Jupyter](https://jupyter.org/), [Xarray](http://xarray.pydata.org/), [Dask](http://dask.pydata.org/), and [Zarr](https://zarr.readthedocs.io/).
@@ -181,7 +181,7 @@ It’s useful to understand the recent history and related efforts in this space
   Pangeo is used heavily within NCAR.
 - **[Microsoft Planetary Computer](https://planetarycomputer.microsoft.com/)** is a collection of datasets and computational tools hosted by Microsoft in the Azure cloud.
   It combines Pangeo-style computing environments with a data library based on [SpatioTemporal Asset Catalog](https://stacspec.org/)
-- **[Radiant Earth ML Hub](https://www.radiant.earth/mlhub/)** is a cloud-based open library dedicated to Earth observation training data for use with machine learning algorithms.
+- **[Source Cooperative (formerly Radiant Earth ML Hub)](https://source.coop)** is a cloud-based open library dedicated to Earth observation training data for use with machine learning algorithms.
   It focuses mostly on data access and curation.
   Data are cataloged using STAC.
 - **[Pangeo Forge](https://pangeo-forge.org/)** is a new initiative, funded by the NSF EarthCube program, to build a platform for
