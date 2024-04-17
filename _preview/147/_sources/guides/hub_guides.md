@@ -17,15 +17,13 @@ For a quick guide on how to start a Dask Cluster, consult this page from the Pan
 
 ```{mermaid}
 flowchart LR
-  A[Jupyter Notebook] --> C
-  B[MyST Markdown] --> C
-  C(mystmd) --> D{AST}
-  D <--> E[LaTeX]
-  E --> F[PDF]
-  D --> G[Word]
-  D --> H[React]
-  D --> I[HTML]
-  D <--> J[JATS]
+    A-->B
+    B-->C
+    C-->D
+    click A callback "Tooltip for a callback"
+    click B "https://www.github.com" "This is a tooltip for a link"
+    click C call callback() "Tooltip for a callback"
+    click D href "https://www.github.com" "This is a tooltip for a link"
 ```
 
 ### I have a dataset and want to work with it on the hub. How do I upload it?
