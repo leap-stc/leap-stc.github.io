@@ -107,8 +107,8 @@ To check how much space you are using in your home directory open a terminal win
 LEAP-Pangeo provides users two cloud buckets to store data
 
 - `gs://leap-scratch/` - Temporary Storage deleted after 7 days. Use this bucket for testing and storing large intermediate results. [More info](https://docs.2i2c.org/user/topics/data/cloud/#scratch-bucket)
-- `gs://leap-persistent` - Persistent Storage. Use this bucket for storing results you want to share with other members.
-- `gs://leap-persistent-ro` - Persistent Storage with read-only access for most users. To upload data to this bucket you need to use [this](hub.data.upload_hpc) method below.
+- `gs://leap-persistent/` - Persistent Storage. Use this bucket for storing results you want to share with other members.
+- `gs://leap-persistent-ro/` - Persistent Storage with read-only access for most users. To upload data to this bucket you need to use [this](hub.data.upload_hpc) method below.
 
 Files stored on each of those buckets can be accessed by any LEAP member, so be concious in the way you use these.
 
