@@ -35,8 +35,9 @@ For medium sized datasets, that can be uploaded within an hour, you can use a te
 - Set up a new environment on your local machine (e.g. laptop)
 
 ```shell
-mamba env create --name leap_pange_transfer python=3.9 google-auth gcsfs jupyterlab xarray zarr dask #add any other dependencies (e.g. netcdf4) that you need to read your data
+mamba env create --name leap_pangeo_transfer python=3.9 google-auth gcsfs jupyterlab xarray zarr dask
 ```
+> Add any other dependencies (e.g. netcdf4) that you need to read your data at the end of the line
 
 - Activate the environment
 
