@@ -4,7 +4,7 @@ The different elements of the project can be implemented in parallel and gradual
 
 ## Roles
 
-:::{admonition} Decision Needed
+:::\{admonition} Decision Needed
 An open question for LEAP-Pangeo is whether to develop and maintain our infrastructure
 via subcontracts or via Columbia employees whom we hire.
 Below the roles are enumerated in a generic way according to the needed expertise.
@@ -66,7 +66,7 @@ and machine-learning models, will require a mix of skills commonly referred to a
 
 #### Education and Training
 
-:::{admonition} Decision Needed
+:::\{admonition} Decision Needed
 What is the scope of LEAP-Pangeo training? How much should we expect trainees to learn?
 What is the intersection with other educational activities, including for-credit courses?
 :::
@@ -77,10 +77,10 @@ and cloud computing.
 
 ### Contractors vs. Employees
 
-| | Pros | Cons |
-| -- | -- | -- |
-| **Employees** | Longer-term commitment to project. Better integration with on-campus activities. | Slow hiring. Recruiting challenges. Uncertainty they can deliver needed results. |
-| **Contractors** | Can spin up rapidly. Proven track records. Connection to broader ecosystems. Don't have to deal with hiring. Acccess to top technical talent. | Potentially less integrated into project. |
+|                 | Pros                                                                                                                                          | Cons                                                                             |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| **Employees**   | Longer-term commitment to project. Better integration with on-campus activities.                                                              | Slow hiring. Recruiting challenges. Uncertainty they can deliver needed results. |
+| **Contractors** | Can spin up rapidly. Proven track records. Connection to broader ecosystems. Don't have to deal with hiring. Acccess to top technical talent. | Potentially less integrated into project.                                        |
 
 ## Timeline
 
@@ -89,6 +89,7 @@ What follows is a possible timeline for implementation.
 ### Fall 2021
 
 #### Activities
+
 - 📍 Deploy generic Pangeo JupyterHub on Google Cloud using supported credits.
 - 📍 Provide basic end-user documentation for using the Hub
   (comparable to [Pangeo Cloud docs](https://pangeo.io/cloud.html)).
@@ -104,7 +105,6 @@ What follows is a possible timeline for implementation.
 - 📍 Conduct data survey to assess data needs of research, education, and outreach activities.
 - 📍 Data engineers work with researchers on data ingestion.
 - 📍 Refine Hub environment based on initial feedback.
-
 
 #### Milestones
 
