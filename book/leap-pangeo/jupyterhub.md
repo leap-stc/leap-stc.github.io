@@ -103,6 +103,7 @@ If you want to save larger files for your work use our [](hub.data.buckets) and 
 :::
 
 (hub.data.buckets)=
+
 ### LEAP-Pangeo Cloud Storage Buckets
 
 LEAP-Pangeo provides users two cloud buckets to store data
@@ -117,6 +118,7 @@ Files stored on each of those buckets can be accessed by any LEAP member, so be 
 - **When writing to buckets only ever write to your personal folder!** Your personal folder is a combination of the bucketname and your github username (e.g. \`gs://leap-persistent/funky-user/').
 
 (hub.data.list)=
+
 #### Inspecting contents of the bucket
 
 We recommend using [gcsfs](https://gcsfs.readthedocs.io/en/latest/) or [fsspec](https://filesystem-spec.readthedocs.io/en/latest/) which provide a filesytem-like interface for python.
@@ -131,6 +133,7 @@ fs.ls("leap-persistent/funky-user")
 ```
 
 (hub.data.read_write)=
+
 #### Basic writing to and reading from cloud buckets
 
 We do not recommend uploading large files (e.g. netcdf) directly to the bucket. Instead we recommend to write data as ARCO (Analysis-Ready Cloud-Optimized) formats like [zarr](https://zarr.dev)(for n-dimensional arrays) and [parquet](https://parquet.apache.org)(for tabular data) (read more [here](https://ieeexplore.ieee.org/document/9354557) why we recommend ARCO formats).

@@ -12,6 +12,7 @@ For a quick guide on how to start a Dask Cluster, consult this page from the Pan
 - <https://pangeo.io/cloud.html#dask>
 
 (guide.hub.data)=
+
 ## Data
 
 ### I have a dataset and want to work with it on the hub. How do I upload it?
