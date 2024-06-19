@@ -1,6 +1,5 @@
 # LEAP-Pangeo Architecture
 
-
 LEAP-Pangeo is a cloud-based data and computing platform that will be used to support research, education, and knowledge transfer within the LEAP program.
 
 ## Design Principles
@@ -8,6 +7,7 @@ LEAP-Pangeo is a cloud-based data and computing platform that will be used to su
 In the proposal, we committed to building this in a way that enables the tools and infrastructure to be reused and remixed.
 So The challenge for LEAP Pangeo is to deploy an “enterprise quality” platform built entirely out of open-source tools, and to make this platform as reusable and useful for the broader climate science community as possible.
 We committed to following the following design principles:
+
 - Open source
 - Modular system: built out of smaller, standalone pieces which interoperate through clearly documented interfaces / standards
 - Agile development on GitHub
@@ -34,6 +34,7 @@ The data library is directly inspired by the [IRI Data Library](https://iridl.ld
 
 The contents of the data library will evolve dynamically based on the needs of the project.
 Examples of data that may become part of the library are
+
 - NOAA [OISST](https://www.ncei.noaa.gov/products/optimum-interpolation-sst) sea-surface temperature data,
   used in workshops and classes to illustrate the fundamentals of geospatial data science.
 - High-resolution climate model simulations from the [NCAR "EarthWorks"](https://news.ucar.edu/132760/csu-ncar-develop-high-res-global-model-community-use)
@@ -88,6 +89,7 @@ The catalog will store all relevant metadata about LEAP datasets following estab
 It will also provide direct links to raw data in cloud object storage.
 
 The catalog will facilitate several different modes of access:
+
 - Searching, crawling, and opening datasets from within notebooks or scripts
 - "Crawling" by search indexes or other machine-to-machine interfaces
 - A pretty web front-end interface for interactive public browsing
@@ -161,9 +163,7 @@ This is the most open-ended aspect of our infrastructure.
 Organizing and displaying this information effectively is a challenging problem in
 information architecture and systems design.
 
-
- ## Related Tools and Platforms
-
+## Related Tools and Platforms
 
 It’s useful to understand the recent history and related efforts in this space.
 

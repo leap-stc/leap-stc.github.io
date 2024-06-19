@@ -495,7 +495,8 @@ A complete list of all packages installed in this environment is located at:</p>
 <p>We regularly update the version of the images provided in the drop-down menu.</p>
 <p>To ensure full reproducibility you should save the full info of the image you worked with (this is stored in the environment variable <code class="docutils literal notranslate"><span class="pre">JUPYTER_IMAGE_SPEC</span></code>) with your work. You could for example print the following in the first cell of a notebook:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;JUPYTER_IMAGE_SPEC&#39;</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;JUPYTER_IMAGE_SPEC&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>You can then use that string with the <a class="reference internal" href="#hub-image-custom"><span class="std std-ref">custom images</span></a> to reproduce your work with exactly the same environment.</p>
@@ -544,8 +545,8 @@ To help onboard you to this new way of working, we have written a guide to Files
 <p>LEAP-Pangeo provides users two cloud buckets to store data</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">gs://leap-scratch/</span></code> - Temporary Storage deleted after 7 days. Use this bucket for testing and storing large intermediate results. <a class="reference external" href="https://docs.2i2c.org/user/topics/data/cloud/#scratch-bucket">More info</a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">gs://leap-persistent</span></code> - Persistent Storage. Use this bucket for storing results you want to share with other members.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">gs://leap-persistent-ro</span></code> - Persistent Storage with read-only access for most users. To upload data to this bucket you need to use <a class="reference internal" href="../guides/hub_guides.html#hub-data-upload-hpc"><span class="std std-ref">this</span></a> method below.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gs://leap-persistent/</span></code> - Persistent Storage. Use this bucket for storing results you want to share with other members.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gs://leap-persistent-ro/</span></code> - Persistent Storage with read-only access for most users. To upload data to this bucket you need to use <a class="reference internal" href="../guides/hub_guides.html#hub-data-upload-hpc"><span class="std std-ref">this</span></a> method below.</p></li>
 </ul>
 <p>Files stored on each of those buckets can be accessed by any LEAP member, so be concious in the way you use these.</p>
 <ul class="simple">
@@ -557,8 +558,9 @@ To help onboard you to this new way of working, we have written a guide to Files
 <p>We recommend using <a class="reference external" href="https://gcsfs.readthedocs.io/en/latest/">gcsfs</a> or <a class="reference external" href="https://filesystem-spec.readthedocs.io/en/latest/">fsspec</a> which provide a filesytem-like interface for python.</p>
 <p>You can e.g. list the contents of your personal folder with</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gcsfs</span>
-<span class="n">fs</span> <span class="o">=</span> <span class="n">gcsfs</span><span class="o">.</span><span class="n">GCSFileSystem</span><span class="p">()</span> <span class="c1"># equivalent to fsspec.fs(&#39;gs&#39;)</span>
-<span class="n">fs</span><span class="o">.</span><span class="n">ls</span><span class="p">(</span><span class="s1">&#39;leap-persistent/funky-user&#39;</span><span class="p">)</span>
+
+<span class="n">fs</span> <span class="o">=</span> <span class="n">gcsfs</span><span class="o">.</span><span class="n">GCSFileSystem</span><span class="p">()</span>  <span class="c1"># equivalent to fsspec.fs(&#39;gs&#39;)</span>
+<span class="n">fs</span><span class="o">.</span><span class="n">ls</span><span class="p">(</span><span class="s2">&quot;leap-persistent/funky-user&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -569,15 +571,18 @@ To help onboard you to this new way of working, we have written a guide to Files
 <p>Xarray provides a method to stream results of a computation to zarr</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="o">...</span>
 <span class="n">ds_processed</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="o">...</span><span class="p">)</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="n">user_path</span> <span class="o">=</span> <span class="s2">&quot;gs://leap-scratch/funky-user&quot;</span> <span class="c1"># 👀 make sure to prepend `gs://` to the path or xarray will interpret this as a local path</span>
+<span class="n">user_path</span> <span class="o">=</span> <span class="s2">&quot;gs://leap-scratch/funky-user&quot;</span>  <span class="c1"># 👀 make sure to prepend `gs://` to the path or xarray will interpret this as a local path</span>
 <span class="n">store_name</span> <span class="o">=</span> <span class="s2">&quot;processed_store.zarr&quot;</span>
-<span class="n">ds_processed</span><span class="o">.</span><span class="n">to_zarr</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">user_path</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">store_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">ds_processed</span><span class="o">.</span><span class="n">to_zarr</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">user_path</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">store_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>This will write a zarr store to the scratch bucket.</p>
 <p>You can read it back into an xarray dataset with this snippet:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;gs://leap-scratch/funky-user/processed_store.zarr&#39;</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s1">&#39;zarr&#39;</span><span class="p">,</span> <span class="n">chunks</span><span class="o">=</span><span class="p">{})</span> <span class="c1">#</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span>
+    <span class="s2">&quot;gs://leap-scratch/funky-user/processed_store.zarr&quot;</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;zarr&quot;</span><span class="p">,</span> <span class="n">chunks</span><span class="o">=</span><span class="p">{}</span>
+<span class="p">)</span>  <span class="c1">#</span>
 </pre></div>
 </div>
 <p>… and you can give this to any other registered LEAP user and they can load it exactly like you can!</p>
@@ -586,8 +591,8 @@ To help onboard you to this new way of working, we have written a guide to Files
 <p>Note that providing the url starting with <code class="docutils literal notranslate"><span class="pre">gs://...</span></code> is assumes that you have appropriate credentials set up in your environment to read/write to that bucket. On the hub these are already set up for you to work with the <a class="reference internal" href="#hub-data-buckets"><span class="std std-ref">LEAP-Pangeo Cloud Storage Buckets</span></a>, but if you are trying to interact with non-public buckets you need to authenticate yourself. Check out the sections <a class="reference internal" href="../guides/hub_guides.html#hub-guide-data-upload-manual"><span class="std std-ref">below</span></a> to see an example how to do that.</p>
 </div>
 <p>You can also write other files directly to the bucket by using <a class="reference external" href="https://filesystem-spec.readthedocs.io/en/latest/api.html#fsspec.open"><code class="docutils literal notranslate"><span class="pre">fsspec.open</span></code></a> similarly to the python builtin <a class="reference external" href="https://docs.python.org/3/library/functions.html#open"><code class="docutils literal notranslate"><span class="pre">open</span></code></a></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;gs://leap-scratch/funky-user/test.txt&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;hello world&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;gs://leap-scratch/funky-user/test.txt&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;hello world&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -599,12 +604,13 @@ To help onboard you to this new way of working, we have written a guide to Files
 </div>
 <p>You can remove single files by using a gcsfs/fsspec filessytem as above</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gcsfs</span>
-<span class="n">fs</span> <span class="o">=</span> <span class="n">gcsfs</span><span class="o">.</span><span class="n">GCSFileSystem</span><span class="p">()</span> <span class="c1"># equivalent to fsspec.fs(&#39;gs&#39;)</span>
-<span class="n">fs</span><span class="o">.</span><span class="n">rm</span><span class="p">(</span><span class="s1">&#39;leap-persistent/funky-user/file_to_delete.nc&#39;</span><span class="p">)</span>
+
+<span class="n">fs</span> <span class="o">=</span> <span class="n">gcsfs</span><span class="o">.</span><span class="n">GCSFileSystem</span><span class="p">()</span>  <span class="c1"># equivalent to fsspec.fs(&#39;gs&#39;)</span>
+<span class="n">fs</span><span class="o">.</span><span class="n">rm</span><span class="p">(</span><span class="s2">&quot;leap-persistent/funky-user/file_to_delete.nc&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>If you want to remove zarr stores (which are an ‘exploded’ data format, and thus represented by a folder structure) you have to recursively delete the store.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fs</span><span class="o">.</span><span class="n">rm</span><span class="p">(</span><span class="s1">&#39;leap-scratch/funky-user/processed_store.zarr&#39;</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fs</span><span class="o">.</span><span class="n">rm</span><span class="p">(</span><span class="s2">&quot;leap-scratch/funky-user/processed_store.zarr&quot;</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
