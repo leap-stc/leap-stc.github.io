@@ -102,7 +102,7 @@ ds.to_zarr(mapper)
 
 (hub.data.upload_hpc)=
 
-##### Uploading large original data from an HPC system (no browser access on the system available)
+#### Uploading large original data from an HPC system (no browser access on the system available)
 
 A commong scenario is the following: A researcher/student has run a simulation on a High Performance Computer (HPC) at their institution, but now wants to collaboratively work on the analysis or train a machine learning model with this data. For this they need to upload it to the cloud storage.
 
