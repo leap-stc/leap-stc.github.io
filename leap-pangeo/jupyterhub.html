@@ -330,24 +330,26 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#leap-pangeo-buckets">
-     LEAP-Pangeo Buckets
+    <a class="reference internal nav-link" href="#leap-pangeo-cloud-storage-buckets">
+     LEAP-Pangeo Cloud Storage Buckets
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inspecting-contents-of-the-bucket">
-     Inspecting contents of the bucket
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#basic-writing-to-and-reading-from-cloud-buckets">
-     Basic writing to and reading from cloud buckets
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#deleting-from-cloud-buckets">
-     Deleting from cloud buckets
-    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#inspecting-contents-of-the-bucket">
+       Inspecting contents of the bucket
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#basic-writing-to-and-reading-from-cloud-buckets">
+       Basic writing to and reading from cloud buckets
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#deleting-from-cloud-buckets">
+       Deleting from cloud buckets
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -404,24 +406,26 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#leap-pangeo-buckets">
-     LEAP-Pangeo Buckets
+    <a class="reference internal nav-link" href="#leap-pangeo-cloud-storage-buckets">
+     LEAP-Pangeo Cloud Storage Buckets
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inspecting-contents-of-the-bucket">
-     Inspecting contents of the bucket
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#basic-writing-to-and-reading-from-cloud-buckets">
-     Basic writing to and reading from cloud buckets
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#deleting-from-cloud-buckets">
-     Deleting from cloud buckets
-    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#inspecting-contents-of-the-bucket">
+       Inspecting contents of the bucket
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#basic-writing-to-and-reading-from-cloud-buckets">
+       Basic writing to and reading from cloud buckets
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#deleting-from-cloud-buckets">
+       Deleting from cloud buckets
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -533,10 +537,11 @@ To help onboard you to this new way of working, we have written a guide to Files
 <p class="admonition-title">Warning</p>
 <p>Please do not store large files in your user directory <code class="docutils literal notranslate"><span class="pre">/home/jovyan</span></code>. Your home directory is intended only for notebooks, analysis scripts, and small datasets (&lt; 1 GB). It is not an appropriate place to store large datasets.</p>
 <p>To check how much space you are using in your home directory open a terminal window on the hub and run <code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">-h</span> <span class="pre">--max-depth=1</span> <span class="pre">~/</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-h</span></code>.</p>
+<p>If you want to save larger files for your work use our <a class="reference internal" href="#hub-data-buckets"><span class="std std-ref">LEAP-Pangeo Cloud Storage Buckets</span></a> and consult out <a class="reference internal" href="../guides/hub_guides.html#guide-hub-data"><span class="std std-ref">Hub Data Guide</span></a></p>
 </div>
 </div>
-<div class="section" id="leap-pangeo-buckets">
-<span id="hub-data-buckets"></span><h3>LEAP-Pangeo Buckets<a class="headerlink" href="#leap-pangeo-buckets" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="leap-pangeo-cloud-storage-buckets">
+<span id="hub-data-buckets"></span><h3>LEAP-Pangeo Cloud Storage Buckets<a class="headerlink" href="#leap-pangeo-cloud-storage-buckets" title="Permalink to this headline">¶</a></h3>
 <p>LEAP-Pangeo provides users two cloud buckets to store data</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">gs://leap-scratch/</span></code> - Temporary Storage deleted after 7 days. Use this bucket for testing and storing large intermediate results. <a class="reference external" href="https://docs.2i2c.org/user/topics/data/cloud/#scratch-bucket">More info</a></p></li>
@@ -548,9 +553,8 @@ To help onboard you to this new way of working, we have written a guide to Files
 <li><p><strong>Do not put sensitive information (passwords, keys, personal data) into these buckets!</strong></p></li>
 <li><p><strong>When writing to buckets only ever write to your personal folder!</strong> Your personal folder is a combination of the bucketname and your github username (e.g. `gs://leap-persistent/funky-user/’).</p></li>
 </ul>
-</div>
 <div class="section" id="inspecting-contents-of-the-bucket">
-<span id="hub-data-list"></span><h3>Inspecting contents of the bucket<a class="headerlink" href="#inspecting-contents-of-the-bucket" title="Permalink to this headline">¶</a></h3>
+<span id="hub-data-list"></span><h4>Inspecting contents of the bucket<a class="headerlink" href="#inspecting-contents-of-the-bucket" title="Permalink to this headline">¶</a></h4>
 <p>We recommend using <a class="reference external" href="https://gcsfs.readthedocs.io/en/latest/">gcsfs</a> or <a class="reference external" href="https://filesystem-spec.readthedocs.io/en/latest/">fsspec</a> which provide a filesytem-like interface for python.</p>
 <p>You can e.g. list the contents of your personal folder with</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gcsfs</span>
@@ -561,7 +565,7 @@ To help onboard you to this new way of working, we have written a guide to Files
 </div>
 </div>
 <div class="section" id="basic-writing-to-and-reading-from-cloud-buckets">
-<span id="hub-data-read-write"></span><h3>Basic writing to and reading from cloud buckets<a class="headerlink" href="#basic-writing-to-and-reading-from-cloud-buckets" title="Permalink to this headline">¶</a></h3>
+<span id="hub-data-read-write"></span><h4>Basic writing to and reading from cloud buckets<a class="headerlink" href="#basic-writing-to-and-reading-from-cloud-buckets" title="Permalink to this headline">¶</a></h4>
 <p>We do not recommend uploading large files (e.g. netcdf) directly to the bucket. Instead we recommend to write data as ARCO (Analysis-Ready Cloud-Optimized) formats like <a class="reference external" href="https://zarr.dev">zarr</a>(for n-dimensional arrays) and <a class="reference external" href="https://parquet.apache.org">parquet</a>(for tabular data) (read more <a class="reference external" href="https://ieeexplore.ieee.org/document/9354557">here</a> why we recommend ARCO formats).</p>
 <p>If you work with xarray Datasets switching the storage format is as easy as swapping out a single line when reading/writing data:</p>
 <p>Xarray provides a method to stream results of a computation to zarr</p>
@@ -584,7 +588,7 @@ To help onboard you to this new way of working, we have written a guide to Files
 <p>… and you can give this to any other registered LEAP user and they can load it exactly like you can!</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Note that providing the url starting with <code class="docutils literal notranslate"><span class="pre">gs://...</span></code> is assumes that you have appropriate credentials set up in your environment to read/write to that bucket. On the hub these are already set up for you to work with the <a class="reference internal" href="#hub-data-buckets"><span class="std std-ref">LEAP-Pangeo Buckets</span></a>, but if you are trying to interact with non-public buckets you need to authenticate yourself. Check out the sections <a class="reference internal" href="../guides/hub_guides.html#hub-guide-data-upload-manual"><span class="std std-ref">below</span></a> to see an example how to do that.</p>
+<p>Note that providing the url starting with <code class="docutils literal notranslate"><span class="pre">gs://...</span></code> is assumes that you have appropriate credentials set up in your environment to read/write to that bucket. On the hub these are already set up for you to work with the <a class="reference internal" href="#hub-data-buckets"><span class="std std-ref">LEAP-Pangeo Cloud Storage Buckets</span></a>, but if you are trying to interact with non-public buckets you need to authenticate yourself. Check out the sections <a class="reference internal" href="../guides/hub_guides.html#hub-guide-data-upload-manual"><span class="std std-ref">below</span></a> to see an example how to do that.</p>
 </div>
 <p>You can also write other files directly to the bucket by using <a class="reference external" href="https://filesystem-spec.readthedocs.io/en/latest/api.html#fsspec.open"><code class="docutils literal notranslate"><span class="pre">fsspec.open</span></code></a> similarly to the python builtin <a class="reference external" href="https://docs.python.org/3/library/functions.html#open"><code class="docutils literal notranslate"><span class="pre">open</span></code></a></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;gs://leap-scratch/funky-user/test.txt&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -593,7 +597,7 @@ To help onboard you to this new way of working, we have written a guide to Files
 </div>
 </div>
 <div class="section" id="deleting-from-cloud-buckets">
-<h3>Deleting from cloud buckets<a class="headerlink" href="#deleting-from-cloud-buckets" title="Permalink to this headline">¶</a></h3>
+<h4>Deleting from cloud buckets<a class="headerlink" href="#deleting-from-cloud-buckets" title="Permalink to this headline">¶</a></h4>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Depending on which cloud bucket you are working, make sure to double check which files you are deleting by <a class="reference internal" href="#hub-data-list"><span class="std std-ref">inspecting the contents</span></a> and only working in a subdirectory with your username (e.g. <code class="docutils literal notranslate"><span class="pre">gs://&lt;leap-bucket&gt;/&lt;your-username&gt;/some/project/structure</span></code>.</p>
@@ -608,6 +612,7 @@ To help onboard you to this new way of working, we have written a guide to Files
 <p>If you want to remove zarr stores (which are an ‘exploded’ data format, and thus represented by a folder structure) you have to recursively delete the store.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fs</span><span class="o">.</span><span class="n">rm</span><span class="p">(</span><span class="s2">&quot;leap-scratch/funky-user/processed_store.zarr&quot;</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>
