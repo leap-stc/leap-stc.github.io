@@ -100,11 +100,13 @@ The primary purpose of this directory is to store small files, like github repos
 Please do not store large files in your user directory `/home/jovyan`. Your home directory is intended only for notebooks, analysis scripts, and small datasets (\< 1 GB). It is not an appropriate place to store large datasets.
 
 To check how much space you are using in your home directory open a terminal window on the hub and run `du -h --max-depth=1 ~/ | sort -h`.
+
+If you want to save larger files for your work use our [](hub.data.buckets) and consult out [Hub Data Guide](guide.hub.data)
 :::
 
 (hub.data.buckets)=
 
-### LEAP-Pangeo Buckets
+### LEAP-Pangeo Cloud Storage Buckets
 
 LEAP-Pangeo provides users two cloud buckets to store data
 
@@ -119,7 +121,7 @@ Files stored on each of those buckets can be accessed by any LEAP member, so be 
 
 (hub.data.list)=
 
-### Inspecting contents of the bucket
+#### Inspecting contents of the bucket
 
 We recommend using [gcsfs](https://gcsfs.readthedocs.io/en/latest/) or [fsspec](https://filesystem-spec.readthedocs.io/en/latest/) which provide a filesytem-like interface for python.
 
@@ -134,7 +136,7 @@ fs.ls("leap-persistent/funky-user")
 
 (hub.data.read_write)=
 
-### Basic writing to and reading from cloud buckets
+#### Basic writing to and reading from cloud buckets
 
 We do not recommend uploading large files (e.g. netcdf) directly to the bucket. Instead we recommend to write data as ARCO (Analysis-Ready Cloud-Optimized) formats like [zarr](https://zarr.dev)(for n-dimensional arrays) and [parquet](https://parquet.apache.org)(for tabular data) (read more [here](https://ieeexplore.ieee.org/document/9354557) why we recommend ARCO formats).
 
@@ -175,7 +177,7 @@ with fsspec.open("gs://leap-scratch/funky-user/test.txt", mode="w") as f:
     f.write("hello world")
 ```
 
-### Deleting from cloud buckets
+#### Deleting from cloud buckets
 
 :::\{warning}
 Depending on which cloud bucket you are working, make sure to double check which files you are deleting by [inspecting the contents](hub.data.list) and only working in a subdirectory with your username (e.g. `gs://<leap-bucket>/<your-username>/some/project/structure`.
