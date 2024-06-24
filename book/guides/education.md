@@ -3,8 +3,8 @@
 This guide is intended for folks who want to run classes using the LEAP Pangeo resources.
 
 ## Requirements
-- Make sure to check out our [](tutorial.getting_started) and particularly ensure that you have [access to the Jupyterhub](hub.access).
 
+- Make sure to check out our [](tutorial.getting_started) and particularly ensure that you have [access to the Jupyterhub](hub.access).
 
 ## Running classes on the JupyterHub
 
