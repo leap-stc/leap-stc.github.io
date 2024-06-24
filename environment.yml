@@ -8,3 +8,5 @@ dependencies:
   - pip
   - pip:
     - sphinx-jinja
+    - pre-commit
+    - lxml_html_clean
