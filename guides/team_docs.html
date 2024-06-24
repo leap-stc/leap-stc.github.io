@@ -329,6 +329,11 @@ const thebe_selector_output = ".output, .cell_output"
      Monitor User Directory Useage
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#regularly-updating-the-software-environment">
+     Regularly Updating the Software Environment
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -383,6 +388,11 @@ const thebe_selector_output = ".output, .cell_output"
      Monitor User Directory Useage
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#regularly-updating-the-software-environment">
+     Regularly Updating the Software Environment
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -427,6 +437,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="regular-maintenance">
 <h2>Regular Maintenance<a class="headerlink" href="#regular-maintenance" title="Permalink to this headline">¶</a></h2>
+<p>This section documents common tasks performed as part of the Data and Computation Team’s duties.</p>
 <div class="section" id="monitor-user-directory-useage">
 <h3>Monitor User Directory Useage<a class="headerlink" href="#monitor-user-directory-useage" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference internal" href="../leap-pangeo/jupyterhub.html#hub-guide-data-user-dir"><span class="std std-ref">user directories</span></a> of all members are on a shared volume of fixed size. We pay for the total size of the volume no matter if it is used or not, so we should strive to keep usage to a minimum. Our current policy is that &lt;50GB per user is acceptable.
@@ -434,6 +445,14 @@ Unfortunately we do not have a technical way to implement per user quotas, so we
 <ul class="simple">
 <li><p>How much space is left on the <a class="reference external" href="https://grafana.leap.2i2c.cloud/d/hub-dashboard/jupyterhub-dashboard?orgId=1&amp;viewPanel=23">entire shared volume</a>? If the free space falls <em>below 20%</em> we need to discuss further actions.</p></li>
 <li><p><a class="reference external" href="https://grafana.leap.2i2c.cloud/d/bd232539-52d0-4435-8a62-fe637dc822be/home-directory-usage-dashboard?orgId=1">Which users are taking up more than the allowed 50GB</a>. For users who take up more than 50GB the suggested action is to reach out via slack or email.</p></li>
+</ul>
+</div>
+<div class="section" id="regularly-updating-the-software-environment">
+<h3>Regularly Updating the Software Environment<a class="headerlink" href="#regularly-updating-the-software-environment" title="Permalink to this headline">¶</a></h3>
+<p>We aim to provide users with <a class="reference internal" href="../leap-pangeo/jupyterhub.html#jupyterhub-software-env"><span class="std std-ref">up-to-date default software environments</span></a>. This currently requires to change the <a class="reference external" href="https://github.com/pangeo-data/pangeo-docker-images">pangeo-docker-images</a> tag manually.</p>
+<ul class="simple">
+<li><p>Make sure you are subscribed to release notifications on <a class="reference external" href="https://github.com/pangeo-data/pangeo-docker-images">pangeo-docker-images</a> to recieve Github notification about new releases</p></li>
+<li><p>To bump the version, submit a PR to <a class="reference external" href="https://github.com/2i2c-org/infrastructure/blob/master/config/clusters/leap/common.values.yaml">this config file</a> in the <a class="reference external" href="https://github.com/2i2c-org/infrastructure">2i2c infrastructure repo</a>. In that PR you need to change the image tag for <em>all image choices</em>, see an example <a class="reference external" href="https://github.com/2i2c-org/infrastructure/pull/3688">here</a>.</p></li>
 </ul>
 </div>
 </div>

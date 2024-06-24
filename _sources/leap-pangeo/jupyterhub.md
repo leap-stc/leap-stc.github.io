@@ -16,6 +16,8 @@ This document goes over the primary technical details of the JupyterHub.
 - For a quick tutorial on basic usage, please see [Getting Started](tutorial.md).
 - To get an in-depth overview of the LEAP Pangeo Architecture and how the JupyterHub fits into it, please see the [Architecture](architecture.md) page.
 
+(jupyterhub.software_env)=
+
 ## The Software Environment
 
 The software environment you encounter on the Hub is based upon [docker images](https://www.digitalocean.com/community/tutorials/the-docker-ecosystem-an-introduction-to-common-components) which you can run on other machines (like your laptop or an HPC cluster) for better reproducibility.
