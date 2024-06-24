@@ -383,7 +383,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="admin-considerations">
 <h2>Admin considerations<a class="headerlink" href="#admin-considerations" title="Permalink to this headline">¶</a></h2>
-<p>To fully separate this testing from the Hub etc we have created a separate project in Gcloud (same billing account and Org). To keep an eye on (e.g. accidental) cost overrun, I added a budget alert (in the linked billing account) that applies to all resources for this new project, and set a 500$ alert with notifications at various thresholds.</p>
+<p>To fully separate this testing from the Hub etc we have created a separate project in Gcloud (same billing account and Org). To keep an eye on (e.g. accidental) cost overrun, I added a budget alert (in the linked billing account) that applies to all resources for this new project, and set a 500$ alert with notifications at various thresholds. New users need the following IAM permissions:</p>
+<ul class="simple">
+<li><p>“Compute Admin”</p></li>
+<li><p>“Service Account User”</p></li>
+</ul>
 </div>
 <div class="section" id="how-to-get-access">
 <h2>How to get access<a class="headerlink" href="#how-to-get-access" title="Permalink to this headline">¶</a></h2>
