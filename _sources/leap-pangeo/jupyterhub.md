@@ -177,6 +177,36 @@ with fsspec.open("gs://leap-scratch/funky-user/test.txt", mode="w") as f:
     f.write("hello world")
 ```
 
+Another example of a rountrip save and load with numpy:
+
+```python
+import numpy as np
+import fsspec
+
+arr = np.array([1, 2, 4])
+arr
+```
+
+```
+array([1, 2, 4])
+```
+
+```python
+with fsspec.open("gs://leap-scratch/funky-user/arr_test.npy", mode="wb") as f:
+    np.save(f, arr)
+
+with fsspec.open("gs://leap-scratch/jbusecke/arr_test.npy", mode="rb") as f:
+    arr_reloaded = np.load(f)
+
+arr_reloaded
+```
+
+```
+array([1, 2, 4])
+```
+
+> Make sure to specify `mode='rb'` or `move='wb'` for binary files.
+
 #### Deleting from cloud buckets
 
 :::\{warning}
