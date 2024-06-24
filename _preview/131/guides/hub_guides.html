@@ -153,7 +153,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="team_docs.html">
-   Onboarding Guide for Data and Computation Team Members
+   Guide for Data and Computation Team Members
   </a>
  </li>
  <li class="toctree-l1">
@@ -328,13 +328,11 @@ const thebe_selector_output = ".output, .cell_output"
       <a class="reference internal nav-link" href="#upload-medium-sized-original-data-from-your-local-machine">
        Upload medium sized original data from your local machine
       </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#uploading-large-original-data-from-an-hpc-system-no-browser-access-on-the-system-available">
-         Uploading large original data from an HPC system (no browser access on the system available)
-        </a>
-       </li>
-      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#uploading-large-original-data-from-an-hpc-system-no-browser-access-on-the-system-available">
+       Uploading large original data from an HPC system (no browser access on the system available)
+      </a>
      </li>
     </ul>
    </li>
@@ -391,13 +389,11 @@ const thebe_selector_output = ".output, .cell_output"
       <a class="reference internal nav-link" href="#upload-medium-sized-original-data-from-your-local-machine">
        Upload medium sized original data from your local machine
       </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#uploading-large-original-data-from-an-hpc-system-no-browser-access-on-the-system-available">
-         Uploading large original data from an HPC system (no browser access on the system available)
-        </a>
-       </li>
-      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#uploading-large-original-data-from-an-hpc-system-no-browser-access-on-the-system-available">
+       Uploading large original data from an HPC system (no browser access on the system available)
+      </a>
      </li>
     </ul>
    </li>
@@ -427,7 +423,7 @@ For a quick guide on how to start a Dask Cluster, consult this page from the Pan
 </div>
 </div>
 <div class="section" id="data">
-<h2>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h2>
+<span id="guide-hub-data"></span><h2>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="i-have-a-dataset-and-want-to-work-with-it-on-the-hub-how-do-i-upload-it">
 <h3>I have a dataset and want to work with it on the hub. How do I upload it?<a class="headerlink" href="#i-have-a-dataset-and-want-to-work-with-it-on-the-hub-how-do-i-upload-it" title="Permalink to this headline">¶</a></h3>
 <p>If you would like to add a new dataset to the LEAP Data Library, please first raise an issue <a class="reference external" href="https://github.com/leap-stc/data-management/issues/new?assignees=&amp;labels=dataset&amp;template=new_dataset.yaml&amp;title=New+Dataset+%5BDataset+Name%5D">here</a>. This enables us to track detailed information about proposed datasets and have an open discussion about how to upload it to the cloud.</p>
@@ -446,9 +442,12 @@ For a quick guide on how to start a Dask Cluster, consult this page from the Pan
 <ul class="simple">
 <li><p>Set up a new environment on your local machine (e.g. laptop)</p></li>
 </ul>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>leap_pange_transfer<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9<span class="w"> </span>google-auth<span class="w"> </span>gcsfs<span class="w"> </span>jupyterlab<span class="w"> </span>xarray<span class="w"> </span>zarr<span class="w"> </span>dask<span class="w"> </span><span class="c1">#add any other dependencies (e.g. netcdf4) that you need to read your data</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>leap_pangeo_transfer<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9<span class="w"> </span>google-auth<span class="w"> </span>gcsfs<span class="w"> </span>jupyterlab<span class="w"> </span>xarray<span class="w"> </span>zarr<span class="w"> </span>dask
 </pre></div>
 </div>
+<blockquote>
+<div><p>Add any other dependencies (e.g. netcdf4) that you need to read your data at the end of the line</p>
+</div></blockquote>
 <ul class="simple">
 <li><p>Activate the environment</p></li>
 </ul>
@@ -489,8 +488,11 @@ For a quick guide on how to start a Dask Cluster, consult this page from the Pan
 <div><p>Make sure to replace the <code class="docutils literal notranslate"><span class="pre">path/to/your/token.txt</span></code> with the actual path to your token file.</p>
 </div></blockquote>
 <p>Try to write a small dataset to the cloud:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">to_dataset</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">to_zarr</span><span class="p">(</span><span class="s1">&#39;gs://leap-scratch/&lt;your_username&gt;/test_offsite_upload.zarr&#39;</span><span class="p">)</span> <span class="c1">#adding the &#39;gs://&#39; prefix makes this just work with xarray!</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">to_dataset</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">)</span>
+<span class="n">mapper</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">get_mapper</span><span class="p">(</span>
+    <span class="s2">&quot;gs://leap-scratch/&lt;your_username&gt;/test_offsite_upload.zarr&quot;</span>
+<span class="p">)</span>  <span class="c1"># This additional step is necessary to have the correct authentication set</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">to_zarr</span><span class="p">(</span><span class="n">mapper</span><span class="p">)</span>
 </pre></div>
 </div>
 <blockquote>
@@ -506,8 +508,9 @@ For a quick guide on how to start a Dask Cluster, consult this page from the Pan
 <blockquote>
 <div><p>Make sure to use a different bucket than <code class="docutils literal notranslate"><span class="pre">leap-scratch</span></code>, since that will be deleted every 7 days! For more info refer to the available <a class="reference internal" href="../leap-pangeo/jupyterhub.html#hub-data-buckets"><span class="std std-ref">storage buckets</span></a>.</p>
 </div></blockquote>
+</div>
 <div class="section" id="uploading-large-original-data-from-an-hpc-system-no-browser-access-on-the-system-available">
-<span id="hub-data-upload-hpc"></span><h5>Uploading large original data from an HPC system (no browser access on the system available)<a class="headerlink" href="#uploading-large-original-data-from-an-hpc-system-no-browser-access-on-the-system-available" title="Permalink to this headline">¶</a></h5>
+<span id="hub-data-upload-hpc"></span><h4>Uploading large original data from an HPC system (no browser access on the system available)<a class="headerlink" href="#uploading-large-original-data-from-an-hpc-system-no-browser-access-on-the-system-available" title="Permalink to this headline">¶</a></h4>
 <p>A commong scenario is the following: A researcher/student has run a simulation on a High Performance Computer (HPC) at their institution, but now wants to collaboratively work on the analysis or train a machine learning model with this data. For this they need to upload it to the cloud storage.</p>
 <p>The following steps will guide you through the steps needed to authenticate and upload data to the cloud, but might have to be slightly modified depending on the actual setup of the users HPC.</p>
 <p><strong>Conversion Script/Notebook</strong></p>
@@ -559,27 +562,31 @@ Steps executed on your <span style="color:#22B401">”local” computer (e.g. la
 <span class="kn">import</span> <span class="nn">gcsfs</span>
 <span class="kn">import</span> <span class="nn">json</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;your_auth_file.json&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span> <span class="c1">#🚨 make sure to enter the `.json` file from step 7</span>
-	<span class="n">token</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span>
+    <span class="s2">&quot;your_auth_file.json&quot;</span>
+<span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>  <span class="c1"># 🚨 make sure to enter the `.json` file from step 7</span>
+    <span class="n">token</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 
 <span class="c1"># test write a small dummy xarray dataset to zarr</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span><span class="o">.</span><span class="n">to_dataset</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">)</span> 
-<span class="c1"># Once you have confirmed </span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span><span class="o">.</span><span class="n">to_dataset</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">)</span>
+<span class="c1"># Once you have confirmed</span>
 
 <span class="n">fs</span> <span class="o">=</span> <span class="n">gcsfs</span><span class="o">.</span><span class="n">GCSFileSystem</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
-<span class="n">mapper</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">get_mapper</span><span class="p">(</span><span class="s2">&quot;gs://leap-persistent/&lt;username&gt;/testing/demo_write_from_remote.zarr&quot;</span><span class="p">)</span> <span class="c1">#🚨 enter your leap (github) username here</span>
+<span class="n">mapper</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">get_mapper</span><span class="p">(</span>
+    <span class="s2">&quot;gs://leap-persistent/&lt;username&gt;/testing/demo_write_from_remote.zarr&quot;</span>
+<span class="p">)</span>  <span class="c1"># 🚨 enter your leap (github) username here</span>
 <span class="n">ds</span><span class="o">.</span><span class="n">to_zarr</span><span class="p">(</span><span class="n">mapper</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Now you can repeat the same steps but replace your dataset with the full dataset from above and leave your python code running until the upload has finished. Depending on the internet connection speed and the size of the full dataset, this can take a while.</p>
 <p>If you want to see a progress bar, you can wrap the call to <code class="docutils literal notranslate"><span class="pre">.to_zarr</span></code> with a <a class="reference external" href="https://docs.dask.org/en/stable/diagnostics-local.html#progress-bar">dask progress bar</a></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dask.diagnostics</span> <span class="kn">import</span> <span class="n">ProgressBar</span>
+
 <span class="k">with</span> <span class="n">ProgressBar</span><span class="p">():</span>
-   <span class="n">ds</span><span class="o">.</span><span class="n">to_zarr</span><span class="p">(</span><span class="n">mapper</span><span class="p">)</span>
+    <span class="n">ds</span><span class="o">.</span><span class="n">to_zarr</span><span class="p">(</span><span class="n">mapper</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Once the data has been uploaded, make sure to erase the <code class="docutils literal notranslate"><span class="pre">.../.config/gcloud/....json</span></code> file from step 7, and ask to be removed from the Google Group.</p>
-</div>
 </div>
 </div>
 </div>

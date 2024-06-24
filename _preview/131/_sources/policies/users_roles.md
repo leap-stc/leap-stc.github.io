@@ -1,4 +1,5 @@
 (users.categories)=
+
 # Users and Categories
 
 **Version 2 - 2022-10-25**
@@ -10,7 +11,7 @@ in the [leap-stc](https://github.com/orgs/leap-stc/teams) GitHub organization.
 
 Here we define those roles and map them to GitHub teams.
 
-:::{warning}
+:::\{warning}
 We have discovered a technical issue which affects some of the policies here.
 It turns out that GitHub sub-teams don't appear as part of parent teams.
 This means that the strategies described here for using sub-teams don't quite  work.
@@ -22,11 +23,10 @@ This is annoying, and we hope to have a better solution soon.
 
 ## Code of Conduct
 
-All users of LEAP-Pangeo must abide by the LEAP Code of Conduct:
-
-- https://docs.google.com/document/d/1eE-aYrsf_k5Ep8GB-n8hmqM_LVW-U3uzYKHJBZMvYWU
+All users of LEAP-Pangeo must abide by the [LEAP Code of Conduct](https://leap.columbia.edu/wp-content/uploads/2023/05/LEAP-Code-of-Conduct_V1_October-2022.pdf).
 
 (users.membership)=
+
 ## Membership
 
 LEAP members are grouped into the following member tiers.
@@ -77,6 +77,7 @@ specific courses, bootcamps, etc.
 
 Course instructors who meet one of the following criteria are eligible to request
 access for their class (including self, co-instructor(s), TAs, students, evaluators, etc):
+
 - LEAP senior personnel or advanced research member
 - Full-time faculty at LEAP Institution (Columbia, NYU, UMN, UCI)
 - Full-time faculty who participated in a LEAP’s "train the trainer" workshop
@@ -87,6 +88,7 @@ Course instructors may propose to the LEAP-Pangeo Hub for their upcoming course 
 a short proposal to the LEAP’s Convergence Subcommittee.
 Instructors are required to submit their proposal at least 30 days before the participants will require.
 The proposal should provide the following information.
+
 - Instructor's GitHub username
 - Basic information about the course (institution, department/program, student population, class size, course dates)
 - Basic information about the Instructor (name, affiliation, research interests)
@@ -111,17 +113,18 @@ The education category is intended for _long-term access_ to LEAP-Pangeo resourc
 with research activities.
 
 There are two levels to the Research Category:
+
 - **Entry-level**: involved in LEAP research and community, have access to computing resources and storage on LEAPangeo.
-Members of this Community Tier may access  `Large` JupyterHub servers
-Office Space. Admission based on paragraph sent to Office Space committee.
-Membership in the entry-level research category corresponds to the
-[`leap-pangeo-research-entry-level`](https://github.com/orgs/leap-stc/teams/leap-pangeo-research-entry-level)
-GitHub team.
+  Members of this Community Tier may access  `Large` JupyterHub servers
+  Office Space. Admission based on paragraph sent to Office Space committee.
+  Membership in the entry-level research category corresponds to the
+  [`leap-pangeo-research-entry-level`](https://github.com/orgs/leap-stc/teams/leap-pangeo-research-entry-level)
+  GitHub team.
 - **Advanced**: RFP or supported researcher, student, postdoc, invited to annual meeting, swipe access for LEAP.
-Members of this Community Tier may access `Large` and `Huge` JupyterHub servers, plus GPU access.
-Membership in the entry-level research category corresponds to the
-[`leap-pangeo-research-advanced`](https://github.com/orgs/leap-stc/teams/leap-pangeo-research-entry-level)
-GitHub team.
+  Members of this Community Tier may access `Large` and `Huge` JupyterHub servers, plus GPU access.
+  Membership in the entry-level research category corresponds to the
+  [`leap-pangeo-research-advanced`](https://github.com/orgs/leap-stc/teams/leap-pangeo-research-entry-level)
+  GitHub team.
 
 ### Eligibility
 
@@ -138,18 +141,18 @@ The LEAP Director of Data and Computing or the LEAP Manager of Data and Computin
 the purposes of technical development, debugging, and evaluation of the platform. These members will be added to the [`leap-pangeo-full-access`](https://github.com/orgs/leap-stc/teams/leap-pangeo-full-access) team to have full access to all resources.
 
 (users.membership.apply)=
+
 ### Applying for membership
 
 To become a LEAP member please refer to the [Research Membership Structure](https://leap.columbia.edu/about/policies2/) on the LEAP website.
 
 (users.membership.invite)=
+
 ### "Where is my invite?"
 
 Please check your email account (**the one you used to sign up for Github** - this is independent of the email you use for LEAP) for an invite that will look similar to this:
 
-
 <img src="../images/email_org_invite.png" alt="LEAPPangeo email invite" height="300"/>
-
 
 Click the link and accept all invites.
 
