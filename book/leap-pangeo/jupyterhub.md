@@ -176,21 +176,24 @@ with fsspec.open("gs://leap-scratch/funky-user/test.txt", mode="w") as f:
 ```
 
 Another example of a rountrip save and load with numpy:
+
 ```python
 import numpy as np
 import fsspec
-arr = np.array([1,2,4])
+
+arr = np.array([1, 2, 4])
 arr
 ```
+
 ```
 array([1, 2, 4])
 ```
 
 ```python
-with fsspec.open('gs://leap-scratch/funky-user/arr_test.npy', mode='wb') as f:
+with fsspec.open("gs://leap-scratch/funky-user/arr_test.npy", mode="wb") as f:
     np.save(f, arr)
 
-with fsspec.open('gs://leap-scratch/jbusecke/arr_test.npy', mode='rb') as f:
+with fsspec.open("gs://leap-scratch/jbusecke/arr_test.npy", mode="rb") as f:
     arr_reloaded = np.load(f)
 
 arr_reloaded
@@ -202,9 +205,9 @@ array([1, 2, 4])
 
 > Make sure to specify `mode='rb'` or `move='wb'` for binary files.
 
-
 #### Deleting from cloud buckets
-:::{warning}
+
+:::\{warning}
 Depending on which cloud bucket you are working, make sure to double check which files you are deleting by [inspecting the contents](hub.data.list) and only working in a subdirectory with your username (e.g. `gs://<leap-bucket>/<your-username>/some/project/structure`.
 :::
 
