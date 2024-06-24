@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Data Policy &#8212; Technical Documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
@@ -148,8 +147,18 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../guides/bootcamp.html">
+   Running LEAP bootcamps
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../guides/team_docs.html">
-   Onboarding Guide for Data and Computation Team Members
+   Guide for Data and Computation Team Members
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../guides/faq.html">
+   FAQs
   </a>
  </li>
 </ul>
@@ -283,6 +292,19 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#types-of-data-used-at-leap">
+   Types of Data Used at LEAP
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -295,15 +317,44 @@ const thebe_selector_output = ".output, .cell_output"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#types-of-data-used-at-leap">
+   Types of Data Used at LEAP
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="data-policy">
+  <div class="tex2jax_ignore mathjax_ignore section" id="data-policy">
 <h1>Data Policy<a class="headerlink" href="#data-policy" title="Permalink to this headline">¶</a></h1>
-</section>
+<div class="section" id="types-of-data-used-at-leap">
+<h2>Types of Data Used at LEAP<a class="headerlink" href="#types-of-data-used-at-leap" title="Permalink to this headline">¶</a></h2>
+<p>Within the LEAP project we distinguish between several different types of data mostly based on whether the data was used or produced at LEAP and if the data is already accessible in <abbr>ARCO</abbr> formats in the cloud.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">LEAP produced</p>
+<p>Data that has been created or modified by LEAP researchers.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">LEAP ingested</p>
+<p>Data that is already publically available but has been ingested into cloud storage in <abbr>ARCO</abbr> formats. The actual data/metadata has not been modified from the original.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">LEAP curated</p>
+<p>Data that is already available in  <abbr>ARCO</abbr> formats in publically accessible object storage. Adding this data to the LEAP-Pangeo Catalog enables us to visualize it with the Data Viewer, and collect all datasets of importance in one single location, but none of the data itself is modified.</p>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
