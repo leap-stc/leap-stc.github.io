@@ -97,11 +97,11 @@ As shown in the picture above, every user will see `'/home/jovyan'` as their roo
 The primary purpose of this directory is to store small files, like github repositories and other code.
 
 :::\{warning}
-Please do not store large files in your user directory `/home/jovyan`. Your home directory is intended only for notebooks, analysis scripts, and small datasets (\< 1 GB). It is not an appropriate place to store large datasets. Unlike the cloud buckets, these directories all use the same underlying storage so if a single user fills up the space, the Hub crashes for everyone. To accommodate the expanding LEAP community, the data and compute team has instituted a storage quota. We recommend users use less than 25GB and maintain a hard limit of 50GB. **Users who persistently violate the hard limit may temporarily get reduced cloud access**.
+To accommodate the expanding LEAP community, the data and compute team has instituted a storage quota on individual user directories `/home/jovyan`. Your home directory is intended only for notebooks, analysis scripts, and small datasets (\< 1 GB). It is not an appropriate place to store large datasets. Unlike the cloud buckets, these directories use an underlying storage with a rigid limit. If a single user fills up the space, the Hub crashes for everyone. We recommend users use less than 25GB and enforce a hard limit of 50GB. **Users who persistently violate the limit may temporarily get reduced cloud access**.
 
 To check how much space you are using in your home directory open a terminal window on the hub and run `du -h --max-depth=1 ~/ | sort -h`.
 
-If you want to save larger files for your work use our [](hub.data.buckets) and consult our [Hub Data Guide](guide.hub.data)
+If you want to save larger files for your work use our [](hub.data.buckets) and consult our [Hub Data Guide](guide.hub.data). See the [FAQs](faq.usr_dir_usage_warning) for guidance on reducing storage.
 :::
 
 (hub.data.buckets)=
