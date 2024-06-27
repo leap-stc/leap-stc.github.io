@@ -22,12 +22,16 @@ If you **are** member of one of the github teams, ask them to try the following 
 - \[ \] Restart the computer
 - If these steps do not work, please reach out to the [](support.data_compute_team).
 
+(faq.usr_dir_usage_warning)=
+
 ## I received a warning about space on my User Directory
 
-To accommodate an expanding LEAP community, the data and compute team has instituted a storage quota for all [User Directories](https://leap-stc.github.io/leap-pangeo/jupyterhub.html#your-user-directory). We hope a recommended limit of 25GB and hard limit of 50GB will help maintain the reliability of the hub for all users (recall that everyone is using the same underlying storage so if it fills up, the Hub crashes for everyone!). If you get a Hub Usage Alert email, this means you are going beyond the recommended limits. Users who persistently violate hub usage policies may temporarily get reduced access. Some ways to address this are:
+If you get a Hub Usage Alert email, this means you are violating the User Directory storage limit (to learn why this limit exists, see read about [User Directories](hub.guide.data.user_dir)). Users who persistently violate hub usage policies may temporarily get reduced cloud access.
 
-- consider moving completed or old work to alternate storage locations such as Github.
-- Deleting cached files and ipython checkpoints from old projects
-- move large datasets into a [cloud bucket](https://leap-stc.github.io/leap-pangeo/jupyterhub.html#leap-pangeo-cloud-storage-buckets). Remember that user directories are for scripts and notebooks not datasets!
+**Troubleshooting**
 
-Our goal is to accomodate all users and thus we are happy to assist users in relocating data.  If you have any concerns, please reach out to the [](support.data_compute_team).
+- To see which files and directories are taking up the bulk of your storage, run  `du -h --max-depth=1 ~/ | sort -h`  in Terminal. It will likely be cached files and small/medium size data files that can be removed without disrupting typical usage.
+- Delete cached files, ipython checkpoints, and anything else not needed from old projects
+- Move needed data files into a persistent LEAP [cloud bucket](https://leap-stc.github.io/leap-pangeo/jupyterhub.html#leap-pangeo-cloud-storage-buckets). Remember that user directories are for scripts and notebooks not datasets!
+
+Our goal is to accomodate all community members and thus we are happy to assist users in relocating data.  If you have any concerns, please reach out to the [](support.data_compute_team). You may also consult our [Hub Data Guide](guide.hub.data) and [Data Policy](./../policies/data_policy).
