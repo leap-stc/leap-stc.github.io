@@ -28,5 +28,4 @@ If you get a Hub Usage Alert email, this means you are violating the User Direct
 - To see which files and directories are taking up the bulk of your storage, run `du -h --max-depth=1 ~/ | sort -h` in Terminal. It will likely be cached files and small/medium size data files. 
 - Delete cached files, ipython checkpoints, and anything else not needed from old projects
 - move data into a [cloud bucket](https://leap-stc.github.io/leap-pangeo/jupyterhub.html#leap-pangeo-cloud-storage-buckets). Remember that user directories are for scripts and notebooks not datasets! 
-
 Our goal is to accomodate all users and thus we are happy to assist users in relocating data.  If you have any concerns, please reach out to the [](support.data_compute_team). You may also consult our [Data Guide](guide.hub.data) and [Data Policy](./../policies/data_policy). 
