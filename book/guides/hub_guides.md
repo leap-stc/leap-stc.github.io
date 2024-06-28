@@ -1,34 +1,9 @@
-# How-To Guides for Using the Hub
 
-These are a set of guides for using the JupyterHub Compute Environment effectively.
-
-## Compute
-
-### Dask
-
-To help you scale up calculations using a cluster, the Hub is configured with Dask Gateway.
-For a quick guide on how to start a Dask Cluster, consult this page from the Pangeo docs:
-
-- <https://pangeo.io/cloud.html#dask>
-
-(guide.hub.data)=
-
-## Data
-
-### I have a dataset and want to work with it on the hub. How do I upload it?
-
-If you would like to add a new dataset to the LEAP Data Library, please first raise an issue [here](https://github.com/leap-stc/data-management/issues/new?assignees=&labels=dataset&template=new_dataset.yaml&title=New+Dataset+%5BDataset+Name%5D). This enables us to track detailed information about proposed datasets and have an open discussion about how to upload it to the cloud.
-
+# Move
 We distinguish between two primary *types* of data to upload: "Original" and "Published" data.
 
 - **Published Data** has been published and archived in a publically accessible location (e.g. a data repository like [zenodo](https://zenodo.org) or [figshare](https://figshare.com)). We do not recommend uploading this data to the cloud directly, but instead use [Pangeo Forge](https://pangeo-forge.readthedocs.io/en/latest/) to transform and upload it to the cloud. This ensures that the data is stored in an ARCO format and can be easily accessed by other LEAP members.
 - **Original Data** is any dataset that is produced by researchers at LEAP and has not been published yet. The main use case for this data is to share it with other LEAP members and collaborate on it. For original data we support direct uploaded to the cloud. *Be aware that original data could change rapidly as the data producer is iterating on their code*. We encourage all datasets to be archived and published before using them in scientific publications.
-
-#### Transform and Upload published data to an ARCO format (with Pangeo Forge)
-
-Coming Soon
-
-(hub.guide.data.upload_manual)=
 
 #### Upload medium sized original data from your local machine
 
@@ -205,3 +180,56 @@ with ProgressBar():
 ```
 
 Once the data has been uploaded, make sure to erase the `.../.config/gcloud/....json` file from step 7, and ask to be removed from the Google Group.
+
+
+# How-To Guides for Using the Hub
+
+These are a set of guides for using the JupyterHub Compute Environment effectively.
+
+## Compute
+
+### Dask
+
+To help you scale up calculations using a cluster, the Hub is configured with Dask Gateway.
+For a quick guide on how to start a Dask Cluster, consult this page from the Pangeo docs:
+
+- <https://pangeo.io/cloud.html#dask>
+
+(guide.hub.data)=
+
+## Data Guide
+
+Data is fundamental to most people's work at LEAP. This guide describes best practices how to find, transfer, ingest, and catalog data.
+
+### Discovering Dataset
+
+You want to have a specific dataset to explore or analyze? There is a good chance that somebody else at LEAP has already worked with the data! So the first thing to look for data should always be a visit to the [](explanation.architecture.catalog).
+
+### Ingesting Datasets
+
+If you do not find your dataset in the data catalog we can ingest it, so that the dataset is available for the LEAP community and beyond (see [](reference.cloud_storage) for who can access which resource). Here at LEAP we want to ingest data in [Analysis-Ready Cloud-Optimized (ARCO)](reference.arco) formats like [zarr](reference.software.zarr). 
+
+To start ingesting a dataset follow these steps:
+
+1. Add a new [dataset_request](https://github.com/leap-stc/data-management/issues/new?assignees=&labels=dataset&projects=&template=new_dataset.yaml&title=New+Dataset+%5BDataset+Name%5D) in the [data-management](https://github.com/leap-stc/data-management) repo so there is a central place where people can suggest datasets for ingestion and follow progress.
+2. Start a feedstock for your dataset. We organize any kind of data that is part of the [](explanation.architecture.data-library) in its own repository under the `leap-stc` github organization. Please use [our Template](https://github.com/leap-stc/LEAP_template_feedstock) to get started. Based on the 3 [types of data]() we host in the [](explanation.architecture.data-library) there are different ways of ingesting data (with specific instructions provided in the [template feedstock](https://github.com/leap-stc/LEAP_template_feedstock):
+    - Linking an existing (public, egress-free) ARCO dataset to the [](explanation.architecture.catalog)
+    - (Work in Progress): Creating a virtual zarr store from existing publically hosted legacy format data (e.g. netcdf)
+    - Ingesting and transforming data into an ARCO copy on [](reference.cloud_storage). The preferred method to do that is to use [](reference.pangeo-forge).
+  
+>[!Note]
+>This does currently not provide a solution to handle datasets that have been produced by you (as e.g. part of a publication). We are working on formalizing a workflow for this type of data. Please reach out to the [](support.data_compute_team) if you have data that you would like to publish. See [](explanation.data-policy.published-vs-unpublished) 
+
+The endresult should feel indistingushable to the user (i.e. they just copy and paste a snippet and can immideatly get to work [](explanation.data-policies.access)) 
+
+
+
+#### Manually uploading/downloading data to cloud buckets
+
+We discourage manually moving datasets to our cloud storage as much as possible since it is hard to reproduce these datasets at a future point (if e.g. the dataset maintainer has moved on to a different position) (see [](explanation.data-policy.reproducibility). We encourage you to try out the methods above, but if these should not work for some reason (and you were not able to find a solution with the [](support.data_compute_team), you should try the methods below. We will always [prioritize unblocking your work](explanation.code-policy.dont-let-perfect-be-the-enemy-of-good).
+
+The below solutions fundamentally rely on the data being 'pushed' to the [](reference.cloud_storage) which usually requires intervention on part of the [](explanation.data-policy.roles.data-expert). This stands in contrast to e.g. data ingestion via [](reference.pangeo-forge) where the [](explanation.data-policy.roles.data-expert) only has to work on the recipe creation and the data is 'pulled' in a reproducible way. For more information see [](explanation.data-policy).
+
+Fundamentally the 'pushing' of datasets relies on two components:
+- Setting up permissions so that you can read/write to the [](reference.cloud_storage) - Several methods to get permissions are described in [](reference.cloud_storage.external-access).
+- Initiating a data transfer from your 'local' machine (e.g. your laptop, a server, or HPC Cluster). You can check on some methods in [](reference.cloud_storage.data-transfer)
