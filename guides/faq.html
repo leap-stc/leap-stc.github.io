@@ -302,6 +302,11 @@ const thebe_selector_output = ".output, .cell_output"
    I cannot log into the hub 😱
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#i-received-a-warning-about-space-on-my-user-directory">
+   I received a warning about space on my User Directory
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -325,6 +330,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#i-cannot-log-into-the-hub">
    I cannot log into the hub 😱
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#i-received-a-warning-about-space-on-my-user-directory">
+   I received a warning about space on my User Directory
   </a>
  </li>
 </ul>
@@ -358,6 +368,17 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>[ ] Restart the computer</p></li>
 <li><p>If these steps do not work, please reach out to the <a class="reference internal" href="../support.html#support-data-compute-team"><span class="std std-ref">Data and Computation Team</span></a>.</p></li>
 </ul>
+</div>
+<div class="section" id="i-received-a-warning-about-space-on-my-user-directory">
+<span id="faq-usr-dir-usage-warning"></span><h2>I received a warning about space on my User Directory<a class="headerlink" href="#i-received-a-warning-about-space-on-my-user-directory" title="Permalink to this headline">¶</a></h2>
+<p>If you get a Hub Usage Alert email, this means you are violating the User Directory storage limit (to learn why this limit exists, see read about <a class="reference internal" href="../leap-pangeo/jupyterhub.html#hub-guide-data-user-dir"><span class="std std-ref">User Directories</span></a>). Remember that user directories are for scripts and notebooks not datasets! Users who persistently violate hub usage policies may temporarily get reduced cloud access.</p>
+<p><strong>Troubleshooting</strong></p>
+<ul class="simple">
+<li><p>To see which files and directories are taking up the bulk of your storage, run  <code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">-h</span> <span class="pre">--max-depth=1</span> <span class="pre">~/</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-h</span></code>  in Terminal. It will likely reveal cached files and small/medium size data files that can be removed without disrupting typical usage.</p></li>
+<li><p>Delete cached files, ipython checkpoints, and any other unwanted files.</p></li>
+<li><p>If you still require more storage, it is likely that you are storing downloaded data in your user directory. We recommend storing data in a LEAP <a class="reference external" href="https://leap-stc.github.io/leap-pangeo/jupyterhub.html#leap-pangeo-cloud-storage-buckets">cloud bucket</a> or data catalog. For more information, please consult our <a class="reference internal" href="hub_guides.html#guide-hub-data"><span class="std std-ref">Hub Data Guide</span></a> and <a class="reference internal" href="../policies/data_policy.html"><span class="doc std std-doc">Data Policy</span></a>.</p></li>
+</ul>
+<p>Our goal is to accomodate all community members and thus we are happy to assist users in relocating data.  If you have any concerns, please reach out to the <a class="reference internal" href="../support.html#support-data-compute-team"><span class="std std-ref">Data and Computation Team</span></a>.</p>
 </div>
 </div>
 
