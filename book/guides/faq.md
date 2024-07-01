@@ -23,6 +23,7 @@ If you **are** member of one of the github teams, ask them to try the following 
 - If these steps do not work, please reach out to the [](support.data_compute_team).
 
 (faq.usr_dir_usage_warning)=
+
 ## I received a warning about space on my User Directory
 If you get a Hub Usage Alert email, this means you are violating the User Directory storage limit (to learn why this limit exists, see read about [User Directories](hub.guide.data.user_dir)). Remember that user directories are for scripts and notebooks not datasets! Users who persistently violate hub usage policies may temporarily get reduced cloud access. 
 
