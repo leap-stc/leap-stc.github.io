@@ -18,6 +18,7 @@ parts:
       - file: guides/bootcamp
       - file: guides/team_docs
       - file: guides/faq
+      - file: guides/vm_access
   - caption: Policies
     chapters:
       - file: policies/code_policy
