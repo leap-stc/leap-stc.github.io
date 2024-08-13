@@ -19,6 +19,9 @@ This is a short write up facilitate the spin up of new team members for the Data
       - `Dataflow Admin`
       - `Storage Admin`
       - `Logs Viewer`
+      - `Monitoring Viewer`
+      - `Logs Viewer`
+      - `Compute Viewer`
 
 (onboarding.slack)=
 
