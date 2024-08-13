@@ -49,4 +49,4 @@ We aim to provide users with [up-to-date default software environments](jupyterh
 
 ## Offboarding members
 
-- [] Delete personal `dct-team-<first_name>` service account in IAM (needs admin priviliges). 
+- \[\] Delete personal `dct-team-<first_name>` service account in IAM (needs admin priviliges).
