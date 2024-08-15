@@ -336,6 +336,11 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#offboarding-members">
+   Offboarding members
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -395,6 +400,11 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#offboarding-members">
+   Offboarding members
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -418,6 +428,25 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>[ ] Consider enabling notifications for <a class="reference internal" href="#onboarding-github"><span class="std std-ref">Relevant github repos</span></a></p></li>
 <li><p>[ ] Make a PR to the <code class="docutils literal notranslate"><span class="pre">_config.yaml</span></code> file <a class="reference external" href="https://github.com/leap-stc/leap-stc.github.io/blob/fd69890ffc2f1871968e39b1c460370a0b3f98b3/book/_config.yml#L40-L51">here</a> in a PR. to add a picture and your personal data to the webpage.</p></li>
 <li><p>[ ] Get access to the <a class="reference external" href="https://grafana.leap.2i2c.cloud">Grafana Dashboard</a></p></li>
+<li><p>[ ] Request access to a service account to monitor Google Dataflow and Storage from the <a class="reference external" href="https://console.cloud.google.com/welcome?project=leap-pangeo">Google Cloud Console</a> by raising an issue <a class="reference external" href="https://github.com/leap-stc/data-and-compute-team/issues">here</a></p>
+<ul>
+<li><p>Instructions for admin:</p>
+<ul>
+<li><p>Go to the Google Cloud Console &gt; IAM &gt; Grant Access</p></li>
+<li><p>Add the following permissions:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Dataflow</span> <span class="pre">Admin</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Storage</span> <span class="pre">Admin</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Logs</span> <span class="pre">Viewer</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Monitoring</span> <span class="pre">Viewer</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Logs</span> <span class="pre">Viewer</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Compute</span> <span class="pre">Viewer</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="section" id="relevant-slack-channels">
@@ -455,6 +484,12 @@ Unfortunately we do not have a technical way to implement per user quotas, so we
 <li><p>To bump the version, submit a PR to <a class="reference external" href="https://github.com/2i2c-org/infrastructure/blob/master/config/clusters/leap/common.values.yaml">this config file</a> in the <a class="reference external" href="https://github.com/2i2c-org/infrastructure">2i2c infrastructure repo</a>. In that PR you need to change the image tag for <em>all image choices</em>, see an example <a class="reference external" href="https://github.com/2i2c-org/infrastructure/pull/3688">here</a>.</p></li>
 </ul>
 </div>
+</div>
+<div class="section" id="offboarding-members">
+<h2>Offboarding members<a class="headerlink" href="#offboarding-members" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>[] Delete personal <code class="docutils literal notranslate"><span class="pre">dct-team-&lt;first_name&gt;</span></code> service account in IAM (needs admin priviliges).</p></li>
+</ul>
 </div>
 </div>
 
