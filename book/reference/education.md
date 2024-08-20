@@ -2,7 +2,7 @@
 
 ## LEAP Affiliated Courses
 
-To become a LEAP Affiliated Course you have to fulfil the following requirements:
+To become a LEAP Affiliated Course you have to fulfill the following requirements:
 
 - Acknowledge LEAP's support on syllabus.
 - Add the course to LEAP's education page.
