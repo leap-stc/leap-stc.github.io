@@ -1,4 +1,4 @@
-# (Experimental) Getting access to bare Cloud VMs
+# Getting access to Cloud VMs
 
 ```{admonition} Important
 ---
