@@ -10,7 +10,7 @@ LEAP provides infrastructure support to [](reference.education.leap_affiliated_c
 
 ### Preparing Classes
 
-We suggest that instructors preprare their materials directly on the hub as much as possible, to ensure an identical experience for the students during the class. To develop/test/edit material instructors should apply for [membership](users.membership.apply) under the **education category** as soon as possible and make sure to check out our [](tutorial.getting_started) to familiarize yourself with the environment.
+We suggest that instructors preprare their materials directly on the hub as much as possible, to ensure an identical experience for the students during the class. To develop/test/edit material instructors should apply for [membership](users.membership.apply) under the **education category** as soon as possible and make sure to check out our ['getting started' tutorial](tutorial.getting_started) to familiarize yourself with the environment. 
 
 ### Sign up students
 
