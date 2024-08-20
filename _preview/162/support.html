@@ -1,0 +1,534 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Getting Help &#8212; Technical Documentation</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="How to cite LEAP-Pangeo" href="how_to_cite.html" />
+    <link rel="prev" title="Education" href="reference/education.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/LEAP_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Technical Documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   LEAP Technical Documentation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorials/getting_started.html">
+   Getting Started
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Guides
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="guides/data_guide.html">
+   Data Guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="guides/compute_guide.html">
+   Compute Guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="guides/education_guide.html">
+   Education Guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="guides/bootcamp_guide.html">
+   Bootcamp Guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="guides/vm_access.html">
+   Getting access to Cloud VMs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="guides/team_guide.html">
+   Guide for Data and Computation Team Members
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="guides/faq.html">
+   FAQs
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Explanation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="explanation/architecture.html">
+   LEAP-Pangeo Architecture
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="explanation/implementation.html">
+   LEAP-Pangeo Implementation Plan
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="explanation/code_policy.html">
+   LEAP-Pangeo Code Policy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="explanation/data_policy.html">
+   LEAP-Pangeo Data Policy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="explanation/infrastructure_policy.html">
+   LEAP-Pangeo Infrastructure Policy
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="reference/infrastructure.html">
+   Infrastructure Reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="reference/membership.html">
+   Membership
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="reference/education.html">
+   Education
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Getting Help
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="how_to_cite.html">
+   How to cite LEAP-Pangeo
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="references.html">
+   References
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/support.rst"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/leap-stc/leap-stc.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/leap-stc/leap-stc.github.io/issues/new?title=Issue%20on%20page%20%2Fsupport.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#office-hours">
+   Office Hours
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#leap-pangeo-community-hours">
+   LEAP Pangeo Community Hours
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-and-computation-team">
+     Data and Computation Team
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#julius-busecke-columbia-university">
+       Julius Busecke (Columbia University)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sammy-agrawal-columbia-university">
+       Sammy Agrawal (Columbia University)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#raphael-hagen-carbonplan">
+       Raphael Hagen (CarbonPlan)
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Getting Help</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#office-hours">
+   Office Hours
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#leap-pangeo-community-hours">
+   LEAP Pangeo Community Hours
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-and-computation-team">
+     Data and Computation Team
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#julius-busecke-columbia-university">
+       Julius Busecke (Columbia University)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sammy-agrawal-columbia-university">
+       Sammy Agrawal (Columbia University)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#raphael-hagen-carbonplan">
+       Raphael Hagen (CarbonPlan)
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="getting-help">
+<h1>Getting Help<a class="headerlink" href="#getting-help" title="Permalink to this headline">¶</a></h1>
+<p>For questions about how to use the Hub, please choose from the following resources</p>
+<ul class="simple">
+<li><p>Always check the <a class="reference internal" href="guides/faq.html"><span class="doc">FAQ page</span></a> first</p></li>
+<li><p>Use the <a class="reference external" href="https://github.com/leap-stc/leap-stc.github.io/discussions">LEAP-Pangeo Discussion Forum</a> to search for previous topics or post new ones</p></li>
+<li><p>Join the LEAP Slack and post an issue in the <cite>‘#leap-pangeo’</cite> channel.</p></li>
+<li><p>Reach out to the <a class="reference internal" href="#support-data-compute-team"><span class="std std-ref">Data and Computation Team</span></a> by mentioning <cite>‘&#64;data-and-compute’</cite> on the LEAP slack channel</p></li>
+</ul>
+<div class="section" id="office-hours">
+<h2>Office Hours<a class="headerlink" href="#office-hours" title="Permalink to this headline">¶</a></h2>
+<p>We also offer in-person and virtual Office Hours on Thursdays for questions about LEAP-Pangeo.
+You can reserve an appointment <a class="reference external" href="https://app.reclaim.ai/m/leap-pangeo-office-hours">here</a>.</p>
+</div>
+<div class="section" id="leap-pangeo-community-hours">
+<h2>LEAP Pangeo Community Hours<a class="headerlink" href="#leap-pangeo-community-hours" title="Permalink to this headline">¶</a></h2>
+<p>We run a monthly LEAP Pangeo community event, where we’ll work together on everything LEAP Pangeo! This event is open to all, and is currently in-person only (with virtual options in development). Watch out for dates in the regular LEAP emails.</p>
+<p>If you have a problem with the hub, want to learn how to make your workflow more efficient, or just take an hour to connect with other LEAP folks and code together, bring your laptop and come by!</p>
+<p>This event is open to all skill levels — we aim to make it a fun, collaborative and no-stress event. We’ll have snacks, too!</p>
+<p>👀 <strong>Keep an eye out for upcoming dates in the email newsletter</strong> 🗞️</p>
+<div class="section" id="data-and-computation-team">
+<span id="support-data-compute-team"></span><h3>Data and Computation Team<a class="headerlink" href="#data-and-computation-team" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="julius-busecke-columbia-university">
+<h4>Julius Busecke (Columbia University)<a class="headerlink" href="#julius-busecke-columbia-university" title="Permalink to this headline">¶</a></h4>
+<p>Manager, Data and Computation</p>
+<a class="biopic reference internal image-reference" href="_images/julius.jpg"><img alt="Julius Busecke" class="biopic" src="_images/julius.jpg" style="width: 200px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference external image-reference" href="https://leap-nsf-stc.slack.com/team/U03MSCLCTRA"><img alt="Slack DM" src="https://img.shields.io/static/v1?label=&amp;message=Slack&amp;color=0077B5&amp;style=flat-square&amp;logo=slack" /></a>
+<img alt="Pronouns" src="https://img.shields.io/static/v1?label=pronouns&amp;message=he/him&amp;color=red&amp;style=flat-square" />
+<a class="reference external image-reference" href="http://github.com/jbusecke"><img alt="GitHub Profile" src="https://img.shields.io/github/followers/jbusecke?label=Github&amp;logo=github&amp;style=flat-square" /></a>
+<a class="reference external image-reference" href="https://jbusecke.github.io"><img alt="Website" src="https://img.shields.io/website?style=flat-square&amp;url=https%3A//jbusecke.github.io" /></a>
+</div>
+<div class="section" id="sammy-agrawal-columbia-university">
+<h4>Sammy Agrawal (Columbia University)<a class="headerlink" href="#sammy-agrawal-columbia-university" title="Permalink to this headline">¶</a></h4>
+<p>Leap Pangeo Intern</p>
+<a class="biopic reference internal image-reference" href="_images/sammy.png"><img alt="Sammy Agrawal" class="biopic" src="_images/sammy.png" style="width: 200px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference external image-reference" href="https://leap-nsf-stc.slack.com/team/U05364D6MLL"><img alt="Slack DM" src="https://img.shields.io/static/v1?label=&amp;message=Slack&amp;color=0077B5&amp;style=flat-square&amp;logo=slack" /></a>
+<img alt="Pronouns" src="https://img.shields.io/static/v1?label=pronouns&amp;message=he/him&amp;color=red&amp;style=flat-square" />
+<a class="reference external image-reference" href="http://github.com/SammyAgrawal"><img alt="GitHub Profile" src="https://img.shields.io/github/followers/SammyAgrawal?label=Github&amp;logo=github&amp;style=flat-square" /></a>
+</div>
+<div class="section" id="raphael-hagen-carbonplan">
+<h4>Raphael Hagen (CarbonPlan)<a class="headerlink" href="#raphael-hagen-carbonplan" title="Permalink to this headline">¶</a></h4>
+<p>Pangeo-Forge Recipe Development</p>
+<a class="biopic reference internal image-reference" href="_images/raphael.png"><img alt="Raphael Hagen" class="biopic" src="_images/raphael.png" style="width: 200px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference external image-reference" href="https://leap-nsf-stc.slack.com/team/U05NKVACXB9"><img alt="Slack DM" src="https://img.shields.io/static/v1?label=&amp;message=Slack&amp;color=0077B5&amp;style=flat-square&amp;logo=slack" /></a>
+<img alt="Pronouns" src="https://img.shields.io/static/v1?label=pronouns&amp;message=he/him&amp;color=red&amp;style=flat-square" />
+<a class="reference external image-reference" href="http://github.com/norlandrhagen"><img alt="GitHub Profile" src="https://img.shields.io/github/followers/norlandrhagen?label=Github&amp;logo=github&amp;style=flat-square" /></a>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="reference/education.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Education</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="how_to_cite.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">How to cite LEAP-Pangeo</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By LEAP Community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
