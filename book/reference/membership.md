@@ -26,6 +26,8 @@ For more info see [the main LEAP website](https://leap.columbia.edu/research-hom
 The LEAP Manager of Data and Computing may grant access to other participants for
 the purposes of technical development, debugging, and evaluation of the platform. These members will be added to the [`leap-pangeo-full-access`](https://github.com/orgs/leap-stc/teams/leap-pangeo-full-access) team to have full access to all resources.
 
+(reference.membership.resources)=
+
 ## Github Teams and Resources
 
 The access to the JupyterHub is implemented via [Github Teams](https://docs.github.com/en/organizations/organizing-members-into-teams/about-teams) in the [leap-stc](https://github.com/orgs/leap-stc/teams) GitHub organization. Each Membership tier maps to a single Github Team which determines the resources available to the user.
