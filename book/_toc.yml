@@ -25,6 +25,9 @@ parts:
       - file: policies/data_policy
       - file: policies/infrastructure_policy
       - file: policies/users_roles
+  - caption: Reference
+    chapters:
+      - file: reference/education
   - caption: Miscellaneous
     chapters:
       - file: support
