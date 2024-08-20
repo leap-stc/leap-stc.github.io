@@ -22,7 +22,7 @@ We suggest that instructors preprare their materials directly on the hub as much
 
 ### How to sign up students
 
-All students should apply for [](membership.sign_up) under the **education category** well ahead of the starting date of the class (ideally a week before).
+All students should apply for [membership](users.membership.apply) under the **education category** well ahead of the starting date of the class (ideally a week before).
 
 > \[!IMPORTANT\]
 > A github account is required to gain access to LEAP-Pangeo. It is free to create.
