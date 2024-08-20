@@ -14,8 +14,6 @@ Instructors that plan to host a [](reference.education.leap_affiliated_course) s
 
 We suggest that instructors preprare their materials directly on the hub as much as possible, to ensure an identical experience for the students during the class. To develop/test/edit material instructors should apply for [](users.membership.apply) under the **education category** as soon as possible.
 
-(education.sing_up)=
-
 ### Sign up students
 
 All students should apply for [membership](users.membership.apply) under the **education category** well ahead of the starting date of the class (ideally a week before).
