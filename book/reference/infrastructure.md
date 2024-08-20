@@ -1,4 +1,4 @@
-# Infrastructure Reference
+# Infrastructure
 
 (reference.infrastructure.catalog)=
 
