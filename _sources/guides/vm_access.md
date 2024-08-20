@@ -13,7 +13,7 @@ We want to test e.g. containerized workflows that run climate simulations (for o
 
 ## Admin considerations
 
-To fully separate this testing from the Hub etc we have created a separate project in Gcloud (same billing account and Org). To keep an eye on (e.g. accidental) cost overrun, I added a budget alert (in the linked billing account) that applies to all resources for this new project, and set a 500\$ alert with notifications at various thresholds. New users need the following IAM permissions:
+To fully separate this testing from the Hub etc we have created a separate project in Gcloud (same billing account and Org). To keep an eye on (e.g. accidental) cost overrun, I added a budget alert (in the linked billing account) that applies to all resources for this new project, and set a 500\$ alert with notifications at various thresholds. New users need the following IAM roles (click "Grant Access" with the email as principals):
 
 - "Compute Admin"
 - "Service Account User"
