@@ -27,7 +27,7 @@ All students should apply for [](membership.sign_up) under the **education categ
 > \[!IMPORTANT\]
 > A github account is required to gain access to LEAP-Pangeo. It is free to create.
 
-Instructors can verify that students have access by checking that their github usernames as listed as members of [this github team](<>). We suggest that instructors direct students to [this documentation](<>) and ask them to test their [access to the Hub](hub:server:login) before the class starts to avoid any technical interruptions.
+Instructors can verify that students have access by checking that their github usernames as listed as members of [this github team](https://github.com/orgs/leap-stc/teams/leap-pangeo-base-access). We suggest that instructors direct students to [this documentation](https://leap-stc.github.io/intro.html) and ask them to test their [access to the Hub](hub:server:login) before the class starts to avoid any technical interruptions.
 
 #### Troubleshooting
 
