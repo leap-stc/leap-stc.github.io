@@ -1,3 +1,5 @@
+# Education
+
 (reference.education.leap_affiliated_course)=
 
 ## LEAP Affiliated Courses
