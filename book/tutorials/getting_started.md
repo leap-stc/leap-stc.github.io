@@ -25,7 +25,7 @@ Feel free to [edit it yourself](https://github.com/leap-stc/leap-stc.github.io/b
 1. 👀 Navigate to <https://leap.2i2c.cloud/> and click the big orange button that says "Log in to continue"
 1. 🔐 You will be prompted to authorize a GitHub application. Say "yes" to everything.
    Note you must belong to the appropriate GitHub team in order to access the hub.
-   See {doc}`/policies/users_roles`  for more information.
+   See [](reference.membership.team-resources)  for more information.
 1. 📠 You will redirect to a screen with the following options.
 
 <img width="410" alt="image" src="https://github.com/leap-stc/leap-stc.github.io/assets/14314623/088946a1-896f-4ff8-af91-8107c9f14cfd">
@@ -43,7 +43,7 @@ You have to make 3 choices here:
 
 #### GPUs
 
-Certain members (see [](reference.membership.resources)) have access to server instance with GPU. Currently the GPUs are [Nvidia T4](https://www.nvidia.com/en-us/data-center/tesla-t4/) models. To check what GPU is available on your server you can use [`nvidia-smi`](https://developer.nvidia.com/nvidia-system-management-interface) in the terminal window. You should get output similar to this:
+Certain members (see [](reference.membership.team-resources)) have access to server instance with GPU. Currently the GPUs are [Nvidia T4](https://www.nvidia.com/en-us/data-center/tesla-t4/) models. To check what GPU is available on your server you can use [`nvidia-smi`](https://developer.nvidia.com/nvidia-system-management-interface) in the terminal window. You should get output similar to this:
 
 ```shell
 

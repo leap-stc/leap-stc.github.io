@@ -26,7 +26,7 @@ For more info see [the main LEAP website](https://leap.columbia.edu/research-hom
 The LEAP Manager of Data and Computing may grant access to other participants for
 the purposes of technical development, debugging, and evaluation of the platform. These members will be added to the [`leap-pangeo-full-access`](https://github.com/orgs/leap-stc/teams/leap-pangeo-full-access) team to have full access to all resources.
 
-(reference.membership.resources)=
+(reference.membership.team-resources)=
 
 ## Github Teams and Resources
 
