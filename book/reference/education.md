@@ -2,7 +2,7 @@
 
 (reference.education.leap_affiliated_course)=
 
-## LEAP Affiliated Courses
+## LEAP Affiliated Course
 
 To become a LEAP Affiliated Course you have to fulfill the following requirements:
 
