@@ -16,7 +16,7 @@ This guide is intended for folks who want to run classes using the LEAP Pangeo r
 
 Instructors that plan to host a [](reference.education.leap_affiliated_course) should contact the [](support.data_compute_team) well in advance (ideally a month before the starting date of the class) in order to coordinate efforts efficiently.
 
-We suggest that instructors preprare their materials directly on the hub as much as possible, to ensure an identical experience for the students during the class. To develop/test/edit material instructors should apply for [](membership.sign_up) under the **education category** as soon as possible.
+We suggest that instructors preprare their materials directly on the hub as much as possible, to ensure an identical experience for the students during the class. To develop/test/edit material instructors should apply for [](users.membership.apply) under the **education category** as soon as possible.
 
 (education.sing_up)=
 
