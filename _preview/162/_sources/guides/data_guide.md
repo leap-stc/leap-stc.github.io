@@ -147,8 +147,9 @@ To start ingesting a dataset follow these steps:
    - (Work in Progress): Creating a virtual zarr store from existing publically hosted legacy format data (e.g. netcdf)
    - Ingesting and transforming data into an ARCO copy on [](reference.infrastructure.buckets). The preferred method to do that is to use [](reference.pangeo-forge).
 
-> \[!Note\]
-> This does currently not provide a solution to handle datasets that have been produced by you (as e.g. part of a publication). We are working on formalizing a workflow for this type of data. Please reach out to the [](support.data_compute_team) if you have data that you would like to publish. See [](explanation.data-policy.types) for more.
+:::\{note}
+This does currently not provide a solution to handle datasets that have been produced by you (as e.g. part of a publication). We are working on formalizing a workflow for this type of data. Please reach out to the [](support.data_compute_team) if you have data that you would like to publish. See [](explanation.data-policy.types) for more.
+:::
 
 The endresult should feel indistingushable to the user (i.e. they just copy and paste a snippet and can immideatly get to work [](explanation.data-policies.access))
 
