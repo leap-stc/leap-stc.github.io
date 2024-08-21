@@ -9,3 +9,4 @@ dependencies:
   - pip:
     - sphinx-jinja
     - pre-commit
+    - lxml_html_clean

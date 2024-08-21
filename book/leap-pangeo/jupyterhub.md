@@ -16,6 +16,8 @@ This document goes over the primary technical details of the JupyterHub.
 - For a quick tutorial on basic usage, please see [Getting Started](tutorial.md).
 - To get an in-depth overview of the LEAP Pangeo Architecture and how the JupyterHub fits into it, please see the [Architecture](architecture.md) page.
 
+(jupyterhub.software_env)=
+
 ## The Software Environment
 
 The software environment you encounter on the Hub is based upon [docker images](https://www.digitalocean.com/community/tutorials/the-docker-ecosystem-an-introduction-to-common-components) which you can run on other machines (like your laptop or an HPC cluster) for better reproducibility.
@@ -95,14 +97,16 @@ As shown in the picture above, every user will see `'/home/jovyan'` as their roo
 The primary purpose of this directory is to store small files, like github repositories and other code.
 
 :::\{warning}
-Please do not store large files in your user directory `/home/jovyan`. Your home directory is intended only for notebooks, analysis scripts, and small datasets (\< 1 GB). It is not an appropriate place to store large datasets.
+To accommodate the expanding LEAP community, the data and compute team has instituted a storage quota on individual user directories `/home/jovyan`. Your home directory is intended only for notebooks, analysis scripts, and small datasets (\< 1 GB). It is not an appropriate place to store large datasets. Unlike the cloud buckets, these directories use an underlying storage with a rigid limit. If a single user fills up the space, the Hub crashes for everyone. We recommend users use less than 25GB and enforce a hard limit of 50GB. **Users who persistently violate the limit may temporarily get reduced cloud access**.
 
 To check how much space you are using in your home directory open a terminal window on the hub and run `du -h --max-depth=1 ~/ | sort -h`.
+
+If you want to save larger files for your work use our [](hub.data.buckets) and consult our [Hub Data Guide](guide.hub.data). See the [FAQs](faq.usr_dir_usage_warning) for guidance on reducing storage.
 :::
 
 (hub.data.buckets)=
 
-### LEAP-Pangeo Buckets
+### LEAP-Pangeo Cloud Storage Buckets
 
 LEAP-Pangeo provides users two cloud buckets to store data
 
@@ -117,7 +121,7 @@ Files stored on each of those buckets can be accessed by any LEAP member, so be 
 
 (hub.data.list)=
 
-### Inspecting contents of the bucket
+#### Inspecting contents of the bucket
 
 We recommend using [gcsfs](https://gcsfs.readthedocs.io/en/latest/) or [fsspec](https://filesystem-spec.readthedocs.io/en/latest/) which provide a filesytem-like interface for python.
 
@@ -132,7 +136,7 @@ fs.ls("leap-persistent/funky-user")
 
 (hub.data.read_write)=
 
-### Basic writing to and reading from cloud buckets
+#### Basic writing to and reading from cloud buckets
 
 We do not recommend uploading large files (e.g. netcdf) directly to the bucket. Instead we recommend to write data as ARCO (Analysis-Ready Cloud-Optimized) formats like [zarr](https://zarr.dev)(for n-dimensional arrays) and [parquet](https://parquet.apache.org)(for tabular data) (read more [here](https://ieeexplore.ieee.org/document/9354557) why we recommend ARCO formats).
 
@@ -173,7 +177,37 @@ with fsspec.open("gs://leap-scratch/funky-user/test.txt", mode="w") as f:
     f.write("hello world")
 ```
 
-### Deleting from cloud buckets
+Another example of a rountrip save and load with numpy:
+
+```python
+import numpy as np
+import fsspec
+
+arr = np.array([1, 2, 4])
+arr
+```
+
+```
+array([1, 2, 4])
+```
+
+```python
+with fsspec.open("gs://leap-scratch/funky-user/arr_test.npy", mode="wb") as f:
+    np.save(f, arr)
+
+with fsspec.open("gs://leap-scratch/jbusecke/arr_test.npy", mode="rb") as f:
+    arr_reloaded = np.load(f)
+
+arr_reloaded
+```
+
+```
+array([1, 2, 4])
+```
+
+> Make sure to specify `mode='rb'` or `move='wb'` for binary files.
+
+#### Deleting from cloud buckets
 
 :::\{warning}
 Depending on which cloud bucket you are working, make sure to double check which files you are deleting by [inspecting the contents](hub.data.list) and only working in a subdirectory with your username (e.g. `gs://<leap-bucket>/<your-username>/some/project/structure`.
