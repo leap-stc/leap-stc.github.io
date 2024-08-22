@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Getting access to Cloud VMs &#8212; Technical Documentation</title>
+    <title>LEAP-Pangeo Data Policy &#8212; Technical Documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Guide for Data and Computation Team Members" href="team_guide.html" />
-    <link rel="prev" title="Bootcamp Guide" href="bootcamp_guide.html" />
+    <link rel="next" title="LEAP-Pangeo Infrastructure Policy" href="infrastructure_policy.html" />
+    <link rel="prev" title="LEAP-Pangeo Code Policy" href="code_policy.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -115,39 +115,39 @@ const thebe_selector_output = ".output, .cell_output"
   Guides
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="data_guide.html">
+  <a class="reference internal" href="../guides/data_guide.html">
    Data Guide
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="compute_guide.html">
+  <a class="reference internal" href="../guides/compute_guide.html">
    Compute Guide
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="education_guide.html">
+  <a class="reference internal" href="../guides/education_guide.html">
    Education Guide
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="bootcamp_guide.html">
+  <a class="reference internal" href="../guides/bootcamp_guide.html">
    Bootcamp Guide
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../guides/vm_access.html">
    Getting access to Cloud VMs
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="team_guide.html">
+  <a class="reference internal" href="../guides/team_guide.html">
    Guide for Data and Computation Team Members
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="faq.html">
+  <a class="reference internal" href="../guides/faq.html">
    FAQs
   </a>
  </li>
@@ -157,29 +157,29 @@ const thebe_selector_output = ".output, .cell_output"
   Explanation
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../explanation/architecture.html">
+  <a class="reference internal" href="architecture.html">
    LEAP-Pangeo Architecture
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../explanation/implementation.html">
+  <a class="reference internal" href="implementation.html">
    LEAP-Pangeo Implementation Plan
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../explanation/code_policy.html">
+  <a class="reference internal" href="code_policy.html">
    LEAP-Pangeo Code Policy
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../explanation/data_policy.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    LEAP-Pangeo Data Policy
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../explanation/infrastructure_policy.html">
+  <a class="reference internal" href="infrastructure_policy.html">
    LEAP-Pangeo Infrastructure Policy
   </a>
  </li>
@@ -268,7 +268,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/guides/vm_access.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/explanation/data_policy.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -288,7 +288,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/leap-stc/leap-stc.github.io/issues/new?title=Issue%20on%20page%20%2Fguides/vm_access.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/leap-stc/leap-stc.github.io/issues/new?title=Issue%20on%20page%20%2Fexplanation/data_policy.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -315,24 +315,31 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why">
-   Why?
+  <a class="reference internal nav-link" href="#data-access">
+   Data Access
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#admin-considerations">
-   Admin considerations
+  <a class="reference internal nav-link" href="#reproducibility">
+   Reproducibility
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-get-access">
-   How to get access
+  <a class="reference internal nav-link" href="#types-of-data-used-at-leap">
+   Types of Data Used at LEAP
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#log-into-google-cloud-console-and-start-a-small-test-vm">
-   Log into google cloud console and start a small test VM
+  <a class="reference internal nav-link" href="#roles">
+   Roles
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-expert">
+     Data Expert
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -344,7 +351,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Getting access to Cloud VMs</h1>
+                <h1>LEAP-Pangeo Data Policy</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -355,24 +362,31 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why">
-   Why?
+  <a class="reference internal nav-link" href="#data-access">
+   Data Access
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#admin-considerations">
-   Admin considerations
+  <a class="reference internal nav-link" href="#reproducibility">
+   Reproducibility
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-get-access">
-   How to get access
+  <a class="reference internal nav-link" href="#types-of-data-used-at-leap">
+   Types of Data Used at LEAP
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#log-into-google-cloud-console-and-start-a-small-test-vm">
-   Log into google cloud console and start a small test VM
+  <a class="reference internal nav-link" href="#roles">
+   Roles
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-expert">
+     Data Expert
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -383,39 +397,39 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="getting-access-to-cloud-vms">
-<h1>Getting access to Cloud VMs<a class="headerlink" href="#getting-access-to-cloud-vms" title="Permalink to this headline">¶</a></h1>
-<div class="important admonition">
-<p class="admonition-title">Important</p>
-<p>This documentation should be considered highly experimental and permissions to follow these instructions are only given to a small subset of testers at the moment.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="leap-pangeo-data-policy">
+<span id="explanation-data-policy"></span><h1>LEAP-Pangeo Data Policy<a class="headerlink" href="#leap-pangeo-data-policy" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="data-access">
+<span id="explanation-data-policies-access"></span><h2>Data Access<a class="headerlink" href="#data-access" title="Permalink to this headline">¶</a></h2>
+<p>🚧</p>
 </div>
-<div class="section" id="why">
-<h2>Why?<a class="headerlink" href="#why" title="Permalink to this headline">¶</a></h2>
-<p>We want to test e.g. containerized workflows that run climate simulations (for online testing of ML parametrizations). For that we need a ‘bare’ VM, and not the JupyterLab interface.</p>
+<div class="section" id="reproducibility">
+<span id="explanation-data-policy-reproducibility"></span><h2>Reproducibility<a class="headerlink" href="#reproducibility" title="Permalink to this headline">¶</a></h2>
+<p>🚧</p>
 </div>
-<div class="section" id="admin-considerations">
-<h2>Admin considerations<a class="headerlink" href="#admin-considerations" title="Permalink to this headline">¶</a></h2>
-<p>To fully separate this testing from the Hub etc we have created a separate project in Gcloud (same billing account and Org). To keep an eye on (e.g. accidental) cost overrun, I added a budget alert (in the linked billing account) that applies to all resources for this new project, and set a 500$ alert with notifications at various thresholds. New users need the following IAM roles (click “Grant Access” with the email as principals):</p>
-<ul class="simple">
-<li><p>“Compute Admin”</p></li>
-<li><p>“Service Account User”</p></li>
-</ul>
+<div class="section" id="types-of-data-used-at-leap">
+<span id="explanation-data-policy-types"></span><h2>Types of Data Used at LEAP<a class="headerlink" href="#types-of-data-used-at-leap" title="Permalink to this headline">¶</a></h2>
+<p>Within the LEAP project we distinguish between several different types of data mostly based on whether the data was used or produced at LEAP and if the data is already accessible in <abbr>ARCO</abbr> formats in the cloud.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">LEAP produced</p>
+<p>Data that has been created or modified by LEAP researchers. We currently do not provide any way of ensuring that data is archived, and users should never rely on LEAP-Pangeo resources as the only replicate of valuable data (see also <a class="reference internal" href="../guides/data_guide.html#guides-data-ingestion"><span class="std std-ref">Ingesting Datasets into Cloud Storage</span></a>).</p>
 </div>
-<div class="section" id="how-to-get-access">
-<h2>How to get access<a class="headerlink" href="#how-to-get-access" title="Permalink to this headline">¶</a></h2>
-<p>Send your email (private gmail preferred) to Julius Busecke</p>
+<div class="dropdown admonition">
+<p class="admonition-title">LEAP ingested</p>
+<p>Data that is already publically available but has been ingested into cloud storage in <abbr>ARCO</abbr> formats. The actual data/metadata has not been modified from the original.</p>
 </div>
-<div class="section" id="log-into-google-cloud-console-and-start-a-small-test-vm">
-<h2>Log into google cloud console and start a small test VM<a class="headerlink" href="#log-into-google-cloud-console-and-start-a-small-test-vm" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Use the email you sent above to sign into <a class="reference external" href="https://console.cloud.google.com">https://console.cloud.google.com</a></p></li>
-<li><p>Make sure to chose the project “ClimSimTesting” <img alt="" src="../_images/vm_access_project.png" /></p></li>
-<li><p>Now navigate to “Compute Engine” and click on “Create New Instance”. Chose a recognizable name (e.g. <code class="docutils literal notranslate"><span class="pre">climsim_&lt;your_name&gt;_test</span></code> and leave everything else on default for now and click “Create” at the bottom.</p></li>
-<li><p>After a short spin up you should see your VM instance with a green checkmark.</p></li>
-<li><p>Try to SSH into it via the cloud console (click on SSH on the far right).</p></li>
-<li><p>Let me know on slack that you were able to create an instance</p></li>
-<li><p><strong>Very Important</strong>: Delete your instance after the test. <strong>You should do this everytime you are done using the VM to avoid large costs</strong>. Click on the triple dots on the right, and chose “Delete”. <img alt="" src="../_images/vm_access_delete.png" /></p></li>
-</ul>
+<div class="dropdown admonition">
+<p class="admonition-title">LEAP curated</p>
+<p>Data that is already available in  <abbr>ARCO</abbr> formats in publically accessible object storage. Adding this data to the LEAP-Pangeo Catalog enables us to visualize it with the Data Viewer, and collect all datasets of importance in one single location, but none of the data itself is modified.</p>
+</div>
+</div>
+<div class="section" id="roles">
+<h2>Roles<a class="headerlink" href="#roles" title="Permalink to this headline">¶</a></h2>
+<p>Many different people at LEAP interact with data in various ways. Here is a list of typical roles (some people have multiple roles):</p>
+<div class="section" id="data-expert">
+<span id="explanation-data-policy-roles-data-expert"></span><h3>Data Expert<a class="headerlink" href="#data-expert" title="Permalink to this headline">¶</a></h3>
+<p>🚧</p>
+</div>
 </div>
 </div>
 
@@ -432,7 +446,7 @@ const thebe_selector_output = ".output, .cell_output"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./guides"
+            path: "./explanation"
         },
         predefinedOutput: true
     }
@@ -444,17 +458,17 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="bootcamp_guide.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="code_policy.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Bootcamp Guide</p>
+            <p class="prev-next-title">LEAP-Pangeo Code Policy</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="team_guide.html" title="next page">
+    <a class='right-next' id="next-link" href="infrastructure_policy.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Guide for Data and Computation Team Members</p>
+        <p class="prev-next-title">LEAP-Pangeo Infrastructure Policy</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

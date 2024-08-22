@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Getting access to Cloud VMs &#8212; Technical Documentation</title>
+    <title>Guide for Data and Computation Team Members &#8212; Technical Documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Guide for Data and Computation Team Members" href="team_guide.html" />
-    <link rel="prev" title="Bootcamp Guide" href="bootcamp_guide.html" />
+    <link rel="next" title="FAQs" href="faq.html" />
+    <link rel="prev" title="Getting access to Cloud VMs" href="vm_access.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -136,13 +136,13 @@ const thebe_selector_output = ".output, .cell_output"
    Bootcamp Guide
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="vm_access.html">
    Getting access to Cloud VMs
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="team_guide.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Guide for Data and Computation Team Members
   </a>
  </li>
@@ -268,7 +268,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/guides/vm_access.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/guides/team_guide.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -288,7 +288,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/leap-stc/leap-stc.github.io/issues/new?title=Issue%20on%20page%20%2Fguides/vm_access.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/leap-stc/leap-stc.github.io/issues/new?title=Issue%20on%20page%20%2Fguides/team_guide.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -315,23 +315,47 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why">
-   Why?
+  <a class="reference internal nav-link" href="#onboarding">
+   Onboarding
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#checklist-for-new-members">
+     Checklist for new members
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#relevant-slack-channels">
+     Relevant Slack channels
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#relevant-github-repos">
+     Relevant github repos
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#admin-considerations">
-   Admin considerations
+  <a class="reference internal nav-link" href="#regular-maintenance">
+   Regular Maintenance
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#monitor-user-directory-useage">
+     Monitor User Directory Useage
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#regularly-updating-the-software-environment">
+     Regularly Updating the Software Environment
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-get-access">
-   How to get access
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#log-into-google-cloud-console-and-start-a-small-test-vm">
-   Log into google cloud console and start a small test VM
+  <a class="reference internal nav-link" href="#offboarding-members">
+   Offboarding members
   </a>
  </li>
 </ul>
@@ -344,7 +368,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Getting access to Cloud VMs</h1>
+                <h1>Guide for Data and Computation Team Members</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -355,23 +379,47 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why">
-   Why?
+  <a class="reference internal nav-link" href="#onboarding">
+   Onboarding
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#checklist-for-new-members">
+     Checklist for new members
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#relevant-slack-channels">
+     Relevant Slack channels
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#relevant-github-repos">
+     Relevant github repos
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#admin-considerations">
-   Admin considerations
+  <a class="reference internal nav-link" href="#regular-maintenance">
+   Regular Maintenance
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#monitor-user-directory-useage">
+     Monitor User Directory Useage
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#regularly-updating-the-software-environment">
+     Regularly Updating the Software Environment
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-get-access">
-   How to get access
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#log-into-google-cloud-console-and-start-a-small-test-vm">
-   Log into google cloud console and start a small test VM
+  <a class="reference internal nav-link" href="#offboarding-members">
+   Offboarding members
   </a>
  </li>
 </ul>
@@ -383,38 +431,81 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="getting-access-to-cloud-vms">
-<h1>Getting access to Cloud VMs<a class="headerlink" href="#getting-access-to-cloud-vms" title="Permalink to this headline">¶</a></h1>
-<div class="important admonition">
-<p class="admonition-title">Important</p>
-<p>This documentation should be considered highly experimental and permissions to follow these instructions are only given to a small subset of testers at the moment.</p>
-</div>
-<div class="section" id="why">
-<h2>Why?<a class="headerlink" href="#why" title="Permalink to this headline">¶</a></h2>
-<p>We want to test e.g. containerized workflows that run climate simulations (for online testing of ML parametrizations). For that we need a ‘bare’ VM, and not the JupyterLab interface.</p>
-</div>
-<div class="section" id="admin-considerations">
-<h2>Admin considerations<a class="headerlink" href="#admin-considerations" title="Permalink to this headline">¶</a></h2>
-<p>To fully separate this testing from the Hub etc we have created a separate project in Gcloud (same billing account and Org). To keep an eye on (e.g. accidental) cost overrun, I added a budget alert (in the linked billing account) that applies to all resources for this new project, and set a 500$ alert with notifications at various thresholds. New users need the following IAM roles (click “Grant Access” with the email as principals):</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="guide-for-data-and-computation-team-members">
+<h1>Guide for Data and Computation Team Members<a class="headerlink" href="#guide-for-data-and-computation-team-members" title="Permalink to this headline">¶</a></h1>
+<p>This is a short write up facilitate the spin up of new team members for the Data and Computation Team and describe regular maintenance tasks.</p>
+<div class="section" id="onboarding">
+<h2>Onboarding<a class="headerlink" href="#onboarding" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="checklist-for-new-members">
+<h3>Checklist for new members<a class="headerlink" href="#checklist-for-new-members" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>“Compute Admin”</p></li>
-<li><p>“Service Account User”</p></li>
+<li><p>[ ] Ask to be added to the <a class="reference external" href="https://github.com/orgs/leap-stc/teams/data-team/members">Data and Computation Github team</a></p></li>
+<li><p>[ ] Ask to be added to the <code class="docutils literal notranslate"><span class="pre">&#64;data-and-compute</span></code> Slack user group</p></li>
+<li><p>[ ] Subscribe to <a class="reference internal" href="#onboarding-slack"><span class="std std-ref">Relevant Slack channels</span></a></p></li>
+<li><p>[ ] Consider enabling notifications for <a class="reference internal" href="#onboarding-github"><span class="std std-ref">Relevant github repos</span></a></p></li>
+<li><p>[ ] Make a PR to the <code class="docutils literal notranslate"><span class="pre">_config.yaml</span></code> file <a class="reference external" href="https://github.com/leap-stc/leap-stc.github.io/blob/fd69890ffc2f1871968e39b1c460370a0b3f98b3/book/_config.yml#L40-L51">here</a> in a PR. to add a picture and your personal data to the webpage.</p></li>
+<li><p>[ ] Get access to the <a class="reference external" href="https://grafana.leap.2i2c.cloud">Grafana Dashboard</a></p></li>
+<li><p>[ ] Request access to a service account to monitor Google Dataflow and Storage from the <a class="reference external" href="https://console.cloud.google.com/welcome?project=leap-pangeo">Google Cloud Console</a> by raising an issue <a class="reference external" href="https://github.com/leap-stc/data-and-compute-team/issues">here</a></p>
+<ul>
+<li><p>Instructions for admin:</p>
+<ul>
+<li><p>Go to the Google Cloud Console &gt; IAM &gt; Grant Access</p></li>
+<li><p>Add the following permissions:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Dataflow</span> <span class="pre">Admin</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Storage</span> <span class="pre">Admin</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Logs</span> <span class="pre">Viewer</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Monitoring</span> <span class="pre">Viewer</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Logs</span> <span class="pre">Viewer</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Compute</span> <span class="pre">Viewer</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
-<div class="section" id="how-to-get-access">
-<h2>How to get access<a class="headerlink" href="#how-to-get-access" title="Permalink to this headline">¶</a></h2>
-<p>Send your email (private gmail preferred) to Julius Busecke</p>
-</div>
-<div class="section" id="log-into-google-cloud-console-and-start-a-small-test-vm">
-<h2>Log into google cloud console and start a small test VM<a class="headerlink" href="#log-into-google-cloud-console-and-start-a-small-test-vm" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="relevant-slack-channels">
+<span id="onboarding-slack"></span><h3>Relevant Slack channels<a class="headerlink" href="#relevant-slack-channels" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Use the email you sent above to sign into <a class="reference external" href="https://console.cloud.google.com">https://console.cloud.google.com</a></p></li>
-<li><p>Make sure to chose the project “ClimSimTesting” <img alt="" src="../_images/vm_access_project.png" /></p></li>
-<li><p>Now navigate to “Compute Engine” and click on “Create New Instance”. Chose a recognizable name (e.g. <code class="docutils literal notranslate"><span class="pre">climsim_&lt;your_name&gt;_test</span></code> and leave everything else on default for now and click “Create” at the bottom.</p></li>
-<li><p>After a short spin up you should see your VM instance with a green checkmark.</p></li>
-<li><p>Try to SSH into it via the cloud console (click on SSH on the far right).</p></li>
-<li><p>Let me know on slack that you were able to create an instance</p></li>
-<li><p><strong>Very Important</strong>: Delete your instance after the test. <strong>You should do this everytime you are done using the VM to avoid large costs</strong>. Click on the triple dots on the right, and chose “Delete”. <img alt="" src="../_images/vm_access_delete.png" /></p></li>
+<li><p><a class="reference external" href="https://leap-nsf-stc.slack.com/archives/C065KPT1S4Q"><code class="docutils literal notranslate"><span class="pre">data-and-computation-team</span></code></a>: Private channel for internal discussions, please contact the Manager for Data and Computing to be added.</p></li>
+<li><p><a class="reference external" href="https://leap-nsf-stc.slack.com/archives/C02KB0DDB6E"><code class="docutils literal notranslate"><span class="pre">leap-pangeo</span></code></a>: Community wide channel where LEAP-Pangeo users can ask questions. Members of the team should join the channel and regularly engage with issues raised.</p></li>
+</ul>
+</div>
+<div class="section" id="relevant-github-repos">
+<span id="onboarding-github"></span><h3>Relevant github repos<a class="headerlink" href="#relevant-github-repos" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/leap-stc/leap-stc.github.io"><code class="docutils literal notranslate"><span class="pre">leap-stc.github.io</span></code></a>: The source for the <a class="reference external" href="https://leap-stc.github.io/intro.html">LEAP-Pangeo technical documentation</a>. This also contains <a class="reference external" href="https://github.com/leap-stc/leap-stc.github.io/discussions">LEAP-Pangeo Discussion Forum</a></p></li>
+<li><p><a class="reference external" href="https://github.com/leap-stc/data-management"><code class="docutils literal notranslate"><span class="pre">data-management</span></code></a>: Contains all the <a class="reference external" href="https://pangeo-forge.readthedocs.io/en/latest/">pangeo-forge</a> based code/automation to ingest new datasets. Point users to the <a class="reference external" href="https://github.com/leap-stc/data-management/issues/new/choose">issue tracker</a> to request new datasets.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="regular-maintenance">
+<h2>Regular Maintenance<a class="headerlink" href="#regular-maintenance" title="Permalink to this headline">¶</a></h2>
+<p>This section documents common tasks performed as part of the Data and Computation Team’s duties.</p>
+<div class="section" id="monitor-user-directory-useage">
+<h3>Monitor User Directory Useage<a class="headerlink" href="#monitor-user-directory-useage" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructure-hub-user-dir"><span class="std std-ref">user directories</span></a> of all members are on a shared volume of fixed size. We pay for the total size of the volume no matter if it is used or not, so we should strive to keep usage to a minimum. Our current policy is that &lt;50GB per user is acceptable.
+Unfortunately we do not have a technical way to implement per user quotas, so we need to regularly check two things:</p>
+<ul class="simple">
+<li><p>How much space is left on the <a class="reference external" href="https://grafana.leap.2i2c.cloud/d/hub-dashboard/jupyterhub-dashboard?orgId=1&amp;viewPanel=23">entire shared volume</a>? If the free space falls <em>below 20%</em> we need to discuss further actions.</p></li>
+<li><p><a class="reference external" href="https://grafana.leap.2i2c.cloud/d/bd232539-52d0-4435-8a62-fe637dc822be/home-directory-usage-dashboard?orgId=1">Which users are taking up more than the allowed 50GB</a>. For users who take up more than 50GB the suggested action is to reach out via slack or email.</p></li>
+</ul>
+</div>
+<div class="section" id="regularly-updating-the-software-environment">
+<h3>Regularly Updating the Software Environment<a class="headerlink" href="#regularly-updating-the-software-environment" title="Permalink to this headline">¶</a></h3>
+<p>We aim to provide users with <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructure-hub-software-env"><span class="std std-ref">up-to-date default software environments</span></a>. This currently requires to change the <a class="reference external" href="https://github.com/pangeo-data/pangeo-docker-images">pangeo-docker-images</a> tag manually.</p>
+<ul class="simple">
+<li><p>Make sure you are subscribed to release notifications on <a class="reference external" href="https://github.com/pangeo-data/pangeo-docker-images">pangeo-docker-images</a> to recieve Github notification about new releases</p></li>
+<li><p>To bump the version, submit a PR to <a class="reference external" href="https://github.com/2i2c-org/infrastructure/blob/master/config/clusters/leap/common.values.yaml">this config file</a> in the <a class="reference external" href="https://github.com/2i2c-org/infrastructure">2i2c infrastructure repo</a>. In that PR you need to change the image tag for <em>all image choices</em>, see an example <a class="reference external" href="https://github.com/2i2c-org/infrastructure/pull/3688">here</a>.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="offboarding-members">
+<h2>Offboarding members<a class="headerlink" href="#offboarding-members" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>[] Delete personal <code class="docutils literal notranslate"><span class="pre">dct-team-&lt;first_name&gt;</span></code> service account in IAM (needs admin priviliges).</p></li>
 </ul>
 </div>
 </div>
@@ -444,17 +535,17 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="bootcamp_guide.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="vm_access.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Bootcamp Guide</p>
+            <p class="prev-next-title">Getting access to Cloud VMs</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="team_guide.html" title="next page">
+    <a class='right-next' id="next-link" href="faq.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Guide for Data and Computation Team Members</p>
+        <p class="prev-next-title">FAQs</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

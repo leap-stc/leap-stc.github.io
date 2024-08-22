@@ -53,8 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="(Experimental) Getting access to bare Cloud VMs" href="vm_access.html" />
-    <link rel="prev" title="Guide for Data and Computation Team Members" href="team_docs.html" />
+    <link rel="next" title="LEAP-Pangeo Architecture" href="../explanation/architecture.html" />
+    <link rel="prev" title="Guide for Data and Computation Team Members" href="team_guide.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -100,28 +100,13 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  LEAP-Pangeo
+  Tutorials
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../leap-pangeo/tutorial.html">
+  <a class="reference internal" href="../tutorials/getting_started.html">
    Getting Started
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../leap-pangeo/jupyterhub.html">
-   LEAP-Pangeo JupyterHub
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../leap-pangeo/architecture.html">
-   LEAP-Pangeo Architecture
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../leap-pangeo/implementation.html">
-   LEAP-Pangeo Implementation Plan
   </a>
  </li>
 </ul>
@@ -132,27 +117,32 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="hub_guides.html">
-   How-To Guides for Using the Hub
+  <a class="reference internal" href="data_guide.html">
+   Data Guide
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../leap-pangeo/solutions.html">
-   Common Problems (with Solutions)
+  <a class="reference internal" href="compute_guide.html">
+   Compute Guide
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="education.html">
+  <a class="reference internal" href="education_guide.html">
    Education Guide
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="bootcamp.html">
-   Running LEAP bootcamps
+  <a class="reference internal" href="bootcamp_guide.html">
+   Bootcamp Guide
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="team_docs.html">
+  <a class="reference internal" href="vm_access.html">
+   Getting access to Cloud VMs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="team_guide.html">
    Guide for Data and Computation Team Members
   </a>
  </li>
@@ -161,36 +151,36 @@ const thebe_selector_output = ".output, .cell_output"
    FAQs
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="vm_access.html">
-   (Experimental) Getting access to bare Cloud VMs
-  </a>
- </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Policies
+  Explanation
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../policies/code_policy.html">
-   Code Policy
+  <a class="reference internal" href="../explanation/architecture.html">
+   LEAP-Pangeo Architecture
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../policies/data_policy.html">
-   Data Policy
+  <a class="reference internal" href="../explanation/implementation.html">
+   LEAP-Pangeo Implementation Plan
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../policies/infrastructure_policy.html">
-   Infrastructure Policy
+  <a class="reference internal" href="../explanation/code_policy.html">
+   LEAP-Pangeo Code Policy
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../policies/users_roles.html">
-   Users and Categories
+  <a class="reference internal" href="../explanation/data_policy.html">
+   LEAP-Pangeo Data Policy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../explanation/infrastructure_policy.html">
+   LEAP-Pangeo Infrastructure Policy
   </a>
  </li>
 </ul>
@@ -200,6 +190,16 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../reference/infrastructure.html">
+   Infrastructure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../reference/membership.html">
+   Membership
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../reference/education.html">
    Education
@@ -315,6 +315,11 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#where-is-my-invite">
+   “Where is my invite?”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#i-cannot-log-into-the-hub">
    I cannot log into the hub 😱
   </a>
@@ -323,6 +328,18 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#i-received-a-warning-about-space-on-my-user-directory">
    I received a warning about space on my User Directory
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dask-killed-workers">
+   Dask “Killed Workers”
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#datasets-chunks-too-large">
+     Datasets Chunks too large
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -345,6 +362,11 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#where-is-my-invite">
+   “Where is my invite?”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#i-cannot-log-into-the-hub">
    I cannot log into the hub 😱
   </a>
@@ -353,6 +375,18 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#i-received-a-warning-about-space-on-my-user-directory">
    I received a warning about space on my User Directory
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dask-killed-workers">
+   Dask “Killed Workers”
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#datasets-chunks-too-large">
+     Datasets Chunks too large
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -365,17 +399,27 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="faqs">
 <h1>FAQs<a class="headerlink" href="#faqs" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="where-is-my-invite">
+<span id="faq-where-is-my-invite"></span><h2>“Where is my invite?”<a class="headerlink" href="#where-is-my-invite" title="Permalink to this headline">¶</a></h2>
+<p>Please check your email account (<strong>the one you used to sign up for Github</strong> - this is independent of the email you use for LEAP) for an invite that will look similar to this:</p>
+<a class="reference internal image-reference" href="../_images/email_org_invite.png"><img alt="LEAPPangeo email invite" src="../_images/email_org_invite.png" style="height: 300px;" /></a>
+<p>Click the link and accept all invites.</p>
+<p>Alternatively you can log into your github account, and should see a notification in the top right menu under the “Organizations” tab.</p>
+<a class="reference internal image-reference" href="../_images/gh_org_invite_1.png"><img alt="LEAPPangeo gh invite" src="../_images/gh_org_invite_1.png" style="height: 300px;" /></a>
+<p>You can follow that and accept the invitation there aswell.</p>
+<a class="reference internal image-reference" href="../_images/gh_org_invite_2.png"><img alt="LEAPPangeo gh invite2" src="../_images/gh_org_invite_2.png" style="height: 150px;" /></a>
+</div>
 <div class="section" id="i-cannot-log-into-the-hub">
 <span id="faq-cannot-log-into-hub"></span><h2>I cannot log into the hub 😱<a class="headerlink" href="#i-cannot-log-into-the-hub" title="Permalink to this headline">¶</a></h2>
 <p>If you are unable to log into the hub, please check the following steps:</p>
 <ul class="simple">
-<li><p>[ ] Check if you are member of the <a class="reference internal" href="../policies/users_roles.html#users-categories"><span class="std std-ref">appropriate github teams</span></a>.</p></li>
+<li><p>[ ] Check if you are member of the <a class="reference internal" href="../reference/membership.html#reference-membership-tiers"><span class="std std-ref">appropriate github teams</span></a>.</p></li>
 </ul>
 <p>If you <strong>are not</strong> follow these steps:</p>
 <ul class="simple">
-<li><p>[ ] Did you <a class="reference internal" href="../policies/users_roles.html#users-membership-apply"><span class="std std-ref">sign up for LEAP membership</span></a>? This will be done for you if you sign up for an event like the Momentum bootcamp!</p></li>
-<li><p>[ ] Did you receive a github invite? <a class="reference internal" href="../policies/users_roles.html#users-membership-invite"><span class="std std-ref">Here</span></a> is how to check for that.</p></li>
-<li><p>[ ] Check again if they are part of the <a class="reference internal" href="../policies/users_roles.html#users-categories"><span class="std std-ref">appropriate github teams</span></a>.</p></li>
+<li><p>[ ] Did you <a class="reference internal" href="../reference/membership.html#users-membership-apply"><span class="std std-ref">sign up for LEAP membership</span></a>? This will be done for you if you sign up for an event like the Momentum bootcamp!</p></li>
+<li><p>[ ] Did you receive a github invite? <a class="reference internal" href="#faq-where-is-my-invite"><span class="std std-ref">Here</span></a> is how to check for that.</p></li>
+<li><p>[ ] Check again if they are part of the <a class="reference internal" href="../reference/membership.html#reference-membership-tiers"><span class="std std-ref">appropriate github teams</span></a>.</p></li>
 <li><p>If these steps do not work, please reach out to the <a class="reference internal" href="../support.html#support-data-compute-team"><span class="std std-ref">Data and Computation Team</span></a>.</p></li>
 </ul>
 <p>If you <strong>are</strong> member of one of the github teams, ask them to try the following steps:</p>
@@ -388,14 +432,40 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="i-received-a-warning-about-space-on-my-user-directory">
 <span id="faq-usr-dir-usage-warning"></span><h2>I received a warning about space on my User Directory<a class="headerlink" href="#i-received-a-warning-about-space-on-my-user-directory" title="Permalink to this headline">¶</a></h2>
-<p>If you get a Hub Usage Alert email, this means you are violating the User Directory storage limit (to learn why this limit exists, see read about <a class="reference internal" href="../leap-pangeo/jupyterhub.html#hub-guide-data-user-dir"><span class="std std-ref">User Directories</span></a>). Remember that user directories are for scripts and notebooks not datasets! Users who persistently violate hub usage policies may temporarily get reduced cloud access.</p>
+<p>If you get a Hub Usage Alert email, this means you are violating the User Directory storage limit (to learn why this limit exists, see read about <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructure-hub-user-dir"><span class="std std-ref">User Directories</span></a>). Remember that user directories are for scripts and notebooks not datasets! Users who persistently violate hub usage policies may temporarily get reduced cloud access.</p>
 <p><strong>Troubleshooting</strong></p>
 <ul class="simple">
 <li><p>To see which files and directories are taking up the bulk of your storage, run  <code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">-h</span> <span class="pre">--max-depth=1</span> <span class="pre">~/</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-h</span></code>  in Terminal. It will likely reveal cached files and small/medium size data files that can be removed without disrupting typical usage.</p></li>
 <li><p>Delete cached files, ipython checkpoints, and any other unwanted files.</p></li>
-<li><p>If you still require more storage, it is likely that you are storing downloaded data in your user directory. We recommend storing data in a LEAP <a class="reference external" href="https://leap-stc.github.io/leap-pangeo/jupyterhub.html#leap-pangeo-cloud-storage-buckets">cloud bucket</a> or data catalog. For more information, please consult our <a class="reference internal" href="hub_guides.html#guide-hub-data"><span class="std std-ref">Hub Data Guide</span></a> and <a class="reference internal" href="../policies/data_policy.html"><span class="doc std std-doc">Data Policy</span></a>.</p></li>
+<li><p>If you still require more storage, it is likely that you are storing downloaded data in your user directory. We recommend storing data in a LEAP <a class="reference external" href="https://leap-stc.github.io/leap-pangeo/jupyterhub.html#leap-pangeo-cloud-storage-buckets">cloud bucket</a> or data catalog. For more information, please consult our <a class="reference internal" href="data_guide.html#guide-data"><span class="std std-ref">Data Guide</span></a> and <a class="reference internal" href="../explanation/data_policy.html#explanation-data-policy"><span class="std std-ref">LEAP-Pangeo Data Policy</span></a>.</p></li>
 </ul>
 <p>Our goal is to accomodate all community members and thus we are happy to assist users in relocating data.  If you have any concerns, please reach out to the <a class="reference internal" href="../support.html#support-data-compute-team"><span class="std std-ref">Data and Computation Team</span></a>.</p>
+</div>
+<div class="section" id="dask-killed-workers">
+<h2>Dask “Killed Workers”<a class="headerlink" href="#dask-killed-workers" title="Permalink to this headline">¶</a></h2>
+<p>The “Killed Worker” message in dask can result due to a variety of reasons. Here are some of the common reasons why you might see such an error message</p>
+<div class="section" id="datasets-chunks-too-large">
+<h3>Datasets Chunks too large<a class="headerlink" href="#datasets-chunks-too-large" title="Permalink to this headline">¶</a></h3>
+<p><strong>Issue</strong>
+The default dask worker configuration can deal well with dataset chunk sizes of ~100MB. If the chunks of your data are significantly larger, your worker might crash just upon loading a few of these chunks into memory.</p>
+<p><strong>Solution</strong>
+You can change the configuration of your dask workers and increase the memory each worker has to deal with larger chunks. You can adjust the memory by passing additional <a class="reference external" href="https://gateway.dask.org/cluster-options.html">options</a> to the dask-gatway cluster upon creation:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dask_gateway</span> <span class="kn">import</span> <span class="n">Gateway</span>
+
+<span class="n">gateway</span> <span class="o">=</span> <span class="n">Gateway</span><span class="p">()</span>
+<span class="n">options</span> <span class="o">=</span> <span class="n">gateway</span><span class="o">.</span><span class="n">cluster_options</span><span class="p">()</span>
+
+<span class="n">options</span><span class="o">.</span><span class="n">worker_memory</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># 10 GB of memory per worker.</span>
+
+<span class="c1"># Create a cluster with those options</span>
+<span class="n">cluster</span> <span class="o">=</span> <span class="n">gateway</span><span class="o">.</span><span class="n">new_cluster</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+<span class="n">cluster</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">cluster</span><span class="o">.</span><span class="n">get_client</span><span class="p">()</span>
+</pre></div>
+</div>
+<!-- TODO: Add example how to change this in HTML repr -->
+<p><a class="reference external" href="https://notebooksharing.space/view/2b6753a5ffe8ddfae1da3b8e2b5507e617de47eb25f758a20c92b62e7e650fd7#displayOptions=">Example with Solution</a></p>
+</div>
 </div>
 </div>
 
@@ -424,17 +494,17 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="team_docs.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="team_guide.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">Guide for Data and Computation Team Members</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="vm_access.html" title="next page">
+    <a class='right-next' id="next-link" href="../explanation/architecture.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">(Experimental) Getting access to bare Cloud VMs</p>
+        <p class="prev-next-title">LEAP-Pangeo Architecture</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
