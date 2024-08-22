@@ -350,6 +350,13 @@ const thebe_selector_output = ".output, .cell_output"
     <a class="reference internal nav-link" href="#ingesting-datasets-into-cloud-storage">
      Ingesting Datasets into Cloud Storage
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#how-to-get-new-data-ingested">
+       How to get new data ingested
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#manually-uploading-downloading-data-to-cloud-buckets">
@@ -426,6 +433,13 @@ const thebe_selector_output = ".output, .cell_output"
     <a class="reference internal nav-link" href="#ingesting-datasets-into-cloud-storage">
      Ingesting Datasets into Cloud Storage
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#how-to-get-new-data-ingested">
+       How to get new data ingested
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#manually-uploading-downloading-data-to-cloud-buckets">
@@ -567,23 +581,33 @@ To help onboard you to this new way of working, we have written a guide to Files
 </ul>
 <div class="section" id="ingesting-datasets-into-cloud-storage">
 <span id="guides-data-ingestion"></span><h3>Ingesting Datasets into Cloud Storage<a class="headerlink" href="#ingesting-datasets-into-cloud-storage" title="Permalink to this headline">¶</a></h3>
-<p>If you do not find your dataset in the data catalog we can ingest it, so that the dataset is available for the LEAP community and beyond (see <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructure-buckets"><span class="std std-ref">LEAP-Pangeo Cloud Storage Buckets</span></a> for who can access which resource). Here at LEAP we want to ingest data in <a class="reference internal" href="../reference/infrastructure.html#reference-arco"><span class="std std-ref">Analysis-Ready Cloud-Optimized (ARCO)</span></a> formats.</p>
-<p>To start ingesting a dataset follow these steps:</p>
-<ol class="simple">
-<li><p>Add a new <a class="reference external" href="https://github.com/leap-stc/data-management/issues/new?assignees=&amp;labels=dataset&amp;projects=&amp;template=new_dataset.yaml&amp;title=New+Dataset+%5BDataset+Name%5D">dataset_request</a> in the <a class="reference external" href="https://github.com/leap-stc/data-management">data-management</a> repo so there is a central place where people can suggest datasets for ingestion and follow progress.</p></li>
-<li><p>Start a feedstock for your dataset. We organize any kind of data that is part of the <a class="reference internal" href="../explanation/architecture.html#explanation-architecture-data-library"><span class="std std-ref">The Data Library</span></a> in its own repository under the <code class="docutils literal notranslate"><span class="pre">leap-stc</span></code> github organization. Please use <a class="reference external" href="https://github.com/leap-stc/LEAP_template_feedstock">our Template</a> to get started. Based on the 3 <a class="reference internal" href="../explanation/data_policy.html#explanation-data-policy-types"><span class="std std-ref">types of data</span></a> we host in the <a class="reference internal" href="../explanation/architecture.html#explanation-architecture-data-library"><span class="std std-ref">The Data Library</span></a> there are different ways of ingesting data (with specific instructions provided in the <a class="reference external" href="https://github.com/leap-stc/LEAP_template_feedstock">template feedstock</a>):</p>
+<p>If you do not find your dataset in the data catalog we can ingest it. Data ingestion in this context means that we have a programatic way to download and transform data into <a class="reference internal" href="../reference/infrastructure.html#reference-arco"><span class="std std-ref">Analysis-Ready Cloud-Optimized (ARCO)</span></a> formats in a reproducible way, so that the dataset is available for the LEAP community and beyond (see <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructure-buckets"><span class="std std-ref">LEAP-Pangeo Cloud Storage Buckets</span></a> for who can access which resource).</p>
+<p>Based on the 3 <a class="reference internal" href="../explanation/data_policy.html#explanation-data-policy-types"><span class="std std-ref">types of data</span></a> we host in the <a class="reference internal" href="../explanation/architecture.html#explanation-architecture-data-library"><span class="std std-ref">The Data Library</span></a> there are different ways of ingesting data:</p>
 <ul class="simple">
 <li><p>Linking an existing (public, egress-free) ARCO dataset to the <a class="reference internal" href="../explanation/architecture.html#explanation-architecture-catalog"><span class="std std-ref">Data Catalog</span></a></p></li>
+<li><p>Ingesting and transforming data into an ARCO copy on <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructure-buckets"><span class="std std-ref">LEAP-Pangeo Cloud Storage Buckets</span></a>.</p></li>
 <li><p>(Work in Progress): Creating a virtual zarr store from existing publically hosted legacy format data (e.g. netcdf)</p></li>
-<li><p>Ingesting and transforming data into an ARCO copy on <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructure-buckets"><span class="std std-ref">LEAP-Pangeo Cloud Storage Buckets</span></a>. The preferred method to do that is to use <a class="reference internal" href="../reference/infrastructure.html#reference-pangeo-forge"><span class="std std-ref">Pangeo-Forge</span></a>.</p></li>
 </ul>
-</li>
+<p>The endresult should feel indistingushable to the user (i.e. they just copy and paste a snippet and can immideatly get to work <a class="reference internal" href="../explanation/data_policy.html#explanation-data-policies-access"><span class="std std-ref">Data Access</span></a>)</p>
+<p>We have additional requirements for the data ingestion to make the process sustainable and scalable:</p>
+<ul class="simple">
+<li><p>Process needs to be reproducible, e.g. when we want to reingest data to a different storage location</p></li>
+<li><p>Separation of concerns: The person who knows the dataset (the ‘data expert’) is in the unique position to encode their knowledge about the dataset into the recipe, but they should not be concerned with the details of how to execute it and where the data is ultimate stored. This is the responsibility of the Data and Compute team.</p></li>
+</ul>
+<p>The way we achieve this is to base our ingestion on <a class="reference external" href="https://pangeo-forge.readthedocs.io/en/latest/composition/index.html#recipe-composition">Pangeo Forge recipes</a>. For clearer organization each dataset the recipe should reside in its own repository under the <code class="docutils literal notranslate"><span class="pre">leap-stc</span></code> github organization. Each of these repositories will be called a ‘feedstock’, which contains additional metadata files (you can read more in the <a class="reference external" href="https://pangeo-forge.readthedocs.io/en/latest/deployment/feedstocks.html#from-recipe-to-feedstock">Pangeo Forge docs</a>).</p>
+<div class="section" id="how-to-get-new-data-ingested">
+<h4>How to get new data ingested<a class="headerlink" href="#how-to-get-new-data-ingested" title="Permalink to this headline">¶</a></h4>
+<p>To start ingesting a dataset follow these steps:</p>
+<ol class="simple">
+<li><p>Let the LEAP community and the Data and Computation Team know about this new dataset. We gather all ingestion requests in our <a class="reference external" href="https://github.com/leap-stc/data-management/issues">‘leap-stc/data_management’ issue tracker</a>. You should check existing issues with the tag <a class="reference external" href="https://github.com/leap-stc/data-management/issues?q=is%3Aissue+is%3Aopen+label%3Adataset">‘dataset’</a> to see if somebody else might have already requested this particular dataset. If that is not the case you can add a new <a class="reference external" href="https://github.com/leap-stc/data-management/issues/new?assignees=&amp;labels=dataset&amp;projects=&amp;template=new_dataset.yaml&amp;title=New+Dataset+%5BDataset+Name%5D">dataset_request</a>. Making these request in a central location enables others to see which datasets are currently being ingested and what the status is.</p></li>
+<li><p>Use our <a class="reference external" href="https://github.com/leap-stc/LEAP_template_feedstock">feedstock template</a> to create a feedstock repostory by following instructions in the README to get you started with either one of the above.</p></li>
+<li><p>If issues arise please reach out to the <a class="reference internal" href="../support.html#support-data-compute-team"><span class="std std-ref">Data and Computation Team</span></a></p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This does currently not provide a solution to handle datasets that have been produced by you (as e.g. part of a publication). We are working on formalizing a workflow for this type of data. Please reach out to the <a class="reference internal" href="../support.html#support-data-compute-team"><span class="std std-ref">Data and Computation Team</span></a> if you have data that you would like to publish. See <a class="reference internal" href="../explanation/data_policy.html#explanation-data-policy-types"><span class="std std-ref">Types of Data Used at LEAP</span></a> for more.</p>
 </div>
-<p>The endresult should feel indistingushable to the user (i.e. they just copy and paste a snippet and can immideatly get to work <a class="reference internal" href="../explanation/data_policy.html#explanation-data-policies-access"><span class="std std-ref">Data Access</span></a>)</p>
+</div>
 </div>
 <div class="section" id="manually-uploading-downloading-data-to-cloud-buckets">
 <span id="guide-data-upload-manual"></span><h3>Manually uploading/downloading data to cloud buckets<a class="headerlink" href="#manually-uploading-downloading-data-to-cloud-buckets" title="Permalink to this headline">¶</a></h3>
