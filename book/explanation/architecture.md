@@ -1,3 +1,5 @@
+(explanation.architecture)=
+
 # LEAP-Pangeo Architecture
 
 LEAP-Pangeo is a cloud-based data and computing platform that will be used to support research, education, and knowledge transfer within the LEAP program.
@@ -27,6 +29,8 @@ LEAP-Pangeo high-level architecture diagram
 
 There are four primary components to LEAP-Pangeo.
 
+(explanation.architecture.data-library)=
+
 ### The Data Library
 
 The data library will provide analysis-ready, cloud-optimized data for all aspects of LEAP.
@@ -43,6 +47,22 @@ Examples of data that may become part of the library are
   by ML researchers into climate science.
 - Easily accessible syntheses of climate projections from [CMIP6 data](https://esgf-node.llnl.gov/projects/cmip6/), produced by the LEAP team,
   for use by industry partners for business strategy and decision making.
+
+(explanation.architecture.catalog)=
+
+#### Data Catalog
+
+A [STAC](https://stacspec.org/) data catalog be used to enumerate all LEAP-Pangeo datasets and provide this information to the public.
+The catalog will store all relevant metadata about LEAP datasets following established metadata standards (e.g. CF Conventions).
+It will also provide direct links to raw data in cloud object storage.
+
+The catalog will facilitate several different modes of access:
+
+- Searching, crawling, and opening datasets from within notebooks or scripts
+- "Crawling" by search indexes or other machine-to-machine interfaces
+- A pretty web front-end interface for interactive public browsing
+
+The [Radiant Earth MLHub](https://mlhub.earth/) is a great reference for how we imagine the LEAP data catalog will eventually look.
 
 ### Data Storage Service
 
@@ -82,20 +102,6 @@ This synergistic relationship with be mutually beneficial to two NSF-sponsored p
 Using Pangeo Forge effectively will require LEAP scientists and data engineers to engage
 with the open-source development process around Pangeo Forge and related technologies.
 
-#### Catalog
-
-A [STAC](https://stacspec.org/) data catalog be used to enumerate all LEAP-Pangeo datasets and provide this information to the public.
-The catalog will store all relevant metadata about LEAP datasets following established metadata standards (e.g. CF Conventions).
-It will also provide direct links to raw data in cloud object storage.
-
-The catalog will facilitate several different modes of access:
-
-- Searching, crawling, and opening datasets from within notebooks or scripts
-- "Crawling" by search indexes or other machine-to-machine interfaces
-- A pretty web front-end interface for interactive public browsing
-
-The [Radiant Earth MLHub](https://mlhub.earth/) is a great reference for how we imagine the LEAP data catalog will eventually look.
-
 ### The Hub
 
 ```{figure} https://jupyter.org/assets/homepage/labpreview.webp
@@ -130,9 +136,7 @@ with full-featured Python software environments for environmental data science.
 These environments will be the starting point for LEAP environments.
 They may be augmented as LEAP evolves with more specific software as needed by research projects.
 
-Use management and access control for the Hub are described in {doc}`/policies/users_roles`.
-We use GitHub for identity management, in order to make it easy to include participants
-from any partner institution..
+Use management and access control for the Hub are described in [](reference.membership).
 
 ### The Knowledge Graph
 
@@ -145,9 +149,9 @@ LEAP "outputs" will be of four main types:
 - **Educational Modules** - used for teaching
 
 All of these object must be tracked and cataloged in a uniform way.
-The {doc}`/policies/code_policy` and {doc}`/policies/data_policy` will help set these standards.
+The [](explanation.code_policy) and [](explanation.data-policy) will help set these standards.
 
-```{figure} LEAP_knowledge_graph.png
+```{figure} ../images/LEAP_knowledge_graph.png
 ---
 width: 600px
 name: knowledge-graph
