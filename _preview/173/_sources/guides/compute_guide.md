@@ -22,7 +22,7 @@ Generally you have two options to generate images:
 - Inheret from a community maintained existing image and add additional dependencies (**recommended**)
 - Build an entirely new environment, for instance based on a conda environment file.
 
-In most cases we recommend the first approach due to the lower maintenance burden (configurations from upstream can be adopted by a simple tag change). This guide will describe the particular steps needed to generate your own image based on one of the pangeo docker images.
+In most cases we recommend the first approach due to the lower maintenance burden (configurations from upstream can be adopted by a simple tag change). This guide will describe the particular steps needed to generate your own image based on one of the pangeo docker images. These instructions are based mostly on the 2i2c documentation of how to [Customize a community-maintained upstream image](https://docs.2i2c.org/admin/howto/environment/customize-image/index.html) with some modification specific to LEAP.
 
 ### Creating a repository
 
@@ -36,7 +36,16 @@ We highly encourage creating this repo under the `leap-stc` organization. This w
 
 ### Set up the Container registry
 
-We recommend hosting the image under the [`leap-stc` quay.io account](https://quay.io/user/leap-stc/). This requires actions from a member of the [](support.data_compute_team). Please open an issue titled `Get quay.io secrets` in your newly created repo, and tag `@leap-stc/data-and-compute` in the message body.
+We recommend hosting the image under the [`leap-stc` quay.io account](https://quay.io/user/leap-stc/). This requires actions from a member of the [](support.data_compute_team). Please open an issue titled `Set up quay.io` in your newly created repo, and add a message like this:
+
+```
+@leap-stc/data-and-compute 
+can you please share the quay.io secrets 
+with this repo and set up a matching repo 
+under the leap-stc quay.io account.
+```
+
+.
 
 ```{note}
 If you decide to host the image under your own account, you should follow the instructions in the [2i2c docs](https://docs.2i2c.org/admin/howto/environment/customize-image/index.html#set-up-the-github-repository-and-connect-it-to-quay-io). 

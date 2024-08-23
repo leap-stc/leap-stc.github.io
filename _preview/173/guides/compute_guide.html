@@ -428,7 +428,7 @@ For a quick guide on how to start a Dask Cluster, consult this page from the Pan
 <li><p>Inheret from a community maintained existing image and add additional dependencies (<strong>recommended</strong>)</p></li>
 <li><p>Build an entirely new environment, for instance based on a conda environment file.</p></li>
 </ul>
-<p>In most cases we recommend the first approach due to the lower maintenance burden (configurations from upstream can be adopted by a simple tag change). This guide will describe the particular steps needed to generate your own image based on one of the pangeo docker images.</p>
+<p>In most cases we recommend the first approach due to the lower maintenance burden (configurations from upstream can be adopted by a simple tag change). This guide will describe the particular steps needed to generate your own image based on one of the pangeo docker images. These instructions are based mostly on the 2i2c documentation of how to <a class="reference external" href="https://docs.2i2c.org/admin/howto/environment/customize-image/index.html">Customize a community-maintained upstream image</a> with some modification specific to LEAP.</p>
 <div class="section" id="creating-a-repository">
 <h3>Creating a repository<a class="headerlink" href="#creating-a-repository" title="Permalink to this headline">¶</a></h3>
 <p>Create a repository from <a class="reference external" href="https://github.com/2i2c-org/example-inherit-from-community-image/tree/main">2i2c-org/example-inherit-from-community-image</a> by clicking the <code class="docutils literal notranslate"><span class="pre">Use</span> <span class="pre">this</span> <span class="pre">Template</span></code> button in the upper right corner.</p>
@@ -439,7 +439,14 @@ For a quick guide on how to start a Dask Cluster, consult this page from the Pan
 </div>
 <div class="section" id="set-up-the-container-registry">
 <span id="guides-compute-custom-image-container-registry"></span><h3>Set up the Container registry<a class="headerlink" href="#set-up-the-container-registry" title="Permalink to this headline">¶</a></h3>
-<p>We recommend hosting the image under the <a class="reference external" href="https://quay.io/user/leap-stc/"><code class="docutils literal notranslate"><span class="pre">leap-stc</span></code> quay.io account</a>. This requires actions from a member of the <a class="reference internal" href="../support.html#support-data-compute-team"><span class="std std-ref">Data and Computation Team</span></a>. Please open an issue titled <code class="docutils literal notranslate"><span class="pre">Get</span> <span class="pre">quay.io</span> <span class="pre">secrets</span></code> in your newly created repo, and tag <code class="docutils literal notranslate"><span class="pre">&#64;leap-stc/data-and-compute</span></code> in the message body.</p>
+<p>We recommend hosting the image under the <a class="reference external" href="https://quay.io/user/leap-stc/"><code class="docutils literal notranslate"><span class="pre">leap-stc</span></code> quay.io account</a>. This requires actions from a member of the <a class="reference internal" href="../support.html#support-data-compute-team"><span class="std std-ref">Data and Computation Team</span></a>. Please open an issue titled <code class="docutils literal notranslate"><span class="pre">Set</span> <span class="pre">up</span> <span class="pre">quay.io</span></code> in your newly created repo, and add a message like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@leap</span><span class="o">-</span><span class="n">stc</span><span class="o">/</span><span class="n">data</span><span class="o">-</span><span class="ow">and</span><span class="o">-</span><span class="n">compute</span> 
+<span class="n">can</span> <span class="n">you</span> <span class="n">please</span> <span class="n">share</span> <span class="n">the</span> <span class="n">quay</span><span class="o">.</span><span class="n">io</span> <span class="n">secrets</span> 
+<span class="k">with</span> <span class="n">this</span> <span class="n">repo</span> <span class="ow">and</span> <span class="nb">set</span> <span class="n">up</span> <span class="n">a</span> <span class="n">matching</span> <span class="n">repo</span> 
+<span class="n">under</span> <span class="n">the</span> <span class="n">leap</span><span class="o">-</span><span class="n">stc</span> <span class="n">quay</span><span class="o">.</span><span class="n">io</span> <span class="n">account</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you decide to host the image under your own account, you should follow the instructions in the <a class="reference external" href="https://docs.2i2c.org/admin/howto/environment/customize-image/index.html#set-up-the-github-repository-and-connect-it-to-quay-io">2i2c docs</a>.</p>
