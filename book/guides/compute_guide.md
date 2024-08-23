@@ -22,7 +22,7 @@ Generally you have two options to generate images:
 - Inheret from a community maintained existing image and add additional dependencies (**recommended**)
 - Build an entirely new environment, for instance based on a conda environment file.
 
-In most cases we recommend the first approach due to the lower maintenance burden (configurations from upstream can be adopted by a simple tag change). This guide will describe the particular steps needed to generate your own image based on one of the pangeo docker images.
+In most cases we recommend the first approach due to the lower maintenance burden (configurations from upstream can be adopted by a simple tag change). This guide will describe the particular steps needed to generate your own image based on one of the pangeo docker images. These instructions are based mostly on the 2i2c documentation of how to [Customize a community-maintained upstream image](https://docs.2i2c.org/admin/howto/environment/customize-image/index.html) with some modification specific to LEAP.
 
 ### Creating a repository
 
