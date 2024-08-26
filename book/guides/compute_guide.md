@@ -29,7 +29,10 @@ In most cases we recommend the first approach due to the lower maintenance burde
 Create a repository from [2i2c-org/example-inherit-from-community-image](https://github.com/2i2c-org/example-inherit-from-community-image/tree/main) by clicking the `Use this Template` button in the upper right corner.
 
 ```{warning}
-We highly encourage creating this repo under the `leap-stc` organization. This will make things much easier below.
+We highly encourage
+- creating this repo under the `leap-stc` organization
+- making the repo public
+This will ensure all steps below work as easily as possible.
 ```
 
 (guides.compute.custom_image.container_registry)=
