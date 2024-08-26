@@ -43,12 +43,11 @@ We recommend hosting the image under the [`leap-stc` quay.io account](https://qu
 
 ```
 @leap-stc/data-and-compute 
-can you please share the quay.io secrets 
-with this repo and set up a matching repo 
-under the leap-stc quay.io account.
+can you please:
+- share the quay.io secrets with this repo 
+- set up a matching repo under the `leap-stc`quay.io organization
+- give the robot account access to that new repo
 ```
-
-.
 
 ```{note}
 If you decide to host the image under your own account, you should follow the instructions in the [2i2c docs](https://docs.2i2c.org/admin/howto/environment/customize-image/index.html#set-up-the-github-repository-and-connect-it-to-quay-io). 
