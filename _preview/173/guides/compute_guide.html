@@ -445,13 +445,13 @@ This will ensure all steps below work as easily as possible.</p></li>
 <div class="section" id="set-up-the-container-registry">
 <span id="guides-compute-custom-image-container-registry"></span><h3>Set up the Container registry<a class="headerlink" href="#set-up-the-container-registry" title="Permalink to this headline">¶</a></h3>
 <p>We recommend hosting the image under the <a class="reference external" href="https://quay.io/user/leap-stc/"><code class="docutils literal notranslate"><span class="pre">leap-stc</span></code> quay.io account</a>. This requires actions from a member of the <a class="reference internal" href="../support.html#support-data-compute-team"><span class="std std-ref">Data and Computation Team</span></a>. Please open an issue titled <code class="docutils literal notranslate"><span class="pre">Set</span> <span class="pre">up</span> <span class="pre">quay.io</span></code> in your newly created repo, and add a message like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@leap</span><span class="o">-</span><span class="n">stc</span><span class="o">/</span><span class="n">data</span><span class="o">-</span><span class="ow">and</span><span class="o">-</span><span class="n">compute</span> 
-<span class="n">can</span> <span class="n">you</span> <span class="n">please</span> <span class="n">share</span> <span class="n">the</span> <span class="n">quay</span><span class="o">.</span><span class="n">io</span> <span class="n">secrets</span> 
-<span class="k">with</span> <span class="n">this</span> <span class="n">repo</span> <span class="ow">and</span> <span class="nb">set</span> <span class="n">up</span> <span class="n">a</span> <span class="n">matching</span> <span class="n">repo</span> 
-<span class="n">under</span> <span class="n">the</span> <span class="n">leap</span><span class="o">-</span><span class="n">stc</span> <span class="n">quay</span><span class="o">.</span><span class="n">io</span> <span class="n">account</span><span class="o">.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>@leap-stc/data-and-compute 
+can you please:
+- share the quay.io secrets with this repo 
+- set up a matching repo under the `leap-stc`quay.io organization
+- give the robot account access to that new repo
 </pre></div>
 </div>
-<p>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you decide to host the image under your own account, you should follow the instructions in the <a class="reference external" href="https://docs.2i2c.org/admin/howto/environment/customize-image/index.html#set-up-the-github-repository-and-connect-it-to-quay-io">2i2c docs</a>.</p>
