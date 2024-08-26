@@ -81,7 +81,7 @@ At the time of writing `2024.08.18` was the latest tag, but you should always ch
 - Finally set up the Github actions so that we can build the image in the next step. You can follow the instructions from 2i2c [here](https://docs.2i2c.org/admin/howto/environment/customize-image/index.html#build-base-image) to modify the github workflows and push changes back to Github.
 
 ```{important}
-If you chose to host the image via LEAP (as recommended in [](guides.compute.custom_image.container_registry)), make sure you replace the `IMAGE_NAME` with `leap-stc/<your repository name>`.
+If you chose to host the image via LEAP (as recommended in [](guides.compute.custom_image.container_registry)), make sure you replace the `IMAGE_NAME` with `leap-stc/<your repository name>` in `.github/workflows/build.yaml` and `.github/workflows/test.yaml`.
 ```
 
 ### Test the image
