@@ -1,0 +1,574 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guide for Data and Computation Team Members &#8212; Technical Documentation</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="FAQs" href="faq.html" />
+    <link rel="prev" title="Getting access to Cloud VMs" href="vm_access.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/LEAP_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Technical Documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   LEAP Technical Documentation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/getting_started.html">
+   Getting Started
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Guides
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_guide.html">
+   Data Guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="compute_guide.html">
+   Compute Guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="education_guide.html">
+   Education Guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="bootcamp_guide.html">
+   Bootcamp Guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="vm_access.html">
+   Getting access to Cloud VMs
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Guide for Data and Computation Team Members
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="faq.html">
+   FAQs
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Explanation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../explanation/architecture.html">
+   LEAP-Pangeo Architecture
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../explanation/implementation.html">
+   LEAP-Pangeo Implementation Plan
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../explanation/code_policy.html">
+   LEAP-Pangeo Code Policy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../explanation/data_policy.html">
+   LEAP-Pangeo Data Policy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../explanation/infrastructure_policy.html">
+   LEAP-Pangeo Infrastructure Policy
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../reference/infrastructure.html">
+   Infrastructure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../reference/membership.html">
+   Membership
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../reference/education.html">
+   Education
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../support.html">
+   Getting Help
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../how_to_cite.html">
+   How to cite LEAP-Pangeo
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   References
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/guides/team_guide.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/leap-stc/leap-stc.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/leap-stc/leap-stc.github.io/issues/new?title=Issue%20on%20page%20%2Fguides/team_guide.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#onboarding">
+   Onboarding
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#checklist-for-new-members">
+     Checklist for new members
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#relevant-slack-channels">
+     Relevant Slack channels
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#relevant-github-repos">
+     Relevant github repos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#regular-maintenance">
+   Regular Maintenance
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#monitor-user-directory-useage">
+     Monitor User Directory Useage
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#regularly-updating-the-software-environment">
+     Regularly Updating the Software Environment
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#offboarding-members">
+   Offboarding members
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Guide for Data and Computation Team Members</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#onboarding">
+   Onboarding
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#checklist-for-new-members">
+     Checklist for new members
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#relevant-slack-channels">
+     Relevant Slack channels
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#relevant-github-repos">
+     Relevant github repos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#regular-maintenance">
+   Regular Maintenance
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#monitor-user-directory-useage">
+     Monitor User Directory Useage
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#regularly-updating-the-software-environment">
+     Regularly Updating the Software Environment
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#offboarding-members">
+   Offboarding members
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="guide-for-data-and-computation-team-members">
+<h1>Guide for Data and Computation Team Members<a class="headerlink" href="#guide-for-data-and-computation-team-members" title="Permalink to this headline">¶</a></h1>
+<p>This is a short write up facilitate the spin up of new team members for the Data and Computation Team and describe regular maintenance tasks.</p>
+<div class="section" id="onboarding">
+<h2>Onboarding<a class="headerlink" href="#onboarding" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="checklist-for-new-members">
+<h3>Checklist for new members<a class="headerlink" href="#checklist-for-new-members" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>[ ] Ask to be added to the <a class="reference external" href="https://github.com/orgs/leap-stc/teams/data-team/members">Data and Computation Github team</a></p></li>
+<li><p>[ ] Ask to be added to the <code class="docutils literal notranslate"><span class="pre">&#64;data-and-compute</span></code> Slack user group</p></li>
+<li><p>[ ] Subscribe to <a class="reference internal" href="#onboarding-slack"><span class="std std-ref">Relevant Slack channels</span></a></p></li>
+<li><p>[ ] Consider enabling notifications for <a class="reference internal" href="#onboarding-github"><span class="std std-ref">Relevant github repos</span></a></p></li>
+<li><p>[ ] Make a PR to the <code class="docutils literal notranslate"><span class="pre">_config.yaml</span></code> file <a class="reference external" href="https://github.com/leap-stc/leap-stc.github.io/blob/fd69890ffc2f1871968e39b1c460370a0b3f98b3/book/_config.yml#L40-L51">here</a> in a PR. to add a picture and your personal data to the webpage.</p></li>
+<li><p>[ ] Get access to the <a class="reference external" href="https://grafana.leap.2i2c.cloud">Grafana Dashboard</a></p></li>
+<li><p>[ ] Request access to a service account to monitor Google Dataflow and Storage from the <a class="reference external" href="https://console.cloud.google.com/welcome?project=leap-pangeo">Google Cloud Console</a> by raising an issue <a class="reference external" href="https://github.com/leap-stc/data-and-compute-team/issues">here</a></p>
+<ul>
+<li><p>Instructions for admin:</p>
+<ul>
+<li><p>Go to the Google Cloud Console &gt; IAM &gt; Grant Access</p></li>
+<li><p>Add the following permissions:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Dataflow</span> <span class="pre">Admin</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Storage</span> <span class="pre">Admin</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Logs</span> <span class="pre">Viewer</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Monitoring</span> <span class="pre">Viewer</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Logs</span> <span class="pre">Viewer</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Compute</span> <span class="pre">Viewer</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="relevant-slack-channels">
+<span id="onboarding-slack"></span><h3>Relevant Slack channels<a class="headerlink" href="#relevant-slack-channels" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://leap-nsf-stc.slack.com/archives/C065KPT1S4Q"><code class="docutils literal notranslate"><span class="pre">data-and-computation-team</span></code></a>: Private channel for internal discussions, please contact the Manager for Data and Computing to be added.</p></li>
+<li><p><a class="reference external" href="https://leap-nsf-stc.slack.com/archives/C02KB0DDB6E"><code class="docutils literal notranslate"><span class="pre">leap-pangeo</span></code></a>: Community wide channel where LEAP-Pangeo users can ask questions. Members of the team should join the channel and regularly engage with issues raised.</p></li>
+</ul>
+</div>
+<div class="section" id="relevant-github-repos">
+<span id="onboarding-github"></span><h3>Relevant github repos<a class="headerlink" href="#relevant-github-repos" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/leap-stc/leap-stc.github.io"><code class="docutils literal notranslate"><span class="pre">leap-stc.github.io</span></code></a>: The source for the <a class="reference external" href="https://leap-stc.github.io/intro.html">LEAP-Pangeo technical documentation</a>. This also contains <a class="reference external" href="https://github.com/leap-stc/leap-stc.github.io/discussions">LEAP-Pangeo Discussion Forum</a></p></li>
+<li><p><a class="reference external" href="https://github.com/leap-stc/data-management"><code class="docutils literal notranslate"><span class="pre">data-management</span></code></a>: Contains all the <a class="reference external" href="https://pangeo-forge.readthedocs.io/en/latest/">pangeo-forge</a> based code/automation to ingest new datasets. Point users to the <a class="reference external" href="https://github.com/leap-stc/data-management/issues/new/choose">issue tracker</a> to request new datasets.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="regular-maintenance">
+<h2>Regular Maintenance<a class="headerlink" href="#regular-maintenance" title="Permalink to this headline">¶</a></h2>
+<p>This section documents common tasks performed as part of the Data and Computation Team’s duties.</p>
+<div class="section" id="monitor-user-directory-useage">
+<h3>Monitor User Directory Useage<a class="headerlink" href="#monitor-user-directory-useage" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructure-hub-user-dir"><span class="std std-ref">user directories</span></a> of all members are on a shared volume of fixed size. We pay for the total size of the volume no matter if it is used or not, so we should strive to keep usage to a minimum. Our current policy is that &lt;50GB per user is acceptable.
+Unfortunately we do not have a technical way to implement per user quotas, so we need to regularly check two things:</p>
+<ul class="simple">
+<li><p>How much space is left on the <a class="reference external" href="https://grafana.leap.2i2c.cloud/d/hub-dashboard/jupyterhub-dashboard?orgId=1&amp;viewPanel=23">entire shared volume</a>? If the free space falls <em>below 20%</em> we need to discuss further actions.</p></li>
+<li><p><a class="reference external" href="https://grafana.leap.2i2c.cloud/d/bd232539-52d0-4435-8a62-fe637dc822be/home-directory-usage-dashboard?orgId=1">Which users are taking up more than the allowed 50GB</a>. For users who take up more than 50GB the suggested action is to reach out via slack or email.</p></li>
+</ul>
+</div>
+<div class="section" id="regularly-updating-the-software-environment">
+<h3>Regularly Updating the Software Environment<a class="headerlink" href="#regularly-updating-the-software-environment" title="Permalink to this headline">¶</a></h3>
+<p>We aim to provide users with <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructure-hub-software-env"><span class="std std-ref">up-to-date default software environments</span></a>. This currently requires to change the <a class="reference external" href="https://github.com/pangeo-data/pangeo-docker-images">pangeo-docker-images</a> tag manually.</p>
+<ul class="simple">
+<li><p>Make sure you are subscribed to release notifications on <a class="reference external" href="https://github.com/pangeo-data/pangeo-docker-images">pangeo-docker-images</a> to recieve Github notification about new releases</p></li>
+<li><p>To bump the version, submit a PR to <a class="reference external" href="https://github.com/2i2c-org/infrastructure/blob/master/config/clusters/leap/common.values.yaml">this config file</a> in the <a class="reference external" href="https://github.com/2i2c-org/infrastructure">2i2c infrastructure repo</a>. In that PR you need to change the image tag for <em>all image choices</em>, see an example <a class="reference external" href="https://github.com/2i2c-org/infrastructure/pull/3688">here</a>.</p></li>
+<li><p>To send emails, a token file is setup as the OAUTH_GMAIL_CREDENTIALS Github Secret in the member management repo; every so often (around biweekly) the action will require re-authentication, generating a new token that should replace the existing secret. This makes use of OAUTH_GMAIL_CLIENT_SECRET, which never needs to change. To update the OAUTH_GMAIL_CREDENTIALS secret, run the <code class="docutils literal notranslate"><span class="pre">generate_emails_token(github_action_mode=False)</span></code> function from <a class="reference external" href="http://utils.py">utils.py</a> locally, which will direct you to a confirmation screen. Log in to the <a class="reference external" href="mailto:leap&#46;pangeo&#37;&#52;&#48;gmail&#46;com">leap<span>&#46;</span>pangeo<span>&#64;</span>gmail<span>&#46;</span>com</a> account and authorize access. You will require a copy of the CLIENT_SECRETS file on your personal machine which can be retreived from Google Cloud Console from the above pangeo support email.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="offboarding-members">
+<h2>Offboarding members<a class="headerlink" href="#offboarding-members" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>[] Delete personal <code class="docutils literal notranslate"><span class="pre">dct-team-&lt;first_name&gt;</span></code> service account in IAM (needs admin priviliges).</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./guides"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="vm_access.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Getting access to Cloud VMs</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="faq.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">FAQs</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By LEAP Community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
