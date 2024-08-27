@@ -69,7 +69,7 @@ To inheret from the latest pangeo-notebook image you should paste:
 quay.io/pangeo/pangeo-notebook:2024.08.18
 ```
 
-```{important}
+```{note}
 At the time of writing `2024.08.18` was the latest tag, but you should always check for the latest hash [here](https://github.com/pangeo-data/pangeo-docker-images/tags) and use that one.
 ```
 
@@ -80,7 +80,7 @@ At the time of writing `2024.08.18` was the latest tag, but you should always ch
 - Finally set up the Github actions so that we can build the image in the next step. You can follow the instructions from 2i2c [here](https://docs.2i2c.org/admin/howto/environment/customize-image/index.html#build-base-image) to modify the github workflows and push changes back to Github.
 
 ```{important}
-If you chose to host the image via LEAP (as recommended in [](guides.compute.custom_image.container_registry)), make sure you replace the `IMAGE_NAME` with `leap-stc/<your repository name>` in `.github/workflows/build.yaml` and `.github/workflows/test.yaml`.
+If you chose to host the image via LEAP (as recommended in [](guides.compute.custom_image.container_registry)), make sure you replace the `IMAGE_NAME` value in `.github/workflows/build.yaml` and `.github/workflows/test.yaml` with `leap-stc/<your repository name>`.
 ```
 
 ### Test the image
