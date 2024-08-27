@@ -470,8 +470,8 @@ can you please:
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">quay</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">pangeo</span><span class="o">/</span><span class="n">pangeo</span><span class="o">-</span><span class="n">notebook</span><span class="p">:</span><span class="mf">2024.08.18</span>
 </pre></div>
 </div>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>At the time of writing <code class="docutils literal notranslate"><span class="pre">2024.08.18</span></code> was the latest tag, but you should always check for the latest hash <a class="reference external" href="https://github.com/pangeo-data/pangeo-docker-images/tags">here</a> and use that one.</p>
 </div>
 <ul class="simple">
@@ -481,7 +481,7 @@ can you please:
 </ul>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>If you chose to host the image via LEAP (as recommended in <a class="reference internal" href="#guides-compute-custom-image-container-registry"><span class="std std-ref">Set up the Container registry</span></a>), make sure you replace the <code class="docutils literal notranslate"><span class="pre">IMAGE_NAME</span></code> with <code class="docutils literal notranslate"><span class="pre">leap-stc/&lt;your</span> <span class="pre">repository</span> <span class="pre">name&gt;</span></code> in <code class="docutils literal notranslate"><span class="pre">.github/workflows/build.yaml</span></code> and <code class="docutils literal notranslate"><span class="pre">.github/workflows/test.yaml</span></code>.</p>
+<p>If you chose to host the image via LEAP (as recommended in <a class="reference internal" href="#guides-compute-custom-image-container-registry"><span class="std std-ref">Set up the Container registry</span></a>), make sure you replace the <code class="docutils literal notranslate"><span class="pre">IMAGE_NAME</span></code> value in <code class="docutils literal notranslate"><span class="pre">.github/workflows/build.yaml</span></code> and <code class="docutils literal notranslate"><span class="pre">.github/workflows/test.yaml</span></code> with <code class="docutils literal notranslate"><span class="pre">leap-stc/&lt;your</span> <span class="pre">repository</span> <span class="pre">name&gt;</span></code>.</p>
 </div>
 </div>
 <div class="section" id="test-the-image">
