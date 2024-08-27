@@ -145,7 +145,7 @@ Based on the 3 [types of data](explanation.data-policy.types) we host in the [](
 - Ingesting and transforming data into an ARCO copy on [](reference.infrastructure.buckets).
 - (Work in Progress): Creating a virtual zarr store from existing publically hosted legacy format data (e.g. netcdf)
 
-The endresult should feel indistingushable to the user (i.e. they just copy and paste a snippet and can immideatly get to work [](explanation.data-policies.access))
+The end result should feel indistingushable to the user (i.e. they just copy and paste a snippet and can immediately get to work [](explanation.data-policies.access))
 
 We have additional requirements for the data ingestion to make the process sustainable and scalable:
 
