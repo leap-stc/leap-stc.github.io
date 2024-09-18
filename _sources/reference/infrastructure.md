@@ -35,7 +35,9 @@ This document goes over the primary technical details of the JupyterHub.
 
 ### Server
 
-🚧
+#### Managing Servers
+
+You can start and stop your server (and even open multiple named servers) from the `Hub Control Panel`. You can get to the hub control panel by navigating to `https://leap.2i2c.cloud/hub/home` in your browser or navigating to `File > Hub Control Panel` from the JupyterLab Interface.
 
 (reference.infrastructure.hub.user_dir)=
 
