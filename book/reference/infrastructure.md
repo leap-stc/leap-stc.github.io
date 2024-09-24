@@ -111,6 +111,8 @@ If you select the `Image > Other...` Option during [server login](hub:server:log
 
 If you want to build your own docker image for your project, take a look at [this template](https://github.com/2i2c-org/hub-user-image-template) and the instructions to learn how to use [repo2docker](https://github.com/jupyterhub/repo2docker) to set up CI workflows to automatically build docker images from your repository.
 
+(reference.infrastructure.hub.software_env.temp_install)=
+
 #### Installing additonal packages
 
 You can install additional packages using `pip` and `conda`.
