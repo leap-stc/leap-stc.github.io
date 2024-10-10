@@ -118,20 +118,59 @@ However, these will disappear when your server shuts down.
 
 For a more permanent solution we recommend building project specific dockerfiles and using those as [custom images](reference.infrastructure.hub.image.custom).
 
+(reference.infrastructure.storage)=
+
+## Storage
+
+We provide multiple object storage location with different characteristics and costs considerations, which are detailed below. If you plan to use any of the storage please read these instructions carefully.
+
+:::\{warning}
+The LEAP-Pangeo storage is intended to be used for [](reference.arco) data. None of the LEAP-Pangeo storage resources should be considered as a singular storage location for data.
+:::
+
+- **Never put sensitive information (passwords, keys, personal data) into any of these buckets!**
+
 (reference.infrastructure.buckets)=
 
-## LEAP-Pangeo Cloud Storage Buckets
+### LEAP-Pangeo Cloud Storage Buckets
 
-LEAP-Pangeo provides users two cloud buckets to store data. Your [](reference.infrastructure.hub.server) is automatically authenticated to read from any of these buckets but write access might differ (see below). See [](reference.authentication) for details on how to access buckets from 'outside' the JupyterHub.
+LEAP-Pangeo maintains multiple community buckets with different characteristics. Additionally we can provide research groups with access to project specific buckets.
+
+The community buckets are currently located in Google Cloud Storage and the \[\](reference.osn-   pod).
+
+(reference.infrastructure.buckets.google)=
+
+#### Google Cloud Storage Buckets
+
+The [](reference.infrastructure.hub.server) is automatically authenticated to read and write within any of the Google hosted storage. See [](reference.authentication) for details on how to access buckets from 'outside' the JupyterHub.
 
 - `gs://leap-scratch/` - Temporary Storage deleted after 7 days. Use this bucket for testing and storing large intermediate results. [More info](https://docs.2i2c.org/user/topics/data/cloud/#scratch-bucket)
 - `gs://leap-persistent/` - Persistent Storage. Use this bucket for storing results you want to share with other members.
-- `gs://leap-persistent-ro/` - Persistent Storage with read-only access for most users. To upload data to this bucket you need to use [this](hub.data.upload_hpc) method below.
+  :::\{important}
+  We will deprecate persisten storage on Google Cloud Storage in the future and be replaced by longer term scratch storage.
+  :::
+- `gs://leap-persistent-ro/` - Persistent Storage with read-only access for most users. This is used for our data ingested via [Pangeo-Forge](guides.data.ingestion).
+  :::\{important}
+  This bucket will be retired in the future. We are currently migrating the data ingestion to the [](reference.infrastructure.buckets.osn).
+  :::
 
 Files stored on each of those buckets can be accessed by any LEAP member, so be concious in the way you use these.
 
-- **Do not put sensitive information (passwords, keys, personal data) into these buckets!**
-- **When writing to buckets only ever write to your personal folder!** Your personal folder is a combination of the bucketname and your github username (e.g. \`gs://leap-persistent/funky-user/').
+- **Storing data here will incur costs as long as the data exists.** Please be mindful about removing data that is not needed anymore. If you want to store large amounts of data for longer time, please [consider moving the data to one of the OSN buckets](guide.migrate_data_to_osn).
+- **When writing to community buckets only ever write to your personal folder!** Your personal folder is a combination of the bucketname and your github username (e.g. \`gs://leap-persistent/funky-user/').
+
+(reference.infrastructure.buckets.osn)=
+
+#### OSN Buckets
+
+The [](reference.osn-pod) is the target for our [](pangeo_forge) and [](manual) data ingestion. All of the following buckets can be read anonymously. Writing privilige is only granted to automated pipelines and to [](support.data_compute_team) members. All data in these buckets should be accessible via the [](reference.infrastructure.catalog).
+
+- `https://nyu1.osn.mghpcc.org/leap-pangeo-pipeline` - Persistent public storage to host datasets ingested via [](guides.data.ingestion).
+- `https://nyu1.osn.mghpcc.org/leap-pangeo-manual` - Persistent public storage to host datasets ingested manually. `https://nyu1.osn.mghpcc.org/leap-pangeo-inbox` is used to populate this bucket, see [](manual_ingestion) for details.
+
+##### OSN Project Buckets
+
+We can provide additional buckets for [](reference.m2lines) and LEAP projects. Please contact the [](support.data_compute_team) for further details.
 
 ## Compute
 
@@ -186,3 +225,31 @@ Below you can find some examples of ARCO data formats
 ## Pangeo-Forge
 
 You can find more information about Pangeo-Forge [here](https://pangeo-forge.readthedocs.io/en/latest/).
+
+(reference.osn)=
+
+## Open Storage Network (OSN)
+
+🚧
+
+(reference.m2lines)=
+
+## m2lines
+
+(reference.osn-pod)=
+
+### m2lines Open Storage Network Pod
+
+LEAP-Pangeo has access to a 1PB on-premise object storage server managed by the [](reference.osn) which is funded by the [](reference.m2lines) project. It provides the option to host data publically accessible (anonymous read) without generating [](reference.egress) costs.
+
+## Google Cloud Storage
+
+🚧
+
+## General Information about Cloud Object Storage
+
+(reference.egress)=
+
+### Egress cost
+
+Commodity cloud storage generally bills every single request that touches a data object. These costs are often higher when data is moved out of the providers network, commonly referred to as egress. These costs make it hard to control costs while providing data publically.
