@@ -9,6 +9,7 @@ parts:
       - file: tutorials/getting_started
   - caption: Guides
     chapters:
+      - file: guides/code_guide
       - file: guides/data_guide
       - file: guides/compute_guide
       - file: guides/education_guide

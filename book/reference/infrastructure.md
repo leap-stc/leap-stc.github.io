@@ -120,15 +120,21 @@ For a more permanent solution we recommend building project specific dockerfiles
 
 (reference.infrastructure.storage)=
 
-## Storage
+## Cloud Storage
 
 We provide multiple object storage location with different characteristics and costs considerations, which are detailed below. If you plan to use any of the storage please read these instructions carefully.
 
 :::\{warning}
 The LEAP-Pangeo storage is intended to be used for [](reference.arco) data. None of the LEAP-Pangeo storage resources should be considered as a singular storage location for data.
+
+**Never put sensitive information (passwords, keys, personal data) into any of these buckets!**
 :::
 
-- **Never put sensitive information (passwords, keys, personal data) into any of these buckets!**
+(reference.infrastructrue.osn_pod)=
+
+### m2lines OSN Pod
+
+🚧
 
 (reference.infrastructure.buckets)=
 
