@@ -30,6 +30,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
     
   <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
@@ -45,6 +46,7 @@
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -54,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Compute Guide" href="compute_guide.html" />
-    <link rel="prev" title="Getting Started" href="../tutorials/getting_started.html" />
+    <link rel="prev" title="Code Guide" href="code_guide.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -116,6 +118,11 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="code_guide.html">
+   Code Guide
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Data Guide
@@ -325,8 +332,29 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tools">
+     Tools
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#configuration-for-authenticated-access">
+       Configuration for Authenticated Access
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hub-data-setup">
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#inspecting-contents-of-the-bucket">
      Inspecting contents of the bucket
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#moving-data">
+     Moving Data
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -408,8 +436,29 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tools">
+     Tools
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#configuration-for-authenticated-access">
+       Configuration for Authenticated Access
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hub-data-setup">
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#inspecting-contents-of-the-bucket">
      Inspecting contents of the bucket
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#moving-data">
+     Moving Data
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -471,7 +520,7 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="data-guide">
 <span id="guide-data"></span><h1>Data Guide<a class="headerlink" href="#data-guide" title="Permalink to this headline">¶</a></h1>
-<p>Data is fundamental to most people’s work at LEAP. This guide describes best practices how to find, transfer, ingest, and catalog data.</p>
+<p>Data is fundamental to most people’s work at LEAP. This guide describes best practices how to find, read, write, transfer, ingest, and catalog data.</p>
 <div class="section" id="discovering-dataset">
 <h2>Discovering Dataset<a class="headerlink" href="#discovering-dataset" title="Permalink to this headline">¶</a></h2>
 <p>You want to have a specific dataset to explore or analyze? There is a good chance that somebody else at LEAP has already worked with the data! So the first thing to look for data should always be a visit to the <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructure-catalog"><span class="std std-ref">LEAP-Pangeo Data Catalog</span></a>.</p>
@@ -484,15 +533,141 @@ To help onboard you to this new way of working, we have written a guide to Files
 <li><p><a class="reference external" href="https://docs.2i2c.org/user/topics/data/filesystem/">2i2c Docs: Data and Filesystem</a></p></li>
 </ul>
 <p>We recommend you read this thoroughly, especially the part about Git and GitHub. LEAP provides several <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructure-buckets"><span class="std std-ref">cloud buckets</span></a>, and the following steps illustrate how to work with data in object storage as opposed to a filesystem.</p>
+<div class="section" id="tools">
+<h3>Tools<a class="headerlink" href="#tools" title="Permalink to this headline">¶</a></h3>
+<p>There are many tools available to interact with cloud object storage. We currently have basic operations documented for two tools:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://filesystem-spec.readthedocs.io/en/latest/">fsspec</a> (and its submodules <a class="reference external" href="https://gcsfs.readthedocs.io/en/latest/">gcsfs</a> and <a class="reference external" href="https://s3fs.readthedocs.io/en/latest/">s3fs</a>) which provide filesystem-like access from within a python session. Fsspec is also used by xarray under the hood.</p></li>
+<li><p><a class="reference external" href="https://rclone.org/">rclone</a> which provides a Command Line Interface to many different storage backends.</p></li>
+</ul>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Note on rclone documentation</p>
+<p>Rclone is a very extensive and powerful tool, but with its many options it can be overwhelming (at least it was for Julius) at the beginning. We will only demonstrate essential options here, for more details see the <a class="reference external" href="https://rclone.org/">docs</a>. If however instructions here are not working for your specific use case, please reach out so we can improve the docs.</p>
+</div>
+<div class="section" id="configuration-for-authenticated-access">
+<span id="data-config-files"></span><h4>Configuration for Authenticated Access<a class="headerlink" href="#configuration-for-authenticated-access" title="Permalink to this headline">¶</a></h4>
+<p>Unless a given cloud bucket allows anonymous access or is preauthenticated within your environment (like it is the case for some of the <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructure-buckets"><span class="std std-ref">LEAP-Pangeo owned buckets</span></a>) you will need to authenticate with a key/secret pair.</p>
+<div class="warning admonition">
+<p class="admonition-title">Always Handle credentials with care!</p>
+<p>Always handle secrets with care. Do not store them in plain text that is visible to others (e.g. in a notebook cell that is pushed to a public github repository). See <a class="reference internal" href="code_guide.html#guide-code-secrets"><span class="std std-ref">Handling Secrets</span></a> for more instructions on how to keep secrets safe.</p>
+</div>
+<p>We recommend to store your secrets in one of the following configuration files (which will be used in the following example to read and write data):
+s</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Fsspec</label><div class="sd-tab-content docutils">
+<p>Fsspec supports named [](aws profiles) in a credentials files. You can create one via Generate an aws credential file via the <a class="reference external" href="https://docs.aws.amazon.com/cli/v1/userguide/cli-configure-files.html#cli-configure-files-examples">aws CLI</a>(installed on the hub by defaule):</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>aws<span class="w"> </span>configure<span class="w"> </span>--profile<span class="w"> </span>&lt;pick_a_name&gt;
+</pre></div>
+</div>
+<p>Pick a sensible name for your profile, particularly if you are working with multiple profiles and buckets.</p>
+<p>The file <code class="docutils literal notranslate"><span class="pre">~/.aws/credentials</span></code> then contains your key/secret similar to this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">&lt;</span><span class="n">the_profile_name_you_picked</span><span class="o">&gt;</span><span class="p">]</span>
+<span class="n">aws_access_key_id</span> <span class="o">=</span> <span class="o">***</span>
+<span class="n">aws_secret_access_key</span> <span class="o">=</span> <span class="o">***</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Rclone</label><div class="sd-tab-content docutils">
+<p>Rclone has its own <a class="reference external" href="https://rclone.org/docs/#config-config-file">configuration file format</a> where you can specify the key and secret (and many other settings) in a similar fashion (note the missing <code class="docutils literal notranslate"><span class="pre">aws_</span></code> though!).</p>
+<p>We recommend setting up the config file (show the default location with <code class="docutils literal notranslate"><span class="pre">rclone</span> <span class="pre">config</span> <span class="pre">file</span></code>) by hand to look something like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">&lt;</span><span class="n">remote_name</span><span class="o">&gt;</span><span class="p">]</span>
+<span class="o">...</span> <span class="c1"># other values</span>
+<span class="n">access_key_id</span> <span class="o">=</span> <span class="n">XXX</span>
+<span class="n">secret_access_key</span> <span class="o">=</span> <span class="n">XXX</span>
+</pre></div>
+</div>
+<p>You can have multiple ‘remotes’ in this file for different cloud buckets.</p>
+<p>For the <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructrue-osn-pod"><span class="std std-ref">m2lines OSN Pod</span></a> use this remote definition:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">osn</span><span class="p">]</span>
+<span class="nb">type</span> <span class="o">=</span> <span class="n">s3</span>
+<span class="n">provider</span> <span class="o">=</span> <span class="n">Ceph</span>
+<span class="n">endpoint</span> <span class="o">=</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">nyu1</span><span class="o">.</span><span class="n">osn</span><span class="o">.</span><span class="n">mghpcc</span><span class="o">.</span><span class="n">org</span>
+<span class="n">access_key_id</span> <span class="o">=</span> <span class="n">XXX</span>
+<span class="n">secret_access_key</span> <span class="o">=</span> <span class="n">XXX</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Ideally we want to store these secrets only in one central location. The natural place for these seems to be in an <a class="reference external" href="https://docs.aws.amazon.com/cli/v1/userguide/cli-configure-files.html#cli-configure-files-format">AWS cli profiles</a>, which can also be used for fsspec. There however seem to be multiple issues (<a class="reference external" href="https://forum.rclone.org/t/shared-credentials-file-is-not-recognised/46993">here</a>) around this feature in rclone, and so far we have not succeeded in using AWS profiles in rclone.
+According to those issues we can only make the aws profiles (or <a class="reference external" href="https://forum.rclone.org/t/s3-profile-failing-when-explicit-s3-endpoint-is-present/36063/4?u=jbusecke">source profiles?</a>, anyways the credentials part of it) work if we define one config file per remote <a class="reference external" href="https://forum.rclone.org/t/shared-credentials-file-is-not-recognised/46993/2?u=jbusecke">and use the ‘default’ profile</a>which presumably breaks compatibility with fsspec, and also does not work at all right now. So at the moment we will have to keep the credentials in two separate spots 🤷‍♂️. <strong>Please make sure to apply proper caution when <a class="reference internal" href="code_guide.html#guide-code-secrets"><span class="std std-ref">handling secrets</span></a> for each config files that stores secrets in plain text!</strong></p>
+</div>
+</div>
+</div>
+<div class="section" id="hub-data-setup">
+<span id="id1"></span><h3><a class="headerlink" href="#hub-data-setup" title="Permalink to this headline">¶</a></h3>
+</div>
 <div class="section" id="inspecting-contents-of-the-bucket">
 <span id="hub-data-list"></span><h3>Inspecting contents of the bucket<a class="headerlink" href="#inspecting-contents-of-the-bucket" title="Permalink to this headline">¶</a></h3>
-<p>We recommend using <a class="reference external" href="https://gcsfs.readthedocs.io/en/latest/">gcsfs</a> or <a class="reference external" href="https://filesystem-spec.readthedocs.io/en/latest/">fsspec</a> which provide a filesytem-like interface for python.</p>
-<p>You can e.g. list the contents of your personal folder with</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gcsfs</span>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Fsspec</label><div class="sd-tab-content docutils">
+<p>The initial step in working with fsspec is to create a <code class="docutils literal notranslate"><span class="pre">filesystem</span></code> object which enables the abstraction on top of different object storage system.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fsspec</span>
 
-<span class="n">fs</span> <span class="o">=</span> <span class="n">gcsfs</span><span class="o">.</span><span class="n">GCSFileSystem</span><span class="p">()</span>  <span class="c1"># equivalent to fsspec.fs(&#39;gs&#39;)</span>
-<span class="n">fs</span><span class="o">.</span><span class="n">ls</span><span class="p">(</span><span class="s2">&quot;leap-persistent/funky-user&quot;</span><span class="p">)</span>
+<span class="c1"># for Google Storage </span>
+<span class="n">fs</span> <span class="o">=</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">filesystem</span><span class="p">(</span><span class="s1">&#39;gs&#39;</span><span class="p">)</span> <span class="c1"># equivalent to gcsfs.GCSFileSystem()</span>
+
+<span class="c1"># for s3</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">filesystem</span><span class="p">(</span><span class="s1">&#39;s3&#39;</span><span class="p">)</span> <span class="c1"># equivalent to s3fs.S3FileSystem()</span>
 </pre></div>
+</div>
+<p>For <strong>authenticated access</strong> you need to pass additional arguments. In this case (for the m2lines OSN pod) we pass a custom endpoint and an <a class="reference internal" href="#data-config-files"><span class="std std-ref">aws profile</span></a>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fs</span> <span class="o">=</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">filesystem</span><span class="p">(</span>
+    <span class="s1">&#39;s3&#39;</span><span class="p">,</span>
+    <span class="n">profile</span><span class="o">=</span><span class="s1">&#39;&lt;the_profile_name_you_picked&gt;&#39;</span><span class="p">,</span>  <span class="c1">## This is the profile name you configured above.</span>
+    <span class="n">client_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;endpoint_url&#39;</span><span class="p">:</span> <span class="s1">&#39;https://nyu1.osn.mghpcc.org &#39;</span><span class="p">}</span> <span class="c1"># This is the endpoint for the m2lines osn pod</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>You can now use the <code class="docutils literal notranslate"><span class="pre">.ls</span></code> method to list contents of a bucket and prefixes.</p>
+<p>You can e.g. list the contents of your personal folder on the persistent GCS bucket with</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fs</span><span class="o">.</span><span class="n">ls</span><span class="p">(</span><span class="s2">&quot;leap-persistent/funky-user&quot;</span><span class="p">)</span> <span class="c1"># replace with your github username</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+Rclone</label><div class="sd-tab-content docutils">
+<p>To inspect a bucket you can use clone with the profile (‘remote’ in rclone terminology) set up <a class="reference internal" href="#data-config-files"><span class="std std-ref">above</span></a>:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rclone<span class="w"> </span>ls<span class="w"> </span>&lt;remote_name&gt;:bucket-name/funky-user
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="moving-data">
+<h3>Moving Data<a class="headerlink" href="#moving-data" title="Permalink to this headline">¶</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+Fsspec</label><div class="sd-tab-content docutils">
+<p>🚧</p>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
+Rclone</label><div class="sd-tab-content docutils">
+<p>You can move directories from a local computer to cloud storage with rclone (make sure you are properly <a class="reference internal" href="#data-config-files"><span class="std std-ref">authenticated</span></a>):</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rclone<span class="w"> </span>copy<span class="w"> </span>path/to/local/dir/<span class="w"> </span>&lt;remote_name&gt;:&lt;bucket-name&gt;/funky-user
+</pre></div>
+</div>
+<p>You can also move data between cloud buckets using rclone</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rclone<span class="w"> </span>copy<span class="w"> </span><span class="se">\</span>
+<span class="w"> </span>&lt;remote_name_a&gt;:&lt;bucket-name&gt;/funky-user<span class="se">\</span>
+<span class="w"> </span>&lt;remote_name_b&gt;:&lt;bucket-name&gt;/funky-user
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Copying with rclone will stream the data from the source to your computer and back to the target, and thus transfer speed is likely limited by the internet connection of your local machine.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="basic-writing-to-and-reading-from-cloud-buckets">
@@ -789,11 +964,11 @@ Steps executed on your <span style="color:#22B401">”local” computer (e.g. la
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../tutorials/getting_started.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="code_guide.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Getting Started</p>
+            <p class="prev-next-title">Code Guide</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="compute_guide.html" title="next page">

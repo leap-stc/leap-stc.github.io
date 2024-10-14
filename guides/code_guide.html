@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Getting access to Cloud VMs &#8212; Technical Documentation</title>
+    <title>Code Guide &#8212; Technical Documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Guide for Data and Computation Team Members" href="team_guide.html" />
-    <link rel="prev" title="Bootcamp Guide" href="bootcamp_guide.html" />
+    <link rel="next" title="Data Guide" href="data_guide.html" />
+    <link rel="prev" title="Getting Started" href="../tutorials/getting_started.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -118,8 +118,8 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="code_guide.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Code Guide
   </a>
  </li>
@@ -143,8 +143,8 @@ const thebe_selector_output = ".output, .cell_output"
    Bootcamp Guide
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="vm_access.html">
    Getting access to Cloud VMs
   </a>
  </li>
@@ -275,7 +275,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/guides/vm_access.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/guides/code_guide.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -295,7 +295,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/leap-stc/leap-stc.github.io/issues/new?title=Issue%20on%20page%20%2Fguides/vm_access.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/leap-stc/leap-stc.github.io/issues/new?title=Issue%20on%20page%20%2Fguides/code_guide.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -322,23 +322,8 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why">
-   Why?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#admin-considerations">
-   Admin considerations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-get-access">
-   How to get access
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#log-into-google-cloud-console-and-start-a-small-test-vm">
-   Log into google cloud console and start a small test VM
+  <a class="reference internal nav-link" href="#handling-secrets">
+   Handling Secrets
   </a>
  </li>
 </ul>
@@ -351,7 +336,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Getting access to Cloud VMs</h1>
+                <h1>Code Guide</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -362,23 +347,8 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why">
-   Why?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#admin-considerations">
-   Admin considerations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-get-access">
-   How to get access
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#log-into-google-cloud-console-and-start-a-small-test-vm">
-   Log into google cloud console and start a small test VM
+  <a class="reference internal nav-link" href="#handling-secrets">
+   Handling Secrets
   </a>
  </li>
 </ul>
@@ -390,39 +360,11 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="getting-access-to-cloud-vms">
-<h1>Getting access to Cloud VMs<a class="headerlink" href="#getting-access-to-cloud-vms" title="Permalink to this headline">¶</a></h1>
-<div class="important admonition">
-<p class="admonition-title">Important</p>
-<p>This documentation should be considered highly experimental and permissions to follow these instructions are only given to a small subset of testers at the moment.</p>
-</div>
-<div class="section" id="why">
-<h2>Why?<a class="headerlink" href="#why" title="Permalink to this headline">¶</a></h2>
-<p>We want to test e.g. containerized workflows that run climate simulations (for online testing of ML parametrizations). For that we need a ‘bare’ VM, and not the JupyterLab interface.</p>
-</div>
-<div class="section" id="admin-considerations">
-<h2>Admin considerations<a class="headerlink" href="#admin-considerations" title="Permalink to this headline">¶</a></h2>
-<p>To fully separate this testing from the Hub etc we have created a separate project in Gcloud (same billing account and Org). To keep an eye on (e.g. accidental) cost overrun, I added a budget alert (in the linked billing account) that applies to all resources for this new project, and set a 500$ alert with notifications at various thresholds. New users need the following IAM roles (click “Grant Access” with the email as principals):</p>
-<ul class="simple">
-<li><p>“Compute Admin”</p></li>
-<li><p>“Service Account User”</p></li>
-</ul>
-</div>
-<div class="section" id="how-to-get-access">
-<h2>How to get access<a class="headerlink" href="#how-to-get-access" title="Permalink to this headline">¶</a></h2>
-<p>Send your email (private gmail preferred) to Julius Busecke</p>
-</div>
-<div class="section" id="log-into-google-cloud-console-and-start-a-small-test-vm">
-<h2>Log into google cloud console and start a small test VM<a class="headerlink" href="#log-into-google-cloud-console-and-start-a-small-test-vm" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Use the email you sent above to sign into <a class="reference external" href="https://console.cloud.google.com">https://console.cloud.google.com</a></p></li>
-<li><p>Make sure to chose the project “ClimSimTesting” <img alt="" src="../_images/vm_access_project.png" /></p></li>
-<li><p>Now navigate to “Compute Engine” and click on “Create New Instance”. Chose a recognizable name (e.g. <code class="docutils literal notranslate"><span class="pre">climsim_&lt;your_name&gt;_test</span></code> and leave everything else on default for now and click “Create” at the bottom.</p></li>
-<li><p>After a short spin up you should see your VM instance with a green checkmark.</p></li>
-<li><p>Try to SSH into it via the cloud console (click on SSH on the far right).</p></li>
-<li><p>Let me know on slack that you were able to create an instance</p></li>
-<li><p><strong>Very Important</strong>: Delete your instance after the test. <strong>You should do this everytime you are done using the VM to avoid large costs</strong>. Click on the triple dots on the right, and chose “Delete”. <img alt="" src="../_images/vm_access_delete.png" /></p></li>
-</ul>
+  <div class="tex2jax_ignore mathjax_ignore section" id="code-guide">
+<h1>Code Guide<a class="headerlink" href="#code-guide" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="handling-secrets">
+<span id="guide-code-secrets"></span><h2>Handling Secrets<a class="headerlink" href="#handling-secrets" title="Permalink to this headline">¶</a></h2>
+<p>🚧 Coming soon …</p>
 </div>
 </div>
 
@@ -451,17 +393,17 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="bootcamp_guide.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../tutorials/getting_started.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Bootcamp Guide</p>
+            <p class="prev-next-title">Getting Started</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="team_guide.html" title="next page">
+    <a class='right-next' id="next-link" href="data_guide.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Guide for Data and Computation Team Members</p>
+        <p class="prev-next-title">Data Guide</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
