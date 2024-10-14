@@ -34,7 +34,12 @@ sphinx:
   recursive_update: true
   extra_extensions:
     - sphinx_jinja
+    - sphinx_design
   config:
+    suppress_warnings:
+      - app.add_node
+      - app.add_directive
+      - app.add_role
     bibtex_reference_style: author_year
     jinja_contexts: # super weird to enter all this data here. Waiting on https://github.com/executablebooks/jupyter-book/issues/858#issuecomment-1767368922 to see if there is a better way.
       team-data:
