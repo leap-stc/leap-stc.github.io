@@ -11,6 +11,8 @@ For questions about how to use the Hub, please choose from the following resourc
 
 - Reach out to the :ref:`support.data_compute_team` by mentioning `'@data-and-compute'` on the LEAP slack channel
 
+- Tag `'@leap-stc/data-and-compute'` in a Github issue.
+
 
 Office Hours
 ~~~~~~~~~~~~
