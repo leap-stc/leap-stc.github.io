@@ -159,16 +159,20 @@ rclone ls <remote_name>:bucket-name/funky-user
 You can move directories from a local computer to cloud storage with rclone (make sure you are properly [authenticated](data.config-files)):
 
 ```shell
-rclone copy path/to/local/dir/ <remote_name>:<bucket-name>/funky-user
+rclone copy path/to/local/dir/ <remote_name>:<bucket-name>/funky-user/some-directory
 ```
 
 You can also move data between cloud buckets using rclone
 
 ```shell
 rclone copy \
- <remote_name_a>:<bucket-name>/funky-user\
- <remote_name_b>:<bucket-name>/funky-user
+ <remote_name_a>:<bucket-name>/funky-user/some-directory\
+ <remote_name_b>:<bucket-name>/funky-user/some-directory
 ```
+:::{admonition} Copying single files
+:class: note
+To copy single files with rclone use the [copyto command](https://rclone.org/commands/rclone_copyto/) or copy the containing folder and use the `--include` or `--exclude` flags to select the file to copy.  
+:::
 
 :::{note}
 Copying with rclone will stream the data from the source to your computer and back to the target, and thus transfer speed is likely limited by the internet connection of your local machine.

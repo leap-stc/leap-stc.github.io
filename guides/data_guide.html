@@ -654,14 +654,18 @@ Fsspec</label><div class="sd-tab-content docutils">
 </input><label class="sd-tab-label" for="sd-tab-item-5">
 Rclone</label><div class="sd-tab-content docutils">
 <p>You can move directories from a local computer to cloud storage with rclone (make sure you are properly <a class="reference internal" href="#data-config-files"><span class="std std-ref">authenticated</span></a>):</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rclone<span class="w"> </span>copy<span class="w"> </span>path/to/local/dir/<span class="w"> </span>&lt;remote_name&gt;:&lt;bucket-name&gt;/funky-user
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rclone<span class="w"> </span>copy<span class="w"> </span>path/to/local/dir/<span class="w"> </span>&lt;remote_name&gt;:&lt;bucket-name&gt;/funky-user/some-directory
 </pre></div>
 </div>
 <p>You can also move data between cloud buckets using rclone</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rclone<span class="w"> </span>copy<span class="w"> </span><span class="se">\</span>
-<span class="w"> </span>&lt;remote_name_a&gt;:&lt;bucket-name&gt;/funky-user<span class="se">\</span>
-<span class="w"> </span>&lt;remote_name_b&gt;:&lt;bucket-name&gt;/funky-user
+<span class="w"> </span>&lt;remote_name_a&gt;:&lt;bucket-name&gt;/funky-user/some-directory<span class="se">\</span>
+<span class="w"> </span>&lt;remote_name_b&gt;:&lt;bucket-name&gt;/funky-user/some-directory
 </pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Copying single files</p>
+<p>To copy single files with rclone use the <a class="reference external" href="https://rclone.org/commands/rclone_copyto/">copyto command</a> or copy the containing folder and use the <code class="docutils literal notranslate"><span class="pre">--include</span></code> or <code class="docutils literal notranslate"><span class="pre">--exclude</span></code> flags to select the file to copy.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
