@@ -7,11 +7,11 @@ For questions about how to use the Hub, please choose from the following resourc
 
 - Use the `LEAP-Pangeo Discussion Forum <https://github.com/leap-stc/leap-stc.github.io/discussions>`_ to search for previous topics or post new ones
 
-- Join the LEAP Slack and post an issue in the `'#leap-pangeo'` channel.
+- Join the LEAP Slack and post an issue in the ``'#leap-pangeo'`` channel.
 
-- Reach out to the :ref:`support.data_compute_team` by mentioning `'@data-and-compute'` on the LEAP slack channel
+- Reach out to the :ref:`support.data_compute_team` by mentioning ``'@data-and-compute'`` on the LEAP slack channel
 
-- Tag `'@leap-stc/data-and-compute'` in a Github issue.
+- Tag ``'@leap-stc/data-and-compute'`` in a Github issue.
 
 
 Office Hours
