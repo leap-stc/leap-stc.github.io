@@ -17,6 +17,6 @@ jobs:
 
   deploy:
     needs: build
-    uses: ProjectPythia/cookbook-actions/.github/workflows/deploy-book.yaml@main
+    uses: jbusecke/cookbook-actions/.github/workflows/deploy-book.yaml@patch-6
     with:
       publish_dir: "book/_build/html"
