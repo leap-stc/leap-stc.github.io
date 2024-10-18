@@ -1,6 +1,6 @@
 (explanation.architecture)=
 
-# LEAP-Pangeo Architecture
+# Testing LEAP-Pangeo Architecture
 
 LEAP-Pangeo is a cloud-based data and computing platform that will be used to support research, education, and knowledge transfer within the LEAP program.
 
