@@ -16,6 +16,10 @@ The website is located at <https://leap-stc.github.io/>.
 - Install dependencies with `mamba env create -f environment.yml`
 - Build book with `jupyter-book build book/`
 - Inspect the book with e.g. `open book/_build/html/index.html`
+- Or alternatively run a small server to get interactive updates:
+  - `cd book/_build/html`
+  - `python -m http.server`
+  - Navigate to `http://localhost:8000/intro.html` in your browser.
 
 ### Run linting locally
 
