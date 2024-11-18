@@ -37,7 +37,7 @@ Data that is already publically available but has been ingested into cloud stora
 
 :::\{admonition} LEAP curated
 :class: dropdown
-Data that is already available in  {abbr}`ARCO` formats in publically accessible object storage. Adding this data to the LEAP-Pangeo Catalog enables us to visualize it with the Data Viewer, and collect all datasets of importance in one single location, but none of the data itself is modified.
+Data that is already available in {abbr}`ARCO` formats in publically accessible object storage. Adding this data to the LEAP-Pangeo Catalog enables us to visualize it with the Data Viewer, and collect all datasets of importance in one single location, but none of the data itself is modified.
 :::
 
 ## Roles

@@ -174,7 +174,7 @@ It’s useful to understand the recent history and related efforts in this space
 - **[Google Colab](https://research.google.com/colaboratory/faq.html)** is a free notebook-in-the-cloud service run by Google.
   It is built around the open source Jupyter project, but with advanced notebook sharing capabilities (like Google Docs).
 - **[Google Earth Engine](https://earthengine.google.org/)** is a reference point for all cloud geospatial analytics platforms.
-  It’s actually a standalone application that is separate from Google Cloud, the single instance of a highly customized, black box (i.e. not open source)  application that enables parallel computing on distributed data.
+  It’s actually a standalone application that is separate from Google Cloud, the single instance of a highly customized, black box (i.e. not open source) application that enables parallel computing on distributed data.
   It’s very good at what it was designed for (analyzing satellite images), but isn’t easily adapted to other applications, such as machine learning.
 - **[Columbia IRI Data Library](https://iridl.ldeo.columbia.edu/index.html)** is a powerful and freely accessible online data repository and analysis tool that allows a user to view, analyze, and download hundreds of terabytes of climate-related data through a standard web browser.
   Due to its somewhat outdated architecture, IRI data library cannot easily be updated or adapted to new projects.
