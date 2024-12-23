@@ -14,8 +14,8 @@ All users of LEAP-Pangeo must abide by the [LEAP Code of Conduct](https://leap.c
 
 The membership tiers are listed in ascending order of access/privileges.
 
-- **PUBLIC MEMBERSHIP(Please note: Public Membership will be live soon.)**  Receive weekly LEAP newsletter and invitations to LEAP events. Access to LEAP Pangeo that includes limited performance notebooks, read only access to all LEAP storage, and write access to our scratch bucket, where everything is deleted after 7 days.
-- **EDUCATION MEMBERSHIP**  Open to participants in LEAP Education programs (e.g., Bootcamp, academic courses, and summer programs). Receive weekly LEAP newsletter and invitations to LEAP events. Access to LEAP Pangeo compute and storage for duration of education program.
+- **PUBLIC MEMBERSHIP(Please note: Public Membership will be live soon.)** Receive weekly LEAP newsletter and invitations to LEAP events. Access to LEAP Pangeo that includes limited performance notebooks, read only access to all LEAP storage, and write access to our scratch bucket, where everything is deleted after 7 days.
+- **EDUCATION MEMBERSHIP** Open to participants in LEAP Education programs (e.g., Bootcamp, academic courses, and summer programs). Receive weekly LEAP newsletter and invitations to LEAP events. Access to LEAP Pangeo compute and storage for duration of education program.
 - **RESEARCH MEMBERSHIP** Open to researchers who have been referred by a LEAP scientist. Receive weekly LEAP newsletter and invitations to LEAP events. Access to LEAP Pangeo compute and storage for six (6) months (renewal applications may be submitted at the conclusion of six months).
 - **LEAP-FUNDED RESEARCHE MEMBERSHIP**. Open to researchers who receive LEAP funding. Receive weekly LEAP newsletter and invitations to LEAP events. Access to LEAP Pangeo compute and storage for duration of time with LEAP.
 
