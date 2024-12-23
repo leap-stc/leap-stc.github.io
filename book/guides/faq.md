@@ -24,20 +24,20 @@ You can follow that and accept the invitation there aswell.
 
 If you are unable to log into the hub, please check the following steps:
 
-- \[ \] Check if you are member of the [appropriate github teams](reference.membership.tiers).
+- [ ] Check if you are member of the [appropriate github teams](reference.membership.tiers).
 
 If you **are not** follow these steps:
 
-- \[ \] Did you [sign up for LEAP membership](users.membership.apply)? This will be done for you if you sign up for an event like the Momentum bootcamp!
-- \[ \] Did you receive a github invite? [Here](faq.where_is_my_invite) is how to check for that.
-- \[ \] Check again if they are part of the [appropriate github teams](reference.membership.tiers).
+- [ ] Did you [sign up for LEAP membership](users.membership.apply)? This will be done for you if you sign up for an event like the Momentum bootcamp!
+- [ ] Did you receive a github invite? [Here](faq.where_is_my_invite) is how to check for that.
+- [ ] Check again if they are part of the [appropriate github teams](reference.membership.tiers).
 - If these steps do not work, please reach out to the [](support.data_compute_team).
 
 If you **are** member of one of the github teams, ask them to try the following steps:
 
-- \[ \] Refresh the browser cache
-- \[ \] Try a different browser
-- \[ \] Restart the computer
+- [ ] Refresh the browser cache
+- [ ] Try a different browser
+- [ ] Restart the computer
 - If these steps do not work, please reach out to the [](support.data_compute_team).
 
 (faq.usr_dir_usage_warning)=
@@ -48,11 +48,11 @@ If you get a Hub Usage Alert email, this means you are violating the User Direct
 
 **Troubleshooting**
 
-- To see which files and directories are taking up the bulk of your storage, run  `du -h --max-depth=1 ~/ | sort -h`  in Terminal. It will likely reveal cached files and small/medium size data files that can be removed without disrupting typical usage.
+- To see which files and directories are taking up the bulk of your storage, run `du -h --max-depth=1 ~/ | sort -h` in Terminal. It will likely reveal cached files and small/medium size data files that can be removed without disrupting typical usage.
 - Delete cached files, ipython checkpoints, and any other unwanted files.
 - If you still require more storage, it is likely that you are storing downloaded data in your user directory. We recommend storing data in a LEAP [cloud bucket](https://leap-stc.github.io/leap-pangeo/jupyterhub.html#leap-pangeo-cloud-storage-buckets) or data catalog. For more information, please consult our [](guide.data) and [](explanation.data-policy).
 
-Our goal is to accomodate all community members and thus we are happy to assist users in relocating data.  If you have any concerns, please reach out to the [](support.data_compute_team).
+Our goal is to accomodate all community members and thus we are happy to assist users in relocating data. If you have any concerns, please reach out to the [](support.data_compute_team).
 
 ## Dask "Killed Workers"
 
