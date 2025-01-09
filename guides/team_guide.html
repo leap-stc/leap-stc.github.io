@@ -365,6 +365,30 @@ const thebe_selector_output = ".output, .cell_output"
    Offboarding members
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#admin-tasks">
+   Admin Tasks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#renewing-personal-fine-grained-access-token-for-leap-member-management">
+     Renewing Personal fine grained access token for LEAP member management
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#steps">
+       Steps
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#handover-checklist-for-admins">
+     Handover Checklist for Admins
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -428,6 +452,30 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#offboarding-members">
    Offboarding members
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#admin-tasks">
+   Admin Tasks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#renewing-personal-fine-grained-access-token-for-leap-member-management">
+     Renewing Personal fine grained access token for LEAP member management
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#steps">
+       Steps
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#handover-checklist-for-admins">
+     Handover Checklist for Admins
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -515,6 +563,44 @@ Unfortunately we do not have a technical way to implement per user quotas, so we
 <ul class="simple">
 <li><p>[] Delete personal <code class="docutils literal notranslate"><span class="pre">dct-team-&lt;first_name&gt;</span></code> service account in IAM (needs admin priviliges).</p></li>
 </ul>
+</div>
+<div class="section" id="admin-tasks">
+<h2>Admin Tasks<a class="headerlink" href="#admin-tasks" title="Permalink to this headline">¶</a></h2>
+<p>This part of the guide is reserved for team members with admin access to the <code class="docutils literal notranslate"><span class="pre">'leap-stc'</span></code> github organization!</p>
+<div class="section" id="renewing-personal-fine-grained-access-token-for-leap-member-management">
+<span id="guide-team-admin-renew-member-token"></span><h3>Renewing Personal fine grained access token for LEAP member management<a class="headerlink" href="#renewing-personal-fine-grained-access-token-for-leap-member-management" title="Permalink to this headline">¶</a></h3>
+<p>In order to automate member sign up by adding github users from a private Google Sheet to the appropriate github teams (via <a class="reference external" href="https://github.com/leap-stc/member_management/blob/main/.github/workflows/read_sheet.yaml">this gh action</a>) the github action needs the appropriate priviliges to add/remove members from teams. We are currently handling this by providing a personal access token as the <code class="docutils literal notranslate"><span class="pre">&quot;ORG_TOKEN&quot;</span></code> secret. The person creating the token will usually be the Manager for Data and Computation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ideally we want to remove the dependency on a single user account here, but for now this is the only way I have found this to work properly. Maybe there is a way to establish a ‘dummy’ user?</p>
+</div>
+<div class="section" id="steps">
+<h4>Steps<a class="headerlink" href="#steps" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Make sure you have access to set secrets on the private <a class="reference external" href="https://github.com/leap-stc/member_management">member_management repo</a></p></li>
+<li><p>Go to the personal account “Settings&gt;Developer Settings” Tab. From there naviate to “Personal Access Token&gt;Fine-Grained tokens”</p></li>
+<li><p>If present click on “LEAP member management token”, othewise create a new token with that name (the actual name is optional here, but make sure to name it in a memorable way), and authenticate.</p></li>
+<li><p>Generate or regenerate the token</p>
+<ul>
+<li><p>The required permissions are “Read and Write access to members” and “Read Access to actions and metadata”</p></li>
+<li><p>Set the expiration to a full year (the current limit set on the org level)</p></li>
+</ul>
+</li>
+<li><p>Make sure to copy the token (leave the page open until the next step is completed, since you will have to recreate the token once the page is closed!)</p></li>
+<li><p>Go to the <a class="reference external" href="https://github.com/leap-stc/member_management">member_management repo</a> and navigate to “Settings &gt; Secrets and Variables &gt; Actions” and open the “ORG_TOKEN” to edit</p></li>
+<li><p>Paste the above token from the clipboard and save.</p></li>
+<li><p>Run the <a class="reference external" href="https://github.com/leap-stc/member_management/actions/workflows/read_sheet.yaml">Member Add Action</a> and confirm that it is successful</p></li>
+<li><p>Close the token page and you are done!</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="handover-checklist-for-admins">
+<h3>Handover Checklist for Admins<a class="headerlink" href="#handover-checklist-for-admins" title="Permalink to this headline">¶</a></h3>
+<p>The following is a list of tasks that should be done by any new hire in the Data and Computation Manager position to ensure smooth operations.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#guide-team-admin-renew-member-token"><span class="std std-ref">Renewing Personal fine grained access token for LEAP member management</span></a></p></li>
+</ul>
+</div>
 </div>
 </div>
 
