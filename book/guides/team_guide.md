@@ -60,3 +60,37 @@ We aim to provide users with [up-to-date default software environments](referenc
 ## Offboarding members
 
 - \[\] Delete personal `dct-team-<first_name>` service account in IAM (needs admin priviliges).
+
+## Admin Tasks
+
+This part of the guide is reserved for team members with admin access to the `'leap-stc'` github organization!
+
+(guide.team.admin.renew_member_token)=
+
+### Renewing Personal fine grained access token for LEAP member management
+
+In order to automate member sign up by adding github users from a private Google Sheet to the appropriate github teams (via [this gh action](https://github.com/leap-stc/member_management/blob/main/.github/workflows/read_sheet.yaml)) the github action needs the appropriate priviliges to add/remove members from teams. We are currently handling this by providing a personal access token as the `"ORG_TOKEN"` secret. The person creating the token will usually be the Manager for Data and Computation.
+
+:::\{note}
+Ideally we want to remove the dependency on a single user account here, but for now this is the only way I have found this to work properly. Maybe there is a way to establish a 'dummy' user?
+:::
+
+#### Steps
+
+- Make sure you have access to set secrets on the private [member_management repo](https://github.com/leap-stc/member_management)
+- Go to the personal account "Settings>Developer Settings" Tab. From there naviate to "Personal Access Token>Fine-Grained tokens"
+- If present click on "LEAP member management token", othewise create a new token with that name (the actual name is optional here, but make sure to name it in a memorable way), and authenticate.
+- Generate or regenerate the token
+  - The required permissions are "Read and Write access to members" and "Read Access to actions and metadata"
+  - Set the expiration to a full year (the current limit set on the org level)
+- Make sure to copy the token (leave the page open until the next step is completed, since you will have to recreate the token once the page is closed!)
+- Go to the [member_management repo](https://github.com/leap-stc/member_management) and navigate to "Settings > Secrets and Variables > Actions" and open the "ORG_TOKEN" to edit
+- Paste the above token from the clipboard and save.
+- Run the [Member Add Action](https://github.com/leap-stc/member_management/actions/workflows/read_sheet.yaml) and confirm that it is successful
+- Close the token page and you are done!
+
+### Handover Checklist for Admins
+
+The following is a list of tasks that should be done by any new hire in the Data and Computation Manager position to ensure smooth operations.
+
+- [](guide.team.admin.renew_member_token)
