@@ -38,7 +38,19 @@ You can reuse the materials for your own bootcamps or modify them to your needs.
 
 ## Running the bootcamp
 
+### Prepare ahead of the event
+
+Bootcamp instructors should make sure that they are added to the [Bootcamp Instructors Github Team](https://github.com/orgs/leap-stc/teams/bootcamp-instructors). If not please reach out to one of the github organization admins to be added. 
+
+Before the event check the following:
+- Is somebody available to add new data to the Member Data Google Sheet?
+- Can the instructors manually trigger the ["Parse Member Sheet and Add New Members" action](https://github.com/leap-stc/member_management/actions/workflows/read_sheet.yaml) (by clicking on "Run Workflow>Run Workflow" in the top right).
+
+### Troubleshooting during the event
+
 If students have trouble signin into the hub, please refer to the [FAQ](faq.cannot-log-into-hub) for troubleshooting steps.
+
+In case people have signed up late (i.e. their github username is *not* in the Member Data Google Sheet, instructors should collect the necessary data from the participants, add the data (including the github username) to the Member Data Google Sheet and run the ["Parse Member Sheet and Add New Members" action](https://github.com/leap-stc/member_management/actions/workflows/read_sheet.yaml) as described above.
 
 ## Debrief
 
