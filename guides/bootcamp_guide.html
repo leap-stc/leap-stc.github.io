@@ -335,6 +335,18 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#running-the-bootcamp">
    Running the bootcamp
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prepare-ahead-of-the-event">
+     Prepare ahead of the event
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#troubleshooting-during-the-event">
+     Troubleshooting during the event
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#debrief">
@@ -375,6 +387,18 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#running-the-bootcamp">
    Running the bootcamp
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prepare-ahead-of-the-event">
+     Prepare ahead of the event
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#troubleshooting-during-the-event">
+     Troubleshooting during the event
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#debrief">
@@ -436,7 +460,21 @@ This ensures the following:</p>
 </div>
 <div class="section" id="running-the-bootcamp">
 <h2>Running the bootcamp<a class="headerlink" href="#running-the-bootcamp" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="prepare-ahead-of-the-event">
+<h3>Prepare ahead of the event<a class="headerlink" href="#prepare-ahead-of-the-event" title="Permalink to this headline">¶</a></h3>
+<p>Bootcamp instructors should make sure that they are added to the <a class="reference external" href="https://github.com/orgs/leap-stc/teams/bootcamp-instructors">Bootcamp Instructors Github Team</a>. If not please reach out to one of the github organization admins to be added. The goal should be that whoever runs the bootcamp can perform tasks that might be needed the day of (mostly likely signing up folks who either entered wrong data or did not register ahead of time).</p>
+<p>Before the event check the following:</p>
+<ul class="simple">
+<li><p>Is somebody available to add new data to the Member Data Google Sheet? LEAPs Managing Director has the ability to add data or give others edit access.</p></li>
+<li><p>Can the instructors manually trigger the <a class="reference external" href="https://github.com/leap-stc/member_management/actions/workflows/read_sheet.yaml">“Parse Member Sheet and Add New Members” action</a> (by clicking on “Run Workflow&gt;Run Workflow” in the top right).</p></li>
+<li><p>Double Check that all participants github names are present in the <a class="reference external" href="https://github.com/orgs/leap-stc/teams/leap-pangeo-base-access">leap-pangeo-base-access</a> team! If folks are in this team they will have access to the hub! If they are not there they either have not accepted the invite to the team (they will be shown as pending invites; tell them to accept the invite as described <a class="reference external" href="https://leap-stc.github.io/guides/faq.html#where-is-my-invite">here</a>) or there is an issue with their github username (check their github handles in the Member Data Google Sheet for typos and completeness).</p></li>
+</ul>
+</div>
+<div class="section" id="troubleshooting-during-the-event">
+<h3>Troubleshooting during the event<a class="headerlink" href="#troubleshooting-during-the-event" title="Permalink to this headline">¶</a></h3>
 <p>If students have trouble signin into the hub, please refer to the <a class="reference internal" href="faq.html#faq-cannot-log-into-hub"><span class="std std-ref">FAQ</span></a> for troubleshooting steps.</p>
+<p>In case people have signed up late (i.e. their github username is <em>not</em> in the Member Data Google Sheet), instructors should collect the necessary data from the participants, add the data (including the github username) to the Member Data Google Sheet and run the <a class="reference external" href="https://github.com/leap-stc/member_management/actions/workflows/read_sheet.yaml">“Parse Member Sheet and Add New Members” action</a> as described above.</p>
+</div>
 </div>
 <div class="section" id="debrief">
 <h2>Debrief<a class="headerlink" href="#debrief" title="Permalink to this headline">¶</a></h2>
