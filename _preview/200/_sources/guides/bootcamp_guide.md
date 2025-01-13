@@ -46,12 +46,13 @@ Before the event check the following:
 
 - Is somebody available to add new data to the Member Data Google Sheet? LEAPs Managing Director has the ability to add data or give others edit access.
 - Can the instructors manually trigger the ["Parse Member Sheet and Add New Members" action](https://github.com/leap-stc/member_management/actions/workflows/read_sheet.yaml) (by clicking on "Run Workflow>Run Workflow" in the top right).
+- Double Check that all participants github names are present in the [leap-pangeo-base-access](https://github.com/orgs/leap-stc/teams/leap-pangeo-base-access) team! If folks are in this team they will have access to the hub! If they are not there check their github handles in the Member Data Google Sheet for typos.
 
 ### Troubleshooting during the event
 
 If students have trouble signin into the hub, please refer to the [FAQ](faq.cannot-log-into-hub) for troubleshooting steps.
 
-In case people have signed up late (i.e. their github username is *not* in the Member Data Google Sheet, instructors should collect the necessary data from the participants, add the data (including the github username) to the Member Data Google Sheet and run the ["Parse Member Sheet and Add New Members" action](https://github.com/leap-stc/member_management/actions/workflows/read_sheet.yaml) as described above.
+In case people have signed up late (i.e. their github username is *not* in the Member Data Google Sheet), instructors should collect the necessary data from the participants, add the data (including the github username) to the Member Data Google Sheet and run the ["Parse Member Sheet and Add New Members" action](https://github.com/leap-stc/member_management/actions/workflows/read_sheet.yaml) as described above.
 
 ## Debrief
 
