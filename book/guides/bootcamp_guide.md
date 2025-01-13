@@ -52,7 +52,7 @@ Before the event check the following:
 
 If students have trouble signin into the hub, please refer to the [FAQ](faq.cannot-log-into-hub) for troubleshooting steps.
 
-In case people have signed up late (i.e. their github username is *not* in the Member Data Google Sheet, instructors should collect the necessary data from the participants, add the data (including the github username) to the Member Data Google Sheet and run the ["Parse Member Sheet and Add New Members" action](https://github.com/leap-stc/member_management/actions/workflows/read_sheet.yaml) as described above.
+In case people have signed up late (i.e. their github username is *not* in the Member Data Google Sheet), instructors should collect the necessary data from the participants, add the data (including the github username) to the Member Data Google Sheet and run the ["Parse Member Sheet and Add New Members" action](https://github.com/leap-stc/member_management/actions/workflows/read_sheet.yaml) as described above.
 
 ## Debrief
 
