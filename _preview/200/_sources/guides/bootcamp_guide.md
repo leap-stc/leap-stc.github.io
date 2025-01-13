@@ -44,7 +44,7 @@ Bootcamp instructors should make sure that they are added to the [Bootcamp Instr
 
 Before the event check the following:
 
-- Is somebody available to add new data to the Member Data Google Sheet?
+- Is somebody available to add new data to the Member Data Google Sheet? LEAPs Managing Director has the ability to add data or give others edit access.
 - Can the instructors manually trigger the ["Parse Member Sheet and Add New Members" action](https://github.com/leap-stc/member_management/actions/workflows/read_sheet.yaml) (by clicking on "Run Workflow>Run Workflow" in the top right).
 
 ### Troubleshooting during the event
