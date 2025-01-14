@@ -97,15 +97,18 @@ The following is a list of tasks that should be done by any new hire in the Data
 
 ## Non-Technical Admin Tasks
 
-This section describes admin tasks that are necessary for the maintenance of LEAP-Pangeo components (including collaborative efforts lead m2lines) which require appropriate permissions, but no coding (everything can be achieved on one of several websites). 
+This section describes admin tasks that are necessary for the maintenance of LEAP-Pangeo components (including collaborative efforts lead m2lines) which require appropriate permissions, but no coding (everything can be achieved on one of several websites).
 
 ### m2lines OSN pod administration
-All administrative tasks pertaining to the m2lines OSN bucket are handled via the [Coldfront Portal](https://coldfront.osn.mghpcc.org/). Please log in with one of your affiliated organizations and make sure to *use the same one each time in case you have multiple affiliations*. 
 
-The important units of division on the OSN pod are **projects** and **buckets**. Each project can have multiple buckets, and you can give others access as guests and admins on a per project basis. Buckets are how the actual storage space is organized, and each bucket will have *access credentials* and a *storage quota*, both of which might need actions from an admin from time to time. 
+All administrative tasks pertaining to the m2lines OSN bucket are handled via the [Coldfront Portal](https://coldfront.osn.mghpcc.org/). Please log in with one of your affiliated organizations and make sure to *use the same one each time in case you have multiple affiliations*.
+
+The important units of division on the OSN pod are **projects** and **buckets**. Each project can have multiple buckets, and you can give others access as guests and admins on a per project basis. Buckets are how the actual storage space is organized, and each bucket will have *access credentials* and a *storage quota*, both of which might need actions from an admin from time to time.
 
 #### Increasing Storage Quota
+
 If any of the buckets needs more storage space, follow these steps:
+
 - Log into [Coldfront](https://coldfront.osn.mghpcc.org/)
 - Navigate to the project that contains the bucket (we currently separate projects for m2lines, LEAP, and the LEAP-Pangeo Data ingestion)
 - Scroll to "Allocations" and find your bucket in the "Information" column. Click on the folder icon in the corresponding "Actions" column.
