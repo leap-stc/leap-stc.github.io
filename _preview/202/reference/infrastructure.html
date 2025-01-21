@@ -381,6 +381,13 @@ const thebe_selector_output = ".output, .cell_output"
     <a class="reference internal nav-link" href="#m2lines-osn-pod">
      m2lines OSN Pod
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#credentials">
+       Credentials
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -513,6 +520,13 @@ const thebe_selector_output = ".output, .cell_output"
     <a class="reference internal nav-link" href="#m2lines-osn-pod">
      m2lines OSN Pod
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#credentials">
+       Credentials
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -703,7 +717,14 @@ However, these will disappear when your server shuts down.</p>
 <h2>Cloud Storage<a class="headerlink" href="#cloud-storage" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="m2lines-osn-pod">
 <span id="reference-infrastructrue-osn-pod"></span><h3>m2lines OSN Pod<a class="headerlink" href="#m2lines-osn-pod" title="Permalink to this headline">¶</a></h3>
-<p>🚧</p>
+<div class="section" id="credentials">
+<span id="reference-infrastructrue-osn-pod-credentials"></span><h4>Credentials<a class="headerlink" href="#credentials" title="Permalink to this headline">¶</a></h4>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>All OSN credentials are long lived and should be treated as such. Please do not share them publicly (e.g. in your notebook or a github repository) and when sharing with e.g. collaborators use an encrypted way of sharing (e.g. password manager).</p>
+</div>
+<p>Credentials for the OSN Pod are specific to each bucket. There are two types of credentials: “Read-only” and “Read-Write”. Exercise caution when sharing/saving secrets, particularly the latter. Each type of credentials consists of two strings (key + secret) and can be obtained by the OSN admin.</p>
+</div>
 </div>
 </div>
 <div class="section" id="leap-pangeo-cloud-storage-buckets">

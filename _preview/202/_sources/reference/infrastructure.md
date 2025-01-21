@@ -124,7 +124,15 @@ For a more permanent solution we recommend building project specific dockerfiles
 
 ### m2lines OSN Pod
 
-🚧
+(reference.infrastructrue.osn_pod.credentials)=
+
+#### Credentials
+
+:::\{warning}
+All OSN credentials are long lived and should be treated as such. Please do not share them publicly (e.g. in your notebook or a github repository) and when sharing with e.g. collaborators use an encrypted way of sharing (e.g. password manager).
+:::
+
+Credentials for the OSN Pod are specific to each bucket. There are two types of credentials: "Read-only" and "Read-Write". Exercise caution when sharing/saving secrets, particularly the latter. Each type of credentials consists of two strings (key + secret) and can be obtained by the OSN admin.
 
 (reference.infrastructure.buckets)=
 
