@@ -400,6 +400,16 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#check-bucket-attributes">
+       Check Bucket attributes
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#share-bucket-credentials">
+       Share bucket credentials
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#increasing-storage-quota">
        Increasing Storage Quota
       </a>
@@ -511,6 +521,16 @@ const thebe_selector_output = ".output, .cell_output"
      m2lines OSN pod administration
     </a>
     <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#check-bucket-attributes">
+       Check Bucket attributes
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#share-bucket-credentials">
+       Share bucket credentials
+      </a>
+     </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#increasing-storage-quota">
        Increasing Storage Quota
@@ -657,6 +677,25 @@ Unfortunately we do not have a technical way to implement per user quotas, so we
 <h3>m2lines OSN pod administration<a class="headerlink" href="#m2lines-osn-pod-administration" title="Permalink to this headline">¶</a></h3>
 <p>All administrative tasks pertaining to the m2lines OSN bucket are handled via the <a class="reference external" href="https://coldfront.osn.mghpcc.org/">Coldfront Portal</a>. Please log in with one of your affiliated organizations and make sure to <em>use the same one each time in case you have multiple affiliations</em>.</p>
 <p>The important units of division on the OSN pod are <strong>projects</strong> and <strong>buckets</strong>. Each project can have multiple buckets, and you can give others access as guests and admins on a per project basis. Buckets are how the actual storage space is organized, and each bucket will have <em>access credentials</em> and a <em>storage quota</em>, both of which might need actions from an admin from time to time.</p>
+<div class="section" id="check-bucket-attributes">
+<span id="guide-team-admin-osnpod-check"></span><h4>Check Bucket attributes<a class="headerlink" href="#check-bucket-attributes" title="Permalink to this headline">¶</a></h4>
+<p>To check individual buckets’ attributes log into the <a class="reference external" href="https://coldfront.osn.mghpcc.org/">Coldfront Portal</a>, click on the relevant project, navigate to the “Allocations” section, find the bucket name in the “Information” column and click on the folder symbol in the “Actions” column.</p>
+<p>Scroll to the “Allocation Attributes” section. You can see all relevant values here.</p>
+<p><strong>OSN Anonymous Access</strong>: If False, this data is public, no credentials are needed to read data (writing still requires credentials).
+<strong>OSN Bucket Quota (TB)</strong>: Shows the currently allocated size. This is the max size, not what is actuall used!
+<strong>OSN RO/RW Bucket Access/Secret Key</strong>: Credentials for read-only (RO) and read-write (RW) access to the bucket. See <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructrue-osn-pod-credentials"><span class="std std-ref">Credentials</span></a> for more details.</p>
+</div>
+<div class="section" id="share-bucket-credentials">
+<h4>Share bucket credentials<a class="headerlink" href="#share-bucket-credentials" title="Permalink to this headline">¶</a></h4>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Some buckets are not meant to be accessible for write by users! Please always refer to <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructrue-osn-pod-organization"><span class="std std-ref">OSN Pod Organization</span></a> and only give access to project specific buckets and the <code class="docutils literal notranslate"><span class="pre">'leap-pangeo-inbox'</span></code> bucket to non-admins.</p>
+</div>
+<ul class="simple">
+<li><p>Navigate to the specific bucket you want to share credentials to (see <a class="reference internal" href="#guide-team-admin-osnpod-check"><span class="std std-ref">above</span></a> for detailed steps)</p></li>
+<li><p>Copy the relevant Access and Secret keys (either RO or RW depending on the desired use) and share them with the relevant users e.g. by pasting them into a password manager and sharing an authenticated link.</p></li>
+</ul>
+</div>
 <div class="section" id="increasing-storage-quota">
 <h4>Increasing Storage Quota<a class="headerlink" href="#increasing-storage-quota" title="Permalink to this headline">¶</a></h4>
 <p>If any of the buckets needs more storage space, follow these steps:</p>
