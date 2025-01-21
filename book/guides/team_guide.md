@@ -105,6 +105,27 @@ All administrative tasks pertaining to the m2lines OSN bucket are handled via th
 
 The important units of division on the OSN pod are **projects** and **buckets**. Each project can have multiple buckets, and you can give others access as guests and admins on a per project basis. Buckets are how the actual storage space is organized, and each bucket will have *access credentials* and a *storage quota*, both of which might need actions from an admin from time to time.
 
+(guide.team.admin.osnpod.check)=
+
+#### Check Bucket attributes
+
+To check individual buckets' attributes log into the [Coldfront Portal](https://coldfront.osn.mghpcc.org/), click on the relevant project, navigate to the "Allocations" section, find the bucket name in the "Information" column and click on the folder symbol in the "Actions" column. 
+
+Scroll to the "Allocation Attributes" section. You can see all relevant values here. 
+
+**OSN Anonymous Access**: If False, this data is public, no credentials are needed to read data (writing still requires credentials).
+**OSN Bucket Quota (TB)**: Shows the currently allocated size. This is the max size, not what is actuall used!
+**OSN RO/RW Bucket Access/Secret Key**: Credentials for read-only (RO) and read-write (RW) access to the bucket. See [](reference.infrastructrue.osn_pod.credentials) for more details.
+
+#### Share bucket credentials
+
+:::\{attention}
+Some buckets are not meant to be accessible for write by users! Please always refer to [](reference.infrastructrue.osn_pod.organization) and only give access to project specific buckets and the `'leap-pangeo-inbox'` bucket to non-admins.
+:::
+
+- Navigate to the specific bucket you want to share credentials to (see [above](guide.team.admin.osnpod.check) for detailed steps)
+- Copy the relevant Access and Secret keys (either RO or RW depending on the desired use) and share them with the relevant users e.g. by pasting them into a password manager and sharing an authenticated link.
+
 #### Increasing Storage Quota
 
 If any of the buckets needs more storage space, follow these steps:
