@@ -109,9 +109,9 @@ The important units of division on the OSN pod are **projects** and **buckets**.
 
 #### Check Bucket attributes
 
-To check individual buckets' attributes log into the [Coldfront Portal](https://coldfront.osn.mghpcc.org/), click on the relevant project, navigate to the "Allocations" section, find the bucket name in the "Information" column and click on the folder symbol in the "Actions" column. 
+To check individual buckets' attributes log into the [Coldfront Portal](https://coldfront.osn.mghpcc.org/), click on the relevant project, navigate to the "Allocations" section, find the bucket name in the "Information" column and click on the folder symbol in the "Actions" column.
 
-Scroll to the "Allocation Attributes" section. You can see all relevant values here. 
+Scroll to the "Allocation Attributes" section. You can see all relevant values here.
 
 **OSN Anonymous Access**: If False, this data is public, no credentials are needed to read data (writing still requires credentials).
 **OSN Bucket Quota (TB)**: Shows the currently allocated size. This is the max size, not what is actuall used!
