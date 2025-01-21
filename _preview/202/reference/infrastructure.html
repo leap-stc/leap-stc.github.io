@@ -383,6 +383,11 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#osn-pod-organization">
+       OSN Pod Organization
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#credentials">
        Credentials
       </a>
@@ -521,6 +526,11 @@ const thebe_selector_output = ".output, .cell_output"
      m2lines OSN Pod
     </a>
     <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#osn-pod-organization">
+       OSN Pod Organization
+      </a>
+     </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#credentials">
        Credentials
@@ -717,6 +727,44 @@ However, these will disappear when your server shuts down.</p>
 <h2>Cloud Storage<a class="headerlink" href="#cloud-storage" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="m2lines-osn-pod">
 <span id="reference-infrastructrue-osn-pod"></span><h3>m2lines OSN Pod<a class="headerlink" href="#m2lines-osn-pod" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="osn-pod-organization">
+<span id="reference-infrastructrue-osn-pod-organization"></span><h4>OSN Pod Organization<a class="headerlink" href="#osn-pod-organization" title="Permalink to this headline">¶</a></h4>
+<p>The ~1PB storage on the OSN Pod can be customized into Projects and Buckets. Projects are used to give additional users access to the Coldfront Admin Console, whereas buckets are how storage is administered up on the Pod. A project can have multiple buckets.</p>
+<p>There are currently 3 principal Projects on the Pod:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'leap-pangeo'</span></code>: Used for Data Ingestion across the m2lines and LEAP community</p>
+<ul>
+<li><p>Buckets:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">'leap-pangeo-manual'</span></code>: <strong>No write access for users</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'leap-pangeo-pipeline'</span></code>: <strong>No write access for users</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'leap-pangeo-inbox'</span></code>: <em>Write access can be shared with users who want to add data e.g. from an HPC center</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'m2lines'</span></code>: Used for project data and publications from the m2lines project</p>
+<ul>
+<li><p>Buckets:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">'m2lines-pubs'</span></code>: <strong>No write access for users</strong></p></li>
+<li><p>… various project buckets</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'leap'</span></code>: Used for project data and publications from the LEAP project</p>
+<ul>
+<li><p>Buckets:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">'leap-pubs'</span></code>: <strong>No write access for users</strong></p></li>
+<li><p>… various project buckets</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
 <div class="section" id="credentials">
 <span id="reference-infrastructrue-osn-pod-credentials"></span><h4>Credentials<a class="headerlink" href="#credentials" title="Permalink to this headline">¶</a></h4>
 <div class="admonition warning">
