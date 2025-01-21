@@ -131,19 +131,20 @@ For a more permanent solution we recommend building project specific dockerfiles
 The ~1PB storage on the OSN Pod can be customized into Projects and Buckets. Projects are used to give additional users access to the Coldfront Admin Console, whereas buckets are how storage is administered up on the Pod. A project can have multiple buckets.
 
 There are currently 3 principal Projects on the Pod:
+
 - `'leap-pangeo'`: Used for Data Ingestion across the m2lines and LEAP community
   - Buckets:
-      - `'leap-pangeo-manual'`: **No write access for users**
-      - `'leap-pangeo-pipeline'`: **No write access for users**
-      - `'leap-pangeo-inbox'`: *Write access can be shared with users who want to add data e.g. from an HPC center*
--  `'m2lines'`: Used for project data and publications from the m2lines project
-    -  Buckets:
-        - `'m2lines-pubs'`: **No write access for users**
-        - ... various project buckets  
--  `'leap'`: Used for project data and publications from the LEAP project
-    -  Buckets:
-        - `'leap-pubs'`: **No write access for users**
-        - ... various project buckets
+    - `'leap-pangeo-manual'`: **No write access for users**
+    - `'leap-pangeo-pipeline'`: **No write access for users**
+    - `'leap-pangeo-inbox'`: *Write access can be shared with users who want to add data e.g. from an HPC center*
+- `'m2lines'`: Used for project data and publications from the m2lines project
+  - Buckets:
+    - `'m2lines-pubs'`: **No write access for users**
+    - ... various project buckets
+- `'leap'`: Used for project data and publications from the LEAP project
+  - Buckets:
+    - `'leap-pubs'`: **No write access for users**
+    - ... various project buckets
 
 (reference.infrastructrue.osn_pod.credentials)=
 
