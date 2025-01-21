@@ -8,7 +8,5 @@
 
 ## Working with git
 
-- You need to authenticate
-- Use gh-scoped-creds (so that permanent creds are never stored in plain text) (see above).
-- Make sure to commit+push important things as a backup (and have a backup of important data \{link})
-- \[ \] Add link to the get started tutorial.
+The recommended way to move code in and out of the hub is via github. This will version control your code via git and serve as one backup location for your research code. The recommended way to authenticate is to use [gh-scoped-creds](https://docs.2i2c.org/user/topics/data/git/#using-gh-scoped-creds) which is preinstalled on the default software images. 
+Please read the in-depth [guide by 2i2c](https://docs.2i2c.org/user/topics/data/git/#move-code-in-and-out-of-the-hub-with-github) for more details.
