@@ -396,7 +396,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#m2lines-osn-pod-administration">
-     m2lines OSN pod administration
+     M²LInES OSN pod administration
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -422,6 +422,11 @@ const thebe_selector_output = ".output, .cell_output"
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#create-a-new-project">
        Create a new Project
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#osn-support">
+       OSN Support
       </a>
      </li>
     </ul>
@@ -523,7 +528,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#m2lines-osn-pod-administration">
-     m2lines OSN pod administration
+     M²LInES OSN pod administration
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -549,6 +554,11 @@ const thebe_selector_output = ".output, .cell_output"
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#create-a-new-project">
        Create a new Project
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#osn-support">
+       OSN Support
       </a>
      </li>
     </ul>
@@ -682,10 +692,10 @@ Unfortunately we do not have a technical way to implement per user quotas, so we
 </div>
 <div class="section" id="non-technical-admin-tasks">
 <h2>Non-Technical Admin Tasks<a class="headerlink" href="#non-technical-admin-tasks" title="Permalink to this headline">¶</a></h2>
-<p>This section describes admin tasks that are necessary for the maintenance of LEAP-Pangeo components (including collaborative efforts lead m2lines) which require appropriate permissions, but no coding (everything can be achieved on one of several websites).</p>
+<p>This section describes admin tasks that are necessary for the maintenance of LEAP-Pangeo components (including collaborative efforts lead M²LInES) which require appropriate permissions, but no coding (everything can be achieved on one of several websites).</p>
 <div class="section" id="m2lines-osn-pod-administration">
-<h3>m2lines OSN pod administration<a class="headerlink" href="#m2lines-osn-pod-administration" title="Permalink to this headline">¶</a></h3>
-<p>All administrative tasks pertaining to the m2lines OSN bucket are handled via the <a class="reference external" href="https://coldfront.osn.mghpcc.org/">Coldfront Portal</a>. Please log in with one of your affiliated organizations and make sure to <em>use the same one each time in case you have multiple affiliations</em>.</p>
+<h3>M²LInES OSN pod administration<a class="headerlink" href="#m2lines-osn-pod-administration" title="Permalink to this headline">¶</a></h3>
+<p>All administrative tasks pertaining to the M²LInES OSN bucket are handled via the <a class="reference external" href="https://coldfront.osn.mghpcc.org/">Coldfront Portal</a>. Please log in with one of your affiliated organizations and make sure to <em>use the same one each time in case you have multiple affiliations</em>.</p>
 <p>The important units of division on the OSN pod are <strong>projects</strong> and <strong>buckets</strong>. Each project can have multiple buckets, and you can give others access as guests and admins on a per project basis. Buckets are how the actual storage space is organized, and each bucket will have <em>access credentials</em> and a <em>storage quota</em>, both of which might need actions from an admin from time to time.</p>
 <div class="section" id="check-bucket-attributes">
 <span id="guide-team-admin-osnpod-check"></span><h4>Check Bucket attributes<a class="headerlink" href="#check-bucket-attributes" title="Permalink to this headline">¶</a></h4>
@@ -711,7 +721,7 @@ Unfortunately we do not have a technical way to implement per user quotas, so we
 <p>If any of the buckets needs more storage space, follow these steps:</p>
 <ul class="simple">
 <li><p>Log into <a class="reference external" href="https://coldfront.osn.mghpcc.org/">Coldfront</a></p></li>
-<li><p>Navigate to the project that contains the bucket (we currently separate projects for m2lines, LEAP, and the LEAP-Pangeo Data ingestion)</p></li>
+<li><p>Navigate to the project that contains the bucket (we currently separate projects for M²LInES, LEAP, and the LEAP-Pangeo Data ingestion)</p></li>
 <li><p>Scroll to “Allocations” and find your bucket in the “Information” column. Click on the folder icon in the corresponding “Actions” column.</p></li>
 <li><p>In the top right click on “Request Change” and scroll down to “Allocation Attributes”. Enter the desired new size in TB in the “Request New Value” column and the “OSN Bucket Quota (TB)” row and enter a short justification (required).</p></li>
 <li><p>Click the “Submit” button.</p></li>
@@ -733,7 +743,7 @@ Unfortunately we do not have a technical way to implement per user quotas, so we
 <h4>Create a new Project<a class="headerlink" href="#create-a-new-project" title="Permalink to this headline">¶</a></h4>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You need PI status on the pod to create new projects. Reach out to the m2lines admin to discuss this if you do not have access yet.</p>
+<p>You need PI status on the pod to create new projects. Reach out to the M²LInES admin to discuss this if you do not have access yet.</p>
 </div>
 <ul class="simple">
 <li><p>Log into <a class="reference external" href="https://coldfront.osn.mghpcc.org/">Coldfront</a></p></li>
@@ -743,6 +753,10 @@ Unfortunately we do not have a technical way to implement per user quotas, so we
 <li><p>Then click “Save”</p></li>
 <li><p>Wait for email confirmation.</p></li>
 </ul>
+</div>
+<div class="section" id="osn-support">
+<h4>OSN Support<a class="headerlink" href="#osn-support" title="Permalink to this headline">¶</a></h4>
+<p>For any questions/functionality not mentioned above, please refer to the <a class="reference external" href="https://coldfront.osn.mghpcc.org/static/osndocs/index.html">OSN documentation</a> or reach out to the OSN support (<code class="docutils literal notranslate"><span class="pre">'help&#64;osn.mghpcc.org'</span></code>)</p>
 </div>
 </div>
 </div>
