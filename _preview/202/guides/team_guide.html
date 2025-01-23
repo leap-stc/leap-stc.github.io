@@ -419,6 +419,11 @@ const thebe_selector_output = ".output, .cell_output"
        Provision a new Bucket
       </a>
      </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#create-a-new-project">
+       Create a new Project
+      </a>
+     </li>
     </ul>
    </li>
   </ul>
@@ -539,6 +544,11 @@ const thebe_selector_output = ".output, .cell_output"
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#provision-a-new-bucket">
        Provision a new Bucket
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#create-a-new-project">
+       Create a new Project
       </a>
      </li>
     </ul>
@@ -711,6 +721,28 @@ Unfortunately we do not have a technical way to implement per user quotas, so we
 </div>
 <div class="section" id="provision-a-new-bucket">
 <h4>Provision a new Bucket<a class="headerlink" href="#provision-a-new-bucket" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Log into <a class="reference external" href="https://coldfront.osn.mghpcc.org/">Coldfront</a></p></li>
+<li><p>Navigate to an existing Project (or create a new one; see below), scroll to “Allocations” and click on “Request Resource Allocation”</p></li>
+<li><p>In the following dialog chose “OSN Bucket (Storage)”, write a short justification which <strong>includes whether you want the bucket to have anonymous (public) access!</strong>, and choose a size in TB.</p></li>
+<li><p>Click “Submit”</p></li>
+<li><p>Wait for email confirmation.</p></li>
+</ul>
+</div>
+<div class="section" id="create-a-new-project">
+<h4>Create a new Project<a class="headerlink" href="#create-a-new-project" title="Permalink to this headline">¶</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You need PI status on the pod to create new projects. Reach out to the m2lines admin to discuss this if you do not have access yet.</p>
+</div>
+<ul class="simple">
+<li><p>Log into <a class="reference external" href="https://coldfront.osn.mghpcc.org/">Coldfront</a></p></li>
+<li><p>Click on the “Projects” link on the homepage</p></li>
+<li><p>Click “Add a Project”</p></li>
+<li><p>Choose a title, write a short description of the project, and optionally choose a field of science.</p></li>
+<li><p>Then click “Save”</p></li>
+<li><p>Wait for email confirmation.</p></li>
+</ul>
 </div>
 </div>
 </div>
