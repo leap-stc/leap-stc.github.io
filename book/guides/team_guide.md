@@ -158,3 +158,7 @@ You need PI status on the pod to create new projects. Reach out to the m2lines a
 - Choose a title, write a short description of the project, and optionally choose a field of science.
 - Then click "Save"
 - Wait for email confirmation.
+
+#### OSN Support
+
+For any questions/functionality not mentioned above, please refer to the [OSN documentation](https://coldfront.osn.mghpcc.org/static/osndocs/index.html) or reach out to the OSN support (`'help@osn.mghpcc.org'`)
