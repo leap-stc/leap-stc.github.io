@@ -147,13 +147,14 @@ If any of the buckets needs more storage space, follow these steps:
 - Wait for email confirmation.
 
 #### Create a new Project
+
 :::\{note}
 You need PI status on the pod to create new projects. Reach out to the m2lines admin to discuss this if you do not have access yet.
 :::
+
 - Log into [Coldfront](https://coldfront.osn.mghpcc.org/)
 - Click on the "Projects" link on the homepage
 - Click "Add a Project"
 - Choose a title, write a short description of the project, and optionally choose a field of science.
 - Then click "Save"
 - Wait for email confirmation.
-
