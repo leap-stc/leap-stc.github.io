@@ -103,26 +103,30 @@ This section describes admin tasks that are necessary for the maintenance of LEA
 
 Ideally members should be signed on automatically and well ahead of any event. But despite the best efforts situations arise where either staff or the organizers/instructors of an event need to quickly sign on new members, and troubleshoot if certain users do not have access to the JupyterHub. Follow the steps in this Flowchart to quickly resolve any issues in such cases.
 
-[picture]
+\[picture\]
 
 #### A+G: Check if a user is in the Member Spreadsheet
+
 Request read access or inquire with LEAP staff to confirm that the user(s) who are having trouble, are listed in the Member Data Spreadsheet and make sure the the sheet **includes their github username**. Always make sure that the github name exists (search in github), and does not contain extra characters like `"@"`.
 
 #### B: Add Users to the Member Spreadsheet
+
 If this is not time sensitive, make sure that the user has completed the membership application (more details [here](reference.membership.tiers)) and inquire with LEAP staff about the status of membership (adding users might take a while, thus always sign up users well in advance). In a time sensitive situation contact LEAP staff to expedite the addition of new users added to the Member Spreadsheet.
 
 #### C+D+F: Checking Github Team Membership and invite status
 
 Repeat the following steps for all relevant Github Teams (you can find links to the team page [here](reference.membership.tiers)):
+
 - C: Navigate to the search bar at the top that says "Find a member..." and enter the **github username** of the user. If the name shows up the user is part of this github team
 - D: Right next to the search bar is a button that says "... pending members". Click on that button and scroll down the list. If the username is in that list the member has received an invite, but not yet accepted it.
 - F: **Accepting the invite has to be done by the user!**. Point them to our [FAQ's](faq.where_is_my_invite) for instructions on how to accept the invite.
 
 #### E: Manually rerunning github sign up action
 
-:::{attention}
+:::\{attention}
 You need to have maintainer access to the private [leap-stc/member_management repo](https://github.com/leap-stc/member_management) in order to follow these steps. If you cannot repeat these steps please ask one of the github organization admins to be added to an appropriate team (e.g. [bootcamp-instructor](https://github.com/orgs/leap-stc/teams/bootcamp-instructors)) that has access.
 :::
+
 - Navigate to [leap-stc/member_management](https://github.com/leap-stc/member_management)
 - In the top rider click on "Actions"
 - On the left click on "Parse Member Sheet and Add New Members"
@@ -131,14 +135,15 @@ You need to have maintainer access to the private [leap-stc/member_management re
 - If the circle turns green, you are done. If the circle turns red, try to run it one more time to exclude any random issues. If the error persists, reach out to a member of the [](support.data_compute_team)
 
 #### H: Clearing Browser Cache etc
+
 If users are part of a github team, and still have trouble signing on, instruct them to clear their browser cache, or try a different browser. This step is unlikely to be necessary
 
 #### If none of this works
-:::{note}
+
+:::\{note}
 This is a very unlikely scenario and has very rarely happend!
 :::
-Follow the flowchart and reach out to either the [](support.data_compute_team) or [2i2c support](https://docs.2i2c.org/support/). 
-
+Follow the flowchart and reach out to either the [](support.data_compute_team) or [2i2c support](https://docs.2i2c.org/support/).
 
 ### M²LInES OSN pod administration
 
