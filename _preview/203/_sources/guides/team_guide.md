@@ -99,11 +99,13 @@ The following is a list of tasks that should be done by any new hire in the Data
 
 This section describes admin tasks that are necessary for the maintenance of LEAP-Pangeo components (including collaborative efforts lead M²LInES) which require appropriate permissions, but no coding (everything can be achieved on one of several websites).
 
+(guide.team.admin.member_signup_troubleshooting)=
+
 ### Member Sign Up Troubleshooting
 
 Ideally members should be signed on automatically and well ahead of any event. But despite the best efforts situations arise where either staff or the organizers/instructors of an event need to quickly sign on new members, and troubleshoot if certain users do not have access to the JupyterHub. Follow the steps in this Flowchart to quickly resolve any issues in such cases.
 
-\[picture\]
+![](../images/member_troubleshooting.png)
 
 #### A+G: Check if a user is in the Member Spreadsheet
 
