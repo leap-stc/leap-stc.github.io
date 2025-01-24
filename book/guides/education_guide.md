@@ -32,4 +32,4 @@ Make sure to familiarize yourself with the troubleshooting steps below before th
 
 #### Students cannot sign on
 
-Refer students to the [FAQ](faq.cannot-log-into-hub) for troubleshooting steps and follow the [admin troubleshooting steps](guide.team.admin.member_signup_troubleshooting) if problems persist. 
+Refer students to the [FAQ](faq.cannot-log-into-hub) for troubleshooting steps and follow the [admin troubleshooting steps](guide.team.admin.member_signup_troubleshooting) if problems persist.
