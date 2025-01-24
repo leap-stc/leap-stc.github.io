@@ -111,6 +111,8 @@ If you select the `Image > Other...` Option during [server login](hub:server:log
 
 If you want to build your own docker image for your project, take a look at [this template](https://github.com/2i2c-org/hub-user-image-template) and the instructions to learn how to use [repo2docker](https://github.com/jupyterhub/repo2docker) to set up CI workflows to automatically build docker images from your repository.
 
+(reference.infrastructure.hub.software_env.temp_install)=
+
 #### Installing additonal packages
 
 You can install additional packages using `pip` and `conda`.
@@ -124,7 +126,37 @@ For a more permanent solution we recommend building project specific dockerfiles
 
 ### m2lines OSN Pod
 
-🚧
+(reference.infrastructrue.osn_pod.organization)=
+
+#### OSN Pod Organization
+
+The ~1PB storage on the OSN Pod can be customized into Projects and Buckets. Projects are used to give additional users access to the Coldfront Admin Console, whereas buckets are how storage is administered up on the Pod. A project can have multiple buckets.
+
+There are currently 3 principal Projects on the Pod:
+
+- `'leap-pangeo'`: Used for Data Ingestion across the m2lines and LEAP community
+  - Buckets:
+    - `'leap-pangeo-manual'`: **No write access for users**
+    - `'leap-pangeo-pipeline'`: **No write access for users**
+    - `'leap-pangeo-inbox'`: *Write access can be shared with users who want to add data e.g. from an HPC center*
+- `'m2lines'`: Used for project data and publications from the m2lines project
+  - Buckets:
+    - `'m2lines-pubs'`: **No write access for users**
+    - ... various project buckets
+- `'leap'`: Used for project data and publications from the LEAP project
+  - Buckets:
+    - `'leap-pubs'`: **No write access for users**
+    - ... various project buckets
+
+(reference.infrastructrue.osn_pod.credentials)=
+
+#### Credentials
+
+:::\{warning}
+All OSN credentials are long lived and should be treated as such. Please do not share them publicly (e.g. in your notebook or a github repository) and when sharing with e.g. collaborators use an encrypted way of sharing (e.g. password manager).
+:::
+
+Credentials for the OSN Pod are specific to each bucket. There are two types of credentials: "Read-only" and "Read-Write". Exercise caution when sharing/saving secrets, particularly the latter. Each type of credentials consists of two keys (access + secret). Both are required to access the bucket, and they are shared by the OSN Admin.
 
 (reference.infrastructure.buckets)=
 
