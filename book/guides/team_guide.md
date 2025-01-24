@@ -162,3 +162,22 @@ You need PI status on the pod to create new projects. Reach out to the M²LInES 
 #### OSN Support
 
 For any questions/functionality not mentioned above, please refer to the [OSN documentation](https://coldfront.osn.mghpcc.org/static/osndocs/index.html) or reach out to the OSN support (`'help@osn.mghpcc.org'`)
+
+### Google Cloud Account Maintenance
+:::{attention}
+To follow these steps you need to have the appropriate priviliges on the LEAP cloud account/organization. Reach out to an organization owner if you need access.
+:::
+
+All of the following steps are done from the [Google Cloud Console](https://console.cloud.google.com)
+
+#### Billing
+- Click on the 'burger' symbold on the top-left, and navigate to Billing
+
+##### Check Running Costs (recommended weekly)
+- Click on "Reports" on the left.
+- From the first drop down on the right, select "Last 90 days" (you can also select a custom time frame if you want to see longer term costs). Further Down on the right disable "Promotions & others" to see the amount spent from credits.
+- You should now see 3 bars in the center that indicate the monthly spending split into "Services" (e.g. compute, storage). You can further refine this partition with the options on the right, but this overview should generally be sufficient for routine cost monitoring e.g. to detect abnormally high spending.
+
+##### Check remaining credits (recommended monthly)
+- Click on "Credits" on the left to see current and past cloud credits including the total amount, and remaining value.
+- Make sure that enough credits are available for continued operation (based on the monthly costs). Contact Google to arrange for release of next credit round if funds run low.
