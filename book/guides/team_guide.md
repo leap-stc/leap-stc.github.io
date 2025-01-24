@@ -94,3 +94,71 @@ Ideally we want to remove the dependency on a single user account here, but for 
 The following is a list of tasks that should be done by any new hire in the Data and Computation Manager position to ensure smooth operations.
 
 - [](guide.team.admin.renew_member_token)
+
+## Non-Technical Admin Tasks
+
+This section describes admin tasks that are necessary for the maintenance of LEAP-Pangeo components (including collaborative efforts lead M²LInES) which require appropriate permissions, but no coding (everything can be achieved on one of several websites).
+
+### M²LInES OSN pod administration
+
+All administrative tasks pertaining to the M²LInES OSN bucket are handled via the [Coldfront Portal](https://coldfront.osn.mghpcc.org/). Please log in with one of your affiliated organizations and make sure to *use the same one each time in case you have multiple affiliations*.
+
+The important units of division on the OSN pod are **projects** and **buckets**. Each project can have multiple buckets, and you can give others access as guests and admins on a per project basis. Buckets are how the actual storage space is organized, and each bucket will have *access credentials* and a *storage quota*, both of which might need actions from an admin from time to time.
+
+(guide.team.admin.osnpod.check)=
+
+#### Check Bucket attributes
+
+To check individual buckets' attributes log into the [Coldfront Portal](https://coldfront.osn.mghpcc.org/), click on the relevant project, navigate to the "Allocations" section, find the bucket name in the "Information" column and click on the folder symbol in the "Actions" column.
+
+Scroll to the "Allocation Attributes" section. You can see all relevant values here.
+
+**OSN Anonymous Access**: If False, this data is public, no credentials are needed to read data (writing still requires credentials).
+**OSN Bucket Quota (TB)**: Shows the currently allocated size. This is the max size, not what is actuall used!
+**OSN RO/RW Bucket Access/Secret Key**: Credentials for read-only (RO) and read-write (RW) access to the bucket. See [](reference.infrastructrue.osn_pod.credentials) for more details.
+
+#### Share bucket credentials
+
+:::\{attention}
+Some buckets are not meant to be accessible for write by users! Please always refer to [](reference.infrastructrue.osn_pod.organization) and only give access to project specific buckets and the `'leap-pangeo-inbox'` bucket to non-admins.
+:::
+
+- Navigate to the specific bucket you want to share credentials to (see [above](guide.team.admin.osnpod.check) for detailed steps)
+- Copy the relevant Access and Secret keys (either RO or RW depending on the desired use) and share them with the relevant users e.g. by pasting them into a password manager and sharing an authenticated link.
+
+#### Increasing Storage Quota
+
+If any of the buckets needs more storage space, follow these steps:
+
+- Log into [Coldfront](https://coldfront.osn.mghpcc.org/)
+- Navigate to the project that contains the bucket (we currently separate projects for M²LInES, LEAP, and the LEAP-Pangeo Data ingestion)
+- Scroll to "Allocations" and find your bucket in the "Information" column. Click on the folder icon in the corresponding "Actions" column.
+- In the top right click on "Request Change" and scroll down to "Allocation Attributes". Enter the desired new size in TB in the "Request New Value" column and the "OSN Bucket Quota (TB)" row and enter a short justification (required).
+- Click the "Submit" button.
+- You should see a green box with "Allocation change request successfully submitted. " at the top of the next page.
+- Wait for email confirmation of the change.
+
+#### Provision a new Bucket
+
+- Log into [Coldfront](https://coldfront.osn.mghpcc.org/)
+- Navigate to an existing Project (or create a new one; see below), scroll to "Allocations" and click on "Request Resource Allocation"
+- In the following dialog chose "OSN Bucket (Storage)", write a short justification which **includes whether you want the bucket to have anonymous (public) access!**, and choose a size in TB.
+- Click "Submit"
+- Wait for email confirmation.
+
+#### Create a new Project
+
+:::\{note}
+You need PI status on the pod to create new projects. Reach out to the M²LInES admin to discuss this if you do not have access yet.
+:::
+
+- Log into [Coldfront](https://coldfront.osn.mghpcc.org/)
+- Click on the "Projects" link on the homepage
+- Click "Add a Project"
+- Choose a title, write a short description of the project, and optionally choose a field of science.
+- Then click "Save"
+- Wait for email confirmation.
+
+#### OSN Support
+
+For any questions/functionality not mentioned above, please refer to the [OSN documentation](https://coldfront.osn.mghpcc.org/static/osndocs/index.html) or reach out to the OSN support (`'help@osn.mghpcc.org'`)
