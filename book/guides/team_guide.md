@@ -105,7 +105,7 @@ This section describes admin tasks that are necessary for the maintenance of LEA
 
 Ideally members should be signed on automatically and well ahead of any event. But despite the best efforts situations arise where either staff or the organizers/instructors of an event need to quickly sign on new members, and troubleshoot if certain users do not have access to the JupyterHub. Follow the steps in this Flowchart to quickly resolve any issues in such cases.
 
-![](member_troubleshooting.png)
+![](../images/member_troubleshooting.png)
 
 #### A+G: Check if a user is in the Member Spreadsheet
 
