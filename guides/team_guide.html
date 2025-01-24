@@ -389,6 +389,50 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#non-technical-admin-tasks">
+   Non-Technical Admin Tasks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#m2lines-osn-pod-administration">
+     M²LInES OSN pod administration
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#check-bucket-attributes">
+       Check Bucket attributes
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#share-bucket-credentials">
+       Share bucket credentials
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#increasing-storage-quota">
+       Increasing Storage Quota
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#provision-a-new-bucket">
+       Provision a new Bucket
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#create-a-new-project">
+       Create a new Project
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#osn-support">
+       OSN Support
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -474,6 +518,50 @@ const thebe_selector_output = ".output, .cell_output"
     <a class="reference internal nav-link" href="#handover-checklist-for-admins">
      Handover Checklist for Admins
     </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#non-technical-admin-tasks">
+   Non-Technical Admin Tasks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#m2lines-osn-pod-administration">
+     M²LInES OSN pod administration
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#check-bucket-attributes">
+       Check Bucket attributes
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#share-bucket-credentials">
+       Share bucket credentials
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#increasing-storage-quota">
+       Increasing Storage Quota
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#provision-a-new-bucket">
+       Provision a new Bucket
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#create-a-new-project">
+       Create a new Project
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#osn-support">
+       OSN Support
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -600,6 +688,76 @@ Unfortunately we do not have a technical way to implement per user quotas, so we
 <ul class="simple">
 <li><p><a class="reference internal" href="#guide-team-admin-renew-member-token"><span class="std std-ref">Renewing Personal fine grained access token for LEAP member management</span></a></p></li>
 </ul>
+</div>
+</div>
+<div class="section" id="non-technical-admin-tasks">
+<h2>Non-Technical Admin Tasks<a class="headerlink" href="#non-technical-admin-tasks" title="Permalink to this headline">¶</a></h2>
+<p>This section describes admin tasks that are necessary for the maintenance of LEAP-Pangeo components (including collaborative efforts lead M²LInES) which require appropriate permissions, but no coding (everything can be achieved on one of several websites).</p>
+<div class="section" id="m2lines-osn-pod-administration">
+<h3>M²LInES OSN pod administration<a class="headerlink" href="#m2lines-osn-pod-administration" title="Permalink to this headline">¶</a></h3>
+<p>All administrative tasks pertaining to the M²LInES OSN bucket are handled via the <a class="reference external" href="https://coldfront.osn.mghpcc.org/">Coldfront Portal</a>. Please log in with one of your affiliated organizations and make sure to <em>use the same one each time in case you have multiple affiliations</em>.</p>
+<p>The important units of division on the OSN pod are <strong>projects</strong> and <strong>buckets</strong>. Each project can have multiple buckets, and you can give others access as guests and admins on a per project basis. Buckets are how the actual storage space is organized, and each bucket will have <em>access credentials</em> and a <em>storage quota</em>, both of which might need actions from an admin from time to time.</p>
+<div class="section" id="check-bucket-attributes">
+<span id="guide-team-admin-osnpod-check"></span><h4>Check Bucket attributes<a class="headerlink" href="#check-bucket-attributes" title="Permalink to this headline">¶</a></h4>
+<p>To check individual buckets’ attributes log into the <a class="reference external" href="https://coldfront.osn.mghpcc.org/">Coldfront Portal</a>, click on the relevant project, navigate to the “Allocations” section, find the bucket name in the “Information” column and click on the folder symbol in the “Actions” column.</p>
+<p>Scroll to the “Allocation Attributes” section. You can see all relevant values here.</p>
+<p><strong>OSN Anonymous Access</strong>: If False, this data is public, no credentials are needed to read data (writing still requires credentials).
+<strong>OSN Bucket Quota (TB)</strong>: Shows the currently allocated size. This is the max size, not what is actuall used!
+<strong>OSN RO/RW Bucket Access/Secret Key</strong>: Credentials for read-only (RO) and read-write (RW) access to the bucket. See <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructrue-osn-pod-credentials"><span class="std std-ref">Credentials</span></a> for more details.</p>
+</div>
+<div class="section" id="share-bucket-credentials">
+<h4>Share bucket credentials<a class="headerlink" href="#share-bucket-credentials" title="Permalink to this headline">¶</a></h4>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Some buckets are not meant to be accessible for write by users! Please always refer to <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructrue-osn-pod-organization"><span class="std std-ref">OSN Pod Organization</span></a> and only give access to project specific buckets and the <code class="docutils literal notranslate"><span class="pre">'leap-pangeo-inbox'</span></code> bucket to non-admins.</p>
+</div>
+<ul class="simple">
+<li><p>Navigate to the specific bucket you want to share credentials to (see <a class="reference internal" href="#guide-team-admin-osnpod-check"><span class="std std-ref">above</span></a> for detailed steps)</p></li>
+<li><p>Copy the relevant Access and Secret keys (either RO or RW depending on the desired use) and share them with the relevant users e.g. by pasting them into a password manager and sharing an authenticated link.</p></li>
+</ul>
+</div>
+<div class="section" id="increasing-storage-quota">
+<h4>Increasing Storage Quota<a class="headerlink" href="#increasing-storage-quota" title="Permalink to this headline">¶</a></h4>
+<p>If any of the buckets needs more storage space, follow these steps:</p>
+<ul class="simple">
+<li><p>Log into <a class="reference external" href="https://coldfront.osn.mghpcc.org/">Coldfront</a></p></li>
+<li><p>Navigate to the project that contains the bucket (we currently separate projects for M²LInES, LEAP, and the LEAP-Pangeo Data ingestion)</p></li>
+<li><p>Scroll to “Allocations” and find your bucket in the “Information” column. Click on the folder icon in the corresponding “Actions” column.</p></li>
+<li><p>In the top right click on “Request Change” and scroll down to “Allocation Attributes”. Enter the desired new size in TB in the “Request New Value” column and the “OSN Bucket Quota (TB)” row and enter a short justification (required).</p></li>
+<li><p>Click the “Submit” button.</p></li>
+<li><p>You should see a green box with “Allocation change request successfully submitted. ” at the top of the next page.</p></li>
+<li><p>Wait for email confirmation of the change.</p></li>
+</ul>
+</div>
+<div class="section" id="provision-a-new-bucket">
+<h4>Provision a new Bucket<a class="headerlink" href="#provision-a-new-bucket" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Log into <a class="reference external" href="https://coldfront.osn.mghpcc.org/">Coldfront</a></p></li>
+<li><p>Navigate to an existing Project (or create a new one; see below), scroll to “Allocations” and click on “Request Resource Allocation”</p></li>
+<li><p>In the following dialog chose “OSN Bucket (Storage)”, write a short justification which <strong>includes whether you want the bucket to have anonymous (public) access!</strong>, and choose a size in TB.</p></li>
+<li><p>Click “Submit”</p></li>
+<li><p>Wait for email confirmation.</p></li>
+</ul>
+</div>
+<div class="section" id="create-a-new-project">
+<h4>Create a new Project<a class="headerlink" href="#create-a-new-project" title="Permalink to this headline">¶</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You need PI status on the pod to create new projects. Reach out to the M²LInES admin to discuss this if you do not have access yet.</p>
+</div>
+<ul class="simple">
+<li><p>Log into <a class="reference external" href="https://coldfront.osn.mghpcc.org/">Coldfront</a></p></li>
+<li><p>Click on the “Projects” link on the homepage</p></li>
+<li><p>Click “Add a Project”</p></li>
+<li><p>Choose a title, write a short description of the project, and optionally choose a field of science.</p></li>
+<li><p>Then click “Save”</p></li>
+<li><p>Wait for email confirmation.</p></li>
+</ul>
+</div>
+<div class="section" id="osn-support">
+<h4>OSN Support<a class="headerlink" href="#osn-support" title="Permalink to this headline">¶</a></h4>
+<p>For any questions/functionality not mentioned above, please refer to the <a class="reference external" href="https://coldfront.osn.mghpcc.org/static/osndocs/index.html">OSN documentation</a> or reach out to the OSN support (<code class="docutils literal notranslate"><span class="pre">'help&#64;osn.mghpcc.org'</span></code>)</p>
+</div>
 </div>
 </div>
 </div>
