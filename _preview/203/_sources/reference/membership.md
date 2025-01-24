@@ -70,6 +70,6 @@ is removed from the `leap-pangeo-users` group.
 
 ![](../images/member_sign_up_schematic.png)
 
-All data relevant to LEAP membership is centrally processed in a spreadsheet with access limited to LEAP staff. To allow LEAP members access to the JupyterHub (and the associated storage and compute resources; all managed by 2i2c) the [](support.data_compute_team) maintains a set of Github Actions that parse the relevant data like github usernames and membership expiration, and add users to the appropriate [teams](reference.membership.team-resources).
+All data relevant to LEAP membership is centrally processed in a spreadsheet with access limited to LEAP staff. To allow LEAP members access to the JupyterHub (and the associated storage and compute resources; all managed by 2i2c) the [](support.data_compute_team) maintains a set of [Github Actions](https://github.com/leap-stc/member_management/actions/workflows/read_sheet.yaml)(the member management repository is private) that parse the relevant data like github usernames and membership expiration, and add users to the appropriate [teams](reference.membership.team-resources).
 For normal operations users should [apply](users.membership.apply) and wait a few days until they are approved, entered, and signed up for access.
 For urgent situations (like events, classes) that require expedited sign up please refer to [](guide.team.admin.member_signup_troubleshooting).
