@@ -358,6 +358,11 @@ const thebe_selector_output = ".output, .cell_output"
    Offboarding Process
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#member-sign-up-procedure">
+   Member Sign Up Procedure
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -415,6 +420,11 @@ const thebe_selector_output = ".output, .cell_output"
    Offboarding Process
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#member-sign-up-procedure">
+   Member Sign Up Procedure
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -435,8 +445,8 @@ const thebe_selector_output = ".output, .cell_output"
 <span id="reference-membership-tiers"></span><h2>Membership Tiers<a class="headerlink" href="#membership-tiers" title="Permalink to this headline">¶</a></h2>
 <p>The membership tiers are listed in ascending order of access/privileges.</p>
 <ul class="simple">
-<li><p><strong>PUBLIC MEMBERSHIP(Please note: Public Membership will be live soon.)</strong>  Receive weekly LEAP newsletter and invitations to LEAP events. Access to LEAP Pangeo that includes limited performance notebooks, read only access to all LEAP storage, and write access to our scratch bucket, where everything is deleted after 7 days.</p></li>
-<li><p><strong>EDUCATION MEMBERSHIP</strong>  Open to participants in LEAP Education programs (e.g., Bootcamp, academic courses, and summer programs). Receive weekly LEAP newsletter and invitations to LEAP events. Access to LEAP Pangeo compute and storage for duration of education program.</p></li>
+<li><p><strong>PUBLIC MEMBERSHIP(Please note: Public Membership will be live soon.)</strong> Receive weekly LEAP newsletter and invitations to LEAP events. Access to LEAP Pangeo that includes limited performance notebooks, read only access to all LEAP storage, and write access to our scratch bucket, where everything is deleted after 7 days.</p></li>
+<li><p><strong>EDUCATION MEMBERSHIP</strong> Open to participants in LEAP Education programs (e.g., Bootcamp, academic courses, and summer programs). Receive weekly LEAP newsletter and invitations to LEAP events. Access to LEAP Pangeo compute and storage for duration of education program.</p></li>
 <li><p><strong>RESEARCH MEMBERSHIP</strong> Open to researchers who have been referred by a LEAP scientist. Receive weekly LEAP newsletter and invitations to LEAP events. Access to LEAP Pangeo compute and storage for six (6) months (renewal applications may be submitted at the conclusion of six months).</p></li>
 <li><p><strong>LEAP-FUNDED RESEARCHE MEMBERSHIP</strong>. Open to researchers who receive LEAP funding. Receive weekly LEAP newsletter and invitations to LEAP events. Access to LEAP Pangeo compute and storage for duration of time with LEAP.</p></li>
 </ul>
@@ -503,6 +513,13 @@ Removing a user from the <code class="docutils literal notranslate"><span class=
 completely.
 An automated process will delete user data from the hub one month after a user
 is removed from the <code class="docutils literal notranslate"><span class="pre">leap-pangeo-users</span></code> group.</p>
+</div>
+<div class="section" id="member-sign-up-procedure">
+<span id="reference-member-sign-up"></span><h2>Member Sign Up Procedure<a class="headerlink" href="#member-sign-up-procedure" title="Permalink to this headline">¶</a></h2>
+<p><img alt="" src="../_images/member_sign_up_schematic.png" /></p>
+<p>All data relevant to LEAP membership is centrally processed in a spreadsheet with access limited to LEAP staff. To allow LEAP members access to the JupyterHub (and the associated storage and compute resources; all managed by 2i2c) the <a class="reference internal" href="../support.html#support-data-compute-team"><span class="std std-ref">Data and Computation Team</span></a> maintains a set of <a class="reference external" href="https://github.com/leap-stc/member_management/actions/workflows/read_sheet.yaml">Github Actions</a>(the member management repository is private) that parse the relevant data like github usernames and membership expiration, and add users to the appropriate <a class="reference internal" href="#reference-membership-team-resources"><span class="std std-ref">teams</span></a>.
+For normal operations users should <a class="reference internal" href="#users-membership-apply"><span class="std std-ref">apply</span></a> and wait a few days until they are approved, entered, and signed up for access.
+For urgent situations (like events, classes) that require expedited sign up please refer to <a class="reference internal" href="../guides/team_guide.html#guide-team-admin-member-signup-troubleshooting"><span class="std std-ref">Member Sign Up Troubleshooting</span></a>.</p>
 </div>
 </div>
 
