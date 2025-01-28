@@ -151,6 +151,7 @@ Using VMs this way does not automatically delete instances. Make sure to do that
     - The additional flags passed here seem to work well for past transfers, but they might be tuned for better performance in various scenarios.
 - Watch the transfer progress or work on something else ☕️
 - You might get disconnected from the SSH browser window after a while (this is why we run the process within tmux!). Simple click on SSH again and run `tmux ls`. Pick whatever session you want to re-attach. Then do `tmux attach -d -t <session id>` to re-attach it to a new tmux instance and release it from the old one.
+- **Important. DO NOT SKIP!**: When your transfer is finished, go back to [Google Cloud Console](https://console.cloud.google.com) and from there to "Compute Engine" and "VM instances" and click the three dots to the right of your instance, and delete it. If you forget about this LEAP will keep paying for the instance!
 
 
 ## Non-Technical Admin Tasks
