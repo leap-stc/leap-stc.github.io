@@ -145,12 +145,11 @@ Using VMs this way does not automatically delete instances. Make sure to do that
   export RCLONE_CONFIG_TARGET_SECRET_ACCESS_KEY=XXX
   ```
 - Run the transfer! `rclone sync --fast-list --s3-chunk-size 128M --s3-upload-concurrency 128 --transfers 128 --checkers 256 -P source:leap-persistent/some/prefix/ target:osn-bucket-name/another/prefix`
-    - Choosing `sync` here enables you to restart a transfer if it failed (e.g. due to a spot instance being shut down, or the transfer taking longer than expected).
-    - The additional flags passed here seem to work well for past transfers, but they might be tuned for better performance in various scenarios.
+  - Choosing `sync` here enables you to restart a transfer if it failed (e.g. due to a spot instance being shut down, or the transfer taking longer than expected).
+  - The additional flags passed here seem to work well for past transfers, but they might be tuned for better performance in various scenarios.
 - Watch the transfer progress or work on something else ☕️
 - You might get disconnected from the SSH browser window after a while (this is why we run the process within tmux!). Simple click on SSH again and run `tmux ls`. Pick whatever session you want to re-attach. Then do `tmux attach -d -t <session id>` to re-attach it to a new tmux instance and release it from the old one.
 - **Important. DO NOT SKIP!**: When your transfer is finished, go back to [Google Cloud Console](https://console.cloud.google.com) and from there to "Compute Engine" and "VM instances" and click the three dots to the right of your instance, and delete it. If you forget about this LEAP will keep paying for the instance!
-
 
 ## Non-Technical Admin Tasks
 
@@ -267,4 +266,6 @@ You need PI status on the pod to create new projects. Reach out to the M²LInES 
 #### OSN Support
 
 For any questions/functionality not mentioned above, please refer to the [OSN documentation](https://coldfront.osn.mghpcc.org/static/osndocs/index.html) or reach out to the OSN support (`'help@osn.mghpcc.org'`)
+
+```
 ```
