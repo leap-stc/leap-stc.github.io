@@ -174,7 +174,7 @@ Credentials for the OSN Pod are specific to each bucket. There are two types of 
 
 LEAP-Pangeo maintains multiple community buckets with different characteristics. Additionally we can provide research groups with access to project specific buckets.
 
-The community buckets are currently located in Google Cloud Storage and the \[\](reference.osn-   pod).
+The community buckets are currently located in Google Cloud Storage and the \[\](reference.osn- pod).
 
 (reference.infrastructure.buckets.google)=
 
