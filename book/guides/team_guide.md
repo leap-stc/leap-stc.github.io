@@ -173,7 +173,7 @@ All of the following steps are done from the [Google Cloud Console](https://cons
 
 #### Billing
 
-- Click on the 'burger' symbold on the top-left, and navigate to Billing
+- Click on the 'burger' symbold on the top-left, and navigate to Billing or search for "Billing" in the bar on the top.
 
 ##### Check Running Costs (recommended weekly)
 
