@@ -395,6 +395,43 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#member-sign-up-troubleshooting">
+     Member Sign Up Troubleshooting
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#a-g-check-if-a-user-is-in-the-member-spreadsheet">
+       A+G: Check if a user is in the Member Spreadsheet
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#b-add-users-to-the-member-spreadsheet">
+       B: Add Users to the Member Spreadsheet
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#c-d-f-checking-github-team-membership-and-invite-status">
+       C+D+F: Checking Github Team Membership and invite status
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#e-manually-rerunning-github-sign-up-action">
+       E: Manually rerunning github sign up action
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#h-clearing-browser-cache-etc">
+       H: Clearing Browser Cache etc
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#if-none-of-this-works">
+       If none of this works
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#m2lines-osn-pod-administration">
      M²LInES OSN pod administration
     </a>
@@ -526,6 +563,43 @@ const thebe_selector_output = ".output, .cell_output"
    Non-Technical Admin Tasks
   </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#member-sign-up-troubleshooting">
+     Member Sign Up Troubleshooting
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#a-g-check-if-a-user-is-in-the-member-spreadsheet">
+       A+G: Check if a user is in the Member Spreadsheet
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#b-add-users-to-the-member-spreadsheet">
+       B: Add Users to the Member Spreadsheet
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#c-d-f-checking-github-team-membership-and-invite-status">
+       C+D+F: Checking Github Team Membership and invite status
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#e-manually-rerunning-github-sign-up-action">
+       E: Manually rerunning github sign up action
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#h-clearing-browser-cache-etc">
+       H: Clearing Browser Cache etc
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#if-none-of-this-works">
+       If none of this works
+      </a>
+     </li>
+    </ul>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#m2lines-osn-pod-administration">
      M²LInES OSN pod administration
@@ -693,6 +767,55 @@ Unfortunately we do not have a technical way to implement per user quotas, so we
 <div class="section" id="non-technical-admin-tasks">
 <h2>Non-Technical Admin Tasks<a class="headerlink" href="#non-technical-admin-tasks" title="Permalink to this headline">¶</a></h2>
 <p>This section describes admin tasks that are necessary for the maintenance of LEAP-Pangeo components (including collaborative efforts lead M²LInES) which require appropriate permissions, but no coding (everything can be achieved on one of several websites).</p>
+<div class="section" id="member-sign-up-troubleshooting">
+<span id="guide-team-admin-member-signup-troubleshooting"></span><h3>Member Sign Up Troubleshooting<a class="headerlink" href="#member-sign-up-troubleshooting" title="Permalink to this headline">¶</a></h3>
+<p>Ideally members should be signed on automatically and well ahead of any event (see <a class="reference internal" href="../reference/membership.html#reference-member-sign-up"><span class="std std-ref">Member Sign Up Procedure</span></a> for an overview of our member sign up mechanics). But despite the best efforts situations arise where either staff or the organizers/instructors of an event need to quickly sign on new members, and troubleshoot if certain users do not have access to the JupyterHub. Follow the steps in this Flowchart to quickly resolve any issues in such cases.</p>
+<p><img alt="" src="../_images/member_troubleshooting.png" /></p>
+<div class="section" id="a-g-check-if-a-user-is-in-the-member-spreadsheet">
+<h4>A+G: Check if a user is in the Member Spreadsheet<a class="headerlink" href="#a-g-check-if-a-user-is-in-the-member-spreadsheet" title="Permalink to this headline">¶</a></h4>
+<p>Request read access or inquire with LEAP staff to confirm that the user(s) who are having trouble, are listed in the Member Data Spreadsheet and make sure the the sheet <strong>includes their github username</strong>. Always make sure that the github name exists (search in github), and does not contain extra characters like <code class="docutils literal notranslate"><span class="pre">&quot;&#64;&quot;</span></code>.</p>
+</div>
+<div class="section" id="b-add-users-to-the-member-spreadsheet">
+<h4>B: Add Users to the Member Spreadsheet<a class="headerlink" href="#b-add-users-to-the-member-spreadsheet" title="Permalink to this headline">¶</a></h4>
+<p>If this is not time sensitive, make sure that the user has completed the membership application (more details <a class="reference internal" href="../reference/membership.html#reference-membership-tiers"><span class="std std-ref">here</span></a>) and inquire with LEAP staff about the status of membership (adding users might take a while, thus always sign up users well in advance). In a time sensitive situation contact LEAP staff to expedite the addition of new users added to the Member Spreadsheet.</p>
+</div>
+<div class="section" id="c-d-f-checking-github-team-membership-and-invite-status">
+<h4>C+D+F: Checking Github Team Membership and invite status<a class="headerlink" href="#c-d-f-checking-github-team-membership-and-invite-status" title="Permalink to this headline">¶</a></h4>
+<p>Repeat the following steps for all relevant Github Teams (you can find links to the team page <a class="reference internal" href="../reference/membership.html#reference-membership-tiers"><span class="std std-ref">here</span></a>):</p>
+<ul class="simple">
+<li><p>C: Navigate to the search bar at the top that says “Find a member…” and enter the <strong>github username</strong> of the user. If the name shows up the user is part of this github team</p></li>
+<li><p>D: Right next to the search bar is a button that says “… pending members”. Click on that button and scroll down the list. If the username is in that list the member has received an invite, but not yet accepted it.</p></li>
+<li><p>F: <strong>Accepting the invite has to be done by the user!</strong>. Point them to our <a class="reference internal" href="faq.html#faq-where-is-my-invite"><span class="std std-ref">FAQ’s</span></a> for instructions on how to accept the invite.</p></li>
+</ul>
+</div>
+<div class="section" id="e-manually-rerunning-github-sign-up-action">
+<h4>E: Manually rerunning github sign up action<a class="headerlink" href="#e-manually-rerunning-github-sign-up-action" title="Permalink to this headline">¶</a></h4>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>You need to have maintainer access to the private <a class="reference external" href="https://github.com/leap-stc/member_management">leap-stc/member_management repo</a> in order to follow these steps. If you cannot repeat these steps please ask one of the github organization admins to be added to an appropriate team (e.g. <a class="reference external" href="https://github.com/orgs/leap-stc/teams/bootcamp-instructors">bootcamp-instructor</a>) that has access.</p>
+</div>
+<ul class="simple">
+<li><p>Navigate to <a class="reference external" href="https://github.com/leap-stc/member_management">leap-stc/member_management</a></p></li>
+<li><p>In the top rider click on “Actions”</p></li>
+<li><p>On the left click on “Parse Member Sheet and Add New Members”</p></li>
+<li><p>In the upper right corner, click on “Run Workflow”, and again on “Run Workflow” in the pop up window.</p></li>
+<li><p>After a short while you should see a yellow circle in the main window, indicating that the github action is in progress. Wait until the action is finished (usually 3-5 minutes).</p></li>
+<li><p>If the circle turns green, you are done. If the circle turns red, try to run it one more time to exclude any random issues. If the error persists, reach out to a member of the <a class="reference internal" href="../support.html#support-data-compute-team"><span class="std std-ref">Data and Computation Team</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="h-clearing-browser-cache-etc">
+<h4>H: Clearing Browser Cache etc<a class="headerlink" href="#h-clearing-browser-cache-etc" title="Permalink to this headline">¶</a></h4>
+<p>If users are part of a github team, and still have trouble signing on, instruct them to clear their browser cache, or try a different browser. This step is unlikely to be necessary</p>
+</div>
+<div class="section" id="if-none-of-this-works">
+<h4>If none of this works<a class="headerlink" href="#if-none-of-this-works" title="Permalink to this headline">¶</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a very unlikely scenario and has very rarely happend!</p>
+</div>
+<p>Follow the flowchart and reach out to either the <a class="reference internal" href="../support.html#support-data-compute-team"><span class="std std-ref">Data and Computation Team</span></a> or <a class="reference external" href="https://docs.2i2c.org/support/">2i2c support</a>.</p>
+</div>
+</div>
 <div class="section" id="m2lines-osn-pod-administration">
 <h3>M²LInES OSN pod administration<a class="headerlink" href="#m2lines-osn-pod-administration" title="Permalink to this headline">¶</a></h3>
 <p>All administrative tasks pertaining to the M²LInES OSN bucket are handled via the <a class="reference external" href="https://coldfront.osn.mghpcc.org/">Coldfront Portal</a>. Please log in with one of your affiliated organizations and make sure to <em>use the same one each time in case you have multiple affiliations</em>.</p>
