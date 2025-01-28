@@ -14,8 +14,8 @@ All users of LEAP-Pangeo must abide by the [LEAP Code of Conduct](https://leap.c
 
 The membership tiers are listed in ascending order of access/privileges.
 
-- **PUBLIC MEMBERSHIP(Please note: Public Membership will be live soon.)**  Receive weekly LEAP newsletter and invitations to LEAP events. Access to LEAP Pangeo that includes limited performance notebooks, read only access to all LEAP storage, and write access to our scratch bucket, where everything is deleted after 7 days.
-- **EDUCATION MEMBERSHIP**  Open to participants in LEAP Education programs (e.g., Bootcamp, academic courses, and summer programs). Receive weekly LEAP newsletter and invitations to LEAP events. Access to LEAP Pangeo compute and storage for duration of education program.
+- **PUBLIC MEMBERSHIP(Please note: Public Membership will be live soon.)** Receive weekly LEAP newsletter and invitations to LEAP events. Access to LEAP Pangeo that includes limited performance notebooks, read only access to all LEAP storage, and write access to our scratch bucket, where everything is deleted after 7 days.
+- **EDUCATION MEMBERSHIP** Open to participants in LEAP Education programs (e.g., Bootcamp, academic courses, and summer programs). Receive weekly LEAP newsletter and invitations to LEAP events. Access to LEAP Pangeo compute and storage for duration of education program.
 - **RESEARCH MEMBERSHIP** Open to researchers who have been referred by a LEAP scientist. Receive weekly LEAP newsletter and invitations to LEAP events. Access to LEAP Pangeo compute and storage for six (6) months (renewal applications may be submitted at the conclusion of six months).
 - **LEAP-FUNDED RESEARCHE MEMBERSHIP**. Open to researchers who receive LEAP funding. Receive weekly LEAP newsletter and invitations to LEAP events. Access to LEAP Pangeo compute and storage for duration of time with LEAP.
 
@@ -63,3 +63,13 @@ Removing a user from the `leap-pangeo-users` group entirely will disable their a
 completely.
 An automated process will delete user data from the hub one month after a user
 is removed from the `leap-pangeo-users` group.
+
+(reference.member_sign_up)=
+
+## Member Sign Up Procedure
+
+![](../images/member_sign_up_schematic.png)
+
+All data relevant to LEAP membership is centrally processed in a spreadsheet with access limited to LEAP staff. To allow LEAP members access to the JupyterHub (and the associated storage and compute resources; all managed by 2i2c) the [](support.data_compute_team) maintains a set of [Github Actions](https://github.com/leap-stc/member_management/actions/workflows/read_sheet.yaml)(the member management repository is private) that parse the relevant data like github usernames and membership expiration, and add users to the appropriate [teams](reference.membership.team-resources).
+For normal operations users should [apply](users.membership.apply) and wait a few days until they are approved, entered, and signed up for access.
+For urgent situations (like events, classes) that require expedited sign up please refer to [](guide.team.admin.member_signup_troubleshooting).

@@ -95,6 +95,10 @@ Ideally we want to store these secrets only in one central location. The natural
 According to those issues we can only make the aws profiles (or [source profiles?](https://forum.rclone.org/t/s3-profile-failing-when-explicit-s3-endpoint-is-present/36063/4?u=jbusecke), anyways the credentials part of it) work if we define one config file per remote [and use the 'default' profile](https://forum.rclone.org/t/shared-credentials-file-is-not-recognised/46993/2?u=jbusecke)which presumably breaks compatibility with fsspec, and also does not work at all right now. So at the moment we will have to keep the credentials in two separate spots 🤷‍♂️. **Please make sure to apply proper caution when [handling secrets](guide.code.secrets) for each config files that stores secrets in plain text!**
 :::
 
+:::\{note}
+You can find more great documentation, specifically on how to use OSN resources, in [this section](https://hytest-org.github.io/hytest/essential_reading/DataSources/Data_S3.html#credentialed-access) of the [HyTEST Docs](https://hytest-org.github.io/hytest/doc/About.html#)
+:::
+
 (hub.data.setup)=
 
 ### 
@@ -159,16 +163,20 @@ rclone ls <remote_name>:bucket-name/funky-user
 You can move directories from a local computer to cloud storage with rclone (make sure you are properly [authenticated](data.config-files)):
 
 ```shell
-rclone copy path/to/local/dir/ <remote_name>:<bucket-name>/funky-user
+rclone copy path/to/local/dir/ <remote_name>:<bucket-name>/funky-user/some-directory
 ```
 
 You can also move data between cloud buckets using rclone
 
 ```shell
 rclone copy \
- <remote_name_a>:<bucket-name>/funky-user\
- <remote_name_b>:<bucket-name>/funky-user
+ <remote_name_a>:<bucket-name>/funky-user/some-directory\
+ <remote_name_b>:<bucket-name>/funky-user/some-directory
 ```
+:::{admonition} Copying single files
+:class: note
+To copy single files with rclone use the [copyto command](https://rclone.org/commands/rclone_copyto/) or copy the containing folder and use the `--include` or `--exclude` flags to select the file to copy.  
+:::
 
 :::{note}
 Copying with rclone will stream the data from the source to your computer and back to the target, and thus transfer speed is likely limited by the internet connection of your local machine.
