@@ -597,6 +597,10 @@ Rclone</label><div class="sd-tab-content docutils">
 <p>Ideally we want to store these secrets only in one central location. The natural place for these seems to be in an <a class="reference external" href="https://docs.aws.amazon.com/cli/v1/userguide/cli-configure-files.html#cli-configure-files-format">AWS cli profiles</a>, which can also be used for fsspec. There however seem to be multiple issues (<a class="reference external" href="https://forum.rclone.org/t/shared-credentials-file-is-not-recognised/46993">here</a>) around this feature in rclone, and so far we have not succeeded in using AWS profiles in rclone.
 According to those issues we can only make the aws profiles (or <a class="reference external" href="https://forum.rclone.org/t/s3-profile-failing-when-explicit-s3-endpoint-is-present/36063/4?u=jbusecke">source profiles?</a>, anyways the credentials part of it) work if we define one config file per remote <a class="reference external" href="https://forum.rclone.org/t/shared-credentials-file-is-not-recognised/46993/2?u=jbusecke">and use the ‘default’ profile</a>which presumably breaks compatibility with fsspec, and also does not work at all right now. So at the moment we will have to keep the credentials in two separate spots 🤷‍♂️. <strong>Please make sure to apply proper caution when <a class="reference internal" href="code_guide.html#guide-code-secrets"><span class="std std-ref">handling secrets</span></a> for each config files that stores secrets in plain text!</strong></p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can find more great documentation, specifically on how to use OSN resources, in <a class="reference external" href="https://hytest-org.github.io/hytest/essential_reading/DataSources/Data_S3.html#credentialed-access">this section</a> of the <a class="reference external" href="https://hytest-org.github.io/hytest/doc/About.html">HyTEST Docs</a></p>
+</div>
 </div>
 </div>
 <div class="section" id="hub-data-setup">
