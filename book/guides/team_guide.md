@@ -144,8 +144,6 @@ Using VMs this way does not automatically delete instances. Make sure to do that
   export RCLONE_CONFIG_TARGET_ACCESS_KEY_ID=XXX
   export RCLONE_CONFIG_TARGET_SECRET_ACCESS_KEY=XXX
   ```
-
-```
 - Run the transfer! `rclone sync --fast-list --s3-chunk-size 128M --s3-upload-concurrency 128 --transfers 128 --checkers 256 -P source:leap-persistent/some/prefix/ target:osn-bucket-name/another/prefix`
     - Choosing `sync` here enables you to restart a transfer if it failed (e.g. due to a spot instance being shut down, or the transfer taking longer than expected).
     - The additional flags passed here seem to work well for past transfers, but they might be tuned for better performance in various scenarios.
