@@ -218,7 +218,7 @@ ds = xr.open_dataset(
 ... and you can give this to any other registered LEAP user and they can load it exactly like you can!
 
 :::\{note}
-Note that providing the url starting with `gs://...` is assumes that you have appropriate credentials set up in your environment to read/write to that bucket. On the hub these are already set up for you to work with the [](reference.infrastructure.buckets), but if you are trying to interact with non-public buckets you need to authenticate yourself. Check out the sections [below](guide.data.upload_manual) to see an example how to do that.
+Note that providing the url starting with `gs://...` is assumes that you have appropriate credentials set up in your environment to read/write to that bucket. On the hub these are already set up for you to work with the [](reference.infrastructure.buckets), but if you are trying to interact with non-public buckets you need to authenticate yourself. Check out [](data.config-files) to see an example how to do that.
 :::
 
 You can also write other files directly to the bucket by using [`fsspec.open`](https://filesystem-spec.readthedocs.io/en/latest/api.html#fsspec.open) similarly to the python builtin [`open`](https://docs.python.org/3/library/functions.html#open)
@@ -321,9 +321,10 @@ To start ingesting a dataset follow these steps:
 This does currently not provide a solution to handle datasets that have been produced by you (as e.g. part of a publication). We are working on formalizing a workflow for this type of data. Please reach out to the [](support.data_compute_team) if you have data that you would like to publish. See [](explanation.data-policy.types) for more.
 :::
 
+(guide.data.upload_manual)=
 #### How to get new data ingested (if public download is not available)
 
-If an option to download the source data is available always try to follow the [pangeo-forge based workflow](uides.data.ingestion_pipeline) first to maximize reproducibility. But if the data of your choice is located on behind a firewall on an HPC center, the 'pull' based paradigm of pangeo-forge will not work. In this case we have an option to 'push' the data to a special "inbox" bucket (`'leap-pangeo-inbox'`) on the [](reference.infrastructrue.osn_pod), from there an admin can move the data to another dedicated bucket and the data can be added to the catalog using the [template feedstock](https://github.com/leap-stc/LEAP_template_feedstock).
+If an option to download the source data is available always try to follow the [pangeo-forge based workflow](guides.data.ingestion_pipeline) first to maximize reproducibility. But if the data of your choice is located on behind a firewall on an HPC center, the 'pull' based paradigm of pangeo-forge will not work. In this case we have an option to 'push' the data to a special "inbox" bucket (`'leap-pangeo-inbox'`) on the [](reference.infrastructrue.osn_pod), from there an admin can move the data to another dedicated bucket and the data can be added to the catalog using the [template feedstock](https://github.com/leap-stc/LEAP_template_feedstock).
 
 **Step by Step instructions**
 
