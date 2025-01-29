@@ -322,6 +322,7 @@ This does currently not provide a solution to handle datasets that have been pro
 :::
 
 (guide.data.upload_manual)=
+
 #### How to get new data ingested (if public download is not available)
 
 If an option to download the source data is available always try to follow the [pangeo-forge based workflow](guides.data.ingestion_pipeline) first to maximize reproducibility. But if the data of your choice is located on behind a firewall on an HPC center, the 'pull' based paradigm of pangeo-forge will not work. In this case we have an option to 'push' the data to a special "inbox" bucket (`'leap-pangeo-inbox'`) on the [](reference.infrastructrue.osn_pod), from there an admin can move the data to another dedicated bucket and the data can be added to the catalog using the [template feedstock](https://github.com/leap-stc/LEAP_template_feedstock).
