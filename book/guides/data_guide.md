@@ -307,6 +307,7 @@ We have additional requirements for the data ingestion to make the process susta
 
 The way we achieve this is to base our ingestion on [Pangeo Forge recipes](https://pangeo-forge.readthedocs.io/en/latest/composition/index.html#recipe-composition). For clearer organization each dataset the recipe should reside in its own repository under the `leap-stc` github organization. Each of these repositories will be called a 'feedstock', which contains additional metadata files (you can read more in the [Pangeo Forge docs](https://pangeo-forge.readthedocs.io/en/latest/deployment/feedstocks.html#from-recipe-to-feedstock)).
 
+(guides.data.ingestion_pipeline)=
 #### How to get new data ingested
 
 To start ingesting a dataset follow these steps:
@@ -319,9 +320,27 @@ To start ingesting a dataset follow these steps:
 This does currently not provide a solution to handle datasets that have been produced by you (as e.g. part of a publication). We are working on formalizing a workflow for this type of data. Please reach out to the [](support.data_compute_team) if you have data that you would like to publish. See [](explanation.data-policy.types) for more.
 :::
 
-(guide.data.upload_manual)=
+#### How to get new data ingested (if public download is not available)
 
-### Manually uploading/downloading data to cloud buckets
+If an option to download the source data is available always try to follow the [pangeo-forge based workflow](uides.data.ingestion_pipeline) first to maximize reproducibility. But if the data of your choice is located on behind a firewall on an HPC center, the 'pull' based paradigm of pangeo-forge will not work. In this case we have an option to 'push' the data to a special "inbox" bucket (`'leap-pangeo-inbox'`) on the [](reference.infrastructrue.osn_pod), from there an admin can move the data to another dedicated bucket and the data can be added to the catalog using the [template feedstock](https://github.com/leap-stc/LEAP_template_feedstock).
+
+**Step by Step instructions**
+- Reach out to the [](support.data_compute_team). They will contact the OSN pod admin and share bucket credentials for the `'leap-pangeo-inbox'` bucket.
+- Authenticate to that bucket from a compute location that has access to your desired data and the internet. You can find instructions on how to authenticate [here](data.config-files).
+- Upload the data to the 'leap-pangeo-inbox' in **a dedicated folder** (note the exact name of that folder, it is important for the later steps). How you exactly achieve the upload will depend on your preference. Some common options include:
+    - Open a bunch of netcdf files into xarray and use `.to_zarr(...)` to write the data to zarr.
+    - Use fsspec or rclone to move an existing zarr store to the target bucket
+  Either way the uploaded folder should contain one or more zarr stores!
+- Once you have confirmed that all data is uploaded, ask an admin to move this data to the dedicated `'leap-pangeo-manual'` bucket on the OSN pod. They can do this by running [this github action](https://github.com/leap-stc/data-management/blob/main/.github/workflows/transfer.yaml), which requires the subfolder name from above as input.
+- Once the data is moved, follow the instructions in the [template feedstock](https://github.com/leap-stc/LEAP_template_feedstock) to ["link an existing dataset"](https://github.com/leap-stc/LEAP_template_feedstock#linking-existing-arco-datasets) (The actual ingestion, i.e. conversion to zarr has been done manually in this case). Reach out to the [](support.data_compute_team) if you need support.
+
+(guide.data.upload_manual_deprecated)=
+
+### Manually uploading/downloading data to cloud buckets (deprecated)
+
+:::{warning}
+This section of the docs is just retained for completeness. There might be special situations where it is beneficial/necessary to upload data to the [](reference.infrastructure.buckets) but we generally encourage data ingestion to the [](reference.infrastructrue.osn_pod) due to the public access and reduced running cost. See above for instructions.
+:::
 
 We discourage manually moving datasets to our cloud storage as much as possible since it is hard to reproduce these datasets at a future point (if e.g. the dataset maintainer has moved on to a different position) (see [](explanation.data-policy.reproducibility). We encourage you to try out the methods above, but if these should not work for some reason (and you were not able to find a solution with the [](support.data_compute_team)), you should try the methods below. We will always [prioritize unblocking your work](explanation.code-policy.dont-let-perfect-be-the-enemy-of-good).
 
