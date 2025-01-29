@@ -60,7 +60,7 @@ sphinx:
             pic: raphael.png
             github: norlandrhagen
             slack_id: U05NKVACXB9 
-        former-people:
+        former:
           - name: Julius Busecke
             role: Manager, Data and Computation
             teams: [data-and-compute, leap-pangeo]
@@ -69,7 +69,6 @@ sphinx:
             pic: julius.jpg
             github: jbusecke
             website: "https://jbusecke.github.io"
-            slack_id: U03MSCLCTRA
 
 parse:
   myst_enable_extensions: #extensions to enable in the myst parser. See https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html
