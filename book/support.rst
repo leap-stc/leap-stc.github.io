@@ -95,7 +95,7 @@ Former Team Members
 
 .. jinja:: team-data
 
-  {% for person in former-people %}
+  {% for person in former %}
 
   {{ person.name }} ({{ person.org }})
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
