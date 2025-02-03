@@ -387,6 +387,18 @@ const thebe_selector_output = ".output, .cell_output"
      Handover Checklist for Admins
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#moving-data-between-buckets-using-bare-vms">
+     Moving Data between buckets using bare VMs
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#manual-spinup-of-cloud-vms-for-bulk-data-transfer">
+       Manual spinup of cloud VMs for bulk data transfer
+      </a>
+     </li>
+    </ul>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -555,6 +567,18 @@ const thebe_selector_output = ".output, .cell_output"
     <a class="reference internal nav-link" href="#handover-checklist-for-admins">
      Handover Checklist for Admins
     </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#moving-data-between-buckets-using-bare-vms">
+     Moving Data between buckets using bare VMs
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#manual-spinup-of-cloud-vms-for-bulk-data-transfer">
+       Manual spinup of cloud VMs for bulk data transfer
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -763,6 +787,66 @@ Unfortunately we do not have a technical way to implement per user quotas, so we
 <li><p><a class="reference internal" href="#guide-team-admin-renew-member-token"><span class="std std-ref">Renewing Personal fine grained access token for LEAP member management</span></a></p></li>
 </ul>
 </div>
+<div class="section" id="moving-data-between-buckets-using-bare-vms">
+<h3>Moving Data between buckets using bare VMs<a class="headerlink" href="#moving-data-between-buckets-using-bare-vms" title="Permalink to this headline">¶</a></h3>
+<p>In general you need some form of compute to move data between different object store locations, but be aware that the data will be always be streamed to and from that location over the internet, so fast connection speed is key for fast transfers. There are a variety of ways to move data with perhaps the easiest being to run fsspec or rclone on your local computer, but speed is likely limited by your local internet connection. For certain tasks (e.g. moving data to admin only publishing buckets on the <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructrue-osn-pod"><span class="std std-ref">m2lines OSN Pod</span></a>) it is recommended to use rclone on a VM</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>These instructions should be easy to adapt to VM instances on other clouds, and can likely be automated to a much larger degree, but this is what has worked so far. Ultimately this approach is a somewhat manual implementation of the concept of <a class="reference external" href="https://github.com/skyplane-project/skyplane">skyplane</a> which sadly does not seem to be actively maintained anymore. As of the writing of these docs we were able to achieve ~700MB/s transfer speeds with a single VM following the instructions below</p>
+</div>
+<div class="section" id="manual-spinup-of-cloud-vms-for-bulk-data-transfer">
+<h4>Manual spinup of cloud VMs for bulk data transfer<a class="headerlink" href="#manual-spinup-of-cloud-vms-for-bulk-data-transfer" title="Permalink to this headline">¶</a></h4>
+<p>Following these instructions requires permissions on the LEAP Google Cloud Account. Contact an admin if you run into permission issues.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Using VMs this way does not automatically delete instances. Make sure to do that when your transfer is done.</p>
+</div>
+<ul>
+<li><p>Navigate to the <a class="reference external" href="https://console.cloud.google.com">Google Cloud Console</a> and from there to “Compute Engine” and “VM instances”</p></li>
+<li><p>Click on “Create Instance”</p></li>
+<li><p>Configure your VM instance (this is an example config that worked well in the past, you can modify as needed). If not specified below leave all settings on the default.</p>
+<ul class="simple">
+<li><p>Choose a memorable name like “boatymccloneface”</p></li>
+<li><p>Use a region that is close to your storage (for LEAP buckets this is <code class="docutils literal notranslate"><span class="pre">'us-central1'</span></code> and leave the zone on <code class="docutils literal notranslate"><span class="pre">'Any'</span></code></p></li>
+<li><p>Choose an <code class="docutils literal notranslate"><span class="pre">'E2'</span></code> machine type preset (here <code class="docutils literal notranslate"><span class="pre">e2-standard-8</span></code>)</p></li>
+<li><p>In “OS and Storage” select the latest “Ubuntu” version as Operating System and “Balanced persistent disk” as Boot disk type.</p>
+<ul>
+<li><p>Set the size to 20GB</p></li>
+</ul>
+</li>
+<li><p>Under “Observability” enable “Install Ops Agent …”</p></li>
+<li><p>(<strong>Only needed when source location is on GCS</strong>) Under “Security” change “Access scopes” to “Set access for each API”, and set “Storage” to “Read Only”.</p></li>
+<li><p>(<strong>Optional cost saving</strong>) Under “Advanced” select <code class="docutils literal notranslate"><span class="pre">'VM</span> <span class="pre">provisioning</span> <span class="pre">model:</span> <span class="pre">Spot'</span></code> (this means the instance can shut down at any time, and you will have to rerun these steps to pick up the transfer. If you want the job to finish guaranteed, choose “On Demand”, but be aware that this will come at a higher cost).</p></li>
+<li><p><strong>Optional but highly Recommended</strong>: Under “Advanced” enable “Set a time limit for the VM”, and limit it to the number of hours you expect the transfer to take. You can choose to either stop or delete the VM under “On VM termination”. If you choose stop you will keep incurring costs for the storage volume, so unless you expect to restart the instance, choose delete here.</p></li>
+</ul>
+</li>
+<li><p>Click on “Create”</p></li>
+<li><p>You should now be able to see your instance in the list under “VM Instances”. Click the SSH button to tunnel into the VM</p></li>
+<li><p>Install rclone with <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">-v</span> <span class="pre">;</span> <span class="pre">curl</span> <span class="pre">https://rclone.org/install.sh</span> <span class="pre">|</span> <span class="pre">sudo</span> <span class="pre">bash</span></code></p></li>
+<li><p>Start a tmux session with <code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">new</span></code> (<a class="reference external" href="https://tmuxcheatsheet.com/">cheatsheet for tmux</a>)</p></li>
+<li><p>Set the config via env variables one by one. The exact details might depend on your source/target storage. See the <a class="reference external" href="https://rclone.org/docs/">rclone docs</a> for more details. This example copies from the LEAP gcs buckets to the OSN pod</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">RCLONE_CONFIG_SOURCE_TYPE</span><span class="o">=</span><span class="n">gcs</span>
+<span class="n">export</span> <span class="n">RCLONE_CONFIG_SOURCE_ENV_AUTH</span><span class="o">=</span><span class="n">true</span>
+<span class="n">export</span> <span class="n">RCLONE_CONFIG_TARGET_TYPE</span><span class="o">=</span><span class="n">s3</span>
+<span class="n">export</span> <span class="n">RCLONE_CONFIG_TARGET_PROVIDER</span><span class="o">=</span><span class="n">Ceph</span>
+<span class="n">export</span> <span class="n">RCLONE_CONFIG_TARGET_ENDPOINT</span><span class="o">=</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">nyu1</span><span class="o">.</span><span class="n">osn</span><span class="o">.</span><span class="n">mghpcc</span><span class="o">.</span><span class="n">org</span>
+<span class="n">export</span> <span class="n">RCLONE_CONFIG_TARGET_ACCESS_KEY_ID</span><span class="o">=</span><span class="n">XXX</span>
+<span class="n">export</span> <span class="n">RCLONE_CONFIG_TARGET_SECRET_ACCESS_KEY</span><span class="o">=</span><span class="n">XXX</span>
+</pre></div>
+</div>
+</li>
+<li><p>Run the transfer! <code class="docutils literal notranslate"><span class="pre">rclone</span> <span class="pre">sync</span> <span class="pre">--fast-list</span> <span class="pre">--s3-chunk-size</span> <span class="pre">128M</span> <span class="pre">--s3-upload-concurrency</span> <span class="pre">128</span> <span class="pre">--transfers</span> <span class="pre">128</span> <span class="pre">--checkers</span> <span class="pre">256</span> <span class="pre">-P</span> <span class="pre">source:leap-persistent/some/prefix/</span> <span class="pre">target:osn-bucket-name/another/prefix</span></code></p>
+<ul class="simple">
+<li><p>Choosing <code class="docutils literal notranslate"><span class="pre">sync</span></code> here enables you to restart a transfer if it failed (e.g. due to a spot instance being shut down, or the transfer taking longer than expected).</p></li>
+<li><p>The additional flags passed here seem to work well for past transfers, but they might be tuned for better performance in various scenarios.</p></li>
+</ul>
+</li>
+<li><p>Watch the transfer progress or work on something else ☕️</p></li>
+<li><p>You might get disconnected from the SSH browser window after a while (this is why we run the process within tmux!). Simple click on SSH again and run <code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">ls</span></code>. Pick whatever session you want to re-attach. Then do <code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">attach</span> <span class="pre">-d</span> <span class="pre">-t</span> <span class="pre">&lt;session</span> <span class="pre">id&gt;</span></code> to re-attach it to a new tmux instance and release it from the old one.</p></li>
+<li><p><strong>Important. DO NOT SKIP!</strong>: When your transfer is finished, go back to <a class="reference external" href="https://console.cloud.google.com">Google Cloud Console</a> and from there to “Compute Engine” and “VM instances” and click the three dots to the right of your instance, and delete it. If you forget about this LEAP will keep paying for the instance!</p></li>
+</ul>
+</div>
+</div>
 </div>
 <div class="section" id="non-technical-admin-tasks">
 <h2>Non-Technical Admin Tasks<a class="headerlink" href="#non-technical-admin-tasks" title="Permalink to this headline">¶</a></h2>
@@ -880,6 +964,9 @@ Unfortunately we do not have a technical way to implement per user quotas, so we
 <div class="section" id="osn-support">
 <h4>OSN Support<a class="headerlink" href="#osn-support" title="Permalink to this headline">¶</a></h4>
 <p>For any questions/functionality not mentioned above, please refer to the <a class="reference external" href="https://coldfront.osn.mghpcc.org/static/osndocs/index.html">OSN documentation</a> or reach out to the OSN support (<code class="docutils literal notranslate"><span class="pre">'help&#64;osn.mghpcc.org'</span></code>)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
