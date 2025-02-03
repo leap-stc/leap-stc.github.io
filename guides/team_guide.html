@@ -480,6 +480,30 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
     </ul>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#google-cloud-account-maintenance">
+     Google Cloud Account Maintenance
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#billing">
+       Billing
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-running-costs-recommended-weekly">
+         Check Running Costs (recommended weekly)
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-remaining-credits-recommended-monthly">
+         Check remaining credits (recommended monthly)
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
   </ul>
  </li>
 </ul>
@@ -658,6 +682,30 @@ const thebe_selector_output = ".output, .cell_output"
       <a class="reference internal nav-link" href="#osn-support">
        OSN Support
       </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#google-cloud-account-maintenance">
+     Google Cloud Account Maintenance
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#billing">
+       Billing
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-running-costs-recommended-weekly">
+         Check Running Costs (recommended weekly)
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-remaining-credits-recommended-monthly">
+         Check remaining credits (recommended monthly)
+        </a>
+       </li>
+      </ul>
      </li>
     </ul>
    </li>
@@ -964,8 +1012,34 @@ Unfortunately we do not have a technical way to implement per user quotas, so we
 <div class="section" id="osn-support">
 <h4>OSN Support<a class="headerlink" href="#osn-support" title="Permalink to this headline">¶</a></h4>
 <p>For any questions/functionality not mentioned above, please refer to the <a class="reference external" href="https://coldfront.osn.mghpcc.org/static/osndocs/index.html">OSN documentation</a> or reach out to the OSN support (<code class="docutils literal notranslate"><span class="pre">'help&#64;osn.mghpcc.org'</span></code>)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
+</div>
+</div>
+<div class="section" id="google-cloud-account-maintenance">
+<h3>Google Cloud Account Maintenance<a class="headerlink" href="#google-cloud-account-maintenance" title="Permalink to this headline">¶</a></h3>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>To follow these steps you need to have the appropriate priviliges on the LEAP cloud account/organization. Reach out to an organization owner if you need access.</p>
+</div>
+<p>All of the following steps are done from the <a class="reference external" href="https://console.cloud.google.com">Google Cloud Console</a></p>
+<div class="section" id="billing">
+<h4>Billing<a class="headerlink" href="#billing" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Click on the ‘burger’ symbold on the top-left, and navigate to Billing or search for “Billing” in the bar on the top.</p></li>
+</ul>
+<div class="section" id="check-running-costs-recommended-weekly">
+<h5>Check Running Costs (recommended weekly)<a class="headerlink" href="#check-running-costs-recommended-weekly" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p>Click on “Reports” on the left.</p></li>
+<li><p>From the first drop down on the right, select “Last 90 days” (you can also select a custom time frame if you want to see longer term costs). Further Down on the right disable “Promotions &amp; others” to see the amount spent from credits.</p></li>
+<li><p>You should now see 3 bars in the center that indicate the monthly spending split into “Services” (e.g. compute, storage). You can further refine this partition with the options on the right, but this overview should generally be sufficient for routine cost monitoring e.g. to detect abnormally high spending.</p></li>
+</ul>
+</div>
+<div class="section" id="check-remaining-credits-recommended-monthly">
+<h5>Check remaining credits (recommended monthly)<a class="headerlink" href="#check-remaining-credits-recommended-monthly" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p>Click on “Credits” on the left to see current and past cloud credits including the total amount, and remaining value.</p></li>
+<li><p>Make sure that enough credits are available for continued operation (based on the monthly costs). Contact Google to arrange for release of next credit round if funds run low.</p></li>
+</ul>
 </div>
 </div>
 </div>

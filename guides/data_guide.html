@@ -384,11 +384,16 @@ const thebe_selector_output = ".output, .cell_output"
        How to get new data ingested
       </a>
      </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#how-to-get-new-data-ingested-if-public-download-is-not-available">
+       How to get new data ingested (if public download is not available)
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#manually-uploading-downloading-data-to-cloud-buckets">
-     Manually uploading/downloading data to cloud buckets
+    <a class="reference internal nav-link" href="#manually-uploading-downloading-data-to-cloud-buckets-deprecated">
+     Manually uploading/downloading data to cloud buckets (deprecated)
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -488,11 +493,16 @@ const thebe_selector_output = ".output, .cell_output"
        How to get new data ingested
       </a>
      </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#how-to-get-new-data-ingested-if-public-download-is-not-available">
+       How to get new data ingested (if public download is not available)
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#manually-uploading-downloading-data-to-cloud-buckets">
-     Manually uploading/downloading data to cloud buckets
+    <a class="reference internal nav-link" href="#manually-uploading-downloading-data-to-cloud-buckets-deprecated">
+     Manually uploading/downloading data to cloud buckets (deprecated)
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -702,7 +712,7 @@ Rclone</label><div class="sd-tab-content docutils">
 <p>… and you can give this to any other registered LEAP user and they can load it exactly like you can!</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Note that providing the url starting with <code class="docutils literal notranslate"><span class="pre">gs://...</span></code> is assumes that you have appropriate credentials set up in your environment to read/write to that bucket. On the hub these are already set up for you to work with the <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructure-buckets"><span class="std std-ref">LEAP-Pangeo Cloud Storage Buckets</span></a>, but if you are trying to interact with non-public buckets you need to authenticate yourself. Check out the sections <a class="reference internal" href="#guide-data-upload-manual"><span class="std std-ref">below</span></a> to see an example how to do that.</p>
+<p>Note that providing the url starting with <code class="docutils literal notranslate"><span class="pre">gs://...</span></code> is assumes that you have appropriate credentials set up in your environment to read/write to that bucket. On the hub these are already set up for you to work with the <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructure-buckets"><span class="std std-ref">LEAP-Pangeo Cloud Storage Buckets</span></a>, but if you are trying to interact with non-public buckets you need to authenticate yourself. Check out <a class="reference internal" href="#data-config-files"><span class="std std-ref">Configuration for Authenticated Access</span></a> to see an example how to do that.</p>
 </div>
 <p>You can also write other files directly to the bucket by using <a class="reference external" href="https://filesystem-spec.readthedocs.io/en/latest/api.html#fsspec.open"><code class="docutils literal notranslate"><span class="pre">fsspec.open</span></code></a> similarly to the python builtin <a class="reference external" href="https://docs.python.org/3/library/functions.html#open"><code class="docutils literal notranslate"><span class="pre">open</span></code></a></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;gs://leap-scratch/funky-user/test.txt&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -779,7 +789,7 @@ Rclone</label><div class="sd-tab-content docutils">
 </ul>
 <p>The way we achieve this is to base our ingestion on <a class="reference external" href="https://pangeo-forge.readthedocs.io/en/latest/composition/index.html#recipe-composition">Pangeo Forge recipes</a>. For clearer organization each dataset the recipe should reside in its own repository under the <code class="docutils literal notranslate"><span class="pre">leap-stc</span></code> github organization. Each of these repositories will be called a ‘feedstock’, which contains additional metadata files (you can read more in the <a class="reference external" href="https://pangeo-forge.readthedocs.io/en/latest/deployment/feedstocks.html#from-recipe-to-feedstock">Pangeo Forge docs</a>).</p>
 <div class="section" id="how-to-get-new-data-ingested">
-<h4>How to get new data ingested<a class="headerlink" href="#how-to-get-new-data-ingested" title="Permalink to this headline">¶</a></h4>
+<span id="guides-data-ingestion-pipeline"></span><h4>How to get new data ingested<a class="headerlink" href="#how-to-get-new-data-ingested" title="Permalink to this headline">¶</a></h4>
 <p>To start ingesting a dataset follow these steps:</p>
 <ol class="simple">
 <li><p>Let the LEAP community and the Data and Computation Team know about this new dataset. We gather all ingestion requests in our <a class="reference external" href="https://github.com/leap-stc/data-management/issues">‘leap-stc/data_management’ issue tracker</a>. You should check existing issues with the tag <a class="reference external" href="https://github.com/leap-stc/data-management/issues?q=is%3Aissue+is%3Aopen+label%3Adataset">‘dataset’</a> to see if somebody else might have already requested this particular dataset. If that is not the case you can add a new <a class="reference external" href="https://github.com/leap-stc/data-management/issues/new?assignees=&amp;labels=dataset&amp;projects=&amp;template=new_dataset.yaml&amp;title=New+Dataset+%5BDataset+Name%5D">dataset_request</a>. Making these request in a central location enables others to see which datasets are currently being ingested and what the status is.</p></li>
@@ -791,9 +801,31 @@ Rclone</label><div class="sd-tab-content docutils">
 <p>This does currently not provide a solution to handle datasets that have been produced by you (as e.g. part of a publication). We are working on formalizing a workflow for this type of data. Please reach out to the <a class="reference internal" href="../support.html#support-data-compute-team"><span class="std std-ref">Data and Computation Team</span></a> if you have data that you would like to publish. See <a class="reference internal" href="../explanation/data_policy.html#explanation-data-policy-types"><span class="std std-ref">Types of Data Used at LEAP</span></a> for more.</p>
 </div>
 </div>
+<div class="section" id="how-to-get-new-data-ingested-if-public-download-is-not-available">
+<span id="guide-data-upload-manual"></span><h4>How to get new data ingested (if public download is not available)<a class="headerlink" href="#how-to-get-new-data-ingested-if-public-download-is-not-available" title="Permalink to this headline">¶</a></h4>
+<p>If an option to download the source data is available always try to follow the <a class="reference internal" href="#guides-data-ingestion-pipeline"><span class="std std-ref">pangeo-forge based workflow</span></a> first to maximize reproducibility. But if the data of your choice is located on behind a firewall on an HPC center, the ‘pull’ based paradigm of pangeo-forge will not work. In this case we have an option to ‘push’ the data to a special “inbox” bucket (<code class="docutils literal notranslate"><span class="pre">'leap-pangeo-inbox'</span></code>) on the <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructrue-osn-pod"><span class="std std-ref">m2lines OSN Pod</span></a>, from there an admin can move the data to another dedicated bucket and the data can be added to the catalog using the <a class="reference external" href="https://github.com/leap-stc/LEAP_template_feedstock">template feedstock</a>.</p>
+<p><strong>Step by Step instructions</strong></p>
+<ul class="simple">
+<li><p>Reach out to the <a class="reference internal" href="../support.html#support-data-compute-team"><span class="std std-ref">Data and Computation Team</span></a>. They will contact the OSN pod admin and share bucket credentials for the <code class="docutils literal notranslate"><span class="pre">'leap-pangeo-inbox'</span></code> bucket.</p></li>
+<li><p>Authenticate to that bucket from a compute location that has access to your desired data and the internet. You can find instructions on how to authenticate <a class="reference internal" href="#data-config-files"><span class="std std-ref">here</span></a>.</p></li>
+<li><p>Upload the data to the ‘leap-pangeo-inbox’ in <strong>a dedicated folder</strong> (note the exact name of that folder, it is important for the later steps). How you exactly achieve the upload will depend on your preference. Some common options include:</p>
+<ul>
+<li><p>Open a bunch of netcdf files into xarray and use <code class="docutils literal notranslate"><span class="pre">.to_zarr(...)</span></code> to write the data to zarr.</p></li>
+<li><p>Use fsspec or rclone to move an existing zarr store to the target bucket
+Either way the uploaded folder should contain one or more zarr stores!</p></li>
+</ul>
+</li>
+<li><p>Once you have confirmed that all data is uploaded, ask an admin to move this data to the dedicated <code class="docutils literal notranslate"><span class="pre">'leap-pangeo-manual'</span></code> bucket on the OSN pod. They can do this by running <a class="reference external" href="https://github.com/leap-stc/data-management/blob/main/.github/workflows/transfer.yaml">this github action</a>, which requires the subfolder name from above as input.</p></li>
+<li><p>Once the data is moved, follow the instructions in the <a class="reference external" href="https://github.com/leap-stc/LEAP_template_feedstock">template feedstock</a> to <a class="reference external" href="https://github.com/leap-stc/LEAP_template_feedstock#linking-existing-arco-datasets">“link an existing dataset”</a> (The actual ingestion, i.e. conversion to zarr has been done manually in this case). Reach out to the <a class="reference internal" href="../support.html#support-data-compute-team"><span class="std std-ref">Data and Computation Team</span></a> if you need support.</p></li>
+</ul>
 </div>
-<div class="section" id="manually-uploading-downloading-data-to-cloud-buckets">
-<span id="guide-data-upload-manual"></span><h3>Manually uploading/downloading data to cloud buckets<a class="headerlink" href="#manually-uploading-downloading-data-to-cloud-buckets" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="manually-uploading-downloading-data-to-cloud-buckets-deprecated">
+<span id="guide-data-upload-manual-deprecated"></span><h3>Manually uploading/downloading data to cloud buckets (deprecated)<a class="headerlink" href="#manually-uploading-downloading-data-to-cloud-buckets-deprecated" title="Permalink to this headline">¶</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This section of the docs is just retained for completeness. There might be special situations where it is beneficial/necessary to upload data to the <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructure-buckets"><span class="std std-ref">LEAP-Pangeo Cloud Storage Buckets</span></a> but we generally encourage data ingestion to the <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructrue-osn-pod"><span class="std std-ref">m2lines OSN Pod</span></a> due to the public access and reduced running cost. See above for instructions.</p>
+</div>
 <p>We discourage manually moving datasets to our cloud storage as much as possible since it is hard to reproduce these datasets at a future point (if e.g. the dataset maintainer has moved on to a different position) (see <a class="reference internal" href="../explanation/data_policy.html#explanation-data-policy-reproducibility"><span class="std std-ref">Reproducibility</span></a>. We encourage you to try out the methods above, but if these should not work for some reason (and you were not able to find a solution with the <a class="reference internal" href="../support.html#support-data-compute-team"><span class="std std-ref">Data and Computation Team</span></a>), you should try the methods below. We will always <a class="reference internal" href="../explanation/code_policy.html#explanation-code-policy-dont-let-perfect-be-the-enemy-of-good"><span class="std std-ref">prioritize unblocking your work</span></a>.</p>
 <p>The below solutions fundamentally rely on the data being ‘pushed’ to the <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructure-buckets"><span class="std std-ref">LEAP-Pangeo Cloud Storage Buckets</span></a> which usually requires intervention on part of the <a class="reference internal" href="../explanation/data_policy.html#explanation-data-policy-roles-data-expert"><span class="std std-ref">Data Expert</span></a>. This stands in contrast to e.g. data ingestion via <a class="reference internal" href="../reference/infrastructure.html#reference-pangeo-forge"><span class="std std-ref">Pangeo-Forge</span></a> where the <a class="reference internal" href="../explanation/data_policy.html#explanation-data-policy-roles-data-expert"><span class="std std-ref">Data Expert</span></a> only has to work on the recipe creation and the data is ‘pulled’ in a reproducible way. For more information see <a class="reference internal" href="../explanation/data_policy.html#explanation-data-policy"><span class="std std-ref">LEAP-Pangeo Data Policy</span></a>.</p>
 <p>Fundamentally the ‘pushing’ of datasets relies on two components:</p>
