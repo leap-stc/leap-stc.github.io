@@ -95,6 +95,62 @@ The following is a list of tasks that should be done by any new hire in the Data
 
 - [](guide.team.admin.renew_member_token)
 
+### Moving Data between buckets using bare VMs
+
+In general you need some form of compute to move data between different object store locations, but be aware that the data will be always be streamed to and from that location over the internet, so fast connection speed is key for fast transfers. There are a variety of ways to move data with perhaps the easiest being to run fsspec or rclone on your local computer, but speed is likely limited by your local internet connection. For certain tasks (e.g. moving data to admin only publishing buckets on the [](reference.infrastructrue.osn_pod)) it is recommended to use rclone on a VM
+:::\{tip}
+These instructions should be easy to adapt to VM instances on other clouds, and can likely be automated to a much larger degree, but this is what has worked so far. Ultimately this approach is a somewhat manual implementation of the concept of [skyplane](https://github.com/skyplane-project/skyplane) which sadly does not seem to be actively maintained anymore. As of the writing of these docs we were able to achieve ~700MB/s transfer speeds with a single VM following the instructions below
+:::
+
+#### Manual spinup of cloud VMs for bulk data transfer
+
+Following these instructions requires permissions on the LEAP Google Cloud Account. Contact an admin if you run into permission issues.
+
+:::\{warning}
+Using VMs this way does not automatically delete instances. Make sure to do that when your transfer is done.
+:::
+
+- Navigate to the [Google Cloud Console](https://console.cloud.google.com) and from there to "Compute Engine" and "VM instances"
+- Click on "Create Instance"
+- Configure your VM instance (this is an example config that worked well in the past, you can modify as needed). If not specified below leave all settings on the default.
+  - Choose a memorable name like "boatymccloneface"
+
+  - Use a region that is close to your storage (for LEAP buckets this is `'us-central1'` and leave the zone on `'Any'`
+
+  - Choose an `'E2'` machine type preset (here `e2-standard-8`)
+
+  - In "OS and Storage" select the latest "Ubuntu" version as Operating System and "Balanced persistent disk" as Boot disk type.
+
+    - Set the size to 20GB
+
+  - Under "Observability" enable "Install Ops Agent ..."
+
+  - (**Only needed when source location is on GCS**) Under "Security" change "Access scopes" to "Set access for each API", and set "Storage" to "Read Only".
+
+  - (**Optional cost saving**) Under "Advanced" select `'VM provisioning model: Spot'` (this means the instance can shut down at any time, and you will have to rerun these steps to pick up the transfer. If you want the job to finish guaranteed, choose "On Demand", but be aware that this will come at a higher cost).
+
+  - **Optional but highly Recommended**: Under "Advanced" enable "Set a time limit for the VM", and limit it to the number of hours you expect the transfer to take. You can choose to either stop or delete the VM under "On VM termination". If you choose stop you will keep incurring costs for the storage volume, so unless you expect to restart the instance, choose delete here.
+- Click on "Create"
+- You should now be able to see your instance in the list under "VM Instances". Click the SSH button to tunnel into the VM
+- Install rclone with `sudo -v ; curl https://rclone.org/install.sh | sudo bash`
+- Start a tmux session with `tmux new` ([cheatsheet for tmux](https://tmuxcheatsheet.com/))
+- Set the config via env variables one by one. The exact details might depend on your source/target storage. See the [rclone docs](https://rclone.org/docs/) for more details. This example copies from the LEAP gcs buckets to the OSN pod
+  ```
+  export RCLONE_CONFIG_SOURCE_TYPE=gcs
+  export RCLONE_CONFIG_SOURCE_ENV_AUTH=true
+  export RCLONE_CONFIG_TARGET_TYPE=s3
+  export RCLONE_CONFIG_TARGET_PROVIDER=Ceph
+  export RCLONE_CONFIG_TARGET_ENDPOINT=https://nyu1.osn.mghpcc.org
+  export RCLONE_CONFIG_TARGET_ACCESS_KEY_ID=XXX
+  export RCLONE_CONFIG_TARGET_SECRET_ACCESS_KEY=XXX
+  ```
+- Run the transfer! `rclone sync --fast-list --s3-chunk-size 128M --s3-upload-concurrency 128 --transfers 128 --checkers 256 -P source:leap-persistent/some/prefix/ target:osn-bucket-name/another/prefix`
+  - Choosing `sync` here enables you to restart a transfer if it failed (e.g. due to a spot instance being shut down, or the transfer taking longer than expected).
+  - The additional flags passed here seem to work well for past transfers, but they might be tuned for better performance in various scenarios.
+- Watch the transfer progress or work on something else ☕️
+- You might get disconnected from the SSH browser window after a while (this is why we run the process within tmux!). Simple click on SSH again and run `tmux ls`. Pick whatever session you want to re-attach. Then do `tmux attach -d -t <session id>` to re-attach it to a new tmux instance and release it from the old one.
+- **Important. DO NOT SKIP!**: When your transfer is finished, go back to [Google Cloud Console](https://console.cloud.google.com) and from there to "Compute Engine" and "VM instances" and click the three dots to the right of your instance, and delete it. If you forget about this LEAP will keep paying for the instance!
+
 ## Non-Technical Admin Tasks
 
 This section describes admin tasks that are necessary for the maintenance of LEAP-Pangeo components (including collaborative efforts lead M²LInES) which require appropriate permissions, but no coding (everything can be achieved on one of several websites).
