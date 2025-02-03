@@ -95,6 +95,10 @@ Ideally we want to store these secrets only in one central location. The natural
 According to those issues we can only make the aws profiles (or [source profiles?](https://forum.rclone.org/t/s3-profile-failing-when-explicit-s3-endpoint-is-present/36063/4?u=jbusecke), anyways the credentials part of it) work if we define one config file per remote [and use the 'default' profile](https://forum.rclone.org/t/shared-credentials-file-is-not-recognised/46993/2?u=jbusecke)which presumably breaks compatibility with fsspec, and also does not work at all right now. So at the moment we will have to keep the credentials in two separate spots 🤷‍♂️. **Please make sure to apply proper caution when [handling secrets](guide.code.secrets) for each config files that stores secrets in plain text!**
 :::
 
+:::\{note}
+You can find more great documentation, specifically on how to use OSN resources, in [this section](https://hytest-org.github.io/hytest/essential_reading/DataSources/Data_S3.html#credentialed-access) of the [HyTEST Docs](https://hytest-org.github.io/hytest/doc/About.html#)
+:::
+
 (hub.data.setup)=
 
 ### 
@@ -214,7 +218,7 @@ ds = xr.open_dataset(
 ... and you can give this to any other registered LEAP user and they can load it exactly like you can!
 
 :::\{note}
-Note that providing the url starting with `gs://...` is assumes that you have appropriate credentials set up in your environment to read/write to that bucket. On the hub these are already set up for you to work with the [](reference.infrastructure.buckets), but if you are trying to interact with non-public buckets you need to authenticate yourself. Check out the sections [below](guide.data.upload_manual) to see an example how to do that.
+Note that providing the url starting with `gs://...` is assumes that you have appropriate credentials set up in your environment to read/write to that bucket. On the hub these are already set up for you to work with the [](reference.infrastructure.buckets), but if you are trying to interact with non-public buckets you need to authenticate yourself. Check out [](data.config-files) to see an example how to do that.
 :::
 
 You can also write other files directly to the bucket by using [`fsspec.open`](https://filesystem-spec.readthedocs.io/en/latest/api.html#fsspec.open) similarly to the python builtin [`open`](https://docs.python.org/3/library/functions.html#open)
@@ -303,6 +307,8 @@ We have additional requirements for the data ingestion to make the process susta
 
 The way we achieve this is to base our ingestion on [Pangeo Forge recipes](https://pangeo-forge.readthedocs.io/en/latest/composition/index.html#recipe-composition). For clearer organization each dataset the recipe should reside in its own repository under the `leap-stc` github organization. Each of these repositories will be called a 'feedstock', which contains additional metadata files (you can read more in the [Pangeo Forge docs](https://pangeo-forge.readthedocs.io/en/latest/deployment/feedstocks.html#from-recipe-to-feedstock)).
 
+(guides.data.ingestion_pipeline)=
+
 #### How to get new data ingested
 
 To start ingesting a dataset follow these steps:
@@ -317,7 +323,28 @@ This does currently not provide a solution to handle datasets that have been pro
 
 (guide.data.upload_manual)=
 
-### Manually uploading/downloading data to cloud buckets
+#### How to get new data ingested (if public download is not available)
+
+If an option to download the source data is available always try to follow the [pangeo-forge based workflow](guides.data.ingestion_pipeline) first to maximize reproducibility. But if the data of your choice is located on behind a firewall on an HPC center, the 'pull' based paradigm of pangeo-forge will not work. In this case we have an option to 'push' the data to a special "inbox" bucket (`'leap-pangeo-inbox'`) on the [](reference.infrastructrue.osn_pod), from there an admin can move the data to another dedicated bucket and the data can be added to the catalog using the [template feedstock](https://github.com/leap-stc/LEAP_template_feedstock).
+
+**Step by Step instructions**
+
+- Reach out to the [](support.data_compute_team). They will contact the OSN pod admin and share bucket credentials for the `'leap-pangeo-inbox'` bucket.
+- Authenticate to that bucket from a compute location that has access to your desired data and the internet. You can find instructions on how to authenticate [here](data.config-files).
+- Upload the data to the 'leap-pangeo-inbox' in **a dedicated folder** (note the exact name of that folder, it is important for the later steps). How you exactly achieve the upload will depend on your preference. Some common options include:
+  - Open a bunch of netcdf files into xarray and use `.to_zarr(...)` to write the data to zarr.
+  - Use fsspec or rclone to move an existing zarr store to the target bucket
+    Either way the uploaded folder should contain one or more zarr stores!
+- Once you have confirmed that all data is uploaded, ask an admin to move this data to the dedicated `'leap-pangeo-manual'` bucket on the OSN pod. They can do this by running [this github action](https://github.com/leap-stc/data-management/blob/main/.github/workflows/transfer.yaml), which requires the subfolder name from above as input.
+- Once the data is moved, follow the instructions in the [template feedstock](https://github.com/leap-stc/LEAP_template_feedstock) to ["link an existing dataset"](https://github.com/leap-stc/LEAP_template_feedstock#linking-existing-arco-datasets) (The actual ingestion, i.e. conversion to zarr has been done manually in this case). Reach out to the [](support.data_compute_team) if you need support.
+
+(guide.data.upload_manual_deprecated)=
+
+### Manually uploading/downloading data to cloud buckets (deprecated)
+
+:::\{warning}
+This section of the docs is just retained for completeness. There might be special situations where it is beneficial/necessary to upload data to the [](reference.infrastructure.buckets) but we generally encourage data ingestion to the [](reference.infrastructrue.osn_pod) due to the public access and reduced running cost. See above for instructions.
+:::
 
 We discourage manually moving datasets to our cloud storage as much as possible since it is hard to reproduce these datasets at a future point (if e.g. the dataset maintainer has moved on to a different position) (see [](explanation.data-policy.reproducibility). We encourage you to try out the methods above, but if these should not work for some reason (and you were not able to find a solution with the [](support.data_compute_team)), you should try the methods below. We will always [prioritize unblocking your work](explanation.code-policy.dont-let-perfect-be-the-enemy-of-good).
 

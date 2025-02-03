@@ -6,13 +6,13 @@ This is a short write up facilitate the spin up of new team members for the Data
 
 ### Checklist for new members
 
-- \[ \] Ask to be added to the [Data and Computation Github team](https://github.com/orgs/leap-stc/teams/data-team/members)
-- \[ \] Ask to be added to the `@data-and-compute` Slack user group
-- \[ \] Subscribe to [](onboarding.slack)
-- \[ \] Consider enabling notifications for [](onboarding.github)
-- \[ \] Make a PR to the `_config.yaml` file [here](https://github.com/leap-stc/leap-stc.github.io/blob/fd69890ffc2f1871968e39b1c460370a0b3f98b3/book/_config.yml#L40-L51) in a PR. to add a picture and your personal data to the webpage.
-- \[ \] Get access to the [Grafana Dashboard](https://grafana.leap.2i2c.cloud)
-- \[ \] Request access to a service account to monitor Google Dataflow and Storage from the [Google Cloud Console](https://console.cloud.google.com/welcome?project=leap-pangeo) by raising an issue [here](https://github.com/leap-stc/data-and-compute-team/issues)
+- [ ] Ask to be added to the [Data and Computation Github team](https://github.com/orgs/leap-stc/teams/data-team/members)
+- [ ] Ask to be added to the `@data-and-compute` Slack user group
+- [ ] Subscribe to [](onboarding.slack)
+- [ ] Consider enabling notifications for [](onboarding.github)
+- [ ] Make a PR to the `_config.yaml` file [here](https://github.com/leap-stc/leap-stc.github.io/blob/fd69890ffc2f1871968e39b1c460370a0b3f98b3/book/_config.yml#L40-L51) in a PR. to add a picture and your personal data to the webpage.
+- [ ] Get access to the [Grafana Dashboard](https://grafana.leap.2i2c.cloud)
+- [ ] Request access to a service account to monitor Google Dataflow and Storage from the [Google Cloud Console](https://console.cloud.google.com/welcome?project=leap-pangeo) by raising an issue [here](https://github.com/leap-stc/data-and-compute-team/issues)
   - Instructions for admin:
     - Go to the Google Cloud Console > IAM > Grant Access
     - Add the following permissions:
@@ -59,7 +59,7 @@ We aim to provide users with [up-to-date default software environments](referenc
 
 ## Offboarding members
 
-- \[\] Delete personal `dct-team-<first_name>` service account in IAM (needs admin priviliges).
+- [] Delete personal `dct-team-<first_name>` service account in IAM (needs admin priviliges).
 
 ## Admin Tasks
 
@@ -95,9 +95,113 @@ The following is a list of tasks that should be done by any new hire in the Data
 
 - [](guide.team.admin.renew_member_token)
 
+### Moving Data between buckets using bare VMs
+
+In general you need some form of compute to move data between different object store locations, but be aware that the data will be always be streamed to and from that location over the internet, so fast connection speed is key for fast transfers. There are a variety of ways to move data with perhaps the easiest being to run fsspec or rclone on your local computer, but speed is likely limited by your local internet connection. For certain tasks (e.g. moving data to admin only publishing buckets on the [](reference.infrastructrue.osn_pod)) it is recommended to use rclone on a VM
+:::\{tip}
+These instructions should be easy to adapt to VM instances on other clouds, and can likely be automated to a much larger degree, but this is what has worked so far. Ultimately this approach is a somewhat manual implementation of the concept of [skyplane](https://github.com/skyplane-project/skyplane) which sadly does not seem to be actively maintained anymore. As of the writing of these docs we were able to achieve ~700MB/s transfer speeds with a single VM following the instructions below
+:::
+
+#### Manual spinup of cloud VMs for bulk data transfer
+
+Following these instructions requires permissions on the LEAP Google Cloud Account. Contact an admin if you run into permission issues.
+
+:::\{warning}
+Using VMs this way does not automatically delete instances. Make sure to do that when your transfer is done.
+:::
+
+- Navigate to the [Google Cloud Console](https://console.cloud.google.com) and from there to "Compute Engine" and "VM instances"
+- Click on "Create Instance"
+- Configure your VM instance (this is an example config that worked well in the past, you can modify as needed). If not specified below leave all settings on the default.
+  - Choose a memorable name like "boatymccloneface"
+
+  - Use a region that is close to your storage (for LEAP buckets this is `'us-central1'` and leave the zone on `'Any'`
+
+  - Choose an `'E2'` machine type preset (here `e2-standard-8`)
+
+  - In "OS and Storage" select the latest "Ubuntu" version as Operating System and "Balanced persistent disk" as Boot disk type.
+
+    - Set the size to 20GB
+
+  - Under "Observability" enable "Install Ops Agent ..."
+
+  - (**Only needed when source location is on GCS**) Under "Security" change "Access scopes" to "Set access for each API", and set "Storage" to "Read Only".
+
+  - (**Optional cost saving**) Under "Advanced" select `'VM provisioning model: Spot'` (this means the instance can shut down at any time, and you will have to rerun these steps to pick up the transfer. If you want the job to finish guaranteed, choose "On Demand", but be aware that this will come at a higher cost).
+
+  - **Optional but highly Recommended**: Under "Advanced" enable "Set a time limit for the VM", and limit it to the number of hours you expect the transfer to take. You can choose to either stop or delete the VM under "On VM termination". If you choose stop you will keep incurring costs for the storage volume, so unless you expect to restart the instance, choose delete here.
+- Click on "Create"
+- You should now be able to see your instance in the list under "VM Instances". Click the SSH button to tunnel into the VM
+- Install rclone with `sudo -v ; curl https://rclone.org/install.sh | sudo bash`
+- Start a tmux session with `tmux new` ([cheatsheet for tmux](https://tmuxcheatsheet.com/))
+- Set the config via env variables one by one. The exact details might depend on your source/target storage. See the [rclone docs](https://rclone.org/docs/) for more details. This example copies from the LEAP gcs buckets to the OSN pod
+  ```
+  export RCLONE_CONFIG_SOURCE_TYPE=gcs
+  export RCLONE_CONFIG_SOURCE_ENV_AUTH=true
+  export RCLONE_CONFIG_TARGET_TYPE=s3
+  export RCLONE_CONFIG_TARGET_PROVIDER=Ceph
+  export RCLONE_CONFIG_TARGET_ENDPOINT=https://nyu1.osn.mghpcc.org
+  export RCLONE_CONFIG_TARGET_ACCESS_KEY_ID=XXX
+  export RCLONE_CONFIG_TARGET_SECRET_ACCESS_KEY=XXX
+  ```
+- Run the transfer! `rclone sync --fast-list --s3-chunk-size 128M --s3-upload-concurrency 128 --transfers 128 --checkers 256 -P source:leap-persistent/some/prefix/ target:osn-bucket-name/another/prefix`
+  - Choosing `sync` here enables you to restart a transfer if it failed (e.g. due to a spot instance being shut down, or the transfer taking longer than expected).
+  - The additional flags passed here seem to work well for past transfers, but they might be tuned for better performance in various scenarios.
+- Watch the transfer progress or work on something else ☕️
+- You might get disconnected from the SSH browser window after a while (this is why we run the process within tmux!). Simple click on SSH again and run `tmux ls`. Pick whatever session you want to re-attach. Then do `tmux attach -d -t <session id>` to re-attach it to a new tmux instance and release it from the old one.
+- **Important. DO NOT SKIP!**: When your transfer is finished, go back to [Google Cloud Console](https://console.cloud.google.com) and from there to "Compute Engine" and "VM instances" and click the three dots to the right of your instance, and delete it. If you forget about this LEAP will keep paying for the instance!
+
 ## Non-Technical Admin Tasks
 
 This section describes admin tasks that are necessary for the maintenance of LEAP-Pangeo components (including collaborative efforts lead M²LInES) which require appropriate permissions, but no coding (everything can be achieved on one of several websites).
+
+(guide.team.admin.member_signup_troubleshooting)=
+
+### Member Sign Up Troubleshooting
+
+Ideally members should be signed on automatically and well ahead of any event (see [](reference.member_sign_up) for an overview of our member sign up mechanics). But despite the best efforts situations arise where either staff or the organizers/instructors of an event need to quickly sign on new members, and troubleshoot if certain users do not have access to the JupyterHub. Follow the steps in this Flowchart to quickly resolve any issues in such cases.
+
+![](../images/member_troubleshooting.png)
+
+#### A+G: Check if a user is in the Member Spreadsheet
+
+Request read access or inquire with LEAP staff to confirm that the user(s) who are having trouble, are listed in the Member Data Spreadsheet and make sure the the sheet **includes their github username**. Always make sure that the github name exists (search in github), and does not contain extra characters like `"@"`.
+
+#### B: Add Users to the Member Spreadsheet
+
+If this is not time sensitive, make sure that the user has completed the membership application (more details [here](reference.membership.tiers)) and inquire with LEAP staff about the status of membership (adding users might take a while, thus always sign up users well in advance). In a time sensitive situation contact LEAP staff to expedite the addition of new users added to the Member Spreadsheet.
+
+#### C+D+F: Checking Github Team Membership and invite status
+
+Repeat the following steps for all relevant Github Teams (you can find links to the team page [here](reference.membership.tiers)):
+
+- C: Navigate to the search bar at the top that says "Find a member..." and enter the **github username** of the user. If the name shows up the user is part of this github team
+- D: Right next to the search bar is a button that says "... pending members". Click on that button and scroll down the list. If the username is in that list the member has received an invite, but not yet accepted it.
+- F: **Accepting the invite has to be done by the user!**. Point them to our [FAQ's](faq.where_is_my_invite) for instructions on how to accept the invite.
+
+#### E: Manually rerunning github sign up action
+
+:::\{attention}
+You need to have maintainer access to the private [leap-stc/member_management repo](https://github.com/leap-stc/member_management) in order to follow these steps. If you cannot repeat these steps please ask one of the github organization admins to be added to an appropriate team (e.g. [bootcamp-instructor](https://github.com/orgs/leap-stc/teams/bootcamp-instructors)) that has access.
+:::
+
+- Navigate to [leap-stc/member_management](https://github.com/leap-stc/member_management)
+- In the top rider click on "Actions"
+- On the left click on "Parse Member Sheet and Add New Members"
+- In the upper right corner, click on "Run Workflow", and again on "Run Workflow" in the pop up window.
+- After a short while you should see a yellow circle in the main window, indicating that the github action is in progress. Wait until the action is finished (usually 3-5 minutes).
+- If the circle turns green, you are done. If the circle turns red, try to run it one more time to exclude any random issues. If the error persists, reach out to a member of the [](support.data_compute_team)
+
+#### H: Clearing Browser Cache etc
+
+If users are part of a github team, and still have trouble signing on, instruct them to clear their browser cache, or try a different browser. This step is unlikely to be necessary
+
+#### If none of this works
+
+:::\{note}
+This is a very unlikely scenario and has very rarely happend!
+:::
+Follow the flowchart and reach out to either the [](support.data_compute_team) or [2i2c support](https://docs.2i2c.org/support/).
 
 ### M²LInES OSN pod administration
 
