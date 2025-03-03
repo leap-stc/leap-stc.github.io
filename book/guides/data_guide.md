@@ -2,7 +2,7 @@
 
 # Data Guide
 
-Data is fundamental to most people's work at LEAP. This guide describes best practices how to find, read, write, transfer, ingest, and catalog data.
+Data is fundamental to most people's work at LEAP. This guide describes best practices for how to find, read, write, transfer, ingest, and catalog data. 
 
 ## Discovering Dataset
 

@@ -15,7 +15,7 @@ To summarize these arguments, a shared data and computing platform will:
 
 - *Facilitate seamless collaboration between project members around data-intensive science, accelerating research progress.*
 - *Empower LEAP participants with instant access to high-performance computing and analysis-ready data in order to support ambitious research objectives.* This access is provided through our [JupyterHub platform](reference.infrastructure.hub).
-- *Place actionable data in the hands of LEAP partners to support knowledge transfer.using the [](reference.infrastructure.catalog)*.
+- *Place actionable data in the hands of LEAP partners to support knowledge transfer using the [](reference.infrastructure.catalog)*.
 - *Enable rich data-driven classroom experiences for learners, helping them transition successfully from coursework to research.*
 
 ## Contents
