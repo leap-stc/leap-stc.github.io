@@ -2,8 +2,9 @@ name: leap-docs-env
 channels:
   - conda-forge
 dependencies:
+  - python=3.11
   - sphinx==4.5.0
-  - jupyter-book==0.12.3
+  - jupyter-book==0.15.1
   - sphinxcontrib-bibtex
   - pip
   - pip:
