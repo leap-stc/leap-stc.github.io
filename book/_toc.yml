@@ -7,13 +7,17 @@ parts:
   - caption: Tutorials
     chapters:
       - file: tutorials/getting_started
+      - file: tutorials/ingesting_dataset
+      - file: tutorials/education_guide
+      - file: tutorials/bootcamp_guide
   - caption: Guides
     chapters:
       - file: guides/code_guide
       - file: guides/data_guide
+        sections:
+          - file: guides/data_guides/data_jupyterhub
+          - file: guides/data_guides/transfer_data
       - file: guides/compute_guide
-      - file: guides/education_guide
-      - file: guides/bootcamp_guide
       - file: guides/vm_access
       - file: guides/team_guide
       - file: guides/faq

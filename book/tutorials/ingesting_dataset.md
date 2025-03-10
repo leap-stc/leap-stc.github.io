@@ -1,0 +1,37 @@
+We have additional requirements for the data ingestion to make the process sustainable and scalable:
+
+- Process needs to be reproducible, e.g. when we want to reingest data to a different storage location
+- Separation of concerns: The person who knows the dataset (the 'data expert') is in the unique position to encode their knowledge about the dataset into the recipe, but they should not be concerned with the details of how to execute it and where the data is ultimate stored. This is the responsibility of the Data and Compute team.
+
+The way we achieve this is to base our ingestion on [Pangeo Forge recipes](https://pangeo-forge.readthedocs.io/en/latest/composition/index.html#recipe-composition). For clearer organization each dataset the recipe should reside in its own repository under the `leap-stc` github organization. Each of these repositories will be called a 'feedstock', which contains additional metadata files (you can read more in the [Pangeo Forge docs](https://pangeo-forge.readthedocs.io/en/latest/deployment/feedstocks.html#from-recipe-to-feedstock)).
+
+(guides.data.ingestion_pipeline)=
+
+#### How to get new data ingested
+
+To start ingesting a dataset follow these steps:
+
+1. Let the LEAP community and the Data and Computation Team know about this new dataset. We gather all ingestion requests in our ['leap-stc/data_management' issue tracker](https://github.com/leap-stc/data-management/issues). You should check existing issues with the tag ['dataset'](https://github.com/leap-stc/data-management/issues?q=is%3Aissue+is%3Aopen+label%3Adataset) to see if somebody else might have already requested this particular dataset. If that is not the case you can add a new [dataset_request](https://github.com/leap-stc/data-management/issues/new?assignees=&labels=dataset&projects=&template=new_dataset.yaml&title=New+Dataset+%5BDataset+Name%5D). Making these request in a central location enables others to see which datasets are currently being ingested and what the status is.
+1. Use our [feedstock template](https://github.com/leap-stc/LEAP_template_feedstock) to create a feedstock repostory by following instructions in the README to get you started with either one of the above.
+1. If issues arise please reach out to the [](support.data_compute_team)
+
+:::\{note}
+This does currently not provide a solution to handle datasets that have been produced by you (as e.g. part of a publication). We are working on formalizing a workflow for this type of data. Please reach out to the [](support.data_compute_team) if you have data that you would like to publish. See [](explanation.data-policy.types) for more.
+:::
+
+(guide.data.upload_manual)=
+
+#### How to get new data ingested (if public download is not available)
+
+If an option to download the source data is available always try to follow the [pangeo-forge based workflow](guides.data.ingestion_pipeline) first to maximize reproducibility. But if the data of your choice is located on behind a firewall on an HPC center, the 'pull' based paradigm of pangeo-forge will not work. In this case we have an option to 'push' the data to a special "inbox" bucket (`'leap-pangeo-inbox'`) on the [](reference.infrastructrue.osn_pod), from there an admin can move the data to another dedicated bucket and the data can be added to the catalog using the [template feedstock](https://github.com/leap-stc/LEAP_template_feedstock).
+
+**Step by Step instructions**
+
+- Reach out to the [](support.data_compute_team). They will contact the OSN pod admin and share bucket credentials for the `'leap-pangeo-inbox'` bucket.
+- Authenticate to that bucket from a compute location that has access to your desired data and the internet. You can find instructions on how to authenticate [here](data.config-files).
+- Upload the data to the 'leap-pangeo-inbox' in **a dedicated folder** (note the exact name of that folder, it is important for the later steps). How you exactly achieve the upload will depend on your preference. Some common options include:
+  - Open a bunch of netcdf files into xarray and use `.to_zarr(...)` to write the data to zarr.
+  - Use fsspec or rclone to move an existing zarr store to the target bucket
+    Either way the uploaded folder should contain one or more zarr stores!
+- Once you have confirmed that all data is uploaded, ask an admin to move this data to the dedicated `'leap-pangeo-manual'` bucket on the OSN pod. They can do this by running [this github action](https://github.com/leap-stc/data-management/blob/main/.github/workflows/transfer.yaml), which requires the subfolder name from above as input.
+- Once the data is moved, follow the instructions in the [template feedstock](https://github.com/leap-stc/LEAP_template_feedstock) to ["link an existing dataset"](https://github.com/leap-stc/LEAP_template_feedstock#linking-existing-arco-datasets) (The actual ingestion, i.e. conversion to zarr has been done manually in this case). Reach out to the [](support.data_compute_team) if you need support.

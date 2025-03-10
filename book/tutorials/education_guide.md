@@ -1,3 +1,6 @@
+---
+title: Teaching Classes
+---
 # Education Guide
 
 This guide is intended for folks who want to run classes using the LEAP Pangeo resources.
