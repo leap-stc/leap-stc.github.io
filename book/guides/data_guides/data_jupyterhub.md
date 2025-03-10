@@ -1,23 +1,27 @@
 (guide.data.working)=
+
 # Working with Data in Cloud Object Storage
 
 Data and files work differently in the cloud.
-To help onboard you to this new way of working, we have written a how-to guide to working with Files and Data in the Cloud: 
+To help onboard you to this new way of working, we have written a how-to guide to working with Files and Data in the Cloud:
 
 - [2i2c Docs: Data and Filesystem](https://docs.2i2c.org/user/topics/data/filesystem/)
 
 We recommend you read this thoroughly, especially the part about Git and GitHub. It provides
-- an overview of the different directories visible upon login to the JupyterHub and what they are meant for. 
-- how to authenticate to Github from the Hub and integrate it with your Hub workflow. 
-- how users should share files with each other. 
-LEAP provides several [cloud buckets](reference.infrastructure.buckets), and the following steps illustrate how to work with data in object storage as opposed to a filesystem. 
+
+- an overview of the different directories visible upon login to the JupyterHub and what they are meant for.
+- how to authenticate to Github from the Hub and integrate it with your Hub workflow.
+- how users should share files with each other.
+  LEAP provides several [cloud buckets](reference.infrastructure.buckets), and the following steps illustrate how to work with data in object storage as opposed to a filesystem.
 
 ## Working from the LEAP JupyterHub
 
 ### How to load Data from the LEAP Catalog
-You want to have a specific dataset to explore or analyze? There is a good chance that somebody else at LEAP has already worked with the data! So the first thing to look for data should always be a visit to the [LEAP Data Catalog](catalog.leap.columbia.edu). This is a repository of data sets published by the LEAP community in collaboration with the Data and Compute Team. The home page will immediately show a list of which datasets are included. Every dataset has a brief description, provides a simple code snippet for loading the data into Python, and links to the original feedstock from which the data was ingested. The term ["feedstock"](https://pangeo-forge.readthedocs.io/en/latest/deployment/feedstocks.html) is inherited from the Pangeo Forge project, and basically refers to the code repository defining the data pipeline. Feedstocks allow curious users to trace back towards the original data source for transparency and reproducibility. 
+
+You want to have a specific dataset to explore or analyze? There is a good chance that somebody else at LEAP has already worked with the data! So the first thing to look for data should always be a visit to the [LEAP Data Catalog](catalog.leap.columbia.edu). This is a repository of data sets published by the LEAP community in collaboration with the Data and Compute Team. The home page will immediately show a list of which datasets are included. Every dataset has a brief description, provides a simple code snippet for loading the data into Python, and links to the original feedstock from which the data was ingested. The term ["feedstock"](https://pangeo-forge.readthedocs.io/en/latest/deployment/feedstocks.html) is inherited from the Pangeo Forge project, and basically refers to the code repository defining the data pipeline. Feedstocks allow curious users to trace back towards the original data source for transparency and reproducibility.
 
 The basic requirements for loading the data are the following packages, which are automatically accessible to any user of the JupyterHub platform. But if you wish to load the data on your machine, then you must ensure your python environment has the following pacakges:
+
 ```
 xarray
 requests
@@ -120,7 +124,8 @@ fs.rm("leap-scratch/funky-user/processed_store.zarr", recursive=True)
 ```
 
 ## Working from outside the JupyterHub
-Although the LEAP Jupyterhub was created to vastly simplify the process, there are ways to work with cloud bucket data outside of the Hub, either on a local machine or remote HPC. 
+
+Although the LEAP Jupyterhub was created to vastly simplify the process, there are ways to work with cloud bucket data outside of the Hub, either on a local machine or remote HPC.
 
 ### Tools
 

@@ -2,18 +2,20 @@
 
 # Data Guide
 
-Data is fundamental to most people's work at LEAP. This guide describes best practices for how to find, read, write, transfer, ingest, and catalog data. It is meant as a broad overview to common workflows and institutional policies. We categorize LEAP-relevant use of data into three categories: 
+Data is fundamental to most people's work at LEAP. This guide describes best practices for how to find, read, write, transfer, ingest, and catalog data. It is meant as a broad overview to common workflows and institutional policies. We categorize LEAP-relevant use of data into three categories:
+
 - Using the data that LEAP has catalogued and made accessible in ARCO format. This is done via our [Data Catalog](reference.infrastructure.catalog).
-- Working with data that exists in the cloud. This is in conjunction with the [JupyterHub platform](reference.infrastructure.hub) as an alternative to other data science workflows. 
+- Working with data that exists in the cloud. This is in conjunction with the [JupyterHub platform](reference.infrastructure.hub) as an alternative to other data science workflows.
 - Publishing new scientific data for consumption by other parties. This includes ingesting data into [public cloud buckets](reference.infrastructure.buckets).
 
 To learn how to work with existing data alraedy in the cloud, please consult [this resource](guide.data.working). To learn how to publish or move your own data into cloud storage, please consult [this resource](guide.data.transfer).
 
 ## Discovering Dataset
 
-You want to have a specific dataset to explore or analyze? There is a good chance that somebody else at LEAP has already worked with the data! So the first thing to look for data should always be a visit to the [LEAP Data Catalog](catalog.leap.columbia.edu). This is a repository of data sets published by the LEAP community in collaboration with the Data and Compute Team. The home page will immediately show a list of which datasets are included. Every dataset has a brief description, provides a simple code snippet for loading the data into Python, and links to the original feedstock from which the data was ingested. The term ["feedstock"](https://pangeo-forge.readthedocs.io/en/latest/deployment/feedstocks.html) is inherited from the Pangeo Forge project, and basically refers to the code repository defining the data pipeline. Feedstocks allow curious users to trace back towards the original data source for transparency and reproducibility. 
+You want to have a specific dataset to explore or analyze? There is a good chance that somebody else at LEAP has already worked with the data! So the first thing to look for data should always be a visit to the [LEAP Data Catalog](catalog.leap.columbia.edu). This is a repository of data sets published by the LEAP community in collaboration with the Data and Compute Team. The home page will immediately show a list of which datasets are included. Every dataset has a brief description, provides a simple code snippet for loading the data into Python, and links to the original feedstock from which the data was ingested. The term ["feedstock"](https://pangeo-forge.readthedocs.io/en/latest/deployment/feedstocks.html) is inherited from the Pangeo Forge project, and basically refers to the code repository defining the data pipeline. Feedstocks allow curious users to trace back towards the original data source for transparency and reproducibility.
 
 The basic requirements for loading the data are the following packages, which are automatically accessible to any user of the JupyterHub platform. But if you wish to load the data on your machine, then you must ensure your python environment has the following pacakges:
+
 ```
 xarray
 requests
@@ -31,10 +33,11 @@ To help onboard you to this new way of working, we have written a guide to Files
 - [2i2c Docs: Data and Filesystem](https://docs.2i2c.org/user/topics/data/filesystem/)
 
 We recommend you read this thoroughly, especially the part about Git and GitHub. It provides
-- an overview of the different directories visible upon login to the JupyterHub and what they are meant for. 
-- how to authenticate to Github from the Hub and integrate it with your Hub workflow. 
-- how users should share files with each other. 
-LEAP provides several [cloud buckets](reference.infrastructure.buckets), and the following steps illustrate how to work with data in object storage as opposed to a filesystem.
+
+- an overview of the different directories visible upon login to the JupyterHub and what they are meant for.
+- how to authenticate to Github from the Hub and integrate it with your Hub workflow.
+- how users should share files with each other.
+  LEAP provides several [cloud buckets](reference.infrastructure.buckets), and the following steps illustrate how to work with data in object storage as opposed to a filesystem.
 
 ### Tools
 
