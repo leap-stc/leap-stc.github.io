@@ -17,6 +17,88 @@ To help onboard you to this new way of working, we have written a guide to Files
 
 We recommend you read this thoroughly, especially the part about Git and GitHub. LEAP provides several [cloud buckets](reference.infrastructure.buckets), and the following steps illustrate how to work with data in object storage as opposed to a filesystem.
 
+### Writing Xarray Datasets to Cloud Storage as Zarr
+
+[Xarary](https://docs.xarray.dev/en/stable/getting-started-guide/why-xarray.html) an open-source python project and data model for working with n-dimensional arrays. It is very useful for manipulating large gridded climate datasets.
+
+Below are a few snippets on how to write your Xarray Datasets to cloud storage.
+
+:::\{note}
+Writing to Zarr is the recomened way to save Xarray Datasets. It is very performant and scales incredibly well. That said, there are a few gotchas to look out for. Recently, [Zarr Python V3 was released](https://zarr.dev/blog/zarr-python-3-release/). Depending on which `zarr-python` version you have installed on the hub, writing can look slightly differant!
+
+You can check the version with
+
+```python
+import zarr
+
+print(zarr.__version__)
+```
+
+:::
+
+#### Write to GCS (Google Cloud Storage)
+
+You can write to a GCS bucket with Xarray with a single line of code if you are using the 2i2c Jupyter-hub as the authentication should be ~automagically~ configured.
+
+```python
+import xarray as xr
+
+# Note: We are using an Xarray tutorial dataset in this example
+ds = xr.tutorial.open_dataset("air_temperature", chunks={})
+
+path = "gs://leap-scratch/<YOUR_USERNAME>/<DATASET_NAME.zarr"
+
+
+# optional: you can speciy the Zarr format if you have Zarr python v3 installed.
+zarr_format = 3
+
+# Note: Zarr python V3 currently does not support consolidated metadata.
+ds.to_zarr(path, zarr_format=zarr_format, consolidated=False)
+
+# You can then open that Zarr store with Xarray with:
+# roundtrip = xr.open_zarr(path, chunks={}, consolidated=False)
+```
+
+#### Write to OSN - Open Storage Network
+
+LEAP has an allocation of storage on an OSN pod. OSN allows s3-like cloud storage that has no egress fees. This means that you can share data with the public or outside colaborators without any cost per request. Please contact the data-and-compute team on slack if you feel like this would fit your data use case and you want to store data on OSN.
+
+In the example below, we have to provide a bit more authentication to write to OSN.
+
+```python
+import xarray as xr
+import fsspec
+import zarr
+
+ds = xr.tutorial.open_dataset("air_temperature", chunks={})
+
+# define our credentials, bucket name and dataset path
+osn_bucket_name = "leap-pangeo-inbox"
+osn_key = "<ask DCT team>"
+osn_secret = "<ask DCT team>"
+endpoint_url = "https://nyu1.osn.mghpcc.org"
+dataset_path = f"{osn_bucket_name}/{dataset_name}"
+
+# Here we are using fsspec/s3fs to pass our OSN credentials to Zarr.
+# Note: If you get an error like: TypeError: Unsupported type for store_like: 'FSMap'`. It is because zarr-python does not currently support the older fsspec FSMap object style. https://github.com/zarr-developers/zarr-python/issues/2706
+
+fs = fsspec.filesystem(
+    "s3",
+    key=osn_key,
+    secret=osn_secret,
+    client_kwargs={"endpoint_url": endpoint_url},
+    asynchronous=True,
+)
+store = zarr.storage.FsspecStore(fs, path=dataset_path)
+
+zarr_format = 3
+
+ds.to_zarr(store=store, zarr_format=zarr_format, consolidated=False)
+
+# Note: Your data can be read anywhere, by anyone!
+# roundtrip = xr.open_zarr(f"{dataset_path}', consolidated=False)
+```
+
 ### Tools
 
 There are many tools available to interact with cloud object storage. We currently have basic operations documented for two tools:
