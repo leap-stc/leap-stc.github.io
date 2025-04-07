@@ -24,7 +24,7 @@ We recommend you read this thoroughly, especially the part about Git and GitHub.
 Below are a few snippets on how to write your Xarray Datasets to cloud storage.
 
 :::\{note}
-Writing to Zarr is the recomened way to save Xarray Datasets. It is very performant and scales incredibly well. That said, there are a few gotchas to look out for. Recently, [Zarr Python V3 was released](https://zarr.dev/blog/zarr-python-3-release/). Depending on which `zarr-python` version you have installed on the hub, writing can look slightly differant!
+Writing to Zarr is the recommended way to save Xarray Datasets. It is very performant and scales incredibly well. That said, there are a few gotchas to look out for. Recently, [Zarr Python V3 was released](https://zarr.dev/blog/zarr-python-3-release/). Depending on which `zarr-python` version you have installed on the hub, writing can look slightly differant!
 
 You can check the version with
 
@@ -46,6 +46,7 @@ import xarray as xr
 # Note: We are using an Xarray tutorial dataset in this example
 ds = xr.tutorial.open_dataset("air_temperature", chunks={})
 
+# Note: This example writes to the `leap-scratch`, but you could also write to the leap-persistent bucket.
 path = "gs://leap-scratch/<YOUR_USERNAME>/<DATASET_NAME.zarr"
 
 
@@ -64,6 +65,11 @@ ds.to_zarr(path, zarr_format=zarr_format, consolidated=False)
 LEAP has an allocation of storage on an OSN pod. OSN allows s3-like cloud storage that has no egress fees. This means that you can share data with the public or outside colaborators without any cost per request. Please contact the data-and-compute team on slack if you feel like this would fit your data use case and you want to store data on OSN.
 
 In the example below, we have to provide a bit more authentication to write to OSN.
+
+:::\{admonition} Note on OSN
+:class: tip, dropdown
+This section is a work in progress and may change. Generally leap users should default to writing to GCS.
+:::
 
 ```python
 import xarray as xr
@@ -91,6 +97,7 @@ fs = fsspec.filesystem(
 )
 store = zarr.storage.FsspecStore(fs, path=dataset_path)
 
+# Note: With zarr-python v3, you can write either Zarr python v2 or v3 by speciying the `zarr_format` as 2 or 3.
 zarr_format = 3
 
 ds.to_zarr(store=store, zarr_format=zarr_format, consolidated=False)
@@ -98,6 +105,21 @@ ds.to_zarr(store=store, zarr_format=zarr_format, consolidated=False)
 # Note: Your data can be read anywhere, by anyone!
 # roundtrip = xr.open_zarr(f"{dataset_path}', consolidated=False)
 ```
+
+:::\{admonition} Zarr V2 vs Zarr V3
+:class: tip, dropdown
+As of writing, the pypi/conda version of Zarr python is 3+. The Python library `zarr-python` can read and write either version 2 or 3.
+The pangeo community image that is used for the LEAP/2i2c Jupyter-hub now comes with Zarr V3.
+
+You can check your version of Zarr with:
+
+```python
+import zarr
+
+print(zarr.__version__)
+```
+
+:::
 
 ### Tools
 
