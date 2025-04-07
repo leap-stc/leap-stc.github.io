@@ -1,6 +1,8 @@
 (guide.data.working)=
+
 # Working with Cloud Data on the JupyterHub
-Once it has been ingested into a cloud bucket, working with data on the LEAP JupyterHub is incredibly easy. The most common workflow involves using [Xarray](https://docs.xarray.dev/en/stable/getting-started-guide/why-xarray.html), an open-source python project and data model for working with n-dimensional arrays. It is very useful for manipulating large gridded climate datasets. What's nice is that Xarray is built on top of well-known libraries such as NumPy and Pandas and thus can serve as a drop in "storage backend"; i.e. one can easily go Pandas <--> Xarray <--> Cloud.
+
+Once it has been ingested into a cloud bucket, working with data on the LEAP JupyterHub is incredibly easy. The most common workflow involves using [Xarray](https://docs.xarray.dev/en/stable/getting-started-guide/why-xarray.html), an open-source python project and data model for working with n-dimensional arrays. It is very useful for manipulating large gridded climate datasets. What's nice is that Xarray is built on top of well-known libraries such as NumPy and Pandas and thus can serve as a drop in "storage backend"; i.e. one can easily go Pandas \<--> Xarray \<--> Cloud.
 
 ## Writing Xarray Datasets to Cloud Storage as Zarr
 
@@ -20,7 +22,9 @@ print(zarr.__version__)
 :::
 
 (hub.data.read_write)=
+
 ### Write to GCS (Google Cloud Storage)
+
 We do not recommend uploading large files (e.g. netcdf) directly to the bucket. Instead we recommend to write data as ARCO (Analysis-Ready Cloud-Optimized) formats like [zarr](https://zarr.dev)(for n-dimensional arrays) and [parquet](https://parquet.apache.org)(for tabular data) (read more [here](https://ieeexplore.ieee.org/document/9354557) why we recommend ARCO formats).
 
 Working with Xarray Datasets on the LEAP 2i2c JupyterHub makes it incredibly easy to switch storage formats when reading/writing data. You can write to a GCS bucket with Xarray with a single line of code as the authentication should be ~automagically~ configured.
@@ -30,8 +34,8 @@ import xarray as xr
 
 # Note: We are using an Xarray tutorial dataset in this example
 ds = xr.tutorial.open_dataset("air_temperature", chunks={})
-ds_processed = ds.mean(...).resample(...) # sample modifications to data
-path = "gs://leap-scratch/<YOUR_USERNAME>/<DATASET_NAME>.zarr" # 👀 make sure to prepend `gs://` to the path or xarray will interpret this as a local path
+ds_processed = ds.mean(...).resample(...)  # sample modifications to data
+path = "gs://leap-scratch/<YOUR_USERNAME>/<DATASET_NAME>.zarr"  # 👀 make sure to prepend `gs://` to the path or xarray will interpret this as a local path
 
 # optional: you can specify the Zarr format if you have Zarr python v3 installed.
 zarr_format = 3
@@ -42,6 +46,7 @@ ds_processed.to_zarr(path, zarr_format=zarr_format, consolidated=False)
 # You can then open that Zarr store with Xarray with:
 # roundtrip = xr.open_zarr(path, chunks={}, consolidated=False)
 ```
+
 You can read it back into an xarray dataset with this snippet:
 
 ```python
@@ -88,7 +93,6 @@ array([1, 2, 4])
 
 > Make sure to specify `mode='rb'` or `move='wb'` for binary files.
 
-
 #### Write to OSN - Open Storage Network
 
 LEAP has an allocation of storage on an OSN pod. OSN allows s3-like cloud storage that has no egress fees. This means that you can share data with the public or outside colaborators without any cost per request. Please contact the data-and-compute team on slack if you feel like this would fit your data use case and you want to store data on OSN.
@@ -128,7 +132,6 @@ ds.to_zarr(store=store, zarr_format=zarr_format, consolidated=False)
 # Note: Your data can be read anywhere, by anyone!
 # roundtrip = xr.open_zarr(f"{dataset_path}', consolidated=False)
 ```
-
 
 ### How to delete data from cloud buckets
 
