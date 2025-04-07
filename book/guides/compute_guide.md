@@ -3,9 +3,7 @@
 These are a set of guides for using the JupyterHub Compute Environment effectively.
 
 ## Dask
-
-To help you scale up calculations using a cluster, the Hub is configured with Dask Gateway.
-For a quick guide on how to start a Dask Cluster, consult this page from the Pangeo docs:
+Dask is a powerful tool to parallelize large-scale workflows that is tightly integrated with familiar tools such as NumPy, Pandas, and Xarray. Dask is included in the Hub's default software environment and is highly encouraged for compute-intensive tasks. For a primer on Dask, a good resource is the [Project Pythia Dask Cookbook](https://projectpythia.org/dask-cookbook/README.html). Even larger calcuations can be deployed on the Hub using [Dask Gateway](https://gateway.dask.org/). For a quick guide on how to start a Dask Cluster, consult this page from the Pangeo docs:
 
 - <https://pangeo.io/cloud.html#dask>
 

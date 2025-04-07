@@ -6,9 +6,11 @@ We distinguish between two primary *types* of data to upload: "Original" and "Pu
 - **Published Data** has been published and archived in a publically accessible location (e.g. a data repository like [zenodo](https://zenodo.org) or [figshare](https://figshare.com)). We do not recommend uploading this data to the cloud directly, but instead use [Pangeo Forge](https://pangeo-forge.readthedocs.io/en/latest/) to transform and upload it to the cloud. This ensures that the data is stored in an ARCO format and can be easily accessed by other LEAP members.
 - **Original Data** is any dataset that is produced by researchers at LEAP and has not been published yet. The main use case for this data is to share it with other LEAP members and collaborate on it. For original data we support direct uploaded to the cloud. *Be aware that original data could change rapidly as the data producer is iterating on their code*. We encourage all datasets to be archived and published before using them in scientific publications.
 
+Step one is always to check whether data already exists in the [LEAP data catalog](guide.data.catalog), in which case access is simply a matter of pasting a code snippet. 
+
 (guides.data.ingestion)=
 
-### Ingesting Datasets into Cloud Storage
+## Ingesting Datasets into Cloud Storage
 
 If you do not find your dataset in the data catalog we can ingest it. Data ingestion in this context means that we have a programatic way to download and transform data into [Analysis-Ready Cloud-Optimized (ARCO)](reference.arco) formats in a reproducible way, so that the dataset is available for the LEAP community and beyond (see [](reference.infrastructure.buckets) for who can access which resource).
 
@@ -24,24 +26,9 @@ If you are interested in publishing archival or original data, please refer to o
 
 (guide.data.upload_manual_deprecated)=
 
-### Manually uploading/downloading data to cloud buckets (deprecated)
+### Upload medium sized original data from your local machine
 
-:::\{warning}
-This section of the docs is just retained for completeness. There might be special situations where it is beneficial/necessary to upload data to the [](reference.infrastructure.buckets) but we generally encourage data ingestion to the [](reference.infrastructrue.osn_pod) due to the public access and reduced running cost. See above for instructions.
-:::
-
-We discourage manually moving datasets to our cloud storage as much as possible since it is hard to reproduce these datasets at a future point (if e.g. the dataset maintainer has moved on to a different position) (see [](explanation.data-policy.reproducibility). We encourage you to try out the methods above, but if these should not work for some reason (and you were not able to find a solution with the [](support.data_compute_team)), you should try the methods below. We will always [prioritize unblocking your work](explanation.code-policy.dont-let-perfect-be-the-enemy-of-good).
-
-The below solutions fundamentally rely on the data being 'pushed' to the [](reference.infrastructure.buckets) which usually requires intervention on part of the [](explanation.data-policy.roles.data-expert). This stands in contrast to e.g. data ingestion via [](reference.pangeo-forge) where the [](explanation.data-policy.roles.data-expert) only has to work on the recipe creation and the data is 'pulled' in a reproducible way. For more information see [](explanation.data-policy).
-
-Fundamentally the 'pushing' of datasets relies on two components:
-
-- Setting up permissions so that you can read/write to the [](reference.infrastructure.buckets) - Several methods to get permissions are described in [](reference.authentication).
-- Initiating a data transfer from your 'local' machine (e.g. your laptop, a server, or HPC Cluster). You can check on some methods below.
-
-#### Upload medium sized original data from your local machine
-
-For medium sized datasets, that can be uploaded within an hour, you can use a temporary access token generated on the JupyterHub to upload data to the cloud.
+For medium sized datasets that can be uploaded within an hour, you can use a temporary access token generated on the JupyterHub to upload data to the cloud.
 
 - Set up a new environment on your local machine (e.g. laptop)
 
@@ -103,7 +90,7 @@ ds.to_zarr(mapper)
 
 (hub.data.upload_hpc)=
 
-#### Uploading large original data from an HPC system (no browser access on the system available)
+### Uploading large original data from an HPC system (no browser access on the system available)
 
 A commong scenario is the following: A researcher/student has run a simulation on a High Performance Computer (HPC) at their institution, but now wants to collaboratively work on the analysis or train a machine learning model with this data. For this they need to upload it to the cloud storage.
 
@@ -202,3 +189,18 @@ with ProgressBar():
 ```
 
 Once the data has been uploaded, make sure to erase the `.../.config/gcloud/....json` file from step 7, and ask to be removed from the Google Group.
+
+### Manually uploading/downloading data to cloud buckets (deprecated)
+
+:::{warning}
+This section of the docs is just retained for completeness. There might be special situations where it is beneficial/necessary to upload data to the [](reference.infrastructure.buckets) but we generally encourage data ingestion to the [](reference.infrastructrue.osn_pod) due to the public access and reduced running cost. See above for instructions.
+:::
+
+We discourage manually moving datasets to our cloud storage as much as possible since it is hard to reproduce these datasets at a future point (if e.g. the dataset maintainer has moved on to a different position) (see [](explanation.data-policy.reproducibility). We encourage you to try out the methods above, but if these should not work for some reason (and you were not able to find a solution with the [](support.data_compute_team)), you should try the methods below. We will always [prioritize unblocking your work](explanation.code-policy.dont-let-perfect-be-the-enemy-of-good).
+
+The below solutions fundamentally rely on the data being 'pushed' to the [](reference.infrastructure.buckets) which usually requires intervention on part of the [](explanation.data-policy.roles.data-expert). This stands in contrast to e.g. data ingestion via [](reference.pangeo-forge) where the [](explanation.data-policy.roles.data-expert) only has to work on the recipe creation and the data is 'pulled' in a reproducible way. For more information see [](explanation.data-policy).
+
+Fundamentally the 'pushing' of datasets relies on two components:
+
+- Setting up permissions so that you can read/write to the [](reference.infrastructure.buckets) - Several methods to get permissions are described in [](reference.authentication).
+- Initiating a data transfer from your 'local' machine (e.g. your laptop, a server, or HPC Cluster). You can check on some methods below.
