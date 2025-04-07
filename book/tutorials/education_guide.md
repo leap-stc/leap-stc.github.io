@@ -2,7 +2,7 @@
 title: Teaching Classes
 ---
 
-# Education Guide
+# Teaching Classes (Education)
 
 This guide is intended for folks who want to run classes using the LEAP Pangeo resources.
 

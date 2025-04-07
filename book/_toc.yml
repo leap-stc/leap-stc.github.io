@@ -10,6 +10,13 @@ parts:
       - file: tutorials/ingesting_dataset
       - file: tutorials/education_guide
       - file: tutorials/bootcamp_guide
+  - caption: Explanation
+    chapters:
+      - file: explanation/architecture
+      - file: explanation/implementation 
+      - file: explanation/code_policy
+      - file: explanation/data_policy
+      - file: explanation/infrastructure_policy
   - caption: Guides
     chapters:
       - file: guides/code_guide
@@ -23,13 +30,6 @@ parts:
       - file: guides/vm_access
       - file: guides/team_guide
       - file: guides/faq
-  - caption: Explanation
-    chapters:
-      - file: explanation/architecture
-      - file: explanation/implementation 
-      - file: explanation/code_policy
-      - file: explanation/data_policy
-      - file: explanation/infrastructure_policy
   - caption: Reference
     chapters:
       - file: reference/infrastructure
