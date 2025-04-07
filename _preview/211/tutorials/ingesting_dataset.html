@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ingesting Data into the Cloud &#8212; Technical Documentation</title>
+    <title>Data Ingestion Tutorial &#8212; Technical Documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Education Guide" href="education_guide.html" />
+    <link rel="next" title="Teaching Classes (Education)" href="education_guide.html" />
     <link rel="prev" title="Getting Started" href="getting_started.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -113,17 +113,49 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Ingesting Data into the Cloud
+   Data Ingestion Tutorial
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="education_guide.html">
-   Education Guide
+   Teaching Classes (Education)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="bootcamp_guide.html">
-   Bootcamp Guide
+   Running Bootcamps
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Explanation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../explanation/architecture.html">
+   LEAP-Pangeo Architecture
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../explanation/implementation.html">
+   LEAP-Pangeo Implementation Plan
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../explanation/code_policy.html">
+   LEAP-Pangeo Code Policy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../explanation/data_policy.html">
+   LEAP-Pangeo Data Policy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../explanation/infrastructure_policy.html">
+   LEAP-Pangeo Infrastructure Policy
   </a>
  </li>
 </ul>
@@ -188,38 +220,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../guides/faq.html">
    FAQs
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Explanation
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../explanation/architecture.html">
-   LEAP-Pangeo Architecture
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../explanation/implementation.html">
-   LEAP-Pangeo Implementation Plan
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../explanation/code_policy.html">
-   LEAP-Pangeo Code Policy
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../explanation/data_policy.html">
-   LEAP-Pangeo Data Policy
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../explanation/infrastructure_policy.html">
-   LEAP-Pangeo Infrastructure Policy
   </a>
  </li>
 </ul>
@@ -373,7 +373,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Ingesting Data into the Cloud</h1>
+                <h1>Data Ingestion Tutorial</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -402,8 +402,10 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="ingesting-data-into-the-cloud">
-<h1>Ingesting Data into the Cloud<a class="headerlink" href="#ingesting-data-into-the-cloud" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="data-ingestion-tutorial">
+<h1>Data Ingestion Tutorial<a class="headerlink" href="#data-ingestion-tutorial" title="Permalink to this headline">¶</a></h1>
+<p>New to cloud data ingestion? You’re not alone! Transferring large volumes of climate data is not an easy process, and can feel like a tall order. Never fear! This tutorial is aimed completely at beginners, and is designed to provide the <strong>why, how, and what</strong> for data ingestion!</p>
+<p>First of all, data ingestion refers to the general process of moving data from wherever it might exist to an analysis-ready, cloud-optimized (ARCO) format.</p>
 <div class="section" id="requirements-and-desiderata">
 <h2>Requirements and Desiderata<a class="headerlink" href="#requirements-and-desiderata" title="Permalink to this headline">¶</a></h2>
 <p>We have additional requirements for the data ingestion to make the process sustainable and scalable:</p>
@@ -463,7 +465,7 @@ const thebe_selector_output = ".output, .cell_output"
     <a class='right-next' id="next-link" href="education_guide.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Education Guide</p>
+        <p class="prev-next-title">Teaching Classes (Education)</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
