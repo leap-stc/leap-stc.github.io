@@ -1,7 +1,9 @@
 (guide.data.catalog)=
 
 # Working with the LEAP Data Catalog
+
 You want to have a specific dataset to explore or analyze? There is a good chance that somebody else at LEAP has already worked with the data! So the first thing to look for data should always be a visit to the [LEAP Data Catalog](reference.infrastructure.catalog). This guide goes over the process of loading data from the catalog. If data is not there, it also specifies how one can request cloud-ingested data be added to the catalog. If you are completely new to data ingestion and putting data into the cloud, please check out our beginner oriented [tutorial](guides.data.ingestion_tutorial).
+
 ## How to load Data from the LEAP Catalog
 
 This is a repository of data sets published by the LEAP community in collaboration with the Data and Compute Team. The home page will immediately show a list of which datasets are included. Every dataset has a brief description, provides a simple code snippet for loading the data into Python, and links to the original feedstock from which the data was ingested. The term ["feedstock"](https://pangeo-forge.readthedocs.io/en/latest/deployment/feedstocks.html) is inherited from the Pangeo Forge project, and basically refers to the code repository defining the data pipeline. Feedstocks allow curious users to trace back towards the original data source for transparency and reproducibility.
