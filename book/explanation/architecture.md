@@ -103,6 +103,7 @@ Using Pangeo Forge effectively will require LEAP scientists and data engineers t
 with the open-source development process around Pangeo Forge and related technologies.
 
 (explanation.jupyterhub)=
+
 ### The Hub
 
 ```{figure} https://jupyter.org/assets/homepage/labpreview.webp
