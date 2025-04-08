@@ -438,7 +438,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Below are a few snippets on how to write your Xarray Datasets to cloud storage.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Writing to Zarr is the recommended way to save Xarray Datasets. It is very performant and scales incredibly well. That said, there are a few gotchas to look out for. Recently, <a class="reference external" href="https://zarr.dev/blog/zarr-python-3-release/">Zarr Python V3 was released</a>. Depending on which <code class="docutils literal notranslate"><span class="pre">zarr-python</span></code> version you have installed on the hub, writing can look slightly differant!</p>
+<p>Writing to Zarr is the recommended way to save Xarray Datasets. It is very performant and scales incredibly well. That said, there are a few gotchas to look out for. Recently, <a class="reference external" href="https://zarr.dev/blog/zarr-python-3-release/">Zarr Python V3 was released</a>. Depending on which <code class="docutils literal notranslate"><span class="pre">zarr-python</span></code> version you have installed on the hub, writing can look slightly differant! As of April 2025, the pypi/conda version of Zarr python is 3+. The Python library <code class="docutils literal notranslate"><span class="pre">zarr-python</span></code> can read and write either version 2 or 3. The pangeo community image that is used for the LEAP/2i2c Jupyter-hub now comes with Zarr V3.</p>
 <p>You can check the version with</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">zarr</span>
 
@@ -455,9 +455,12 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="c1"># Note: We are using an Xarray tutorial dataset in this example</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">tutorial</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s2">&quot;air_temperature&quot;</span><span class="p">,</span> <span class="n">chunks</span><span class="o">=</span><span class="p">{})</span>
 <span class="n">ds_processed</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="o">...</span><span class="p">)</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>  <span class="c1"># sample modifications to data</span>
-<span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;gs://leap-scratch/&lt;YOUR_USERNAME&gt;/&lt;DATASET_NAME&gt;.zarr&quot;</span>  <span class="c1"># 👀 make sure to prepend `gs://` to the path or xarray will interpret this as a local path</span>
+<span class="c1"># Note: This example writes to the `leap-scratch`, but you could also write to the leap-persistent bucket.</span>
+<span class="c1"># 👀 make sure to prepend `gs://` to the path or xarray will interpret this as a local path</span>
 
-<span class="c1"># optional: you can specify the Zarr format if you have Zarr python v3 installed.</span>
+<span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;gs://leap-scratch/&lt;YOUR_USERNAME&gt;/&lt;DATASET_NAME&gt;.zarr&quot;</span>
+
+<span class="c1"># Note: With zarr-python v3, you can write either Zarr python v2 or v3 by speciying the `zarr_format` as 2 or 3.</span>
 <span class="n">zarr_format</span> <span class="o">=</span> <span class="mi">3</span>
 
 <span class="c1"># Note: Zarr python V3 currently does not support consolidated metadata.</span>
@@ -510,6 +513,10 @@ const thebe_selector_output = ".output, .cell_output"
 <h4>Write to OSN - Open Storage Network<a class="headerlink" href="#write-to-osn-open-storage-network" title="Permalink to this headline">¶</a></h4>
 <p>LEAP has an allocation of storage on an OSN pod. OSN allows s3-like cloud storage that has no egress fees. This means that you can share data with the public or outside colaborators without any cost per request. Please contact the data-and-compute team on slack if you feel like this would fit your data use case and you want to store data on OSN.</p>
 <p>In the example below, we have to provide a bit more authentication to write to OSN.</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Note on OSN</p>
+<p>This section is a work in progress and may change. Generally leap users should default to writing to GCS.</p>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xr</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">fsspec</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">zarr</span>
