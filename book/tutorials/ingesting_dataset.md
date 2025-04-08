@@ -1,7 +1,8 @@
 # Data Ingestion Tutorial
+
 New to cloud data ingestion? You're not alone! Transferring large volumes of climate data is not an easy process, and can feel like a tall order. Never fear! This tutorial is aimed completely at beginners, and is designed to provide the **why, how, and what** for data ingestion!
 
-First of all, data ingestion refers to the general process of moving data from wherever it might exist to an analysis-ready, cloud-optimized (ARCO) format. 
+First of all, data ingestion refers to the general process of moving data from wherever it might exist to an analysis-ready, cloud-optimized (ARCO) format.
 
 ## Requirements and Desiderata
 
