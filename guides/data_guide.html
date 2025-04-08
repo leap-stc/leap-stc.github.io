@@ -332,6 +332,23 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#writing-xarray-datasets-to-cloud-storage-as-zarr">
+     Writing Xarray Datasets to Cloud Storage as Zarr
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#write-to-gcs-google-cloud-storage">
+       Write to GCS (Google Cloud Storage)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#write-to-osn-open-storage-network">
+       Write to OSN - Open Storage Network
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#tools">
      Tools
     </a>
@@ -441,6 +458,23 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#writing-xarray-datasets-to-cloud-storage-as-zarr">
+     Writing Xarray Datasets to Cloud Storage as Zarr
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#write-to-gcs-google-cloud-storage">
+       Write to GCS (Google Cloud Storage)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#write-to-osn-open-storage-network">
+       Write to OSN - Open Storage Network
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#tools">
      Tools
     </a>
@@ -543,6 +577,98 @@ To help onboard you to this new way of working, we have written a guide to Files
 <li><p><a class="reference external" href="https://docs.2i2c.org/user/topics/data/filesystem/">2i2c Docs: Data and Filesystem</a></p></li>
 </ul>
 <p>We recommend you read this thoroughly, especially the part about Git and GitHub. LEAP provides several <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructure-buckets"><span class="std std-ref">cloud buckets</span></a>, and the following steps illustrate how to work with data in object storage as opposed to a filesystem.</p>
+<div class="section" id="writing-xarray-datasets-to-cloud-storage-as-zarr">
+<h3>Writing Xarray Datasets to Cloud Storage as Zarr<a class="headerlink" href="#writing-xarray-datasets-to-cloud-storage-as-zarr" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://docs.xarray.dev/en/stable/getting-started-guide/why-xarray.html">Xarary</a> an open-source python project and data model for working with n-dimensional arrays. It is very useful for manipulating large gridded climate datasets.</p>
+<p>Below are a few snippets on how to write your Xarray Datasets to cloud storage.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Writing to Zarr is the recommended way to save Xarray Datasets. It is very performant and scales incredibly well. That said, there are a few gotchas to look out for. Recently, <a class="reference external" href="https://zarr.dev/blog/zarr-python-3-release/">Zarr Python V3 was released</a>. Depending on which <code class="docutils literal notranslate"><span class="pre">zarr-python</span></code> version you have installed on the hub, writing can look slightly differant!</p>
+<p>You can check the version with</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">zarr</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">zarr</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="write-to-gcs-google-cloud-storage">
+<h4>Write to GCS (Google Cloud Storage)<a class="headerlink" href="#write-to-gcs-google-cloud-storage" title="Permalink to this headline">¶</a></h4>
+<p>You can write to a GCS bucket with Xarray with a single line of code if you are using the 2i2c Jupyter-hub as the authentication should be ~automagically~ configured.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xr</span>
+
+<span class="c1"># Note: We are using an Xarray tutorial dataset in this example</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">tutorial</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s2">&quot;air_temperature&quot;</span><span class="p">,</span> <span class="n">chunks</span><span class="o">=</span><span class="p">{})</span>
+
+<span class="c1"># Note: This example writes to the `leap-scratch`, but you could also write to the leap-persistent bucket.</span>
+<span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;gs://leap-scratch/&lt;YOUR_USERNAME&gt;/&lt;DATASET_NAME.zarr&quot;</span>
+
+
+<span class="c1"># optional: you can speciy the Zarr format if you have Zarr python v3 installed.</span>
+<span class="n">zarr_format</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="c1"># Note: Zarr python V3 currently does not support consolidated metadata.</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">to_zarr</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">zarr_format</span><span class="o">=</span><span class="n">zarr_format</span><span class="p">,</span> <span class="n">consolidated</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># You can then open that Zarr store with Xarray with:</span>
+<span class="c1"># roundtrip = xr.open_zarr(path, chunks={}, consolidated=False)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="write-to-osn-open-storage-network">
+<h4>Write to OSN - Open Storage Network<a class="headerlink" href="#write-to-osn-open-storage-network" title="Permalink to this headline">¶</a></h4>
+<p>LEAP has an allocation of storage on an OSN pod. OSN allows s3-like cloud storage that has no egress fees. This means that you can share data with the public or outside colaborators without any cost per request. Please contact the data-and-compute team on slack if you feel like this would fit your data use case and you want to store data on OSN.</p>
+<p>In the example below, we have to provide a bit more authentication to write to OSN.</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Note on OSN</p>
+<p>This section is a work in progress and may change. Generally leap users should default to writing to GCS.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xr</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">fsspec</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">zarr</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">tutorial</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s2">&quot;air_temperature&quot;</span><span class="p">,</span> <span class="n">chunks</span><span class="o">=</span><span class="p">{})</span>
+
+<span class="c1"># define our credentials, bucket name and dataset path</span>
+<span class="n">osn_bucket_name</span> <span class="o">=</span> <span class="s2">&quot;leap-pangeo-inbox&quot;</span>
+<span class="n">osn_key</span> <span class="o">=</span> <span class="s2">&quot;&lt;ask DCT team&gt;&quot;</span>
+<span class="n">osn_secret</span> <span class="o">=</span> <span class="s2">&quot;&lt;ask DCT team&gt;&quot;</span>
+<span class="n">endpoint_url</span> <span class="o">=</span> <span class="s2">&quot;https://nyu1.osn.mghpcc.org&quot;</span>
+<span class="n">dataset_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">osn_bucket_name</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">dataset_name</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="c1"># Here we are using fsspec/s3fs to pass our OSN credentials to Zarr.</span>
+<span class="c1"># Note: If you get an error like: TypeError: Unsupported type for store_like: &#39;FSMap&#39;`. It is because zarr-python does not currently support the older fsspec FSMap object style. https://github.com/zarr-developers/zarr-python/issues/2706</span>
+
+<span class="n">fs</span> <span class="o">=</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">filesystem</span><span class="p">(</span>
+    <span class="s2">&quot;s3&quot;</span><span class="p">,</span>
+    <span class="n">key</span><span class="o">=</span><span class="n">osn_key</span><span class="p">,</span>
+    <span class="n">secret</span><span class="o">=</span><span class="n">osn_secret</span><span class="p">,</span>
+    <span class="n">client_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;endpoint_url&quot;</span><span class="p">:</span> <span class="n">endpoint_url</span><span class="p">},</span>
+    <span class="n">asynchronous</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">store</span> <span class="o">=</span> <span class="n">zarr</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">FsspecStore</span><span class="p">(</span><span class="n">fs</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">dataset_path</span><span class="p">)</span>
+
+<span class="c1"># Note: With zarr-python v3, you can write either Zarr python v2 or v3 by speciying the `zarr_format` as 2 or 3.</span>
+<span class="n">zarr_format</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">ds</span><span class="o">.</span><span class="n">to_zarr</span><span class="p">(</span><span class="n">store</span><span class="o">=</span><span class="n">store</span><span class="p">,</span> <span class="n">zarr_format</span><span class="o">=</span><span class="n">zarr_format</span><span class="p">,</span> <span class="n">consolidated</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Note: Your data can be read anywhere, by anyone!</span>
+<span class="c1"># roundtrip = xr.open_zarr(f&quot;{dataset_path}&#39;, consolidated=False)</span>
+</pre></div>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Zarr V2 vs Zarr V3</p>
+<p>As of writing, the pypi/conda version of Zarr python is 3+. The Python library <code class="docutils literal notranslate"><span class="pre">zarr-python</span></code> can read and write either version 2 or 3.
+The pangeo community image that is used for the LEAP/2i2c Jupyter-hub now comes with Zarr V3.</p>
+<p>You can check your version of Zarr with:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">zarr</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">zarr</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="tools">
 <h3>Tools<a class="headerlink" href="#tools" title="Permalink to this headline">¶</a></h3>
 <p>There are many tools available to interact with cloud object storage. We currently have basic operations documented for two tools:</p>
