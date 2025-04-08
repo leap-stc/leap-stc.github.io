@@ -10,7 +10,7 @@ To get started using the hub, check out this video by [James Munroe](https://git
 
 ## How can I get access to the Hub
 
-Only LEAP members will be able to access the hub. Please [become a member](users.membership.apply) and make sure you accept the [invitation on github](faq.where_is_my_invite) before proceeding
+Only LEAP members will be able to access the hub. The tier of access is directly determined by membership in the corresponding [Github Team](reference.membership.team-resources). Please [become a member](users.membership.apply) and make sure you accept the [invitation on github](faq.where_is_my_invite) before proceeding.
 
 ## Hub Usage
 

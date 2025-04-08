@@ -102,6 +102,8 @@ This synergistic relationship with be mutually beneficial to two NSF-sponsored p
 Using Pangeo Forge effectively will require LEAP scientists and data engineers to engage
 with the open-source development process around Pangeo Forge and related technologies.
 
+(explanation.jupyterhub)=
+
 ### The Hub
 
 ```{figure} https://jupyter.org/assets/homepage/labpreview.webp
