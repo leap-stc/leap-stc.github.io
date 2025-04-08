@@ -9,7 +9,7 @@ Once it has been ingested into a cloud bucket, working with data on the LEAP Jup
 Below are a few snippets on how to write your Xarray Datasets to cloud storage.
 
 :::\{note}
-Writing to Zarr is the recommended way to save Xarray Datasets. It is very performant and scales incredibly well. That said, there are a few gotchas to look out for. Recently, [Zarr Python V3 was released](https://zarr.dev/blog/zarr-python-3-release/). Depending on which `zarr-python` version you have installed on the hub, writing can look slightly differant!
+Writing to Zarr is the recommended way to save Xarray Datasets. It is very performant and scales incredibly well. That said, there are a few gotchas to look out for. Recently, [Zarr Python V3 was released](https://zarr.dev/blog/zarr-python-3-release/). Depending on which `zarr-python` version you have installed on the hub, writing can look slightly differant! As of April 2025, the pypi/conda version of Zarr python is 3+. The Python library `zarr-python` can read and write either version 2 or 3. The pangeo community image that is used for the LEAP/2i2c Jupyter-hub now comes with Zarr V3.
 
 You can check the version with
 
@@ -35,9 +35,12 @@ import xarray as xr
 # Note: We are using an Xarray tutorial dataset in this example
 ds = xr.tutorial.open_dataset("air_temperature", chunks={})
 ds_processed = ds.mean(...).resample(...)  # sample modifications to data
-path = "gs://leap-scratch/<YOUR_USERNAME>/<DATASET_NAME>.zarr"  # 👀 make sure to prepend `gs://` to the path or xarray will interpret this as a local path
+# Note: This example writes to the `leap-scratch`, but you could also write to the leap-persistent bucket.
+# 👀 make sure to prepend `gs://` to the path or xarray will interpret this as a local path
 
-# optional: you can specify the Zarr format if you have Zarr python v3 installed.
+path = "gs://leap-scratch/<YOUR_USERNAME>/<DATASET_NAME>.zarr"  
+
+# Note: With zarr-python v3, you can write either Zarr python v2 or v3 by speciying the `zarr_format` as 2 or 3.
 zarr_format = 3
 
 # Note: Zarr python V3 currently does not support consolidated metadata.
@@ -98,6 +101,11 @@ array([1, 2, 4])
 LEAP has an allocation of storage on an OSN pod. OSN allows s3-like cloud storage that has no egress fees. This means that you can share data with the public or outside colaborators without any cost per request. Please contact the data-and-compute team on slack if you feel like this would fit your data use case and you want to store data on OSN.
 
 In the example below, we have to provide a bit more authentication to write to OSN.
+
+:::\{admonition} Note on OSN
+:class: tip, dropdown
+This section is a work in progress and may change. Generally leap users should default to writing to GCS.
+:::
 
 ```python
 import xarray as xr
