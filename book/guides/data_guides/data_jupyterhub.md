@@ -38,7 +38,7 @@ ds_processed = ds.mean(...).resample(...)  # sample modifications to data
 # Note: This example writes to the `leap-scratch`, but you could also write to the leap-persistent bucket.
 # 👀 make sure to prepend `gs://` to the path or xarray will interpret this as a local path
 
-path = "gs://leap-scratch/<YOUR_USERNAME>/<DATASET_NAME>.zarr"  
+path = "gs://leap-scratch/<YOUR_USERNAME>/<DATASET_NAME>.zarr"
 
 # Note: With zarr-python v3, you can write either Zarr python v2 or v3 by speciying the `zarr_format` as 2 or 3.
 zarr_format = 3
