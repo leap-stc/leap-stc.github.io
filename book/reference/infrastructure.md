@@ -50,19 +50,19 @@ Your User Directory behaves very similar to a filestystem on your computer. If y
 
 <img width="357" alt="image" src="https://github.com/leap-stc/leap-stc.github.io/assets/14314623/a84c12e2-9f8a-4de1-a3e3-feff1bf59061">
 
-:::\{note}
+```{note}
 As shown in the picture above, every user will see `'/home/jovyan'` as their root directory. This is different from many HPC accounts where your home directory will point to a directory with your username. But the functionality is similar. These are *your own files* and they cannot be seen/modified by other users (except admins).
-:::
+```
 
 The primary purpose of this directory is to store small files, like github repositories and other code.
 
-:::\{warning}
+```{warning}
 To accommodate the expanding LEAP community, the data and compute team has instituted a storage quota on individual user directories `/home/jovyan`. Your home directory is intended only for notebooks, analysis scripts, and small datasets (< 1 GB). It is not an appropriate place to store large datasets. Unlike the cloud buckets, these directories use an underlying storage with a rigid limit. If a single user fills up the space, the Hub crashes for everyone. We recommend users use less than 25GB and enforce a hard limit of 50GB. **Users who persistently violate the limit may temporarily get reduced cloud access**.
 
 To check how much space you are using in your home directory open a terminal window on the hub and run `du -h --max-depth=1 ~/ | sort -h`.
 
 If you want to save larger files for your work use our [](reference.infrastructure.buckets) and consult our [Hub Data Guide](guide.data). See the [FAQs](faq.usr_dir_usage_warning) for guidance on reducing storage.
-:::
+```
 
 (reference.infrastructure.hub.software_env)=
 
@@ -103,16 +103,13 @@ print(os.environ["JUPYTER_IMAGE_SPEC"])
 You can then use that string with the [custom images](reference.infrastructure.hub.image.custom) to reproduce your work with exactly the same environment.
 :::
 
-(reference.infrastructure.hub.image.custom)=
 
+(reference.infrastructure.hub.image.custom)=
 #### Custom Images
 
-If you select the `Image > Other...` Option during [server login](hub:server:login) you can paste an arbitrary reference in the form of `docker_registry/organization/image_name:image_version`. As an example we can get the `2023.05.08` version of the pangeo tensorflow notebook by pasting `quay.io/pangeo/ml-notebook:2023.05.08`.
-
-If you want to build your own docker image for your project, take a look at [this template](https://github.com/2i2c-org/hub-user-image-template) and the instructions to learn how to use [repo2docker](https://github.com/jupyterhub/repo2docker) to set up CI workflows to automatically build docker images from your repository.
+If you select the `Image > Other...` Option during [server login](hub:server:login) you can paste an arbitrary reference in the form of `docker_registry/organization/image_name:image_version`. As an example we can get the `2023.05.08` version of the pangeo tensorflow notebook by pasting `quay.io/pangeo/ml-notebook:2023.05.08`. This reference must point to an actual image built somewhere. To learn how to build custom docker images for the Jupyterhub, check out our [compute guide](guides.compute.image.custom).
 
 (reference.infrastructure.hub.software_env.temp_install)=
-
 #### Installing additonal packages
 
 You can install additional packages using `pip` and `conda`.
