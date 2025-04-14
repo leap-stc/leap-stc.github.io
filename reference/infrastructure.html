@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Membership" href="membership.html" />
-    <link rel="prev" title="LEAP-Pangeo Infrastructure Policy" href="../explanation/infrastructure_policy.html" />
+    <link rel="prev" title="FAQs" href="../guides/faq.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -111,51 +111,19 @@ const thebe_selector_output = ".output, .cell_output"
    Getting Started
   </a>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Guides
- </span>
-</p>
-<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../guides/code_guide.html">
-   Code Guide
+  <a class="reference internal" href="../tutorials/ingesting_dataset.html">
+   Data Ingestion Tutorial
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../guides/data_guide.html">
-   Data Guide
+  <a class="reference internal" href="../tutorials/education_guide.html">
+   Teaching Classes (Education)
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../guides/compute_guide.html">
-   Compute Guide
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../guides/education_guide.html">
-   Education Guide
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../guides/bootcamp_guide.html">
-   Bootcamp Guide
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../guides/vm_access.html">
-   Getting access to Cloud VMs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../guides/team_guide.html">
-   Guide for Data and Computation Team Members
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../guides/faq.html">
-   FAQs
+  <a class="reference internal" href="../tutorials/bootcamp_guide.html">
+   Running Bootcamps
   </a>
  </li>
 </ul>
@@ -188,6 +156,70 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../explanation/infrastructure_policy.html">
    LEAP-Pangeo Infrastructure Policy
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Guides
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../guides/code_guide.html">
+   Code Guide
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../guides/data_guide.html">
+   Data Guide
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/data_guides/transfer_data.html">
+     Transfering Data into Cloud Storage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/data_guides/data_catalog.html">
+     Working with the LEAP Data Catalog
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/data_guides/data_jupyterhub.html">
+     Working with Cloud Data on the JupyterHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/data_guides/external_workflow.html">
+     Working outside the LEAP JupyterHub
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../guides/compute_guide.html">
+   Compute Guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../guides/vm_access.html">
+   Getting access to Cloud VMs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../guides/team_guide.html">
+   Guide for Data and Computation Team Members
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../guides/faq.html">
+   FAQs
   </a>
  </li>
 </ul>
@@ -620,7 +652,7 @@ const thebe_selector_output = ".output, .cell_output"
 </tr>
 </tbody>
 </table>
-<p>For more explanation about the catalog, and its role in the overall vision of LEAP, see <a class="reference internal" href="../explanation/architecture.html#explanation-architecture"><span class="std std-ref">LEAP-Pangeo Architecture</span></a>. See <a class="reference internal" href="../guides/data_guide.html#guides-data-ingestion"><span class="std std-ref">Ingesting Datasets into Cloud Storage</span></a> for details on how to ingest data and link it into the catalog.</p>
+<p>For more explanation about the catalog, and its role in the overall vision of LEAP, see <a class="reference internal" href="../explanation/architecture.html#explanation-architecture"><span class="std std-ref">LEAP-Pangeo Architecture</span></a>. See <a class="reference internal" href="../guides/data_guides/transfer_data.html#guides-data-ingestion"><span class="std std-ref">Ingesting Datasets into Cloud Storage</span></a> for details on how to ingest data and link it into the catalog.</p>
 </div>
 <div class="section" id="leap-pangeo-jupyterhub">
 <span id="reference-infrastructure-hub"></span><h2>LEAP-Pangeo JupyterHub<a class="headerlink" href="#leap-pangeo-jupyterhub" title="Permalink to this headline">¶</a></h2>
@@ -781,7 +813,7 @@ However, these will disappear when your server shuts down.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">gs://leap-scratch/</span></code> - Temporary Storage deleted after 7 days. Use this bucket for testing and storing large intermediate results. <a class="reference external" href="https://docs.2i2c.org/user/topics/data/cloud/#scratch-bucket">More info</a></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">gs://leap-persistent/</span></code> - Persistent Storage. Use this bucket for storing results you want to share with other members.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">gs://leap-persistent-ro/</span></code> - Persistent Storage with read-only access for most users. To upload data to this bucket you need to use <a class="reference internal" href="../guides/data_guide.html#hub-data-upload-hpc"><span class="std std-ref">this</span></a> method below.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gs://leap-persistent-ro/</span></code> - Persistent Storage with read-only access for most users. To upload data to this bucket you need to use <a class="reference internal" href="../guides/data_guides/transfer_data.html#hub-data-upload-hpc"><span class="std std-ref">this</span></a> method below.</p></li>
 </ul>
 <p>Files stored on each of those buckets can be accessed by any LEAP member, so be concious in the way you use these.</p>
 <ul class="simple">
@@ -858,11 +890,11 @@ However, these will disappear when your server shuts down.</p>
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../explanation/infrastructure_policy.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../guides/faq.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">LEAP-Pangeo Infrastructure Policy</p>
+            <p class="prev-next-title">FAQs</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="membership.html" title="next page">

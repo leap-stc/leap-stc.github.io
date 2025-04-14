@@ -110,51 +110,19 @@ const thebe_selector_output = ".output, .cell_output"
    Getting Started
   </a>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Guides
- </span>
-</p>
-<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="guides/code_guide.html">
-   Code Guide
+  <a class="reference internal" href="tutorials/ingesting_dataset.html">
+   Data Ingestion Tutorial
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="guides/data_guide.html">
-   Data Guide
+  <a class="reference internal" href="tutorials/education_guide.html">
+   Teaching Classes (Education)
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="guides/compute_guide.html">
-   Compute Guide
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="guides/education_guide.html">
-   Education Guide
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="guides/bootcamp_guide.html">
-   Bootcamp Guide
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="guides/vm_access.html">
-   Getting access to Cloud VMs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="guides/team_guide.html">
-   Guide for Data and Computation Team Members
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="guides/faq.html">
-   FAQs
+  <a class="reference internal" href="tutorials/bootcamp_guide.html">
+   Running Bootcamps
   </a>
  </li>
 </ul>
@@ -187,6 +155,70 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="explanation/infrastructure_policy.html">
    LEAP-Pangeo Infrastructure Policy
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Guides
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="guides/code_guide.html">
+   Code Guide
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="guides/data_guide.html">
+   Data Guide
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/data_guides/transfer_data.html">
+     Transfering Data into Cloud Storage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/data_guides/data_catalog.html">
+     Working with the LEAP Data Catalog
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/data_guides/data_jupyterhub.html">
+     Working with Cloud Data on the JupyterHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/data_guides/external_workflow.html">
+     Working outside the LEAP JupyterHub
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="guides/compute_guide.html">
+   Compute Guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="guides/vm_access.html">
+   Getting access to Cloud VMs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="guides/team_guide.html">
+   Guide for Data and Computation Team Members
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="guides/faq.html">
+   FAQs
   </a>
  </li>
 </ul>
@@ -410,7 +442,7 @@ To summarize these arguments, a shared data and computing platform will:</p>
 <ul class="simple">
 <li><p><em>Facilitate seamless collaboration between project members around data-intensive science, accelerating research progress.</em></p></li>
 <li><p><em>Empower LEAP participants with instant access to high-performance computing and analysis-ready data in order to support ambitious research objectives.</em> This access is provided through our <a class="reference internal" href="reference/infrastructure.html#reference-infrastructure-hub"><span class="std std-ref">JupyterHub platform</span></a>.</p></li>
-<li><p><em>Place actionable data in the hands of LEAP partners to support knowledge transfer.using the <a class="reference internal" href="reference/infrastructure.html#reference-infrastructure-catalog"><span class="std std-ref">LEAP-Pangeo Data Catalog</span></a></em>.</p></li>
+<li><p><em>Place actionable data in the hands of LEAP partners to support knowledge transfer using the <a class="reference internal" href="reference/infrastructure.html#reference-infrastructure-catalog"><span class="std std-ref">LEAP-Pangeo Data Catalog</span></a></em>.</p></li>
 <li><p><em>Enable rich data-driven classroom experiences for learners, helping them transition successfully from coursework to research.</em></p></li>
 </ul>
 </div>
@@ -420,19 +452,9 @@ To summarize these arguments, a shared data and computing platform will:</p>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/getting_started.html">Getting Started</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="guides/code_guide.html">Code Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guides/data_guide.html">Data Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guides/compute_guide.html">Compute Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guides/education_guide.html">Education Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guides/bootcamp_guide.html">Bootcamp Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guides/vm_access.html">Getting access to Cloud VMs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guides/team_guide.html">Guide for Data and Computation Team Members</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guides/faq.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/ingesting_dataset.html">Data Ingestion Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/education_guide.html">Teaching Classes (Education)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/bootcamp_guide.html">Running Bootcamps</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
@@ -443,6 +465,17 @@ To summarize these arguments, a shared data and computing platform will:</p>
 <li class="toctree-l1"><a class="reference internal" href="explanation/code_policy.html">LEAP-Pangeo Code Policy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="explanation/data_policy.html">LEAP-Pangeo Data Policy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="explanation/infrastructure_policy.html">LEAP-Pangeo Infrastructure Policy</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guides/code_guide.html">Code Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/data_guide.html">Data Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/compute_guide.html">Compute Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/vm_access.html">Getting access to Cloud VMs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/team_guide.html">Guide for Data and Computation Team Members</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/faq.html">FAQs</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">

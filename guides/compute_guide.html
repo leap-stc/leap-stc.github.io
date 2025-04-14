@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Education Guide" href="education_guide.html" />
-    <link rel="prev" title="Data Guide" href="data_guide.html" />
+    <link rel="next" title="Getting access to Cloud VMs" href="vm_access.html" />
+    <link rel="prev" title="Working outside the LEAP JupyterHub" href="data_guides/external_workflow.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -111,51 +111,19 @@ const thebe_selector_output = ".output, .cell_output"
    Getting Started
   </a>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Guides
- </span>
-</p>
-<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="code_guide.html">
-   Code Guide
+  <a class="reference internal" href="../tutorials/ingesting_dataset.html">
+   Data Ingestion Tutorial
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="data_guide.html">
-   Data Guide
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Compute Guide
+  <a class="reference internal" href="../tutorials/education_guide.html">
+   Teaching Classes (Education)
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="education_guide.html">
-   Education Guide
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="bootcamp_guide.html">
-   Bootcamp Guide
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="vm_access.html">
-   Getting access to Cloud VMs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="team_guide.html">
-   Guide for Data and Computation Team Members
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="faq.html">
-   FAQs
+  <a class="reference internal" href="../tutorials/bootcamp_guide.html">
+   Running Bootcamps
   </a>
  </li>
 </ul>
@@ -188,6 +156,70 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../explanation/infrastructure_policy.html">
    LEAP-Pangeo Infrastructure Policy
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Guides
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="code_guide.html">
+   Code Guide
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="data_guide.html">
+   Data Guide
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data_guides/transfer_data.html">
+     Transfering Data into Cloud Storage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data_guides/data_catalog.html">
+     Working with the LEAP Data Catalog
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data_guides/data_jupyterhub.html">
+     Working with Cloud Data on the JupyterHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data_guides/external_workflow.html">
+     Working outside the LEAP JupyterHub
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Compute Guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="vm_access.html">
+   Getting access to Cloud VMs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="team_guide.html">
+   Guide for Data and Computation Team Members
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="faq.html">
+   FAQs
   </a>
  </li>
 </ul>
@@ -419,8 +451,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>These are a set of guides for using the JupyterHub Compute Environment effectively.</p>
 <div class="section" id="dask">
 <h2>Dask<a class="headerlink" href="#dask" title="Permalink to this headline">¶</a></h2>
-<p>To help you scale up calculations using a cluster, the Hub is configured with Dask Gateway.
-For a quick guide on how to start a Dask Cluster, consult this page from the Pangeo docs:</p>
+<p>Dask is a powerful tool to parallelize large-scale workflows that is tightly integrated with familiar tools such as NumPy, Pandas, and Xarray. Dask is included in the Hub’s default software environment and is highly encouraged for compute-intensive tasks. For a primer on Dask, a good resource is the <a class="reference external" href="https://projectpythia.org/dask-cookbook/README.html">Project Pythia Dask Cookbook</a>. Even larger calcuations can be deployed on the Hub using <a class="reference external" href="https://gateway.dask.org/">Dask Gateway</a>. For a quick guide on how to start a Dask Cluster, consult this page from the Pangeo docs:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://pangeo.io/cloud.html#dask">https://pangeo.io/cloud.html#dask</a></p></li>
 </ul>
@@ -432,7 +463,7 @@ For a quick guide on how to start a Dask Cluster, consult this page from the Pan
 <p>This guide will not describe how to build a docker image from scratch, but instead rely on <a class="reference external" href="https://github.com/jupyterhub/repo2docker">repo2docker</a> which is implemented in template repositories.</p>
 <p>Generally you have two options to generate images:</p>
 <ul class="simple">
-<li><p>Inheret from a community maintained existing image and add additional dependencies (<strong>recommended</strong>)</p></li>
+<li><p>Inherit from a community maintained existing image and add additional dependencies (<strong>recommended</strong>)</p></li>
 <li><p>Build an entirely new environment, for instance based on a conda environment file.</p></li>
 </ul>
 <p>In most cases we recommend the first approach due to the lower maintenance burden (configurations from upstream can be adopted by a simple tag change). This guide will describe the particular steps needed to generate your own image based on one of the pangeo docker images. These instructions are based mostly on the 2i2c documentation of how to <a class="reference external" href="https://docs.2i2c.org/admin/howto/environment/customize-image/index.html">Customize a community-maintained upstream image</a> with some modification specific to LEAP.</p>
@@ -524,17 +555,17 @@ can you please:
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="data_guide.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="data_guides/external_workflow.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Data Guide</p>
+            <p class="prev-next-title">Working outside the LEAP JupyterHub</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="education_guide.html" title="next page">
+    <a class='right-next' id="next-link" href="vm_access.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Education Guide</p>
+        <p class="prev-next-title">Getting access to Cloud VMs</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

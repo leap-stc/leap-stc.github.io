@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="LEAP-Pangeo Architecture" href="../explanation/architecture.html" />
+    <link rel="next" title="Infrastructure" href="../reference/infrastructure.html" />
     <link rel="prev" title="Guide for Data and Computation Team Members" href="team_guide.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -111,51 +111,19 @@ const thebe_selector_output = ".output, .cell_output"
    Getting Started
   </a>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Guides
- </span>
-</p>
-<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="code_guide.html">
-   Code Guide
+  <a class="reference internal" href="../tutorials/ingesting_dataset.html">
+   Data Ingestion Tutorial
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="data_guide.html">
-   Data Guide
+  <a class="reference internal" href="../tutorials/education_guide.html">
+   Teaching Classes (Education)
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="compute_guide.html">
-   Compute Guide
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="education_guide.html">
-   Education Guide
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="bootcamp_guide.html">
-   Bootcamp Guide
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="vm_access.html">
-   Getting access to Cloud VMs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="team_guide.html">
-   Guide for Data and Computation Team Members
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   FAQs
+  <a class="reference internal" href="../tutorials/bootcamp_guide.html">
+   Running Bootcamps
   </a>
  </li>
 </ul>
@@ -188,6 +156,70 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../explanation/infrastructure_policy.html">
    LEAP-Pangeo Infrastructure Policy
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Guides
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="code_guide.html">
+   Code Guide
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="data_guide.html">
+   Data Guide
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data_guides/transfer_data.html">
+     Transfering Data into Cloud Storage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data_guides/data_catalog.html">
+     Working with the LEAP Data Catalog
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data_guides/data_jupyterhub.html">
+     Working with Cloud Data on the JupyterHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data_guides/external_workflow.html">
+     Working outside the LEAP JupyterHub
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="compute_guide.html">
+   Compute Guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="vm_access.html">
+   Getting access to Cloud VMs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="team_guide.html">
+   Guide for Data and Computation Team Members
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   FAQs
   </a>
  </li>
 </ul>
@@ -508,10 +540,10 @@ You can change the configuration of your dask workers and increase the memory ea
             <p class="prev-next-title">Guide for Data and Computation Team Members</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../explanation/architecture.html" title="next page">
+    <a class='right-next' id="next-link" href="../reference/infrastructure.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">LEAP-Pangeo Architecture</p>
+        <p class="prev-next-title">Infrastructure</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

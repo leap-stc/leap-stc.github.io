@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Getting Started &#8212; Technical Documentation</title>
+    <title>Running Bootcamps &#8212; Technical Documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Data Ingestion Tutorial" href="ingesting_dataset.html" />
-    <link rel="prev" title="LEAP Technical Documentation" href="../intro.html" />
+    <link rel="next" title="LEAP-Pangeo Architecture" href="../explanation/architecture.html" />
+    <link rel="prev" title="Teaching Classes (Education)" href="education_guide.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -106,8 +106,8 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="getting_started.html">
    Getting Started
   </a>
  </li>
@@ -121,8 +121,8 @@ const thebe_selector_output = ".output, .cell_output"
    Teaching Classes (Education)
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="bootcamp_guide.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Running Bootcamps
   </a>
  </li>
@@ -307,7 +307,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/tutorials/getting_started.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/tutorials/bootcamp_guide.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -327,7 +327,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/leap-stc/leap-stc.github.io/issues/new?title=Issue%20on%20page%20%2Ftutorials/getting_started.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/leap-stc/leap-stc.github.io/issues/new?title=Issue%20on%20page%20%2Ftutorials/bootcamp_guide.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -354,38 +354,36 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-can-i-get-access-to-the-hub">
-   How can I get access to the Hub
+  <a class="reference internal nav-link" href="#preparing-the-bootcamp">
+   Preparing the bootcamp
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#hub-usage">
-   Hub Usage
+  <a class="reference internal nav-link" href="#materials-for-the-bootcamp">
+   Materials for the bootcamp
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-the-bootcamp">
+   Running the bootcamp
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#logging-in">
-     Logging In
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#gpus">
-       GPUs
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-jupyterlab">
-     Using JupyterLab
+    <a class="reference internal nav-link" href="#prepare-ahead-of-the-event">
+     Prepare ahead of the event
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#shutting-down-your-server">
-     Shutting Down Your Server
+    <a class="reference internal nav-link" href="#troubleshooting-during-the-event">
+     Troubleshooting during the event
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#debrief">
+   Debrief
+  </a>
  </li>
 </ul>
 
@@ -397,7 +395,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Getting Started</h1>
+                <h1>Running Bootcamps</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -408,38 +406,36 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-can-i-get-access-to-the-hub">
-   How can I get access to the Hub
+  <a class="reference internal nav-link" href="#preparing-the-bootcamp">
+   Preparing the bootcamp
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#hub-usage">
-   Hub Usage
+  <a class="reference internal nav-link" href="#materials-for-the-bootcamp">
+   Materials for the bootcamp
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-the-bootcamp">
+   Running the bootcamp
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#logging-in">
-     Logging In
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#gpus">
-       GPUs
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-jupyterlab">
-     Using JupyterLab
+    <a class="reference internal nav-link" href="#prepare-ahead-of-the-event">
+     Prepare ahead of the event
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#shutting-down-your-server">
-     Shutting Down Your Server
+    <a class="reference internal nav-link" href="#troubleshooting-during-the-event">
+     Troubleshooting during the event
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#debrief">
+   Debrief
+  </a>
  </li>
 </ul>
 
@@ -450,75 +446,71 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="getting-started">
-<span id="tutorial-getting-started"></span><h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
-<p>To get started using the hub, check out this video by <a class="reference external" href="https://github.com/jmunroe">James Munroe</a> from <a class="reference external" href="https://2i2c.org">2i2c</a> explaining the architecture.</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/RKXWxtNqWKw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<div class="section" id="how-can-i-get-access-to-the-hub">
-<span id="hub-access"></span><h2>How can I get access to the Hub<a class="headerlink" href="#how-can-i-get-access-to-the-hub" title="Permalink to this headline">¶</a></h2>
-<p>Only LEAP members will be able to access the hub. The tier of access is directly determined by membership in the corresponding <a class="reference internal" href="../reference/membership.html#reference-membership-team-resources"><span class="std std-ref">Github Team</span></a>. Please <a class="reference internal" href="../reference/membership.html#users-membership-apply"><span class="std std-ref">become a member</span></a> and make sure you accept the <a class="reference internal" href="../guides/faq.html#faq-where-is-my-invite"><span class="std std-ref">invitation on github</span></a> before proceeding.</p>
-</div>
-<div class="section" id="hub-usage">
-<h2>Hub Usage<a class="headerlink" href="#hub-usage" title="Permalink to this headline">¶</a></h2>
-<p>This is a rough and ready guide to using the Hub.
-This documentation will be expanded as we learn and evolve.
-Feel free to <a class="reference external" href="https://github.com/leap-stc/leap-stc.github.io/blob/main/book/leap-pangeo/jupyterhub.md">edit it yourself</a> if you have suggetions for improvement!</p>
-<div class="section" id="logging-in">
-<span id="hub-server-login"></span><h3>Logging In<a class="headerlink" href="#logging-in" title="Permalink to this headline">¶</a></h3>
-<ol class="simple">
-<li><p>👀 Navigate to <a class="reference external" href="https://leap.2i2c.cloud/">https://leap.2i2c.cloud/</a> and click the big orange button that says “Log in to continue”</p></li>
-<li><p>🔐 You will be prompted to authorize a GitHub application. Say “yes” to everything.
-Note you must belong to the appropriate GitHub team in order to access the hub.
-See <a class="reference internal" href="../reference/membership.html#reference-membership-team-resources"><span class="std std-ref">Github Teams and Resources</span></a> for more information.</p></li>
-<li><p>📠 You will redirect to a screen with the following options.</p></li>
-</ol>
-<a class="reference internal image-reference" href="https://github.com/leap-stc/leap-stc.github.io/assets/14314623/088946a1-896f-4ff8-af91-8107c9f14cfd"><img alt="image" src="https://github.com/leap-stc/leap-stc.github.io/assets/14314623/088946a1-896f-4ff8-af91-8107c9f14cfd" style="width: 410px;" /></a>
-<blockquote>
-<div><p>Note: Depending on your <a class="reference internal" href="../reference/membership.html#reference-membership-tiers"><span class="std std-ref">membership</span></a> you might see additional options (e.g. for GPU machines)</p>
-</div></blockquote>
-<p>You have to make 3 choices here:</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="running-bootcamps">
+<h1>Running Bootcamps<a class="headerlink" href="#running-bootcamps" title="Permalink to this headline">¶</a></h1>
+<p>We collect all bootcamp materials in the <a class="reference external" href="https://github.com/leap-stc/LEAP-bootcamps">LEAP-Pangeo bootcamp repository</a>. Please keep all relevant information and materials in this repository to make it easier for participants to find them.</p>
+<div class="section" id="preparing-the-bootcamp">
+<h2>Preparing the bootcamp<a class="headerlink" href="#preparing-the-bootcamp" title="Permalink to this headline">¶</a></h2>
+<p>We encourage you to reuse materials from past bootcamps and adapt them to your needs. <strong>Past event have suggested that it is extremely helpful to have the instructor write down code live, so participants can follow along.</strong>
+This ensures the following:</p>
 <ul class="simple">
-<li><p>The machine type (Choose between “CPU only” or “GPU” if available)
-<strong>⚠️The GPU images should be used only when needed to accelerate model training.</strong></p></li>
-<li><p>The software environment (“Image”). Find more info in the <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructure-hub-software-env"><span class="std std-ref">Software Environment Section</span></a>.</p></li>
-<li><p>The node share. These are shared resources, and you should try to use the smallest image you need. You can easily start up a new server with a larger share if you find your work to be limited by CPU/RAM</p></li>
+<li><p>The lecturer substantially more time to write live, ensuring that others can follow along</p></li>
+<li><p>It also demonstrates that the lecturer is not a superhuman, but also makes mistakes and has to debug code. This is a very important lesson for students to learn, as it is a very common part of the coding process and often not shown in lectures.</p></li>
+<li><p>It also allows the lecturer to explain the code as they write it, which is a very important part of the learning process.</p></li>
 </ul>
-<ol class="simple">
-<li><p>🕥 Wait for your server to start up. It can take up to few minutes.</p></li>
-</ol>
-<div class="section" id="gpus">
-<h4>GPUs<a class="headerlink" href="#gpus" title="Permalink to this headline">¶</a></h4>
-<p>Certain members (see <a class="reference internal" href="../reference/membership.html#reference-membership-team-resources"><span class="std std-ref">Github Teams and Resources</span></a>) have access to server instance with GPU. Currently the GPUs are <a class="reference external" href="https://www.nvidia.com/en-us/data-center/tesla-t4/">Nvidia T4</a> models. To check what GPU is available on your server you can use <a class="reference external" href="https://developer.nvidia.com/nvidia-system-management-interface"><code class="docutils literal notranslate"><span class="pre">nvidia-smi</span></code></a> in the terminal window. You should get output similar to this:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">   </span>nvidia-smi
-<span class="w">   </span>
-<span class="w">   </span>+-----------------------------------------------------------------------------+
-<span class="w">   </span><span class="p">|</span><span class="w"> </span>NVIDIA-SMI<span class="w"> </span><span class="m">510</span>.47.03<span class="w">    </span>Driver<span class="w"> </span>Version:<span class="w"> </span><span class="m">510</span>.47.03<span class="w">    </span>CUDA<span class="w"> </span>Version:<span class="w"> </span><span class="m">11</span>.6<span class="w">     </span><span class="p">|</span>
-<span class="w">   </span><span class="p">|</span>-------------------------------+----------------------+----------------------+
-<span class="w">   </span><span class="p">|</span><span class="w"> </span>GPU<span class="w">  </span>Name<span class="w">        </span>Persistence-M<span class="p">|</span><span class="w"> </span>Bus-Id<span class="w">        </span>Disp.A<span class="w"> </span><span class="p">|</span><span class="w"> </span>Volatile<span class="w"> </span>Uncorr.<span class="w"> </span>ECC<span class="w"> </span><span class="p">|</span>
-<span class="w">   </span><span class="p">|</span><span class="w"> </span>Fan<span class="w">  </span>Temp<span class="w">  </span>Perf<span class="w">  </span>Pwr:Usage/Cap<span class="p">|</span><span class="w">         </span>Memory-Usage<span class="w"> </span><span class="p">|</span><span class="w"> </span>GPU-Util<span class="w">  </span>Compute<span class="w"> </span>M.<span class="w"> </span><span class="p">|</span>
-<span class="w">   </span><span class="p">|</span><span class="w">                               </span><span class="p">|</span><span class="w">                      </span><span class="p">|</span><span class="w">               </span>MIG<span class="w"> </span>M.<span class="w"> </span><span class="p">|</span>
-<span class="w">   </span><span class="p">|</span><span class="o">===============================</span>+<span class="o">======================</span>+<span class="o">======================</span><span class="p">|</span>
-<span class="w">   </span><span class="p">|</span><span class="w">   </span><span class="m">0</span><span class="w">  </span>Tesla<span class="w"> </span>T4<span class="w">            </span>Off<span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="m">00000000</span>:00:04.0<span class="w"> </span>Off<span class="w"> </span><span class="p">|</span><span class="w">                    </span><span class="m">0</span><span class="w"> </span><span class="p">|</span>
-<span class="w">   </span><span class="p">|</span><span class="w"> </span>N/A<span class="w">   </span>41C<span class="w">    </span>P8<span class="w">    </span>11W<span class="w"> </span>/<span class="w">  </span>70W<span class="w"> </span><span class="p">|</span><span class="w">      </span>0MiB<span class="w"> </span>/<span class="w"> </span>15360MiB<span class="w"> </span><span class="p">|</span><span class="w">      </span><span class="m">0</span>%<span class="w">      </span>Default<span class="w"> </span><span class="p">|</span>
-<span class="w">   </span><span class="p">|</span><span class="w">                               </span><span class="p">|</span><span class="w">                      </span><span class="p">|</span><span class="w">                  </span>N/A<span class="w"> </span><span class="p">|</span>
-<span class="w">   </span>+-------------------------------+----------------------+----------------------+
+<p>Ideally you will use the same materials as the participants (see below for how to organize them), and clear all outputs prior to starting the lecture by right clicking on the notebook and selecting “Clear All Outputs”.</p>
+<blockquote>
+<div><p><strong>Of course you are not expected to remember all the code. Ideally you have a second laptop/tablet to use as a cheat sheet during the presentation.</strong></p>
+</div></blockquote>
+<div class="important admonition">
+<p class="admonition-title">Pretty please</p>
+<p>It would be great if you can commit your filled notebooks after the lecture, so participants can access them later. See below for where to commit them.</p>
+</div>
+</div>
+<div class="section" id="materials-for-the-bootcamp">
+<h2>Materials for the bootcamp<a class="headerlink" href="#materials-for-the-bootcamp" title="Permalink to this headline">¶</a></h2>
+<p>You can reuse the materials for your own bootcamps or modify them to your needs. Please do not change the past materials, and instead create new folders/entries in the following places:</p>
+<ul>
+<li><p>Create a new folder in the “Codes” and “Lectures” folders and add your materials there. <em>If you are giving the same material as a previous bootcamp, please copy them.</em></p>
+<ul>
+<li><div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you are using materials from other sources, like the <a class="reference external" href="https://earth-env-data-science.github.io/intro.html">An Introduction to Earth and Environmental Data Science</a> book. Please just follow the past events structure and link to the original materials.</p>
+</div>
+</li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://github.com/leap-stc/LEAP-bootcamps/README.md">README.md</a> Enter a new entry under the “Events” section. This should include an <a class="reference external" href="https://nbgitpuller.readthedocs.io/en/latest/">nbgitpuller</a> link for each notebook you work with, so participants can easily pull the materials to their hub (there is a neat tool to <a class="reference external" href="https://nbgitpuller.readthedocs.io/en/latest/link.html">generate these links</a>). Please also use the LEAP-Pangeo Hub badge by adding code like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[![Open in LEAP-Pangeo Hub](https://custom-icon-badges.demolab.com/badge/Jupyter%20Hub-Launch%20%F0%9F%9A%80-blue?style=for-the-badge&amp;logo=leap-globe)](&lt;generated link&gt;) 
 </pre></div>
 </div>
+<blockquote>
+<div><p>Add the generated link to the <code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span></code> brackets.</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="running-the-bootcamp">
+<h2>Running the bootcamp<a class="headerlink" href="#running-the-bootcamp" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="prepare-ahead-of-the-event">
+<h3>Prepare ahead of the event<a class="headerlink" href="#prepare-ahead-of-the-event" title="Permalink to this headline">¶</a></h3>
+<p>Bootcamp instructors should make sure that they are added to the <a class="reference external" href="https://github.com/orgs/leap-stc/teams/bootcamp-instructors">Bootcamp Instructors Github Team</a>. If not please reach out to one of the github organization admins to be added. The goal should be that whoever runs the bootcamp can perform tasks that might be needed the day of (mostly likely signing up folks who either entered wrong data or did not register ahead of time).</p>
+<p>Before the event check the following:</p>
+<ul class="simple">
+<li><p>Is somebody available to add new data to the Member Data Google Sheet? LEAPs Managing Director has the ability to add data or give others edit access.</p></li>
+<li><p>Can the instructors manually trigger the <a class="reference external" href="https://github.com/leap-stc/member_management/actions/workflows/read_sheet.yaml">“Parse Member Sheet and Add New Members” action</a> (by clicking on “Run Workflow&gt;Run Workflow” in the top right).</p></li>
+<li><p>Double Check that all participants github names are present in the <a class="reference external" href="https://github.com/orgs/leap-stc/teams/leap-pangeo-base-access">leap-pangeo-base-access</a> team! If folks are in this team they will have access to the hub! If they are not there they either have not accepted the invite to the team (they will be shown as pending invites; tell them to accept the invite as described <a class="reference external" href="https://leap-stc.github.io/guides/faq.html#where-is-my-invite">here</a>) or there is an issue with their github username (check their github handles in the Member Data Google Sheet for typos and completeness). Find a more detailed guide for troubleshooting <a class="reference internal" href="../guides/team_guide.html#guide-team-admin-member-signup-troubleshooting"><span class="std std-ref">here</span></a>. We recommend that you familiarize yourself and test these steps ahead of time.</p></li>
+</ul>
+<p>If you are anticipating a large demand for an event it might be useful to consult with the <a class="reference internal" href="../support.html#support-data-compute-team"><span class="std std-ref">Data and Computation Team</span></a> or 2i2c beforehand.</p>
+</div>
+<div class="section" id="troubleshooting-during-the-event">
+<h3>Troubleshooting during the event<a class="headerlink" href="#troubleshooting-during-the-event" title="Permalink to this headline">¶</a></h3>
+<p>If students have trouble signin into the hub, please refer to the <a class="reference internal" href="../guides/faq.html#faq-cannot-log-into-hub"><span class="std std-ref">FAQ</span></a> and <a class="reference internal" href="../guides/team_guide.html#guide-team-admin-member-signup-troubleshooting"><span class="std std-ref">Member Sign Up Troubleshooting</span></a> for troubleshooting steps.</p>
 </div>
 </div>
-<div class="section" id="using-jupyterlab">
-<h3>Using JupyterLab<a class="headerlink" href="#using-jupyterlab" title="Permalink to this headline">¶</a></h3>
-<p>After your server fires up, you will be dropped into a JupyterLab environment.</p>
-<p>If you are new to JupyterLab, you might want to peruse the <a class="reference external" href="https://jupyterlab.readthedocs.io/en/stable/user/interface.html">user guide</a>.</p>
-</div>
-<div class="section" id="shutting-down-your-server">
-<h3>Shutting Down Your Server<a class="headerlink" href="#shutting-down-your-server" title="Permalink to this headline">¶</a></h3>
-<p>Your server will shut down automatically after a period of inactivity.
-However, if you know you are done working, it’s best to shut it down directly.
-To shut it down, go to <a class="reference external" href="https://leap.2i2c.cloud/hub/home">https://leap.2i2c.cloud/hub/home</a> and click the big red button that says “Stop My Server”</p>
-<a class="reference internal image-reference" href="https://user-images.githubusercontent.com/1197350/167768526-7742a260-d353-4bdb-b9d0-36e9cc17aba1.png"><img alt="image" src="https://user-images.githubusercontent.com/1197350/167768526-7742a260-d353-4bdb-b9d0-36e9cc17aba1.png" style="width: 800px;" /></a>
-<p>You can also navigate to this page from JupyterLab by clicking the <code class="docutils literal notranslate"><span class="pre">File</span></code> menu and going to <code class="docutils literal notranslate"><span class="pre">Hub</span> <span class="pre">Control</span> <span class="pre">Panel</span></code>.</p>
-</div>
+<div class="section" id="debrief">
+<h2>Debrief<a class="headerlink" href="#debrief" title="Permalink to this headline">¶</a></h2>
+<p>Please add your versions of the filled notebooks to a subfolder named <code class="docutils literal notranslate"><span class="pre">filled_notebooks</span></code> in the eventfolder you created above, so participants can access them later.</p>
 </div>
 </div>
 
@@ -547,17 +539,17 @@ To shut it down, go to <a class="reference external" href="https://leap.2i2c.clo
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="education_guide.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">LEAP Technical Documentation</p>
+            <p class="prev-next-title">Teaching Classes (Education)</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="ingesting_dataset.html" title="next page">
+    <a class='right-next' id="next-link" href="../explanation/architecture.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Data Ingestion Tutorial</p>
+        <p class="prev-next-title">LEAP-Pangeo Architecture</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bootcamp Guide &#8212; Technical Documentation</title>
+    <title>Data Ingestion Tutorial &#8212; Technical Documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Getting access to Cloud VMs" href="vm_access.html" />
-    <link rel="prev" title="Education Guide" href="education_guide.html" />
+    <link rel="next" title="Teaching Classes (Education)" href="education_guide.html" />
+    <link rel="prev" title="Getting Started" href="getting_started.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -105,57 +105,25 @@ const thebe_selector_output = ".output, .cell_output"
   Tutorials
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../tutorials/getting_started.html">
-   Getting Started
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Guides
- </span>
-</p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="code_guide.html">
-   Code Guide
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="data_guide.html">
-   Data Guide
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="compute_guide.html">
-   Compute Guide
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="education_guide.html">
-   Education Guide
+  <a class="reference internal" href="getting_started.html">
+   Getting Started
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Bootcamp Guide
+   Data Ingestion Tutorial
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="vm_access.html">
-   Getting access to Cloud VMs
+  <a class="reference internal" href="education_guide.html">
+   Teaching Classes (Education)
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="team_guide.html">
-   Guide for Data and Computation Team Members
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="faq.html">
-   FAQs
+  <a class="reference internal" href="bootcamp_guide.html">
+   Running Bootcamps
   </a>
  </li>
 </ul>
@@ -188,6 +156,70 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../explanation/infrastructure_policy.html">
    LEAP-Pangeo Infrastructure Policy
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Guides
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../guides/code_guide.html">
+   Code Guide
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../guides/data_guide.html">
+   Data Guide
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/data_guides/transfer_data.html">
+     Transfering Data into Cloud Storage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/data_guides/data_catalog.html">
+     Working with the LEAP Data Catalog
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/data_guides/data_jupyterhub.html">
+     Working with Cloud Data on the JupyterHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/data_guides/external_workflow.html">
+     Working outside the LEAP JupyterHub
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../guides/compute_guide.html">
+   Compute Guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../guides/vm_access.html">
+   Getting access to Cloud VMs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../guides/team_guide.html">
+   Guide for Data and Computation Team Members
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../guides/faq.html">
+   FAQs
   </a>
  </li>
 </ul>
@@ -275,7 +307,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/guides/bootcamp_guide.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/tutorials/ingesting_dataset.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -295,7 +327,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/leap-stc/leap-stc.github.io/issues/new?title=Issue%20on%20page%20%2Fguides/bootcamp_guide.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/leap-stc/leap-stc.github.io/issues/new?title=Issue%20on%20page%20%2Ftutorials/ingesting_dataset.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -322,35 +354,13 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#preparing-the-bootcamp">
-   Preparing the bootcamp
+  <a class="reference internal nav-link" href="#requirements-and-desiderata">
+   Requirements and Desiderata
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#materials-for-the-bootcamp">
-   Materials for the bootcamp
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#running-the-bootcamp">
-   Running the bootcamp
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#prepare-ahead-of-the-event">
-     Prepare ahead of the event
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#troubleshooting-during-the-event">
-     Troubleshooting during the event
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#debrief">
-   Debrief
+  <a class="reference internal nav-link" href="#how-to-get-new-data-ingested">
+   How to get new data ingested
   </a>
  </li>
 </ul>
@@ -363,7 +373,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Bootcamp Guide</h1>
+                <h1>Data Ingestion Tutorial</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -374,35 +384,13 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#preparing-the-bootcamp">
-   Preparing the bootcamp
+  <a class="reference internal nav-link" href="#requirements-and-desiderata">
+   Requirements and Desiderata
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#materials-for-the-bootcamp">
-   Materials for the bootcamp
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#running-the-bootcamp">
-   Running the bootcamp
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#prepare-ahead-of-the-event">
-     Prepare ahead of the event
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#troubleshooting-during-the-event">
-     Troubleshooting during the event
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#debrief">
-   Debrief
+  <a class="reference internal nav-link" href="#how-to-get-new-data-ingested">
+   How to get new data ingested
   </a>
  </li>
 </ul>
@@ -414,71 +402,31 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="bootcamp-guide">
-<h1>Bootcamp Guide<a class="headerlink" href="#bootcamp-guide" title="Permalink to this headline">¶</a></h1>
-<p>We collect all bootcamp materials in the <a class="reference external" href="https://github.com/leap-stc/LEAP-bootcamps">LEAP-Pangeo bootcamp repository</a>. Please keep all relevant information and materials in this repository to make it easier for participants to find them.</p>
-<div class="section" id="preparing-the-bootcamp">
-<h2>Preparing the bootcamp<a class="headerlink" href="#preparing-the-bootcamp" title="Permalink to this headline">¶</a></h2>
-<p>We encourage you to reuse materials from past bootcamps and adapt them to your needs. <strong>Past event have suggested that it is extremely helpful to have the instructor write down code live, so participants can follow along.</strong>
-This ensures the following:</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="data-ingestion-tutorial">
+<h1>Data Ingestion Tutorial<a class="headerlink" href="#data-ingestion-tutorial" title="Permalink to this headline">¶</a></h1>
+<p>New to cloud data ingestion? You’re not alone! Transferring large volumes of climate data is not an easy process, and can feel like a tall order. Never fear! This tutorial is aimed completely at beginners, and is designed to provide the <strong>why, how, and what</strong> for data ingestion!</p>
+<p>First of all, data ingestion refers to the general process of moving data from wherever it might exist to an analysis-ready, cloud-optimized (ARCO) format.</p>
+<div class="section" id="requirements-and-desiderata">
+<h2>Requirements and Desiderata<a class="headerlink" href="#requirements-and-desiderata" title="Permalink to this headline">¶</a></h2>
+<p>We have additional requirements for the data ingestion to make the process sustainable and scalable:</p>
 <ul class="simple">
-<li><p>The lecturer substantially more time to write live, ensuring that others can follow along</p></li>
-<li><p>It also demonstrates that the lecturer is not a superhuman, but also makes mistakes and has to debug code. This is a very important lesson for students to learn, as it is a very common part of the coding process and often not shown in lectures.</p></li>
-<li><p>It also allows the lecturer to explain the code as they write it, which is a very important part of the learning process.</p></li>
+<li><p>Process needs to be reproducible, e.g. when we want to reingest data to a different storage location</p></li>
+<li><p>Separation of concerns: The person who knows the dataset (the ‘data expert’) is in the unique position to encode their knowledge about the dataset into the recipe, but they should not be concerned with the details of how to execute it and where the data is ultimate stored. This is the responsibility of the Data and Compute team.</p></li>
 </ul>
-<p>Ideally you will use the same materials as the participants (see below for how to organize them), and clear all outputs prior to starting the lecture by right clicking on the notebook and selecting “Clear All Outputs”.</p>
-<blockquote>
-<div><p><strong>Of course you are not expected to remember all the code. Ideally you have a second laptop/tablet to use as a cheat sheet during the presentation.</strong></p>
-</div></blockquote>
-<div class="important admonition">
-<p class="admonition-title">Pretty please</p>
-<p>It would be great if you can commit your filled notebooks after the lecture, so participants can access them later. See below for where to commit them.</p>
+<p>The way we achieve this is to base our ingestion on <a class="reference external" href="https://pangeo-forge.readthedocs.io/en/latest/composition/index.html#recipe-composition">Pangeo Forge recipes</a>. For clearer organization each dataset the recipe should reside in its own repository under the <code class="docutils literal notranslate"><span class="pre">leap-stc</span></code> github organization. Each of these repositories will be called a ‘feedstock’, which contains additional metadata files (you can read more in the <a class="reference external" href="https://pangeo-forge.readthedocs.io/en/latest/deployment/feedstocks.html#from-recipe-to-feedstock">Pangeo Forge docs</a>).</p>
 </div>
+<div class="section" id="how-to-get-new-data-ingested">
+<span id="guides-data-ingestion-tutorial"></span><h2>How to get new data ingested<a class="headerlink" href="#how-to-get-new-data-ingested" title="Permalink to this headline">¶</a></h2>
+<p>To start ingesting a dataset follow these steps:</p>
+<ol class="simple">
+<li><p>Let the LEAP community and the Data and Computation Team know about this new dataset. We gather all ingestion requests in our <a class="reference external" href="https://github.com/leap-stc/data-management/issues">‘leap-stc/data_management’ issue tracker</a>. You should check existing issues with the tag <a class="reference external" href="https://github.com/leap-stc/data-management/issues?q=is%3Aissue+is%3Aopen+label%3Adataset">‘dataset’</a> to see if somebody else might have already requested this particular dataset. If that is not the case you can add a new <a class="reference external" href="https://github.com/leap-stc/data-management/issues/new?assignees=&amp;labels=dataset&amp;projects=&amp;template=new_dataset.yaml&amp;title=New+Dataset+%5BDataset+Name%5D">dataset_request</a>. Making these request in a central location enables others to see which datasets are currently being ingested and what the status is.</p></li>
+<li><p>Use our <a class="reference external" href="https://github.com/leap-stc/LEAP_template_feedstock">feedstock template</a> to create a feedstock repostory by following instructions in the README to get you started with either one of the above.</p></li>
+<li><p>If issues arise please reach out to the <a class="reference internal" href="../support.html#support-data-compute-team"><span class="std std-ref">Data and Computation Team</span></a></p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This does currently not provide a solution to handle datasets that have been produced by you (as e.g. part of a publication). We are working on formalizing a workflow for this type of data. Please reach out to the <a class="reference internal" href="../support.html#support-data-compute-team"><span class="std std-ref">Data and Computation Team</span></a> if you have data that you would like to publish. See <a class="reference internal" href="../explanation/data_policy.html#explanation-data-policy-types"><span class="std std-ref">Types of Data Used at LEAP</span></a> for more.</p>
 </div>
-<div class="section" id="materials-for-the-bootcamp">
-<h2>Materials for the bootcamp<a class="headerlink" href="#materials-for-the-bootcamp" title="Permalink to this headline">¶</a></h2>
-<p>You can reuse the materials for your own bootcamps or modify them to your needs. Please do not change the past materials, and instead create new folders/entries in the following places:</p>
-<ul>
-<li><p>Create a new folder in the “Codes” and “Lectures” folders and add your materials there. <em>If you are giving the same material as a previous bootcamp, please copy them.</em></p>
-<ul>
-<li><div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>If you are using materials from other sources, like the <a class="reference external" href="https://earth-env-data-science.github.io/intro.html">An Introduction to Earth and Environmental Data Science</a> book. Please just follow the past events structure and link to the original materials.</p>
-</div>
-</li>
-</ul>
-</li>
-<li><p><a class="reference external" href="https://github.com/leap-stc/LEAP-bootcamps/README.md">README.md</a> Enter a new entry under the “Events” section. This should include an <a class="reference external" href="https://nbgitpuller.readthedocs.io/en/latest/">nbgitpuller</a> link for each notebook you work with, so participants can easily pull the materials to their hub (there is a neat tool to <a class="reference external" href="https://nbgitpuller.readthedocs.io/en/latest/link.html">generate these links</a>). Please also use the LEAP-Pangeo Hub badge by adding code like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[![Open in LEAP-Pangeo Hub](https://custom-icon-badges.demolab.com/badge/Jupyter%20Hub-Launch%20%F0%9F%9A%80-blue?style=for-the-badge&amp;logo=leap-globe)](&lt;generated link&gt;) 
-</pre></div>
-</div>
-<blockquote>
-<div><p>Add the generated link to the <code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span></code> brackets.</p>
-</div></blockquote>
-</li>
-</ul>
-</div>
-<div class="section" id="running-the-bootcamp">
-<h2>Running the bootcamp<a class="headerlink" href="#running-the-bootcamp" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="prepare-ahead-of-the-event">
-<h3>Prepare ahead of the event<a class="headerlink" href="#prepare-ahead-of-the-event" title="Permalink to this headline">¶</a></h3>
-<p>Bootcamp instructors should make sure that they are added to the <a class="reference external" href="https://github.com/orgs/leap-stc/teams/bootcamp-instructors">Bootcamp Instructors Github Team</a>. If not please reach out to one of the github organization admins to be added. The goal should be that whoever runs the bootcamp can perform tasks that might be needed the day of (mostly likely signing up folks who either entered wrong data or did not register ahead of time).</p>
-<p>Before the event check the following:</p>
-<ul class="simple">
-<li><p>Is somebody available to add new data to the Member Data Google Sheet? LEAPs Managing Director has the ability to add data or give others edit access.</p></li>
-<li><p>Can the instructors manually trigger the <a class="reference external" href="https://github.com/leap-stc/member_management/actions/workflows/read_sheet.yaml">“Parse Member Sheet and Add New Members” action</a> (by clicking on “Run Workflow&gt;Run Workflow” in the top right).</p></li>
-<li><p>Double Check that all participants github names are present in the <a class="reference external" href="https://github.com/orgs/leap-stc/teams/leap-pangeo-base-access">leap-pangeo-base-access</a> team! If folks are in this team they will have access to the hub! If they are not there they either have not accepted the invite to the team (they will be shown as pending invites; tell them to accept the invite as described <a class="reference external" href="https://leap-stc.github.io/guides/faq.html#where-is-my-invite">here</a>) or there is an issue with their github username (check their github handles in the Member Data Google Sheet for typos and completeness). Find a more detailed guide for troubleshooting <a class="reference internal" href="team_guide.html#guide-team-admin-member-signup-troubleshooting"><span class="std std-ref">here</span></a>. We recommend that you familiarize yourself and test these steps ahead of time.</p></li>
-</ul>
-<p>If you are anticipating a large demand for an event it might be useful to consult with the <a class="reference internal" href="../support.html#support-data-compute-team"><span class="std std-ref">Data and Computation Team</span></a> or 2i2c beforehand.</p>
-</div>
-<div class="section" id="troubleshooting-during-the-event">
-<h3>Troubleshooting during the event<a class="headerlink" href="#troubleshooting-during-the-event" title="Permalink to this headline">¶</a></h3>
-<p>If students have trouble signin into the hub, please refer to the <a class="reference internal" href="faq.html#faq-cannot-log-into-hub"><span class="std std-ref">FAQ</span></a> and <a class="reference internal" href="team_guide.html#guide-team-admin-member-signup-troubleshooting"><span class="std std-ref">Member Sign Up Troubleshooting</span></a> for troubleshooting steps.</p>
-</div>
-</div>
-<div class="section" id="debrief">
-<h2>Debrief<a class="headerlink" href="#debrief" title="Permalink to this headline">¶</a></h2>
-<p>Please add your versions of the filled notebooks to a subfolder named <code class="docutils literal notranslate"><span class="pre">filled_notebooks</span></code> in the eventfolder you created above, so participants can access them later.</p>
 </div>
 </div>
 
@@ -495,7 +443,7 @@ This ensures the following:</p>
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./guides"
+            path: "./tutorials"
         },
         predefinedOutput: true
     }
@@ -507,17 +455,17 @@ This ensures the following:</p>
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="education_guide.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="getting_started.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Education Guide</p>
+            <p class="prev-next-title">Getting Started</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="vm_access.html" title="next page">
+    <a class='right-next' id="next-link" href="education_guide.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Getting access to Cloud VMs</p>
+        <p class="prev-next-title">Teaching Classes (Education)</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
