@@ -7,9 +7,11 @@ For questions about how to use the Hub, please choose from the following resourc
 
 - Use the `LEAP-Pangeo Discussion Forum <https://github.com/leap-stc/leap-stc.github.io/discussions>`_ to search for previous topics or post new ones
 
-- Join the LEAP Slack and post an issue in the `'#leap-pangeo'` channel.
+- Join the LEAP Slack and post an issue in the ``'#leap-pangeo'`` channel.
 
-- Reach out to the :ref:`support.data_compute_team` by mentioning `'@data-and-compute'` on the LEAP slack channel
+- Reach out to the :ref:`support.data_compute_team` by mentioning ``'@data-and-compute'`` on the LEAP slack channel
+
+- Tag ``'@leap-stc/data-and-compute'`` in a Github issue.
 
 
 Office Hours
@@ -54,6 +56,58 @@ Data and Computation Team
       :alt: Slack DM
       :target: https://leap-nsf-stc.slack.com/team/{{ person.slack_id }}
   
+  {% endif %}
+
+  {% if person.pronouns %}
+  .. image:: https://img.shields.io/static/v1?label=pronouns&message={{ person.pronouns }}&color=red&style=flat-square
+     :alt: Pronouns
+  {% endif %}
+
+  {% if person.github %}
+  .. image:: https://img.shields.io/github/followers/{{ person.github }}?label=Github&logo=github&style=flat-square
+     :alt: GitHub Profile
+     :target: http://github.com/{{ person.github }}
+  {% endif %}
+
+  {% if person.twitter %}
+  .. image:: https://img.shields.io/twitter/follow/{{ person.twitter }}?logo=twitter&style=flat-square
+      :alt: Twitter
+      :target: https://twitter.com/{{ person.twitter }}
+  {% endif %}
+
+  {% if person.linkedin %}
+  .. image:: https://img.shields.io/static/v1?label=&message=LinkedIn&color=0077B5&style=flat-square&logo=linkedin
+     :alt: Google Scholar
+     :target: https://www.linkedin.com/in/{{ person.linkedin }}
+  {% endif %}
+
+  {% if person.website %}
+  .. image:: https://img.shields.io/website?style=flat-square&url={{ person.website|urlencode }}
+      :alt: Website
+      :target: {{ person.website }}
+  {% endif %}
+
+  {{ person.bio }}
+  {% endfor %}
+
+Former Team Members
+-------------------
+
+.. jinja:: team-data
+
+  {% for person in former %}
+
+  {{ person.name }} ({{ person.org }})
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  {% if person.role %}
+  {{ person.role }}
+  {% endif %}
+  {% if person.pic %}
+  .. image:: images/{{ person.pic }}
+     :width: 200px
+     :alt: {{ person.name }}
+     :class: biopic
   {% endif %}
 
   {% if person.pronouns %}

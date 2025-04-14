@@ -10,7 +10,7 @@ To get started using the hub, check out this video by [James Munroe](https://git
 
 ## How can I get access to the Hub
 
-Only LEAP members will be able to access the hub. Please [become a member](users.membership.apply) and make sure you accept the [invitation on github](faq.where_is_my_invite) before proceeding
+Only LEAP members will be able to access the hub. The tier of access is directly determined by membership in the corresponding [Github Team](reference.membership.team-resources). Please [become a member](users.membership.apply) and make sure you accept the [invitation on github](faq.where_is_my_invite) before proceeding.
 
 ## Hub Usage
 
@@ -25,7 +25,7 @@ Feel free to [edit it yourself](https://github.com/leap-stc/leap-stc.github.io/b
 1. 👀 Navigate to <https://leap.2i2c.cloud/> and click the big orange button that says "Log in to continue"
 1. 🔐 You will be prompted to authorize a GitHub application. Say "yes" to everything.
    Note you must belong to the appropriate GitHub team in order to access the hub.
-   See [](reference.membership.team-resources)  for more information.
+   See [](reference.membership.team-resources) for more information.
 1. 📠 You will redirect to a screen with the following options.
 
 <img width="410" alt="image" src="https://github.com/leap-stc/leap-stc.github.io/assets/14314623/088946a1-896f-4ff8-af91-8107c9f14cfd">

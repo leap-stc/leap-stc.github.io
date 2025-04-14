@@ -7,15 +7,9 @@ parts:
   - caption: Tutorials
     chapters:
       - file: tutorials/getting_started
-  - caption: Guides
-    chapters:
-      - file: guides/data_guide
-      - file: guides/compute_guide
-      - file: guides/education_guide
-      - file: guides/bootcamp_guide
-      - file: guides/vm_access
-      - file: guides/team_guide
-      - file: guides/faq
+      - file: tutorials/ingesting_dataset
+      - file: tutorials/education_guide
+      - file: tutorials/bootcamp_guide
   - caption: Explanation
     chapters:
       - file: explanation/architecture
@@ -23,6 +17,19 @@ parts:
       - file: explanation/code_policy
       - file: explanation/data_policy
       - file: explanation/infrastructure_policy
+  - caption: Guides
+    chapters:
+      - file: guides/code_guide
+      - file: guides/data_guide
+        sections:
+          - file: guides/data_guides/transfer_data
+          - file: guides/data_guides/data_catalog
+          - file: guides/data_guides/data_jupyterhub
+          - file: guides/data_guides/external_workflow
+      - file: guides/compute_guide
+      - file: guides/vm_access
+      - file: guides/team_guide
+      - file: guides/faq
   - caption: Reference
     chapters:
       - file: reference/infrastructure

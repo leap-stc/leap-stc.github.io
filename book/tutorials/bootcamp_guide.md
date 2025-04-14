@@ -1,4 +1,8 @@
-# Bootcamp Guide
+---
+title: Hosting a Bootcamp
+---
+
+# Running Bootcamps
 
 We collect all bootcamp materials in the [LEAP-Pangeo bootcamp repository](https://github.com/leap-stc/LEAP-bootcamps). Please keep all relevant information and materials in this repository to make it easier for participants to find them.
 
@@ -38,7 +42,21 @@ You can reuse the materials for your own bootcamps or modify them to your needs.
 
 ## Running the bootcamp
 
-If students have trouble signin into the hub, please refer to the [FAQ](faq.cannot-log-into-hub) for troubleshooting steps.
+### Prepare ahead of the event
+
+Bootcamp instructors should make sure that they are added to the [Bootcamp Instructors Github Team](https://github.com/orgs/leap-stc/teams/bootcamp-instructors). If not please reach out to one of the github organization admins to be added. The goal should be that whoever runs the bootcamp can perform tasks that might be needed the day of (mostly likely signing up folks who either entered wrong data or did not register ahead of time).
+
+Before the event check the following:
+
+- Is somebody available to add new data to the Member Data Google Sheet? LEAPs Managing Director has the ability to add data or give others edit access.
+- Can the instructors manually trigger the ["Parse Member Sheet and Add New Members" action](https://github.com/leap-stc/member_management/actions/workflows/read_sheet.yaml) (by clicking on "Run Workflow>Run Workflow" in the top right).
+- Double Check that all participants github names are present in the [leap-pangeo-base-access](https://github.com/orgs/leap-stc/teams/leap-pangeo-base-access) team! If folks are in this team they will have access to the hub! If they are not there they either have not accepted the invite to the team (they will be shown as pending invites; tell them to accept the invite as described [here](https://leap-stc.github.io/guides/faq.html#where-is-my-invite)) or there is an issue with their github username (check their github handles in the Member Data Google Sheet for typos and completeness). Find a more detailed guide for troubleshooting [here](guide.team.admin.member_signup_troubleshooting). We recommend that you familiarize yourself and test these steps ahead of time.
+
+If you are anticipating a large demand for an event it might be useful to consult with the [](support.data_compute_team) or 2i2c beforehand.
+
+### Troubleshooting during the event
+
+If students have trouble signin into the hub, please refer to the [FAQ](faq.cannot-log-into-hub) and [](guide.team.admin.member_signup_troubleshooting) for troubleshooting steps.
 
 ## Debrief
 
