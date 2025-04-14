@@ -7,7 +7,7 @@ LEAP-Pangeo is a cloud-based data and computing platform that will be used to su
 ## Design Principles
 
 In the proposal, we committed to building this in a way that enables the tools and infrastructure to be reused and remixed.
-So The challenge for LEAP Pangeo is to deploy an “enterprise quality” platform built entirely out of open-source tools, and to make this platform as reusable and useful for the broader climate science community as possible.
+So the challenge for LEAP Pangeo is to deploy an “enterprise quality” platform built entirely out of open-source tools, and to make this platform as reusable and useful for the broader climate science community as possible.
 We committed to following the following design principles:
 
 - Open source
@@ -27,14 +27,19 @@ name: architecture-diagram
 LEAP-Pangeo high-level architecture diagram
 ```
 
-There are four primary components to LEAP-Pangeo.
+There are four primary components to LEAP-Pangeo: 
+```{figure} ../images/architecture.png
+---
+name: architecture-components
+---
+LEAP-Pangeo consists of the data catalog, a storage service, a compute environment, and a Knowledge Graph. 
+```
 
-(explanation.architecture.data-library)=
-
-### The Data Library
+(explanation.architecture.catalog)=
+### The Data Catalog
 
 The data library will provide analysis-ready, cloud-optimized data for all aspects of LEAP.
-The data library is directly inspired by the [IRI Data Library](https://iridl.ldeo.columbia.edu) mentioned above; however, LEAP-Pangeo data will be hosted in the cloud, for maximum impact, accessibility, and interoperability.
+The library is directly inspired by the [IRI Data Library](https://iridl.ldeo.columbia.edu) mentioned above; however, LEAP-Pangeo data will be hosted in the cloud, for maximum impact, accessibility, and interoperability.
 
 The contents of the data library will evolve dynamically based on the needs of the project.
 Examples of data that may become part of the library are
@@ -48,9 +53,6 @@ Examples of data that may become part of the library are
 - Easily accessible syntheses of climate projections from [CMIP6 data](https://esgf-node.llnl.gov/projects/cmip6/), produced by the LEAP team,
   for use by industry partners for business strategy and decision making.
 
-(explanation.architecture.catalog)=
-
-#### Data Catalog
 
 A [STAC](https://stacspec.org/) data catalog be used to enumerate all LEAP-Pangeo datasets and provide this information to the public.
 The catalog will store all relevant metadata about LEAP datasets following established metadata standards (e.g. CF Conventions).
@@ -75,7 +77,7 @@ as the JupyterHub.
 Going forward, we will work with NCAR to obtain an [Open Storage Network](https://www.openstoragenetwork.org/)
 pod which allows data to be accessible from both Google Cloud and NCAR's computing system.
 
-#### Pangeo Forge
+### Pangeo Forge
 
 ```{figure} https://raw.githubusercontent.com/pangeo-forge/flow-charts/main/renders/architecture.png
 ---
