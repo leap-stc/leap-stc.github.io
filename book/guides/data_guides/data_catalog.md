@@ -2,7 +2,7 @@
 
 # Working with the LEAP Data Catalog
 
-You want to have a specific dataset to explore or analyze? There is a good chance that somebody else at LEAP has already worked with the data! So the first thing to look for data should always be a visit to the [LEAP Data Catalog](reference.infrastructure.catalog). This guide goes over the process of loading data from the catalog. If data is not there, it also specifies how one can request cloud-ingested data be added to the catalog. If you are completely new to data ingestion and putting data into the cloud, please check out our beginner oriented [tutorial](guides.data.ingestion_tutorial).
+You want to have a specific dataset to explore or analyze? There is a chance that somebody else at LEAP has already worked with the data! So the first thing to look for data should always be a visit to the [LEAP Data Catalog](reference.infrastructure.catalog). This guide goes over the process of loading data from the catalog. If data is not there, it also specifies how one can request cloud-ingested data be added to the catalog. If you are completely new to data ingestion and putting data into the cloud, please check out our beginner oriented [tutorial](guides.data.ingestion_tutorial).
 
 ## How to load Data from the LEAP Catalog
 
@@ -11,12 +11,9 @@ This is a repository of data sets published by the LEAP community in collaborati
 The basic requirements for loading the data are the following packages, which are automatically accessible to any user of the JupyterHub platform. But if you wish to load the data on your machine, then you must ensure your python environment has the following packages:
 
 ```
-xarray
-requests
-aiohttp
-dask
-zarr
-fsspec
+Xarray
+gcsfs
+Zarr
 ```
 
 (guides.data.ingestion_pipeline)=
