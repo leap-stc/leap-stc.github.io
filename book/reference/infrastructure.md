@@ -220,9 +220,3 @@ Below you can find some examples of ARCO data formats
 ### Zarr
 
 [zarr](https://zarr.dev)
-
-(reference.pangeo-forge)=
-
-## Pangeo-Forge
-
-You can find more information about Pangeo-Forge [here](https://pangeo-forge.readthedocs.io/en/latest/).

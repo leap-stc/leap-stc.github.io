@@ -77,7 +77,7 @@ pod which allows data to be accessible from both Google Cloud and NCAR's computi
 
 ````
 
-(explanation.jupyterhub)=
+
 
 ### The Hub
 
