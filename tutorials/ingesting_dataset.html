@@ -413,7 +413,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Process needs to be reproducible, e.g. when we want to reingest data to a different storage location</p></li>
 <li><p>Separation of concerns: The person who knows the dataset (the ‘data expert’) is in the unique position to encode their knowledge about the dataset into the recipe, but they should not be concerned with the details of how to execute it and where the data is ultimate stored. This is the responsibility of the Data and Compute team.</p></li>
 </ul>
-<p>The way we achieve this is to base our ingestion on <a class="reference external" href="https://pangeo-forge.readthedocs.io/en/latest/composition/index.html#recipe-composition">Pangeo Forge recipes</a>. For clearer organization each dataset the recipe should reside in its own repository under the <code class="docutils literal notranslate"><span class="pre">leap-stc</span></code> github organization. Each of these repositories will be called a ‘feedstock’, which contains additional metadata files (you can read more in the <a class="reference external" href="https://pangeo-forge.readthedocs.io/en/latest/deployment/feedstocks.html#from-recipe-to-feedstock">Pangeo Forge docs</a>).</p>
+<p>For clearer organization each dataset should reside in its own repository under the <code class="docutils literal notranslate"><span class="pre">leap-stc</span></code> github organization. Each of these repositories will be called a ‘feedstock’, which contains additional metadata files.</p>
 </div>
 <div class="section" id="how-to-get-new-data-ingested">
 <span id="guides-data-ingestion-tutorial"></span><h2>How to get new data ingested<a class="headerlink" href="#how-to-get-new-data-ingested" title="Permalink to this headline">¶</a></h2>

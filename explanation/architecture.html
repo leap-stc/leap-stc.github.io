@@ -379,18 +379,6 @@ const thebe_selector_output = ".output, .cell_output"
     <a class="reference internal nav-link" href="#data-storage-service">
      Data Storage Service
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#pangeo-forge">
-       Pangeo Forge
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-hub">
-     The Hub
-    </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-knowledge-graph">
@@ -449,18 +437,6 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#data-storage-service">
      Data Storage Service
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#pangeo-forge">
-       Pangeo Forge
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-hub">
-     The Hub
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -548,39 +524,24 @@ Cloud Object Storage is the most performant, cost-effective, and simple way to s
 as the JupyterHub.
 Going forward, we will work with NCAR to obtain an <a class="reference external" href="https://www.openstoragenetwork.org/">Open Storage Network</a>
 pod which allows data to be accessible from both Google Cloud and NCAR’s computing system.</p>
-<div class="section" id="pangeo-forge">
-<h4>Pangeo Forge<a class="headerlink" href="#pangeo-forge" title="Permalink to this headline">¶</a></h4>
-<div class="figure align-default" id="pangeo-forge-flow">
-<a class="reference internal image-reference" href="https://raw.githubusercontent.com/pangeo-forge/flow-charts/main/renders/architecture.png"><img alt="https://raw.githubusercontent.com/pangeo-forge/flow-charts/main/renders/architecture.png" src="https://raw.githubusercontent.com/pangeo-forge/flow-charts/main/renders/architecture.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Pangeo Forge high-level workflow. Diagram from <a class="reference external" href="https://github.com/pangeo-forge/flow-charts">https://github.com/pangeo-forge/flow-charts</a></span><a class="headerlink" href="#pangeo-forge-flow" title="Permalink to this image">¶</a></p>
-</div>
-<p>A central tool for the population and maintenance of the LEAP-Pangeo data catalog is
-<a class="reference external" href="https://pangeo-forge.readthedocs.io/en/latest/">Pangeo Forge</a>.
-Pangeo Forge is an open source tool for data Extraction, Transformation, and Loading (ETL).
-The goal of Pangeo Forge is to make it easy to extract data from traditional data repositories and deposit in cloud object storage in analysis-ready, cloud-optimized (ARCO) format.</p>
-<p>Pangeo Forge works by allowing domain scientists to define “recipes” that describe data transformation pipelines.
-These recipes are stored in GitHub repositories.
-Continuous integration monitors GitHub and automatically executes the data pipelines when needed.
-The use of distributed, cloud-based processing allows very large volumes of data to be processed quickly.</p>
-<p>Pangeo Forge is a new project, funded by the NSF EarthCube program.
-LEAP-Pangeo will provide a high-impact use case for Pangeo Forge, and Pangeo Forge
-will empower and enhance LEAP research.
-This synergistic relationship with be mutually beneficial to two NSF-sponsored projects.
-Using Pangeo Forge effectively will require LEAP scientists and data engineers to engage
-with the open-source development process around Pangeo Forge and related technologies.</p>
-</div>
-</div>
-<div class="section" id="the-hub">
-<span id="explanation-jupyterhub"></span><h3>The Hub<a class="headerlink" href="#the-hub" title="Permalink to this headline">¶</a></h3>
-<div class="figure align-default" id="jupyterlab-preview">
-<a class="reference internal image-reference" href="https://jupyter.org/assets/homepage/labpreview.webp"><img alt="https://jupyter.org/assets/homepage/labpreview.webp" src="https://jupyter.org/assets/homepage/labpreview.webp" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Screenshot from JupyterLab. From <a class="reference external" href="https://jupyter.org/">https://jupyter.org/</a></span><a class="headerlink" href="#jupyterlab-preview" title="Permalink to this image">¶</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+
+### The Hub
+
+```{figure} https://jupyter.org/assets/homepage/labpreview.webp
+---
+width: 400px
+name: jupyterlab-preview
+---
+Screenshot from JupyterLab. From &lt;https://jupyter.org/&gt;
+</pre></div>
 </div>
 <p>Jupyter Notebook / Lab has emerged as the standard tool for doing interactive data science.
 Jupyter supports combining rich text, code, and generated outputs (e.g. figures) into a single document, creating a way to communicate and share complete data-science research project</p>
 <div class="figure align-default" id="jupyterhub-architecture">
 <a class="reference internal image-reference" href="https://jupyterhub.readthedocs.io/en/stable/_images/jhub-fluxogram.jpeg"><img alt="https://jupyterhub.readthedocs.io/en/stable/_images/jhub-fluxogram.jpeg" src="https://jupyterhub.readthedocs.io/en/stable/_images/jhub-fluxogram.jpeg" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">JupyterHub architecture. From <a class="reference external" href="https://jupyterhub.readthedocs.io/">https://jupyterhub.readthedocs.io/</a></span><a class="headerlink" href="#jupyterhub-architecture" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">JupyterHub architecture. From <a class="reference external" href="https://jupyterhub.readthedocs.io/">https://jupyterhub.readthedocs.io/</a></span><a class="headerlink" href="#jupyterhub-architecture" title="Permalink to this image">¶</a></p>
 </div>
 <p>JupyterHub is a multi-user Jupyter Notebook / Lab environment that runs on a server.
 JupyterHub provides a gateway to highly customized software environments backed by dedicated computing with specified resources (CPU, RAM, GPU, etc.)
@@ -609,7 +570,7 @@ They may be augmented as LEAP evolves with more specific software as needed by r
 The <a class="reference internal" href="code_policy.html#explanation-code-policy"><span class="std std-ref">LEAP-Pangeo Code Policy</span></a> and <a class="reference internal" href="data_policy.html#explanation-data-policy"><span class="std std-ref">LEAP-Pangeo Data Policy</span></a> will help set these standards.</p>
 <div class="figure align-default" id="knowledge-graph">
 <a class="reference internal image-reference" href="../_images/LEAP_knowledge_graph.png"><img alt="../_images/LEAP_knowledge_graph.png" src="../_images/LEAP_knowledge_graph.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">LEAP Knowledge Graph</span><a class="headerlink" href="#knowledge-graph" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">LEAP Knowledge Graph</span><a class="headerlink" href="#knowledge-graph" title="Permalink to this image">¶</a></p>
 </div>
 <p>By tracking the linked relationships between datasets, papers, code, models, and educational , we will generate a “knowledge graph”.
 This graph will reveal the dynamic, evolving state of the outputs of LEAP research and the relationships between different elements of the project.
@@ -631,18 +592,13 @@ It’s very good at what it was designed for (analyzing satellite images), but i
 <li><p><strong><a class="reference external" href="https://iridl.ldeo.columbia.edu/index.html">Columbia IRI Data Library</a></strong> is a powerful and freely accessible online data repository and analysis tool that allows a user to view, analyze, and download hundreds of terabytes of climate-related data through a standard web browser.
 Due to its somewhat outdated architecture, IRI data library cannot easily be updated or adapted to new projects.</p></li>
 <li><p><strong><a class="reference external" href="http://pangeo.io/">Pangeo</a></strong> is an open science community oriented around open-source python tools for big-data geoscience.
-It is a loose ecosystem of interoperable python packages including <a class="reference external" href="https://jupyter.org/">Jupyter</a>, <a class="reference external" href="http://xarray.pydata.org/">Xarray</a>, <a class="reference external" href="http://dask.pydata.org/">Dask</a>, and <a class="reference external" href="https://zarr.readthedocs.io/">Zarr</a>.
-The Pangeo tools have been deployed in nearly all commercial clouds (AWS, GCP, Azure) as well as HPC environments.
-<a class="reference external" href="https://pangeo.io/cloud.html">Pangeo Cloud</a> is a publicly accessible data-proximate computing environment based on Pangeo tools.
-Pangeo is used heavily within NCAR.</p></li>
+It contains a loose ecosystem of interoperable python packages including <a class="reference external" href="https://jupyter.org/">Jupyter</a>, <a class="reference external" href="http://xarray.pydata.org/">Xarray</a>, <a class="reference external" href="http://dask.pydata.org/">Dask</a>, and <a class="reference external" href="https://zarr.readthedocs.io/">Zarr</a>. There is a community forum for Pangeo related discussions and questions on <a class="reference external" href="https://discourse.pangeo.io/">Discourse</a>.
+The Pangeo tools have been deployed in nearly all commercial clouds (AWS, GCP, Azure) as well as HPC environments.</p></li>
 <li><p><strong><a class="reference external" href="https://planetarycomputer.microsoft.com/">Microsoft Planetary Computer</a></strong> is a collection of datasets and computational tools hosted by Microsoft in the Azure cloud.
 It combines Pangeo-style computing environments with a data library based on <a class="reference external" href="https://stacspec.org/">SpatioTemporal Asset Catalog</a></p></li>
 <li><p><strong><a class="reference external" href="https://www.radiant.earth/mlhub/">Radiant Earth ML Hub</a></strong> is a cloud-based open library dedicated to Earth observation training data for use with machine learning algorithms.
 It focuses mostly on data access and curation.
 Data are cataloged using STAC.</p></li>
-<li><p><strong><a class="reference external" href="https://pangeo-forge.org/">Pangeo Forge</a></strong> is a new initiative, funded by the NSF EarthCube program, to build a platform for
-“crowdsourcing” the production of analysis-ready, cloud-optimized data.
-Once operational, Pangeo Forge will be a useful tool for many different projects which need data in the cloud.</p></li>
 </ul>
 <p>Of these different tools, we opt to build on Pangeo because of its open-source, grassroots
 foundations in the climate data science community, strong uptake within NCAR, and track-record of support from NSF.</p>

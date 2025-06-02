@@ -11,7 +11,7 @@ We have additional requirements for the data ingestion to make the process susta
 - Process needs to be reproducible, e.g. when we want to reingest data to a different storage location
 - Separation of concerns: The person who knows the dataset (the 'data expert') is in the unique position to encode their knowledge about the dataset into the recipe, but they should not be concerned with the details of how to execute it and where the data is ultimate stored. This is the responsibility of the Data and Compute team.
 
-The way we achieve this is to base our ingestion on [Pangeo Forge recipes](https://pangeo-forge.readthedocs.io/en/latest/composition/index.html#recipe-composition). For clearer organization each dataset the recipe should reside in its own repository under the `leap-stc` github organization. Each of these repositories will be called a 'feedstock', which contains additional metadata files (you can read more in the [Pangeo Forge docs](https://pangeo-forge.readthedocs.io/en/latest/deployment/feedstocks.html#from-recipe-to-feedstock)).
+For clearer organization each dataset should reside in its own repository under the `leap-stc` github organization. Each of these repositories will be called a 'feedstock', which contains additional metadata files.
 
 (guides.data.ingestion_tutorial)=
 

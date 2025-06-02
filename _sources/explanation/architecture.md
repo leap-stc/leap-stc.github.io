@@ -75,34 +75,9 @@ as the JupyterHub.
 Going forward, we will work with NCAR to obtain an [Open Storage Network](https://www.openstoragenetwork.org/)
 pod which allows data to be accessible from both Google Cloud and NCAR's computing system.
 
-#### Pangeo Forge
+````
 
-```{figure} https://raw.githubusercontent.com/pangeo-forge/flow-charts/main/renders/architecture.png
----
-width: 600px
-name: pangeo-forge-flow
----
-Pangeo Forge high-level workflow. Diagram from https://github.com/pangeo-forge/flow-charts
-```
 
-A central tool for the population and maintenance of the LEAP-Pangeo data catalog is
-[Pangeo Forge](https://pangeo-forge.readthedocs.io/en/latest/).
-Pangeo Forge is an open source tool for data Extraction, Transformation, and Loading (ETL).
-The goal of Pangeo Forge is to make it easy to extract data from traditional data repositories and deposit in cloud object storage in analysis-ready, cloud-optimized (ARCO) format.
-
-Pangeo Forge works by allowing domain scientists to define "recipes" that describe data transformation pipelines.
-These recipes are stored in GitHub repositories.
-Continuous integration monitors GitHub and automatically executes the data pipelines when needed.
-The use of distributed, cloud-based processing allows very large volumes of data to be processed quickly.
-
-Pangeo Forge is a new project, funded by the NSF EarthCube program.
-LEAP-Pangeo will provide a high-impact use case for Pangeo Forge, and Pangeo Forge
-will empower and enhance LEAP research.
-This synergistic relationship with be mutually beneficial to two NSF-sponsored projects.
-Using Pangeo Forge effectively will require LEAP scientists and data engineers to engage
-with the open-source development process around Pangeo Forge and related technologies.
-
-(explanation.jupyterhub)=
 
 ### The Hub
 
@@ -112,7 +87,7 @@ width: 400px
 name: jupyterlab-preview
 ---
 Screenshot from JupyterLab. From <https://jupyter.org/>
-```
+````
 
 Jupyter Notebook / Lab has emerged as the standard tool for doing interactive data science.
 Jupyter supports combining rich text, code, and generated outputs (e.g. figures) into a single document, creating a way to communicate and share complete data-science research project
@@ -181,18 +156,13 @@ It’s useful to understand the recent history and related efforts in this space
 - **[Columbia IRI Data Library](https://iridl.ldeo.columbia.edu/index.html)** is a powerful and freely accessible online data repository and analysis tool that allows a user to view, analyze, and download hundreds of terabytes of climate-related data through a standard web browser.
   Due to its somewhat outdated architecture, IRI data library cannot easily be updated or adapted to new projects.
 - **[Pangeo](http://pangeo.io/)** is an open science community oriented around open-source python tools for big-data geoscience.
-  It is a loose ecosystem of interoperable python packages including [Jupyter](https://jupyter.org/), [Xarray](http://xarray.pydata.org/), [Dask](http://dask.pydata.org/), and [Zarr](https://zarr.readthedocs.io/).
+  It contains a loose ecosystem of interoperable python packages including [Jupyter](https://jupyter.org/), [Xarray](http://xarray.pydata.org/), [Dask](http://dask.pydata.org/), and [Zarr](https://zarr.readthedocs.io/). There is a community forum for Pangeo related discussions and questions on [Discourse](https://discourse.pangeo.io/).
   The Pangeo tools have been deployed in nearly all commercial clouds (AWS, GCP, Azure) as well as HPC environments.
-  [Pangeo Cloud](https://pangeo.io/cloud.html) is a publicly accessible data-proximate computing environment based on Pangeo tools.
-  Pangeo is used heavily within NCAR.
 - **[Microsoft Planetary Computer](https://planetarycomputer.microsoft.com/)** is a collection of datasets and computational tools hosted by Microsoft in the Azure cloud.
   It combines Pangeo-style computing environments with a data library based on [SpatioTemporal Asset Catalog](https://stacspec.org/)
 - **[Radiant Earth ML Hub](https://www.radiant.earth/mlhub/)** is a cloud-based open library dedicated to Earth observation training data for use with machine learning algorithms.
   It focuses mostly on data access and curation.
   Data are cataloged using STAC.
-- **[Pangeo Forge](https://pangeo-forge.org/)** is a new initiative, funded by the NSF EarthCube program, to build a platform for
-  "crowdsourcing" the production of analysis-ready, cloud-optimized data.
-  Once operational, Pangeo Forge will be a useful tool for many different projects which need data in the cloud.
 
 Of these different tools, we opt to build on Pangeo because of its open-source, grassroots
 foundations in the climate data science community, strong uptake within NCAR, and track-record of support from NSF.
