@@ -122,11 +122,11 @@ For a more permanent solution we recommend building project specific dockerfiles
 
 ## Cloud Storage
 
-(reference.infrastructrue.osn_pod)=
+(reference.infrastructure.osn_pod)=
 
-### m2lines OSN Pod
+### LEAP OSN Pod
 
-(reference.infrastructrue.osn_pod.organization)=
+(reference.infrastructure.osn_pod.organization)=
 
 #### OSN Pod Organization
 
@@ -148,7 +148,7 @@ There are currently 3 principal Projects on the Pod:
     - `'leap-pubs'`: **No write access for users**
     - ... various project buckets
 
-(reference.infrastructrue.osn_pod.credentials)=
+(reference.infrastructure.osn_pod.credentials)=
 
 #### Credentials
 
