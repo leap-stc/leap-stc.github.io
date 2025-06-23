@@ -150,6 +150,8 @@ There are currently 3 principal Projects on the Pod:
 
 (reference.infrastructure.osn_pod.credentials)=
 
+Data can be transferred from `leap-pangeo-inbox` to `leap-pangeo-manual` with [this rclone github action](https://github.com/leap-stc/data-management/actions/runs/11167922927/workflow).
+
 #### Credentials
 
 :::\{warning}
@@ -168,7 +170,7 @@ LEAP-Pangeo provides users two cloud buckets to store data. Your [](reference.in
 - `gs://leap-persistent/` - Persistent Storage. Use this bucket for storing results you want to share with other members.
 - `gs://leap-persistent-ro/` - Persistent Storage with read-only access for most users.
 
-Files stored on each of those buckets can be accessed by any LEAP member, so be concious in the way you use these.
+Files stored on each of those buckets can be accessed by any LEAP member, so be conscious in the way you use these.
 
 - **Do not put sensitive information (passwords, keys, personal data) into these buckets!**
 - **When writing to buckets only ever write to your personal folder!** Your personal folder is a combination of the bucketname and your github username (e.g. \`gs://leap-persistent/funky-user/').
