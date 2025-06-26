@@ -97,7 +97,7 @@ and it should just work! If configured correctly, `leap.2i2c.cloud` should not a
 
 If the CLI asks for a password, please verify that your access token and public keys are valid and consistent across platforms and try the previous steps again. Keep in mind this test has to only work once, and it is not necessary to ssh into JupyterHub via CLI once you confirm this works once.  
 
-## Open LEAP Pangeo on VSCode 
+## Connect to LEAP Pangeo on VSCode 
 
 Launch VSCode, click on the top search bar to open the Command Palette (cmd + shift + P on Mac)
 
