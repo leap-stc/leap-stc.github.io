@@ -85,7 +85,7 @@ There are two levels of authentication - your JupyterHub token, as well as your 
 
 With that, we are ready to go!
 
-## `ssh` into your JupyterHub!
+## Try `ssh`-ing into your JupyterHub!
 
 After all this is setup, you're now able to ssh in! On your local terminal, try:
 
@@ -94,7 +94,8 @@ ssh leap.2i2c.cloud
 ```
 
 and it should just work! If configured correctly, `leap.2i2c.cloud` should not ask you for a password. 
-If it asks for a password, please verify that your access token and public keys are valid and consistent across platforms and try again. 
+
+If the CLI asks for a password, please verify that your access token and public keys are valid and consistent across platforms and try the previous steps again. Keep in mind this test has to only work once, and it is not necessary to ssh into JupyterHub via CLI once you confirm this works once.  
 
 ## Open LEAP Pangeo on VSCode 
 
