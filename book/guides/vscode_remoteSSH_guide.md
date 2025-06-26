@@ -3,17 +3,21 @@
 ## Pre-requisites 
 
 1. LEAP Pangeo Access
+
 You must have the ability to start a server on LEAP Pangeo. More information about membership can be found in the [Membership](https://leap-stc.github.io/reference/membership.html#users-membership-apply) page. 
 
 2. Websocat
+
 [websocat](https://github.com/vi/websocat) must be installed on the client machine.
 `pip install websocat` works on Mac OS, and pre-built binaries [are available](https://github.com/vi/websocat/releases)
 for all other operating systems.
 
 3. VSCode
+
 [VSCode](https://code.visualstudio.com/download) must be installed on the client machine. 
 
 4. VSCode Extensions
+
 Find and install the Remote-SSH and Jupyter extensions on the VSCode Extensions Marketplace. 
 
 <img width="268" alt="Image" src="https://github.com/user-attachments/assets/6dc5d51c-3389-4e2d-ab92-4ee75c981aa5" />
