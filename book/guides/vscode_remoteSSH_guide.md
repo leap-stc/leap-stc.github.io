@@ -1,4 +1,6 @@
-# Setting up a connection to LEAP Pangeo on Your Local Machine via VSCode
+(guide.vscode)=
+
+# Using VSCode with the Hub
 
 ## Pre-requisites
 
