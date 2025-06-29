@@ -30,6 +30,7 @@ parts:
       - file: guides/vm_access
       - file: guides/team_guide
       - file: guides/faq
+      - file: guides/vscode_remoteSSH_guide
   - caption: Reference
     chapters:
       - file: reference/infrastructure
