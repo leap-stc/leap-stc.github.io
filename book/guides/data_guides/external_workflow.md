@@ -175,3 +175,42 @@ Copying with rclone will stream the data from the source to your computer and ba
 
 ````
 `````
+
+
+(guides.data.authentication)=
+
+## Access to LEAP-Pangeo resources without the JupyterHub
+
+(guides.data.authentication.temp_token)=
+
+### Temporary Token
+```{note}
+This does not actually generate credentials that work outside the JupyterHub, Using the Google Groups is the recommended way of accessing the cloud buckets from outside the Hub.
+```
+
+You can generate a temporary (1 hour) token with read/write access as follows:
+
+- Now start up a [LEAP-Pangeo server](https://leap.2i2c.cloud) and open a terminal. Install the [Google Cloud SDK](https://cloud.google.com/sdk/docs/install) using mamba
+
+```shell
+mamba install google-cloud-sdk
+```
+
+Now you can generate a temporary token (valid for 1 hour) that allows you to upload data to the cloud.
+
+```shell
+gcloud auth print-access-token
+```
+
+This will print a temporary token in the terminal. You can e.g. copy that to your clipboard.
+
+(guides.data.authentication.google_groups)=
+
+### Persistent Access via Google Groups
+
+We manage access rights through [Google Groups](https://groups.google.com). Please contact the [](support.data_compute_team) to get added to the appropriate group (a gmail address is required for this).
+
+### Service Account
+
+If you want more permanent access to resources, e.g. as part of a repositories CI using a service account, please reach out to the [](support.data_compute_team) to discuss options.
+
