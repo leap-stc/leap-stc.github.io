@@ -219,7 +219,7 @@ Scroll to the "Allocation Attributes" section. You can see all relevant values h
 
 **OSN Anonymous Access**: If False, this data is public, no credentials are needed to read data (writing still requires credentials).
 **OSN Bucket Quota (TB)**: Shows the currently allocated size. This is the max size, not what is actuall used!
-**OSN RO/RW Bucket Access/Secret Key**: Credentials for read-only (RO) and read-write (RW) access to the bucket. See [](reference.infrastructure.osn_pod.credentials) for more details.
+**OSN RO/RW Bucket Access/Secret Key**: Credentials for read-only (RO) and read-write (RW) access to the bucket. See [](reference.infrastructure.osn_pod) for more details.
 
 #### Share bucket credentials
 
