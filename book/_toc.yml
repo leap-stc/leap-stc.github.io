@@ -25,7 +25,6 @@ parts:
           - file: guides/data_guides/transfer_data
           - file: guides/data_guides/data_catalog
           - file: guides/data_guides/data_jupyterhub
-          - file: guides/data_guides/external_workflow
       - file: guides/compute_guide
       - file: guides/vm_access
       - file: guides/team_guide

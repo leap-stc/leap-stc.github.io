@@ -1,21 +1,14 @@
-autoupdate_schedule: quarterly
+ci:
+  autoupdate_schedule: monthly
 repos:
-    # - repo: https://github.com/jackdewinter/pymarkdown
-    #   rev: v0.9.15
-    #   hooks:
-    #       - id: pymarkdown
-    # - repo: https://github.com/igorshubovych/markdownlint-cli
-    #   rev: v0.38.0
-    #   hooks:
-    #   - id: markdownlint-fix
-    - repo: https://github.com/executablebooks/mdformat
-      rev: 0.7.22  # Use the ref you want to point at
-      hooks:
-      - id: mdformat
-        # Optionally add plugins
-        additional_dependencies:
-        - mdformat-myst
-        - mdformat-black
-        - mdformat-config
-        - mdformat-tables
-        - mdformat-web
+  - repo: https://github.com/executablebooks/mdformat
+    rev: 0.7.22  # Use the ref you want to point at
+    hooks:
+    - id: mdformat
+      # Optionally add plugins
+      additional_dependencies:
+      - mdformat-myst
+      - mdformat-black
+      - mdformat-config
+      - mdformat-tables
+      - mdformat-web

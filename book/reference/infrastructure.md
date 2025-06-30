@@ -122,11 +122,11 @@ For a more permanent solution we recommend building project specific dockerfiles
 
 ## Cloud Storage
 
-(reference.infrastructrue.osn_pod)=
+(reference.infrastructure.osn_pod)=
 
-### m2lines OSN Pod
+### LEAP OSN Pod
 
-(reference.infrastructrue.osn_pod.organization)=
+(reference.infrastructure.osn_pod.organization)=
 
 #### OSN Pod Organization
 
@@ -148,7 +148,9 @@ There are currently 3 principal Projects on the Pod:
     - `'leap-pubs'`: **No write access for users**
     - ... various project buckets
 
-(reference.infrastructrue.osn_pod.credentials)=
+(reference.infrastructure.osn_pod.credentials)=
+
+Data can be transferred from `leap-pangeo-inbox` to `leap-pangeo-manual` with [this rclone github action](https://github.com/leap-stc/data-management/actions/runs/11167922927/workflow).
 
 #### Credentials
 
@@ -166,9 +168,9 @@ LEAP-Pangeo provides users two cloud buckets to store data. Your [](reference.in
 
 - `gs://leap-scratch/` - Temporary Storage deleted after 7 days. Use this bucket for testing and storing large intermediate results. [More info](https://docs.2i2c.org/user/topics/data/cloud/#scratch-bucket)
 - `gs://leap-persistent/` - Persistent Storage. Use this bucket for storing results you want to share with other members.
-- `gs://leap-persistent-ro/` - Persistent Storage with read-only access for most users. To upload data to this bucket you need to use [this](hub.data.upload_hpc) method below.
+- `gs://leap-persistent-ro/` - Persistent Storage with read-only access for most users.
 
-Files stored on each of those buckets can be accessed by any LEAP member, so be concious in the way you use these.
+Files stored on each of those buckets can be accessed by any LEAP member, so be conscious in the way you use these.
 
 - **Do not put sensitive information (passwords, keys, personal data) into these buckets!**
 - **When writing to buckets only ever write to your personal folder!** Your personal folder is a combination of the bucketname and your github username (e.g. \`gs://leap-persistent/funky-user/').

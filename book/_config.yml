@@ -53,7 +53,7 @@ sphinx:
             github: SammyAgrawal
             slack_id: U05364D6MLL
           - name: Raphael Hagen
-            role: Pangeo-Forge Recipe Development
+            role: Recipe Development
             teams: [data-and-compute, leap-pangeo]
             org: CarbonPlan
             pronouns: he / him
