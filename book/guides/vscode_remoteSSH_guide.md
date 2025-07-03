@@ -163,7 +163,7 @@ Launch VSCode, click on the top search bar to open the Command Palette (cmd + sh
 
 <img width="329" alt="Image" src="https://github.com/user-attachments/assets/15620385-784a-427a-8d6c-cd099e1b3017" />
 
-## [VSCode] Write / execute your code via a remote kernel
+## 6 [VSCode] Write / execute your code via a remote kernel
 
 1. Once you open a Notebook, you will find a selection menu for a kernel on the top-right.
 
@@ -179,7 +179,7 @@ Launch VSCode, click on the top search bar to open the Command Palette (cmd + sh
 
 You should now be good to execute code via remote kernel on the LEAP server from local VSCode!
 
-## 6 [VSCode] Re-connecting to Remote SSH After Setup
+## 7 [VSCode] Re-connecting to Remote SSH After Setup
 
 1. Type `>Remote-SSH: Connect to Host` into the top search bar.
 
