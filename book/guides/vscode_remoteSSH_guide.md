@@ -30,7 +30,6 @@ Remote-SSH will be used to connect to your LEAP Pangeo server, while the Jupyter
 :::\{admonition} Before you begin
 There are two levels of authentication – your **JupyterHub token** and your **SSH key pair** (public/private). This guide will walk you through both so you can connect with JupyterHub from your VSCode without entering a password.
 :::
-
 The **JupyterHub token** is like a temporary password that lets your local machine talk to the JupyterHub server over a special channel (via websocat).
 
 The JupyterHub token will be included in your `~/.ssh/config` file on your local machine so ssh knows how to talk to the server.
@@ -38,7 +37,6 @@ The JupyterHub token will be included in your `~/.ssh/config` file on your local
 Your **SSH key pair** is like a secure ID card. Your local machine holds the private key (secret), and the server holds your public key (the badge that proves it trusts you).
 
 The SSH public key will be added to your GitHub account for convenience, and then downloaded onto the JupyterHub server (saved into `~/.ssh/authorized_keys`) so the server knows your local machine is trusted.
-:::
 
 ## 1 [Web Browser] Start your server
 
@@ -134,9 +132,7 @@ ssh leap.2i2c.cloud
 
 and it should just work! If configured correctly, `leap.2i2c.cloud` should not ask you for a password.
 
-## :::\{admonition} Debugging Help
-
-## class: important
+:::\{attention} Debugging Help
 
 If you get the error `ssh: connect to host leap.2i2c.cloud port 22: Operation timed out`, then check you have installed websocat by running `run pip install websocat` and confirm that ther config file in the correct directory, `~/.ssh/config`
 :::
