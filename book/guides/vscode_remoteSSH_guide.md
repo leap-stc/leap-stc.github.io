@@ -27,12 +27,26 @@ Find and install the Remote-SSH and Jupyter extensions on the VSCode Extensions 
 
 Remote-SSH will be used to connect to your LEAP Pangeo server, while the Jupyter extension will be used to open .ipynb notebooks and manage the kernel that runs your code on the remote server.
 
-## [Web Browser] Start your server
+:::\{admonition} Before you begin 
+There are two levels of authentication – your **JupyterHub token** and your **SSH key pair** (public/private). This guide will walk you through both so you can connect with JupyterHub from your VSCode without entering a password. 
+
+The **JupyterHub token** is like a temporary password that lets your local machine talk to the JupyterHub server over a special channel (via websocat). 
+
+The JupyterHub token will be included in your `~/.ssh/config` file on your local machine so ssh knows how to talk to the server.
+
+
+Your **SSH key pair** is like a secure ID card. Your local machine holds the private key (secret), and the server holds your public key (the badge that proves it trusts you).
+
+The SSH public key will be added to your GitHub account for convenience, and then downloaded onto the JupyterHub server (saved into `~/.ssh/authorized_keys`) so the server knows your local machine is trusted.
+::: 
+
+## 1 [Web Browser] Start your server
 
 This setup only works after you start your JupyterHub server. So, start your server!
 Please keep in mind that even after setting up Remote-SSH on your VSCode, you would have to start your server on [LEAP Pangeo](https://leap.2i2c.cloud/hub/home) before attempting to connect to the server.
 
-## [Web Browser] Create a JupyterHub Token
+## 2 JupyterHub Token Setup
+### 2-1 [Web Browser] Obtain a JupyterHub Token
 
 We will need to create a JupyterHub token for authentication.
 
@@ -44,7 +58,7 @@ We will need to create a JupyterHub token for authentication.
 1. Create a new Token, and keep it safe. **Treat this like you would treat a password to your
    JupyterHub instance**! It is recommended you set an expiry date for this.
 
-## [Local Terminal] Setup your local `~/.ssh/config`
+### 2-1 [Local Terminal] Configure local `~/.ssh/config` with the JupyterHub Token
 
 We will set up our ssh config file to tell `ssh` how to connect to our JupyterHub. Add
 an entry that looks like this to the end of your `~/.ssh/config` file (create it if it does not exist).
@@ -60,22 +74,34 @@ replace:
 - `<YOUR-JUPYTERHUB-TOKEN>` with the token you generated earlier
 - `<YOUR-JUPYTERHUB-USERNAME>` with your jupyterhub username
 
-## [Local Terminal + Github] Setup your ssh key and save the public key on Github
+## 3 SSH Key Pair Setup
+### 3-1 [Local Terminal] Generate a ssh key pair
 
-1. Generate key on local terminal:
-   `ssh-keygen -t ed25519 -C "your_email@example.com"`
-1. Add key to ssh-agent:
-   `eval "$(ssh-agent -s)"`
+1. Generate the key pair on local terminal by executing the command:
+   
+   ```ssh-keygen -t ed25519 -C "your_email@example.com"```
+   Make sure to replace your_email@example.com with your actual email address. 
+1. Add key to ssh-agent by executing:
+   `eval "$(ssh-agent -s)"` and
+
    `ssh-add  #~/.ssh/id_ed25519`
-1. Copy and paste the key to your Github account. Use following command to show the key on your local machine:
-   `cat ~/.ssh/id_ed25519.pub` - This is the public key, do not expose your private key `id_ed25519` - the private key should not be shared.
-   In [Github key settings](https://github.com/settings/keys), paste the entire output from previous command (including email address) into the “Key” box, and save.
+1. Copy the public key:
+   Use following command to show the public key on your local machine:
+   ```cat ~/.ssh/id_ed25519.pub``` 
+   And copy the entire key, including the email address. 
 
-## [Web Browser] Setup ssh keys on your JupyterHub server
+   Do not expose your private key `id_ed25519` - the private key should not be shared.
 
-There are two levels of authentication - your JupyterHub token, as well as your ssh keys (public / private).
+### 3-2 [Web Browser] Save the public key on Github
+1. Go to [Github key settings](https://github.com/settings/keys), then click on "New SSH Key." 
 
-1. After you start your JupyterHub server, open a terminal in JupyterLab
+1. Paste the copied public key (including email address) into the “Key” box, and save. In the next step, we will leverage Github to save your public key on JupyterHub. 
+
+### 3-3 [Web Browser] Setup ssh keys on your JupyterHub server
+
+1. Make sure your JupyterHub server is still running. If not, start a new one. 
+
+1. Open a terminal in JupyterLab on your web browser
 
 1. Run the following commands:
 
@@ -89,11 +115,11 @@ There are two levels of authentication - your JupyterHub token, as well as your 
 
 1. Verify that authorized_keys contains your key by running `cat ~/.ssh/authorized_keys` on the JupyterLab Terminal
 
-1. If it is empty or nonexistent, then create the file authorized_keys and paste your ssh public key (`cat ~/.ssh/id_ed25519.pub`, from local terminal) and save file.
+1. If it is empty or nonexistent, then create the file authorized_keys in the ~/.ssh/ directory and paste your ssh public key (`cat ~/.ssh/id_ed25519.pub`, from local terminal) and save file.
 
 With that, we are ready to go!
 
-## [Local Terminal] Try `ssh`-ing into your JupyterHub!
+## 4 [Local Terminal] Try `ssh`-ing into your JupyterHub!
 
 After all this is setup, you're now able to ssh in! On your local terminal, try:
 
@@ -112,7 +138,7 @@ If you get the error `ssh: connect to host leap.2i2c.cloud port 22: Operation ti
 
 If the CLI asks for a password, please verify that your access token and public keys are valid and consistent across platforms and try the previous steps again. Keep in mind this test has to only work once, and it is not necessary to ssh into JupyterHub via CLI once you confirm this works once.
 
-## [VSCode] Connect to LEAP Pangeo on VSCode
+## 5 [VSCode] Connect to LEAP Pangeo on VSCode
 
 Launch VSCode, click on the top search bar to open the Command Palette (cmd + shift + P on Mac)
 
@@ -152,7 +178,7 @@ Launch VSCode, click on the top search bar to open the Command Palette (cmd + sh
 
 You should now be good to execute code via remote kernel on the LEAP server from local VSCode!
 
-## [VSCode] Re-connecting to Remote SSH After Setup
+## 6 [VSCode] Re-connecting to Remote SSH After Setup
 
 1. Type `>Remote-SSH: Connect to Host` into the top search bar.
 
