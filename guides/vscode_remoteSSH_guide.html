@@ -364,59 +364,18 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#start-your-server">
-   Start your server
+  <a class="reference internal nav-link" href="#vscode-connect-to-leap-pangeo-on-vscode">
+   5 [VSCode] Connect to LEAP Pangeo on VSCode
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-a-jupyterhub-token">
-   Create a JupyterHub Token
+  <a class="reference internal nav-link" href="#vscode-write-execute-your-code-via-a-remote-kernel">
+   6 [VSCode] Write / execute your code via a remote kernel
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setup-your-local-ssh-config">
-   Setup your local
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     ~/.ssh/config
-    </span>
-   </code>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setup-your-local-public-key-and-save-key-on-github">
-   Setup your local public key and save key on Github
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setup-ssh-keys-on-your-jupyterhub-server">
-   Setup ssh keys on your JupyterHub server
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#try-ssh-ing-into-your-jupyterhub">
-   Try
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     ssh
-    </span>
-   </code>
-   -ing into your JupyterHub!
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#connect-to-leap-pangeo-on-vscode">
-   Connect to LEAP Pangeo on VSCode
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#write-execute-your-code-via-a-remote-kernel">
-   Write / execute your code via a remote kernel
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#re-connecting-to-remote-ssh-after-setup">
-   Re-connecting to Remote SSH After Setup
+  <a class="reference internal nav-link" href="#vscode-re-connecting-to-remote-ssh-after-setup">
+   7 [VSCode] Re-connecting to Remote SSH After Setup
   </a>
  </li>
 </ul>
@@ -445,59 +404,18 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#start-your-server">
-   Start your server
+  <a class="reference internal nav-link" href="#vscode-connect-to-leap-pangeo-on-vscode">
+   5 [VSCode] Connect to LEAP Pangeo on VSCode
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-a-jupyterhub-token">
-   Create a JupyterHub Token
+  <a class="reference internal nav-link" href="#vscode-write-execute-your-code-via-a-remote-kernel">
+   6 [VSCode] Write / execute your code via a remote kernel
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setup-your-local-ssh-config">
-   Setup your local
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     ~/.ssh/config
-    </span>
-   </code>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setup-your-local-public-key-and-save-key-on-github">
-   Setup your local public key and save key on Github
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setup-ssh-keys-on-your-jupyterhub-server">
-   Setup ssh keys on your JupyterHub server
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#try-ssh-ing-into-your-jupyterhub">
-   Try
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     ssh
-    </span>
-   </code>
-   -ing into your JupyterHub!
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#connect-to-leap-pangeo-on-vscode">
-   Connect to LEAP Pangeo on VSCode
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#write-execute-your-code-via-a-remote-kernel">
-   Write / execute your code via a remote kernel
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#re-connecting-to-remote-ssh-after-setup">
-   Re-connecting to Remote SSH After Setup
+  <a class="reference internal nav-link" href="#vscode-re-connecting-to-remote-ssh-after-setup">
+   7 [VSCode] Re-connecting to Remote SSH After Setup
   </a>
  </li>
 </ul>
@@ -513,101 +431,133 @@ const thebe_selector_output = ".output, .cell_output"
 <span id="guide-vscode"></span><h1>Using VSCode with the Hub<a class="headerlink" href="#using-vscode-with-the-hub" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="pre-requisites">
 <h2>Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
-<li><p>LEAP Pangeo Access</p></li>
-</ol>
+<p>⭐ LEAP Pangeo Access</p>
 <p>You must have the ability to start a server on LEAP Pangeo. More information about membership can be found in the <a class="reference external" href="https://leap-stc.github.io/reference/membership.html#users-membership-apply">Membership</a> page.</p>
-<ol class="simple">
-<li><p>Websocat</p></li>
-</ol>
+<p>⭐ Websocat</p>
 <p><a class="reference external" href="https://github.com/vi/websocat">websocat</a> must be installed on the client machine.
 <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">websocat</span></code> works on Mac OS, and pre-built binaries <a class="reference external" href="https://github.com/vi/websocat/releases">are available</a>
 for all other operating systems.</p>
-<ol class="simple">
-<li><p>VSCode</p></li>
-</ol>
+<p>⭐ VSCode</p>
 <p><a class="reference external" href="https://code.visualstudio.com/download">VSCode</a> must be installed on the client machine.</p>
-<ol class="simple">
-<li><p>VSCode Extensions</p></li>
-</ol>
+<p>⭐ VSCode Extensions</p>
 <p>Find and install the Remote-SSH and Jupyter extensions on the VSCode Extensions Marketplace.</p>
 <a class="reference internal image-reference" href="https://github.com/user-attachments/assets/6dc5d51c-3389-4e2d-ab92-4ee75c981aa5"><img alt="Image" src="https://github.com/user-attachments/assets/6dc5d51c-3389-4e2d-ab92-4ee75c981aa5" style="width: 268px;" /></a>
 <a class="reference internal image-reference" href="https://github.com/user-attachments/assets/67f748fc-7ae0-4cc0-a1b5-a6a4ce8b67e1"><img alt="Image" src="https://github.com/user-attachments/assets/67f748fc-7ae0-4cc0-a1b5-a6a4ce8b67e1" style="width: 272px;" /></a>
 <p>Remote-SSH will be used to connect to your LEAP Pangeo server, while the Jupyter extension will be used to open .ipynb notebooks and manage the kernel that runs your code on the remote server.</p>
+<div class="admonition-before-you-begin admonition">
+<p class="admonition-title">Before you begin</p>
+<p>There are two levels of authentication – your <strong>JupyterHub token</strong> and your <strong>SSH key pair</strong> (public/private). This guide will walk you through both so you can connect with JupyterHub from your VSCode without entering a password.</p>
 </div>
-<div class="section" id="start-your-server">
-<h2>Start your server<a class="headerlink" href="#start-your-server" title="Permalink to this headline">¶</a></h2>
-<p>This setup only works after you start your JupyterHub server. So, start your server!
-Please keep in mind that even after setting up Remote-SSH on your VSCode, you would have to start your server on <a class="reference external" href="https://leap.2i2c.cloud/hub/home">LEAP Pangeo</a> before attempting to connect to the server.</p>
-</div>
-<div class="section" id="create-a-jupyterhub-token">
-<h2>Create a JupyterHub Token<a class="headerlink" href="#create-a-jupyterhub-token" title="Permalink to this headline">¶</a></h2>
-<p>We will need to create a JupyterHub token for authentication.</p>
-<ol class="simple">
-<li><p>Go to the JupyterHub control panel. You can access it via <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">-&gt;</span> <span class="pre">Hub</span> <span class="pre">control</span> <span class="pre">panel</span></code> in
-JupyterLab, or directly going to <a class="reference external" href="https://leap.2i2c.cloud/hub/token">https://leap.2i2c.cloud/hub/token</a>.</p></li>
-<li><p>In the top bar, select <strong>Token</strong>.</p></li>
-<li><p>Create a new Token, and keep it safe. <strong>Treat this like you would treat a password to your
-JupyterHub instance</strong>! It is recommended you set an expiry date for this.</p></li>
-</ol>
-</div>
-<div class="section" id="setup-your-local-ssh-config">
-<h2>Setup your local <code class="docutils literal notranslate"><span class="pre">~/.ssh/config</span></code><a class="headerlink" href="#setup-your-local-ssh-config" title="Permalink to this headline">¶</a></h2>
-<p>We will set up our ssh config file to tell <code class="docutils literal notranslate"><span class="pre">ssh</span></code> how to connect to our JupyterHub. Add
-an entry that looks like this to the end of your <code class="docutils literal notranslate"><span class="pre">~/.ssh/config</span></code> file (create it if it does not exist).</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Host</span> <span class="n">leap</span><span class="mf">.2</span><span class="n">i2c</span><span class="o">.</span><span class="n">cloud</span>
-    <span class="n">User</span> <span class="n">jovyan</span>
-    <span class="n">ProxyCommand</span> <span class="n">websocat</span> <span class="o">--</span><span class="n">binary</span> <span class="o">-</span><span class="n">H</span><span class="o">=</span><span class="s1">&#39;Authorization: token &lt;YOUR-JUPYTERHUB-TOKEN&gt;&#39;</span> <span class="n">asyncstdio</span><span class="p">:</span> <span class="n">wss</span><span class="p">:</span><span class="o">//%</span><span class="n">h</span><span class="o">/</span><span class="n">user</span><span class="o">/&lt;</span><span class="n">YOUR</span><span class="o">-</span><span class="n">JUPYTERHUB</span><span class="o">-</span><span class="n">USERNAME</span><span class="o">&gt;/</span><span class="n">sshd</span><span class="o">/</span>
+<p>The <strong>JupyterHub token</strong> is like a temporary password that lets your local machine talk to the JupyterHub server over a special channel (via websocat).</p>
+<p>The JupyterHub token will be included in your <code class="docutils literal notranslate"><span class="pre">~/.ssh/config</span></code> file on your local machine so ssh knows how to talk to the server.</p>
+<p>Your <strong>SSH key pair</strong> is like a secure ID card. Your local machine holds the private key (secret), and the server holds your public key (the badge that proves it trusts you).</p>
+<p>The SSH public key will be added to your GitHub account for convenience, and then downloaded onto the JupyterHub server (saved into <code class="docutils literal notranslate"><span class="pre">~/.ssh/authorized_keys</span></code>) so the server knows your local machine is trusted.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+## 1 [Web Browser] Start your server
+
+This setup only works after you start your JupyterHub server. So, start your server!
+Please keep in mind that even after setting up Remote-SSH on your VSCode, you would have to start your server on [LEAP Pangeo](https://leap.2i2c.cloud/hub/home) before attempting to connect to the server.
+
+## 2 JupyterHub Token Setup
+
+### 2-1 [Web Browser] Obtain a JupyterHub Token
+
+We will need to create a JupyterHub token for authentication.
+
+1. Go to the JupyterHub control panel. You can access it via `File -&gt; Hub control panel` in
+   JupyterLab, or directly going to [https://leap.2i2c.cloud/hub/token](https://leap.2i2c.cloud/hub/token).
+
+1. In the top bar, select **Token**.
+
+1. Create a new Token, and keep it safe. **Treat this like you would treat a password to your
+   JupyterHub instance**! It is recommended you set an expiry date for this.
+
+### 2-1 [Local Terminal] Configure local `~/.ssh/config` with the JupyterHub Token
+
+We will set up our ssh config file to tell `ssh` how to connect to our JupyterHub. Add
+an entry that looks like this to the end of your `~/.ssh/config` file (create it if it does not exist).
+
+```
+Host leap.2i2c.cloud
+    User jovyan
+    ProxyCommand websocat --binary -H=&#39;Authorization: token &lt;YOUR-JUPYTERHUB-TOKEN&gt;&#39; asyncstdio: wss://%h/user/&lt;YOUR-JUPYTERHUB-USERNAME&gt;/sshd/
+```
+
+replace:
+
+- `&lt;YOUR-JUPYTERHUB-TOKEN&gt;` with the token you generated earlier
+- `&lt;YOUR-JUPYTERHUB-USERNAME&gt;` with your jupyterhub username
+
+## 3 SSH Key Pair Setup
+
+### 3-1 [Local Terminal] Generate a ssh key pair
+
+1. Generate the key pair on local terminal by executing the command:
+
+   `ssh-keygen -t ed25519 -C &quot;your_email@example.com&quot;`
+   Make sure to replace your_email@example.com with your actual email address.
+
+1. Add key to ssh-agent by executing:
+   `eval &quot;$(ssh-agent -s)&quot;` and
+
+   `ssh-add  #~/.ssh/id_ed25519`
+
+1. Copy the public key:
+   Use following command to show the public key on your local machine:
+   `cat ~/.ssh/id_ed25519.pub`
+   And copy the entire key, including the email address.
+
+   Do not expose your private key `id_ed25519` - the private key should not be shared.
+
+### 3-2 [Web Browser] Save the public key on Github
+
+1. Go to [Github key settings](https://github.com/settings/keys), then click on &quot;New SSH Key.&quot;
+
+1. Paste the copied public key (including email address) into the “Key” box, and save. In the next step, we will leverage Github to save your public key on JupyterHub.
+
+### 3-3 [Web Browser] Setup ssh keys on your JupyterHub server
+
+1. Make sure your JupyterHub server is still running. If not, start a new one.
+
+1. Open a terminal in JupyterLab on your web browser
+
+1. Run the following commands:
+
+   ```bash
+   mkdir -p ~/.ssh
+   wget https://github.com/&lt;YOUR-GITHUB-USERNAME&gt;.keys -O ~/.ssh/authorized_keys
+   chmod 0600 ~/.ssh/authorized_keys
+   ```
+
+   replacing `&lt;YOUR-GITHUB-USERNAME&gt;` with your github username.
+
+1. Verify that authorized_keys contains your key by running `cat ~/.ssh/authorized_keys` on the JupyterLab Terminal
+
+1. If it is empty or nonexistent, then create the file authorized_keys in the ~/.ssh/ directory and paste your ssh public key (`cat ~/.ssh/id_ed25519.pub`, from local terminal) and save file.
+
+With that, we are ready to go!
+
+## 4 [Local Terminal] Try `ssh`-ing into your JupyterHub!
+
+After all this is setup, you&#39;re now able to ssh in! On your local terminal, try:
+
+```
+ssh leap.2i2c.cloud
+```
+
+and it should just work! If configured correctly, `leap.2i2c.cloud` should not ask you for a password.
+
+## :::\{admonition} Debugging Help
+
+## class: important
+
+If you get the error `ssh: connect to host leap.2i2c.cloud port 22: Operation timed out`, then check you have installed websocat by running `run pip install websocat` and confirm that ther config file in the correct directory, `~/.ssh/config`
 </pre></div>
 </div>
-<p>replace:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;YOUR-JUPYTERHUB-TOKEN&gt;</span></code> with the token you generated earlier</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;YOUR-JUPYTERHUB-USERNAME&gt;</span></code> with your jupyterhub username</p></li>
-</ul>
-</div>
-<div class="section" id="setup-your-local-public-key-and-save-key-on-github">
-<h2>Setup your local public key and save key on Github<a class="headerlink" href="#setup-your-local-public-key-and-save-key-on-github" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
-<li><p>Generate key on local terminal:
-<code class="docutils literal notranslate"><span class="pre">ssh-keygen</span> <span class="pre">-t</span> <span class="pre">ed25519</span> <span class="pre">-C</span> <span class="pre">&quot;your_email&#64;example.com&quot;</span></code></p></li>
-<li><p>Add key to ssh-agent:
-<code class="docutils literal notranslate"><span class="pre">eval</span> <span class="pre">&quot;$(ssh-agent</span> <span class="pre">-s)&quot;</span></code>
-<code class="docutils literal notranslate"><span class="pre">ssh-add</span>&#160; <span class="pre">#~/.ssh/id_ed25519</span></code></p></li>
-<li><p>Copy and paste the key to your Github account. Use following command to show the key on your local machine:
-<code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">~/.ssh/id_ed25519.pub</span></code> - This is the public key, do not expose your private key <code class="docutils literal notranslate"><span class="pre">id_ed25519</span></code> - the private key should not be shared.
-In <a class="reference external" href="https://github.com/settings/keys">Github key settings</a>, paste the entire output from previous command (including email address) into the “Key” box, and save.</p></li>
-</ol>
-</div>
-<div class="section" id="setup-ssh-keys-on-your-jupyterhub-server">
-<h2>Setup ssh keys on your JupyterHub server<a class="headerlink" href="#setup-ssh-keys-on-your-jupyterhub-server" title="Permalink to this headline">¶</a></h2>
-<p>There are two levels of authentication - your JupyterHub token, as well as your ssh keys (public / private).</p>
-<ol>
-<li><p>After you start your JupyterHub server, open a terminal in JupyterLab</p></li>
-<li><p>Run the following commands:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-p<span class="w"> </span>~/.ssh
-wget<span class="w"> </span>https://github.com/&lt;YOUR-GITHUB-USERNAME&gt;.keys<span class="w"> </span>-O<span class="w"> </span>~/.ssh/authorized_keys
-chmod<span class="w"> </span><span class="m">0600</span><span class="w"> </span>~/.ssh/authorized_keys
-</pre></div>
-</div>
-<p>replacing <code class="docutils literal notranslate"><span class="pre">&lt;YOUR-GITHUB-USERNAME&gt;</span></code> with your github username.</p>
-</li>
-<li><p>Verify that authorized_keys contains your key by running <code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">~/.ssh/authorized_keys</span></code> on the JupyterLab Terminal</p></li>
-<li><p>If it is empty or nonexistent, then create the file authorized_keys and paste your ssh public key (<code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">~/.ssh/id_ed25519.pub</span></code>, from local terminal) and save file.</p></li>
-</ol>
-<p>With that, we are ready to go!</p>
-</div>
-<div class="section" id="try-ssh-ing-into-your-jupyterhub">
-<h2>Try <code class="docutils literal notranslate"><span class="pre">ssh</span></code>-ing into your JupyterHub!<a class="headerlink" href="#try-ssh-ing-into-your-jupyterhub" title="Permalink to this headline">¶</a></h2>
-<p>After all this is setup, you’re now able to ssh in! On your local terminal, try:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">leap</span><span class="mf">.2</span><span class="n">i2c</span><span class="o">.</span><span class="n">cloud</span>
-</pre></div>
-</div>
-<p>and it should just work! If configured correctly, <code class="docutils literal notranslate"><span class="pre">leap.2i2c.cloud</span></code> should not ask you for a password.</p>
 <p>If the CLI asks for a password, please verify that your access token and public keys are valid and consistent across platforms and try the previous steps again. Keep in mind this test has to only work once, and it is not necessary to ssh into JupyterHub via CLI once you confirm this works once.</p>
 </div>
-<div class="section" id="connect-to-leap-pangeo-on-vscode">
-<h2>Connect to LEAP Pangeo on VSCode<a class="headerlink" href="#connect-to-leap-pangeo-on-vscode" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="vscode-connect-to-leap-pangeo-on-vscode">
+<h2>5 [VSCode] Connect to LEAP Pangeo on VSCode<a class="headerlink" href="#vscode-connect-to-leap-pangeo-on-vscode" title="Permalink to this headline">¶</a></h2>
 <p>Launch VSCode, click on the top search bar to open the Command Palette (cmd + shift + P on Mac)</p>
 <ol class="simple">
 <li><p>Enter <code class="docutils literal notranslate"><span class="pre">&gt;Remote-SSH:</span> <span class="pre">Add</span> <span class="pre">New</span> <span class="pre">SSh</span> <span class="pre">Host</span></code></p></li>
@@ -630,8 +580,8 @@ chmod<span class="w"> </span><span class="m">0600</span><span class="w"> </span>
 </ol>
 <a class="reference internal image-reference" href="https://github.com/user-attachments/assets/15620385-784a-427a-8d6c-cd099e1b3017"><img alt="Image" src="https://github.com/user-attachments/assets/15620385-784a-427a-8d6c-cd099e1b3017" style="width: 329px;" /></a>
 </div>
-<div class="section" id="write-execute-your-code-via-a-remote-kernel">
-<h2>Write / execute your code via a remote kernel<a class="headerlink" href="#write-execute-your-code-via-a-remote-kernel" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="vscode-write-execute-your-code-via-a-remote-kernel">
+<h2>6 [VSCode] Write / execute your code via a remote kernel<a class="headerlink" href="#vscode-write-execute-your-code-via-a-remote-kernel" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Once you open a Notebook, you will find a selection menu for a kernel on the top-right.</p></li>
 </ol>
@@ -646,8 +596,8 @@ chmod<span class="w"> </span><span class="m">0600</span><span class="w"> </span>
 <a class="reference internal image-reference" href="https://github.com/user-attachments/assets/772746e7-4eba-49ba-9a89-465b1b19a140"><img alt="Image" src="https://github.com/user-attachments/assets/772746e7-4eba-49ba-9a89-465b1b19a140" style="width: 610px;" /></a>
 <p>You should now be good to execute code via remote kernel on the LEAP server from local VSCode!</p>
 </div>
-<div class="section" id="re-connecting-to-remote-ssh-after-setup">
-<h2>Re-connecting to Remote SSH After Setup<a class="headerlink" href="#re-connecting-to-remote-ssh-after-setup" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="vscode-re-connecting-to-remote-ssh-after-setup">
+<h2>7 [VSCode] Re-connecting to Remote SSH After Setup<a class="headerlink" href="#vscode-re-connecting-to-remote-ssh-after-setup" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Type <code class="docutils literal notranslate"><span class="pre">&gt;Remote-SSH:</span> <span class="pre">Connect</span> <span class="pre">to</span> <span class="pre">Host</span></code> into the top search bar.</p></li>
 </ol>
@@ -663,6 +613,7 @@ chmod<span class="w"> </span><span class="m">0600</span><span class="w"> </span>
 <ol class="simple">
 <li><p>Yuvi [<a class="reference external" href="https://github.com/yuvipanda">https://github.com/yuvipanda</a>], <a class="reference external" href="https://github.com/yuvipanda/jupyter-sshd-proxy/blob/main/README.md">jupyter-sshd-proxy</a>:</p></li>
 <li><p>Joe Ko [jk4730&#64;columbia.edu], clarifications on how to setup the local public key</p></li>
+<li><p>Sungjoon Park [sp4050&#64;columbia.edu], whom you can contact for questions regarding this workflow</p></li>
 </ol>
 </div>
 </div>
