@@ -29,6 +29,7 @@ Remote-SSH will be used to connect to your LEAP Pangeo server, while the Jupyter
 
 :::\{admonition} Before you begin 
 There are two levels of authentication – your **JupyterHub token** and your **SSH key pair** (public/private). This guide will walk you through both so you can connect with JupyterHub from your VSCode without entering a password. 
+:::
 
 The **JupyterHub token** is like a temporary password that lets your local machine talk to the JupyterHub server over a special channel (via websocat). 
 
