@@ -4,21 +4,21 @@
 
 ## Pre-requisites
 
-1. LEAP Pangeo Access
+⭐ LEAP Pangeo Access
 
 You must have the ability to start a server on LEAP Pangeo. More information about membership can be found in the [Membership](https://leap-stc.github.io/reference/membership.html#users-membership-apply) page.
 
-1. Websocat
+⭐ Websocat
 
 [websocat](https://github.com/vi/websocat) must be installed on the client machine.
 `pip install websocat` works on Mac OS, and pre-built binaries [are available](https://github.com/vi/websocat/releases)
 for all other operating systems.
 
-1. VSCode
+⭐ VSCode
 
 [VSCode](https://code.visualstudio.com/download) must be installed on the client machine.
 
-1. VSCode Extensions
+⭐ VSCode Extensions
 
 Find and install the Remote-SSH and Jupyter extensions on the VSCode Extensions Marketplace.
 
@@ -129,12 +129,12 @@ ssh leap.2i2c.cloud
 
 and it should just work! If configured correctly, `leap.2i2c.cloud` should not ask you for a password.
 
-```{admonition} Debugging Help
+:::\{admonition} Debugging Help
 ---
 class: important
 ---
 If you get the error `ssh: connect to host leap.2i2c.cloud port 22: Operation timed out`, then check you have installed websocat by running  `run pip install websocat` and confirm that ther config file in the correct directory, `~/.ssh/config`
-```
+:::
 
 If the CLI asks for a password, please verify that your access token and public keys are valid and consistent across platforms and try the previous steps again. Keep in mind this test has to only work once, and it is not necessary to ssh into JupyterHub via CLI once you confirm this works once.
 
