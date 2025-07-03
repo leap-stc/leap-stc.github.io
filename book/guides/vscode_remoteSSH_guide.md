@@ -132,7 +132,7 @@ ssh leap.2i2c.cloud
 
 and it should just work! If configured correctly, `leap.2i2c.cloud` should not ask you for a password.
 
-:::\{admonition} Debugging Help
+:::\{attention} Debugging Help
 
 If you get the error `ssh: connect to host leap.2i2c.cloud port 22: Operation timed out`, then check you have installed websocat by running `run pip install websocat` and confirm that ther config file in the correct directory, `~/.ssh/config`
 :::
