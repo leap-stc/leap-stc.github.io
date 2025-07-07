@@ -182,7 +182,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="data_guides/transfer_data.html">
-     Transfering Data into Cloud Storage
+     Transferring Data into Cloud Storage
     </a>
    </li>
    <li class="toctree-l2">
@@ -193,11 +193,6 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="data_guides/data_jupyterhub.html">
      Working with Cloud Data on the JupyterHub
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="data_guides/external_workflow.html">
-     Working outside the LEAP JupyterHub
     </a>
    </li>
   </ul>
@@ -874,7 +869,7 @@ Unfortunately we do not have a technical way to implement per user quotas, so we
 </div>
 <div class="section" id="moving-data-between-buckets-using-bare-vms">
 <h3>Moving Data between buckets using bare VMs<a class="headerlink" href="#moving-data-between-buckets-using-bare-vms" title="Permalink to this headline">¶</a></h3>
-<p>In general you need some form of compute to move data between different object store locations, but be aware that the data will be always be streamed to and from that location over the internet, so fast connection speed is key for fast transfers. There are a variety of ways to move data with perhaps the easiest being to run fsspec or rclone on your local computer, but speed is likely limited by your local internet connection. For certain tasks (e.g. moving data to admin only publishing buckets on the <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructrue-osn-pod"><span class="std std-ref">m2lines OSN Pod</span></a>) it is recommended to use rclone on a VM</p>
+<p>In general you need some form of compute to move data between different object store locations, but be aware that the data will be always be streamed to and from that location over the internet, so fast connection speed is key for fast transfers. There are a variety of ways to move data with perhaps the easiest being to run fsspec or rclone on your local computer, but speed is likely limited by your local internet connection. For certain tasks (e.g. moving data to admin only publishing buckets on the <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructure-osn-pod"><span class="std std-ref">LEAP OSN Pod</span></a>) it is recommended to use rclone on a VM</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>These instructions should be easy to adapt to VM instances on other clouds, and can likely be automated to a much larger degree, but this is what has worked so far. Ultimately this approach is a somewhat manual implementation of the concept of <a class="reference external" href="https://github.com/skyplane-project/skyplane">skyplane</a> which sadly does not seem to be actively maintained anymore. As of the writing of these docs we were able to achieve ~700MB/s transfer speeds with a single VM following the instructions below</p>
@@ -995,13 +990,13 @@ Unfortunately we do not have a technical way to implement per user quotas, so we
 <p>Scroll to the “Allocation Attributes” section. You can see all relevant values here.</p>
 <p><strong>OSN Anonymous Access</strong>: If False, this data is public, no credentials are needed to read data (writing still requires credentials).
 <strong>OSN Bucket Quota (TB)</strong>: Shows the currently allocated size. This is the max size, not what is actuall used!
-<strong>OSN RO/RW Bucket Access/Secret Key</strong>: Credentials for read-only (RO) and read-write (RW) access to the bucket. See <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructrue-osn-pod-credentials"><span class="std std-ref">Credentials</span></a> for more details.</p>
+<strong>OSN RO/RW Bucket Access/Secret Key</strong>: Credentials for read-only (RO) and read-write (RW) access to the bucket. See <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructure-osn-pod"><span class="std std-ref">LEAP OSN Pod</span></a> for more details.</p>
 </div>
 <div class="section" id="share-bucket-credentials">
 <h4>Share bucket credentials<a class="headerlink" href="#share-bucket-credentials" title="Permalink to this headline">¶</a></h4>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>Some buckets are not meant to be accessible for write by users! Please always refer to <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructrue-osn-pod-organization"><span class="std std-ref">OSN Pod Organization</span></a> and only give access to project specific buckets and the <code class="docutils literal notranslate"><span class="pre">'leap-pangeo-inbox'</span></code> bucket to non-admins.</p>
+<p>Some buckets are not meant to be accessible for write by users! Please always refer to <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructure-osn-pod-organization"><span class="std std-ref">OSN Pod Organization</span></a> and only give access to project specific buckets and the <code class="docutils literal notranslate"><span class="pre">'leap-pangeo-inbox'</span></code> bucket to non-admins.</p>
 </div>
 <ul class="simple">
 <li><p>Navigate to the specific bucket you want to share credentials to (see <a class="reference internal" href="#guide-team-admin-osnpod-check"><span class="std std-ref">above</span></a> for detailed steps)</p></li>

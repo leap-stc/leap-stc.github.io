@@ -182,7 +182,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../guides/data_guides/transfer_data.html">
-     Transfering Data into Cloud Storage
+     Transferring Data into Cloud Storage
     </a>
    </li>
    <li class="toctree-l2">
@@ -193,11 +193,6 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../guides/data_guides/data_jupyterhub.html">
      Working with Cloud Data on the JupyterHub
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../guides/data_guides/external_workflow.html">
-     Working outside the LEAP JupyterHub
     </a>
    </li>
   </ul>
@@ -415,8 +410,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#m2lines-osn-pod">
-     m2lines OSN Pod
+    <a class="reference internal nav-link" href="#leap-osn-pod">
+     LEAP OSN Pod
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -554,8 +549,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#m2lines-osn-pod">
-     m2lines OSN Pod
+    <a class="reference internal nav-link" href="#leap-osn-pod">
+     LEAP OSN Pod
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -752,10 +747,10 @@ However, these will disappear when your server shuts down.</p>
 </div>
 <div class="section" id="cloud-storage">
 <h2>Cloud Storage<a class="headerlink" href="#cloud-storage" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="m2lines-osn-pod">
-<span id="reference-infrastructrue-osn-pod"></span><h3>m2lines OSN Pod<a class="headerlink" href="#m2lines-osn-pod" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="leap-osn-pod">
+<span id="reference-infrastructure-osn-pod"></span><h3>LEAP OSN Pod<a class="headerlink" href="#leap-osn-pod" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="osn-pod-organization">
-<span id="reference-infrastructrue-osn-pod-organization"></span><h4>OSN Pod Organization<a class="headerlink" href="#osn-pod-organization" title="Permalink to this headline">¶</a></h4>
+<span id="reference-infrastructure-osn-pod-organization"></span><h4>OSN Pod Organization<a class="headerlink" href="#osn-pod-organization" title="Permalink to this headline">¶</a></h4>
 <p>The ~1PB storage on the OSN Pod can be customized into Projects and Buckets. Projects are used to give additional users access to the Coldfront Admin Console, whereas buckets are how storage is administered up on the Pod. A project can have multiple buckets.</p>
 <p>There are currently 3 principal Projects on the Pod:</p>
 <ul class="simple">
@@ -791,9 +786,10 @@ However, these will disappear when your server shuts down.</p>
 </ul>
 </li>
 </ul>
+<p id="reference-infrastructure-osn-pod-credentials">Data can be transferred from <code class="docutils literal notranslate"><span class="pre">leap-pangeo-inbox</span></code> to <code class="docutils literal notranslate"><span class="pre">leap-pangeo-manual</span></code> with <a class="reference external" href="https://github.com/leap-stc/data-management/actions/runs/11167922927/workflow">this rclone github action</a>.</p>
 </div>
 <div class="section" id="credentials">
-<span id="reference-infrastructrue-osn-pod-credentials"></span><h4>Credentials<a class="headerlink" href="#credentials" title="Permalink to this headline">¶</a></h4>
+<h4>Credentials<a class="headerlink" href="#credentials" title="Permalink to this headline">¶</a></h4>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>All OSN credentials are long lived and should be treated as such. Please do not share them publicly (e.g. in your notebook or a github repository) and when sharing with e.g. collaborators use an encrypted way of sharing (e.g. password manager).</p>
@@ -808,9 +804,9 @@ However, these will disappear when your server shuts down.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">gs://leap-scratch/</span></code> - Temporary Storage deleted after 7 days. Use this bucket for testing and storing large intermediate results. <a class="reference external" href="https://docs.2i2c.org/user/topics/data/cloud/#scratch-bucket">More info</a></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">gs://leap-persistent/</span></code> - Persistent Storage. Use this bucket for storing results you want to share with other members.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">gs://leap-persistent-ro/</span></code> - Persistent Storage with read-only access for most users. To upload data to this bucket you need to use <a class="reference internal" href="../guides/data_guides/transfer_data.html#hub-data-upload-hpc"><span class="std std-ref">this</span></a> method below.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gs://leap-persistent-ro/</span></code> - Persistent Storage with read-only access for most users.</p></li>
 </ul>
-<p>Files stored on each of those buckets can be accessed by any LEAP member, so be concious in the way you use these.</p>
+<p>Files stored on each of those buckets can be accessed by any LEAP member, so be conscious in the way you use these.</p>
 <ul class="simple">
 <li><p><strong>Do not put sensitive information (passwords, keys, personal data) into these buckets!</strong></p></li>
 <li><p><strong>When writing to buckets only ever write to your personal folder!</strong> Your personal folder is a combination of the bucketname and your github username (e.g. `gs://leap-persistent/funky-user/’).</p></li>

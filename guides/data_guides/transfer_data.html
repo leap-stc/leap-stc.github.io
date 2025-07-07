@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Transfering Data into Cloud Storage &#8212; Technical Documentation</title>
+    <title>Transferring Data into Cloud Storage &#8212; Technical Documentation</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -182,7 +182,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Transfering Data into Cloud Storage
+     Transferring Data into Cloud Storage
     </a>
    </li>
    <li class="toctree-l2">
@@ -193,11 +193,6 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="data_jupyterhub.html">
      Working with Cloud Data on the JupyterHub
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="external_workflow.html">
-     Working outside the LEAP JupyterHub
     </a>
    </li>
   </ul>
@@ -362,21 +357,58 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#ingesting-datasets-into-cloud-storage">
    Ingesting Datasets into Cloud Storage
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#manually-uploading-data-into-cloud-storage">
+   Manually uploading data into Cloud Storage
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tools-for-cloud-access">
+   Tools for Cloud Access
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#authentication">
+   Authentication
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reading-and-writing-data">
+   Reading and Writing Data
+  </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#upload-medium-sized-original-data-from-your-local-machine">
-     Upload medium sized original data from your local machine
+    <a class="reference internal nav-link" href="#choosing-a-location-osn-vs-gcs">
+     Choosing a location - OSN vs GCS
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#uploading-large-original-data-from-an-hpc-system-no-browser-access-on-the-system-available">
-     Uploading large original data from an HPC system (no browser access on the system available)
+    <a class="reference internal nav-link" href="#moving-data">
+     Moving Data
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#manually-uploading-downloading-data-to-cloud-buckets-deprecated">
-     Manually uploading/downloading data to cloud buckets (deprecated)
+    <a class="reference internal nav-link" href="#transfer-scenarios">
+     Transfer scenarios
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#move-data-from-jupyter-hub-to-gcs">
+       Move data from Jupyter-Hub to GCS
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#move-data-from-jupyter-hub-to-osn">
+       Move data from Jupyter-Hub to OSN
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#move-data-from-laptop-hpc-to-osn">
+       Move data from Laptop/HPC to OSN
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -390,7 +422,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Transfering Data into Cloud Storage</h1>
+                <h1>Transferring Data into Cloud Storage</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -404,21 +436,58 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#ingesting-datasets-into-cloud-storage">
    Ingesting Datasets into Cloud Storage
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#manually-uploading-data-into-cloud-storage">
+   Manually uploading data into Cloud Storage
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tools-for-cloud-access">
+   Tools for Cloud Access
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#authentication">
+   Authentication
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reading-and-writing-data">
+   Reading and Writing Data
+  </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#upload-medium-sized-original-data-from-your-local-machine">
-     Upload medium sized original data from your local machine
+    <a class="reference internal nav-link" href="#choosing-a-location-osn-vs-gcs">
+     Choosing a location - OSN vs GCS
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#uploading-large-original-data-from-an-hpc-system-no-browser-access-on-the-system-available">
-     Uploading large original data from an HPC system (no browser access on the system available)
+    <a class="reference internal nav-link" href="#moving-data">
+     Moving Data
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#manually-uploading-downloading-data-to-cloud-buckets-deprecated">
-     Manually uploading/downloading data to cloud buckets (deprecated)
+    <a class="reference internal nav-link" href="#transfer-scenarios">
+     Transfer scenarios
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#move-data-from-jupyter-hub-to-gcs">
+       Move data from Jupyter-Hub to GCS
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#move-data-from-jupyter-hub-to-osn">
+       Move data from Jupyter-Hub to OSN
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#move-data-from-laptop-hpc-to-osn">
+       Move data from Laptop/HPC to OSN
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -431,8 +500,8 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="transfering-data-into-cloud-storage">
-<span id="guide-data-transfer"></span><h1>Transfering Data into Cloud Storage<a class="headerlink" href="#transfering-data-into-cloud-storage" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="transferring-data-into-cloud-storage">
+<span id="guide-data-transfer"></span><h1>Transferring Data into Cloud Storage<a class="headerlink" href="#transferring-data-into-cloud-storage" title="Permalink to this headline">¶</a></h1>
 <p>We distinguish between two primary <em>types</em> of data to upload: “Original” and “Published” data.</p>
 <ul class="simple">
 <li><p><strong>Published Data</strong> has been published and archived in a publicly accessible location (e.g. a data repository like <a class="reference external" href="https://zenodo.org">zenodo</a> or <a class="reference external" href="https://figshare.com">figshare</a>). We do not recommend uploading this data to the cloud directly, but to instead transform it to Zarr and upload it to the cloud. This ensures that the data is stored in an ARCO format and can be easily accessed by other LEAP members.</p></li>
@@ -441,170 +510,232 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Step one is always to check whether data already exists in the <a class="reference internal" href="data_catalog.html#guide-data-catalog"><span class="std std-ref">LEAP data catalog</span></a>, in which case access is simply a matter of pasting a code snippet.</p>
 <div class="section" id="ingesting-datasets-into-cloud-storage">
 <span id="guides-data-ingestion"></span><h2>Ingesting Datasets into Cloud Storage<a class="headerlink" href="#ingesting-datasets-into-cloud-storage" title="Permalink to this headline">¶</a></h2>
-<p>If you do not find your dataset in the data catalog we can ingest it. Data ingestion in this context means that we have a programatic way to download and transform data into <a class="reference internal" href="../../reference/infrastructure.html#reference-arco"><span class="std std-ref">Analysis-Ready Cloud-Optimized (ARCO)</span></a> formats in a reproducible way, so that the dataset is available for the LEAP community and beyond (see <a class="reference internal" href="../../reference/infrastructure.html#reference-infrastructure-buckets"><span class="std std-ref">LEAP-Pangeo Cloud Storage Buckets</span></a> for who can access which resource).</p>
+<p>If you do not find your dataset in the data catalog we can ingest it. Data ingestion in this context means that we have a programmatic way to download and transform data into <a class="reference internal" href="../../reference/infrastructure.html#reference-arco"><span class="std std-ref">Analysis-Ready Cloud-Optimized (ARCO)</span></a> formats in a reproducible way, so that the dataset is available for the LEAP community and beyond (see <a class="reference internal" href="../../reference/infrastructure.html#reference-infrastructure-buckets"><span class="std std-ref">LEAP-Pangeo Cloud Storage Buckets</span></a> for who can access which resource).</p>
 <p>Based on the 3 <a class="reference internal" href="../../explanation/data_policy.html#explanation-data-policy-types"><span class="std std-ref">types of data</span></a> we host in the <a class="reference internal" href="../../explanation/architecture.html#explanation-architecture-data-library"><span class="std std-ref">The Data Library</span></a> there are different ways of ingesting data:</p>
 <ul class="simple">
 <li><p>Linking an existing (public, egress-free) ARCO dataset to the <a class="reference internal" href="../../explanation/architecture.html#explanation-architecture-catalog"><span class="std std-ref">Data Catalog</span></a></p></li>
 <li><p>Ingesting and transforming data into an ARCO copy on <a class="reference internal" href="../../reference/infrastructure.html#reference-infrastructure-buckets"><span class="std std-ref">LEAP-Pangeo Cloud Storage Buckets</span></a>.</p></li>
-<li><p>(Work in Progress): Creating a virtual zarr store from existing publically hosted legacy format data (e.g. netcdf)</p></li>
+<li><p>(Work in Progress): Creating a <a class="reference external" href="https://virtualizarr.readthedocs.io/en/latest/">virtual zarr store</a> from existing publicly hosted legacy format data (e.g. netcdf)</p></li>
 </ul>
-<p>The end result should feel indistingushable to the user (i.e. they just copy and paste a snippet and can immediately get to work <a class="reference internal" href="../../explanation/data_policy.html#explanation-data-policies-access"><span class="std std-ref">Data Access</span></a>)</p>
+<p>The end result should feel indistinguishable to the user (i.e. they just copy and paste a snippet and can immediately get to work <a class="reference internal" href="../../explanation/data_policy.html#explanation-data-policies-access"><span class="std std-ref">Data Access</span></a>)</p>
 <p>If you are interested in publishing archival or original data, please refer to our How-To guide on <a class="reference internal" href="data_catalog.html#guides-data-ingestion-pipeline"><span class="std std-ref">data ingestion</span></a>.</p>
-<div class="section" id="upload-medium-sized-original-data-from-your-local-machine">
-<span id="guide-data-upload-manual-deprecated"></span><h3>Upload medium sized original data from your local machine<a class="headerlink" href="#upload-medium-sized-original-data-from-your-local-machine" title="Permalink to this headline">¶</a></h3>
-<p>For medium sized datasets that can be uploaded within an hour, you can use a temporary access token generated on the JupyterHub to upload data to the cloud.</p>
-<ul class="simple">
-<li><p>Set up a new environment on your local machine (e.g. laptop)</p></li>
-</ul>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>leap_pangeo_transfer<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9<span class="w"> </span>google-auth<span class="w"> </span>gcsfs<span class="w"> </span>jupyterlab<span class="w"> </span>xarray<span class="w"> </span>zarr<span class="w"> </span>dask
-</pre></div>
 </div>
-<blockquote>
-<div><p>Add any other dependencies (e.g. netcdf4) that you need to read your data at the end of the line</p>
-</div></blockquote>
-<ul class="simple">
-<li><p>Activate the environment</p></li>
-</ul>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>leap_pangeo_transfer
-</pre></div>
-</div>
-<p>and set up a jupyter notbook (or a pure python script) that loads your data in as few xarray datasets as possible. For instance, if you have one dataset that consists of many files split in time, you should set your notebook up to read all the files using xarray into a single dataset, and then try to write out a small part of the dataset to a zarr store.</p>
-<p>Now <a class="reference internal" href="../../reference/infrastructure.html#reference-authentication-temp-token"><span class="std std-ref">generate a temporary token</span></a> and copy the resulting token into a plain text file <code class="docutils literal notranslate"><span class="pre">token.txt</span></code> in a convenient location on your <strong>local machine</strong>.</p>
-<ul class="simple">
-<li><p>Now start a JupyterLab notebook and paste the following code into a cell:</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">gcsfs</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xr</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">google.cloud</span><span class="w"> </span><span class="kn">import</span> <span class="n">storage</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">google.oauth2.credentials</span><span class="w"> </span><span class="kn">import</span> <span class="n">Credentials</span>
-
-<span class="c1"># import an access token</span>
-<span class="c1"># - option 1: read an access token from a file</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;path/to/your/token.txt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">access_token</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-
-<span class="c1"># setup a storage client using credentials</span>
-<span class="n">credentials</span> <span class="o">=</span> <span class="n">Credentials</span><span class="p">(</span><span class="n">access_token</span><span class="p">)</span>
-<span class="n">fs</span> <span class="o">=</span> <span class="n">gcsfs</span><span class="o">.</span><span class="n">GCSFileSystem</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="n">credentials</span><span class="p">)</span>
-</pre></div>
-</div>
-<blockquote>
-<div><p>Make sure to replace the <code class="docutils literal notranslate"><span class="pre">path/to/your/token.txt</span></code> with the actual path to your token file.</p>
-</div></blockquote>
-<p>Try to write a small dataset to the cloud:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">to_dataset</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">)</span>
-<span class="n">mapper</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">get_mapper</span><span class="p">(</span>
-    <span class="s2">&quot;gs://leap-scratch/&lt;your_username&gt;/test_offsite_upload.zarr&quot;</span>
-<span class="p">)</span>  <span class="c1"># This additional step is necessary to have the correct authentication set</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">to_zarr</span><span class="p">(</span><span class="n">mapper</span><span class="p">)</span>
-</pre></div>
-</div>
-<blockquote>
-<div><p>Replace <code class="docutils literal notranslate"><span class="pre">&lt;your_username&gt;</span></code> with your actual username on the hub.</p>
-</div></blockquote>
-<ul class="simple">
-<li><p>Make sure that you can read the test dataset from within the hub (go back to <a class="reference internal" href="data_jupyterhub.html#hub-data-read-write"><span class="std std-ref">Basic writing to and reading from cloud buckets</span></a>).</p></li>
-<li><p>Now the last step is to paste the code to load your actual dataset into the notebook and use <code class="docutils literal notranslate"><span class="pre">.to_zarr</span></code> to upload it.</p></li>
-</ul>
-<blockquote>
-<div><p>Make sure to give the store a meaningful name, and raise an issue in the <a class="reference external" href="https://github.com/leap-stc/data-management/issues">data-management repo</a> to get the dataset added to the LEAP Data Library.</p>
-</div></blockquote>
-<blockquote>
-<div><p>Make sure to use a different bucket than <code class="docutils literal notranslate"><span class="pre">leap-scratch</span></code>, since that will be deleted every 7 days! For more info refer to the available <a class="reference internal" href="../../reference/infrastructure.html#reference-infrastructure-buckets"><span class="std std-ref">storage buckets</span></a>.</p>
-</div></blockquote>
-</div>
-<div class="section" id="uploading-large-original-data-from-an-hpc-system-no-browser-access-on-the-system-available">
-<span id="hub-data-upload-hpc"></span><h3>Uploading large original data from an HPC system (no browser access on the system available)<a class="headerlink" href="#uploading-large-original-data-from-an-hpc-system-no-browser-access-on-the-system-available" title="Permalink to this headline">¶</a></h3>
-<p>A commong scenario is the following: A researcher/student has run a simulation on a High Performance Computer (HPC) at their institution, but now wants to collaboratively work on the analysis or train a machine learning model with this data. For this they need to upload it to the cloud storage.</p>
-<p>The following steps will guide you through the steps needed to authenticate and upload data to the cloud, but might have to be slightly modified depending on the actual setup of the users HPC.</p>
-<p><strong>Conversion Script/Notebook</strong></p>
-<p>In most cases you do not just want to upload the data in its current form (e.g. many netcdf files).</p>
-<!-- TODO: Add an example of why this is bad for performance -->
-<p>Instead we will load the data into an <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.Dataset.html"><code class="docutils literal notranslate"><span class="pre">xarray.Dataset</span></code></a> and then write that Dataset object directly to a zarr store in the cloud. For this you need a python environment with <code class="docutils literal notranslate"><span class="pre">xarray,</span> <span class="pre">gcsfs,</span> <span class="pre">zarr</span></code> installed (you might need additional dependencies for your particular use case).</p>
-<ol>
-<li><p>Spend some time to set up a python script/jupyter notebook on the HPC system that opens your files and combines them in to one or more xarray.Datasets (combine as many files as sensible into a single dataset). Make sure that your data is lazily loaded and the <code class="docutils literal notranslate"><span class="pre">Dataset.data</span></code> is a <a class="reference external" href="https://docs.dask.org/en/stable/array.html">dask array</a></p></li>
-<li><p>Check your dataset:</p>
-<ul class="simple">
-<li><p>Check that the metadata is correct.</p></li>
-<li><p>Check that all the variables/dimensions are in the dataset</p></li>
-<li><p>Check the dask chunksize. A general rule is to aim for around 100MB size, but the size and structure of chunking that is optimal depends heavily on the later use case.</p></li>
-</ul>
-<!-- Some more info on chunking? -->
-</li>
-<li><p>Try to write out a subset of the data locally by calling the <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.Dataset.to_zarr.html"><code class="docutils literal notranslate"><span class="pre">.to_zarr</span></code></a> method on the dataset.</p></li>
-</ol>
-<!-- TODO: Warn not to write out the full dataset -->
-<p>Once that works we can move on to the authentication.</p>
-<p><strong>Upload Prerequisites</strong></p>
-<p>Before we are able to set up authentication we need to make sure our HPC and local computer (required) are set up correctly.</p>
-<ul class="simple">
-<li><p>You have to be signed up to LEAP’s <a class="reference internal" href="../../reference/infrastructure.html#reference-authentication-google-groups"><span class="std std-ref">Google Groups</span></a>.</p></li>
-<li><p>Make sure to install the <a class="reference external" href="https://cloud.google.com/sdk/docs/install">Google Cloud SDK</a> in both your <span style="color:#9301B4">HPC environment</span>, and your local computer that can open a web browser (e.g. your laptop).</p></li>
-</ul>
-<p><strong>Steps</strong>
-Steps executed on your <span style="color:#22B401">”local” computer (e.g. laptop)</span> will be colored in green and steps on your <span style="color:#9301B4">”remote” computer (e.g. HPC)</span> in purple.</p>
-<ol>
-<li><p>SSH into the HPC</p></li>
-<li><p><span style="color:#9301B4">Check that you have an internet connection with <code class="docutils literal notranslate"><span class="pre">ping</span> <span class="pre">www.google.com</span></code></span></p></li>
-<li><p><span style="color:#9301B4">Request no browser authentication: </span></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gcloud</span> <span class="n">auth</span> <span class="n">application</span><span class="o">-</span><span class="n">default</span> <span class="n">login</span> <span class="o">--</span><span class="n">scopes</span><span class="o">=</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">googleapis</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">auth</span><span class="o">/</span><span class="n">devstorage</span><span class="o">.</span><span class="n">read_write</span><span class="p">,</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">googleapis</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">auth</span><span class="o">/</span><span class="n">iam</span><span class="o">.</span><span class="n">test</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">browser</span>
-</pre></div>
-</div>
-<blockquote>
-<div><p>🚨 It is very important to include the <code class="docutils literal notranslate"><span class="pre">--scopes=</span></code> argument for security reasons. Do not run this command without it!</p>
-</div></blockquote>
-</li>
-<li><p>Follow the onscreen prompt and paste the command into a terminal on your local machine.</p></li>
-<li><p><span style="color:#22B401">This will open a browser window. Authenticate with the gmail account that was added to the google group. </span></p></li>
-<li><p><span style="color:#22B401">Go back to the terminal and follow the onscreen instructions.</span> Copy the text from the command line and <span style="color:#9301B4">paste the command in the open dialog on the remote machine.</span></p></li>
-<li><p><span style="color:#9301B4">Make sure to note the path to the auth json!</span> It will be something like <code class="docutils literal notranslate"><span class="pre">.../.config/gcloud/....json</span></code>.</span></p></li>
-</ol>
-<p>Now you are have everything you need to authenticate.</p>
-<p>Lets verify that you can write a small dummy dataset to the cloud. In your notebook/script run the following (make sure to replace the filename and your username as instructed).</p>
-<p>Your dataset should now be available for all LEAP members 🎉🚀</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xr</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">gcsfs</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span>
-    <span class="s2">&quot;your_auth_file.json&quot;</span>
-<span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>  <span class="c1"># 🚨 make sure to enter the `.json` file from step 7</span>
-    <span class="n">token</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-
-<span class="c1"># test write a small dummy xarray dataset to zarr</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span><span class="o">.</span><span class="n">to_dataset</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">)</span>
-<span class="c1"># Once you have confirmed</span>
-
-<span class="n">fs</span> <span class="o">=</span> <span class="n">gcsfs</span><span class="o">.</span><span class="n">GCSFileSystem</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
-<span class="n">mapper</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">get_mapper</span><span class="p">(</span>
-    <span class="s2">&quot;gs://leap-persistent/&lt;username&gt;/testing/demo_write_from_remote.zarr&quot;</span>
-<span class="p">)</span>  <span class="c1"># 🚨 enter your leap (github) username here</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">to_zarr</span><span class="p">(</span><span class="n">mapper</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Now you can repeat the same steps but replace your dataset with the full dataset from above and leave your python code running until the upload has finished. Depending on the internet connection speed and the size of the full dataset, this can take a while.</p>
-<p>If you want to see a progress bar, you can wrap the call to <code class="docutils literal notranslate"><span class="pre">.to_zarr</span></code> with a <a class="reference external" href="https://docs.dask.org/en/stable/diagnostics-local.html#progress-bar">dask progress bar</a></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">dask.diagnostics</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProgressBar</span>
-
-<span class="k">with</span> <span class="n">ProgressBar</span><span class="p">():</span>
-    <span class="n">ds</span><span class="o">.</span><span class="n">to_zarr</span><span class="p">(</span><span class="n">mapper</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Once the data has been uploaded, make sure to erase the <code class="docutils literal notranslate"><span class="pre">.../.config/gcloud/....json</span></code> file from step 7, and ask to be removed from the Google Group.</p>
-</div>
-<div class="section" id="manually-uploading-downloading-data-to-cloud-buckets-deprecated">
-<h3>Manually uploading/downloading data to cloud buckets (deprecated)<a class="headerlink" href="#manually-uploading-downloading-data-to-cloud-buckets-deprecated" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="manually-uploading-data-into-cloud-storage">
+<span id="guide-data-upload-manual-deprecated"></span><h2>Manually uploading data into Cloud Storage<a class="headerlink" href="#manually-uploading-data-into-cloud-storage" title="Permalink to this headline">¶</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This section of the docs is just retained for completeness. There might be special situations where it is beneficial/necessary to upload data to the <a class="reference internal" href="../../reference/infrastructure.html#reference-infrastructure-buckets"><span class="std std-ref">LEAP-Pangeo Cloud Storage Buckets</span></a> but we generally encourage data ingestion to the <a class="reference internal" href="../../reference/infrastructure.html#reference-infrastructrue-osn-pod"><span class="std std-ref">m2lines OSN Pod</span></a> due to the public access and reduced running cost. See above for instructions.</p>
+<p>There might be special situations where it is beneficial/necessary to upload data to the <a class="reference internal" href="../../reference/infrastructure.html#reference-infrastructure-buckets"><span class="std std-ref">LEAP-Pangeo Cloud Storage Buckets</span></a> but we generally encourage data ingestion to the <a class="reference internal" href="../../reference/infrastructure.html#reference-infrastructure-osn-pod"><span class="std std-ref">LEAP OSN Pod</span></a> due to the public access and reduced running cost. See above for instructions.</p>
 </div>
 <p>We discourage manually moving datasets to our cloud storage as much as possible since it is hard to reproduce these datasets at a future point (if e.g. the dataset maintainer has moved on to a different position) (see <a class="reference internal" href="../../explanation/data_policy.html#explanation-data-policy-reproducibility"><span class="std std-ref">Reproducibility</span></a>. We encourage you to try out the methods above, but if these should not work for some reason (and you were not able to find a solution with the <a class="reference internal" href="../../support.html#support-data-compute-team"><span class="std std-ref">Data and Computation Team</span></a>), you should try the methods below. We will always <a class="reference internal" href="../../explanation/code_policy.html#explanation-code-policy-dont-let-perfect-be-the-enemy-of-good"><span class="std std-ref">prioritize unblocking your work</span></a>.</p>
 <p>The below solutions fundamentally rely on the data being ‘pushed’ to the <a class="reference internal" href="../../reference/infrastructure.html#reference-infrastructure-buckets"><span class="std std-ref">LEAP-Pangeo Cloud Storage Buckets</span></a> which usually requires intervention on part of the <a class="reference internal" href="../../explanation/data_policy.html#explanation-data-policy-roles-data-expert"><span class="std std-ref">Data Expert</span></a>. This stands in contrast to e.g. data ingestion where the <a class="reference internal" href="../../explanation/data_policy.html#explanation-data-policy-roles-data-expert"><span class="std std-ref">Data Expert</span></a> only has to work on the recipe creation and the data is ‘pulled’ in a reproducible way. For more information see <a class="reference internal" href="../../explanation/data_policy.html#explanation-data-policy"><span class="std std-ref">LEAP-Pangeo Data Policy</span></a>.</p>
-<p>Fundamentally the ‘pushing’ of datasets relies on two components:</p>
+<!-- Fundamentally the 'pushing' of datasets relies on two components:
+
+- Setting up permissions so that you can read/write to the [](reference.infrastructure.buckets) - Several methods to get permissions are described in [](reference.authentication).
+- Initiating a data transfer from your 'local' machine (e.g. your laptop, a server, or HPC Cluster). You can check on some methods below. -->
+</div>
+<div class="section" id="tools-for-cloud-access">
+<h2>Tools for Cloud Access<a class="headerlink" href="#tools-for-cloud-access" title="Permalink to this headline">¶</a></h2>
+<p>There are many tools available to interact with cloud object storage. We currently have basic operations documented for two tools:</p>
 <ul class="simple">
-<li><p>Setting up permissions so that you can read/write to the <a class="reference internal" href="../../reference/infrastructure.html#reference-infrastructure-buckets"><span class="std std-ref">LEAP-Pangeo Cloud Storage Buckets</span></a> - Several methods to get permissions are described in <a class="reference internal" href="../../reference/infrastructure.html#reference-authentication"><span class="std std-ref">Access to LEAP-Pangeo resources without the JupyterHub</span></a>.</p></li>
-<li><p>Initiating a data transfer from your ‘local’ machine (e.g. your laptop, a server, or HPC Cluster). You can check on some methods below.</p></li>
+<li><p><a class="reference external" href="https://filesystem-spec.readthedocs.io/en/latest/">fsspec</a> (and its submodules <a class="reference external" href="https://gcsfs.readthedocs.io/en/latest/">gcsfs</a> and <a class="reference external" href="https://s3fs.readthedocs.io/en/latest/">s3fs</a>) which provide filesystem-like access to local, remote, and embedded file systems from within a python session. Fsspec is also used by xarray under the hood.
+<code class="docutils literal notranslate"><span class="pre">fsspec</span></code> can be used to transfer small amounts of data to google cloud storage or OSN. If you have more than a few hundred MB’s, it is worth using Rclone.
+<code class="docutils literal notranslate"><span class="pre">fsspec</span></code> should be installed by default on the <strong>Base Pangeo Notebook</strong> environment on the Jupyter-Hub. If you are working locally, you can install it with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">or</span> <span class="pre">conda/mamba</span></code>. ex: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">fsspec</span></code>.</p></li>
+<li><p><a class="reference external" href="https://rclone.org/">rclone</a> which provides a Command Line Interface to many different storage backends.</p></li>
 </ul>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Note on rclone documentation</p>
+<p>Rclone is a very extensive and powerful tool, but with its many options it can be overwhelming (at least it was for Julius) at the beginning. We will only demonstrate essential options here, for more details see the <a class="reference external" href="https://rclone.org/">docs</a>. If however instructions here are not working for your specific use case, please reach out so we can improve the docs.</p>
+</div>
+<p>Using <a class="reference external" href="https://filesystem-spec.readthedocs.io/en/latest/api.html#fsspec.open"><code class="docutils literal notranslate"><span class="pre">fsspec.open</span></code></a> works similarly to the python builtin <a class="reference external" href="https://docs.python.org/3/library/functions.html#open"><code class="docutils literal notranslate"><span class="pre">open</span></code></a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;gs://leap-scratch/funky-user/test.txt&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;hello world&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="authentication">
+<span id="data-config-files"></span><h2>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline">¶</a></h2>
+<p>Unless a given cloud bucket allows anonymous access or is preauthenticated within your environment, you will need to authenticate with a key/secret pair. The <a class="reference internal" href="../../reference/infrastructure.html#reference-infrastructure-buckets"><span class="std std-ref">LEAP-Pangeo owned buckets</span></a> are pre-authenticated on the Hub but working with them externally requires configuration. <strong>Note:</strong> If you are accessing non-public cloud data from the JupyterHub (not published by LEAP), you will also have to follow this process.</p>
+<div class="warning admonition">
+<p class="admonition-title">Always handle credentials with care!</p>
+<p>Always handle secrets with care. Do not store them in plain text that is visible to others (e.g. in a notebook cell that is pushed to a public github repository). See <a class="reference internal" href="../code_guide.html#guide-code-secrets"><span class="std std-ref">Handling Secrets</span></a> for more instructions on how to keep secrets safe.</p>
+</div>
+<p>We recommend to store your secrets in one of the following configuration files (which will be used in the following example to read and write data):</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Fsspec</label><div class="sd-tab-content docutils">
+<p>Fsspec supports named [](aws profiles) in a credentials files. You can create one via Generate an aws credential file via the <a class="reference external" href="https://docs.aws.amazon.com/cli/v1/userguide/cli-configure-files.html#cli-configure-files-examples">aws CLI</a>(installed on the hub by defaule):</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>aws<span class="w"> </span>configure<span class="w"> </span>--profile<span class="w"> </span>&lt;pick_a_name&gt;
+</pre></div>
+</div>
+<p>Pick a sensible name for your profile, particularly if you are working with multiple profiles and buckets.</p>
+<p>The file <code class="docutils literal notranslate"><span class="pre">~/.aws/credentials</span></code> then contains your key/secret similar to this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">&lt;</span><span class="n">the_profile_name_you_picked</span><span class="o">&gt;</span><span class="p">]</span>
+<span class="n">aws_access_key_id</span> <span class="o">=</span> <span class="o">***</span>
+<span class="n">aws_secret_access_key</span> <span class="o">=</span> <span class="o">***</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Rclone</label><div class="sd-tab-content docutils">
+<p>Rclone has its own <a class="reference external" href="https://rclone.org/docs/#config-config-file">configuration file format</a> where you can specify the key and secret (and many other settings) in a similar fashion (note the missing <code class="docutils literal notranslate"><span class="pre">aws_</span></code> though!).</p>
+<p>We recommend setting up the config file (show the default location with <code class="docutils literal notranslate"><span class="pre">rclone</span> <span class="pre">config</span> <span class="pre">file</span></code>) by hand to look something like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">&lt;</span><span class="n">remote_name</span><span class="o">&gt;</span><span class="p">]</span>
+<span class="o">...</span> <span class="c1"># other values</span>
+<span class="n">access_key_id</span> <span class="o">=</span> <span class="n">XXX</span>
+<span class="n">secret_access_key</span> <span class="o">=</span> <span class="n">XXX</span>
+</pre></div>
+</div>
+<p>You can have multiple ‘remotes’ in this file for different cloud buckets.</p>
+<p>For the <a class="reference internal" href="../../reference/infrastructure.html#reference-infrastructure-osn-pod"><span class="std std-ref">LEAP OSN Pod</span></a> use this remote definition:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">osn</span><span class="p">]</span>
+<span class="nb">type</span> <span class="o">=</span> <span class="n">s3</span>
+<span class="n">provider</span> <span class="o">=</span> <span class="n">Ceph</span>
+<span class="n">endpoint</span> <span class="o">=</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">nyu1</span><span class="o">.</span><span class="n">osn</span><span class="o">.</span><span class="n">mghpcc</span><span class="o">.</span><span class="n">org</span>
+<span class="n">access_key_id</span> <span class="o">=</span> <span class="n">XXX</span>
+<span class="n">secret_access_key</span> <span class="o">=</span> <span class="n">XXX</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Ideally we want to store these secrets only in one central location. The natural place for these seems to be in an <a class="reference external" href="https://docs.aws.amazon.com/cli/v1/userguide/cli-configure-files.html#cli-configure-files-format">AWS cli profiles</a>, which can also be used for fsspec. There however seem to be multiple issues (<a class="reference external" href="https://forum.rclone.org/t/shared-credentials-file-is-not-recognised/46993">here</a>) around this feature in rclone, and so far we have not succeeded in using AWS profiles in rclone.
+According to those issues we can only make the aws profiles (or <a class="reference external" href="https://forum.rclone.org/t/s3-profile-failing-when-explicit-s3-endpoint-is-present/36063/4?u=jbusecke">source profiles?</a>, anyways the credentials part of it) work if we define one config file per remote <a class="reference external" href="https://forum.rclone.org/t/shared-credentials-file-is-not-recognised/46993/2?u=jbusecke">and use the ‘default’ profile</a>which presumably breaks compatibility with fsspec, and also does not work at all right now. So at the moment we will have to keep the credentials in two separate spots 🤷‍♂️. <strong>Please make sure to apply proper caution when <a class="reference internal" href="../code_guide.html#guide-code-secrets"><span class="std std-ref">handling secrets</span></a> for each config files that stores secrets in plain text!</strong></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can find more great documentation, specifically on how to use OSN resources, in <a class="reference external" href="https://hytest-org.github.io/hytest/essential_reading/DataSources/Data_S3.html#credentialed-access">this section</a> of the <a class="reference external" href="https://hytest-org.github.io/hytest/doc/About.html">HyTEST Docs</a></p>
+</div>
+</div>
+<div class="section" id="reading-and-writing-data">
+<span id="hub-data-list"></span><h2>Reading and Writing Data<a class="headerlink" href="#reading-and-writing-data" title="Permalink to this headline">¶</a></h2>
+<p>Once authenticated, you can interface with cloud data.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Fsspec</label><div class="sd-tab-content docutils">
+<p>The initial step in working with fsspec is to create a <code class="docutils literal notranslate"><span class="pre">filesystem</span></code> object which enables the abstraction on top of different object storage system.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">fsspec</span>
+
+<span class="c1"># for Google Storage </span>
+<span class="n">fs</span> <span class="o">=</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">filesystem</span><span class="p">(</span><span class="s1">&#39;gs&#39;</span><span class="p">)</span> <span class="c1"># equivalent to gcsfs.GCSFileSystem()</span>
+
+<span class="c1"># for s3</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">filesystem</span><span class="p">(</span><span class="s1">&#39;s3&#39;</span><span class="p">)</span> <span class="c1"># equivalent to s3fs.S3FileSystem()</span>
+</pre></div>
+</div>
+<p>For <strong>authenticated access</strong> you need to pass additional arguments. In this case (for the m2lines OSN pod) we pass a custom endpoint and an <a class="reference internal" href="#data-config-files"><span class="std std-ref">aws profile</span></a>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fs</span> <span class="o">=</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">filesystem</span><span class="p">(</span>
+    <span class="s1">&#39;s3&#39;</span><span class="p">,</span>
+    <span class="n">profile</span><span class="o">=</span><span class="s1">&#39;&lt;the_profile_name_you_picked&gt;&#39;</span><span class="p">,</span>  <span class="c1">## This is the profile name you configured above.</span>
+    <span class="n">client_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;endpoint_url&#39;</span><span class="p">:</span> <span class="s1">&#39;https://nyu1.osn.mghpcc.org &#39;</span><span class="p">}</span> <span class="c1"># This is the endpoint for the m2lines osn pod</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>You can now use the <code class="docutils literal notranslate"><span class="pre">.ls</span></code> method to list contents of a bucket and prefixes.</p>
+<p>You can e.g. list the contents of your personal folder on the persistent GCS bucket with</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fs</span><span class="o">.</span><span class="n">ls</span><span class="p">(</span><span class="s2">&quot;leap-persistent/funky-user&quot;</span><span class="p">)</span> <span class="c1"># replace with your github username</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+Rclone</label><div class="sd-tab-content docutils">
+<p>To inspect a bucket you can use clone with the profile (‘remote’ in rclone terminology) set up <a class="reference internal" href="#data-config-files"><span class="std std-ref">above</span></a>:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rclone<span class="w"> </span>ls<span class="w"> </span>&lt;remote_name&gt;:bucket-name/funky-user
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="choosing-a-location-osn-vs-gcs">
+<h3>Choosing a location - OSN vs GCS<a class="headerlink" href="#choosing-a-location-osn-vs-gcs" title="Permalink to this headline">¶</a></h3>
+<p>Details on both OSN and GCS cloud storage buckets can be found in the <a class="reference internal" href="../../reference/infrastructure.html#reference-infrastructure-osn-pod"><span class="std std-ref">infrastructure guide</span></a>.</p>
+<p>For some general guidelines on choosing:</p>
+<p>GCS:
+- You want to move data from your Jupyter-Hub home directory to the cloud.
+- You don’t need the data to be accessed outside of the Jupyter-Hub.
+- This data is a work-in-progress and might be regenerated or modified.</p>
+<p>OSN:
+- You want your data to be publicly accessible outside of the Jupyter-Hub.
+- You need to move data from your Jupyter-Hub home directory to more persistent storage.
+- You data does not fit into the Zarr model.</p>
+</div>
+<div class="section" id="moving-data">
+<h3>Moving Data<a class="headerlink" href="#moving-data" title="Permalink to this headline">¶</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+fsspec/gcsfs</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">fsspec</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">filesystem</span><span class="p">(</span><span class="s1">&#39;gs&#39;</span><span class="p">)</span>
+<span class="n">fs</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s1">&#39;&lt;YOUR_DATA_FOLDER_ON_THE_JUPYTERHUB&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;gs://leap-persistent/&lt;YOUR_USERNAME&gt;/&lt;DATA_NAME&gt;&#39;</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
+Rclone</label><div class="sd-tab-content docutils">
+<p>You can move directories from a local computer to cloud storage with rclone (make sure you are properly <a class="reference internal" href="#data-config-files"><span class="std std-ref">authenticated</span></a>):</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rclone<span class="w"> </span>copy<span class="w"> </span>path/to/local/dir/<span class="w"> </span>&lt;remote_name&gt;:&lt;bucket-name&gt;/funky-user/some-directory
+</pre></div>
+</div>
+<p>You can also move data between cloud buckets using rclone</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rclone<span class="w"> </span>copy<span class="w"> </span><span class="se">\</span>
+<span class="w"> </span>&lt;remote_name_a&gt;:&lt;bucket-name&gt;/funky-user/some-directory<span class="se">\</span>
+<span class="w"> </span>&lt;remote_name_b&gt;:&lt;bucket-name&gt;/funky-user/some-directory
+</pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Copying single files</p>
+<p>To copy single files with rclone use the <a class="reference external" href="https://rclone.org/commands/rclone_copyto/">copyto command</a> or copy the containing folder and use the <code class="docutils literal notranslate"><span class="pre">--include</span></code> or <code class="docutils literal notranslate"><span class="pre">--exclude</span></code> flags to select the file to copy.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Copying with rclone will stream the data from the source to your computer and back to the target, and thus transfer speed is likely limited by the internet connection of your local machine.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="transfer-scenarios">
+<h3>Transfer scenarios<a class="headerlink" href="#transfer-scenarios" title="Permalink to this headline">¶</a></h3>
+<p>small: KB’s to 100’s of MB
+medium: 1 to &lt;100GB</p>
+<div class="section" id="move-data-from-jupyter-hub-to-gcs">
+<h4>Move data from Jupyter-Hub to GCS<a class="headerlink" href="#move-data-from-jupyter-hub-to-gcs" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Data volume:</p>
+<ul>
+<li><p>small: <code class="docutils literal notranslate"><span class="pre">fsspec/gcsfs</span></code></p></li>
+<li><p>medium: <code class="docutils literal notranslate"><span class="pre">rclone</span></code></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="move-data-from-jupyter-hub-to-osn">
+<h4>Move data from Jupyter-Hub to OSN<a class="headerlink" href="#move-data-from-jupyter-hub-to-osn" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>If the data volume is:</p>
+<ul>
+<li><p>small: <code class="docutils literal notranslate"><span class="pre">rclone</span></code></p></li>
+<li><p>medium: <code class="docutils literal notranslate"><span class="pre">rclone</span></code></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="move-data-from-laptop-hpc-to-osn">
+<h4>Move data from Laptop/HPC to OSN<a class="headerlink" href="#move-data-from-laptop-hpc-to-osn" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>If the data volume is:</p>
+<ul>
+<li><p>small: <code class="docutils literal notranslate"><span class="pre">rclone</span></code></p></li>
+<li><p>medium: <code class="docutils literal notranslate"><span class="pre">rclone</span></code></p></li>
+<li><p>large: <code class="docutils literal notranslate"><span class="pre">rclone</span></code></p></li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
