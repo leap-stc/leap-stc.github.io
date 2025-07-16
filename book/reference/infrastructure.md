@@ -119,7 +119,7 @@ For a more permanent solution we recommend building project specific dockerfiles
 
 (reference.infrastructure.osn_pod)=
 ## Cloud Storage
-
+LEAP maintains 
 (reference.infrastructure.osn_pod.organization)=
 #### OSN Pod Organization
 

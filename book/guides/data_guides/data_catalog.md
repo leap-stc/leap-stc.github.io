@@ -34,7 +34,7 @@ This does currently not provide a solution to handle datasets that have been pro
 
 ### How to get new data ingested (if public download is not available)
 
-If the source data is publicly available and accessable over https, you should create a [feedstock template](https://github.com/leap-stc/LEAP_template_feedstock). If the data is located behind a firewall on an HPC center, the 'pull' based paradigm our feedstocks will not work. In this case we have an option to 'push' the data to a special "inbox" bucket (`'leap-pangeo-inbox'`) on the [](reference.infrastructure.osn_pod), from there an admin can move the data to another dedicated bucket and the data can be added to the catalog using the [template feedstock](https://github.com/leap-stc/LEAP_template_feedstock).
+If the source data is publicly available and accessable over https, you should create a [feedstock template](https://github.com/leap-stc/LEAP_template_feedstock). If the data is located behind a firewall on an HPC center, the 'pull' based paradigm our feedstocks will not work. In this case we have an option to 'push' the data to a special "inbox" bucket (`'leap-pangeo-inbox'`) on the OSN Pod, from there an admin can move the data to another dedicated bucket and the data can be added to the catalog using the [template feedstock](https://github.com/leap-stc/LEAP_template_feedstock).
 
 **Step by Step instructions**
 

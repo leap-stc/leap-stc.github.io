@@ -77,7 +77,7 @@ secret_access_key = XXX
 
 You can have multiple 'remotes' in this file for different cloud buckets.
 
-For the [](reference.infrastructure.osn_pod) use this remote definition:
+For the OSN Pod, use this remote definition:
 ```
 [osn]
 type = s3

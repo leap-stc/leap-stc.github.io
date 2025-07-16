@@ -31,7 +31,7 @@ If you are interested in publishing archival or original data, please refer to o
 ## Manually uploading data into Cloud Storage
 
 ```{warning}
-There might be special situations where it is beneficial/necessary to upload data to the [](reference.infrastructure.buckets) but we generally encourage data ingestion to the [](reference.infrastructure.osn_pod) due to the public access and reduced running cost. See above for instructions.
+There might be special situations where it is beneficial/necessary to upload data to the [](reference.infrastructure.buckets) but we generally encourage data ingestion to the OSN Pod due to the public access and reduced running cost. See above for instructions.
 ```
 
 We discourage manually moving datasets to our cloud storage as much as possible since it is hard to reproduce these datasets at a future point (if e.g. the dataset maintainer has moved on to a different position) (see [](explanation.data-policy.reproducibility). We encourage you to try out the methods above, but if these should not work for some reason (and you were not able to find a solution with the [](support.data_compute_team)), you should try the methods below. We will always [prioritize unblocking your work](explanation.code-policy.dont-let-perfect-be-the-enemy-of-good).
@@ -119,7 +119,7 @@ rclone ls <remote_name>:bucket-name/funky-user
 
 ### Choosing a location - OSN vs GCS
 
-Details on both OSN and GCS cloud storage buckets can be found in the [infrastructure guide](reference.infrastructure.osn_pod).
+Details on both OSN and GCS cloud storage buckets can be found in the [infrastructure guide](reference.infrastructure.catalog).
 
 For some general guidelines on choosing:
 
