@@ -6,4 +6,4 @@ on:
 
 jobs:
   delete:
-    uses: ProjectPythia/cookbook-actions/.github/workflows/delete-preview.yaml@v2024.10.29
+    uses: ProjectPythia/cookbook-actions/.github/workflows/delete-preview.yaml@v2025.06.17

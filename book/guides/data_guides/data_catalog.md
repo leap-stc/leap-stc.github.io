@@ -2,7 +2,7 @@
 
 # Working with the LEAP Data Catalog
 
-You want to have a specific dataset to explore or analyze? There is a good chance that somebody else at LEAP has already worked with the data! So the first thing to look for data should always be a visit to the [LEAP Data Catalog](reference.infrastructure.catalog). This guide goes over the process of loading data from the catalog. If data is not there, it also specifies how one can request cloud-ingested data be added to the catalog. If you are completely new to data ingestion and putting data into the cloud, please check out our beginner oriented [tutorial](guides.data.ingestion_tutorial).
+You want to have a specific dataset to explore or analyze? There is a chance that somebody else at LEAP has already worked with the data! So the first thing to look for data should always be a visit to the [LEAP Data Catalog](reference.infrastructure.catalog). This guide goes over the process of loading data from the catalog. If data is not there, it also specifies how one can request cloud-ingested data be added to the catalog. If you are completely new to data ingestion and putting data into the cloud, please check out our beginner oriented [tutorial](guides.data.ingestion_tutorial).
 
 ## How to load Data from the LEAP Catalog
 
@@ -11,12 +11,9 @@ This is a repository of data sets published by the LEAP community in collaborati
 The basic requirements for loading the data are the following packages, which are automatically accessible to any user of the JupyterHub platform. But if you wish to load the data on your machine, then you must ensure your python environment has the following packages:
 
 ```
-xarray
-requests
-aiohttp
-dask
-zarr
-fsspec
+Xarray
+gcsfs
+Zarr
 ```
 
 (guides.data.ingestion_pipeline)=
@@ -26,7 +23,7 @@ fsspec
 To start ingesting a dataset follow these steps:
 
 1. Let the LEAP community and the Data and Computation Team know about this new dataset. We gather all ingestion requests in our ['leap-stc/data_management' issue tracker](https://github.com/leap-stc/data-management/issues). You should check existing issues with the tag ['dataset'](https://github.com/leap-stc/data-management/issues?q=is%3Aissue+is%3Aopen+label%3Adataset) to see if somebody else might have already requested this particular dataset. If that is not the case you can add a new [dataset_request](https://github.com/leap-stc/data-management/issues/new?assignees=&labels=dataset&projects=&template=new_dataset.yaml&title=New+Dataset+%5BDataset+Name%5D). Making these request in a central location enables others to see which datasets are currently being ingested and what the status is.
-1. Use our [feedstock template](https://github.com/leap-stc/LEAP_template_feedstock) to create a feedstock repostory by following instructions in the README to get you started with either one of the above.
+1. Use our [feedstock template](https://github.com/leap-stc/LEAP_template_feedstock) to create a feedstock repository by following instructions in the README to get you started with either one of the above.
 1. If issues arise please reach out to the [](support.data_compute_team)
 
 :::\{note}
@@ -37,7 +34,7 @@ This does currently not provide a solution to handle datasets that have been pro
 
 ### How to get new data ingested (if public download is not available)
 
-If an option to download the source data is available always try to follow the [pangeo-forge based workflow](guides.data.ingestion_pipeline) first to maximize reproducibility. But if the data of your choice is located on behind a firewall on an HPC center, the 'pull' based paradigm of pangeo-forge will not work. In this case we have an option to 'push' the data to a special "inbox" bucket (`'leap-pangeo-inbox'`) on the [](reference.infrastructrue.osn_pod), from there an admin can move the data to another dedicated bucket and the data can be added to the catalog using the [template feedstock](https://github.com/leap-stc/LEAP_template_feedstock).
+If the source data is publicly available and accessable over https, you should create a [feedstock template](https://github.com/leap-stc/LEAP_template_feedstock). If the data is located behind a firewall on an HPC center, the 'pull' based paradigm our feedstocks will not work. In this case we have an option to 'push' the data to a special "inbox" bucket (`'leap-pangeo-inbox'`) on the [](reference.infrastructure.osn_pod), from there an admin can move the data to another dedicated bucket and the data can be added to the catalog using the [template feedstock](https://github.com/leap-stc/LEAP_template_feedstock).
 
 **Step by Step instructions**
 

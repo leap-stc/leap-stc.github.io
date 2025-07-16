@@ -176,7 +176,6 @@ Copying with rclone will stream the data from the source to your computer and ba
 ````
 `````
 
-
 (guides.data.authentication)=
 
 ## Access to LEAP-Pangeo resources without the JupyterHub
@@ -184,6 +183,7 @@ Copying with rclone will stream the data from the source to your computer and ba
 (guides.data.authentication.temp_token)=
 
 ### Temporary Token
+
 ```{note}
 This does not actually generate credentials that work outside the JupyterHub, Using the Google Groups is the recommended way of accessing the cloud buckets from outside the Hub.
 ```
@@ -213,4 +213,3 @@ We manage access rights through [Google Groups](https://groups.google.com). Plea
 ### Service Account
 
 If you want more permanent access to resources, e.g. as part of a repositories CI using a service account, please reach out to the [](support.data_compute_team) to discuss options.
-

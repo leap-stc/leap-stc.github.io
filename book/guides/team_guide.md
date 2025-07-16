@@ -35,7 +35,7 @@ This is a short write up facilitate the spin up of new team members for the Data
 ### Relevant github repos
 
 - [`leap-stc.github.io`](https://github.com/leap-stc/leap-stc.github.io): The source for the [LEAP-Pangeo technical documentation](https://leap-stc.github.io/intro.html). This also contains [LEAP-Pangeo Discussion Forum](https://github.com/leap-stc/leap-stc.github.io/discussions)
-- [`data-management`](https://github.com/leap-stc/data-management): Contains all the [pangeo-forge](https://pangeo-forge.readthedocs.io/en/latest/) based code/automation to ingest new datasets. Point users to the [issue tracker](https://github.com/leap-stc/data-management/issues/new/choose) to request new datasets.
+- [`data-management`](https://github.com/leap-stc/data-management): Contains all the [LEAP catalog](https://catalog.leap.columbia.edu/) based code/automation to ingest new datasets. Point users to the [issue tracker](https://github.com/leap-stc/data-management/issues/new/choose) to request new datasets.
 
 ## Regular Maintenance
 
@@ -97,7 +97,7 @@ The following is a list of tasks that should be done by any new hire in the Data
 
 ### Moving Data between buckets using bare VMs
 
-In general you need some form of compute to move data between different object store locations, but be aware that the data will be always be streamed to and from that location over the internet, so fast connection speed is key for fast transfers. There are a variety of ways to move data with perhaps the easiest being to run fsspec or rclone on your local computer, but speed is likely limited by your local internet connection. For certain tasks (e.g. moving data to admin only publishing buckets on the [](reference.infrastructrue.osn_pod)) it is recommended to use rclone on a VM
+In general you need some form of compute to move data between different object store locations, but be aware that the data will be always be streamed to and from that location over the internet, so fast connection speed is key for fast transfers. There are a variety of ways to move data with perhaps the easiest being to run fsspec or rclone on your local computer, but speed is likely limited by your local internet connection. For certain tasks (e.g. moving data to admin only publishing buckets on the [](reference.infrastructure.osn_pod)) it is recommended to use rclone on a VM
 :::\{tip}
 These instructions should be easy to adapt to VM instances on other clouds, and can likely be automated to a much larger degree, but this is what has worked so far. Ultimately this approach is a somewhat manual implementation of the concept of [skyplane](https://github.com/skyplane-project/skyplane) which sadly does not seem to be actively maintained anymore. As of the writing of these docs we were able to achieve ~700MB/s transfer speeds with a single VM following the instructions below
 :::
@@ -219,12 +219,12 @@ Scroll to the "Allocation Attributes" section. You can see all relevant values h
 
 **OSN Anonymous Access**: If False, this data is public, no credentials are needed to read data (writing still requires credentials).
 **OSN Bucket Quota (TB)**: Shows the currently allocated size. This is the max size, not what is actuall used!
-**OSN RO/RW Bucket Access/Secret Key**: Credentials for read-only (RO) and read-write (RW) access to the bucket. See [](reference.infrastructrue.osn_pod.credentials) for more details.
+**OSN RO/RW Bucket Access/Secret Key**: Credentials for read-only (RO) and read-write (RW) access to the bucket. See [](reference.infrastructure.osn_pod) for more details.
 
 #### Share bucket credentials
 
 :::\{attention}
-Some buckets are not meant to be accessible for write by users! Please always refer to [](reference.infrastructrue.osn_pod.organization) and only give access to project specific buckets and the `'leap-pangeo-inbox'` bucket to non-admins.
+Some buckets are not meant to be accessible for write by users! Please always refer to [](reference.infrastructure.osn_pod.organization) and only give access to project specific buckets and the `'leap-pangeo-inbox'` bucket to non-admins.
 :::
 
 - Navigate to the specific bucket you want to share credentials to (see [above](guide.team.admin.osnpod.check) for detailed steps)
