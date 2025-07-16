@@ -9,6 +9,7 @@ Dask is a powerful tool to parallelize large-scale workflows that is tightly int
 - <https://pangeo.io/cloud.html#dask>
 
 (guides.compute.image.custom)=
+
 ## Creating Custom Docker Images
 
 The LEAP-Pangeo Jupyterhub provides a selection of [software environments](reference.infrastructure.hub.software_env) that enable many workflows using the Pangeo Software stack, but often users will need to install custom dependencies. Installing dependencies every time you start a server is usually fine for testing, but can become cumbersome over the long run and makes reproducibility much harder.
