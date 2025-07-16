@@ -1,0 +1,741 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Using VSCode with the Hub &#8212; Technical Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'guides/vscode_remoteSSH_guide';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Infrastructure" href="../reference/infrastructure.html" />
+    <link rel="prev" title="FAQs" href="faq.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/LEAP_logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/LEAP_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    LEAP Technical Documentation
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/ingesting_dataset.html">Data Ingestion Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/education_guide.html">Teaching Classes (Education)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/bootcamp_guide.html">Running Bootcamps</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Explanation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../explanation/architecture.html">LEAP-Pangeo Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explanation/implementation.html">LEAP-Pangeo Implementation Plan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explanation/code_policy.html">LEAP-Pangeo Code Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explanation/data_policy.html">LEAP-Pangeo Data Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explanation/infrastructure_policy.html">LEAP-Pangeo Infrastructure Policy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="code_guide.html">Code Guide</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="data_guide.html">Data Guide</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="data_guides/transfer_data.html">Transferring Data into Cloud Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_guides/data_catalog.html">Working with the LEAP Data Catalog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_guides/data_jupyterhub.html">Working with Cloud Data on the JupyterHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_guides/external_workflow.html">Working outside the LEAP JupyterHub</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="compute_guide.html">Compute Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vm_access.html">Getting access to Cloud VMs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="team_guide.html">Guide for Data and Computation Team Members</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQs</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Using VSCode with the Hub</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../reference/infrastructure.html">Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/membership.html">Membership</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/education.html">Education</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Getting Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how_to_cite.html">How to cite LEAP-Pangeo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/leap-stc/leap-stc.github.io" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/leap-stc/leap-stc.github.io/issues/new?title=Issue%20on%20page%20%2Fguides/vscode_remoteSSH_guide.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/guides/vscode_remoteSSH_guide.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Using VSCode with the Hub</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-requisites">Pre-requisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#web-browser-start-your-server">1 [Web Browser] Start your server</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyterhub-token-setup">2 JupyterHub Token Setup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#web-browser-obtain-a-jupyterhub-token">2-1 [Web Browser] Obtain a JupyterHub Token</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-terminal-configure-local-ssh-config-with-the-jupyterhub-token">2-1 [Local Terminal] Configure local <code class="docutils literal notranslate"><span class="pre">~/.ssh/config</span></code> with the JupyterHub Token</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh-key-pair-setup">3 SSH Key Pair Setup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-terminal-generate-a-ssh-key-pair">3-1 [Local Terminal] Generate a ssh key pair</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#web-browser-save-the-public-key-on-github">3-2 [Web Browser] Save the public key on Github</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#web-browser-setup-ssh-keys-on-your-jupyterhub-server">3-3 [Web Browser] Setup ssh keys on your JupyterHub server</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local-terminal-try-ssh-ing-into-your-jupyterhub">4 [Local Terminal] Try <code class="docutils literal notranslate"><span class="pre">ssh</span></code>-ing into your JupyterHub!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-connect-to-leap-pangeo-on-vscode">5 [VSCode] Connect to LEAP Pangeo on VSCode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-write-execute-your-code-via-a-remote-kernel">6 [VSCode] Write / execute your code via a remote kernel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-re-connecting-to-remote-ssh-after-setup">7 [VSCode] Re-connecting to Remote SSH After Setup</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="using-vscode-with-the-hub">
+<span id="guide-vscode"></span><h1>Using VSCode with the Hub<a class="headerlink" href="#using-vscode-with-the-hub" title="Permalink to this headline">#</a></h1>
+<section id="pre-requisites">
+<h2>Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this headline">#</a></h2>
+<p>⭐ LEAP Pangeo Access</p>
+<p>You must have the ability to start a server on LEAP Pangeo. More information about membership can be found in the <a class="reference external" href="https://leap-stc.github.io/reference/membership.html#users-membership-apply">Membership</a> page.</p>
+<p>⭐ Websocat</p>
+<p><a class="reference external" href="https://github.com/vi/websocat">websocat</a> must be installed on the client machine.
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">websocat</span></code> works on Mac OS, and pre-built binaries <a class="reference external" href="https://github.com/vi/websocat/releases">are available</a>
+for all other operating systems.</p>
+<p>⭐ VSCode</p>
+<p><a class="reference external" href="https://code.visualstudio.com/download">VSCode</a> must be installed on the client machine.</p>
+<p>⭐ VSCode Extensions</p>
+<p>Find and install the Remote-SSH and Jupyter extensions on the VSCode Extensions Marketplace.</p>
+<a class="reference internal image-reference" href="https://github.com/user-attachments/assets/6dc5d51c-3389-4e2d-ab92-4ee75c981aa5"><img alt="Image" src="https://github.com/user-attachments/assets/6dc5d51c-3389-4e2d-ab92-4ee75c981aa5" style="width: 268px;" /></a>
+<a class="reference internal image-reference" href="https://github.com/user-attachments/assets/67f748fc-7ae0-4cc0-a1b5-a6a4ce8b67e1"><img alt="Image" src="https://github.com/user-attachments/assets/67f748fc-7ae0-4cc0-a1b5-a6a4ce8b67e1" style="width: 272px;" /></a>
+<p>Remote-SSH will be used to connect to your LEAP Pangeo server, while the Jupyter extension will be used to open .ipynb notebooks and manage the kernel that runs your code on the remote server.</p>
+<div class="admonition-before-you-begin admonition">
+<p class="admonition-title">Before you begin</p>
+<p>There are two levels of authentication – your <strong>JupyterHub token</strong> and your <strong>SSH key pair</strong> (public/private). This guide will walk you through both so you can connect with JupyterHub from your VSCode without entering a password.</p>
+</div>
+<p>The <strong>JupyterHub token</strong> is like a temporary password that lets your local machine talk to the JupyterHub server over a special channel (via websocat).</p>
+<p>The JupyterHub token will be included in your <code class="docutils literal notranslate"><span class="pre">~/.ssh/config</span></code> file on your local machine so ssh knows how to talk to the server.</p>
+<p>Your <strong>SSH key pair</strong> is like a secure ID card. Your local machine holds the private key (secret), and the server holds your public key (the badge that proves it trusts you).</p>
+<p>The SSH public key will be added to your GitHub account for convenience, and then downloaded onto the JupyterHub server (saved into <code class="docutils literal notranslate"><span class="pre">~/.ssh/authorized_keys</span></code>) so the server knows your local machine is trusted.</p>
+</section>
+<section id="web-browser-start-your-server">
+<h2>1 [Web Browser] Start your server<a class="headerlink" href="#web-browser-start-your-server" title="Permalink to this headline">#</a></h2>
+<p>This setup only works after you start your JupyterHub server. So, start your server!
+Please keep in mind that even after setting up Remote-SSH on your VSCode, you would have to start your server on <a class="reference external" href="https://leap.2i2c.cloud/hub/home">LEAP Pangeo</a> before attempting to connect to the server.</p>
+</section>
+<section id="jupyterhub-token-setup">
+<h2>2 JupyterHub Token Setup<a class="headerlink" href="#jupyterhub-token-setup" title="Permalink to this headline">#</a></h2>
+<section id="web-browser-obtain-a-jupyterhub-token">
+<h3>2-1 [Web Browser] Obtain a JupyterHub Token<a class="headerlink" href="#web-browser-obtain-a-jupyterhub-token" title="Permalink to this headline">#</a></h3>
+<p>We will need to create a JupyterHub token for authentication.</p>
+<ol class="arabic simple">
+<li><p>Go to the JupyterHub control panel. You can access it via <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">-&gt;</span> <span class="pre">Hub</span> <span class="pre">control</span> <span class="pre">panel</span></code> in
+JupyterLab, or directly going to <a class="reference external" href="https://leap.2i2c.cloud/hub/token">https://leap.2i2c.cloud/hub/token</a>.</p></li>
+<li><p>In the top bar, select <strong>Token</strong>.</p></li>
+<li><p>Create a new Token, and keep it safe. <strong>Treat this like you would treat a password to your
+JupyterHub instance</strong>! It is recommended you set an expiry date for this.</p></li>
+</ol>
+</section>
+<section id="local-terminal-configure-local-ssh-config-with-the-jupyterhub-token">
+<h3>2-1 [Local Terminal] Configure local <code class="docutils literal notranslate"><span class="pre">~/.ssh/config</span></code> with the JupyterHub Token<a class="headerlink" href="#local-terminal-configure-local-ssh-config-with-the-jupyterhub-token" title="Permalink to this headline">#</a></h3>
+<p>We will set up our ssh config file to tell <code class="docutils literal notranslate"><span class="pre">ssh</span></code> how to connect to our JupyterHub. Add
+an entry that looks like this to the end of your <code class="docutils literal notranslate"><span class="pre">~/.ssh/config</span></code> file (create it if it does not exist).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Host</span> <span class="n">leap</span><span class="mf">.2</span><span class="n">i2c</span><span class="o">.</span><span class="n">cloud</span>
+    <span class="n">User</span> <span class="n">jovyan</span>
+    <span class="n">ProxyCommand</span> <span class="n">websocat</span> <span class="o">--</span><span class="n">binary</span> <span class="o">-</span><span class="n">H</span><span class="o">=</span><span class="s1">&#39;Authorization: token &lt;YOUR-JUPYTERHUB-TOKEN&gt;&#39;</span> <span class="n">asyncstdio</span><span class="p">:</span> <span class="n">wss</span><span class="p">:</span><span class="o">//%</span><span class="n">h</span><span class="o">/</span><span class="n">user</span><span class="o">/&lt;</span><span class="n">YOUR</span><span class="o">-</span><span class="n">JUPYTERHUB</span><span class="o">-</span><span class="n">USERNAME</span><span class="o">&gt;/</span><span class="n">sshd</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>replace:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;YOUR-JUPYTERHUB-TOKEN&gt;</span></code> with the token you generated earlier</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;YOUR-JUPYTERHUB-USERNAME&gt;</span></code> with your jupyterhub username</p></li>
+</ul>
+</section>
+</section>
+<section id="ssh-key-pair-setup">
+<h2>3 SSH Key Pair Setup<a class="headerlink" href="#ssh-key-pair-setup" title="Permalink to this headline">#</a></h2>
+<section id="local-terminal-generate-a-ssh-key-pair">
+<h3>3-1 [Local Terminal] Generate a ssh key pair<a class="headerlink" href="#local-terminal-generate-a-ssh-key-pair" title="Permalink to this headline">#</a></h3>
+<ol class="arabic">
+<li><p>Generate the key pair on local terminal by executing the command:</p>
+<p><code class="docutils literal notranslate"><span class="pre">ssh-keygen</span> <span class="pre">-t</span> <span class="pre">ed25519</span> <span class="pre">-C</span> <span class="pre">&quot;your_email&#64;example.com&quot;</span></code>
+Make sure to replace <a class="reference external" href="mailto:your_email&#37;&#52;&#48;example&#46;com">your_email<span>&#64;</span>example<span>&#46;</span>com</a> with your actual email address.</p>
+</li>
+<li><p>Add key to ssh-agent by executing:
+<code class="docutils literal notranslate"><span class="pre">eval</span> <span class="pre">&quot;$(ssh-agent</span> <span class="pre">-s)&quot;</span></code> and</p>
+<p><code class="docutils literal notranslate"><span class="pre">ssh-add</span>&#160; <span class="pre">#~/.ssh/id_ed25519</span></code></p>
+</li>
+<li><p>Copy the public key:
+Use following command to show the public key on your local machine:
+<code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">~/.ssh/id_ed25519.pub</span></code>
+And copy the entire key, including the email address.</p>
+<p>Do not expose your private key <code class="docutils literal notranslate"><span class="pre">id_ed25519</span></code> - the private key should not be shared.</p>
+</li>
+</ol>
+</section>
+<section id="web-browser-save-the-public-key-on-github">
+<h3>3-2 [Web Browser] Save the public key on Github<a class="headerlink" href="#web-browser-save-the-public-key-on-github" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p>Go to <a class="reference external" href="https://github.com/settings/keys">Github key settings</a>, then click on “New SSH Key.”</p></li>
+<li><p>Paste the copied public key (including email address) into the “Key” box, and save. In the next step, we will leverage Github to save your public key on JupyterHub.</p></li>
+</ol>
+</section>
+<section id="web-browser-setup-ssh-keys-on-your-jupyterhub-server">
+<h3>3-3 [Web Browser] Setup ssh keys on your JupyterHub server<a class="headerlink" href="#web-browser-setup-ssh-keys-on-your-jupyterhub-server" title="Permalink to this headline">#</a></h3>
+<ol class="arabic">
+<li><p>Make sure your JupyterHub server is still running. If not, start a new one.</p></li>
+<li><p>Open a terminal in JupyterLab on your web browser</p></li>
+<li><p>Run the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-p<span class="w"> </span>~/.ssh
+wget<span class="w"> </span>https://github.com/&lt;YOUR-GITHUB-USERNAME&gt;.keys<span class="w"> </span>-O<span class="w"> </span>~/.ssh/authorized_keys
+chmod<span class="w"> </span><span class="m">0600</span><span class="w"> </span>~/.ssh/authorized_keys
+</pre></div>
+</div>
+<p>replacing <code class="docutils literal notranslate"><span class="pre">&lt;YOUR-GITHUB-USERNAME&gt;</span></code> with your github username.</p>
+</li>
+<li><p>Verify that authorized_keys contains your key by running <code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">~/.ssh/authorized_keys</span></code> on the JupyterLab Terminal</p></li>
+<li><p>If it is empty or nonexistent, then create the file authorized_keys in the ~/.ssh/ directory and paste your ssh public key (<code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">~/.ssh/id_ed25519.pub</span></code>, from local terminal) and save file.</p></li>
+</ol>
+<p>With that, we are ready to go!</p>
+</section>
+</section>
+<section id="local-terminal-try-ssh-ing-into-your-jupyterhub">
+<h2>4 [Local Terminal] Try <code class="docutils literal notranslate"><span class="pre">ssh</span></code>-ing into your JupyterHub!<a class="headerlink" href="#local-terminal-try-ssh-ing-into-your-jupyterhub" title="Permalink to this headline">#</a></h2>
+<p>After all this is setup, you’re now able to ssh in! On your local terminal, try:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">leap</span><span class="mf">.2</span><span class="n">i2c</span><span class="o">.</span><span class="n">cloud</span>
+</pre></div>
+</div>
+<p>and it should just work! If configured correctly, <code class="docutils literal notranslate"><span class="pre">leap.2i2c.cloud</span></code> should not ask you for a password.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Debugging Help</p>
+<p>If you get the error <code class="docutils literal notranslate"><span class="pre">ssh:</span> <span class="pre">connect</span> <span class="pre">to</span> <span class="pre">host</span> <span class="pre">leap.2i2c.cloud</span> <span class="pre">port</span> <span class="pre">22:</span> <span class="pre">Operation</span> <span class="pre">timed</span> <span class="pre">out</span></code>, then check you have installed websocat by running <code class="docutils literal notranslate"><span class="pre">run</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">websocat</span></code> and confirm that ther config file in the correct directory, <code class="docutils literal notranslate"><span class="pre">~/.ssh/config</span></code></p>
+</div>
+<p>If the CLI asks for a password, please verify that your access token and public keys are valid and consistent across platforms and try the previous steps again. Keep in mind this test has to only work once, and it is not necessary to ssh into JupyterHub via CLI once you confirm this works once.</p>
+</section>
+<section id="vscode-connect-to-leap-pangeo-on-vscode">
+<h2>5 [VSCode] Connect to LEAP Pangeo on VSCode<a class="headerlink" href="#vscode-connect-to-leap-pangeo-on-vscode" title="Permalink to this headline">#</a></h2>
+<p>Launch VSCode, click on the top search bar to open the Command Palette (cmd + shift + P on Mac)</p>
+<ol class="arabic simple">
+<li><p>Enter <code class="docutils literal notranslate"><span class="pre">&gt;Remote-SSH:</span> <span class="pre">Add</span> <span class="pre">New</span> <span class="pre">SSh</span> <span class="pre">Host</span></code></p></li>
+</ol>
+<a class="reference internal image-reference" href="https://github.com/user-attachments/assets/5aaaf786-5d27-4cc3-a290-889a06e3ab4c"><img alt="Image" src="https://github.com/user-attachments/assets/5aaaf786-5d27-4cc3-a290-889a06e3ab4c" style="width: 636px;" /></a>
+<ol class="arabic simple">
+<li><p>Enter <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">leap.2i2c.cloud</span></code></p></li>
+</ol>
+<a class="reference internal image-reference" href="https://github.com/user-attachments/assets/ef8a0205-ff73-42b3-b60f-497152b41ac7"><img alt="Image" src="https://github.com/user-attachments/assets/ef8a0205-ff73-42b3-b60f-497152b41ac7" style="width: 656px;" /></a>
+<ol class="arabic simple">
+<li><p>Click on the first option, /Users/&lt;your_local_username&gt;/.ssh/config</p></li>
+</ol>
+<a class="reference internal image-reference" href="https://github.com/user-attachments/assets/e3e6db0d-9579-41d3-9678-b6f71c0875db"><img alt="Image" src="https://github.com/user-attachments/assets/e3e6db0d-9579-41d3-9678-b6f71c0875db" style="width: 644px;" /></a>
+<ol class="arabic simple">
+<li><p>Follow further prompts until you are connected. You should see this on your top bar once you are connected.</p></li>
+</ol>
+<a class="reference internal image-reference" href="https://github.com/user-attachments/assets/0a8a6698-1c69-41cf-9b3b-b13ac1450409"><img alt="Image" src="https://github.com/user-attachments/assets/0a8a6698-1c69-41cf-9b3b-b13ac1450409" style="width: 620px;" /></a>
+<ol class="arabic simple">
+<li><p>Click on “Open Folder” and select the home directory. You should be able to access your LEAP-Pangeo Notebooks remotely now.</p></li>
+</ol>
+<a class="reference internal image-reference" href="https://github.com/user-attachments/assets/15620385-784a-427a-8d6c-cd099e1b3017"><img alt="Image" src="https://github.com/user-attachments/assets/15620385-784a-427a-8d6c-cd099e1b3017" style="width: 329px;" /></a>
+</section>
+<section id="vscode-write-execute-your-code-via-a-remote-kernel">
+<h2>6 [VSCode] Write / execute your code via a remote kernel<a class="headerlink" href="#vscode-write-execute-your-code-via-a-remote-kernel" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p>Once you open a Notebook, you will find a selection menu for a kernel on the top-right.</p></li>
+</ol>
+<a class="reference internal image-reference" href="https://github.com/user-attachments/assets/f5a18a77-fd3d-4104-8f84-3ca2d5b9374a"><img alt="Image" src="https://github.com/user-attachments/assets/f5a18a77-fd3d-4104-8f84-3ca2d5b9374a" style="width: 1471px;" /></a>
+<ol class="arabic simple">
+<li><p>Select the option “Python Environments”</p></li>
+</ol>
+<a class="reference internal image-reference" href="https://github.com/user-attachments/assets/867fa947-811d-4a52-b147-61a1a2b88bc6"><img alt="Image" src="https://github.com/user-attachments/assets/867fa947-811d-4a52-b147-61a1a2b88bc6" style="width: 610px;" /></a>
+<ol class="arabic simple">
+<li><p>Selected the recommended <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">(Python</span> <span class="pre">3.x.x)</span></code> kernel</p></li>
+</ol>
+<a class="reference internal image-reference" href="https://github.com/user-attachments/assets/772746e7-4eba-49ba-9a89-465b1b19a140"><img alt="Image" src="https://github.com/user-attachments/assets/772746e7-4eba-49ba-9a89-465b1b19a140" style="width: 610px;" /></a>
+<p>You should now be good to execute code via remote kernel on the LEAP server from local VSCode!</p>
+</section>
+<section id="vscode-re-connecting-to-remote-ssh-after-setup">
+<h2>7 [VSCode] Re-connecting to Remote SSH After Setup<a class="headerlink" href="#vscode-re-connecting-to-remote-ssh-after-setup" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">&gt;Remote-SSH:</span> <span class="pre">Connect</span> <span class="pre">to</span> <span class="pre">Host</span></code> into the top search bar.</p></li>
+</ol>
+<a class="reference internal image-reference" href="https://github.com/user-attachments/assets/5a015483-05bd-4a43-b449-eab593cb0687"><img alt="Image" src="https://github.com/user-attachments/assets/5a015483-05bd-4a43-b449-eab593cb0687" style="width: 755px;" /></a>
+<ol class="arabic simple">
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">leap.2i2c.cloud</span></code>. Keep in mind this action will only work if the <a class="reference external" href="https://leap.2i2c.cloud/hub/home">2i2c Server</a> is already active.</p></li>
+</ol>
+<a class="reference internal image-reference" href="https://github.com/user-attachments/assets/a8d95afd-e0ed-41fe-8020-c840516e4dc1"><img alt="Image" src="https://github.com/user-attachments/assets/a8d95afd-e0ed-41fe-8020-c840516e4dc1" style="width: 764px;" /></a>
+<ol class="arabic simple">
+<li><p>Repeat the steps from <em>“Write / execute your code via a remote kernel”</em></p></li>
+</ol>
+<p>Contributors to this documentation:</p>
+<ol class="arabic simple">
+<li><p>Yuvi [<a class="github reference external" href="https://github.com/yuvipanda">yuvipanda</a>], <a class="reference external" href="https://github.com/yuvipanda/jupyter-sshd-proxy/blob/main/README.md">jupyter-sshd-proxy</a>:</p></li>
+<li><p>Joe Ko [jk4730&#64;columbia.edu], clarifications on how to setup the local public key</p></li>
+<li><p>Sungjoon Park [sp4050&#64;columbia.edu], whom you can contact for questions regarding this workflow</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./guides"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="faq.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">FAQs</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../reference/infrastructure.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Infrastructure</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-requisites">Pre-requisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#web-browser-start-your-server">1 [Web Browser] Start your server</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyterhub-token-setup">2 JupyterHub Token Setup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#web-browser-obtain-a-jupyterhub-token">2-1 [Web Browser] Obtain a JupyterHub Token</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-terminal-configure-local-ssh-config-with-the-jupyterhub-token">2-1 [Local Terminal] Configure local <code class="docutils literal notranslate"><span class="pre">~/.ssh/config</span></code> with the JupyterHub Token</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh-key-pair-setup">3 SSH Key Pair Setup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-terminal-generate-a-ssh-key-pair">3-1 [Local Terminal] Generate a ssh key pair</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#web-browser-save-the-public-key-on-github">3-2 [Web Browser] Save the public key on Github</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#web-browser-setup-ssh-keys-on-your-jupyterhub-server">3-3 [Web Browser] Setup ssh keys on your JupyterHub server</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local-terminal-try-ssh-ing-into-your-jupyterhub">4 [Local Terminal] Try <code class="docutils literal notranslate"><span class="pre">ssh</span></code>-ing into your JupyterHub!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-connect-to-leap-pangeo-on-vscode">5 [VSCode] Connect to LEAP Pangeo on VSCode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-write-execute-your-code-via-a-remote-kernel">6 [VSCode] Write / execute your code via a remote kernel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-re-connecting-to-remote-ssh-after-setup">7 [VSCode] Re-connecting to Remote SSH After Setup</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By LEAP Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
