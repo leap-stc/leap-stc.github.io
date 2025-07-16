@@ -4,11 +4,11 @@ The different elements of the project can be implemented in parallel and gradual
 
 ## Roles
 
-:::\{admonition} Decision Needed
+```{admonition}Decision Needed
 An open question for LEAP-Pangeo is whether to develop and maintain our infrastructure
 via subcontracts or via Columbia employees whom we hire.
 Below the roles are enumerated in a generic way according to the needed expertise.
-:::
+```
 
 ### Data Engineering
 
@@ -66,10 +66,10 @@ and machine-learning models, will require a mix of skills commonly referred to a
 
 #### Education and Training
 
-:::\{admonition} Decision Needed
+```{admonition} Decision Needed
 What is the scope of LEAP-Pangeo training? How much should we expect trainees to learn?
 What is the intersection with other educational activities, including for-credit courses?
-:::
+```
 
 Training participants in using LEAP-Pangeo will require expertise in research computing pedagogy
 and state-of-the-art knowledge of best practices in scientific computing, machine learning,

@@ -89,7 +89,7 @@ A complete list of all packages installed in this environment is located at:
 
 - <https://github.com/pangeo-data/pangeo-docker-images/blob/2022.05.10/pangeo-notebook/packages.txt>
 
-:::\{attention}
+````{attention}
 We regularly update the version of the images provided in the drop-down menu.
 
 To ensure full reproducibility you should save the full info of the image you worked with (this is stored in the environment variable `JUPYTER_IMAGE_SPEC`) with your work. You could for example print the following in the first cell of a notebook:
@@ -98,10 +98,11 @@ To ensure full reproducibility you should save the full info of the image you wo
 import os
 
 print(os.environ["JUPYTER_IMAGE_SPEC"])
-```
+````
 
 You can then use that string with the [custom images](reference.infrastructure.hub.image.custom) to reproduce your work with exactly the same environment.
-:::
+
+````
 
 (reference.infrastructure.hub.image.custom)=
 
@@ -152,9 +153,9 @@ Data can be transferred from `leap-pangeo-inbox` to `leap-pangeo-manual` with [t
 
 #### Credentials
 
-:::\{warning}
+```{warning}
 All OSN credentials are long lived and should be treated as such. Please do not share them publicly (e.g. in your notebook or a github repository) and when sharing with e.g. collaborators use an encrypted way of sharing (e.g. password manager).
-:::
+````
 
 Credentials for the OSN Pod are specific to each bucket. There are two types of credentials: "Read-only" and "Read-Write". Exercise caution when sharing/saving secrets, particularly the latter. Each type of credentials consists of two keys (access + secret). Both are required to access the bucket, and they are shared by the OSN Admin.
 

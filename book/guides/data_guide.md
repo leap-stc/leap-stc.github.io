@@ -25,4 +25,4 @@ After reading this, you are well-equipped to tackle any specific task requiring 
 - Instructions on how to access data LEAP has made available are outlined in [](guide.data.catalog). This guide also overviews how to transfer data that does not exist into the catalog.
 - For more generic instructions on how to publish or move your own data into cloud storage, please consult [](guide.data.transfer).
 - Once data is already placed into the Cloud, the JupyterHub platform is designed to facilitate seamless integration into data science workflows. Read more about this at [](guide.data.working)
-- For whatever reasons, users might wish to navigate cloud ingested data from outside the JupyterHub or make use of non-LEAP affiliated data on our software platform. For guides on how to access generic buckets externally, please consult [](guide.data.transfer)
+- For whatever reasons, users might wish to navigate cloud ingested data from outside the JupyterHub or make use of non-LEAP affiliated data on our software platform. For guides on how to work externally, please consult [](guide.data.external)

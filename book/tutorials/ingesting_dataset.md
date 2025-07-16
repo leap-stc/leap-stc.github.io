@@ -23,6 +23,6 @@ To start ingesting a dataset follow these steps:
 1. Use our [feedstock template](https://github.com/leap-stc/LEAP_template_feedstock) to create a feedstock repostory by following instructions in the README to get you started with either one of the above.
 1. If issues arise please reach out to the [](support.data_compute_team)
 
-:::\{note}
+```{note}
 This does currently not provide a solution to handle datasets that have been produced by you (as e.g. part of a publication). We are working on formalizing a workflow for this type of data. Please reach out to the [](support.data_compute_team) if you have data that you would like to publish. See [](explanation.data-policy.types) for more.
-:::
+```

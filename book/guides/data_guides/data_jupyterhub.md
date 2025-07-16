@@ -8,7 +8,7 @@ Once it has been ingested into a cloud bucket, working with data on the LEAP Jup
 
 Below are a few snippets on how to write your Xarray Datasets to cloud storage.
 
-:::\{note}
+````{note}
 Writing to Zarr is the recommended way to save Xarray Datasets. It is very performant and scales incredibly well. That said, there are a few gotchas to look out for. Recently, [Zarr Python V3 was released](https://zarr.dev/blog/zarr-python-3-release/). Depending on which `zarr-python` version you have installed on the hub, writing can look slightly differant! As of April 2025, the pypi/conda version of Zarr python is 3+. The Python library `zarr-python` can read and write either version 2 or 3. The pangeo community image that is used for the LEAP/2i2c Jupyter-hub now comes with Zarr V3.
 
 You can check the version with
@@ -17,9 +17,9 @@ You can check the version with
 import zarr
 
 print(zarr.__version__)
-```
+````
 
-:::
+````
 
 (hub.data.read_write)=
 
@@ -48,7 +48,7 @@ ds_processed.to_zarr(path, zarr_format=zarr_format, consolidated=False)
 
 # You can then open that Zarr store with Xarray with:
 # roundtrip = xr.open_zarr(path, chunks={}, consolidated=False)
-```
+````
 
 You can read it back into an xarray dataset with this snippet:
 
@@ -62,9 +62,9 @@ ds = xr.open_dataset(
 
 ... and you can give this to any other registered LEAP user and they can load it exactly like you can!
 
-:::\{note}
+```{note}
 Note that providing the url starting with `gs://...` is assumes that you have appropriate credentials set up in your environment to read/write to that bucket. On the hub these are already set up for you to work with the [](reference.infrastructure.buckets), but if you are trying to interact with non-public buckets you need to authenticate yourself. Check out [](data.config-files) to see an example how to do that.
-:::
+```
 
 Another example of a roundtrip save and load with numpy:
 
@@ -102,10 +102,12 @@ LEAP has an allocation of storage on an OSN pod. OSN allows s3-like cloud storag
 
 In the example below, we have to provide a bit more authentication to write to OSN.
 
-:::\{admonition} Note on OSN
-:class: tip, dropdown
+```{admonition} Note on OSN
+---
+class: tip, dropdown
+---
 This section is a work in progress and may change. Generally leap users should default to writing to GCS.
-:::
+```
 
 ```python
 import xarray as xr
@@ -143,9 +145,9 @@ ds.to_zarr(store=store, zarr_format=zarr_format, consolidated=False)
 
 ### How to delete data from cloud buckets
 
-:::\{warning}
+```{warning}
 Depending on which cloud bucket you are working, make sure to double check which files you are deleting by [inspecting the contents](hub.data.list) and only working in a subdirectory with your username (e.g. `gs://<leap-bucket>/<your-username>/some/project/structure`.
-:::
+```
 
 You can remove single files by using a gcsfs/fsspec filessytem as above
 
