@@ -4,7 +4,7 @@ The different elements of the project can be implemented in parallel and gradual
 
 ## Roles
 
-```{admonition}Decision Needed
+```{admonition} Decision Needed
 An open question for LEAP-Pangeo is whether to develop and maintain our infrastructure
 via subcontracts or via Columbia employees whom we hire.
 Below the roles are enumerated in a generic way according to the needed expertise.

@@ -16,7 +16,7 @@ Step one is always to check whether data already exists in the [LEAP data catalo
 
 If you do not find your dataset in the data catalog we can ingest it. Data ingestion in this context means that we have a programmatic way to download and transform data into [Analysis-Ready Cloud-Optimized (ARCO)](reference.arco) formats in a reproducible way, so that the dataset is available for the LEAP community and beyond (see [](reference.infrastructure.buckets) for who can access which resource).
 
-Based on the 3 [types of data](explanation.data-policy.types) we host in the [](explanation.architecture.data-library) there are different ways of ingesting data:
+Based on the 3 [types of data](explanation.data-policy.types) we host in the [](explanation.architecture.catalog) there are different ways of ingesting data:
 
 - Linking an existing (public, egress-free) ARCO dataset to the [](explanation.architecture.catalog)
 - Ingesting and transforming data into an ARCO copy on [](reference.infrastructure.buckets).
@@ -40,7 +40,7 @@ The below solutions fundamentally rely on the data being 'pushed' to the [](refe
 
 <!-- Fundamentally the 'pushing' of datasets relies on two components:
 
-- Setting up permissions so that you can read/write to the [](reference.infrastructure.buckets) - Several methods to get permissions are described in [](reference.authentication).
+- Setting up permissions so that you can read/write to the [](reference.infrastructure.buckets) - Several methods to get permissions are described in [](guides.data.external.authentication).
 - Initiating a data transfer from your 'local' machine (e.g. your laptop, a server, or HPC Cluster). You can check on some methods below. -->
 
 ## Tools for Cloud Access
@@ -87,7 +87,7 @@ fs = fsspec.filesystem('gs') # equivalent to gcsfs.GCSFileSystem()
 fs = fsspec.filesystem('s3') # equivalent to s3fs.S3FileSystem()
 ```
 
-For **authenticated access** you need to pass additional arguments. In this case (for the m2lines OSN pod) we pass a custom endpoint and an [aws profile](data.config-files):
+For **authenticated access** you need to pass additional arguments. In this case (for the m2lines OSN pod) we pass a custom endpoint and an [aws profile](guides.data.external.authentication):
 ```python
 fs = fsspec.filesystem(
     's3',
@@ -108,7 +108,7 @@ fs.ls("leap-persistent/funky-user") # replace with your github username
 
 ````{tab-item} Rclone
 
-To inspect a bucket you can use clone with the profile ('remote' in rclone terminology) set up [above](data.config-files):
+To inspect a bucket you can use clone with the profile ('remote' in rclone terminology) set up [above](guides.data.external.authentication.config-files):
 
 ```shell
 rclone ls <remote_name>:bucket-name/funky-user
@@ -147,7 +147,7 @@ fs.put('<YOUR_DATA_FOLDER_ON_THE_JUPYTERHUB>', 'gs://leap-persistent/<YOUR_USERN
 
 ````{tab-item} Rclone
 
-You can move directories from a local computer to cloud storage with rclone (make sure you are properly [authenticated](data.config-files)):
+You can move directories from a local computer to cloud storage with rclone - make sure you are properly [authenticated](guides.data.external.authentication)!
 
 ```shell
 rclone copy path/to/local/dir/ <remote_name>:<bucket-name>/funky-user/some-directory

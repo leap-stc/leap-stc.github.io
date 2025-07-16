@@ -39,7 +39,7 @@ If the source data is publicly available and accessable over https, you should c
 **Step by Step instructions**
 
 - Reach out to the [](support.data_compute_team). They will contact the OSN pod admin and share bucket credentials for the `'leap-pangeo-inbox'` bucket.
-- Authenticate to that bucket from a compute location that has access to your desired data and the internet. You can find instructions on how to authenticate [here](data.config-files).
+- Authenticate to that bucket from a compute location that has access to your desired data and the internet. You can find instructions on how to authenticate [here](guides.data.external.authentication.config-files).
 - Upload the data to the 'leap-pangeo-inbox' in **a dedicated folder** (note the exact name of that folder, it is important for the later steps). How you exactly achieve the upload will depend on your preference. Some common options include:
   - Open a bunch of netcdf files into xarray and use `.to_zarr(...)` to write the data to zarr.
   - Use fsspec or rclone to move an existing zarr store to the target bucket

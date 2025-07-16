@@ -100,11 +100,9 @@ import os
 print(os.environ["JUPYTER_IMAGE_SPEC"])
 ````
 
-You can then use that string with the [custom images](reference.infrastructure.hub.image.custom) to reproduce your work with exactly the same environment.
+You can then use that string with the [custom images](reference.infrastructure.hub.software_env) to reproduce your work with exactly the same environment.
 
 ````
-
-(reference.infrastructure.hub.image.custom)=
 
 #### Custom Images
 
@@ -117,16 +115,12 @@ If you select the `Image > Other...` Option during [server login](hub:server:log
 You can install additional packages using `pip` and `conda`.
 However, these will disappear when your server shuts down.
 
-For a more permanent solution we recommend building project specific dockerfiles and using those as [custom images](reference.infrastructure.hub.image.custom).
-
-## Cloud Storage
+For a more permanent solution we recommend building project specific dockerfiles and using those as custom images.
 
 (reference.infrastructure.osn_pod)=
-
-### LEAP OSN Pod
+## Cloud Storage
 
 (reference.infrastructure.osn_pod.organization)=
-
 #### OSN Pod Organization
 
 The ~1PB storage on the OSN Pod can be customized into Projects and Buckets. Projects are used to give additional users access to the Coldfront Admin Console, whereas buckets are how storage is administered up on the Pod. A project can have multiple buckets.
@@ -148,7 +142,6 @@ There are currently 3 principal Projects on the Pod:
     - ... various project buckets
 
 (reference.infrastructure.osn_pod.credentials)=
-
 Data can be transferred from `leap-pangeo-inbox` to `leap-pangeo-manual` with [this rclone github action](https://github.com/leap-stc/data-management/actions/runs/11167922927/workflow).
 
 #### Credentials
@@ -163,7 +156,7 @@ Credentials for the OSN Pod are specific to each bucket. There are two types of 
 
 ## LEAP-Pangeo Cloud Storage Buckets
 
-LEAP-Pangeo provides users two cloud buckets to store data. Your [](reference.infrastructure.hub.server) is automatically authenticated to read from any of these buckets but write access might differ (see below). See [](reference.authentication) for details on how to access buckets from 'outside' the JupyterHub.
+LEAP-Pangeo provides users two cloud buckets to store data. Your [](reference.infrastructure.hub.server) is automatically authenticated to read from any of these buckets but write access might differ (see below). See [](guides.data.external.authentication) for details on how to access buckets from 'outside' the JupyterHub.
 
 - `gs://leap-scratch/` - Temporary Storage deleted after 7 days. Use this bucket for testing and storing large intermediate results. [More info](https://docs.2i2c.org/user/topics/data/cloud/#scratch-bucket)
 - `gs://leap-persistent/` - Persistent Storage. Use this bucket for storing results you want to share with other members.

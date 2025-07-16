@@ -26,9 +26,13 @@ with fsspec.open("gs://leap-scratch/funky-user/test.txt", mode="w") as f:
     f.write("hello world")
 ```
 
-(data.config-files)=
+(guides.data.external.authentication)=
 
 ## Authentication
+
+(guides.data.external.authentication.config-files)=
+
+### Generating Auth Config Files
 
 Unless a given cloud bucket allows anonymous access or is preauthenticated within your environment, you will need to authenticate with a key/secret pair. The [LEAP-Pangeo owned buckets](reference.infrastructure.buckets) are pre-authenticated on the Hub but working with them externally requires configuation. **Note:** If you are accessing non-public cloud data from the JupyterHub (not published by LEAP), you will also have to follow this process.
 
@@ -73,8 +77,7 @@ secret_access_key = XXX
 
 You can have multiple 'remotes' in this file for different cloud buckets.
 
-For the [](reference.infrastructrue.osn_pod) use this remote definition:
-
+For the [](reference.infrastructure.osn_pod) use this remote definition:
 ```
 [osn]
 type = s3
@@ -95,44 +98,6 @@ According to those issues we can only make the aws profiles (or [source profiles
 ```{note}
 You can find more great documentation, specifically on how to use OSN resources, in [this section](https://hytest-org.github.io/hytest/essential_reading/DataSources/Data_S3.html#credentialed-access) of the [HyTEST Docs](https://hytest-org.github.io/hytest/doc/About.html#)
 ```
-
-### Moving Data
-
-`````{tab-set}
-````{tab-item} Fsspec
-🚧
-````
-
-````{tab-item} Rclone
-
-You can move directories from a local computer to cloud storage with rclone (make sure you are properly [authenticated](data.config-files)):
-
-```shell
-rclone copy path/to/local/dir/ <remote_name>:<bucket-name>/funky-user/some-directory
-```
-
-You can also move data between cloud buckets using rclone
-
-```shell
-rclone copy \
- <remote_name_a>:<bucket-name>/funky-user/some-directory\
- <remote_name_b>:<bucket-name>/funky-user/some-directory
-```
-```{admonition} Copying single files
-:class: note
-To copy single files with rclone use the [copyto command](https://rclone.org/commands/rclone_copyto/) or copy the containing folder and use the `--include` or `--exclude` flags to select the file to copy.  
-```
-
-```{note}
-Copying with rclone will stream the data from the source to your computer and back to the target, and thus transfer speed is likely limited by the internet connection of your local machine.
-```
-
-````
-`````
-
-(guides.data.authentication)=
-
-## Access to LEAP-Pangeo resources without the JupyterHub
 
 (guides.data.authentication.temp_token)=
 
@@ -160,10 +125,40 @@ This will print a temporary token in the terminal. You can e.g. copy that to you
 
 (guides.data.authentication.google_groups)=
 
-### Persistent Access via Google Groups
-
-We manage access rights through [Google Groups](https://groups.google.com). Please contact the [](support.data_compute_team) to get added to the appropriate group (a gmail address is required for this).
-
 ### Service Account
 
 If you want more permanent access to resources, e.g. as part of a repositories CI using a service account, please reach out to the [](support.data_compute_team) to discuss options.
+
+## Moving Data
+
+`````{tab-set}
+````{tab-item} Fsspec
+🚧
+````
+
+````{tab-item} Rclone
+
+You can move directories from a local computer to cloud storage with rclone (make sure you are properly authenticated!):
+
+```shell
+rclone copy path/to/local/dir/ <remote_name>:<bucket-name>/funky-user/some-directory
+```
+
+You can also move data between cloud buckets using rclone
+
+```shell
+rclone copy \
+ <remote_name_a>:<bucket-name>/funky-user/some-directory\
+ <remote_name_b>:<bucket-name>/funky-user/some-directory
+```
+```{admonition} Copying single files
+:class: note
+To copy single files with rclone use the [copyto command](https://rclone.org/commands/rclone_copyto/) or copy the containing folder and use the `--include` or `--exclude` flags to select the file to copy.  
+```
+
+```{note}
+Copying with rclone will stream the data from the source to your computer and back to the target, and thus transfer speed is likely limited by the internet connection of your local machine.
+```
+
+````
+`````

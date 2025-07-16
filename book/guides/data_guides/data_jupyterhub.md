@@ -17,7 +17,7 @@ You can check the version with
 import zarr
 
 print(zarr.__version__)
-````
+```
 
 ````
 
@@ -48,7 +48,7 @@ ds_processed.to_zarr(path, zarr_format=zarr_format, consolidated=False)
 
 # You can then open that Zarr store with Xarray with:
 # roundtrip = xr.open_zarr(path, chunks={}, consolidated=False)
-````
+```
 
 You can read it back into an xarray dataset with this snippet:
 
@@ -63,7 +63,7 @@ ds = xr.open_dataset(
 ... and you can give this to any other registered LEAP user and they can load it exactly like you can!
 
 ```{note}
-Note that providing the url starting with `gs://...` is assumes that you have appropriate credentials set up in your environment to read/write to that bucket. On the hub these are already set up for you to work with the [](reference.infrastructure.buckets), but if you are trying to interact with non-public buckets you need to authenticate yourself. Check out [](data.config-files) to see an example how to do that.
+Note that providing the url starting with `gs://...` assumes that you have appropriate credentials set up in your environment to read/write to that bucket. On the hub these are already set up for you to work with the [](reference.infrastructure.buckets), but if you are trying to interact with non-public buckets you need to authenticate yourself. Check out [](guides.data.external.authentication) to see an example how to do that.
 ```
 
 Another example of a roundtrip save and load with numpy:
