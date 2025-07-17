@@ -13,8 +13,6 @@ We have additional requirements for the data ingestion to make the process susta
 
 For clearer organization each dataset should reside in its own repository under the `leap-stc` github organization. Each of these repositories will be called a 'feedstock', which contains additional metadata files.
 
-(guides.data.ingestion_tutorial)=
-
 ## How to get new data ingested
 
 To start ingesting a dataset follow these steps:

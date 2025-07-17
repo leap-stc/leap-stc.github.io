@@ -33,9 +33,7 @@ This document goes over the primary technical details of the JupyterHub.
 
 (reference.infrastructure.hub.server)=
 
-### Server
-
-#### Managing Servers
+### Managing Servers
 
 You can start and stop your server (and even open multiple named servers) from the `Hub Control Panel`. You can get to the hub control panel by navigating to `https://leap.2i2c.cloud/hub/home` in your browser or navigating to `File > Hub Control Panel` from the JupyterLab Interface.
 
@@ -123,7 +121,7 @@ LEAP maintains
 
 (reference.infrastructure.osn_pod.organization)=
 
-#### OSN Pod Organization
+### OSN Pod Organization
 
 The ~1PB storage on the OSN Pod can be customized into Projects and Buckets. Projects are used to give additional users access to the Coldfront Admin Console, whereas buckets are how storage is administered up on the Pod. A project can have multiple buckets.
 

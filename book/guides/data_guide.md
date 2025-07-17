@@ -8,7 +8,7 @@ Data is fundamental to most people's work at LEAP. This set of guides describes 
 
 - **Original Data** is any dataset that is produced by researchers at LEAP and has not been published yet. The main use case for this data is to share it with other LEAP members and collaborate on it, as it is a *work in progress*. For original data we support direct uploaded to the cloud. *Be aware that original data could change rapidly as the data producer is iterating on their code*. We encourage all datasets to be archived and published before using them in scientific publications. The [JupyterHub Platform](reference.infrastructure.hub) is the organizing platform for Original Data.
 
-Step one is always to check whether data already exists in the [LEAP data catalog](reference.instrastructure.catalog), in which case access is simply a matter of pasting a code snippet.
+Step one is always to check whether data already exists in the [LEAP data catalog](reference.infrastructure.catalog), in which case access is simply a matter of pasting a code snippet.
 
 We categorize LEAP-relevant use of data into three categories:
 

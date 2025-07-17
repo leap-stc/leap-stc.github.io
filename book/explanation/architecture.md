@@ -40,6 +40,18 @@ LEAP-Pangeo consists of the data catalog, a storage service, a compute environme
 
 ### The Data Catalog
 
+This is a repository of data sets published by the LEAP community in collaboration with the Data and Compute Team. The home page will immediately show a list of which datasets are included. Every dataset has a brief description, provides a simple code snippet for loading the data into Python, and links to the original feedstock from which the data was ingested. The term ["feedstock"](https://pangeo-forge.readthedocs.io/en/latest/deployment/feedstocks.html) is inherited from the Pangeo Forge project, and basically refers to the code repository defining the data pipeline. Feedstocks allow curious users to trace back towards the original data source for transparency and reproducibility.
+
+The datasets usually have a little code snippet for how to load them. The basic requirements for loading the data are the following packages, which are automatically accessible to any user of the JupyterHub platform. But if you wish to load the data on your machine, then you must ensure your python environment has the following packages:
+
+```
+Xarray
+gcsfs
+Zarr
+```
+
+#### (Deprecated) Vision Statement for the Data Catalog
+
 The data library will provide analysis-ready, cloud-optimized data for all aspects of LEAP.
 The library is directly inspired by the [IRI Data Library](https://iridl.ldeo.columbia.edu) mentioned above; however, LEAP-Pangeo data will be hosted in the cloud, for maximum impact, accessibility, and interoperability.
 
