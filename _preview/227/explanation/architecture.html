@@ -174,9 +174,8 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../guides/code_guide.html">Code Guide</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../guides/data_guide.html">Data Guide</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../guides/data_guides/transfer_data.html">Transferring Data into Cloud Storage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../guides/data_guides/data_catalog.html">Working with the LEAP Data Catalog</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../guides/data_guides/data_jupyterhub.html">Working with Cloud Data on the JupyterHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/data_guides/transfer_data.html">Data Ingestion Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/data_guides/cloud_tools.html">Working with Cloud Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guides/data_guides/external_workflow.html">Working outside the LEAP JupyterHub</a></li>
 </ul>
 </li>
@@ -392,7 +391,10 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-principles">Design Principles</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-and-architecture">Design and Architecture</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-data-catalog">The Data Catalog</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-data-catalog">The Data Catalog</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#deprecated-vision-statement-for-the-data-catalog">(Deprecated) Vision Statement for the Data Catalog</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-storage-service">Data Storage Service</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-hub">The Hub</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-knowledge-graph">The Knowledge Graph</a></li>
@@ -445,6 +447,15 @@ This is a key part of our sustainability plan.</p></li>
 </figure>
 <section id="the-data-catalog">
 <span id="explanation-architecture-catalog"></span><h3>The Data Catalog<a class="headerlink" href="#the-data-catalog" title="Permalink to this headline">#</a></h3>
+<p>This is a repository of data sets published by the LEAP community in collaboration with the Data and Compute Team. The home page will immediately show a list of which datasets are included. Every dataset has a brief description, provides a simple code snippet for loading the data into Python, and links to the original feedstock from which the data was ingested. The term <a class="reference external" href="https://pangeo-forge.readthedocs.io/en/latest/deployment/feedstocks.html">“feedstock”</a> is inherited from the Pangeo Forge project, and basically refers to the code repository defining the data pipeline. Feedstocks allow curious users to trace back towards the original data source for transparency and reproducibility.</p>
+<p>The datasets usually have a little code snippet for how to load them. The basic requirements for loading the data are the following packages, which are automatically accessible to any user of the JupyterHub platform. But if you wish to load the data on your machine, then you must ensure your python environment has the following packages:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Xarray</span>
+<span class="n">gcsfs</span>
+<span class="n">Zarr</span>
+</pre></div>
+</div>
+<section id="deprecated-vision-statement-for-the-data-catalog">
+<h4>(Deprecated) Vision Statement for the Data Catalog<a class="headerlink" href="#deprecated-vision-statement-for-the-data-catalog" title="Permalink to this headline">#</a></h4>
 <p>The data library will provide analysis-ready, cloud-optimized data for all aspects of LEAP.
 The library is directly inspired by the <a class="reference external" href="https://iridl.ldeo.columbia.edu">IRI Data Library</a> mentioned above; however, LEAP-Pangeo data will be hosted in the cloud, for maximum impact, accessibility, and interoperability.</p>
 <p>The contents of the data library will evolve dynamically based on the needs of the project.
@@ -469,6 +480,7 @@ It will also provide direct links to raw data in cloud object storage.</p>
 <li><p>A pretty web front-end interface for interactive public browsing</p></li>
 </ul>
 <p>The <a class="reference external" href="https://mlhub.earth/">Radiant Earth MLHub</a> is a great reference for how we imagine the LEAP data catalog will eventually look.</p>
+</section>
 </section>
 <section id="data-storage-service">
 <h3>Data Storage Service<a class="headerlink" href="#data-storage-service" title="Permalink to this headline">#</a></h3>
@@ -629,7 +641,10 @@ foundations in the climate data science community, strong uptake within NCAR, an
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-principles">Design Principles</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-and-architecture">Design and Architecture</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-data-catalog">The Data Catalog</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-data-catalog">The Data Catalog</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#deprecated-vision-statement-for-the-data-catalog">(Deprecated) Vision Statement for the Data Catalog</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-storage-service">Data Storage Service</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-hub">The Hub</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-knowledge-graph">The Knowledge Graph</a></li>

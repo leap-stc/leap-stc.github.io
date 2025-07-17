@@ -174,9 +174,8 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../guides/code_guide.html">Code Guide</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../guides/data_guide.html">Data Guide</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../guides/data_guides/transfer_data.html">Transferring Data into Cloud Storage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../guides/data_guides/data_catalog.html">Working with the LEAP Data Catalog</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../guides/data_guides/data_jupyterhub.html">Working with Cloud Data on the JupyterHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/data_guides/transfer_data.html">Data Ingestion Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/data_guides/cloud_tools.html">Working with Cloud Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guides/data_guides/external_workflow.html">Working outside the LEAP JupyterHub</a></li>
 </ul>
 </li>
@@ -404,9 +403,8 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="data-ingestion-tutorial">
-<h1>Data Ingestion Tutorial<a class="headerlink" href="#data-ingestion-tutorial" title="Permalink to this headline">#</a></h1>
-<p>New to cloud data ingestion? You’re not alone! Transferring large volumes of climate data is not an easy process, and can feel like a tall order. Never fear! This tutorial is aimed completely at beginners, and is designed to provide the <strong>why, how, and what</strong> for data ingestion!</p>
-<p>First of all, data ingestion refers to the general process of moving data from wherever it might exist to an analysis-ready, cloud-optimized (ARCO) format.</p>
+<span id="tutorials-data-ingestion"></span><h1>Data Ingestion Tutorial<a class="headerlink" href="#data-ingestion-tutorial" title="Permalink to this headline">#</a></h1>
+<p>New to cloud data ingestion? You’re not alone! Transferring large volumes of climate data is not an easy process, and can feel like a tall order. Never fear! This tutorial is aimed completely at beginners, and is designed to provide the <strong>what, why, and how</strong> for data ingestion! “Data ingestion” in our usage means a programmatic way to download and transform data into <a class="reference internal" href="../reference/infrastructure.html#reference-arco"><span class="std std-ref">Analysis-Ready Cloud-Optimized (ARCO)</span></a> formats in a reproducible way, so that the dataset is available for the LEAP community and beyond (see <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructure-buckets"><span class="std std-ref">LEAP-Pangeo Cloud Storage Buckets</span></a> for who can access which resource).</p>
 <section id="requirements-and-desiderata">
 <h2>Requirements and Desiderata<a class="headerlink" href="#requirements-and-desiderata" title="Permalink to this headline">#</a></h2>
 <p>We have additional requirements for the data ingestion to make the process sustainable and scalable:</p>
@@ -417,7 +415,7 @@ document.write(`
 <p>For clearer organization each dataset should reside in its own repository under the <code class="docutils literal notranslate"><span class="pre">leap-stc</span></code> github organization. Each of these repositories will be called a ‘feedstock’, which contains additional metadata files.</p>
 </section>
 <section id="how-to-get-new-data-ingested">
-<span id="guides-data-ingestion-tutorial"></span><h2>How to get new data ingested<a class="headerlink" href="#how-to-get-new-data-ingested" title="Permalink to this headline">#</a></h2>
+<h2>How to get new data ingested<a class="headerlink" href="#how-to-get-new-data-ingested" title="Permalink to this headline">#</a></h2>
 <p>To start ingesting a dataset follow these steps:</p>
 <ol class="arabic simple">
 <li><p>Let the LEAP community and the Data and Computation Team know about this new dataset. We gather all ingestion requests in our <a class="reference external" href="https://github.com/leap-stc/data-management/issues">‘leap-stc/data_management’ issue tracker</a>. You should check existing issues with the tag <a class="reference external" href="https://github.com/leap-stc/data-management/issues?q=is%3Aissue+is%3Aopen+label%3Adataset">‘dataset’</a> to see if somebody else might have already requested this particular dataset. If that is not the case you can add a new <a class="reference external" href="https://github.com/leap-stc/data-management/issues/new?assignees=&amp;labels=dataset&amp;projects=&amp;template=new_dataset.yaml&amp;title=New+Dataset+%5BDataset+Name%5D">dataset_request</a>. Making these request in a central location enables others to see which datasets are currently being ingested and what the status is.</p></li>

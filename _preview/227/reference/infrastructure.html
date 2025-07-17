@@ -174,9 +174,8 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../guides/code_guide.html">Code Guide</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../guides/data_guide.html">Data Guide</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../guides/data_guides/transfer_data.html">Transferring Data into Cloud Storage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../guides/data_guides/data_catalog.html">Working with the LEAP Data Catalog</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../guides/data_guides/data_jupyterhub.html">Working with Cloud Data on the JupyterHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/data_guides/transfer_data.html">Data Ingestion Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/data_guides/cloud_tools.html">Working with Cloud Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guides/data_guides/external_workflow.html">Working outside the LEAP JupyterHub</a></li>
 </ul>
 </li>
@@ -392,13 +391,19 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leap-pangeo-data-catalog">LEAP-Pangeo Data Catalog</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leap-pangeo-jupyterhub">LEAP-Pangeo JupyterHub</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#server">Server</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-servers">Managing Servers</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-servers">Managing Servers</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#your-user-directory">Your User Directory</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-software-environment">The Software Environment</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#preselected-images">Preselected Images</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-images">Custom Images</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-additonal-packages">Installing additonal packages</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloud-storage">Cloud Storage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#osn-pod-organization">OSN Pod Organization</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#credentials">Credentials</a></li>
 </ul>
 </li>
 </ul>
@@ -442,7 +447,7 @@ document.write(`
 </tr>
 </tbody>
 </table>
-<p>For more explanation about the catalog, and its role in the overall vision of LEAP, see <a class="reference internal" href="../explanation/architecture.html#explanation-architecture"><span class="std std-ref">LEAP-Pangeo Architecture</span></a>. See <a class="reference internal" href="../guides/data_guides/transfer_data.html#guides-data-ingestion"><span class="std std-ref">Ingesting Datasets into Cloud Storage</span></a> for details on how to ingest data and link it into the catalog.</p>
+<p>For more explanation about the catalog, and its role in the overall vision of LEAP, see <a class="reference internal" href="../explanation/architecture.html#explanation-architecture"><span class="std std-ref">LEAP-Pangeo Architecture</span></a>. See <a class="reference internal" href="../guides/data_guides/transfer_data.html#guides-data-ingestion"><span class="std std-ref">Data Ingestion Workflows</span></a> for details on how to ingest data and link it into the catalog.</p>
 </section>
 <section id="leap-pangeo-jupyterhub">
 <span id="reference-infrastructure-hub"></span><h2>LEAP-Pangeo JupyterHub<a class="headerlink" href="#leap-pangeo-jupyterhub" title="Permalink to this headline">#</a></h2>
@@ -474,12 +479,9 @@ For information who can access the hub with which privileges, please refer to <a
 <li><p>For a quick tutorial on basic usage, please check out our <a class="reference internal" href="../tutorials/getting_started.html#tutorial-getting-started"><span class="std std-ref">Getting Started</span></a> tutorial.</p></li>
 <li><p>To get an in-depth overview of the LEAP Pangeo Architecture and how the JupyterHub fits into it, please see the <a class="reference internal" href="../explanation/architecture.html#explanation-architecture"><span class="std std-ref">Architecture</span></a> page.</p></li>
 </ul>
-<section id="server">
-<span id="reference-infrastructure-hub-server"></span><h3>Server<a class="headerlink" href="#server" title="Permalink to this headline">#</a></h3>
 <section id="managing-servers">
-<h4>Managing Servers<a class="headerlink" href="#managing-servers" title="Permalink to this headline">#</a></h4>
+<span id="reference-infrastructure-hub-server"></span><h3>Managing Servers<a class="headerlink" href="#managing-servers" title="Permalink to this headline">#</a></h3>
 <p>You can start and stop your server (and even open multiple named servers) from the <code class="docutils literal notranslate"><span class="pre">Hub</span> <span class="pre">Control</span> <span class="pre">Panel</span></code>. You can get to the hub control panel by navigating to <code class="docutils literal notranslate"><span class="pre">https://leap.2i2c.cloud/hub/home</span></code> in your browser or navigating to <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Hub</span> <span class="pre">Control</span> <span class="pre">Panel</span></code> from the JupyterLab Interface.</p>
-</section>
 </section>
 <section id="your-user-directory">
 <span id="reference-infrastructure-hub-user-dir"></span><h3>Your User Directory<a class="headerlink" href="#your-user-directory" title="Permalink to this headline">#</a></h3>
@@ -531,52 +533,65 @@ A complete list of all packages installed in this environment is located at:</p>
 </div>
 </div>
 <p>You can then use that string with the <a class="reference internal" href="#reference-infrastructure-hub-software-env"><span class="std std-ref">custom images</span></a> to reproduce your work with exactly the same environment.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-#### Custom Images
-
-If you select the `Image &gt; Other...` Option during [server login](hub:server:login) you can paste an arbitrary reference in the form of `docker_registry/organization/image_name:image_version`. As an example we can get the `2023.05.08` version of the pangeo tensorflow notebook by pasting `quay.io/pangeo/ml-notebook:2023.05.08`. This reference must point to an actual image built somewhere. To learn how to build custom docker images for the Jupyterhub, check out our [compute guide](guides.compute.image.custom).
-
-(reference.infrastructure.hub.software_env.temp_install)=
-
-#### Installing additonal packages
-
-You can install additional packages using `pip` and `conda`.
-However, these will disappear when your server shuts down.
-
-For a more permanent solution we recommend building project specific dockerfiles and using those as custom images.
-
-(reference.infrastructure.osn_pod)=
-## Cloud Storage
-LEAP maintains 
-(reference.infrastructure.osn_pod.organization)=
-#### OSN Pod Organization
-
-The ~1PB storage on the OSN Pod can be customized into Projects and Buckets. Projects are used to give additional users access to the Coldfront Admin Console, whereas buckets are how storage is administered up on the Pod. A project can have multiple buckets.
-
-There are currently 3 principal Projects on the Pod:
-
-- `&#39;leap-pangeo&#39;`: Used for Data Ingestion across the m2lines and LEAP community
-  - Buckets:
-    - `&#39;leap-pangeo-manual&#39;`: **No write access for users**
-    - `&#39;leap-pangeo-pipeline&#39;`: **No write access for users**
-    - `&#39;leap-pangeo-inbox&#39;`: *Write access can be shared with users who want to add data e.g. from an HPC center*
-- `&#39;m2lines&#39;`: Used for project data and publications from the m2lines project
-  - Buckets:
-    - `&#39;m2lines-pubs&#39;`: **No write access for users**
-    - ... various project buckets
-- `&#39;leap&#39;`: Used for project data and publications from the LEAP project
-  - Buckets:
-    - `&#39;leap-pubs&#39;`: **No write access for users**
-    - ... various project buckets
-
-(reference.infrastructure.osn_pod.credentials)=
-Data can be transferred from `leap-pangeo-inbox` to `leap-pangeo-manual` with [this rclone github action](https://github.com/leap-stc/data-management/actions/runs/11167922927/workflow).
-
-#### Credentials
-
-```{warning}
-All OSN credentials are long lived and should be treated as such. Please do not share them publicly (e.g. in your notebook or a github repository) and when sharing with e.g. collaborators use an encrypted way of sharing (e.g. password manager).
-</pre></div>
+</section>
+<section id="custom-images">
+<h4>Custom Images<a class="headerlink" href="#custom-images" title="Permalink to this headline">#</a></h4>
+<p>If you select the <code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">&gt;</span> <span class="pre">Other...</span></code> Option during <a class="reference internal" href="../tutorials/getting_started.html#hub-server-login"><span class="std std-ref">server login</span></a> you can paste an arbitrary reference in the form of <code class="docutils literal notranslate"><span class="pre">docker_registry/organization/image_name:image_version</span></code>. As an example we can get the <code class="docutils literal notranslate"><span class="pre">2023.05.08</span></code> version of the pangeo tensorflow notebook by pasting <code class="docutils literal notranslate"><span class="pre">quay.io/pangeo/ml-notebook:2023.05.08</span></code>. This reference must point to an actual image built somewhere. To learn how to build custom docker images for the Jupyterhub, check out our <a class="reference internal" href="../guides/compute_guide.html#guides-compute-image-custom"><span class="std std-ref">compute guide</span></a>.</p>
+</section>
+<section id="installing-additonal-packages">
+<span id="reference-infrastructure-hub-software-env-temp-install"></span><h4>Installing additonal packages<a class="headerlink" href="#installing-additonal-packages" title="Permalink to this headline">#</a></h4>
+<p>You can install additional packages using <code class="docutils literal notranslate"><span class="pre">pip</span></code> and <code class="docutils literal notranslate"><span class="pre">conda</span></code>.
+However, these will disappear when your server shuts down.</p>
+<p>For a more permanent solution we recommend building project specific dockerfiles and using those as custom images.</p>
+</section>
+</section>
+</section>
+<section id="cloud-storage">
+<span id="reference-infrastructure-osn-pod"></span><h2>Cloud Storage<a class="headerlink" href="#cloud-storage" title="Permalink to this headline">#</a></h2>
+<p>LEAP maintains</p>
+<section id="osn-pod-organization">
+<span id="reference-infrastructure-osn-pod-organization"></span><h3>OSN Pod Organization<a class="headerlink" href="#osn-pod-organization" title="Permalink to this headline">#</a></h3>
+<p>The ~1PB storage on the OSN Pod can be customized into Projects and Buckets. Projects are used to give additional users access to the Coldfront Admin Console, whereas buckets are how storage is administered up on the Pod. A project can have multiple buckets.</p>
+<p>There are currently 3 principal Projects on the Pod:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'leap-pangeo'</span></code>: Used for Data Ingestion across the m2lines and LEAP community</p>
+<ul>
+<li><p>Buckets:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">'leap-pangeo-manual'</span></code>: <strong>No write access for users</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'leap-pangeo-pipeline'</span></code>: <strong>No write access for users</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'leap-pangeo-inbox'</span></code>: <em>Write access can be shared with users who want to add data e.g. from an HPC center</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'m2lines'</span></code>: Used for project data and publications from the m2lines project</p>
+<ul>
+<li><p>Buckets:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">'m2lines-pubs'</span></code>: <strong>No write access for users</strong></p></li>
+<li><p>… various project buckets</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'leap'</span></code>: Used for project data and publications from the LEAP project</p>
+<ul>
+<li><p>Buckets:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">'leap-pubs'</span></code>: <strong>No write access for users</strong></p></li>
+<li><p>… various project buckets</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p id="reference-infrastructure-osn-pod-credentials">Data can be transferred from <code class="docutils literal notranslate"><span class="pre">leap-pangeo-inbox</span></code> to <code class="docutils literal notranslate"><span class="pre">leap-pangeo-manual</span></code> with <a class="reference external" href="https://github.com/leap-stc/data-management/actions/runs/11167922927/workflow">this rclone github action</a>.</p>
+<section id="credentials">
+<h4>Credentials<a class="headerlink" href="#credentials" title="Permalink to this headline">#</a></h4>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>All OSN credentials are long lived and should be treated as such. Please do not share them publicly (e.g. in your notebook or a github repository) and when sharing with e.g. collaborators use an encrypted way of sharing (e.g. password manager).</p>
 </div>
 <p>Credentials for the OSN Pod are specific to each bucket. There are two types of credentials: “Read-only” and “Read-Write”. Exercise caution when sharing/saving secrets, particularly the latter. Each type of credentials consists of two keys (access + secret). Both are required to access the bucket, and they are shared by the OSN Admin.</p>
 </section>
@@ -584,7 +599,7 @@ All OSN credentials are long lived and should be treated as such. Please do not 
 </section>
 <section id="leap-pangeo-cloud-storage-buckets">
 <span id="reference-infrastructure-buckets"></span><h2>LEAP-Pangeo Cloud Storage Buckets<a class="headerlink" href="#leap-pangeo-cloud-storage-buckets" title="Permalink to this headline">#</a></h2>
-<p>LEAP-Pangeo provides users two cloud buckets to store data. Your <a class="reference internal" href="#reference-infrastructure-hub-server"><span class="std std-ref">Server</span></a> is automatically authenticated to read from any of these buckets but write access might differ (see below). See <a class="reference internal" href="../guides/data_guides/external_workflow.html#guides-data-external-authentication"><span class="std std-ref">Authentication</span></a> for details on how to access buckets from ‘outside’ the JupyterHub.</p>
+<p>LEAP-Pangeo provides users two cloud buckets to store data. Your <a class="reference internal" href="#reference-infrastructure-hub-server"><span class="std std-ref">Managing Servers</span></a> is automatically authenticated to read from any of these buckets but write access might differ (see below). See <a class="reference internal" href="../guides/data_guides/external_workflow.html#guides-data-external-authentication"><span class="std std-ref">Authentication</span></a> for details on how to access buckets from ‘outside’ the JupyterHub.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">gs://leap-scratch/</span></code> - Temporary Storage deleted after 7 days. Use this bucket for testing and storing large intermediate results. <a class="reference external" href="https://docs.2i2c.org/user/topics/data/cloud/#scratch-bucket">More info</a></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">gs://leap-persistent/</span></code> - Persistent Storage. Use this bucket for storing results you want to share with other members.</p></li>
@@ -679,13 +694,19 @@ All OSN credentials are long lived and should be treated as such. Please do not 
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leap-pangeo-data-catalog">LEAP-Pangeo Data Catalog</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leap-pangeo-jupyterhub">LEAP-Pangeo JupyterHub</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#server">Server</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-servers">Managing Servers</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-servers">Managing Servers</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#your-user-directory">Your User Directory</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-software-environment">The Software Environment</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#preselected-images">Preselected Images</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-images">Custom Images</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-additonal-packages">Installing additonal packages</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloud-storage">Cloud Storage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#osn-pod-organization">OSN Pod Organization</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#credentials">Credentials</a></li>
 </ul>
 </li>
 </ul>

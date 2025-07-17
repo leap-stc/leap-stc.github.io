@@ -1,8 +1,8 @@
+(tutorials.data.ingestion)=
+
 # Data Ingestion Tutorial
 
-New to cloud data ingestion? You're not alone! Transferring large volumes of climate data is not an easy process, and can feel like a tall order. Never fear! This tutorial is aimed completely at beginners, and is designed to provide the **why, how, and what** for data ingestion!
-
-First of all, data ingestion refers to the general process of moving data from wherever it might exist to an analysis-ready, cloud-optimized (ARCO) format.
+New to cloud data ingestion? You're not alone! Transferring large volumes of climate data is not an easy process, and can feel like a tall order. Never fear! This tutorial is aimed completely at beginners, and is designed to provide the **what, why, and how** for data ingestion! "Data ingestion" in our usage means a programmatic way to download and transform data into [Analysis-Ready Cloud-Optimized (ARCO)](reference.arco) formats in a reproducible way, so that the dataset is available for the LEAP community and beyond (see [](reference.infrastructure.buckets) for who can access which resource).
 
 ## Requirements and Desiderata
 
@@ -12,8 +12,6 @@ We have additional requirements for the data ingestion to make the process susta
 - Separation of concerns: The person who knows the dataset (the 'data expert') is in the unique position to encode their knowledge about the dataset into the recipe, but they should not be concerned with the details of how to execute it and where the data is ultimate stored. This is the responsibility of the Data and Compute team.
 
 For clearer organization each dataset should reside in its own repository under the `leap-stc` github organization. Each of these repositories will be called a 'feedstock', which contains additional metadata files.
-
-(guides.data.ingestion_tutorial)=
 
 ## How to get new data ingested
 

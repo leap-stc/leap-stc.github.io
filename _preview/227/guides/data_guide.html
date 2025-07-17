@@ -63,7 +63,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'guides/data_guide';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Transferring Data into Cloud Storage" href="data_guides/transfer_data.html" />
+    <link rel="next" title="Data Ingestion Workflows" href="data_guides/transfer_data.html" />
     <link rel="prev" title="Code Guide" href="code_guide.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -174,9 +174,8 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="code_guide.html">Code Guide</a></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Data Guide</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="data_guides/transfer_data.html">Transferring Data into Cloud Storage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_guides/data_catalog.html">Working with the LEAP Data Catalog</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_guides/data_jupyterhub.html">Working with Cloud Data on the JupyterHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_guides/transfer_data.html">Data Ingestion Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_guides/cloud_tools.html">Working with Cloud Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_guides/external_workflow.html">Working outside the LEAP JupyterHub</a></li>
 </ul>
 </li>
@@ -404,12 +403,13 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="data-guide">
 <span id="guide-data"></span><h1>Data Guide<a class="headerlink" href="#data-guide" title="Permalink to this headline">#</a></h1>
-<p>Data is fundamental to most people’s work at LEAP. This set of guides describes best practices for how to find, read, write, transfer, ingest, and catalog data. It is meant as a broad overview to common workflows and institutional policies. We categorize LEAP-relevant use of data into three categories:</p>
+<p>Data is fundamental to most people’s work at LEAP. This set of guides describes best practices for how to find, read, write, transfer, ingest, and catalog data. It is meant as a broad overview to common workflows and institutional policies. We distinguish between two primary <em>types</em> of data that get worked with: “Published” and “Original” data.</p>
 <ul class="simple">
-<li><p>Publishing scientific data for consumption by other parties. This includes ingesting data into <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructure-buckets"><span class="std std-ref">public cloud buckets</span></a> from existing data stores that may be hard to access/work with.</p></li>
-<li><p>Working with data that already exists in the cloud. This is in conjunction with the <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructure-hub"><span class="std std-ref">JupyterHub platform</span></a>.</p></li>
-<li><p>Using the data that LEAP has catalogued and made accessible in ARCO format. This is done via our <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructure-catalog"><span class="std std-ref">Data Catalog</span></a>.</p></li>
+<li><p><strong>Published Data</strong> has been published and archived in a publicly accessible location (e.g. a data repository like <a class="reference external" href="https://zenodo.org">zenodo</a> or <a class="reference external" href="https://figshare.com">figshare</a>). We do not recommend uploading this data to the cloud as is, but to instead transform it to Zarr and upload it to the cloud. This ensures that the data is stored in an ARCO format and can be easily accessed by other LEAP members.</p></li>
+<li><p><strong>Original Data</strong> is any dataset that is produced by researchers at LEAP and has not been published yet. The main use case for this data is to share it with other LEAP members and collaborate on it, as it is a <em>work in progress</em>. For original data we support direct uploaded to the cloud. <em>Be aware that original data could change rapidly as the data producer is iterating on their code</em>. We encourage all datasets to be archived and published before using them in scientific publications. The <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructure-hub"><span class="std std-ref">JupyterHub Platform</span></a> is the organizing platform for Original Data.</p></li>
 </ul>
+<p>Step one is always to check whether data already exists in the <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructure-catalog"><span class="std std-ref">LEAP data catalog</span></a>, in which case access is simply a matter of pasting a code snippet.</p>
+<p>We categorize LEAP-relevant use of data into three categories:</p>
 <section id="onboarding-to-jupyterhub">
 <h2>Onboarding to Jupyterhub<a class="headerlink" href="#onboarding-to-jupyterhub" title="Permalink to this headline">#</a></h2>
 <p>If you are a first time or new user to the LEAP platform, you may be unfamilar with how data files work in the cloud. To help onboard you to this new way of working, 2i2c has written a guide to Files and Data in the Cloud:</p>
@@ -424,9 +424,9 @@ document.write(`
 </ul>
 <p>After reading this, you are well-equipped to tackle any specific task requiring data I/O and LEAP.</p>
 <ul class="simple">
-<li><p>Instructions on how to access data LEAP has made available are outlined in <a class="reference internal" href="data_guides/data_catalog.html#guide-data-catalog"><span class="std std-ref">Working with the LEAP Data Catalog</span></a>. This guide also overviews how to transfer data that does not exist into the catalog.</p></li>
-<li><p>For more generic instructions on how to publish or move your own data into cloud storage, please consult <a class="reference internal" href="data_guides/transfer_data.html#guide-data-transfer"><span class="std std-ref">Transferring Data into Cloud Storage</span></a>.</p></li>
-<li><p>Once data is already placed into the Cloud, the JupyterHub platform is designed to facilitate seamless integration into data science workflows. Read more about this at <a class="reference internal" href="data_guides/data_jupyterhub.html#guide-data-working"><span class="std std-ref">Working with Cloud Data on the JupyterHub</span></a></p></li>
+<li><p>Instructions on how to access data LEAP has made available are outlined in <a class="reference internal" href="../reference/infrastructure.html#reference-infrastructure-catalog"><span class="std std-ref">LEAP-Pangeo Data Catalog</span></a>. This guide also overviews how to transfer data that does not exist into the catalog.</p></li>
+<li><p>For more generic instructions on how to publish or move your own data into cloud storage, please consult <a class="reference internal" href="data_guides/transfer_data.html#guides-data-ingestion"><span class="std std-ref">Data Ingestion Workflows</span></a>.</p></li>
+<li><p>Once data is already placed into the Cloud, the JupyterHub platform is designed to facilitate seamless integration into data science workflows. Read more about this at <a class="reference internal" href="data_guides/cloud_tools.html#guide-data-working"><span class="std std-ref">Working with Cloud Data</span></a></p></li>
 <li><p>For whatever reasons, users might wish to navigate cloud ingested data from outside the JupyterHub or make use of non-LEAP affiliated data on our software platform. For guides on how to work externally, please consult <a class="reference internal" href="data_guides/external_workflow.html#guide-data-external"><span class="std std-ref">Working outside the LEAP JupyterHub</span></a></p></li>
 </ul>
 </section>
@@ -479,7 +479,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Transferring Data into Cloud Storage</p>
+        <p class="prev-next-title">Data Ingestion Workflows</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
