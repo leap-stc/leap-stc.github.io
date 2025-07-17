@@ -4,31 +4,11 @@
 
 While we primarily recommend working with LEAP data from our shared compute platform, we understand that many users have good reasons for sticking to the setups they already have. Here we describe solutions to common issues faced for interfacing with LEAP data externally, i.e. not from the JupyterHub.
 
-## Tools for Cloud Access
-
-There are many tools available to interact with cloud object storage. We currently have basic operations documented for two tools:
-
-- [fsspec](https://filesystem-spec.readthedocs.io/en/latest/) (and its submodules [gcsfs](https://gcsfs.readthedocs.io/en/latest/) and [s3fs](https://s3fs.readthedocs.io/en/latest/)) which provide filesystem-like access to local, remote, and embedded file systems from within a python session. Fsspec is also used by xarray under the hood.
-
-- [rclone](https://rclone.org/) which provides a Command Line Interface to many different storage backends.
-
-```{admonition} Note on rclone documentation
----
-class: tip, dropdown
----
-Rclone is a very extensive and powerful tool, but with its many options it can be overwhelming (at least it was for Julius) at the beginning. We will only demonstrate essential options here, for more details see the [docs](https://rclone.org/). If however instructions here are not working for your specific use case, please reach out so we can improve the docs.
-```
-
-Using [`fsspec.open`](https://filesystem-spec.readthedocs.io/en/latest/api.html#fsspec.open) works similarly to the python builtin [`open`](https://docs.python.org/3/library/functions.html#open)
-
-```python
-with fsspec.open("gs://leap-scratch/funky-user/test.txt", mode="w") as f:
-    f.write("hello world")
-```
-
 (guides.data.external.authentication)=
 
 ## Authentication
+
+If you want to access the LEAP cloud buckets from outside the pre-authenticated JupyterHub, you need to be authenticated.
 
 (guides.data.external.authentication.config-files)=
 

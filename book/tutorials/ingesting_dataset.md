@@ -1,8 +1,8 @@
+(tutorials.data.ingestion)=
+
 # Data Ingestion Tutorial
 
-New to cloud data ingestion? You're not alone! Transferring large volumes of climate data is not an easy process, and can feel like a tall order. Never fear! This tutorial is aimed completely at beginners, and is designed to provide the **why, how, and what** for data ingestion!
-
-First of all, data ingestion refers to the general process of moving data from wherever it might exist to an analysis-ready, cloud-optimized (ARCO) format.
+New to cloud data ingestion? You're not alone! Transferring large volumes of climate data is not an easy process, and can feel like a tall order. Never fear! This tutorial is aimed completely at beginners, and is designed to provide the **what, why, and how** for data ingestion! "Data ingestion" in our usage means a programmatic way to download and transform data into [Analysis-Ready Cloud-Optimized (ARCO)](reference.arco) formats in a reproducible way, so that the dataset is available for the LEAP community and beyond (see [](reference.infrastructure.buckets) for who can access which resource).
 
 ## Requirements and Desiderata
 

@@ -102,8 +102,6 @@ print(os.environ["JUPYTER_IMAGE_SPEC"])
 
 You can then use that string with the [custom images](reference.infrastructure.hub.software_env) to reproduce your work with exactly the same environment.
 
-````
-
 #### Custom Images
 
 If you select the `Image > Other...` Option during [server login](hub:server:login) you can paste an arbitrary reference in the form of `docker_registry/organization/image_name:image_version`. As an example we can get the `2023.05.08` version of the pangeo tensorflow notebook by pasting `quay.io/pangeo/ml-notebook:2023.05.08`. This reference must point to an actual image built somewhere. To learn how to build custom docker images for the Jupyterhub, check out our [compute guide](guides.compute.image.custom).
@@ -118,9 +116,13 @@ However, these will disappear when your server shuts down.
 For a more permanent solution we recommend building project specific dockerfiles and using those as custom images.
 
 (reference.infrastructure.osn_pod)=
+
 ## Cloud Storage
-LEAP maintains 
+
+LEAP maintains
+
 (reference.infrastructure.osn_pod.organization)=
+
 #### OSN Pod Organization
 
 The ~1PB storage on the OSN Pod can be customized into Projects and Buckets. Projects are used to give additional users access to the Coldfront Admin Console, whereas buckets are how storage is administered up on the Pod. A project can have multiple buckets.
@@ -142,13 +144,14 @@ There are currently 3 principal Projects on the Pod:
     - ... various project buckets
 
 (reference.infrastructure.osn_pod.credentials)=
+
 Data can be transferred from `leap-pangeo-inbox` to `leap-pangeo-manual` with [this rclone github action](https://github.com/leap-stc/data-management/actions/runs/11167922927/workflow).
 
 #### Credentials
 
 ```{warning}
 All OSN credentials are long lived and should be treated as such. Please do not share them publicly (e.g. in your notebook or a github repository) and when sharing with e.g. collaborators use an encrypted way of sharing (e.g. password manager).
-````
+```
 
 Credentials for the OSN Pod are specific to each bucket. There are two types of credentials: "Read-only" and "Read-Write". Exercise caution when sharing/saving secrets, particularly the latter. Each type of credentials consists of two keys (access + secret). Both are required to access the bucket, and they are shared by the OSN Admin.
 

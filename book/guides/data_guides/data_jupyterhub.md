@@ -4,6 +4,22 @@
 
 Once it has been ingested into a cloud bucket, working with data on the LEAP JupyterHub is incredibly easy. The most common workflow involves using [Xarray](https://docs.xarray.dev/en/stable/getting-started-guide/why-xarray.html), an open-source python project and data model for working with n-dimensional arrays. It is very useful for manipulating large gridded climate datasets. What's nice is that Xarray is built on top of well-known libraries such as NumPy and Pandas and thus can serve as a drop in "storage backend"; i.e. one can easily go Pandas \<--> Xarray \<--> Cloud.
 
+## Using the LEAP Data Catalog
+
+You want to have a specific dataset to explore or analyze? There is a chance that somebody else at LEAP has already worked with the data! So the first thing to look for data should always be a visit to the [LEAP Data Catalog](reference.infrastructure.catalog). If you are completely new to data ingestion and putting data into the cloud, please check out our beginner oriented [tutorial](tutorials.data.ingestion) or our [guide on transferring Cloud Data](guides.data.ingestion).
+
+### Loading a Dataset
+
+This is a repository of data sets published by the LEAP community in collaboration with the Data and Compute Team. The home page will immediately show a list of which datasets are included. Every dataset has a brief description, provides a simple code snippet for loading the data into Python, and links to the original feedstock from which the data was ingested. The term ["feedstock"](https://pangeo-forge.readthedocs.io/en/latest/deployment/feedstocks.html) is inherited from the Pangeo Forge project, and basically refers to the code repository defining the data pipeline. Feedstocks allow curious users to trace back towards the original data source for transparency and reproducibility.
+
+The basic requirements for loading the data are the following packages, which are automatically accessible to any user of the JupyterHub platform. But if you wish to load the data on your machine, then you must ensure your python environment has the following packages:
+
+```
+Xarray
+gcsfs
+Zarr
+```
+
 ## Writing Xarray Datasets to Cloud Storage as Zarr
 
 Below are a few snippets on how to write your Xarray Datasets to cloud storage.
