@@ -71,9 +71,9 @@ This part of the guide is reserved for team members with admin access to the `'l
 
 In order to automate member sign up by adding github users from a private Google Sheet to the appropriate github teams (via [this gh action](https://github.com/leap-stc/member_management/blob/main/.github/workflows/read_sheet.yaml)) the github action needs the appropriate priviliges to add/remove members from teams. We are currently handling this by providing a personal access token as the `"ORG_TOKEN"` secret. The person creating the token will usually be the Manager for Data and Computation.
 
-:::\{note}
+```{note}
 Ideally we want to remove the dependency on a single user account here, but for now this is the only way I have found this to work properly. Maybe there is a way to establish a 'dummy' user?
-:::
+```
 
 #### Steps
 
@@ -97,18 +97,19 @@ The following is a list of tasks that should be done by any new hire in the Data
 
 ### Moving Data between buckets using bare VMs
 
-In general you need some form of compute to move data between different object store locations, but be aware that the data will be always be streamed to and from that location over the internet, so fast connection speed is key for fast transfers. There are a variety of ways to move data with perhaps the easiest being to run fsspec or rclone on your local computer, but speed is likely limited by your local internet connection. For certain tasks (e.g. moving data to admin only publishing buckets on the [](reference.infrastructure.osn_pod)) it is recommended to use rclone on a VM
-:::\{tip}
+In general you need some form of compute to move data between different object store locations, but be aware that the data will be always be streamed to and from that location over the internet, so fast connection speed is key for fast transfers. There are a variety of ways to move data with perhaps the easiest being to run fsspec or rclone on your local computer, but speed is likely limited by your local internet connection. For certain tasks e.g. moving data to admin only publishing buckets on the OSN pod it is recommended to use rclone on a VM
+
+```{tip}
 These instructions should be easy to adapt to VM instances on other clouds, and can likely be automated to a much larger degree, but this is what has worked so far. Ultimately this approach is a somewhat manual implementation of the concept of [skyplane](https://github.com/skyplane-project/skyplane) which sadly does not seem to be actively maintained anymore. As of the writing of these docs we were able to achieve ~700MB/s transfer speeds with a single VM following the instructions below
-:::
+```
 
 #### Manual spinup of cloud VMs for bulk data transfer
 
 Following these instructions requires permissions on the LEAP Google Cloud Account. Contact an admin if you run into permission issues.
 
-:::\{warning}
+```{warning}
 Using VMs this way does not automatically delete instances. Make sure to do that when your transfer is done.
-:::
+```
 
 - Navigate to the [Google Cloud Console](https://console.cloud.google.com) and from there to "Compute Engine" and "VM instances"
 - Click on "Create Instance"
@@ -181,9 +182,9 @@ Repeat the following steps for all relevant Github Teams (you can find links to 
 
 #### E: Manually rerunning github sign up action
 
-:::\{attention}
+```{attention}
 You need to have maintainer access to the private [leap-stc/member_management repo](https://github.com/leap-stc/member_management) in order to follow these steps. If you cannot repeat these steps please ask one of the github organization admins to be added to an appropriate team (e.g. [bootcamp-instructor](https://github.com/orgs/leap-stc/teams/bootcamp-instructors)) that has access.
-:::
+```
 
 - Navigate to [leap-stc/member_management](https://github.com/leap-stc/member_management)
 - In the top rider click on "Actions"
@@ -198,9 +199,10 @@ If users are part of a github team, and still have trouble signing on, instruct 
 
 #### If none of this works
 
-:::\{note}
+```{note}
 This is a very unlikely scenario and has very rarely happend!
-:::
+```
+
 Follow the flowchart and reach out to either the [](support.data_compute_team) or [2i2c support](https://docs.2i2c.org/support/).
 
 ### M²LInES OSN pod administration
@@ -219,13 +221,13 @@ Scroll to the "Allocation Attributes" section. You can see all relevant values h
 
 **OSN Anonymous Access**: If False, this data is public, no credentials are needed to read data (writing still requires credentials).
 **OSN Bucket Quota (TB)**: Shows the currently allocated size. This is the max size, not what is actuall used!
-**OSN RO/RW Bucket Access/Secret Key**: Credentials for read-only (RO) and read-write (RW) access to the bucket. See [](reference.infrastructure.osn_pod) for more details.
+**OSN RO/RW Bucket Access/Secret Key**: Credentials for read-only (RO) and read-write (RW) access to the bucket. See OSN Pod Infrastructure reference for details.
 
 #### Share bucket credentials
 
-:::\{attention}
-Some buckets are not meant to be accessible for write by users! Please always refer to [](reference.infrastructure.osn_pod.organization) and only give access to project specific buckets and the `'leap-pangeo-inbox'` bucket to non-admins.
-:::
+```{attention}
+Some buckets are not meant to be accessible for write by users! Please always refer to OSN Pod Reference and only give access to project specific buckets and the `'leap-pangeo-inbox'` bucket to non-admins.
+```
 
 - Navigate to the specific bucket you want to share credentials to (see [above](guide.team.admin.osnpod.check) for detailed steps)
 - Copy the relevant Access and Secret keys (either RO or RW depending on the desired use) and share them with the relevant users e.g. by pasting them into a password manager and sharing an authenticated link.
@@ -252,9 +254,9 @@ If any of the buckets needs more storage space, follow these steps:
 
 #### Create a new Project
 
-:::\{note}
+```{note}
 You need PI status on the pod to create new projects. Reach out to the M²LInES admin to discuss this if you do not have access yet.
-:::
+```
 
 - Log into [Coldfront](https://coldfront.osn.mghpcc.org/)
 - Click on the "Projects" link on the homepage
@@ -269,9 +271,9 @@ For any questions/functionality not mentioned above, please refer to the [OSN do
 
 ### Google Cloud Account Maintenance
 
-:::\{attention}
+```{attention}
 To follow these steps you need to have the appropriate priviliges on the LEAP cloud account/organization. Reach out to an organization owner if you need access.
-:::
+```
 
 All of the following steps are done from the [Google Cloud Console](https://console.cloud.google.com)
 

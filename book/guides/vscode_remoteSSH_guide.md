@@ -27,9 +27,10 @@ Find and install the Remote-SSH and Jupyter extensions on the VSCode Extensions 
 
 Remote-SSH will be used to connect to your LEAP Pangeo server, while the Jupyter extension will be used to open .ipynb notebooks and manage the kernel that runs your code on the remote server.
 
-:::\{admonition} Before you begin
+```{admonition} Before you begin
 There are two levels of authentication – your **JupyterHub token** and your **SSH key pair** (public/private). This guide will walk you through both so you can connect with JupyterHub from your VSCode without entering a password.
-:::
+```
+
 The **JupyterHub token** is like a temporary password that lets your local machine talk to the JupyterHub server over a special channel (via websocat).
 
 The JupyterHub token will be included in your `~/.ssh/config` file on your local machine so ssh knows how to talk to the server.
@@ -132,10 +133,10 @@ ssh leap.2i2c.cloud
 
 and it should just work! If configured correctly, `leap.2i2c.cloud` should not ask you for a password.
 
-:::\{attention} Debugging Help
+```{attention} Debugging Help
 
 If you get the error `ssh: connect to host leap.2i2c.cloud port 22: Operation timed out`, then check you have installed websocat by running `run pip install websocat` and confirm that ther config file in the correct directory, `~/.ssh/config`
-:::
+```
 
 If the CLI asks for a password, please verify that your access token and public keys are valid and consistent across platforms and try the previous steps again. Keep in mind this test has to only work once, and it is not necessary to ssh into JupyterHub via CLI once you confirm this works once.
 
