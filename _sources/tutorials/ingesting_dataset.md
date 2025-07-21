@@ -1,8 +1,8 @@
+(tutorials.data.ingestion)=
+
 # Data Ingestion Tutorial
 
-New to cloud data ingestion? You're not alone! Transferring large volumes of climate data is not an easy process, and can feel like a tall order. Never fear! This tutorial is aimed completely at beginners, and is designed to provide the **why, how, and what** for data ingestion!
-
-First of all, data ingestion refers to the general process of moving data from wherever it might exist to an analysis-ready, cloud-optimized (ARCO) format.
+New to cloud data ingestion? You're not alone! Transferring large volumes of climate data is not an easy process, and can feel like a tall order. Never fear! This tutorial is aimed completely at beginners, and is designed to provide the **what, why, and how** for data ingestion! "Data ingestion" in our usage means a programmatic way to download and transform data into [Analysis-Ready Cloud-Optimized (ARCO)](reference.arco) formats in a reproducible way, so that the dataset is available for the LEAP community and beyond (see [](reference.infrastructure.buckets) for who can access which resource).
 
 ## Requirements and Desiderata
 
@@ -13,8 +13,6 @@ We have additional requirements for the data ingestion to make the process susta
 
 For clearer organization each dataset should reside in its own repository under the `leap-stc` github organization. Each of these repositories will be called a 'feedstock', which contains additional metadata files.
 
-(guides.data.ingestion_tutorial)=
-
 ## How to get new data ingested
 
 To start ingesting a dataset follow these steps:
@@ -23,6 +21,6 @@ To start ingesting a dataset follow these steps:
 1. Use our [feedstock template](https://github.com/leap-stc/LEAP_template_feedstock) to create a feedstock repostory by following instructions in the README to get you started with either one of the above.
 1. If issues arise please reach out to the [](support.data_compute_team)
 
-:::\{note}
+```{note}
 This does currently not provide a solution to handle datasets that have been produced by you (as e.g. part of a publication). We are working on formalizing a workflow for this type of data. Please reach out to the [](support.data_compute_team) if you have data that you would like to publish. See [](explanation.data-policy.types) for more.
-:::
+```
