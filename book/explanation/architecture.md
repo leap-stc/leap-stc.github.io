@@ -7,7 +7,7 @@ LEAP-Pangeo is a cloud-based data and computing platform that will be used to su
 ## Design Principles
 
 In the proposal, we committed to building this in a way that enables the tools and infrastructure to be reused and remixed.
-So The challenge for LEAP Pangeo is to deploy an “enterprise quality” platform built entirely out of open-source tools, and to make this platform as reusable and useful for the broader climate science community as possible.
+So the challenge for LEAP Pangeo is to deploy an “enterprise quality” platform built entirely out of open-source tools, and to make this platform as reusable and useful for the broader climate science community as possible.
 We committed to following the following design principles:
 
 - Open source
@@ -27,14 +27,33 @@ name: architecture-diagram
 LEAP-Pangeo high-level architecture diagram
 ```
 
-There are four primary components to LEAP-Pangeo.
+There are four primary components to LEAP-Pangeo:
 
-(explanation.architecture.data-library)=
+```{figure} ../images/architecture.png
+---
+name: architecture-components
+---
+LEAP-Pangeo consists of the data catalog, a storage service, a compute environment, and a Knowledge Graph. 
+```
 
-### The Data Library
+(explanation.architecture.catalog)=
+
+### The Data Catalog
+
+This is a repository of data sets published by the LEAP community in collaboration with the Data and Compute Team. The home page will immediately show a list of which datasets are included. Every dataset has a brief description, provides a simple code snippet for loading the data into Python, and links to the original feedstock from which the data was ingested. The term ["feedstock"](https://pangeo-forge.readthedocs.io/en/latest/deployment/feedstocks.html) is inherited from the Pangeo Forge project, and basically refers to the code repository defining the data pipeline. Feedstocks allow curious users to trace back towards the original data source for transparency and reproducibility.
+
+The datasets usually have a little code snippet for how to load them. The basic requirements for loading the data are the following packages, which are automatically accessible to any user of the JupyterHub platform. But if you wish to load the data on your machine, then you must ensure your python environment has the following packages:
+
+```
+Xarray
+gcsfs
+Zarr
+```
+
+#### (Deprecated) Vision Statement for the Data Catalog
 
 The data library will provide analysis-ready, cloud-optimized data for all aspects of LEAP.
-The data library is directly inspired by the [IRI Data Library](https://iridl.ldeo.columbia.edu) mentioned above; however, LEAP-Pangeo data will be hosted in the cloud, for maximum impact, accessibility, and interoperability.
+The library is directly inspired by the [IRI Data Library](https://iridl.ldeo.columbia.edu) mentioned above; however, LEAP-Pangeo data will be hosted in the cloud, for maximum impact, accessibility, and interoperability.
 
 The contents of the data library will evolve dynamically based on the needs of the project.
 Examples of data that may become part of the library are
@@ -47,10 +66,6 @@ Examples of data that may become part of the library are
   by ML researchers into climate science.
 - Easily accessible syntheses of climate projections from [CMIP6 data](https://esgf-node.llnl.gov/projects/cmip6/), produced by the LEAP team,
   for use by industry partners for business strategy and decision making.
-
-(explanation.architecture.catalog)=
-
-#### Data Catalog
 
 A [STAC](https://stacspec.org/) data catalog be used to enumerate all LEAP-Pangeo datasets and provide this information to the public.
 The catalog will store all relevant metadata about LEAP datasets following established metadata standards (e.g. CF Conventions).
@@ -75,10 +90,6 @@ as the JupyterHub.
 Going forward, we will work with NCAR to obtain an [Open Storage Network](https://www.openstoragenetwork.org/)
 pod which allows data to be accessible from both Google Cloud and NCAR's computing system.
 
-````
-
-
-
 ### The Hub
 
 ```{figure} https://jupyter.org/assets/homepage/labpreview.webp
@@ -87,7 +98,7 @@ width: 400px
 name: jupyterlab-preview
 ---
 Screenshot from JupyterLab. From <https://jupyter.org/>
-````
+```
 
 Jupyter Notebook / Lab has emerged as the standard tool for doing interactive data science.
 Jupyter supports combining rich text, code, and generated outputs (e.g. figures) into a single document, creating a way to communicate and share complete data-science research project
