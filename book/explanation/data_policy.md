@@ -3,22 +3,6 @@ abbreviations:
   ARCO: Analysis-Ready Cloud-Optimized
 ---
 
-(explanation.data-policy)=
-
-# LEAP-Pangeo Data Policy
-
-(explanation.data-policies.access)=
-
-## Data Access
-
-🚧
-
-(explanation.data-policy.reproducibility)=
-
-## Reproducibility
-
-🚧
-
 (explanation.data-policy.types)=
 
 ## Types of Data Used at LEAP
@@ -45,13 +29,3 @@ class: dropdown
 ---
 Data that is already available in {abbr}`ARCO` formats in publically accessible object storage. Adding this data to the LEAP-Pangeo Catalog enables us to visualize it with the Data Viewer, and collect all datasets of importance in one single location, but none of the data itself is modified.
 ```
-
-## Roles
-
-Many different people at LEAP interact with data in various ways. Here is a list of typical roles (some people have multiple roles):
-
-(explanation.data-policy.roles.data-expert)=
-
-### Data Expert
-
-🚧
