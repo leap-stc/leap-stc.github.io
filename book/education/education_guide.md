@@ -1,16 +1,8 @@
----
-title: Teaching Classes
----
-
-# Teaching Classes (Education)
-
-This guide is intended for folks who want to run classes using the LEAP Pangeo resources.
-
-## Teaching classes using the LEAP-Pangeo JupyterHub
+# Teaching Classes Using LEAP-Pangeo JupyterHub
 
 ### Can I use LEAP-Pangeo resources to teach my class?
 
-LEAP provides infrastructure support to [](reference.education.leap_affiliated_course). If you are an instructor and want your class to become affiliated with LEAP, you should contact the [](support.data_compute_team) well in advance (ideally a month before the starting date of the class) in order to coordinate efforts efficiently.
+LEAP provides infrastructure support to [](education.leap_affiliated_courses.become_new_course). If you are an instructor and want your class to become affiliated with LEAP, you should contact the [](support.data_compute_team) well in advance (ideally a month before the starting date of the class) in order to coordinate efforts.
 
 ### Preparing Classes
 

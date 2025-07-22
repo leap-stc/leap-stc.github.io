@@ -8,7 +8,6 @@ parts:
     chapters:
       - file: tutorials/getting_started
       - file: tutorials/ingesting_dataset
-      - file: tutorials/education_guide
       - file: tutorials/bootcamp_guide
   - caption: Explanation
     chapters:
@@ -30,11 +29,14 @@ parts:
       - file: guides/team_guide
       - file: guides/faq
       - file: guides/vscode_remoteSSH_guide
+  - caption: Education
+    chapters:
+      - file: education/education
+      - file: education/education_guide
   - caption: Reference
     chapters:
       - file: reference/infrastructure
       - file: reference/membership
-      - file: reference/education
   - caption: Miscellaneous
     chapters:
       - file: support
