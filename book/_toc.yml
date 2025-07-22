@@ -12,10 +12,8 @@ parts:
   - caption: Explanation
     chapters:
       - file: explanation/architecture
-      - file: explanation/implementation 
-      - file: explanation/code_policy
+      - file: explanation/implementation
       - file: explanation/data_policy
-      - file: explanation/infrastructure_policy
   - caption: Guides
     chapters:
       - file: guides/code_guide
