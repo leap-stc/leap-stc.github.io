@@ -1,3 +1,5 @@
+(education.leap_affiliated_courses)=
+
 # LEAP Affiliated Courses
 
 (education.leap_affiliated_courses.become_new_course)=
