@@ -1,9 +1,8 @@
 (explanation.data-policy)=
 
----
-abbreviations:
-  ARCO: Analysis-Ready Cloud-Optimized
----
+______________________________________________________________________
+
+## abbreviations: ARCO: Analysis-Ready Cloud-Optimized
 
 (explanation.data-policy.types)=
 
