@@ -54,8 +54,7 @@ If you believe OSN better fits your data use case, please contact the data-and-c
 
 If the source data is publicly available and accessible over https, you should create a [template feedstock](https://github.com/leap-stc/LEAP_template_feedstock) directly. If the data is located behind a firewall on an HPC center, the 'pull' based paradigm our feedstocks will not work. In this case we have an option to 'push' the data to a special "inbox" bucket (`'leap-pangeo-inbox'`) on the OSN Pod. This intermediate staging area makes the data accessible. From there an admin can move the data to another dedicated bucket and the data can be added to the catalog using the [template feedstock](https://github.com/leap-stc/LEAP_template_feedstock).
 
-We discourage manually moving datasets to our cloud storage as much as possible since it is hard to reproduce these datasets at a future point (if e.g. the dataset maintainer has moved on to a different position) (see [](explanation.data-policy.reproducibility). We will always [prioritize unblocking your work](explanation.code-policy.dont-let-perfect-be-the-enemy-of-good).
-
+We discourage manually moving datasets to our cloud storage as much as possible since it is hard to reproduce these datasets at a future point (if e.g. the dataset maintainer has moved on to a different position)
 <!-- Fundamentally the 'pushing' of datasets relies on two components:
 
 - Setting up permissions so that you can read/write to the [](reference.infrastructure.buckets) - Several methods to get permissions are described in [](guides.data.external.authentication).
