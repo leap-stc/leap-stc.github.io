@@ -34,7 +34,7 @@ nav:
 theme:
   language: en
   name: material
-  logo: assets/LEAP_logo.png
+  logo: assets/LEAP_globe.png
   palette:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
