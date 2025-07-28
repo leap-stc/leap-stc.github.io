@@ -1,0 +1,86 @@
+site_name: LEAP Technical Documentation
+repo_name: leap-stc.github.io
+repo_url: https://github.com/leap-stc/leap-stc.github.io
+site_description: LEAP Technical Operations Manual Website
+site_author: LEAP DCT
+docs_dir: docs
+
+nav:
+  - "index.md"
+  - Introuction:
+      - introduction/what_is_the_hub.md
+      - introduction/getting_started.md
+  - Data:
+      - data/data_catalog.md
+      - data/data_policy.md
+      - data/data_locations.md
+      - data/data_lifecycle.md
+  - Compute:
+      - compute/hub_access.md
+      - compute/compute_scaling.md
+      - compute/manage_software.md
+  - Education / Outreach:
+      - edu/classes.md
+      - edu/bootcamps.md
+
+  - FAQ / Reference:
+      - faq/file_formats.md
+
+  - Support:
+      - support/contact.md
+
+
+
+theme:
+  language: en
+  name: material
+  logo: assets/LEAP_logo.png
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      primary: default-dark
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: default-dark
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+  extra_css:
+    - stylesheets/extra.css
+
+
+  font:
+    text: Veranda
+    code: Roboto Mono
+
+  features:
+    - content.code.annotate
+    - content.code.copy
+    - navigation.indexes
+    - navigation.instant
+    - navigation.tracking
+    - search.suggest
+    - search.share
+
+plugins:
+  - search
+  - markdown-exec
+
+
+markdown_extensions:
+  - mkdocs-click
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+  - toc:
+      permalink: true
