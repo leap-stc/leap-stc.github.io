@@ -45,6 +45,11 @@ Files stored on each of those buckets can be accessed by any LEAP member, so be 
 - **Do not put sensitive information (passwords, keys, personal data) into these buckets!**
 - **When writing to buckets only ever write to your personal folder!** Your personal folder is a combination of the bucketname and your github username (e.g. \`gs://leap-persistent/funky-user/').
 
+GCS is great if:
+\- You want to move data from your Jupyter-Hub home directory to the cloud.
+\- You don't need the data to be accessed outside of the Jupyter-Hub.
+\- This data is a work-in-progress and might be regenerated or modified.
+
 ## Open Storage Network (OSN) Pod
 
 The [Open Storage Network](https://www.openstoragenetwork.org/) is a federally funded distributed cloud storage for the research community. LEAP has a ~1 petabyte allocation on OSN, which is divided into projects and buckets. Projects are used to give additional users access to the Coldfront Admin Console, whereas buckets are how storage is administered up on the Pod. A project can have multiple buckets.
@@ -68,3 +73,10 @@ There are currently 3 principal Projects on the Pod:
 OSN allows s3-like cloud storage that has no egress fees, which means that you can share data with the public or outside colaborators without any cost per request.
 
 Data can be transferred from `leap-pangeo-inbox` to `leap-pangeo-manual` with [this rclone github action](https://github.com/leap-stc/data-management/actions/runs/11167922927/workflow).
+
+OSN is great if:
+\- You want your data to be publicly accessible outside of the Jupyter-Hub.
+\- You need to move data from your Jupyter-Hub home directory to more persistent storage.
+\- You data does not fit into the Zarr model.
+
+If you believe OSN better fits your data use case, please contact the data-and-compute team on slack. Then follow the instructions on OSN Ingestion # TODO LINK INSTRUCTIONS.
