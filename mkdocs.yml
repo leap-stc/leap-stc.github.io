@@ -24,12 +24,11 @@ nav:
       - edu/bootcamps.md
 
   - FAQ / Reference:
-      - faq/file_formats.md
+      - technical-reference/file_formats.md
+      - technical-reference/rclone.md
 
   - Support:
       - support/contact.md
-
-
 
 theme:
   language: en
