@@ -53,3 +53,5 @@ coverage.xml
 book/_build/
 
 .vscode/settings.json
+
+uv.lock
