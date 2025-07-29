@@ -6,7 +6,7 @@ When you just need software for your current notebook session, you can temporari
 
 **1. Conda-Forge**
 
-Open the terminal inside your JupyterLab session. 
+Open the terminal inside your JupyterLab session.
 
 Run the following code: '''conda install <package> -c conda-forge'''
 
@@ -22,18 +22,17 @@ Run the following code:
 
 **3. Pip**
 
-Use pip when the library isn't available or up-to-date on conda-forge or you need the latest Github/PyPI release. 
+Use pip when the library isn't available or up-to-date on conda-forge or you need the latest Github/PyPI release.
 
+<<<<<<< HEAD
 Run the following code: '''pip install <package-name>'''
 > *Tip:* Do all Conda/Mamba installs first, then run any pip install commands. This keeps your environment consistent. 
+=======
+Run the following code: 'pip install <package-name>'
+
+> *Tip:* Do all Conda/Mamba installs first, then run any pip install commands. This keeps your environment consistent.
+>>>>>>> 1ebb10c2408b1fc1d8040b54f6dc209a69b58ed3
 
 **4. Script**
 
-If you are running the same packages every time you start a new session, it is more efficient to wrap the commands in a script. 
-
-
-
-
-
-
-
+If you are running the same packages every time you start a new session, it is more efficient to wrap the commands in a script.
