@@ -8,7 +8,7 @@ When you just need software for your current notebook session, you can temporari
 
 Open the terminal inside your JupyterLab session. 
 
-Run the following code: 'conda install <package> -c conda-forge'
+Run the following code: '''conda install <package> -c conda-forge'''
 
 **2. Mamba**
 
@@ -16,15 +16,15 @@ The base image does not include Mamba. However, Mamba can be useful since it is 
 
 Run the following code:
 
-'conda install -y mamba -c conda-forge'
+'''conda install -y mamba -c conda-forge'''
 
-'mamba install <package-name> -c conda-forge'
+'''mamba install <package-name> -c conda-forge'''
 
 **3. Pip**
 
 Use pip when the library isn't available or up-to-date on conda-forge or you need the latest Github/PyPI release. 
 
-Run the following code: 'pip install <package-name>'
+Run the following code: '''pip install <package-name>'''
 > *Tip:* Do all Conda/Mamba installs first, then run any pip install commands. This keeps your environment consistent. 
 
 **4. Script**
