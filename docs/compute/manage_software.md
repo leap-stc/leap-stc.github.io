@@ -24,14 +24,16 @@ Run the following code:
 
 Use pip when the library isn't available or up-to-date on conda-forge or you need the latest Github/PyPI release.
 
-<<<<<<< HEAD
+\<<\<<\<<< HEAD
 Run the following code: '''pip install <package-name>'''
-> *Tip:* Do all Conda/Mamba installs first, then run any pip install commands. This keeps your environment consistent. 
-=======
-Run the following code: 'pip install <package-name>'
 
 > *Tip:* Do all Conda/Mamba installs first, then run any pip install commands. This keeps your environment consistent.
->>>>>>> 1ebb10c2408b1fc1d8040b54f6dc209a69b58ed3
+> \=======
+> Run the following code: 'pip install <package-name>'
+
+> *Tip:* Do all Conda/Mamba installs first, then run any pip install commands. This keeps your environment consistent.
+>
+> > > > > > > 1ebb10c2408b1fc1d8040b54f6dc209a69b58ed3
 
 **4. Script**
 
