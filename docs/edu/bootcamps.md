@@ -2,21 +2,21 @@
 
 We collect all bootcamp materials in the [LEAP-Pangeo bootcamp repository](https://github.com/leap-stc/LEAP-bootcamps). Please keep all relevant information and materials in this repository to make it easier for participants to find them.
 
-## Preparing the bootcamp
+## Preparing for the bootcamp
 
-We encourage you to reuse materials from past bootcamps and adapt them to your needs. **Past event have suggested that it is extremely helpful to have the instructor write down code live, so participants can follow along.**
+**Past attendees have suggested that it is very helpful to have the instructor write code from scratch.**
 This ensures the following:
 
-- The lecturer substantially more time to write live, ensuring that others can follow along
-- It also demonstrates that the lecturer is not a superhuman, but also makes mistakes and has to debug code. This is a very important lesson for students to learn, as it is a very common part of the coding process and often not shown in lectures.
+- The lecturer takes substantially more time to write live, ensuring that others can follow along.
+- The lecturer is not a superhuman, but also makes mistakes and has to debug code. This is a very important lesson for students to learn, as it is a very common part of the coding process and often not shown in lectures.
 - It also allows the lecturer to explain the code as they write it, which is a very important part of the learning process.
 
-Ideally you will use the same materials as the participants (see below for how to organize them), and clear all outputs prior to starting the lecture by right clicking on the notebook and selecting "Clear All Outputs".
+If you are going to use a notebook pre-populated with code, please clear all outputs prior to starting the lecture by right clicking on the notebook and selecting "Clear All Outputs". 
 
 
 ## Materials for the bootcamp
 
-You can reuse the materials for your own bootcamps or modify them to your needs. Please do not change the past materials, and instead create new folders/entries in the following places:
+We encourage you to reuse materials from past bootcamps and adapt them to your needs. However, in doing so, please do change past materials, but rather create new folders/entries in the following places:
 
 - Create a new folder in the "Codes" and "Lectures" folders and add your materials there. *If you are giving the same material as a previous bootcamp, please copy them.*
   - ```{warning}
@@ -24,9 +24,8 @@ You can reuse the materials for your own bootcamps or modify them to your needs.
     ```
 - [README.md](https://github.com/leap-stc/LEAP-bootcamps/README.md) Enter a new entry under the "Events" section. This should include an [nbgitpuller](https://nbgitpuller.readthedocs.io/en/latest/) link for each notebook you work with, so participants can easily pull the materials to their hub (there is a neat tool to [generate these links](https://nbgitpuller.readthedocs.io/en/latest/link.html)). Please also use the LEAP-Pangeo Hub badge by adding code like this:
   ```
-  [![Open in LEAP-Pangeo Hub](https://custom-icon-badges.demolab.com/badge/Jupyter%20Hub-Launch%20%F0%9F%9A%80-blue?style=for-the-badge&logo=leap-globe)](<generated link>) 
+  [![Open in LEAP-Pangeo Hub](https://custom-icon-badges.demolab.com/badge/Jupyter%20Hub-Launch%20%F0%9F%9A%80-blue?style=for-the-badge&logo=leap-globe)](<generated_link>) 
   ```
-  > Add the generated link to the `<>` brackets.
 
 ## Running the bootcamp
 
@@ -40,7 +39,7 @@ Before the event check the following:
 - Can the instructors manually trigger the ["Parse Member Sheet and Add New Members" action](https://github.com/leap-stc/member_management/actions/workflows/read_sheet.yaml) (by clicking on "Run Workflow>Run Workflow" in the top right).
 - Double Check that all participants github names are present in the [leap-pangeo-base-access](https://github.com/orgs/leap-stc/teams/leap-pangeo-base-access) team! If folks are in this team they will have access to the hub! If they are not there they either have not accepted the invite to the team (they will be shown as pending invites; tell them to accept the invite as described [here](https://leap-stc.github.io/guides/faq.html#where-is-my-invite)) or there is an issue with their github username (check their github handles in the Member Data Google Sheet for typos and completeness). We recommend that you familiarize yourself and test these steps ahead of time.
 
-If you are anticipating a large demand for an event it might be useful to consult with the **DATA AND COMPUTE TEAM** or 2i2c beforehand.
+If you are anticipating many attendees to access the hub at the same time to follow along, it is useful to consult with the **[Data & Compute Team](../../support/contact)** or 2i2c beforehand to ensure a smooth presentation.
 
 ### Troubleshooting during the event
 
@@ -48,4 +47,4 @@ If students have trouble signing in to the hub, please refer to the **FAQ** for 
 
 ## After the event
 
-Please add your versions of the filled notebooks to a subfolder named `filled_notebooks` in the event folder you created above, so participants can access them later.
+Please add your versions of the filled notebooks to a subfolder named `filled_notebooks` in the event folder you created above, so participants and future instructors can access them later.
