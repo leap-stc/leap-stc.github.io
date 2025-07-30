@@ -41,8 +41,9 @@ If you want to save larger files for your work, we recommend using cloud storage
 
 Our platform is centered around cloud data. LEAP owns two Google Cloud buckets (leap-persistent and leap-scratch) and also has an allocation of storage on an OSN pod.
 
-1. For "internal" use, i.e. during the research process, we recommend users use the JupyterHub in conjunction with LEAP Cloud buckets.
+1. For "internal" use, i.e. during the research process, we recommend users use the JupyterHub in conjunction with LEAP Cloud buckets (AKA GCS)
 1. For publishing or sharing data externally (i.e. in conjunction with a released paper), we recommend pushing to OSN Pods.
+   A common workflow is for data to be private --> get ingested to LEAP GCS --> OSN Pods for publication.
 
 ## LEAP-Pangeo Cloud Buckets
 
