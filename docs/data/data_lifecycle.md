@@ -1,6 +1,6 @@
 # Data Lifecycle
 
-This guide is intended to help users make intelligent long-term design decisions about what they want to do with their data, as well as outlining ways to do it. If unfamiliar, you should first check out the overview of our primary [storage locations](data_locations.md) and their use cases first. This page is meant to serve as a high level reference, but troubleshooting will inevitably involve the specifics of your data. If anything feels confusing or daunting your first instinct should always be reaching out to the [](support.data_compute_team)!
+This guide is intended to help users make intelligent long-term design decisions about what they want to do with their data, as well as outlining ways to do it. If unfamiliar, you should first check out the overview of our primary [storage locations](data_locations.md) and their use cases. This page is meant to serve as a high level reference, but troubleshooting will inevitably involve the specifics of your data. If anything feels confusing or daunting your first instinct should always be reaching out to the [Data and Compute Team](../support/contact.md)!
 
 ## Moving data around
 
@@ -36,23 +36,23 @@ Thinking about some of these design choices ahead of time greatly simplifies the
 
 If the source data is publicly available and accessible over https, you should create a [template feedstock](https://github.com/leap-stc/LEAP_template_feedstock) directly. If the data is located behind a firewall on an HPC center, the 'pull' based paradigm our feedstocks will not work. In this case we have an option to 'push' the data to a special "inbox" bucket (`'leap-pangeo-inbox'`) on the OSN Pod. This intermediate staging area makes the data accessible. From there an admin can move the data to another dedicated bucket and the data can be added to the catalog using the [template feedstock](https://github.com/leap-stc/LEAP_template_feedstock).
 
-We discourage manually moving datasets to our cloud storage as much as possible since it is hard to reproduce these datasets at a future point (if e.g. the dataset maintainer has moved on to a different position) (see [](explanation.data-policy.reproducibility). We will always [prioritize unblocking your work](explanation.code-policy.dont-let-perfect-be-the-enemy-of-good).
+We discourage manually moving datasets to our cloud storage as much as possible since it is hard to reproduce these datasets at a future point (if e.g. the dataset maintainer has moved on to a different position).
 
 <!-- Fundamentally the 'pushing' of datasets relies on two components:
 
-- Setting up permissions so that you can read/write to the [](reference.infrastructure.buckets) - Several methods to get permissions are described in [](guides.data.external.authentication).
+- Setting up permissions so that you can read/write to the [Cloud Buckets](data_locations.md##leap-pangeo-cloud-buckets) - Several methods to get permissions are described in [Authentication](../technical-reference/authentication.md).
 - Initiating a data transfer from your 'local' machine (e.g. your laptop, a server, or HPC Cluster). You can check on some methods below. -->
 
 ## Available Tooling
 
-Depending on the above guidelines, you will need access to different tooling. **TODO** *Expand upon available tools and how to set them up, somehow sync with [](guide.data.working)*
+Depending on the above guidelines, you will need access to different tooling. **TODO** *Expand upon available tools and how to set them up*
 
 ### OSN Pod Ingestion
 
 **Step by Step instructions**
 
-- Reach out to the [](support.data_compute_team). They will contact the OSN pod admin and share bucket credentials for the `'leap-pangeo-inbox'` bucket.
-- Authenticate to that bucket from a compute location that has access to your desired data and the internet. You can find instructions on how to authenticate [here](guides.data.external.authentication.config-files).
+- Reach out to the [Data and Compute Team](../support/contact.md). They will contact the OSN pod admin and share bucket credentials for the `'leap-pangeo-inbox'` bucket.
+- Authenticate to that bucket from a compute location that has access to your desired data and the internet. You can find instructions on how to authenticate [here](../technical-reference/authentication.md).
 - Upload the data to the 'leap-pangeo-inbox' in **a dedicated folder** (note the exact name of that folder, it is important for the later steps). How you exactly achieve the upload will depend on your preference. Some common options include:
   - Open a bunch of netcdf files into xarray and use `.to_zarr(...)` to write the data to zarr.
   - Use fsspec or rclone to move an existing zarr store to the target bucket
@@ -95,4 +95,4 @@ ds_processed.to_zarr(store=store, zarr_format=zarr_format, consolidated=False)
 ```
 
 - Once you have confirmed that all data is uploaded, ask an admin to move this data to the dedicated `'leap-pangeo-manual'` bucket on the OSN pod. They can do this by running [this github action](https://github.com/leap-stc/data-management/blob/main/.github/workflows/transfer.yaml), which requires the subfolder name from above as input.
-- Once the data is moved, follow the instructions in the [template feedstock](https://github.com/leap-stc/LEAP_template_feedstock) to ["link an existing dataset"](https://github.com/leap-stc/LEAP_template_feedstock#linking-existing-arco-datasets) (The actual ingestion, i.e. conversion to zarr has been done manually in this case). Reach out to the [](support.data_compute_team) if you need support.
+- Once the data is moved, follow the instructions in the [template feedstock](https://github.com/leap-stc/LEAP_template_feedstock) to ["link an existing dataset"](https://github.com/leap-stc/LEAP_template_feedstock#linking-existing-arco-datasets) (The actual ingestion, i.e. conversion to zarr has been done manually in this case). Reach out to the [](../support/contact.md) if you need support.
