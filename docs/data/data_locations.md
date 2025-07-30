@@ -1,6 +1,6 @@
 # Where Data Lives
 
-At a very high level, your data can live "locally" in your JupyterHub User Directory, in a public cloud bucket, or on a "private" server (HPC Filesystem or local machine).
+This guide is intended to help users make intelligent long-term design decisions about what they want to do with their data and where they want to keep it. At a very high level, your data can live "locally" in your JupyterHub User Directory, in a public cloud bucket, or on a "private" server (HPC Filesystem or local machine).
 
 # User Directory
 
@@ -12,17 +12,18 @@ Your User Directory behaves very similar to a filestystem on your computer. If y
 
 ![Hub Terminal](../assets/hub_terminal.png)
 
-```{note}
-As shown in the picture above, every user will see `'/home/jovyan'` as their root directory. This is different from many HPC accounts where your home directory will point to a directory with your username. But the functionality is similar. These are *your own files* and they cannot be seen/modified by other users (except admins).
+!!! note
+As shown in the picture above, every user will see `'/home/jovyan'` as their root directory. This
+is different from many HPC accounts where your home directory will point to a directory with your username. But the functionality is similar. These are *your own files* and they cannot be seen/modified by other users (except admins).
+
+!!! warning
+To accommodate the expanding LEAP community, the data and compute team has instituted a storage quota on individual user directories `/home/jovyan`.
+Your home directory is intended only for notebooks, analysis scripts, and small datasets (< 1 GB).
+It is not an appropriate place to store large datasets.
+Unlike the cloud buckets, these directories use an underlying storage with a rigid limit. If a single user fills up the space, the Hub crashes for everyone.
+We recommend users use less than 25GB and enforce a hard limit of 100GB, which may decrease.
+
 ```
-
-```{warning}
-To accommodate the expanding LEAP community, the data and compute team has instituted a storage quota on individual user directories `/home/jovyan`. 
-Your home directory is intended only for notebooks, analysis scripts, and small datasets (< 1 GB). 
-It is not an appropriate place to store large datasets. 
-Unlike the cloud buckets, these directories use an underlying storage with a rigid limit. If a single user fills up the space, the Hub crashes for everyone. 
-We recommend users use less than 25GB and enforce a hard limit of 100GB, which may decrease. 
-
 To check how much space you are using in your home directory open a terminal window on the hub and run `du -h --max-depth=1 ~/ | sort -h`.
 
 If you want to save larger files for your work, we recommend using cloud storage. See the [FAQs](../technical-reference/faqs.md) for guidance on reducing storage.
@@ -38,9 +39,12 @@ Our platform is centered around cloud data. LEAP owns two Google Cloud buckets (
 ## LEAP-Pangeo Cloud Buckets
 
 LEAP-Pangeo provides users two cloud buckets to store data. The JupyterHub is automatically authenticated to read from any of these buckets but write access might differ (see below). See [Authentication](../technical-reference/authentication.md) for details on how to access buckets from 'outside' the JupyterHub.
+Google cloud is structured such that it is very easy and cheap to move data *into* the buckets, but there are high egress fees for taking data out of GCP Infrastructure. Taking data out means both writing from GCP to outside and reading from an external source like an HPC.
+!!! tip
+TLDR: Use the LEAP GCS buckets when you are actively doing science using the JupyterHub. If you wish to share some kind of finished product with the world, it is best to "publish" the data by moving outside GCS into OSN.
 
-- `gs://leap-scratch/` - Temporary Storage deleted after 7 days. Use this bucket for testing and storing large intermediate results. [More info](https://docs.2i2c.org/user/topics/data/cloud/#scratch-bucket)
-- `gs://leap-persistent/` - Persistent Storage. Use this bucket for storing results you want to share with other members.
+- `gs://leap-scratch/` - Temporary Storage deleted after 7 days. Use this bucket for testing and storing large intermediate results. leap-scratch is also a great staging area to use while ingesting data to some other permanent location.
+- `gs://leap-persistent/` - Persistent Storage. Use this bucket for storing results you want to share with other members or access consistently from the Hub.
 - `gs://leap-persistent-ro/` - Persistent Storage with read-only access for most users.
 
 Files stored on each of those buckets can be accessed by any LEAP member, so be conscious in the way you use these.
@@ -51,7 +55,7 @@ Files stored on each of those buckets can be accessed by any LEAP member, so be 
 GCS is great if:
 \- You want to move data from your Jupyter-Hub home directory to the cloud.
 \- You don't need the data to be accessed outside of the Jupyter-Hub.
-\- This data is a work-in-progress and might be regenerated or modified.
+\- This data is a work-in-progress and might be regenerated or modified as you do your science.
 
 ## Open Storage Network (OSN) Pod
 
@@ -73,7 +77,7 @@ There are currently 3 principal Projects on the Pod:
     - `'leap-pubs'`: **No write access for users**
     - ... various project buckets
 
-OSN allows s3-like cloud storage that has no egress fees, which means that you can share data with the public or outside colaborators without any cost per request.
+OSN allows s3-like cloud storage that has no egress fees, which means that you can share data with the public or outside colaborators without any cost per request! The downside of course is that the JupyterHub is not configured to interact with OSN as seamlessly as the GCS buckets.
 
 Data can be transferred from `leap-pangeo-inbox` to `leap-pangeo-manual` with [this rclone github action](https://github.com/leap-stc/data-management/actions/runs/11167922927/workflow).
 
@@ -82,4 +86,10 @@ OSN is great if:
 \- You need to move data from your Jupyter-Hub home directory to more persistent storage.
 \- You data does not fit into the Zarr model.
 
-If you believe OSN better fits your data use case, please contact the data-and-compute team on slack. Then follow the instructions on OSN Ingestion # TODO LINK INSTRUCTIONS.
+To migrate data to OSN, please contact the data-and-compute team on slack. They will contact the OSN pod admin and share bucket credentials for the `'leap-pangeo-inbox'` bucket. More details are provided under [authentication](../technical-reference/authentication.md).
+
+# Private Storage - HPC or External Filesystems
+
+There are scenarios in which it probably does not make sense to migrate your data into the cloud!
+
+- If you have a powerful HPC system that produces extremely large volumes (petabytes) of data for processing, the LEAP infrastructure is currently not equipped to handle this.
