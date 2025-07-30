@@ -8,7 +8,7 @@ When you just need software for your current notebook session, you can temporari
 
 Open the terminal inside your JupyterLab session.
 
-Run the following code: ```conda install <package> -c conda-forge```
+Run the following code: `conda install <package> -c conda-forge`
 
 **2. Mamba**
 
@@ -16,14 +16,14 @@ The base image does not include Mamba. However, Mamba can be useful since it is 
 
 Run the following code:
 
-```conda install -y mamba -c conda-forge```
+`conda install -y mamba -c conda-forge`
 
-```mamba install <package-name> -c conda-forge```
+`mamba install <package-name> -c conda-forge`
 
 **3. Pip**
 
 Use pip when the library isn't available or up-to-date on conda-forge or you need the latest Github/PyPI release.
-Run the following code: ```pip install <package-name>```
+Run the following code: `pip install <package-name>`
 
 > *Tip:* Do all Conda/Mamba installs first, then run any pip install commands. This keeps your environment consistent.
 
@@ -33,10 +33,10 @@ If you are running the same packages every time you start a new session, it is m
 
 Create a .sh file with the following skeletal code:
 
-\n#!/bin/bash
+\\n#!/bin/bash
 conda install -y <package> <package> -c conda-forge
 pip install <package>
-echo "Environment ready!"\n
+echo "Environment ready!"\\n
 
 Then in the terminal run the following code to make the script executable: `chmod +x setup-env.sh`
 
@@ -56,7 +56,3 @@ Use a custom image when:
 If you find yourself installing the same packages repeatedly, or if runtime installs are unreliable or time-consuming, consider moving to a custom image for a more stable and efficient experience.
 
 For instructions on creating and managing a custom image, see the [2i2c hub-user-image guide](https://docs.2i2c.org/admin/howto/environment/)
-
-
-
-
