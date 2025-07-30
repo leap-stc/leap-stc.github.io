@@ -13,9 +13,9 @@ The data ingestion process is organized around Github repositories called "feeds
 
 Below we list the most common transfer scenarios and recommend migration workflows for each. Thinking about some of these design choices ahead of time greatly simplifies the back and forth needed by the DCT team when the request eventually comes in. But of course, we can collaborate on the best path forward given the nuances of any particular ingestion request!
 
-### Migrating Public Data from Legacy Catalogs
+### Migrating Public Data
 
-Very commonly, LEAP members will want to work some publicly accessible data that might live in an existing data store like Zenodo, NASA, or NOAA. This is the classic ingestion use case for which much of our tooling is designed. If the data is available via HTTP, one powerful method to avoid duplication is to create a *Virtual Zarr Store* (see [file formats](../technical-reference/file_formats.md)).
+Very commonly, LEAP members will want to work some publicly accessible data that might live in a data store like Zenodo, NASA, or NOAA. This is the classic ingestion use case for which much of our tooling is designed. If the data is available via HTTP, one powerful method to avoid duplication is to create a *Virtual Zarr Store* (see [file formats](../technical-reference/file_formats.md)).
 
 Sometimes, climate data is published online but not publically accessible, i.e. it requires some sort of credentials / authorization to access. Even if this is the case, programmatic access is often supported by tooling from the data providers. For example, the Copernicus Data ecosystem has their own API and dataset licenses. Any user-specific access credentials or tokens stored on User Directories are not accessible to other members of the hub; they remain private. However, they can be viewed by LEAP Data and Compute admins; if this is an issue, please consult us for alternative ingestion options.
 
