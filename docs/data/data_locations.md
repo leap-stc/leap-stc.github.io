@@ -2,6 +2,10 @@
 
 This guide is intended to help users make intelligent long-term design decisions about what they want to do with their data and where they want to keep it. At a very high level, your data can live "locally" in your JupyterHub User Directory, in a public cloud bucket, or on a "private" server (HPC Filesystem or local machine).
 
+- Data being *used* or consumed by third parties best belongs in the OSN Pod, linked to the data catalog.
+- Data being *processed* actively during analytical science workflows should live in the LEAP Cloud buckets in conjunction with the Hub.
+- Data being *generated* will likely exist privately on HPC systems if in the form of large numerical simulations.
+
 # User Directory
 
 When you open your hub, you can navigate to the file browser and see all the files in your User Directory
