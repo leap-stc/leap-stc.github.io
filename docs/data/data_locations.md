@@ -6,7 +6,7 @@ This guide is intended to help users make intelligent long-term design decisions
 
 When you open your hub, you can navigate to the file browser and see all the files in your User Directory
 
-<img width="442" alt="image" src="https://github.com/leap-stc/leap-stc.github.io/assets/14314623/3ba6b45a-a077-4824-b0ec-9c111af50c33">
+![User Directories](../assets/user_directories.png)
 
 Your User Directory behaves very similar to a filestystem on your computer. If you save a file from a notebook, you will see it appear in the File Browser (you might have to wait a few seconds or press refresh) and you can use a terminal to navigate the terminal and manipulate files as you would on a UNIX machine:
 
@@ -23,11 +23,15 @@ It is not an appropriate place to store large datasets.
 Unlike the cloud buckets, these directories use an underlying storage with a rigid limit. If a single user fills up the space, the Hub crashes for everyone.
 We recommend users use less than 25GB and enforce a hard limit of 100GB, which may decrease.
 
+`````
+````
 ```
 To check how much space you are using in your home directory open a terminal window on the hub and run `du -h --max-depth=1 ~/ | sort -h`.
 
 If you want to save larger files for your work, we recommend using cloud storage. See the [FAQs](../technical-reference/faqs.md) for guidance on reducing storage.
 ```
+````
+`````
 
 # Cloud Storage
 
@@ -45,7 +49,6 @@ TLDR: Use the LEAP GCS buckets when you are actively doing science using the Jup
 
 - `gs://leap-scratch/` - Temporary Storage deleted after 7 days. Use this bucket for testing and storing large intermediate results. leap-scratch is also a great staging area to use while ingesting data to some other permanent location.
 - `gs://leap-persistent/` - Persistent Storage. Use this bucket for storing results you want to share with other members or access consistently from the Hub.
-- `gs://leap-persistent-ro/` - Persistent Storage with read-only access for most users.
 
 Files stored on each of those buckets can be accessed by any LEAP member, so be conscious in the way you use these.
 

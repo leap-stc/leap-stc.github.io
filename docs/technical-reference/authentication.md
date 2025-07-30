@@ -2,14 +2,16 @@
 
 Authenticating to LEAP Resources is a frequent pain point reported by our users. Authentication is usually required when working outside of the JupyterHub or when interfacing with the LEAP OSN pods.
 
-## OSN Pods
+## OSN Pod Authentication
 
-important for the later steps). How you exactly achieve the upload will depend on your preference. Some common options include:
+**Step by Step instructions**
 
-- Open a bunch of netcdf files into xarray and use `.to_zarr(...)` to write the data to zarr.
-- Use fsspec or rclone to move an existing zarr store to the target bucket
-  Either way the uploaded folder should contain one or more zarr stores!
-  A typical workflow for the above steps might look like:
+- Reach out to the [](support.data_compute_team). They will contact the OSN pod admin and share bucket credentials for the `'leap-pangeo-inbox'` bucket.
+  important for the later steps). How you exactly achieve the upload will depend on your preference. Some common options include:
+  - Open a bunch of netcdf files into xarray and use `.to_zarr(...)` to write the data to zarr.
+  - Use fsspec or rclone to move an existing zarr store to the target bucket
+    Either way the uploaded folder should contain one or more zarr stores!
+    A typical workflow for the above steps might look like:
 
 ```python
 import xarray as xr

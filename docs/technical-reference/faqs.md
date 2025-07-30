@@ -25,7 +25,7 @@ If you are unable to log into the hub, please check the following steps:
 If you **are not** follow these steps:
 
 - [ ] Did you [sign up for LEAP membership](users.membership.apply)? This will be done for you if you sign up for an event like the Momentum bootcamp!
-- [ ] Did you receive a github invite? [Here](##where_is_my_invite) is how to check for that.
+- [ ] Did you receive a github invite? See above for how to check for that.
 - [ ] Check again if they are part of the appropriate github teams.
 - If these steps do not work, please reach out to the [Data and Compute Team](../support/contact.md).
 
