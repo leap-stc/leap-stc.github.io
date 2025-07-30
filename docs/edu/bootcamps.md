@@ -11,8 +11,7 @@ This ensures the following:
 - The lecturer is not a superhuman, but also makes mistakes and has to debug code. This is a very important lesson for students to learn, as it is a very common part of the coding process and often not shown in lectures.
 - It also allows the lecturer to explain the code as they write it, which is a very important part of the learning process.
 
-If you are going to use a notebook pre-populated with code, please clear all outputs prior to starting the lecture by right clicking on the notebook and selecting "Clear All Outputs". 
-
+If you are going to use a notebook pre-populated with code, please clear all outputs prior to starting the lecture by right clicking on the notebook and selecting "Clear All Outputs".
 
 ## Materials for the bootcamp
 

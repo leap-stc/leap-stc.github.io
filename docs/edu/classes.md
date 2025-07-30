@@ -2,15 +2,15 @@
 
 ## Can I use LEAP-Pangeo for my class?
 
-LEAP provides infrastructure support to [LEAP-Affiliated Courses](https://leap.columbia.edu/education/education-curriculum/). 
+LEAP provides infrastructure support to [LEAP-Affiliated Courses](https://leap.columbia.edu/education/education-curriculum/).
 
 If you are an instructor of a LEAP-Affiliated Course and want your students to access LEAP-Pangeo, you should contact the [Data & Compute Team](../../support/contact) at least 3 weeks before the class start date in order to coordinate efforts for onboarding.
 
-## Preparing to teach 
+## Preparing to teach
 
 ### Class Material
 
-We suggest that instructors and teaching assistants preprare class material directly on the hub as much as possible to ensure an identical experience for the students during the class. 
+We suggest that instructors and teaching assistants preprare class material directly on the hub as much as possible to ensure an identical experience for the students during the class.
 
 To develop, edit, and test class material, instructors and teaching assistants should themselves apply for [membership](https://forms.gle/RpeaMZh5btTdZtzu8) under the **education** category and make sure to check out our **LINK TO GETTING STARTED**.
 
@@ -30,4 +30,4 @@ Make sure to familiarize yourself with the troubleshooting steps below before th
 
 ### Students cannot access JupyterHub
 
-Refer students to **SIGNUP TROUBLESHOOTING** if problems persist. If this does not resolve the issue, please contact the [Data & Compute Team](../../support/contact). 
+Refer students to **SIGNUP TROUBLESHOOTING** if problems persist. If this does not resolve the issue, please contact the [Data & Compute Team](../../support/contact).
