@@ -4,7 +4,7 @@
 
 LEAP provides infrastructure support to [LEAP-Affiliated Courses](https://leap.columbia.edu/education/education-curriculum/).
 
-If you are an instructor of a LEAP-Affiliated Course and want your students to access LEAP-Pangeo,  contact the [Data & Compute Team](../../support/contact) at least 3 weeks before the class start date in order to coordinate efforts for onboarding.
+If you are an instructor of a LEAP-Affiliated Course and want your students to access LEAP-Pangeo, contact the [Data & Compute Team](../../support/contact) at least 3 weeks before the class start date in order to coordinate efforts for onboarding.
 
 ## Preparing to teach
 
