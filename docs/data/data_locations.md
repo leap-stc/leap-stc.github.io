@@ -73,7 +73,7 @@ GCS is great if:
 
 ## Open Storage Network (OSN) Pod
 
-The [Open Storage Network](https://www.openstoragenetwork.org/) is a federally funded distributed cloud storage for the research community. LEAP has a ~1 petabyte allocation on OSN, which is divided into projects and buckets. Projects are used to give additional users access to the Coldfront Admin Console, whereas buckets are how storage is administered up on the Pod. A project can have multiple buckets.
+The [Open Storage Network](https://www.openstoragenetwork.org/) is distributed cloud storage for the research community. LEAP has a ~1 petabyte allocation on OSN, which is divided into projects and buckets. A project can have multiple buckets.
 
 There are currently 2 principal Projects on the Pod (as well as a shared bucket with the m2lines project):
 
