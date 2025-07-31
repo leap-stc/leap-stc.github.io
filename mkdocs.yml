@@ -38,6 +38,8 @@ nav:
   - FAQ / Reference:
       - technical-reference/file_formats.md
       - technical-reference/rclone.md
+      - technical-reference/authentication.md
+      - technical-reference/faqs.md
 
   - Support:
       - support/contact.md
