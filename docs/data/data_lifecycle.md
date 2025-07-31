@@ -1,13 +1,13 @@
 # Data Lifecycles
 
-If unfamiliar, you should first check out the overview of our primary [storage locations](data_locations.md) and their use cases. This page is meant to serve as a high level reference, but troubleshooting will inevitably involve the specifics of your data. If anything feels confusing or daunting your first instinct should always be reaching out to the [Data and Compute Team](../support/contact.md)!
+If unfamiliar, you should first check out the overview of our primary [storage locations](data_locations.md) and their use cases. This page is meant to serve as a high level reference. Troubleshooting will inevitably involve the specifics of your data. If anything feels confusing or daunting your first instinct should always be reaching out to the [Data and Compute Team](../support/contact.md)!
 
 ## Getting data into the Cloud
 
 Working on the JupyterHub generally requires transferring whatever data you want to work with into the cloud. The term "data ingestion" refers to a programmatic way to download and transform data into Analysis-Ready Cloud-Optimized (ARCO) formats. One major benefit of doing so is that the data immediately becomes available for the entire LEAP community (it is extremely easy to link ARCO data to the [LEAP Data Catalog](./data_catalog.md))!
 The data ingestion process is organized around Github repositories called "feedstocks" that centralize communication with the DCT team for each request.
 
-1. Check if the data has already been made accessible via the catalog. If not, let the LEAP community and the Data and Computation Team know about this new dataset. We gather all ingestion requests in our ['leap-stc/data_management' issue tracker](https://github.com/leap-stc/data-management/issues). You should check existing issues with the tag ['dataset'](https://github.com/leap-stc/data-management/issues?q=is%3Aissue+is%3Aopen+label%3Adataset) to see if somebody else might have already requested this particular dataset. If that is not the case you can add a new [dataset_request](https://github.com/leap-stc/data-management/issues/new?assignees=&labels=dataset&projects=&template=new_dataset.yaml&title=New+Dataset+%5BDataset+Name%5D). Making these request in a central location enables others to see which datasets are currently being ingested and what the status is.
+1. Check if the data has already been made accessible via the catalog. If not, let the LEAP community and the Data and Computation Team know about this new dataset. We gather all ingestion requests in our ['leap-stc/data_management' issue tracker](https://github.com/leap-stc/data-management/issues). You should check existing issues with the tag ['dataset'](https://github.com/leap-stc/data-management/issues?q=is%3Aissue+is%3Aopen+label%3Adataset) to see if somebody else might have already requested this particular dataset. If that is not the case you can add a new [dataset_request](https://github.com/leap-stc/data-management/issues/new?assignees=&labels=dataset&projects=&template=new_dataset.yaml&title=New+Dataset+%5BDataset+Name%5D). Making these requests in a central location enables others to see which datasets are currently being ingested and what the status is.
 1. Use our [feedstock template](https://github.com/leap-stc/LEAP_template_feedstock) to create a feedstock repostory by following instructions in the README to get you started with either one of the above.
 1. If issues arise please reach out to the [Data and Compute Team](../support/contact.md).
 
@@ -30,14 +30,14 @@ The biggest barrier here is external authentication; see the [Authentication sec
 
 There are many tools available to interact with cloud object storage. We currently have basic operations documented for three tools:
 
-- GCloud SDK. One can interact with Google Cloud storage directly using the Google Cloud SDK and Command Line Interface. Please consult the [gcloud docs](https://cloud.google.com/sdk/docs/install).
+- [rclone](https://rclone.org/) which provides a Command Line Interface to many different storage backends, see [here](../technical-reference/rclone.md) for more details. Rclone is highly versatile and suits almost all use cases.
+
+- GCloud SDK. One can interact with Google Cloud storage directly using the Google Cloud SDK and Command Line Interface. Please consult the [Install Instructions](https://cloud.google.com/sdk/docs/install) for more guidance.
 
 - [fsspec](https://filesystem-spec.readthedocs.io/en/latest/) (and its submodules [gcsfs](https://gcsfs.readthedocs.io/en/latest/) and [s3fs](https://s3fs.readthedocs.io/en/latest/)) provide filesystem-like access to local, remote, and embedded file systems from within a python session. Fsspec is also used by xarray under the hood and so integrates easily with normal coding workflows (and tools like Dask).
 
   - `fsspec` can be used to transfer small amounts of data to google cloud storage or OSN. If you have more than a few hundred MB's, it is worth using Rclone
   - `fsspec` should be installed by default on the **Base Pangeo Notebook** environment on the Jupyter-Hub. If you are working locally, you can install it with `pip or conda/mamba`. ex: `pip install fsspec`.
-
-- [rclone](https://rclone.org/) which provides a Command Line Interface to many different storage backends, see [here](../technical-reference/rclone.md) for more details.
 
 ### Tool Selection
 
