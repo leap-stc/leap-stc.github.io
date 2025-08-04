@@ -60,7 +60,8 @@ For instructions on creating and managing a custom image, see the [2i2c hub-user
 1. Go to the **Start Server** page in JupyterHub.
    (include link to screenshot here)
 
-1. Select **Other...** from the **Image options** dropdown. Then enter the link to the custom image in the form of `<registry>/<username>/<repo_name>:<git-commit-hash>`
+2. Select **Other...** from the **Image options** dropdown. Then enter the link to the custom image in the form of `<registry>/<username>/<repo_name>:<git-commit-hash>`
    (include link to screenshot here)
 
-1. Launch the server - your packages will be pre-installed.
+3. Launch the server - your packages will be pre-installed.
+
