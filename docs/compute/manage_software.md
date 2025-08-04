@@ -4,34 +4,28 @@ The LEAP JupyterHub environment provides multiple ways to install and manage sof
 
 ## Quick Installs (Temporary)
 
-When you just need software for your current notebook session, you can temporarily install packages using one of the following methods. Each shell command listed can also be run inside an active Jupyter Notebook if prefixed with an exclamation mark (i.e. running `!pip install numpy` in a code cell). The lifetime of the installation lasts until the kernel stops. After this, it has to be re-installed.
+When you just need software for your current notebook session, you can temporarily install packages using one of the following methods. The lifetime of the installation lasts until the kernel stops. After this, it has to be re-installed.
 
-**1. Conda-Forge**
+> *Note:* Each shell command listed can also be run inside an active Jupyter Notebook by prefixing them with an exclamation mark (i.e. running `!pip install numpy` in a code cell). 
+
+**1. Conda (or Mamba)**
 
 Open the terminal inside your JupyterLab session.
 
-Run the following code: `conda install <package> -c conda-forge`
+Run the following code: `conda install <package>`
 
-**2. Mamba**
+> *Tip:* `mamba` is available in the base image and is a faster alternative to `conda` - just swap the command: `mamba install <package-name>`
 
-The base image does not include Mamba. However, Mamba can be useful since it is faster than Conda and can install many dependencies at once. We can install Mamba as a drop-in replacement for Conda.
+**2. Pip**
 
-Run the following code:
-
-`conda install -y mamba -c conda-forge`
-
-`mamba install <package-name> -c conda-forge`
-
-**3. Pip**
-
-Use pip when the library isn't available or up-to-date on conda-forge or you need the latest Github/PyPI release.
+Use pip if the package isn't available or up to date on conda-forge, or if you are installing directly from Github or PyPI.
 Run the following code: `pip install <package-name>`
 
 > *Tip:* Do all Conda/Mamba installs first, then run any pip install commands. This keeps your environment consistent.
 
 **4. Script**
 
-If you are running the same packages every time you start a new session, it is more efficient to wrap the commands in a script. This is useful for workshops or group work.
+If you are installing the same packages every time you start a new session, it is more efficient to wrap the commands in a script. This is especially useful for workshops or group work.
 
 Create a .sh file with the following skeletal code:
 
@@ -48,13 +42,23 @@ You can now execute the script in your terminal by the following: `./<filename>.
 
 In some cases, a custom Docker image is required to ensure that software packages are installed persistently across kernel restarts. Unlike runtime installations, which are temporary and must be re-run each session, a custom image guarantees that packages are available every time a user starts a new server.
 
-Use a custom image when:
+Use a custom image for the following scenarios:
 
-- The same libraries are needed in every session across users
-- Workshops, bootcamps, or other workflows
-- Packages require long install times or complex system dependencies
-- JupyterLab extensions must be pre-built to function properly (ex: AmazonQ, classic labextensions, etc)
+- When multiple users need the same libraries
+- When setting up workshops, bootcamps, or other workflows
+- When packages take a long time to install or have complex dependencies
+- When JupyterLab extensions must be pre-built to function properly (ex: AmazonQ, classic labextensions, etc)
 
 If you find yourself installing the same packages repeatedly, or if runtime installs are unreliable or time-consuming, consider moving to a custom image for a more stable and efficient experience.
 
 For instructions on creating and managing a custom image, see the [2i2c hub-user-image guide](https://docs.2i2c.org/admin/howto/environment/)
+
+### To use a custom image in the LEAP Hub:
+
+1. Go to the **Start Server** page in JupyterHub.
+![Server start page screenshot](../archive/book/images/Server_homescreen.png)
+
+2. Select **Other...** from the **Image options** dropdown. Then enter the link to the custom image in the form of `<registry>/<username>/<repo_name>:<git-commit-hash>`
+![Custom image page screenshot](../archive/book/images/Custom_image.png)
+
+3. Launch the server - your packages will be pre-installed.
