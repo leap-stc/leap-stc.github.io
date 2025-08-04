@@ -42,7 +42,7 @@ Then in the terminal run the following code to make the script executable: `chmo
 
 You can now execute the script in your terminal by the following: `./<filename>.sh`
 
-##Persistant Installs (Docker Image)
+## Persistant Installs (Docker Image)
 
 In some cases, a custom Docker image is required to ensure that software packages are installed persistently across kernel restarts. Unlike runtime installations, which are temporary and must be re-run each session, a custom image guarantees that packages are available every time a user starts a new server.
 
