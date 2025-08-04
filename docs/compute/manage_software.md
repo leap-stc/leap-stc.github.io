@@ -23,7 +23,7 @@ Run the following code: `pip install <package-name>`
 
 > *Tip:* Do all Conda/Mamba installs first, then run any pip install commands. This keeps your environment consistent.
 
-**4. Script**
+**3. Script**
 
 If you are installing the same packages every time you start a new session, it is more efficient to wrap the commands in a script. This is especially useful for workshops or group work.
 
