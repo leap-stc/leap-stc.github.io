@@ -2,7 +2,7 @@ The LEAP JupyterHub environment provides multiple ways to install and manage sof
 
 ## Quick Installs (Temporary)
 
-When you just need software for your current notebook session, you can temporarily install packages using one of the following methods. The lifetime of the installation lasts until the kernel stops. After this, it has to be re-installed.
+When you just need software for your current notebook session, you can temporarily install packages using one of the following methods. Each shell command listed can also be run inside an active Jupyter Notebook if prefixed with an exclamation mark (i.e. running `!pip install numpy` in a code cell). The lifetime of the installation lasts until the kernel stops. After this, it has to be re-installed.
 
 **1. Conda-Forge**
 
