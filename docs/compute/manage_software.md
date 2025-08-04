@@ -13,8 +13,7 @@ Open the terminal inside your JupyterLab session.
 
 Run the following code: `conda install <package>`
 
-> *Tip:* `mamba` is available in the base image and is a faster alternative to `conda`
-> Use the command: `mamba install <package-name>`
+> *Tip:* `mamba` is available in the base image and is a faster alternative to `conda`.  Use the command: `mamba install <package-name>`
 
 **2. Pip**
 
