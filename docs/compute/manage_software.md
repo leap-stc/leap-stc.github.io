@@ -1,6 +1,6 @@
 The LEAP JupyterHub environment provides multiple ways to install and manage software. Choose the method that best fits your needs.
 
-##Quick Installs (Temporary)
+## Quick Installs (Temporary)
 
 When you just need software for your current notebook session, you can temporarily install packages using one of the following methods. The lifetime of the installation lasts until the kernel stops. After this, it has to be re-installed.
 
