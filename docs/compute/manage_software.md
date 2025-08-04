@@ -1,5 +1,4 @@
 # Managing Software
-
 The LEAP JupyterHub environment provides multiple ways to install and manage software. Choose the method that best fits your needs.
 
 ## Quick Installs (Temporary)
@@ -14,7 +13,8 @@ Open the terminal inside your JupyterLab session.
 
 Run the following code: `conda install <package>`
 
-> *Tip:* `mamba` is available in the base image and is a faster alternative to `conda` - just swap the command: `mamba install <package-name>`
+> *Tip:* `mamba` is available in the base image and is a faster alternative to `conda`
+> Use the command: `mamba install <package-name>`
 
 **2. Pip**
 
@@ -29,10 +29,12 @@ If you are installing the same packages every time you start a new session, it i
 
 Create a .sh file with the following skeletal code:
 
-\\n#!/bin/bash
-conda install -y <package> <package> -c conda-forge
+```bash
+#!/bin/bash
+conda install -y <package> <package> 
 pip install <package>
-echo "Environment ready!"\\n
+echo "Environment ready!"
+```
 
 Then in the terminal run the following code to make the script executable: `chmod +x setup-env.sh`
 
@@ -53,12 +55,12 @@ If you find yourself installing the same packages repeatedly, or if runtime inst
 
 For instructions on creating and managing a custom image, see the [2i2c hub-user-image guide](https://docs.2i2c.org/admin/howto/environment/)
 
-### To use a custom image in the LEAP Hub:
+### How to use a custom image in the LEAP Hub:
 
 1. Go to the **Start Server** page in JupyterHub.
-![Server start page screenshot](../archive/book/images/Server_homescreen.png)
+(include link to screenshot here)
 
 2. Select **Other...** from the **Image options** dropdown. Then enter the link to the custom image in the form of `<registry>/<username>/<repo_name>:<git-commit-hash>`
-![Custom image page screenshot](../archive/book/images/Custom_image.png)
+(include link to screenshot here)
 
 3. Launch the server - your packages will be pre-installed.
