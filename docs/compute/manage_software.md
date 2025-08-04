@@ -1,11 +1,12 @@
 # Managing Software
+
 The LEAP JupyterHub environment provides multiple ways to install and manage software. Choose the method that best fits your needs.
 
 ## Quick Installs (Temporary)
 
 When you just need software for your current notebook session, you can temporarily install packages using one of the following methods. The lifetime of the installation lasts until the kernel stops. After this, it has to be re-installed.
 
-> *Note:* Each shell command listed can also be run inside an active Jupyter Notebook by prefixing them with an exclamation mark (i.e. running `!pip install numpy` in a code cell). 
+> *Note:* Each shell command listed can also be run inside an active Jupyter Notebook by prefixing them with an exclamation mark (i.e. running `!pip install numpy` in a code cell).
 
 **1. Conda (or Mamba)**
 
@@ -57,9 +58,9 @@ For instructions on creating and managing a custom image, see the [2i2c hub-user
 ### How to use a custom image in the LEAP Hub:
 
 1. Go to the **Start Server** page in JupyterHub.
-(include link to screenshot here)
+   (include link to screenshot here)
 
-2. Select **Other...** from the **Image options** dropdown. Then enter the link to the custom image in the form of `<registry>/<username>/<repo_name>:<git-commit-hash>`
-(include link to screenshot here)
+1. Select **Other...** from the **Image options** dropdown. Then enter the link to the custom image in the form of `<registry>/<username>/<repo_name>:<git-commit-hash>`
+   (include link to screenshot here)
 
-3. Launch the server - your packages will be pre-installed.
+1. Launch the server - your packages will be pre-installed.
