@@ -1,3 +1,23 @@
-## LEAP Jupyter-Hub
+## LEAP Jupyter Hub
 
-LEAP provides a JupyterHub (*The Hub*), which is a shared cloud-based compute environment. This platform gives LEAP researchers a quick and easy access path to working with cloud compute and data. Moving your processing scripts to the cloud allows you to access terrabytes of shared data and the ability to scale your compute well beyond your local laptop.
+LEAP's primary data and computational resources are available through the LEAP Jupyter Hub (not to be confused with the physical Hub where are share space!). The Jupyter Hub is a shared "cloud-based" computing environment running on donated resources from commerical cloud providers. 
+
+The hub is designed around **interactive** use though long computations are possible. 
+
+To gain access to the Hub please see the [Registration page][Registration]. LEAP's Jupyterhub is managed by our partner [2i2c](https://2i2c.org). 
+
+The Hub includes
+
+- **computing resources** accessible nearly world-wide via a web brower or via VSCode as described on [this page][Accessing the hub]. The resources   include a variety of hardware configurations and a range of pre-defined but evolving sets of software. 
+
+- **data resources** divided among generous shared "cloud buckets" for data and limited home directories for scripts etc. as described at [Where Data Lives][Where Data Lives] 
+
+The computing resources have fast access to LEAP's data resources; they also have fast connections to the boader internet which lowers the barrier to working with data held elsewhere. 
+
+
+Compared to using
+
+- a *laptop*, the Hub offers fast access to data and the ability to access much more powerful computational resources including GPUs for ML training tasks. 
+- *HPCs, clusters, etc.* the hub offers simpler access and less competition for resources (since the pool from which the resources are drawn is enormous). It does not, however, easily support non-interactive use. 
+
+Moving data in to data resources is free; moving data out is expensive (see [Data Lifecycles][Data Lifecycles]). Please plan your workflow accordingly. 
