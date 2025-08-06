@@ -19,7 +19,7 @@ theme:
 
 nav:
   - "index.md"
-  - Introuction:
+  - Introduction:
       - introduction/what_is_the_hub.md
       - introduction/getting_started.md
   - Data:

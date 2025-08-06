@@ -1,6 +1,6 @@
 # FAQs
 
-## "Where is my invite?"
+## Where is my invite?
 
 Please check your email account (**the one you used to sign up for Github** - this is independent of the email you use for LEAP) for an invite that will look similar to this:
 
