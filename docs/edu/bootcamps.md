@@ -11,11 +11,16 @@ This ensures the following:
 - The lecturer is not a superhuman, but also makes mistakes and has to debug code. This is a very important lesson for students to learn, as it is a very common part of the coding process and often not shown in lectures.
 - It also allows the lecturer to explain the code as they write it, which is a very important part of the learning process.
 
-If you are going to use a notebook pre-populated with code, please clear all outputs prior to starting the lecture by right clicking on the notebook and selecting "Clear All Outputs".
+If it is necessary to use a notebook pre-populated with code, please clear all outputs prior to starting the lecture by following this procedure:
+
+- In the Jupyter notebook, click on `Edit` in the top taskbar. 
+- Find and click `Clear Outputs of All Cells` from the dropdown menu.
+- Save Jupyter notebook with cleared outputs by clicking `Save` from the top taskbar and then clicking `Save Notebook`. 
+- After the lecture is over, save the Jupyter notebook again to save the complete version with all outputs.  
 
 ## Materials for the bootcamp
 
-We encourage you to reuse materials from past bootcamps and adapt them to your needs. However, in doing so, please do change past materials, but rather create new folders/entries in the following places:
+We encourage you to reuse materials from past bootcamps and adapt them to your needs. If you re-use material from previous bootcamps, please don't modify the original notebooks, instead create new copies for your use.
 
 - Create a new folder in the "Codes" and "Lectures" folders and add your materials there. *If you are giving the same material as a previous bootcamp, please copy them.*
   !!! warning
