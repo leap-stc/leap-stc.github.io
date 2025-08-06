@@ -13,10 +13,10 @@ This ensures the following:
 
 If it is necessary to use a notebook pre-populated with code, please clear all outputs prior to starting the lecture by following this procedure:
 
-- In the Jupyter notebook, click on `Edit` in the top taskbar. 
+- In the Jupyter notebook, click on `Edit` in the top taskbar.
 - Find and click `Clear Outputs of All Cells` from the dropdown menu.
-- Save Jupyter notebook with cleared outputs by clicking `Save` from the top taskbar and then clicking `Save Notebook`. 
-- After the lecture is over, save the Jupyter notebook again to save the complete version with all outputs.  
+- Save Jupyter notebook with cleared outputs by clicking `Save` from the top taskbar and then clicking `Save Notebook`.
+- After the lecture is over, save the Jupyter notebook again to save the complete version with all outputs.
 
 ## Materials for the bootcamp
 
