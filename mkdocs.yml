@@ -19,12 +19,11 @@ theme:
 
 nav:
   - "index.md"
-  - Introuction:
+  - Introduction:
       - introduction/what_is_the_hub.md
       - introduction/getting_started.md
   - Data:
       - data/data_catalog.md
-      - data/data_policy.md
       - data/data_locations.md
       - data/data_lifecycle.md
   - Compute:
@@ -34,13 +33,16 @@ nav:
   - Education / Outreach:
       - edu/classes.md
       - edu/bootcamps.md
-
-  - FAQ / Reference:
+  - Reference:
       - technical-reference/file_formats.md
       - technical-reference/rclone.md
       - technical-reference/authentication.md
-      - technical-reference/faqs.md
-
+      - technical-reference/Infrastructure-details.md
+  - Frequently asked questions:
+      - faqs/invitation.md
+      - faqs/cant-log-in.md
+      - faqs/disk-space.md
+      - faqs/dask-killed-workers.md
   - Support:
       - support/contact.md
 
