@@ -2,7 +2,7 @@
 
 ## Gaining Access
 
-Only LEAP members will be able to access the hub. To become a LEAP member, please apply via our [Application Form](https://forms.gle/RpeaMZh5btTdZtzu8). Access to the JupyterHub is implemented via [Github Teams](https://docs.github.com/en/organizations/organizing-members-into-teams/about-teams) in the [leap-stc](https://github.com/orgs/leap-stc/teams) GitHub organization. Each membership tier maps to a single Github Team which determines the resources available to the user:
+To gain access to the Hub please apply via our [Application Form](https://forms.gle/RpeaMZh5btTdZtzu8). Access to the JupyterHub is implemented via [Github Teams](https://docs.github.com/en/organizations/organizing-members-into-teams/about-teams) in the [leap-stc](https://github.com/orgs/leap-stc/teams) GitHub organization. Each membership tier is associated with a Github Team and determines the resources available to the user:
 
 | Tier                      | Github Team                                                                                   | Resources Available                                                                                                                            | Intended for                                                                                     |
 | ------------------------- | --------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
