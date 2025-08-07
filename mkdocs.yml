@@ -33,11 +33,11 @@ nav:
   - Education / Outreach:
       - edu/classes.md
       - edu/bootcamps.md
-  - Technical Reference:
-      - technical-reference/file_formats.md
-      - technical-reference/rclone.md
-      - technical-reference/authentication.md
-      - technical-reference/infrastructure_details.md
+  - Reference:
+      - reference/file_formats.md
+      - reference/rclone.md
+      - reference/authentication.md
+      - reference/infrastructure_details.md
   - Support:
       - support/contact.md
       - support/signup_troubleshooting.md

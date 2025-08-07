@@ -15,7 +15,7 @@ Below we list the most common transfer scenarios and recommend migration workflo
 
 ### Migrating Public Data
 
-Very commonly, LEAP members will want to work some publicly accessible data that might live in a data store like Zenodo, NASA, or NOAA. This is the classic ingestion use case for which much of our tooling is designed. If the data is available via HTTP, one powerful method to avoid duplication is to create a *Virtual Zarr Store* (see [file formats](../technical-reference/file_formats.md)).
+Very commonly, LEAP members will want to work some publicly accessible data that might live in a data store like Zenodo, NASA, or NOAA. This is the classic ingestion use case for which much of our tooling is designed. If the data is available via HTTP, one powerful method to avoid duplication is to create a *Virtual Zarr Store* (see [file formats](../reference/file_formats.md)).
 
 Sometimes, climate data is published online but not publically accessible, i.e. it requires some sort of credentials / authorization to access. Even if this is the case, programmatic access is often supported by tooling from the data providers. For example, the Copernicus Data ecosystem has their own API and dataset licenses. Any user-specific access credentials or tokens stored on User Directories are not accessible to other members of the hub; they remain private. However, they can be viewed by LEAP Data and Compute admins; if this is an issue, please consult us for alternative ingestion options.
 
@@ -24,13 +24,13 @@ Sometimes, climate data is published online but not publically accessible, i.e. 
 Many LEAP Scientists also have access to an HPC or external filesystem on which their data is being generated. The biggest reason to ingest such data is for collaboration.
 If the data is located behind a firewall on an HPC center, the normal 'pull' based paradigm of our feedstocks will not work. In this case we have an option to 'push' the data to a special "inbox" bucket (`'leap-pangeo-inbox'`) on the OSN Pod. Once the data is in this accessible intermediate staging area, the process and tools documented on the [feedstock template](https://github.com/leap-stc/LEAP_template_feedstock) ought to work.
 
-The biggest barrier here is external authentication; see the [Authentication section](../technical-reference/authentication.md) for how to do this. Once authenticated, users can initiate a data transfer from their 'local' machine (laptop, server, or HPC Cluster) with the tools documented below.
+The biggest barrier here is external authentication; see the [Authentication section](../reference/authentication.md) for how to do this. Once authenticated, users can initiate a data transfer from their 'local' machine (laptop, server, or HPC Cluster) with the tools documented below.
 
 ## Data Tooling
 
 There are many tools available to interact with cloud object storage. We currently have basic operations documented for three tools:
 
-- [rclone](https://rclone.org/) which provides a Command Line Interface to many different storage backends, see [here](../technical-reference/rclone.md) for more details. Rclone is highly versatile and suits almost all use cases.
+- [rclone](https://rclone.org/) which provides a Command Line Interface to many different storage backends, see [here](../reference/rclone.md) for more details. Rclone is highly versatile and suits almost all use cases.
 
 - GCloud SDK. One can interact with Google Cloud storage directly using the Google Cloud SDK and Command Line Interface. Please consult the [Install Instructions](https://cloud.google.com/sdk/docs/install) for more guidance.
 
