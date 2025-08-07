@@ -19,7 +19,7 @@ theme:
 
 nav:
   - "index.md"
-  - Introuction:
+  - Introduction:
       - introduction/what_is_the_hub.md
       - introduction/getting_started.md
   - Data:
@@ -34,15 +34,16 @@ nav:
   - Education / Outreach:
       - edu/classes.md
       - edu/bootcamps.md
-
-  - FAQ / Reference:
+  - Technical Reference:
       - technical-reference/file_formats.md
       - technical-reference/rclone.md
       - technical-reference/authentication.md
-      - technical-reference/faqs.md
-
   - Support:
       - support/contact.md
+      - support/signup_troubleshooting.md
+      - support/hub_access_error.md
+      - support/dask_killed_workers.md
+      - support/hub_usage_alert.md
 
 theme:
   language: en

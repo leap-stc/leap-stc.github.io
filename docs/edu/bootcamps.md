@@ -51,7 +51,7 @@ If you are anticipating many attendees to access the hub at the same time to fol
 
 ### Troubleshooting during the event
 
-If students have trouble signing in to the hub, please refer to the [FAQ](../../technical-reference/faqs) for troubleshooting steps.
+If students have trouble signing in to the hub, please refer to [FAQs](../../support/faqs) for troubleshooting steps.
 
 ## After the event
 
