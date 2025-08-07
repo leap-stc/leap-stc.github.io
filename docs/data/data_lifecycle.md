@@ -36,8 +36,8 @@ There are many tools available to interact with cloud object storage. We current
 
 - [fsspec](https://filesystem-spec.readthedocs.io/en/latest/) (and its submodules [gcsfs](https://gcsfs.readthedocs.io/en/latest/) and [s3fs](https://s3fs.readthedocs.io/en/latest/)) provide filesystem-like access to local, remote, and embedded file systems from within a python session. Fsspec is also used by xarray under the hood and so integrates easily with normal coding workflows (and tools like Dask).
 
-  - `fsspec` can be used to transfer small amounts of data to google cloud storage or OSN. If you have more than a few hundred MB's, it is worth using Rclone
-  - `fsspec` should be installed by default on the **Base Pangeo Notebook** environment on the Jupyter-Hub. If you are working locally, you can install it with `pip or conda/mamba`. ex: `pip install fsspec`.
+    - `fsspec` can be used to transfer small amounts of data to google cloud storage or OSN. If you have more than a few hundred MB's, it is worth using Rclone
+    - `fsspec` should be installed by default on the **Base Pangeo Notebook** environment on the Jupyter-Hub. If you are working locally, you can install it with `pip or conda/mamba`. ex: `pip install fsspec`.
 
 ### Tool Selection
 
@@ -48,18 +48,18 @@ large: >100GB
 #### Move data from User Directory to GCS
 
 - Data volume:
-  - small: `fsspec/gcsfs`
-  - medium: `rclone`
+    - small: `fsspec/gcsfs`
+    - medium: `rclone`
 
 #### Move data from Jupyter-Hub to OSN
 
 - If the data volume is:
-  - small: `rclone`
-  - medium: `rclone`
+    - small: `rclone`
+    - medium: `rclone`
 
 #### Move data from Laptop/HPC to OSN
 
 - If the data volume is:
-  - small: `rclone`
-  - medium: `rclone`
-  - large: `rclone`
+    - small: `rclone`
+    - medium: `rclone`
+    - large: `rclone`
