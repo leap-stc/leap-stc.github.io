@@ -20,33 +20,33 @@ You can follow that and accept the invitation there aswell.
 
 If you are unable to log into the hub, please check the following steps:
 
-- [ ] Check if you are member of the [appropriate github teams](reference.membership.tiers).
+- [ ] Check if you are member of the [appropriate github teams]\<MISSING SECTION?>.
 
 If you **are not** follow these steps:
 
-- [ ] Did you [sign up for LEAP membership](users.membership.apply)? This will be done for you if you sign up for an event like the Momentum bootcamp!
+- [ ] Did you [sign up for LEAP membership]\<MISSING SECTION?> This will be done for you if you sign up for an event like the Momentum bootcamp!
 - [ ] Did you receive a github invite? See above for how to check for that.
 - [ ] Check again if they are part of the appropriate github teams.
-- If these steps do not work, please reach out to the [Data and Compute Team](../support/contact.md).
+- If these steps do not work, please reach out to the [Data and Compute Team][contact].
 
 If you **are** member of one of the github teams, ask them to try the following steps:
 
 - [ ] Refresh the browser cache
 - [ ] Try a different browser
 - [ ] Restart the computer
-- If these steps do not work, please reach out to the [Data and Compute Team](../support/contact.md).
+- If these steps do not work, please reach out to the [Data and Compute Team][contact].
 
 ## I received a warning about space on my User Directory
 
-If you get a Hub Usage Alert email, this means you are violating the User Directory storage limit (to learn why this limit exists, see read about [User Directories](reference.infrastructure.hub.user_dir)). Remember that user directories are for scripts and notebooks not datasets! Users who persistently violate hub usage policies may temporarily get reduced cloud access.
+If you get a Hub Usage Alert email, this means you are violating the User Directory storage limit (to learn why this limit exists, see read about [User Directories][user-directory]). Remember that user directories are for scripts and notebooks not datasets! Users who persistently violate hub usage policies may temporarily get reduced cloud access.
 
 **Troubleshooting**
 
 - To see which files and directories are taking up the bulk of your storage, run `du -h --max-depth=1 ~/ | sort -h` in Terminal. It will likely reveal cached files and small/medium size data files that can be removed without disrupting typical usage.
 - Delete cached files, ipython checkpoints, and any other unwanted files.
-- If you still require more storage, it is likely that you are storing downloaded data in your user directory. We recommend storing data in a LEAP cloud bucket or data catalog. For more information, please consult our [data locations](../data/data_locations.md).
+- If you still require more storage, it is likely that you are storing downloaded data in your user directory. We recommend storing data in a LEAP cloud bucket or data catalog. For more information, please consult our [data locations][where-data-lives].
 
-Our goal is to accomodate all community members and thus we are happy to assist users in relocating data. If you have any concerns, please reach out to the [Data and Compute Team](../support/contact.md).
+Our goal is to accomodate all community members and thus we are happy to assist users in relocating data. If you have any concerns, please reach out to the [Data and Compute Team][contact].
 
 ## Dask "Killed Workers"
 

@@ -6,7 +6,7 @@ Authenticating to LEAP Resources is a frequent pain point reported by our users.
 
 **Step by Step instructions**
 
-1. Reach out to the [](support.data_compute_team). They will contact the OSN pod admin and share bucket credentials for the `'leap-pangeo-inbox'` bucket.
+1. Reach out to the [the data-and-compute team][contact]. They can share bucket credentials for the `'leap-pangeo-inbox'` bucket.
 1. How you exactly achieve the upload will depend on your preference. Some common options include:
    - Load / Aggregate your NetCDF files using xarray and save the output to Zarr using `.to_zarr(...)`
    - Use fsspec or rclone to move an existing zarr store to the target bucket

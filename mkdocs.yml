@@ -24,7 +24,6 @@ nav:
       - introduction/getting_started.md
   - Data:
       - data/data_catalog.md
-      - data/data_policy.md
       - data/data_locations.md
       - data/data_lifecycle.md
   - Compute:
