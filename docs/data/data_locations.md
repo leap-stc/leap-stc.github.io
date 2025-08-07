@@ -35,7 +35,7 @@ Your User Directory behaves like a typical UNIX filesystem. If you save a file f
 
 To check how much space you are using in your home directory open a terminal window on the hub and run `du -h --max-depth=1 ~/ | sort -h`.
 
-If you want to save larger files for your work, we recommend using cloud storage. See the [Hub Usage Alert](../support/hub_usage_alert) for guidance on reducing storage.
+If you want to save larger files for your work, we recommend using cloud storage. See the [Hub Usage Alert][hub-usage-alert] for guidance on reducing storage.
 
 # Cloud Storage
 
@@ -55,7 +55,7 @@ Google cloud is structured such that it is very easy and cheap to move data *int
 
 !!! tip
 
-    TLDR: Use the LEAP GCS buckets when you are actively doing science using the JupyterHub. If you wish to share some kind of finished product with the world, it is best to "publish" the data by moving outside GCS into OSN.
+    Use the LEAP GCS buckets when you are actively doing science using the JupyterHub. If you wish to share some kind of finished product with the world, it is best to "publish" the data by moving outside GCS into OSN.
 
 - `gs://leap-scratch/` - Temporary Storage deleted after 7 days. Use this bucket for testing and storing large intermediate results. leap-scratch is also a great staging area to use while ingesting data to some other permanent location.
 - `gs://leap-persistent/` - Persistent Storage. Use this bucket for storing results you want to share with other members or access consistently from the Hub.

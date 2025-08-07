@@ -18,9 +18,9 @@ To develop, edit, and test class material, we suggest that instructors themselve
 
 All students should apply for [membership](https://forms.gle/RpeaMZh5btTdZtzu8) under the **education** category at least two weeks before the starting date of the class.
 
-!!! important
+!!! note
 
-In order to gain access to LEAP-Pangeo, a Github account is required. It is free to create one. Please instruct your students to create one before requesting access.
+    In order to gain access to LEAP-Pangeo, a Github account is required. It is free to create one. Please instruct your students to create one before requesting access.
 
 Instructors can verify that students have access by checking that their github usernames as listed as members of [leap-pangeo-base-access](https://github.com/orgs/leap-stc/teams/leap-pangeo-base-access) on Github. We suggest that instructors direct students to the [Getting Started][getting-started] page and ask them to test their [access to the Hub][accessing-the-hub] before the class starts to avoid any technical interruptions.
 

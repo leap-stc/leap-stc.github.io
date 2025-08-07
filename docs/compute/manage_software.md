@@ -18,7 +18,7 @@ Run the following code: `conda install <package>`
 
 !!! tip
 
-`mamba` is available in the base image and is a faster alternative to `conda`. Use the command: `mamba install <package-name>`
+    `mamba` is available in the base image and is a faster alternative to `conda`. Use the command: `mamba install <package-name>`
 
 **2. Pip**
 
@@ -27,7 +27,7 @@ Run the following code: `pip install <package-name>`
 
 !!! tip
 
-Do all Conda/Mamba installs first, then run any pip install commands. This keeps your environment consistent.
+    Do all Conda/Mamba installs first, then run any pip install commands. This keeps your environment consistent.
 
 **3. Script**
 
