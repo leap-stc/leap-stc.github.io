@@ -12,7 +12,7 @@ If you are an instructor of a LEAP-Affiliated Course and want your students to a
 
 We suggest that instructors and teaching assistants preprare class material directly on the hub as much as possible to ensure an identical experience for the students during the class.
 
-To develop, edit, and test class material, we suggest that instructors themselves apply for [membership](https://forms.gle/RpeaMZh5btTdZtzu8) under the **education** category and check out our [Getting Started](../../introduction/getting_started) guide. 
+To develop, edit, and test class material, we suggest that instructors themselves apply for [membership](https://forms.gle/RpeaMZh5btTdZtzu8) under the **education** category and check out our [Getting Started](../../introduction/getting_started) guide.
 
 ### Sign up students
 
@@ -29,4 +29,4 @@ We recommend familiarizing yourself with the troubleshooting steps below before 
 
 ### Students cannot access JupyterHub
 
-Refer students to **SIGNUP TROUBLESHOOTING** if problems persist. If this does not resolve the issue, please contact the [Data & Compute Team](../../support/contact).
+Refer students to [sign-up troubleshooting](../../technical-reference/faqs) if problems persist. If this does not resolve the issue, please contact the [Data & Compute Team](../../support/contact).
