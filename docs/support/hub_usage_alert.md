@@ -11,5 +11,3 @@ If you get a Hub Usage Alert email, this means you are violating the User Direct
 - If you still require more storage, it is likely that you are storing downloaded data in your user directory. We recommend storing data in a LEAP cloud bucket or data catalog. For more information, please consult our [data locations](../data/data_locations.md).
 
 Our goal is to accomodate all community members, so we are happy to assist users in relocating data. If you have any concerns, please reach out to the [Data and Compute Team](../support/contact.md).
-
-
