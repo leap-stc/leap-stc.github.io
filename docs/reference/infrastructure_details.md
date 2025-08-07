@@ -3,7 +3,7 @@
 ## LEAP-Pangeo JupyterHub
 
 Our team has a cloud-based [JupyterHub](https://jupyter.org/hub).
-For information who can access the hub with which privileges, please refer to [](reference.membership.tiers).
+For information who can access the hub with which privileges, please refer to [NEEDS LINK - FIXME].
 
 |                       |                                                                                   |
 | --------------------- | --------------------------------------------------------------------------------- |
@@ -20,4 +20,4 @@ For information who can access the hub with which privileges, please refer to []
 | **Management Repo**                  | <https://github.com/leap-stc/data-management> |
 | **Maintained in collaboration with** | [Carbonplan](https://carbonplan.org)          |
 
-For more explanation about ingesting data and linking it into the catalog, see [Data Lifecycles](../../data/data_lifecycle).
+For more explanation about ingesting data and linking it into the catalog, see [Data Lifecycles][data-lifecycle].

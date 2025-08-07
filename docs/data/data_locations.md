@@ -53,7 +53,7 @@ A common workflow is for data to be private --> get ingested to LEAP GCS --> OSN
 
 ## LEAP-Pangeo Cloud Buckets
 
-LEAP-Pangeo provides users two cloud buckets to store data. The JupyterHub is automatically authenticated to read from any of these buckets but write access might differ (see below). See [Authentication](../reference/authentication.md) for details on how to access buckets from 'outside' the JupyterHub.
+LEAP-Pangeo provides users two cloud buckets to store data. The JupyterHub is automatically authenticated to read from any of these buckets but write access might differ (see below). See [Authentication][authentication] for details on how to access buckets from 'outside' the JupyterHub.
 Google cloud is structured such that it is very easy and cheap to move data *into* the buckets, but there are high egress fees for taking data out of GCP Infrastructure. Taking data out means both writing from GCP to outside and reading from an external source like an HPC.
 !!! tip
 TLDR: Use the LEAP GCS buckets when you are actively doing science using the JupyterHub. If you wish to share some kind of finished product with the world, it is best to "publish" the data by moving outside GCS into OSN.
@@ -95,7 +95,7 @@ OSN is great if:
 \- You need to move data from your Jupyter-Hub home directory to more persistent storage.
 \- You data does not fit into the Zarr model.
 
-To migrate data to OSN, please contact the data-and-compute team on slack. They will contact the OSN pod admin and share bucket credentials for the `'leap-pangeo-inbox'` bucket. More details are provided under [authentication](../reference/authentication.md).
+To migrate data to OSN, please contact the data-and-compute team on slack. They will contact the OSN pod admin and share bucket credentials for the `'leap-pangeo-inbox'` bucket. More details are provided under [authentication][authentication].
 
 # Private Storage - HPC or External Filesystems
 

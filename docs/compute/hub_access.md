@@ -29,7 +29,7 @@ Another option for accessing *The hub* is connecting with the IDE VSCode.
 
 ![VSCode Jupyter Extension](https://github.com/user-attachments/assets/67f748fc-7ae0-4cc0-a1b5-a6a4ce8b67e1){ align=left }
 
-### Authentication
+### Authentication Options
 
 !!! note
 

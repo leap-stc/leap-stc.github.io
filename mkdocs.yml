@@ -38,6 +38,9 @@ nav:
       - reference/rclone.md
       - reference/authentication.md
       - reference/infrastructure_details.md
+      - reference/faqs.md
+      
+
   - Support:
       - support/contact.md
       - support/signup_troubleshooting.md

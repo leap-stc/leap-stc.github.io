@@ -24,4 +24,4 @@ You can follow that and accept the invitation there aswell.
 
 ## Filled out the form, but I did not get an invite?
 
-In this case, it is most likely that you made a typo when filling out the membership form. Please fill it out again [here](https://forms.gle/RpeaMZh5btTdZtzu8), and wait a day before checking your inbox for an invite. If you need access ASAP, please alert your instructor or contact the [Data & Compute Team](../support/contact.md) to get access.
+In this case, it is most likely that you made a typo when filling out the membership form. Please fill it out again [here](https://forms.gle/RpeaMZh5btTdZtzu8), and wait a day before checking your inbox for an invite. If you need access ASAP, please alert your instructor or contact the [Data & Compute Team][contact] to get access.
