@@ -43,7 +43,7 @@ Before the event, we recommend that instructors follow these steps ahead of time
 - Before the bootcamp begins, double check that all participants github names are present in the [leap-pangeo-base-access](https://github.com/orgs/leap-stc/teams/leap-pangeo-base-access) team! If folks are in this team they will have access to the hub. If they are not present here, then we need to troubleshoot Hub access.
 - The first thing to try is manually triggering the ["Parse Member Sheet and Add New Members" action](https://github.com/leap-stc/member_management/actions/workflows/read_sheet.yaml) by clicking on `Run Workflow > Run Workflow` in the top right menu. If a student has filled out the hub access sign-up form with the correct information, this action will invite them to the team and once they accept the invite, they will receive access to the Hub.
 - If this does not work, it is likely that the student either (1 - Pending Invite) have not accepted the invite to the team yet or (2 - Wrong Username) made a mistake while inputting their Github username on the Hub access request form.
-  - For (1 - Pending Invite), ask the student to accept the [leap-pangeo-base-access](https://github.com/orgs/leap-stc/teams/leap-pangeo-base-access) team invite on Github.
+  - For (1 - Pending Invite), ask the student to accept the [leap-pangeo-base-access](https://github.com/orgs/leap-stc/teams/leap-pangeo-base-access) team invite on Github. More details on troubleshooting can be found [here](../../support/signup_troubleshooting).
   - For (2 - Wrong Username), check their github handles in the Member Data Google Sheet for typos.
 - In either case, it is useful to have view/edit access to the Member Data Google Sheet. LEAPs Managing Director has the ability to add data or give others edit access – request access via [Slack](https://leap-nsf-stc.slack.com/ssb/redirect) if you need it.
 
@@ -51,7 +51,7 @@ If you are anticipating many attendees to access the hub at the same time to fol
 
 ### Troubleshooting during the event
 
-If students have trouble signing in to the hub, please refer to [FAQs](../../support/faqs) for troubleshooting steps.
+If students have trouble signing in to the hub, please refer to [Sign-up Troubleshooting](../../support/signup_troubleshooting) for troubleshooting steps.
 
 ## After the event
 

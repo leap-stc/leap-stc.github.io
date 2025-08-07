@@ -36,7 +36,7 @@ Individual user directories `/home/jovyan` have a storage quota. Your home direc
 ```
 To check how much space you are using in your home directory open a terminal window on the hub and run `du -h --max-depth=1 ~/ | sort -h`.
 
-If you want to save larger files for your work, we recommend using cloud storage. See the [FAQs](../technical-reference/faqs.md) for guidance on reducing storage.
+If you want to save larger files for your work, we recommend using cloud storage. See the [Hub Usage Alert](../support/hub_usage_alert) for guidance on reducing storage.
 ```
 ````
 `````

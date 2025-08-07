@@ -29,4 +29,4 @@ We recommend familiarizing yourself with the troubleshooting steps below before 
 
 ### Students cannot access JupyterHub
 
-Refer students to [sign-up troubleshooting](../../support/faqs) if problems persist. If this does not resolve the issue, please contact the [Data & Compute Team](../../support/contact).
+Refer students to [sign-up troubleshooting](../../support/signup_troubleshooting) if problems persist. If this does not resolve the issue, please contact the [Data & Compute Team](../../support/contact).
