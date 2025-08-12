@@ -16,7 +16,10 @@ nav:
       - data/data_locations.md
       - data/data_lifecycle.md
   - Compute:
-      - compute/hub_access.md
+      - Compute:
+	- Hub Access:
+		- Overview: compute/hub_access.md
+		- Access through VSCode: compute/vs_code_to_hub.md
       - compute/compute_scaling.md
       - compute/manage_software.md
   - Education / Outreach:
