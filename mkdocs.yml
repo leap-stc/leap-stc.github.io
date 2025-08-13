@@ -1,7 +1,7 @@
 site_name: LEAP Technical Documentation
 repo_name: leap-stc.github.io
 repo_url: https://github.com/leap-stc/leap-stc.github.io
-site_description: LEAP Technical Operations Manual Website
+site_description: LEAP Technical Documentation
 site_author: LEAP DCT
 docs_dir: docs
 
@@ -22,14 +22,14 @@ nav:
   - Introduction:
       - introduction/what_is_the_hub.md
       - introduction/getting_started.md
+  - Computing:
+      - compute/hub_access.md
+      - compute/compute_scaling.md
+      - compute/manage_software.md
   - Data:
       - data/data_catalog.md
       - data/data_locations.md
       - data/data_lifecycle.md
-  - Compute:
-      - compute/hub_access.md
-      - compute/compute_scaling.md
-      - compute/manage_software.md
   - Education / Outreach:
       - edu/classes.md
       - edu/bootcamps.md
