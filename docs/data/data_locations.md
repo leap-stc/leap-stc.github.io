@@ -2,13 +2,13 @@
 
 Data can live in one of three main places:
 
-- [LEAP's Jupyter hub][leap-jupyter-hub]. This includes a) shared "cloud buckets", one for data being actively processed and another for data with longer lifetimes, and b) user directories for very small amount of data and code used privately. 
+- [LEAP's Jupyter hub][leap-jupyter-hub]. This includes a) shared "cloud buckets", one for data being actively processed and another for data with longer lifetimes, and b) user directories for very small amount of data and code used privately.
 
-- LEAP-owned cloud storage (our OSN pod, co-owned with the M2LINES project) 
+- LEAP-owned cloud storage (our OSN pod, co-owned with the M2LINES project)
 
 - External or HPC Filesystem (private, local)
 
-As a very general guideline: 
+As a very general guideline:
 
 - Data being *imported* might arrive from external sources (e.g. a large numerical simulation on an HPC system)
 
@@ -16,15 +16,15 @@ As a very general guideline:
 
 - Data being *shared* with third parties normally lives in the OSN Pod, linked to the data catalog.
 
-# LEAP Jupyter hub 
+# LEAP Jupyter hub
 
 ## LEAP's Cloud Buckets
 
-!!! tip 
+!!! tip
 
     Google Cloud's costs are structured to make it free and easy to move data *into* the buckets, but there are high egress fees for taking data out of GCP Infrastructure. Taking data out means both writing from GCP to outside and reading from an external source like an HPC.
 
-LEAP's Jupyter hub provides users two cloud buckets in which to store data. 
+LEAP's Jupyter hub provides users two cloud buckets in which to store data.
 
 - `gs://leap-scratch/` - Temporary Storage deleted after 7 days. Use this bucket for testing and storing large intermediate results. leap-scratch is also a great staging area to use while ingesting data to some other permanent location.
 - `gs://leap-persistent/` - Persistent Storage. Use this bucket for storing results you want to share with other members or access consistently from the Hub.
@@ -35,7 +35,6 @@ Files stored on each of those buckets can be accessed by all LEAP members, so be
 - **When writing to buckets only ever write to your personal folder!** Your personal folder is a combination of the bucketname and your github username (e.g. \`gs://leap-persistent/funky-user/').
 
 The JupyterHub is automatically authenticated to read from any of these buckets but write access might differ (see below). See [Authentication][authentication] for details on how to access buckets from 'outside' the JupyterHub.
-
 
 GCS is where to put data if:
 
@@ -61,12 +60,12 @@ Your User Directory behaves like a typical UNIX filesystem. If you save a file f
 
     Unlike most systems, on a Jupyter hub every user sees `'/home/jovyan'` as their root directory, but the functionality is similar. These are *your own files* and they cannot be seen/modified by other users (except admins).
 
-Your home directory is intended only for notebooks, analysis scripts, and small datasets (< 1 GB). Large datasets should stored in cloud buckets.  Please try to keep your home directory size to 25GB. To check how much space you are using in your home directory open a terminal window on the hub and run `du -h --max-depth=1 ~/ | sort -h`.
+Your home directory is intended only for notebooks, analysis scripts, and small datasets (< 1 GB). Large datasets should stored in cloud buckets. Please try to keep your home directory size to 25GB. To check how much space you are using in your home directory open a terminal window on the hub and run `du -h --max-depth=1 ~/ | sort -h`.
 See the [Hub Usage Alert][hub-usage-alert] for guidance on reducing storage.
 
 !!! warning
 
-    Home directories have a hard limit of 100GB, which may decrease without warning. 
+    Home directories have a hard limit of 100GB, which may decrease without warning.
 
 ## Jupyter Hub Cloud Buckets
 
@@ -81,7 +80,7 @@ LEAP uses two Google Cloud buckets (leap-persistent and leap-scratch) and also h
 
 # Cloud storage on the Open Storage Network
 
-The [Open Storage Network](https://www.openstoragenetwork.org/) is distributed cloud storage for the research community. LEAP helped the M2LINES project buy  a ~1 petabyte OSN pod. OSN allows s3-like cloud storage that has no egress fees, which means that you can share data with the public or outside colaborators without any cost per request! The downsides are that storage is large but finite, and that authentication is not as seamless as the GCS buckets.
+The [Open Storage Network](https://www.openstoragenetwork.org/) is distributed cloud storage for the research community. LEAP helped the M2LINES project buy a ~1 petabyte OSN pod. OSN allows s3-like cloud storage that has no egress fees, which means that you can share data with the public or outside colaborators without any cost per request! The downsides are that storage is large but finite, and that authentication is not as seamless as the GCS buckets.
 
 The pod is divided into projects and buckets. A project can have multiple buckets. There are currently 2 principal Projects on the Pod (as well as a shared bucket with the m2lines project):
 
@@ -94,7 +93,6 @@ The pod is divided into projects and buckets. A project can have multiple bucket
     - Buckets:
         - `'leap-pubs'`: **No write access for users**
         - ... various project buckets
-            
 
 Data can be transferred from `leap-pangeo-inbox` to `leap-pangeo-manual` with [this rclone github action](https://github.com/leap-stc/data-management/actions/runs/11167922927/workflow).
 
