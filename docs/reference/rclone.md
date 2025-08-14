@@ -13,9 +13,7 @@ mamba install rclone -y
 ```
 
 Once installed, you can setup "remotes", which are storage locations that have credentials.
-You can view and modify the rclone config file to add remotes. Rclone will show you where this is located by running: `rclone config file`.
-
-An example file might look something like this:
+You can view and modify the rclone config file to add remotes. Rclone will show you where this is located by running: `rclone config file`. Please consult our [Authentication guide](./authentication.md) for instructions on how to setup various remotes on rclone.
 
 ```
 [leap-pubs]
@@ -33,7 +31,15 @@ access_key_id = <CONTACT DATA AND COMPUTE TEAM>
 secret_access_key = <CONTACT DATA AND COMPUTE TEAM>
 endpoint = https://nyu1.osn.mghpcc.org
 no_check_bucket = true
+
+[leap-gcs]
+type = google cloud storage
+object_acl = bucketOwnerFullControl
+location = us
+env_auth = true
 ```
+
+For guidance on how to setup a configut
 
 Details for the LEAP OSN pods are [here][open-storage-network].
 
