@@ -1,30 +1,33 @@
 # Data Lifecycle
 
-If unfamiliar, you should first check out the overview of our primary [storage locations][where-data-lives] and their use cases. This page is meant to serve as a high level reference. Troubleshooting will inevitably involve the specifics of your data. If anything feels confusing or daunting your first instinct should always be reaching out to the [Data and Compute Team][contact]
+This page is meant to serve as a high level reference to the data lifecycle. Please see also the overview of our primary [storage locations][where-data-lives] and their use cases. Troubleshooting of any issues will inevitably involve the specifics of your data. Questions can be addressed to the [Data and Compute Team][contact]
 
-## Getting data into the Cloud
+## Data ingestion
 
-Working on the JupyterHub generally requires transferring whatever data you want to work with into the cloud. The term "data ingestion" refers to a programmatic way to download and transform data into Analysis-Ready Cloud-Optimized (ARCO) formats. One major benefit of doing so is that the data immediately becomes available for the entire LEAP community (it is extremely easy to link ARCO data to the [LEAP Data Catalog][leap-data-catalog])
-The data ingestion process is organized around Github repositories called "feedstocks" that centralize communication with the DCT team for each request.
+Working on the JupyterHub often requires transferring whatever data you want to work with into the cloud. The term "data ingestion" refers to a reproducible way to download and transform data into appropriate formats. Data in LEAP's cloud storage is available for the entire LEAP community and can be added to the [LEAP Data Catalog][leap-data-catalog]).
 
-1. Check if the data has already been made accessible via the catalog. If not, let the LEAP community and the Data and Computation Team know about this new dataset. We gather all ingestion requests in our ['leap-stc/data_management' issue tracker](https://github.com/leap-stc/data-management/issues). You should check existing issues with the tag ['dataset'](https://github.com/leap-stc/data-management/issues?q=is%3Aissue+is%3Aopen+label%3Adataset) to see if somebody else might have already requested this particular dataset. If that is not the case you can add a new [dataset_request](https://github.com/leap-stc/data-management/issues/new?assignees=&labels=dataset&projects=&template=new_dataset.yaml&title=New+Dataset+%5BDataset+Name%5D). Making these requests in a central location enables others to see which datasets are currently being ingested and what the status is.
-1. Use our [feedstock template](https://github.com/leap-stc/LEAP_template_feedstock) to create a feedstock repository by following instructions in the README to get you started with either one of the above.
-1. If issues arise please reach out to the [Data and Compute Team][contact].
+The Data and Compute team can help with large or complicated data ingestion efforts. We organize such efforts in Github repositories called "feedstocks" that centralize the knowledge each request. Once you've verified that that the data you need isn't available through the catalog:
 
-Below we list the most common transfer scenarios and recommend migration workflows for each. Thinking about some of these design choices ahead of time greatly simplifies the back and forth needed by the DCT team when the request eventually comes in. But of course, we can collaborate on the best path forward given the nuances of any particular ingestion request!
+1. Let the LEAP community and the Data and Computation Team know about the new dataset via the ['leap-stc/data_management' issue tracker](https://github.com/leap-stc/data-management/issues). You should check existing issues with the tag ['dataset'](https://github.com/leap-stc/data-management/issues?q=is%3Aissue+is%3Aopen+label%3Adataset) to see if somebody else might have already requested this particular dataset. If that is not the case you can add a new [dataset_request](https://github.com/leap-stc/data-management/issues/new?assignees=&labels=dataset&projects=&template=new_dataset.yaml&title=New+Dataset+%5BDataset+Name%5D).
+1. Use our [feedstock template](https://github.com/leap-stc/LEAP_template_feedstock) to create a feedstock repository, holding the code and other information needed for ingestions, by following instructions in the README to get you started with either one of the above.
+
+Most tasks fall into one of two categories
 
 ### Migrating Public Data
 
-Very commonly, LEAP members will want to work some publicly accessible data that might live in a data store like Zenodo, NASA, or NOAA. This is the classic ingestion use case for which much of our tooling is designed. If the data is available via HTTP, one powerful method to avoid duplication is to create a *Virtual Zarr Store* (see [file formats][file-formats]).
+LEAP scientsts frequently want to work with publicly accessible data available in a data store like Zenodo, NASA, or NOAA. This is the use case for which much of our tooling is designed.
 
-Sometimes, climate data is published online but not publicly accessible, i.e. it requires some sort of credentials / authorization to access. Even if this is the case, programmatic access is often supported by tooling from the data providers. For example, the Copernicus Data ecosystem has their own API and dataset licenses. Any user-specific access credentials or tokens stored on User Directories are not accessible to other members of the hub; they remain private. However, they can be viewed by LEAP Data and Compute admins; if this is an issue, please consult us for alternative ingestion options.
+If the data is available via HTTP, one powerful method to avoid duplication is to create a *Virtual Zarr Store* (see [file formats][file-formats]).
+
+Sometimes, climate data is published online but not publicly accessible, i.e. it requires some sort of credentials / authorization to access. Even if this is the case, programmatic access is often supported by tooling from the data providers. For example, the Copernicus Data ecosystem has their own API and dataset licenses. User-specific access credentials or tokens stored on User Directories are not accessible to other members of the hub; they remain private. However, they can be viewed by LEAP Data and Compute admins; if this is an issue, please consult us for alternative ingestion options.
 
 ### Migrating HPC Data
 
-Many LEAP Scientists also have access to an HPC or external filesystem on which their data is being generated. The biggest reason to ingest such data is for collaboration.
+LEAP scientists also have access to an HPC or external filesystem on which their data is being generated. Such data might be ingested to allow collaboration with others in LEAP and/or to apply LEAP computational resources to analysis.
+
 If the data is located behind a firewall on an HPC center, the normal 'pull' based paradigm of our feedstocks will not work. In this case we have an option to 'push' the data to a special "inbox" bucket (`'leap-pangeo-inbox'`) on the OSN Pod. Once the data is in this accessible intermediate staging area, the process and tools documented on the [feedstock template](https://github.com/leap-stc/LEAP_template_feedstock) ought to work.
 
-The biggest barrier here is external authentication; see the [Authentication section][authentication] for how to do this. Once authenticated, users can initiate a data transfer from their 'local' machine (laptop, server, or HPC Cluster) with the tools documented below.
+The biggest barrier here is external authentication; see the [Authentication section][authentication]. Once authenticated, users can initiate a data transfer from their 'local' machine (laptop, server, or HPC Cluster) with the tools documented below.
 
 ## Data Tooling
 
