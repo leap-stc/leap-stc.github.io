@@ -18,7 +18,9 @@ nav:
   - Compute:
       - Hub Access:
           - Overview: compute/hub_access.md
-          - Access through VSCode: compute/vs_code_to_hub.md
+          - Access via Browser: compute/hub_browser_access.md
+          - Access via VSCode: compute/vs_code_to_hub.md
+          - Access VSCode inside Hub: compute/vscpde_inside_hub.md
       - compute/compute_scaling.md
       - compute/manage_software.md
   - Education / Outreach:
