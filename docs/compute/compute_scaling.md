@@ -79,4 +79,4 @@ Here is a simplified guide on how to choose the appropriate image and compute co
 
 !!! tip
 
-    If you are not sure which one to pic, then start with the Base Pangeo Notebook + 8-16 GB CPU. You can always stop your server and restart with a different configuration
+    If you are not sure which one to pick, then start with the Base Pangeo Notebook + 8-16 GB CPU. You can always stop your server and restart with a different configuration
