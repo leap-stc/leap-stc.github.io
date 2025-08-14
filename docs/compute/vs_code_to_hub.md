@@ -1,6 +1,6 @@
-# Accessing the Hub via VS Code
+# Accessing the Hub via VSCode
 
-This page gives instructions on how to access the hub through the IDE VSCode
+Accessing the LEAP JupyterHub through VS Code in your browser offers a powerful, IDE-like experience with minimal setup — ideal for users working on code-heavy projects or managing full repositories in a unified remote environment.
 
 ## Pre-requisites
 
