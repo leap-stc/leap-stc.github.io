@@ -39,8 +39,6 @@ location = us
 env_auth = true
 ```
 
-For guidance on how to setup a configut
-
 Details for the LEAP OSN pods are [here][open-storage-network].
 
 You can find more great documentation, specifically on how to use OSN resources, in [this section](https://hytest-org.github.io/hytest/essential_reading/DataSources/Data_S3.html#credentialed-access) of the [HyTEST Docs](https://hytest-org.github.io/hytest/doc/About.html#)
