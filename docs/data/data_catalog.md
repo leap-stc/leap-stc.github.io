@@ -1,6 +1,6 @@
-# The LEAP data catalog
+# LEAP data catalog
 
-LEAP maintains a catalog of publically-available datasets available via streaming at
+LEAP maintains a catalog of publicly-available datasets available via streaming at
 [https://catalog.leap.columbia.edu](https://catalog.leap.columbia.edu).
 The catalog includes data that's been ingested (link) from public sources as well as pointers to
 data sets maintained by others. The catalog can be viewed by anyone inside or outside of LEAP.

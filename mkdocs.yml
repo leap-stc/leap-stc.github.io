@@ -24,7 +24,6 @@ nav:
       - introduction/getting_started.md
   - Data:
       - data/data_catalog.md
-      - data/data_policy.md
       - data/data_locations.md
       - data/data_lifecycle.md
   - Compute:
@@ -34,15 +33,20 @@ nav:
   - Education / Outreach:
       - edu/classes.md
       - edu/bootcamps.md
-
-  - FAQ / Reference:
-      - technical-reference/file_formats.md
-      - technical-reference/rclone.md
-      - technical-reference/authentication.md
-      - technical-reference/faqs.md
+  - Reference:
+      - reference/file_formats.md
+      - reference/rclone.md
+      - reference/authentication.md
+      - reference/infrastructure_details.md
+      - reference/faqs.md
+      
 
   - Support:
       - support/contact.md
+      - support/signup_troubleshooting.md
+      - support/hub_access_error.md
+      - support/dask_killed_workers.md
+      - support/hub_usage_alert.md
 
 theme:
   language: en
