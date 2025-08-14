@@ -5,8 +5,8 @@ Accessing the LEAP JupyterHub via your browser is the simplest and most reliable
 **How to Launch:**
 
 1. Go to the [LEAP JupyterHub](https://leap.2i2c.cloud/hub/) browser
-2. Login with your institutional credentials
-3. This should bring you to a main menu where you can choose your cloud-compute resources and environment
+1. Login with your institutional credentials
+1. This should bring you to a main menu where you can choose your cloud-compute resources and environment
 
 ![Image title](../assets/hub_menu.png){ align=left }
 

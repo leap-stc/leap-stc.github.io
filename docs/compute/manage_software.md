@@ -56,25 +56,26 @@ If you find yourself installing the same packages repeatedly, or if runtime inst
 
 For instructions on creating and managing a custom image, see the [2i2c hub-user-image guide](https://docs.2i2c.org/admin/howto/environment/)
 
-
 ### How to use a custom image in the LEAP Hub:
 
 1. Go to the **Start Server** page in JupyterHub.
    (include link to screenshot here)
 
-2. Select **Other...** from the **Image options** dropdown. Then enter the link to the custom image in the form of `<registry>/<username>/<repo_name>:<git-commit-hash>`
+1. Select **Other...** from the **Image options** dropdown. Then enter the link to the custom image in the form of `<registry>/<username>/<repo_name>:<git-commit-hash>`
    (include link to screenshot here)
 
-3. Launch the server - your packages will be pre-installed.
+1. Launch the server - your packages will be pre-installed.
 
-### Using Dask for Scalable Computation 
+### Using Dask for Scalable Computation
 
 Dask is a parallel computing library that extends familiar tools like `numpy`, `pandas`, and `xarray` to work on *large datasets* and *across many cores*.
 
 It enables you to:
+
 - Analyze datasets that don't fit in memory
 - Speed up workflows by leveraging multiple CPUs or clusters
 - Process large climate, model, and satellite data efficiently
 
 You should consider using Dask when:
+
 - You're working with *large datasets* (e.g.

@@ -7,13 +7,13 @@ Accessing the LEAP JupyterHub through VS Code in your browser offers a powerful,
 - Register for a LEAP account to use the *The hub*. Details can be found on the [Introduction / Getting Started](../introduction/getting_started.md#registration) page.
 
 - Install [websocat](https://github.com/vi/websocat) on your local machine.
-    `pip install websocat` works on Mac OS, and pre-built binaries [are available](https://github.com/vi/websocat/releases)
-    for all other operating systems.
+  `pip install websocat` works on Mac OS, and pre-built binaries [are available](https://github.com/vi/websocat/releases)
+  for all other operating systems.
 
 - Install [VSCode](https://code.visualstudio.com/download) on your local machine.
 
 - In VSCode, find and install the `Remote-SSH` and `Jupyter` extensions from the VSCode Extensions Marketplace.
-    Remote-SSH will be used to connect to your LEAP Pangeo server, while the Jupyter extension will be used to open .ipynb notebooks and manage the kernel that runs your code on the remote server.
+  Remote-SSH will be used to connect to your LEAP Pangeo server, while the Jupyter extension will be used to open .ipynb notebooks and manage the kernel that runs your code on the remote server.
 
 ![VSCode Remote-SSH Extension](https://github.com/user-attachments/assets/6dc5d51c-3389-4e2d-ab92-4ee75c981aa5){ align=middle }
 
@@ -22,7 +22,7 @@ Accessing the LEAP JupyterHub through VS Code in your browser offers a powerful,
 ## Authentication Options
 
 !!! note
-    There are two levels of authentication – your **JupyterHub token** and your **SSH key pair** (public/private). This guide will walk you through both so you can connect with JupyterHub from your VSCode without entering a password.
+There are two levels of authentication – your **JupyterHub token** and your **SSH key pair** (public/private). This guide will walk you through both so you can connect with JupyterHub from your VSCode without entering a password.
 
 ### JupyterHub token
 
@@ -45,17 +45,17 @@ Please keep in mind that even after setting up Remote-SSH on your VSCode, you wo
 
 ### 2 JupyterHub Token Setup
 
-#### 2.1 [Web Browser] Obtain a JupyterHub Token 
+#### 2.1 [Web Browser] Obtain a JupyterHub Token
 
 We will need to create a JupyterHub token for authentication.
 
 1. Go to the JupyterHub control panel. You can access it via `File -> Hub control panel` in
-    JupyterLab, or directly going to [https://leap.2i2c.cloud/hub/token](https://leap.2i2c.cloud/hub/token).
+   JupyterLab, or directly going to [https://leap.2i2c.cloud/hub/token](https://leap.2i2c.cloud/hub/token).
 
-2. In the top bar, select **Token**.
+1. In the top bar, select **Token**.
 
-3. Create a new Token, and keep it safe. **Treat this like you would treat a password to your
-    JupyterHub instance**! It is recommended you set an expiry date for this.
+1. Create a new Token, and keep it safe. **Treat this like you would treat a password to your
+   JupyterHub instance**! It is recommended you set an expiry date for this.
 
 ### 2.1 [Local Terminal] Configure local `~/.ssh/config` with the JupyterHub Token
 
@@ -79,46 +79,46 @@ replace:
 
 1. Generate the key pair on local terminal by executing the command:
 
-    `ssh-keygen -t ed25519 -C "your_email@example.com"`
-    Make sure to replace your_email@example.com with your actual email address.
+   `ssh-keygen -t ed25519 -C "your_email@example.com"`
+   Make sure to replace your_email@example.com with your actual email address.
 
-2. Add key to ssh-agent by executing:
-    `eval "$(ssh-agent -s)"` and
+1. Add key to ssh-agent by executing:
+   `eval "$(ssh-agent -s)"` and
 
-    `ssh-add  #~/.ssh/id_ed25519`
+   `ssh-add  #~/.ssh/id_ed25519`
 
-3. Copy the public key:
-    Use following command to show the public key on your local machine:
-    `cat ~/.ssh/id_ed25519.pub`
-    And copy the entire key, including the email address.
+1. Copy the public key:
+   Use following command to show the public key on your local machine:
+   `cat ~/.ssh/id_ed25519.pub`
+   And copy the entire key, including the email address.
 
-    Do not expose your private key `id_ed25519` - the private key should not be shared.
+   Do not expose your private key `id_ed25519` - the private key should not be shared.
 
 #### 3.2 [Web Browser] Save the public key on Github
 
 1. Go to [Github key settings](https://github.com/settings/keys), then click on "New SSH Key."
 
-2. Paste the copied public key (including email address) into the "Key" box, and save. In the next step, we will leverage Github to save your public key on JupyterHub.
+1. Paste the copied public key (including email address) into the "Key" box, and save. In the next step, we will leverage Github to save your public key on JupyterHub.
 
 #### 3.3 [Web Browser] Setup ssh keys on your JupyterHub server
 
 1. Make sure your JupyterHub server is still running. If not, start a new one.
 
-2. Open a terminal in JupyterLab on your web browser
+1. Open a terminal in JupyterLab on your web browser
 
-3. Run the following commands:
+1. Run the following commands:
 
-    ```bash
-    mkdir -p ~/.ssh
-    wget https://github.com/<YOUR-GITHUB-USERNAME>.keys -O ~/.ssh/authorized_keys
-    chmod 0600 ~/.ssh/authorized_keys
-    ```
+   ```bash
+   mkdir -p ~/.ssh
+   wget https://github.com/<YOUR-GITHUB-USERNAME>.keys -O ~/.ssh/authorized_keys
+   chmod 0600 ~/.ssh/authorized_keys
+   ```
 
-    replacing `<YOUR-GITHUB-USERNAME>` with your github username.
+   replacing `<YOUR-GITHUB-USERNAME>` with your github username.
 
-4. Verify that authorized_keys contains your key by running `cat ~/.ssh/authorized_keys` on the JupyterLab Terminal
+1. Verify that authorized_keys contains your key by running `cat ~/.ssh/authorized_keys` on the JupyterLab Terminal
 
-5. If it is empty or nonexistent, then create the file authorized_keys in the ~/.ssh/ directory and paste your ssh public key (`cat ~/.ssh/id_ed25519.pub`, from local terminal) and save file.
+1. If it is empty or nonexistent, then create the file authorized_keys in the ~/.ssh/ directory and paste your ssh public key (`cat ~/.ssh/id_ed25519.pub`, from local terminal) and save file.
 
 With that, we are ready to go!
 
@@ -133,7 +133,7 @@ ssh leap.2i2c.cloud
 and it should just work! If configured correctly, `leap.2i2c.cloud` should not ask you for a password.
 
 !!! warning Debugging Help:
-    If you get the error `ssh: connect to host leap.2i2c.cloud port 22: Operation timed out`, then check you have installed websocat by running `run pip install websocat` and confirm that ther config file in the correct directory, `~/.ssh/config`
+If you get the error `ssh: connect to host leap.2i2c.cloud port 22: Operation timed out`, then check you have installed websocat by running `run pip install websocat` and confirm that ther config file in the correct directory, `~/.ssh/config`
 
 If the CLI asks for a password, please verify that your access token and public keys are valid and consistent across platforms and try the previous steps again. Keep in mind this test has to only work once, and it is not necessary to ssh into JupyterHub via CLI once you confirm this works once.
 
@@ -192,6 +192,5 @@ You should now be good to execute code via remote kernel on the LEAP server from
 Contributors to this documentation:
 
 1. Yuvi [https://github.com/yuvipanda], [jupyter-sshd-proxy](https://github.com/yuvipanda/jupyter-sshd-proxy/blob/main/README.md):
-2. Joe Ko [jk4730@columbia.edu], clarifications on how to setup the local public key
-3. Sungjoon Park [sp4050@columbia.edu], whom you can contact for questions regarding this workflow
-
+1. Joe Ko [jk4730@columbia.edu], clarifications on how to setup the local public key
+1. Sungjoon Park [sp4050@columbia.edu], whom you can contact for questions regarding this workflow
