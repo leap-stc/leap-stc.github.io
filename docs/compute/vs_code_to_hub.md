@@ -15,9 +15,9 @@ Accessing the LEAP JupyterHub through VS Code in your browser offers a powerful,
 - In VSCode, find and install the `Remote-SSH` and `Jupyter` extensions from the VSCode Extensions Marketplace.
   Remote-SSH will be used to connect to your LEAP Pangeo server, while the Jupyter extension will be used to open .ipynb notebooks and manage the kernel that runs your code on the remote server.
 
-![VSCode Remote-SSH Extension](https://github.com/user-attachments/assets/6dc5d51c-3389-4e2d-ab92-4ee75c981aa5){ align=left }
+![VSCode Remote-SSH Extension](https://github.com/user-attachments/assets/6dc5d51c-3389-4e2d-ab92-4ee75c981aa5)
 
-![VSCode Jupyter Extension](https://github.com/user-attachments/assets/67f748fc-7ae0-4cc0-a1b5-a6a4ce8b67e1){ align=left }
+![VSCode Jupyter Extension](https://github.com/user-attachments/assets/67f748fc-7ae0-4cc0-a1b5-a6a4ce8b67e1)
 
 ## Authentication Options
 
