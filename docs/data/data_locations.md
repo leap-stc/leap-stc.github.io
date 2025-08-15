@@ -78,7 +78,7 @@ LEAP uses two Google Cloud buckets (leap-persistent and leap-scratch) and also h
 
     A common workflow is for data to be private --> get ingested to LEAP GCS --> OSN Pods for publication.\*\*
 
-# Cloud storage on the Open Storage Network
+# Open Storage Network
 
 The [Open Storage Network](https://www.openstoragenetwork.org/) is distributed cloud storage for the research community. LEAP helped the M2LINES project buy a ~1 petabyte OSN pod. OSN allows s3-like cloud storage that has no egress fees, which means that you can share data with the public or outside colaborators without any cost per request! The downsides are that storage is large but finite, and that authentication is not as seamless as the GCS buckets.
 
