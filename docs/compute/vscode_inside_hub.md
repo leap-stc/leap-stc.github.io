@@ -8,27 +8,27 @@ This version of VS Code runs on the same remote server as your Jupyter kernel an
 
 1. **Log into the LEAP Hub**
 
-   - Go to the [LEAP JupyterHub](https://hub.leap.columbia.edu) browser and sign in using your institutional credentials.
+    - Go to the [LEAP JupyterHub](https://hub.leap.columbia.edu) browser and sign in using your institutional credentials.
 
 1. **Start your server (if it's not already running)**
 
-   - Choose a server configuration and click **Start**.
+    - Choose a server configuration and click **Start**.
 
 1. **Click the VS Code Icon**
 
-   - Once your Jupyter environment launches, look in the **Launcher** tab or the **left sidebar**.
-   - Find and click the **VS Code** or **code-server** icon (it may look like the regular VS Code logo).
-   - This opens the in-browser VS Code interface in a new tab or within the same window.
+    - Once your Jupyter environment launches, look in the **Launcher** tab or the **left sidebar**.
+    - Find and click the **VS Code** or **code-server** icon (it may look like the regular VS Code logo).
+    - This opens the in-browser VS Code interface in a new tab or within the same window.
 
-   (Insert screenshot here)
+    (Insert screenshot here)
 
 1. **Using VS Code in the Browser**
 
-   - You can open folders, edit files, and run terminals just like in the desktop app.
-   - Use the **file explorer** on the left to navigate your directory.
-   - Open a terminal: `Terminal` > `New Terminal` (runs in the same environment as Jupyter).
-   - Start or open notebooks: click `.ipynb` files and they’ll open using the built-in Jupyter extension.
-   - Git features, syntax highlighting, search, multi-file editing, etc. are all supported.
+    - You can open folders, edit files, and run terminals just like in the desktop app.
+    - Use the **file explorer** on the left to navigate your directory.
+    - Open a terminal: `Terminal` > `New Terminal` (runs in the same environment as Jupyter).
+    - Start or open notebooks: click `.ipynb` files and they’ll open using the built-in Jupyter extension.
+    - Git features, syntax highlighting, search, multi-file editing, etc. are all supported.
 
 ## AmazonQ
 
