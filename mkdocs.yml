@@ -1,20 +1,36 @@
 site_name: LEAP Technical Documentation
 repo_name: leap-stc.github.io
 repo_url: https://github.com/leap-stc/leap-stc.github.io
-site_description: LEAP Technical Operations Manual Website
-site_author: LEAP DCT
+site_description: LEAP Technical Documentation
+site_author: LEAP's Data and Domputing team
 docs_dir: docs
+
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.indexes
+    - header.autohide 
+    - toc.integrate
 
 nav:
   - "index.md"
-  - Introuction:
+  - Introduction:
       - introduction/what_is_the_hub.md
       - introduction/getting_started.md
+  - Computing:
+      - compute/hub_access.md
+      - compute/compute_scaling.md
+      - compute/manage_software.md
   - Data:
       - data/data_catalog.md
-      - data/data_policy.md
       - data/data_locations.md
       - data/data_lifecycle.md
+
   - Compute:
       - Hub Access:
           - Overview: compute/hub_access.md
@@ -23,17 +39,24 @@ nav:
           - Access via VSCode: compute/vs_code_to_hub.md
       - compute/compute_scaling.md
       - compute/manage_software.md
+      
   - Education / Outreach:
       - edu/classes.md
       - edu/bootcamps.md
-
-  - FAQ / Reference:
-      - faq/file_formats.md
+  - Reference:
+      - reference/file_formats.md
+      - reference/rclone.md
+      - reference/authentication.md
+      - reference/infrastructure_details.md
+      - reference/faqs.md
+      
 
   - Support:
       - support/contact.md
-
-
+      - support/signup_troubleshooting.md
+      - support/hub_access_error.md
+      - support/dask_killed_workers.md
+      - support/hub_usage_alert.md
 
 theme:
   language: en
@@ -74,9 +97,15 @@ theme:
 plugins:
   - search
   - markdown-exec
-
+  - autorefs
 
 markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+  - pymdownx.blocks.caption
   - mkdocs-click
   - pymdownx.highlight:
       anchor_linenums: true

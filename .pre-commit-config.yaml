@@ -2,13 +2,14 @@ ci:
   autoupdate_schedule: monthly
 repos:
   - repo: https://github.com/executablebooks/mdformat
-    rev: 0.7.22  # Use the ref you want to point at
+    rev: 0.7.22  
     hooks:
     - id: mdformat
-      # Optionally add plugins
       additional_dependencies:
       - mdformat-myst
       - mdformat-black
       - mdformat-config
       - mdformat-tables
       - mdformat-web
+      - mdformat-mkdocs  
+      - mdformat-gfm
