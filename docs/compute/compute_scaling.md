@@ -43,7 +43,9 @@ While GPU can accelerate certain workloads, it's not always the best choice for 
 - **Shared, limited resources:** GPUs are a shared resource across LEAP. Using them when not needed can block others who rely on them for large-scale work.
 - **More costly:** GPUs cost significantly more than CPU resources.
 
-> Use GPU only if your workflow truly needs it.
+!!! note
+
+    Use GPU only if your workflow truly needs it.
 
 ### Devs Only
 
@@ -75,4 +77,6 @@ Here is a simplified guide on how to choose the appropriate image and compute co
 | Generating synthetic datasets or simulations        | Base Pangeo Notebook + 16–128 GB CPU                  |
 | Testing new images or infrastructure                | Devs Only + any image                                 |
 
-> *Tip:* If you are not sure which one to pic, then start with the Base Pangeo Notebook + 8-16 GB CPU. You can always stop your server and restart with a different configuration
+!!! tip
+
+    If you are not sure which one to pick, then start with the Base Pangeo Notebook + 8-16 GB CPU. You can always stop your server and restart with a different configuration

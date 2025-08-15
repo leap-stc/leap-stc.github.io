@@ -6,7 +6,9 @@ The LEAP JupyterHub environment provides multiple ways to install and manage sof
 
 When you just need software for your current notebook session, you can temporarily install packages using one of the following methods. The lifetime of the installation lasts until the kernel stops. After this, it has to be re-installed.
 
-> *Note:* Each shell command listed can also be run inside an active Jupyter Notebook by prefixing them with an exclamation mark (i.e. running `!pip install numpy` in a code cell).
+!!! note
+
+    Each shell command listed can also be run inside an active Jupyter Notebook by prefixing them with an exclamation mark (i.e. running `!pip install numpy` in a code cell).
 
 **1. Conda (or Mamba)**
 
@@ -14,14 +16,18 @@ Open the terminal inside your JupyterLab session.
 
 Run the following code: `conda install <package>`
 
-> *Tip:* `mamba` is available in the base image and is a faster alternative to `conda`. Use the command: `mamba install <package-name>`
+!!! tip
+
+    `mamba` is available in the base image and is a faster alternative to `conda`. Use the command: `mamba install <package-name>`
 
 **2. Pip**
 
 Use pip if the package isn't available or up to date on conda-forge, or if you are installing directly from Github or PyPI.
 Run the following code: `pip install <package-name>`
 
-> *Tip:* Do all Conda/Mamba installs first, then run any pip install commands. This keeps your environment consistent.
+!!! tip
+
+    Do all Conda/Mamba installs first, then run any pip install commands. This keeps your environment consistent.
 
 **3. Script**
 
@@ -56,25 +62,26 @@ If you find yourself installing the same packages repeatedly, or if runtime inst
 
 For instructions on creating and managing a custom image, see the [2i2c hub-user-image guide](https://docs.2i2c.org/admin/howto/environment/)
 
-
 ### How to use a custom image in the LEAP Hub:
 
 1. Go to the **Start Server** page in JupyterHub.
-   (include link to screenshot here)
+    (include link to screenshot here)
 
-2. Select **Other...** from the **Image options** dropdown. Then enter the link to the custom image in the form of `<registry>/<username>/<repo_name>:<git-commit-hash>`
-   (include link to screenshot here)
+1. Select **Other...** from the **Image options** dropdown. Then enter the link to the custom image in the form of `<registry>/<username>/<repo_name>:<git-commit-hash>`
+    (include link to screenshot here)
 
-3. Launch the server - your packages will be pre-installed.
+1. Launch the server - your packages will be pre-installed.
 
-### Using Dask for Scalable Computation 
+### Using Dask for Scalable Computation
 
 Dask is a parallel computing library that extends familiar tools like `numpy`, `pandas`, and `xarray` to work on *large datasets* and *across many cores*.
 
 It enables you to:
+
 - Analyze datasets that don't fit in memory
 - Speed up workflows by leveraging multiple CPUs or clusters
 - Process large climate, model, and satellite data efficiently
 
 You should consider using Dask when:
+
 - You're working with *large datasets* (e.g.
