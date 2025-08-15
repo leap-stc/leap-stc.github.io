@@ -1,12 +1,13 @@
 # LEAP data catalog
 
-LEAP maintains a catalog of publicly-available datasets available via streaming at
-[https://catalog.leap.columbia.edu](https://catalog.leap.columbia.edu).
-The catalog includes data that's been ingested (link) from public sources as well as pointers to
-data sets maintained by others. The catalog can be viewed by anyone inside or outside of LEAP.
+LEAP maintains a data catalog at [https://catalog.leap.columbia.edu](https://catalog.leap.columbia.edu).
 
-Any data ingested with pangeo-forge or whatever we're calling it now is automatically dded to the catalog
+The catalog includes data that's been ingested from public sources as well as datasets produced by LEAP. The catalog is publicly accessible.
 
-Data in the catalog can be inspected with the data viewer? We should point to said viewer then.
+## Data accessability
 
-Q: Is some data in our GCS buckets? Then we should note that it's not readable from outside LEAP resources.
+[LEAP data][where-data-lives] is either stored on a Google cloud account (GCS) or on an Open-Storage-Network (OSN) pod. Data hosted on GCS is only available for access through the LEAP authenticated [Jupyter-hub][leap-jupyter-hub]. Data hosted on the OSN pod is publicly accessible and has no egress cost.
+
+## Data Viewer
+
+Zarr CF compliant datasets stored in the LEAP data catalog should be able to be viewed in the browser through the data viewer. This is an experimental feature that allows you to view Zarr data directly in the browser. An example of this can be seen [here](https://www.youtube.com/watch?v=OPFbZAsdKz0)
