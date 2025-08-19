@@ -135,7 +135,9 @@ and it should just work! If configured correctly, `leap.2i2c.cloud` should not a
 !!! warning Debugging Help:
 If you get the error `ssh: connect to host leap.2i2c.cloud port 22: Operation timed out`, then check you have installed websocat by running `run pip install websocat` and confirm that ther config file in the correct directory, `~/.ssh/config`
 
+```
 If the CLI asks for a password, please verify that your access token and public keys are valid and consistent across platforms and try the previous steps again. Keep in mind this test has to only work once, and it is not necessary to ssh into JupyterHub via CLI once you confirm this works once.
+```
 
 ### 4 [VSCode] Connect to LEAP Pangeo on VSCode
 
