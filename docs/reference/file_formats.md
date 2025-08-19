@@ -12,12 +12,14 @@ Network Common Data Form (netCDF) is one of the most established formats for sto
 - Good for sharing single files or smaller projects
 
 ### Example in Python:
-```import xarray as xr
+```python
+import xarray as xr
 
 # Open a netCDF file
 ds = xr.open_dataset("example_data.nc")
 
-print(ds)```
+print(ds)
+```
 
 You can find more information on netCDF at (insert link here)
 
@@ -38,16 +40,20 @@ Zarr is a format for **chunked, compressed, N-dimensional arrays** that can be s
 Sometimes you want to *reference* a dataset without copying it. **Virtualizarr** allows you to create a *virtual Zarr store* that points to existing remote data.
 
 Prerequisites:
+
 - The dataset *must be accessible via HTTP(S)** (e.g., hosted on an open data portal or cloud bucket).
+
 - Once defined, the virtual store behaves like a normal Zarr dataset and you can open it directly in Xarray.
 
 ### Example in Python:
-```import xarray as xr
+```python
+import xarray as xr
 
 # Open a Zarr dataset hosted online
 ds = xr.open_zarr("https://example-bucket/data.zarr")
 
-print(ds)```
+print(ds)
+```
 
 You can find more information on Zarr at (insert link here)
 
@@ -56,9 +62,13 @@ Icechunk is like *Git for climate data arrays*. It provides a version control fo
 
 ### When to use Icechunk:
 -**Remote data access:** Avoid downloading large netCDF files by referencing them directly from an HTTP or cloud-hosted location.
+
 -**Cloud-optimized workflows:** Enable chunked and parallel reads on legacy netCDF data without transforming it into Zarr.
+
 -**Reproducibility:** Track and version reference mappings as lightweight JSON files alongside code and notebooks.
+
 -**Storage efficiency:** Save space by mapping existing data structures instead of duplicating them in new formats.
+
 -**Collaboration:** Share consistent dataset references with teammates without moving or modifying source data.
 
 ### Use Case:
