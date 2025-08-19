@@ -1,4 +1,3 @@
-<!-- mdformat off -->
 # Accessing the Hub via VSCode running locally
 
 Accessing the LEAP JupyterHub through VS Code in your browser offers a powerful, IDE-like experience with minimal setup — ideal for users working on code-heavy projects or managing full repositories in a unified remote environment.
@@ -83,12 +82,12 @@ replace:
    `ssh-keygen -t ed25519 -C "your_email@example.com"`
    Make sure to replace your_email@example.com with your actual email address.
 
-1. Add key to ssh-agent by executing:
+2. Add key to ssh-agent by executing:
    `eval "$(ssh-agent -s)"` and
 
    `ssh-add  #~/.ssh/id_ed25519`
 
-1. Copy the public key:
+3. Copy the public key:
    Use following command to show the public key on your local machine:
    `cat ~/.ssh/id_ed25519.pub`
    And copy the entire key, including the email address.
@@ -196,6 +195,5 @@ Contributors to this documentation:
 - Joe Ko [jk4730@columbia.edu], clarifications on how to setup the local public key
 - Sungjoon Park [sp4050@columbia.edu], whom you can contact for questions regarding this workflow
 
-<!-- mdformat on -->
 
 
