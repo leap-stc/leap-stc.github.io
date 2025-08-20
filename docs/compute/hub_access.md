@@ -1,14 +1,12 @@
 # Hub Access Overview
 
-LEAP provides flexible ways to access its JupyterHub environment depending on your workflow preferences. You can:
+There are multiple ways to access the JupyterHub depending on your workflow preferences. You can:
 
 - Access the Hub directly through a *web browser*
 - Connect to the Hub using *VSCode on your local machine*
-- Use a *VSCode interface inside JupyterLab* via the built-in extension
+- Use a *VSCode interface inside JupyterLab* via a built-in extension
 
-Each has its own trade-offs in setup, power, and user experience. This page will help you decide which method is right for you based on your workflow.
-
-## TL;DR
+This page can help you decide which method is right for you based on your workflow.
 
 | Method                     | Best For                                                 |
 | -------------------------- | -------------------------------------------------------- |
@@ -29,7 +27,7 @@ Each has its own trade-offs in setup, power, and user experience. This page will
 
 **Cons**
 
-- Not a full IDE (limited refactoring, Git UX, extensions)
+- Not a full IDE (limited refactoring, UX, extensions)
 - Multi-file repo workflows can feel clunky
 - Fewer features compared to VS Code
 
@@ -97,7 +95,7 @@ See installation instructions here: [Access via VSCode (external)](vs_code_to_hu
 
 !!! note
 
-Go to [Managing Software](manage_software.md) for more guidance on installing packages.
+    Go to [Managing Software](manage_software.md) for more guidance on installing packages.
 
 ## Security & Data Movement
 
@@ -106,7 +104,7 @@ Go to [Managing Software](manage_software.md) for more guidance on installing pa
 
 !!! tip
 
-# - You can switch between methods at any time - no need to stick to one - All methods access the same files in your Hub home directory
+    You can switch between methods at any time - no need to stick to one - All methods access the same files in your Hub home directory
 
 # Accessing the hub
 
@@ -124,7 +122,7 @@ Another option for accessing *The hub* is connecting with the IDE VSCode.
 
 ### Pre-requisites
 
-- Register for a LEAP account to use the *The hub*. Details can be found on the [Introduction / Getting Started](../introduction/getting_started.md#registration) page.
+- Register for a LEAP account to use the *The hub*. Details can be found on the [Introduction / Getting Started][registration]
 
 - Install [websocat](https://github.com/vi/websocat) on your local machine.
     `pip install websocat` works on Mac OS, and pre-built binaries [are available](https://github.com/vi/websocat/releases)
@@ -133,7 +131,7 @@ Another option for accessing *The hub* is connecting with the IDE VSCode.
 - Install [VSCode](https://code.visualstudio.com/download) on your local machine.
 
 - In VSCode, find and install the `Remote-SSH` and `Jupyter` extensions from the VSCode Extensions Marketplace.
-    Remote-SSH will be used to connect to your LEAP Pangeo server, while the Jupyter extension will be used to open .ipynb notebooks and manage the kernel that runs your code on the remote server.
+    Remote-SSH will be used to connect to your LEAP Pangeo server, while the Jupyter extension will be used to open `.ipynb` notebooks and manage the kernel that runs your code on the remote server.
 
 ![VSCode Remote-SSH Extension](https://github.com/user-attachments/assets/6dc5d51c-3389-4e2d-ab92-4ee75c981aa5){ align=left }
 
@@ -313,6 +311,6 @@ You should now be good to execute code via remote kernel on the LEAP server from
 
 Contributors to this documentation:
 
-1. Yuvi [https://github.com/yuvipanda], [jupyter-sshd-proxy](https://github.com/yuvipanda/jupyter-sshd-proxy/blob/main/README.md):
-1. Joe Ko [jk4730@columbia.edu], clarifications on how to setup the local public key
-1. Sungjoon Park [sp4050@columbia.edu], whom you can contact for questions regarding this workflow
+- [Yuvi Panda](https://github.com/yuvipanda) for [jupyter-sshd-proxy](https://github.com/yuvipanda/jupyter-sshd-proxy/blob/main/README.md)
+- [Joe Ko](jk4730@columbia.edu) for clarifications on how to setup the local public key
+- [Sungjoon Park](sp4050@columbia.edu) for creating this workflow.

@@ -1,4 +1,4 @@
-# Choosing a Server Image and Resources
+# Compute scaling
 
 When launching a server on the LEAP JupyterHub, you'll be asked to select a compute configuration. This guide helps you choose the right **image** and **hardware resources (RAM and CPU/GPU)** for your workflow.
 
@@ -45,16 +45,7 @@ While GPU can accelerate certain workloads, it's not always the best choice for 
 
 !!! note
 
-    Use GPU only if your workflow truly needs it.
-
-### Devs Only
-
-The **Devs Only** option provides access to a full compute node (**~512 GP RAM, ~64 CPUs**). Only some users will see the **Devs Only** configuration. Access to this option is typically:
-
-- Granted manually by administrators
-- Enabled only for users with specific roles (e.g., image developers, system testers, researchers doing large-scale performance testing)
-
-You typically won't need this unless you have been instructed to use it. It should be reserved for compute-intensive or infrastrcuture-critical tasks.
+    Please use GPUs only if your workflow truly needs it.
 
 ## How to choose:
 
@@ -75,7 +66,6 @@ Here is a simplified guide on how to choose the appropriate image and compute co
 | Fine-tuning pre-trained deep learning models        | PyTorch/TensorFlow ML Notebook + **GPU**              |
 | Hyperparameter tuning / grid search (ML)            | PyTorch/TensorFlow ML Notebook + **GPU** or Devs Only |
 | Generating synthetic datasets or simulations        | Base Pangeo Notebook + 16–128 GB CPU                  |
-| Testing new images or infrastructure                | Devs Only + any image                                 |
 
 !!! tip
 

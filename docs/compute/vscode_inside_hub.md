@@ -8,7 +8,7 @@ This version of VS Code runs on the same remote server as your Jupyter kernel an
 
 1. **Log into the LEAP Hub**
 
-    - Go to the [LEAP JupyterHub](https://hub.leap.columbia.edu) browser and sign in using your institutional credentials.
+    - Go to the [LEAP JupyterHub](leap.2i2c.cloud/hub/) browser and sign in using your institutional credentials.
 
 1. **Start your server (if it's not already running)**
 
@@ -20,8 +20,6 @@ This version of VS Code runs on the same remote server as your Jupyter kernel an
     - Find and click the **VS Code** or **code-server** icon (it may look like the regular VS Code logo).
     - This opens the in-browser VS Code interface in a new tab or within the same window.
 
-    (Insert screenshot here)
-
 1. **Using VS Code in the Browser**
 
     - You can open folders, edit files, and run terminals just like in the desktop app.
@@ -30,14 +28,10 @@ This version of VS Code runs on the same remote server as your Jupyter kernel an
     - Start or open notebooks: click `.ipynb` files and they’ll open using the built-in Jupyter extension.
     - Git features, syntax highlighting, search, multi-file editing, etc. are all supported.
 
-## AmazonQ
-
-(should we include a section on this?)
-
 ## Tips
 
 - **Python environment**: Your Python interpreter is automatically set to the remote Hub environment.
-- **Installing packages**: Use the built-in terminal and `pip install` or `conda install`. These packages will install on the remote server.
+- **Installing packages**: Use the built-in terminal and `pip install` or `mamba install`. These packages be added to your base environment.
 - **Save your work**: Changes persist on the Hub’s file system — no need to worry about syncing with your local machine.
 
 ## Common Issues
