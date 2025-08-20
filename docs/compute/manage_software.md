@@ -42,7 +42,8 @@ pip install <package>
 echo "Environment ready!"
 ```
 
-Then in the terminal run the following code to make the script executable: `chmod +x setup-env.sh`
+Then in the terminal run the following code to make the script executable:
+`chmod +x setup-env.sh`
 
 You can now execute the script in your terminal by the following: `./<filename>.sh`
 
@@ -70,3 +71,17 @@ For instructions on creating and managing a custom image, see the [2i2c hub-user
     (include link to screenshot here)
 
 1. Launch the server - your packages will be pre-installed.
+
+### Using Dask for Scalable Computation
+
+Dask is a parallel computing library that extends familiar tools like `numpy`, `pandas`, and `xarray` to work on *large datasets* and *across many cores*.
+
+It enables you to:
+
+- Analyze datasets that don't fit in memory
+- Speed up workflows by leveraging multiple CPUs or clusters
+- Process large climate, model, and satellite data efficiently
+
+You should consider using Dask when:
+
+- You're working with *large datasets* (e.g.
