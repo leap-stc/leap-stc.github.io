@@ -1,4 +1,3 @@
-
 # Hub Access Overview
 
 LEAP provides flexible ways to access its JupyterHub environment depending on your workflow preferences. You can:
@@ -97,6 +96,7 @@ See installation instructions here: [Access via VSCode (external)](vs_code_to_hu
 | **Common pitfall**                     | None                                      | Accidentally installing locally instead of on the Hub |
 
 !!! note
+
 Go to [Managing Software](manage_software.md) for more guidance on installing packages.
 
 ## Security & Data Movement
@@ -105,9 +105,9 @@ Go to [Managing Software](manage_software.md) for more guidance on installing pa
 - *Local VS Code IDE*: easier to accidentally sync data to your local machine or expose secrets via cached credentials
 
 !!! tip
-\- You can switch between methods at any time - no need to stick to one
-\- All methods access the same files in your Hub home directory
-=======
+
+# - You can switch between methods at any time - no need to stick to one - All methods access the same files in your Hub home directory
+
 # Accessing the hub
 
 ## Browser

@@ -6,7 +6,7 @@ The catalog includes data that's been ingested from public sources as well as da
 
 ## Data accessability
 
-[LEAP data][where-data-lives] is either stored on a Google cloud account (GCS) or on an Open Storage Network (OSN) pod. Data hosted on GCS is only available for access through the LEAP authenticated [JupyterHub][leap-jupyter-hub]. Data hosted on the OSN pod is publicly accessible and has no egress cost.
+[LEAP data][where-data-lives] is either stored on a Google Cloud account (GCS) or on an Open Storage Network (OSN) pod. Data hosted on GCS is only available for access through the LEAP authenticated [JupyterHub][leap-jupyter-hub]. Data hosted on the OSN pod is publicly accessible and has no egress cost.
 
 ## Data Viewer
 
