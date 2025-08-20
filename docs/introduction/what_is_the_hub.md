@@ -1,10 +1,10 @@
-## LEAP Jupyter Hub
+## LEAP JupyterHub
 
-LEAP's primary data and computational resources are available through the LEAP Jupyter Hub (not to be confused with the physical Hub where are share space in-person). The Jupyter Hub is a shared "cloud-based" computing environment running on donated resources from commerical cloud providers.
+LEAP's primary data and computational resources are available through the LEAP JupyterHub (not to be confused with the physical Hub where we share space in-person). The JupyterHub is a shared "cloud-based" computing environment running on donated resources from commerical cloud providers.
 
-The hub is designed around **interactive** use though long computations are possible.
+The Hub is designed around **interactive** use, though long computations are possible.
 
-To gain access to the Hub please see the [Registration page][registration]. LEAP's Jupyterhub is managed by our partner [2i2c](https://2i2c.org).
+To gain access to the Hub please see the [registration page][registration]. LEAP's JupyterHub is managed by our partner [2i2c](https://2i2c.org).
 
 The Hub includes
 
@@ -17,6 +17,6 @@ The computing resources have fast access to LEAP's data resources; they also hav
 Compared to using
 
 - a *laptop*, the Hub offers fast access to data and the ability to access much more powerful computational resources including GPUs for ML training tasks.
-- *HPCs, clusters, etc.* the hub offers simpler access and less competition for resources (since the pool from which the resources are drawn is enormous). It does not, however, easily support non-interactive use.
+- *HPCs, clusters, etc.* the Hub offers simpler access and less competition for resources (since the pool from which the resources are drawn is enormous). It does not, however, easily support non-interactive use.
 
 Moving data in to data resources is free; moving data out is expensive (see [Data Lifecycles][data-lifecycle]). Please plan your workflow accordingly.
