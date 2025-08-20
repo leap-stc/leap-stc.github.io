@@ -29,17 +29,17 @@ Once you have applied for membership, it will take a few days until you can be a
 
 !!! note
 
-    Depending on your [membership](reference.membership.tiers) you might see different options (e.g. GPU might be hidden).
+    Depending on your [membership] tier you might see different options (e.g. GPU might be hidden).
 
 ## Resource sizing
 
 When starting a VM on the JupyterHub you have multiple configuration options.
 
-- Software environment ("Image") - Which software environment to use. The default, "Base Pangeo Notebook" contains many commonly used earth science python libraries. You can also supply your own custom docker image.
+- **Software environment ("Image")** - Which software environment to use. The default, *_Base Pangeo Notebook_* contains many commonly used earth science python libraries. You can also supply your own custom docker image.
 
-- VM size ("Node share") - controls cpu cores and amount of memory
+- **VM size ("Node share")** - How many cpu cores and amount of memory.
 
-- VM type - **CPU only** or **GPU**
+- **VM type** - CPU or GPU focused VM.
 
 !!! note
 
