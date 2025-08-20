@@ -38,7 +38,7 @@ If you **are** member of one of the github teams, ask them to try the following 
 
 ## I received a warning about space on my User Directory
 
-If you get a Hub Usage Alert email, this means you are violating the User Directory storage limit (to learn why this limit exists, see read about [User Directories][user-directory]). Remember that user directories are for scripts and notebooks not datasets! Users who persistently violate hub usage policies may temporarily get reduced cloud access.
+If you get a Hub Usage Alert email, this means you are violating the User Directory storage limit (to learn why this limit exists, see read about [User Directories][your-jupyter-hub-user-directory]). Remember that user directories are for scripts and notebooks not datasets! Users who persistently violate hub usage policies may temporarily get reduced cloud access.
 
 **Troubleshooting**
 

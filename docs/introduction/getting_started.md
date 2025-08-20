@@ -45,7 +45,7 @@ When starting a VM on the JupyterHub you have multiple configuration options.
 
     **⚠️The GPU images should be used only when needed to accelerate model training.**
 
-If unsure which options to choose, check out our guide on [scaling compute][choosing-a-server-image-and-resources].
+If unsure which options to choose, check out our guide on [scaling compute][compute-scaling].
 
 ## JupyterLab
 

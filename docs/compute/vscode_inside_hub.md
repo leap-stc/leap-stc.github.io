@@ -8,7 +8,7 @@ This version of VS Code runs on the same remote server as your Jupyter kernel an
 
 1. **Log into the LEAP Hub**
 
-    - Go to the [LEAP JupyterHub](leap.2i2c.cloud/hub/) browser and sign in using your institutional credentials.
+    - Go to the [LEAP JupyterHub](https://leap.2i2c.cloud/) browser and sign in using your institutional credentials.
 
 1. **Start your server (if it's not already running)**
 
