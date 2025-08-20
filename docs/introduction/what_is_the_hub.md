@@ -1,3 +1,5 @@
+# LEAP Jupyter Hub
+
 LEAP's primary data and computational resources are available through the LEAP Jupyter Hub. The Jupyter Hub is a shared "cloud-based" computing environment running on cloud-based storage and compute resources.
 
 The hub is designed primarily around **interactive** use, however long running jobs are also possible.
