@@ -1,4 +1,4 @@
-# File Formats and Data Tools
+# File Formats
 
 This page explains some of the most common data formats used in the LEAP ecosystem.
 
@@ -9,8 +9,8 @@ Network Common Data Form (netCDF) is one of the most established formats for sto
 ### When to Use netCDF:
 
 - Best for local or medium-sized datasets (fits on your disk)
-- Compatible with legacy tools and existing model output archives
-- Good for sharing single files or smaller projects
+- Ideal for working with climate model outputs or archival formats (e.g., CMIP, NOAA)
+- Convenient for sharing as single downloadable files or for smaller-scale workflows
 
 ### Example in Python:
 
@@ -31,22 +31,22 @@ Zarr is a format for **chunked, compressed, N-dimensional arrays** that can be s
 
 ### Versions
 
-- **Zarr v2:** The stable and widely used version today. Many datasets on cloud storage (e.g., AWS, Google Cloud) are published in this format.
+- **Zarr v2:** The stable and widely used version today. Many datasets on cloud storage (e.g., AWS, Google Cloud) are published in this format. We recommend using this version since it is compatible with LEAP Hub.
 - **Zarr v3:** A new standard with improved metadata handling and interoperability. Still in early adoption.
 
 ### When to Use Zarr:
 
-- **Cloud-native workflows:** Accessing data stored on Kaggle, GCS, Pangeo or other object storage.
-- **Large datasets (TB-scale):** Read only the chunks you need, not the entire dataset.
-- **Parallel computing:** Works seamlessly with Dask on LEAPHub
+- Accessing large data stored on Kaggle, GCS, Pangeo or other object storage.
+- Enables selective chunked access without full dataset downloads
+- Supports scalable, parallel computation environments like Dask on LEAPHub
 
-### Virtualizarr:
+### Virtual Zarr Stores:
 
-Sometimes you want to *reference* a dataset without copying it. **Virtualizarr** allows you to create a *virtual Zarr store* that points to existing remote data.
+You can create a "virtual Zarr store that points to existing remote files without copying them. This is useful when referencing datasets that are already hosted on public cloud platforms (via HTTP/S)
 
 Prerequisites:
 
-- The dataset *must be accessible via HTTP(S)*\* (e.g., hosted on an open data portal or cloud bucket).
+- The dataset *must be accessible via HTTP(S)* (e.g., hosted on an open data portal or cloud bucket).
 
 - Once defined, the virtual store behaves like a normal Zarr dataset and you can open it directly in Xarray.
 
@@ -65,28 +65,43 @@ You can find more information on Zarr at (insert link here)
 
 ## Icechunk Repository
 
-Icechunk is like *Git for climate data arrays*. It provides a version control for large datasets, allowing you to store different versions efficiently without duplicating the entire dataset.
+Icechunk is a tool that lets you **map existing netCDF files into a virtual Zarr structure**, using a JSON reference file. It enables you to treat legacy formats like netCDF as if they were Zarr without copying or transforming them.
+
+Think of it like "Git for data": you can create, version, and share mappings to large datasets with minimal overhead.
 
 ### When to use Icechunk:
 
--**Remote data access:** Avoid downloading large netCDF files by referencing them directly from an HTTP or cloud-hosted location.
+- Avoiding downloading large netCDF files by referencing them directly from an HTTP or cloud-hosted location.
 
--**Cloud-optimized workflows:** Enable chunked and parallel reads on legacy netCDF data without transforming it into Zarr.
+- Enabling chunked and parallel reads on netCDF data without transforming it into Zarr.
 
--**Reproducibility:** Track and version reference mappings as lightweight JSON files alongside code and notebooks.
+- Supports collaborating by sharing lightweight references instead of large datasets
 
--**Storage efficiency:** Save space by mapping existing data structures instead of duplicating them in new formats.
-
--**Collaboration:** Share consistent dataset references with teammates without moving or modifying source data.
+- Reduces storage costs by avoiding data duplication across teams or pipelines
 
 ### Use Case:
 
-Suppose you have a collection of netCDF files hosted on an HTTP server. Instead of rewriting the data to Zarr, you can:
+Suppose you have a collection of netCDF files hosted on an HTTP server. Instead of downloading or converting them into Zarr, you can create a lightweight virtual mapping that behaves like a Zarr dataset.
 
-1. Use Icechunk to generate a JSON reference file that maps logical Zarr keys to byte ranges in the original netCDF files.
-1. Load the virtual dataset using `xarray`:
+Example Workflow:
 
-This lets you treat your netCDFs as if they were a Zarr dataset without copying or converting them.
+- Use Icechunk to generate a JSON reference file (`reference.json`) that maps logical Zarr keys to byte ranges in the original netCDF files.
+- Load the virtual dataset as if it were a Zarr store using `xarray` and `fsspec`:
+
+```python
+import xarray as xr
+import fsspec
+
+fs = fsspec.filesystem("reference", fo="reference.json")
+mapper = fs.get_mapper("")
+ds = xr.open_zarr(mapper, consolidated=False)
+
+print(ds)
+```
+
+This approach enables fast, parallel access to remote netCDF files without transforming or duplicating the original data.
+
+You can find more information on Icechunk [here](https://github.com/earth-mover/icechunk)
 
 ## Choosing the Right Tool
 
