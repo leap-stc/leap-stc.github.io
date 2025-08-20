@@ -97,7 +97,7 @@ See installation instructions here: [Access via VSCode (external)](vs_code_to_hu
 
 !!! note
 
-Go to [Managing Software](manage_software.md) for more guidance on installing packages.
+    Go to [Managing Software](manage_software.md) for more guidance on installing packages.
 
 ## Security & Data Movement
 
@@ -106,15 +106,15 @@ Go to [Managing Software](manage_software.md) for more guidance on installing pa
 
 !!! tip
 
-# - You can switch between methods at any time - no need to stick to one - All methods access the same files in your Hub home directory
+    - You can switch between methods at any time - no need to stick to one. All methods access the same files in your Hub home directory
 
 # Accessing the hub
 
 ## Browser
 
-#### https://leap.2i2c.cloud/hub/
+**https://leap.2i2c.cloud/hub/**
 
-You can access *The Hub* by visiting `https://leap.2i2c.cloud/hub/` in your browser. This should bring you to a main menu where you can choose your cloud-compute resources and environment.
+You can access the Hub by visiting `https://leap.2i2c.cloud/hub/` in your browser. This should bring you to a main menu where you can choose your cloud-compute resources and environment.
 
 ![Image title](../assets/hub_menu.png){ align=left }
 

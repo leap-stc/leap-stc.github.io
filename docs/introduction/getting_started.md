@@ -22,12 +22,11 @@ It is very common for users to not realize that they have already received an in
 1. 👀 Navigate to <https://leap.2i2c.cloud/> and click the big orange button that says "Log in to continue"
 1. 🔐 You will be prompted to authorize a GitHub application. Say "yes" to everything.
     Note you must belong to the appropriate GitHub team in order to access the hub.
-    See [](reference.membership.team-resources) for more information.
 1. 📠 You will redirect to a screen with server configuration options. Several drop down menus enable users to choose their environment image (default is "Base Pangeo Notebook") and compute resources (CPU, GPU if enabled).
     ![Server Options](../assets/hub_menu.png)
 1. 🕥 After clicking "Start", wait for your server to start up. It can take up to few minutes.
     !!! note
-    Depending on your [membership](reference.membership.tiers) you might see different options (e.g. GPU might be hidden).
+    Depending on your membership you might see different options (e.g. GPU might be hidden).
 
 You have to make 3 choices here:
 

@@ -12,7 +12,7 @@ When you just need software for your current notebook session, you can temporari
 
 **1. Conda (or Mamba)**
 
-Open the terminal inside your JupyterLab session.
+Open the terminal inside your Jupyter session.
 
 Run the following code: `conda install <package>`
 
@@ -56,7 +56,7 @@ Use a custom image for the following scenarios:
 - When multiple users need the same libraries
 - When setting up workshops, bootcamps, or other workflows
 - When packages take a long time to install or have complex dependencies
-- When JupyterLab extensions must be pre-built to function properly (ex: AmazonQ, classic labextensions, etc)
+- When Jupyter extensions must be pre-built to function properly (ex: AmazonQ, classic labextensions, etc)
 
 If you find yourself installing the same packages repeatedly, or if runtime installs are unreliable or time-consuming, consider moving to a custom image for a more stable and efficient experience.
 
