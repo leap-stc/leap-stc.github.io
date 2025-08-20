@@ -16,9 +16,7 @@ As a very general guideline:
 
 - Data being *shared* with third parties normally lives in the OSN Pod, linked to the data catalog.
 
-# LEAP Jupyter hub
-
-## LEAP's Cloud Buckets
+## LEAP Cloud Buckets
 
 !!! tip
 
