@@ -54,9 +54,9 @@ theme:
   palette:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
+      scheme: default
       primary: custom
       accent: indigo
-      scheme: default
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
@@ -68,10 +68,6 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to system preference
-
-  extra_css:
-    - stylesheets/extra.css
-
 
   font:
     text: Veranda
@@ -91,6 +87,12 @@ theme:
     - search.suggest
     - search.share
     - toc.integrate
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  homepage: https://leap.columbia.edu/
 
 plugins:
   - search

@@ -5,3 +5,15 @@
   --md-accent-fg-color:         #00796B;
   --md-accent-fg-color--transparent: #00796B1a;
 }
+
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color:        #012169;
+  --md-primary-fg-color--light: #B9D9EB;
+  --md-primary-fg-color--dark:  #012169;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:        #012169;
+  --md-primary-fg-color--light: #B9D9EB;
+  --md-primary-fg-color--dark:  #012169;
+}
