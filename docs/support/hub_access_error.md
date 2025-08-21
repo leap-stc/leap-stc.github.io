@@ -17,6 +17,6 @@ If you **are** a member of one of the github teams, try the following steps:
 - [ ] Refresh the browser cache
 - [ ] Try a different browser
 - [ ] Restart your local machine
-- [ ] Try [accessing the hub][accessing-the-hub]
+- [ ] Try [accessing the hub][hub-access-overview]
 
 If these steps do not work, please reach out to the [Data and Compute Team][contact].

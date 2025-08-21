@@ -20,12 +20,12 @@ theme:
 nav:
   - "index.md"
   - Introduction:
-      - introduction/what_is_the_hub.md
       - introduction/getting_started.md
+      - introduction/what_is_the_hub.md
   - Data:
-      - data/data_catalog.md
       - data/data_locations.md
       - data/data_lifecycle.md
+      - data/data_catalog.md
 
   - Compute:
       - Hub Access:

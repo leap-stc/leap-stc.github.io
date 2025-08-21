@@ -4,7 +4,7 @@ This page is meant to serve as a high level reference to the data lifecycle. Ple
 
 ## Data ingestion
 
-Working on the JupyterHub often requires transferring whatever data you want to work with into the cloud. The term "data ingestion" refers to a reproducible way to download and transform data into appropriate formats. Data in LEAP's cloud storage is available for the entire LEAP community and can be added to the [LEAP Data Catalog][leap-data-catalog].
+Working on the JupyterHub often requires transferring whatever data you want to work with into the cloud. The term "data ingestion" refers to a reproducible way to download and transform data into performant formats like Zarr. Data in LEAP's cloud storage is available for the entire LEAP community and can be added to the [LEAP Data Catalog][catalog].
 
 The Data and Compute team can help with large or complicated data ingestion efforts. We organize such efforts in Github repositories called "feedstocks" that centralize knowledge for each request. Once you've verified that the data you need isn't available through the catalog:
 
@@ -33,7 +33,7 @@ The biggest barrier here is external authentication; see the [Authentication sec
 
 There are many tools available to interact with cloud object storage. We currently have basic operations documented for three tools:
 
-- [rclone](https://rclone.org/) which provides a Command Line Interface to many different storage backends, see [here](../reference/rclone.md) for more details. Rclone is highly versatile and suits almost all use cases.
+- [rclone](https://rclone.org/) which provides a Command Line Interface to many different storage backends, see [here](../reference/rclone.md) for more details. Rclone is highly versatile and suits almost all use cases. Details on authentication and usage can be found [here][rclone].
 
 - GCloud SDK. One can interact with Google Cloud storage directly using the Google Cloud SDK and Command Line Interface. Please consult the [Install Instructions](https://cloud.google.com/sdk/docs/install) for more guidance.
 

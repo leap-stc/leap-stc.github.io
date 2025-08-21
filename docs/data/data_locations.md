@@ -2,11 +2,10 @@
 
 Data can live in one of three main places:
 
-- [LEAP's JupyterHub](../introduction/what_is_the_hub.md). This includes
+- [LEAP's Jupyter hub][leap-jupyter-hub], which includes:
 
-    a) shared "cloud buckets", one for data being actively processed and another for data with longer lifetimes
-
-    b) user directories for very small amount of data and code used privately.
+    - Shared "cloud buckets", one for data being actively processed and another for data with longer lifetimes.
+    - User directories for very small amount of data and code used privately.
 
 - LEAP-owned cloud storage (our OSN pod, co-owned with the M2LINES project)
 
@@ -20,9 +19,7 @@ As a very general guideline:
 
 - Data being *shared* with third parties normally lives in the OSN Pod, linked to the data catalog.
 
-# LEAP JupyterHub
-
-## LEAP's Cloud Buckets
+## LEAP Cloud Buckets
 
 !!! tip
 
@@ -36,11 +33,11 @@ LEAP's JupyterHub provides users two cloud buckets in which to store data.
 Files stored on each of those buckets can be accessed by all LEAP members, so be conscious in the way you use these.
 
 - **Do not put sensitive information (passwords, keys, personal data) into these buckets!**
-- **When writing to buckets only ever write to your personal folder!** Your personal folder is a combination of the bucketname and your github username (e.g. \`gs://leap-persistent/funky-user/').
+- **When writing to buckets only ever write to your personal folder!** Your personal folder is a combination of the bucketname and your github username (e.g. \`gs://leap-persistent/your-user-name/').
 
 The JupyterHub is automatically authenticated to read from any of these buckets. See [Authentication][authentication] for details on how to access buckets from 'outside' the JupyterHub.
 
-GCS is where to put data if:
+**GCS is where to put data if:**
 
 - You want to move data from your JupyterHub home directory to the cloud.
 - You don't need the data to be accessed outside of the JupyterHub.
@@ -48,7 +45,7 @@ GCS is where to put data if:
 
 !!! tip
 
-    Use the LEAP GCS buckets when you are actively doing science using the JupyterHub. If you wish to share some kind of finished product with the world, it is best to "publish" the data by moving outside GCS into OSN.
+    Use the LEAP GCS buckets when you are actively doing science using the JupyterHub. If you wish to share some kind of finished product with the world, it is best to "publish" the data by moving outside GCS into OSN or Zenodo.
 
 ## Your JupyterHub User Directory
 
@@ -71,7 +68,7 @@ See the [Hub Usage Alert][hub-usage-alert] for guidance on reducing storage.
 
     Home directories have a hard limit of 100GB, which may decrease without warning.
 
-## JupyterHub Cloud Buckets
+## LEAP Cloud Buckets
 
 LEAP uses two Google Cloud buckets (leap-persistent and leap-scratch) and also has an allocation of storage on an Open Storage Network (OSN) pod.
 
@@ -100,11 +97,10 @@ The pod is divided into projects and buckets. A project can have multiple bucket
 
 Data can be transferred from `leap-pangeo-inbox` to `leap-pangeo-manual` with [this rclone github action](https://github.com/leap-stc/data-management/actions/runs/11167922927/workflow).
 
-OSN is where data should live if:
+OSN is where data should live if if:
 
-- You want your data to be publicly accessible outside of the JupyterHub.
-- You need to move data from your JupyterHub home directory to more persistent storage.
-- You data does not fit into the Zarr model.
+- You want your data to be publicly accessible outside of the Jupyter-Hub.
+- You need to move data from your Jupyter-Hub home directory to more persistent storage.
 
 To migrate data to OSN, please contact the data-and-compute team on slack. They will contact the OSN pod admin and share bucket credentials for the `'leap-pangeo-inbox'` bucket. More details are provided under [authentication][authentication].
 
@@ -118,9 +114,8 @@ GCS:
 
 OSN:
 
-- You want your data to be publicly accessible outside of the JupyterHub.
-- You need to move data from your JupyterHub home directory to more persistent storage.
-- You data does not fit into the Zarr model.
+- You want your data to be publicly accessible outside of the Jupyter-Hub.
+- You need to move data from your Jupyter-Hub home directory to more persistent storage.
 
 # Private Storage - HPC or External Filesystems
 
