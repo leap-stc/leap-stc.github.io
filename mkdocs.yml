@@ -56,7 +56,7 @@ theme:
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: custom
-      accent: indigo
+      accent: custom
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
@@ -64,7 +64,7 @@ theme:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: black
-      accent: indigo
+      accent: custom
       toggle:
         icon: material/brightness-4
         name: Switch to system preference
