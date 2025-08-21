@@ -193,6 +193,6 @@ You should now be good to execute code via remote kernel on the LEAP server from
 
 Contributors to this documentation:
 
-- Yuvi [https://github.com/yuvipanda], [jupyter-sshd-proxy](https://github.com/yuvipanda/jupyter-sshd-proxy/blob/main/README.md):
+- [Yuvi Panda](https://github.com/yuvipanda), [jupyter-sshd-proxy](https://github.com/yuvipanda/jupyter-sshd-proxy/blob/main/README.md):
 - Joe Ko [jk4730@columbia.edu], clarifications on how to setup the local public key
 - Sungjoon Park [sp4050@columbia.edu], whom you can contact for questions regarding this workflow
