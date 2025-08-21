@@ -195,4 +195,4 @@ Contributors to this documentation:
 
 - [Yuvi Panda](https://github.com/yuvipanda), [jupyter-sshd-proxy](https://github.com/yuvipanda/jupyter-sshd-proxy/blob/main/README.md):
 - Joe Ko [jk4730@columbia.edu], clarifications on how to setup the local public key
-- Sungjoon Park [sp4050@columbia.edu], whom you can contact for questions regarding this workflow
+- [Sungjoon Park](https://github.com/sungjoon0710) for compiling this workflow for LEAP Pangeo.
