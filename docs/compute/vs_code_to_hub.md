@@ -4,7 +4,7 @@ Accessing the LEAP JupyterHub through VS Code in your browser offers a powerful,
 
 ## Pre-requisites
 
-- Register for a LEAP account to use the *The hub*. Details can be found on the [Introduction / Getting Started](../introduction/getting_started.md#registration) page.
+- Register for a LEAP account to use the *The hub*. Details can be found on the [Introduction / Getting Started][gaining-access] page.
 
 - Install [websocat](https://github.com/vi/websocat) on your local machine.
     `pip install websocat` works on Mac OS, and pre-built binaries [are available](https://github.com/vi/websocat/releases)

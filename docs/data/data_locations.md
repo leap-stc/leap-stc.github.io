@@ -25,7 +25,7 @@ As a very general guideline:
 
     Google Cloud's costs are structured to make it free and easy to move data *into* the buckets, but there are high egress fees for taking data out of GCP Infrastructure. Taking data out means both writing from GCP to outside and reading from an external source like an HPC.
 
-LEAP's Jupyter hub provides users two cloud buckets in which to store data.
+LEAP's JupyterHub provides users two cloud buckets in which to store data.
 
 - `gs://leap-scratch/` - Temporary Storage deleted after 7 days. Use this bucket for testing and storing large intermediate results. leap-scratch is also a great staging area to use while ingesting data to some other permanent location.
 - `gs://leap-persistent/` - Persistent Storage. Use this bucket for storing results you want to share with other members or access consistently from the Hub.
@@ -35,31 +35,31 @@ Files stored on each of those buckets can be accessed by all LEAP members, so be
 - **Do not put sensitive information (passwords, keys, personal data) into these buckets!**
 - **When writing to buckets only ever write to your personal folder!** Your personal folder is a combination of the bucketname and your github username (e.g. \`gs://leap-persistent/your-user-name/').
 
-The JupyterHub is automatically authenticated to read from any of these buckets but write access might differ (see below). See [Authentication][authentication] for details on how to access buckets from 'outside' the JupyterHub.
+The JupyterHub is automatically authenticated to read from any of these buckets. See [Authentication][authentication] for details on how to access buckets from 'outside' the JupyterHub.
 
 **GCS is where to put data if:**
 
-- You want to move data from your Jupyter-Hub home directory to the cloud.
-- You don't need the data to be accessed outside of the Jupyter-Hub.
+- You want to move data from your JupyterHub home directory to the cloud.
+- You don't need the data to be accessed outside of the JupyterHub.
 - This data is a work-in-progress and might be regenerated or modified as you do your science.
 
 !!! tip
 
     Use the LEAP GCS buckets when you are actively doing science using the JupyterHub. If you wish to share some kind of finished product with the world, it is best to "publish" the data by moving outside GCS into OSN or Zenodo.
 
-## Your Jupyter Hub user directory
+## Your JupyterHub User Directory
 
-When you open your hub, you can navigate to the file browser and see all the files in your User Directory
+When you open your hub, you can navigate to the file browser and see all the files in your user directory
 
 ![User Directories](../assets/user_directories.png)
 
-Your User Directory behaves like a typical UNIX filesystem. If you save a file from a notebook, you will see it appear in the File Browser (you might have to wait a few seconds or press refresh). You can also use the terminal to navigate and manipulate files as you would on your local machine.
+Your user directory behaves like a typical UNIX filesystem. If you save a file from a notebook, you will see it appear in the file browser (you might have to wait a few seconds or press refresh). You can also use the terminal to navigate and manipulate files as you would on your local machine.
 
 ![Hub Terminal](../assets/hub_terminal.png)
 
 !!! note
 
-    Unlike most systems, on a Jupyter hub every user sees `'/home/jovyan'` as their root directory, but the functionality is similar. These are *your own files* and they cannot be seen/modified by other users (except admins).
+    Unlike most systems, on a JupyterHub every user sees `'/home/jovyan'` as their root directory, but the functionality is similar. These are *your own files* and they cannot be seen/modified by anyone else (except admins).
 
 Your home directory is intended only for notebooks, analysis scripts, and small datasets (< 1 GB). Large datasets should stored in cloud buckets. Please try to keep your home directory size to 25GB. To check how much space you are using in your home directory open a terminal window on the hub and run `du -h --max-depth=1 ~/ | sort -h`.
 See the [Hub Usage Alert][hub-usage-alert] for guidance on reducing storage.
@@ -77,7 +77,7 @@ LEAP uses two Google Cloud buckets (leap-persistent and leap-scratch) and also h
 
 !!! note
 
-    A common workflow is for data to be private --> get ingested to LEAP GCS --> OSN Pods for publication.\*\*
+    A common workflow is for data to be private --> get ingested to LEAP GCS --> OSN Pods for publication.
 
 # Open Storage Network
 
@@ -85,7 +85,7 @@ The [Open Storage Network](https://www.openstoragenetwork.org/) is distributed c
 
 The pod is divided into projects and buckets. A project can have multiple buckets. There are currently 2 principal Projects on the Pod (as well as a shared bucket with the m2lines project):
 
-- `'leap-pangeo'`: Used for Data Ingestion across the m2lines and LEAP community
+- `'leap-pangeo'`: Used for data ingestion across the m2lines and LEAP community
     - Buckets:
         - `'leap-pangeo-inbox'`: *Write access can be shared with users who want to add data e.g. from an HPC center*
         - `'leap-pangeo-manual'`: **No write access for users**
@@ -104,12 +104,12 @@ OSN is where data should live if if:
 
 To migrate data to OSN, please contact the data-and-compute team on slack. They will contact the OSN pod admin and share bucket credentials for the `'leap-pangeo-inbox'` bucket. More details are provided under [authentication][authentication].
 
-### Choosing a location - OSN vs GCS
+## Summary - OSN vs GCS
 
 GCS:
 
-- You want to move data from your Jupyter-Hub home directory to the cloud.
-- You don't need the data to be accessed outside of the Jupyter-Hub.
+- You want to move data from your JupyterHub home directory to the cloud.
+- You don't need the data to be accessed outside of the JupyterHub.
 - This data is a work-in-progress and might be regenerated or modified.
 
 OSN:

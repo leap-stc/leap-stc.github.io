@@ -20,7 +20,7 @@ All students should apply for [membership](https://forms.gle/RpeaMZh5btTdZtzu8) 
 
     In order to gain access to the Jupyter-hub, a Github account is required. It is free to create one. Please instruct your students to create one before requesting access.
 
-Instructors can verify that students have access by checking that their github usernames as listed as members of [leap-pangeo-base-access](https://github.com/orgs/leap-stc/teams/leap-pangeo-base-access) on Github. We suggest that instructors direct students to the [Getting Started][getting-started] page and ask them to test their [access to the Hub][accessing-the-hub] before the class starts to avoid any technical interruptions.
+Instructors can verify that students have access by checking that their github usernames as listed as members of [leap-pangeo-base-access](https://github.com/orgs/leap-stc/teams/leap-pangeo-base-access) on Github. We suggest that instructors direct students to the [Getting Started][getting-started] page and ask them to test their [access to the Hub][hub-access-overview] before the class starts to avoid any technical interruptions.
 
 We recommend familiarizing yourself with the troubleshooting steps below before the start of the class, so that you are prepared to sign up students on the first day if necessary.
 

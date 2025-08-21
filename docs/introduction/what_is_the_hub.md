@@ -4,11 +4,11 @@ LEAP's primary data and computational resources are available through the LEAP J
 
 The hub is designed primarily around **interactive** use, however long running jobs are also possible.
 
-To gain access to the Hub please see the [Registration page][registration]. LEAP's Jupyterhub is managed by our partner [2i2c](https://2i2c.org).
+To gain access to the Hub please see the [registration page][gaining-access]. LEAP's JupyterHub is managed by our partner [2i2c](https://2i2c.org).
 
 The Hub includes
 
-- **computing resources** accessible via a web browser or VSCode as described on [this page][accessing-the-hub]. The resources include a variety of hardware configurations and a range of pre-defined or custom software environments.
+- **computing resources** accessible via a web browser or VSCode as described on [this page][hub-access-overview]. The resources include a variety of hardware configurations and a range of pre-defined or custom software environments.
 
 - **data resources** divided among generous shared "cloud buckets" for data and limited home directories for scripts etc. as described at [Where Data Lives][where-data-lives].
 

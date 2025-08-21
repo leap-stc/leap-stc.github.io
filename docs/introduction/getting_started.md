@@ -1,7 +1,5 @@
 # Getting Started
 
-## Registration
-
 ## Gaining Access
 
 To gain access to the Hub please apply via our [Application Form](https://forms.gle/RpeaMZh5btTdZtzu8). Access to the JupyterHub is implemented via the [leap-stc](https://github.com/orgs/leap-stc/teams) GitHub organization. Each membership tier is associated with a Github Team and determines the resources available to the user.

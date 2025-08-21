@@ -1,6 +1,6 @@
 # Managing Software
 
-The LEAP JupyterHub environment provides multiple ways to install and manage software. Choose the method that best fits your needs.
+The LEAPHub environment provides multiple ways to install and manage software. Choose the method that best fits your needs.
 
 ## Quick Installs (Temporary)
 
@@ -45,7 +45,7 @@ Use a custom image for the following scenarios:
 - When multiple users need the same libraries
 - When setting up workshops, bootcamps, or other workflows
 - When packages take a long time to install or have complex dependencies
-- When JupyterLab extensions must be pre-built to function properly (ex: AmazonQ, classic labextensions, etc)
+- When Jupyter extensions must be pre-built to function properly (ex: AmazonQ, classic labextensions, etc)
 
 If you find yourself installing the same packages repeatedly, or if runtime installs are unreliable or time-consuming, consider moving to a custom image for a more stable and efficient experience.
 
