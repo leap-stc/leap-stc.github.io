@@ -194,5 +194,5 @@ You should now be good to execute code via remote kernel on the LEAP server from
 Contributors to this documentation:
 
 - [Yuvi Panda](https://github.com/yuvipanda), [jupyter-sshd-proxy](https://github.com/yuvipanda/jupyter-sshd-proxy/blob/main/README.md):
-- Joe Ko [jk4730@columbia.edu], clarifications on how to setup the local public key
+- [Joe Ko](https://github.com/josephko91), clarifications on how to setup the local public key
 - [Sungjoon Park](https://github.com/sungjoon0710) for compiling this workflow for LEAP Pangeo.
