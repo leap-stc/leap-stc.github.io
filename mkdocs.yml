@@ -78,15 +78,15 @@ theme:
     - content.code.copy
     - navigation.instant
     - navigation.tracking
-    - navigation.tabs
-    - navigation.sections
-    - navigation.expand
-    - navigation.top
-    - navigation.indexes
+    #- navigation.tabs #displays top-level navigation items as tabs
+    - navigation.sections #groups top level sections in sidebar
+    #- navigation.expand #expands all sub-sections by default
+    - navigation.top #adds back-to-top button when scrolling down
+    - navigation.indexes #enables section index pages
     - header.autohide 
     - search.suggest
     - search.share
-    - toc.integrate
+    #toc.integrate # enabling this causes the table of contents to be displayed in the left sidebar alongside navigation links
 
 extra_css:
   - stylesheets/extra.css
