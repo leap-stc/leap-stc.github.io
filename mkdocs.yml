@@ -1,21 +1,14 @@
+
+# Project Information
 site_name: LEAP Technical Documentation
+site_url: https://leap-stc.github.io/
+site_author: LEAP Data and Compute Team
+site_description: The home for all technical documentation related to LEAP and LEAP-Pangeo
+
+# Repository Information
 repo_name: leap-stc.github.io
 repo_url: https://github.com/leap-stc/leap-stc.github.io
-site_description: LEAP Technical Documentation
-site_author: LEAP's Data and Domputing team
 docs_dir: docs
-
-
-theme:
-  name: material
-  features:
-    - navigation.tabs
-    - navigation.sections
-    - navigation.expand
-    - navigation.top
-    - navigation.indexes
-    - header.autohide 
-    - toc.integrate
 
 nav:
   - "index.md"
@@ -61,14 +54,17 @@ theme:
   palette:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
-      primary: default-dark
+      primary: custom
+      accent: indigo
+      scheme: default
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
 
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: default-dark
+      primary: black
+      accent: indigo
       toggle:
         icon: material/brightness-4
         name: Switch to system preference
@@ -84,11 +80,17 @@ theme:
   features:
     - content.code.annotate
     - content.code.copy
-    - navigation.indexes
     - navigation.instant
     - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.indexes
+    - header.autohide 
     - search.suggest
     - search.share
+    - toc.integrate
 
 plugins:
   - search
