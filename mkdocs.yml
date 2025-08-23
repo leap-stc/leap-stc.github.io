@@ -78,7 +78,7 @@ theme:
     - content.code.copy
     - navigation.instant
     - navigation.tracking
-    #- navigation.tabs #displays top-level navigation items as tabs
+    - navigation.tabs #displays top-level navigation items as tabs
     - navigation.sections #groups top level sections in sidebar
     #- navigation.expand #expands all sub-sections by default
     - navigation.top #adds back-to-top button when scrolling down
