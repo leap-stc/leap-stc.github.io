@@ -13,14 +13,17 @@ docs_dir: docs
 nav:
   - "index.md"
   - Introduction:
+      - Introduction: introduction/index.md
       - introduction/getting_started.md
       - introduction/what_is_the_hub.md
   - Data:
-      - data/data_locations.md
-      - data/data_lifecycle.md
-      - data/data_catalog.md
+      - Data: data/index.md
+      - Locations: data/data_locations.md
+      - The data lifecycle: data/data_lifecycle.md
+      - LEAP's data catalog: data/data_catalog.md
 
   - Compute:
+      - Computing: compute/index.md
       - Hub Access:
           - Overview: compute/hub_access.md
           - Access via Browser: compute/hub_browser_access.md
@@ -30,17 +33,18 @@ nav:
       - compute/manage_software.md
       
   - Education / Outreach:
+      - Education: edu/index.md
       - edu/classes.md
       - edu/bootcamps.md
   - Reference:
+      - Reference: reference/index.md
       - reference/file_formats.md
       - reference/rclone.md
       - reference/authentication.md
-      - reference/infrastructure_details.md
-      - reference/faqs.md
-      
+      - reference/infrastructure_details.md      
 
   - Support:
+      - Support: support/index.md
       - support/contact.md
       - support/signup_troubleshooting.md
       - support/hub_access_error.md

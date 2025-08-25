@@ -14,7 +14,7 @@ Once you have applied for membership, it will take a few days until you can be a
 
 !!! note
 
-    It is very common for users to not realize that they have already received an invitation to join the `leap-stc` Github Organization! If you are unsure whether your membership has gone through, please consult our [FAQs][faqs]
+    It is very common for users to not realize that they have already received an invitation to join the `leap-stc` Github Organization! If you are unsure whether your membership has gone through, please consult the [support section][sign-up-troubleshooting]
 
 ## Logging In
 

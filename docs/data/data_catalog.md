@@ -1,4 +1,4 @@
-# Catalog
+# LEAP's data catalog
 
 LEAP maintains a data catalog at [https://catalog.leap.columbia.edu](https://catalog.leap.columbia.edu).
 
