@@ -131,3 +131,13 @@ cluster.shutdown()
 | **Slow progress**                   | Scale up workers with `cluster.scale(...)` or use `cluster.adapt(minimum=..., maximum=...)`; rechunk for bigger tasks; use `persist()` on reused intermediates.   |
 | **Dataset not found / auth errors** | Verify the bucket/path; check credentials and permissions; confirm whether code is running on the Hub vs. local and that the selected interpreter/kernel matches. |
 | **Dashboard not loading**           | Recreate the client/cluster, then reopen `client.dashboard_link`; ensure the dashboard URL isn’t blocked by network/firewall settings.                            |
+
+## Other ways to run Dask
+
+While Dask is a great tool for scaling, there are other ways to run Dask on distributed systems.
+
+- HPC (job schedulers): https://jobqueue.dask.org/
+- Dask MPI: https://mpi.dask.org/
+- Managed cloud: https://coiled.io/?utm_source=chatgpt.com
+- Kubernetes: https://kubernetes.dask.org/en/latest/?utm_source=chatgpt.com
+- Cloud provider SDKs: https://cloudprovider.dask.org/en/latest/?utm_source=chatgpt.com
