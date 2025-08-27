@@ -2,9 +2,9 @@
 
 ## Accessing LEAP Cloud Buckets
 
-If you are working from a private server (anything that is not the Jupyterhub, i.e. local machine or HPC), accessing LEAP cloud data requires authentication. We manage bucket access directly via Google Cloud Console (GCS), on a per-user basis.
+If you are not working on the LEAP Jupyterhub, i.e. a local machine or HPC, accessing the LEAP cloud data requires authentication. We manage bucket access directly via Google Cloud Console (GCS), on a per-user basis.
 
-1. Ensure your private server can access the Google Cloud SDK via its Terminal. Please consult the [Install Instructions](https://cloud.google.com/sdk/docs/install) for guidance if you do not have gcloud on your machine. Login to whichever google account you want LEAP to grant access to with the [gcloud auth login](https://cloud.google.com/sdk/gcloud/reference/auth/login) command. To ensure everything worked, verify that `gcloud auth list` returns the correct account.
+1. Ensure your computer can access the Google Cloud SDK via its Terminal. Please consult the [Install Instructions](https://cloud.google.com/sdk/docs/install) for guidance if you do not have gcloud on your machine. Login to whichever google account you want LEAP to grant access to with the [gcloud auth login](https://cloud.google.com/sdk/gcloud/reference/auth/login) command. To ensure everything worked, verify that `gcloud auth list` returns the correct account.
 1. Reach out to the Data and Compute team to request access. We'll need to know which account email you have logged into gcloud with as well as [which bucket][leap-cloud-buckets] you need to access. Permissions will be granted based on what kind of access is needed (read-only, write, etc). Once confirmed on our end, verify which permissions were granted with `gcloud storage buckets get-iam-policy gs://<bucket-name>` under your account email.
 1. Once you have access, you have a variety of options for actually moving the data; most tools or libraries have some way of syncing with gcloud. You may find it helpful to generate [Application Default Credentials](https://cloud.google.com/docs/authentication/application-default-credentials) using the `gcloud auth application-default login` command. This helps applications automatically find credentials at runtime, bypassing the need for manual authentication. This will create a OAuth 2.0 Token file in some location like `$HOME/gcloud/application_default_credentials.json`.
 
@@ -34,35 +34,41 @@ A typical workflow for the above steps might look like:
 
 ```python
 import xarray as xr
-import fsspec
 import zarr
+from obstore.store import S3Store
+from zarr.storage import ObjectStore
+
+# Optional: This will start a dask distributed client for parallel processing.
+client = Client()
+print(client.scheduler.address)
 
 ds = xr.tutorial.open_dataset("air_temperature", chunks={})
 ds_processed = ds.mean(...).resample(...)  # sample modifications to data
 
 # define our credentials, bucket name and dataset path
-osn_bucket_name = "leap-pangeo-inbox"
-osn_key = "<ask DCT team>"
-osn_secret = "<ask DCT team>"
-endpoint_url = "https://nyu1.osn.mghpcc.org"
-dataset_path = f"{osn_bucket_name}/{dataset_name}"
+DATASET_NAME = "<INSERT_YOUR_DATASET_NAME_HERE>"
 
-# Here we are using fsspec/s3fs to pass our OSN credentials to Zarr.
-# Note: If you get an error like: TypeError: Unsupported type for store_like: 'FSMap'`. It is because zarr-python does not currently support the older fsspec FSMap object style. https://github.com/zarr-developers/zarr-python/issues/2706
-
-fs = fsspec.filesystem(
-    "s3",
-    key=osn_key,
-    secret=osn_secret,
-    client_kwargs={"endpoint_url": endpoint_url},
-    asynchronous=True,
+osnstore = S3Store(
+    "leap-pangeo-inbox",
+    prefix=f"{DATASET_NAME}/{DATASET_NAME}.zarr",
+    aws_endpoint="https://nyu1.osn.mghpcc.org",
+    access_key_id="<ASK LEAP DCT MEMBERS FOR CREDENTIALS>",
+    secret_access_key="<ASK LEAP DCT MEMBERS FOR CREDENTIALS>",
+    client_options={"allow_http": True},
 )
-store = zarr.storage.FsspecStore(fs, path=dataset_path)
+zstore = ObjectStore(osnstore)
 
-zarr_format = 3
-
-ds_processed.to_zarr(store=store, zarr_format=zarr_format, consolidated=False)
+# Write our dataset as Zarr to OSN
+ds.to_zarr(
+    zstore,
+    zarr_format=3,
+    consolidated=False,
+    mode="w",
+)
 
 # Note: Your data can be read anywhere, by anyone!
-# roundtrip = xr.open_zarr(f"{dataset_path}', consolidated=False)
+roundtrip = xr.open_zarr(
+    "https://nyu1.osn.mghpcc.org/leap-pangeo-inbox/dataset-name/dataset-name.zarr",
+    consolidated=False,
+)
 ```

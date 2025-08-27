@@ -46,34 +46,31 @@ If you get a Hub Usage Alert email, this means you are violating the User Direct
 - Delete cached files, ipython checkpoints, and any other unwanted files.
 - If you still require more storage, it is likely that you are storing downloaded data in your user directory. We recommend storing data in a LEAP cloud bucket or data catalog. For more information, please consult our [data locations][where-data-lives].
 
-Our goal is to accomodate all community members and thus we are happy to assist users in relocating data. If you have any concerns, please reach out to the [Data and Compute Team][contact].
+Our goal is to accommodate all community members and thus we are happy to assist users in relocating data. If you have any concerns, please reach out to the [Data and Compute Team][contact].
 
-## Dask "Killed Workers"
+## Dask / Xarray tips and tricks
 
-The "Killed Worker" message in dask can result due to a variety of reasons. Here are some of the common reasons why you might see such an error message
+The Xarray docs have a page on [Xarray + dask best practices](https://docs.xarray.dev/en/stable/user-guide/dask.html#best-practices).
 
-### Datasets Chunks too large
+#### Correct chunk sizes
 
-**Issue**
-The default dask worker configuration can deal well with dataset chunk sizes of ~100MB. If the chunks of your data are significantly larger, your worker might crash just upon loading a few of these chunks into memory.
+When working with Xarray and Zarr, you should aim for data chunk sizes around **100MB**. Chunk sizes too small can overwhelm the Dask scheduler, while chunk sizes being to large can give you memory issues.
 
-**Solution**
-You can change the configuration of your dask workers and increase the memory each worker has to deal with larger chunks. You can adjust the memory by passing additional [options](https://gateway.dask.org/cluster-options.html) to the dask-gatway cluster upon creation:
+You can examine the chunk size and shape by viewing the html repr of an Xarray dataset in a Jupyter Notebook. If you click on the right-most database logo you should get a drop-down menu that shows the chunking information.
+
+![Chunking](../assets/xarray_repr.png)
+
+#### Delay computation until write
+
+Xarray is great at lazy-computation, this means that is usually possible to run multiple operations before any computation is done. Generally it is a good idea to keep everything lazy (not eager!) until your finish your processing and write your data. For example, a `to_zarr()` call would trigger the computation. This can generally be accomplished by not calling `load()`, `.persist()` or `.compute()`.
+
+#### Use the Dask dashboard
+
+If you are using Dask distributed scheduler you can view the [dask dashboard](https://docs.dask.org/en/latest/dashboard.html?utm_source=xarray-docs) in a browser. This allows you to see memory usage, task progression and a bunch of other metrics all live.
 
 ```python
-from dask_gateway import Gateway
+from distributed import Client
 
-gateway = Gateway()
-options = gateway.cluster_options()
-
-options.worker_memory = 10  # 10 GB of memory per worker.
-
-# Create a cluster with those options
-cluster = gateway.new_cluster(options)
-cluster.scale(...)
-client = cluster.get_client()
+client = Client()
+client
 ```
-
-<!-- TODO: Add example how to change this in HTML repr -->
-
-[Example with Solution](https://notebooksharing.space/view/2b6753a5ffe8ddfae1da3b8e2b5507e617de47eb25f758a20c92b62e7e650fd7#displayOptions=)
