@@ -1,4 +1,12 @@
-# Welome
+---
+title: Home
+hide:
+  - navigation
+---
+
+![Image title](./assets/NSF_LEAP_joint_logo.svg)
+
+# 
 
 These pages detail the use of LEAP's computational and data resources. They are focused on
 LEAP-specific information as much as possible. The Pangeo community and the wider internet may be useful
