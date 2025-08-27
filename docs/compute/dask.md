@@ -82,21 +82,34 @@ z.compute()
 
 This example opens a remote Zarr dataset stored in Google Cloud Storage (GCS), builds a lazy analysis pipeline, and then executes it on a Dask cluster.
 
-````python
+```python
 import xarray as xr
 
 # Zarr example on GCS
-ds = xr.open_dataset("gs://cmip6/CMIP6/HighResMIP/MOHC/HadGEM3-GC31-HM/highresSST-present/r1i1p1f1/3hr/tas/gn/v20170831/, engine="zarr", chunks={})
-ds
+ds = xr.open_dataset(
+    "gs://cmip6/CMIP6/HighResMIP/MOHC/HadGEM3-GC31-HM/highresSST-present/r1i1p1f1/3hr/tas/gn/v20170831/",
+    engine="zarr",
+    chunks={},
+)
 
 # Inspect and adjust chunking if needed
-ds.chunks 
+ds.chunks
 ds = ds.chunk({"time": 240, "lat": 256, "lon": 256})
+
+# Build a lazy pipeline: Area-weighted global mean, then a rolling mean along time
+weights = np.cos(np.deg2rad(ds.lat))
+tas_global = ds.tas.weighted(weights).mean(("lat", "lon"))
+tas_rolled = tas_global.rolling(time=24, center=True, min_periods=12).mean()
+
+# Trigger computation on the cluster
+result = tas_rolled.compute()
+print(result)
 ```
 
 ## Chunking guidance (xarray/Dask)
 
 Good chunking balances memory, overhead, and parallelism:
+
 - Aim for **~50-250 MB** per chunk of array data (rule of thumb)
 - Align chunks with the access pattern (e.g., chunk along `time` for time-wise operations).
 - Rechunk explicitly when the store's deafults aren't ideal
@@ -104,10 +117,11 @@ Good chunking balances memory, overhead, and parallelism:
 ## Cleaning up
 
 When, make sure to shut down your Dask cluster (scheduler + workers) so the compute nodes are released back to the shared Gateway pool. This stops your resource usage and frees capacity for others. Use the following code snippet to do this:
+
 ```python
 client.close()
 cluster.shutdown()
-````
+```
 
 ## Common issues and fixes
 
