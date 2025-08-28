@@ -106,13 +106,47 @@ result = tas_rolled.compute()
 print(result)
 ```
 
-## Chunking guidance (xarray/Dask)
+## Dask / Xarray tips and tricks
+
+The Xarray docs have a page on Xarray + dask best practices [here](https://docs.xarray.dev/en/stable/user-guide/dask.html?utm_source=chatgpt.com#best-practices)
+
+### Correct chunk sizes
+
+When working with Xarray and Zarr, you should aim for data chunk sizes around **~100 MB** (rule of thumb: ~50–250 MB). Chunk sizes that are too small can overwhelm the Dask scheduler, while chunks that are too large can cause memory issues.
+
+You can examine the chunk size and shape by viewing the HTML repr of an Xarray dataset in a Jupyter Notebook. If you click on the right-most database logo you should get a drop-down menu that shows the chunking information.
+
+![chunking](../assets/xarray_repr.png)
 
 Good chunking balances memory, overhead, and parallelism:
 
-- Aim for **~50-250 MB** per chunk of array data (rule of thumb)
-- Align chunks with the access pattern (e.g., chunk along `time` for time-wise operations).
-- Rechunk explicitly when the store's deafults aren't ideal
+- Aim for ~100 MB per chunk of array data (rule of thumb ~50–250 MB).
+- Align chunks with the access pattern (e.g., chunk along time for time-wise operations).
+- Rechunk explicitly when the store’s defaults aren’t ideal.
+
+### Delay computation until write
+
+Xarray is great at lazy computation; it’s usually possible to run multiple operations before any computation is done. Keep everything lazy (not eager!) until you finish your processing and write your data. For example, a `to_zarr()` call will trigger the computation. This can generally be accomplished by **not** calling `.load()`, `.persist()`, or `.compute()` during intermediate steps.
+
+## Use the Dask dashboard
+
+If you are using the Dask distributed scheduler you can view the Dask dashboard in a browser. This allows you to see memory usage, task progression, and a bunch of other metrics live.
+
+```python
+# Local / standalone scheduler:
+from distributed import Client
+
+client = Client()
+client
+```
+
+On Dask Gateway (recommended on the Hub), you’ll typically do:
+
+```python
+# Using Gateway:
+client = cluster.get_client()
+client.dashboard_link
+```
 
 ## Cleaning up
 
