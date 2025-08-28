@@ -16,8 +16,9 @@ This version of VS Code runs on the same remote server as your Jupyter kernel an
 
 1. **Click the VS Code Icon**
 
-    - Once your Jupyter environment launches, look in the **Launcher** tab or the **left sidebar**.
-    - Find and click the **VS Code** or **code-server** icon (it may look like the regular VS Code logo).
+    - Once your Jupyter environment launches, look in the **Launcher** tab
+    - Find and click the **VS Code** icon (it should look like the following screenshot).
+        ![VsCode Icon](../assets/vscode_extension.png)
     - This opens the in-browser VS Code interface in a new tab or within the same window.
 
 1. **Using VS Code in the Browser**
