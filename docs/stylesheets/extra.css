@@ -23,3 +23,7 @@
   --md-secondary-color--light: #B9D9EB;
   --md-secondary-color--dark: #00796B;
 }
+
+.md-typeset a {
+  color: #00796B;   
+}
