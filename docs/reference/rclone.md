@@ -2,11 +2,11 @@
 
 ## Rclone
 
-Rclone is an open-source command line tool for moving and syncing data. It can be very useful for moving data into or out of LEAP cloud buckets.
+Rclone is an open-source command line tool for moving and syncing data. It can be very useful for moving data into or out of LEAP cloud buckets. There is a bit of a learning-curve, but it has [extensive docs](https://rclone.org/docs/). Please [reach out to us][contact] if you run into issues.
 
 ## Usage
 
-Rclone can be installed on the hub by tying in the Terminal:
+Rclone can be installed on the hub by typing in the Terminal:
 
 ```bash
 mamba install rclone -y

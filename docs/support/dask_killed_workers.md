@@ -25,7 +25,3 @@ cluster = gateway.new_cluster(options)
 cluster.scale(...)
 client = cluster.get_client()
 ```
-
-<!-- TODO: Add example how to change this in HTML repr -->
-
-[Example with Solution](https://notebooksharing.space/view/2b6753a5ffe8ddfae1da3b8e2b5507e617de47eb25f758a20c92b62e7e650fd7#displayOptions=)
