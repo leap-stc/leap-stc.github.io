@@ -33,7 +33,7 @@ The biggest barrier here is external authentication; see the [Authentication sec
 
 There are many tools available to interact with cloud object storage. We currently have basic operations documented for three tools:
 
-- [rclone](https://rclone.org/) which provides a Command Line Interface to many different storage backends, see [here](../reference/rclone.md) for more details. Rclone is highly versatile and suits almost all use cases. Details on authentication and usage can be found [here][rclone].
+- [rclone](https://rclone.org/) which provides a Command Line Interface to many different storage backends, see [here](../reference/data_transfer.md) for more details. Rclone is highly versatile and suits almost all use cases. Details on authentication and usage can be found [here][rclone].
 
 - GCloud SDK. One can interact with Google Cloud storage directly using the Google Cloud SDK and Command Line Interface. Please consult the [Install Instructions](https://cloud.google.com/sdk/docs/install) for more guidance.
 
@@ -68,3 +68,5 @@ There are many tools available to interact with cloud object storage. We current
     - small: `rclone`
     - medium: `rclone`
     - large: `rclone`
+
+(Insert links to Rclone and fsspec guides)
