@@ -91,18 +91,27 @@ rclone ls leap-inbox:leap-pangeo-inbox/example-dataset
 
 ### Moving Data
 
-You can move directories from your local computer, to cloud storage with rclone.
+Rclone can copy data from your **local computer**, from an **HPC system**, or between **cloud buckets**.
+
+**From Local/HPC to OSN:**
 
 ```shell
-rclone copy path/to/local/dir/ leap-inbox:<leap-pangeo-inbox/dataset_name/dataset_input_files
+rclone copy path/to/local_or_local/dir/ leap-inbox:<leap-pangeo-inbox/dataset_name/dataset_input_files
 ```
 
-You can also move data between cloud buckets using rclone
+**Between Cloud Buckets:**
 
 ```shell
 rclone copy \
 <remote_name_a>:<bucket-name>/dataset-name/dataset-files \
 <remote_name_b>:<bucket-name>/dataset-name/dataset-files \
+```
+
+**From Local/HPC to GCS:**
+
+```shell
+rclone copy /path/to/local_ir_hpc/data/ \
+  leap-gcs:leap-persistent/username/my_dataset
 ```
 
 The rclone syntax for copying single files is slightly different then for multiple files. To copy a single file you can use the [copyto command](https://rclone.org/commands/rclone_copyto/). Another option is to copy the containing folder and use the `--include` or `--exclude` flags to select the file to copy.
