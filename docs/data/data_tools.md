@@ -91,7 +91,7 @@ rclone ls leap-inbox:leap-pangeo-inbox/example-dataset
 
 ### Moving Data
 
-You can move directories from a local computer to cloud storage with rclone.
+You can move directories from your local computer, to cloud storage with rclone.
 
 ```shell
 rclone copy path/to/local/dir/ leap-inbox:<leap-pangeo-inbox/dataset_name/dataset_input_files
