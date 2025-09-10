@@ -72,3 +72,5 @@ The rclone syntax for copying single files is slightly different then for multip
 !!! note
 
     Transfer speed is likely limited by the internet connection of your local machine.
+
+## fsspec/gcsfs
