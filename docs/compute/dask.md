@@ -148,6 +148,71 @@ client = cluster.get_client()
 client.dashboard_link
 ```
 
+## Memory Management with Xarray and Dask
+
+Running out of memory (OOM) is one of the most common issues when working with climate datasets, even on 128 GB workers.
+Here are patterns to avoid and recommended alternatives.
+
+**Pitfall: eager load + rechunk**
+
+```python
+import xarray as xr
+
+# This will likely OOM!
+ds = xr.open_dataset("bigfile.nc").load()
+ds = ds.chunk({"time": 100})
+result = ds.mean("time").compute()
+```
+
+Here `.load()` forces the full dataset into memory before chunking.
+
+**Better: lazy rechunk + write + reload**
+
+```python
+# Open lazily with Dask
+ds = xr.open_dataset("bigfile.nc", chunks={})
+
+# Rechunk safely
+ds_rechunked = ds.chunk({"time": 100})
+
+# Write to Zarr
+ds_rechunked.to_zarr("gs://leap-persistent/username/bigfile_rechunked.zarr")
+
+# Reopen and process
+ds2 = xr.open_zarr("gs://leap-persistent/username/bigfile_rechunked.zarr")
+result = ds2.mean("time").compute()
+```
+
+This keeps memory use bounded.
+
+### Processing subsets with .isel()
+
+For very large data, process subsets explicitly and append:
+
+```python
+for i in range(6):  # e.g. nf = [0,1,2,3,4,5]
+    ds_sub = ds.isel(nf=[i])  # brackets preserve dimension
+    processed = my_processing(ds_sub)
+
+    processed.to_zarr(
+        "gs://leap-persistent/username/processed.zarr",
+        mode="a",
+        append_dim="nf",
+    )
+```
+
+### Tips to avoid OOM
+
+- Chunk around 100 MB per task
+- Stay lazy until the end of workflow
+- Use the Dask dashboard to monitor memory
+- Scale workers with `cluster.scale()` or `cluster.adapt()`
+- Write intermediates with .to_zarr() to checkpoint progress
+
+!!! tip
+
+    If you hit repeated OOM errors, try the subset-loop approach (isel + to_zarr with mode="a"). It trades some complexity for much more stability.
+
 ## Cleaning up
 
 When, make sure to shut down your Dask cluster (scheduler + workers) so the compute nodes are released back to the shared Gateway pool. This stops your resource usage and frees capacity for others. Use the following code snippet to do this:
@@ -172,6 +237,6 @@ While Dask is a great tool for scaling, there are other ways to run Dask on dist
 
 - HPC (job schedulers): https://jobqueue.dask.org/
 - Dask MPI: https://mpi.dask.org/
-- Managed cloud: https://coiled.io/?utm_source=chatgpt.com
-- Kubernetes: https://kubernetes.dask.org/en/latest/?utm_source=chatgpt.com
-- Cloud provider SDKs: https://cloudprovider.dask.org/en/latest/?utm_source=chatgpt.com
+- Managed cloud: https://coiled.io/
+- Kubernetes: https://kubernetes.dask.org/en/latest/
+- Cloud provider SDKs: https://cloudprovider.dask.org/en/latest/
