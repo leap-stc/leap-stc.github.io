@@ -49,10 +49,12 @@ nav:
   - Support:
       - Support: support/index.md
       - support/contact.md
-      - support/signup_troubleshooting.md
-      - support/hub_access_error.md
-      - support/dask_killed_workers.md
-      - support/hub_usage_alert.md
+      - FAQs:
+        - support/signup_troubleshooting.md
+        - support/hub_access_error.md
+        - support/dask_killed_workers.md
+        - support/hub_usage_alert.md
+
 
 theme:
   language: en
