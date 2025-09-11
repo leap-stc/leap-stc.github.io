@@ -1,6 +1,6 @@
 # File formats
 
-This page explains some of the most common data formats used in the LEAP ecosystem.
+This page explains some of the most common data formats used in the LEAP ecosystem. For guidance on *where data should be stored* and *how to move it into the right location*, see [Where Data Lives](data_locations) and [Data Tools](data_tools).
 
 ## Zarr
 
@@ -43,7 +43,7 @@ Think of it like "git for zarr data": you can create, version, and tag your data
 
 ### Example
 
-The [Iecchunk docs](https://icechunk.io/en/latest/overview/) have tons of useage examples and tutorials. An Xarray specific guide can be found [here](https://icechunk.io/en/latest/xarray/).
+The [Icechunk docs](https://icechunk.io/en/latest/overview/) have tons of useage examples and tutorials. An Xarray specific guide can be found [here](https://icechunk.io/en/latest/xarray/).
 
 ## NetCDF
 

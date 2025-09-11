@@ -18,9 +18,11 @@ nav:
       - introduction/what_is_the_hub.md
   - Data:
       - Data: data/index.md
+      - File Formats: data/file_formats.md
       - Locations: data/data_locations.md
-      - The data lifecycle: data/data_lifecycle.md
-      - LEAP's data catalog: data/data_catalog.md
+      - Data Lifecycle: data/data_lifecycle.md
+      - Data Tools: data/data_tools.md
+      - LEAP's Data Catalog: data/data_catalog.md
 
   - Compute:
       - Computing: compute/index.md
@@ -41,8 +43,6 @@ nav:
       - edu/bootcamps.md
   - Reference:
       - Reference: reference/index.md
-      - reference/file_formats.md
-      - reference/data_transfer.md
       - reference/authentication.md
       - reference/infrastructure_details.md      
 

@@ -27,46 +27,39 @@ LEAP scientists also have access to an HPC or external filesystem on which their
 
 If the data is located behind a firewall on an HPC center, the normal 'pull' based paradigm of our feedstocks will not work. In this case we have an option to 'push' the data to a special "inbox" bucket (`'leap-pangeo-inbox'`) on the OSN Pod. Once the data is in this accessible intermediate staging area, the process and tools documented on the [feedstock template](https://github.com/leap-stc/LEAP_template_feedstock) ought to work.
 
-The biggest barrier here is external authentication; see the [Authentication section][authentication]. Once authenticated, users can initiate a data transfer from their 'local' machine (laptop, server, or HPC Cluster) with the tools documented below.
+The biggest barrier here is external authentication; see the [Authentication section][authentication]. Once authenticated, users can initiate a data transfer from their 'local' machine (laptop, server, or HPC Cluster) with the tools documented in [Data Tools](data-tools).
 
-## Data Tooling
+## Transferring Data (at a glance)
 
-There are many tools available to interact with cloud object storage. We currently have basic operations documented for three tools:
+Use this quick guide; full details and examples are in [Data Tools](data-tools).
 
-- [rclone](https://rclone.org/) which provides a Command Line Interface to many different storage backends, see [here](../reference/data_transfer.md) for more details. Rclone is highly versatile and suits almost all use cases. Details on authentication and usage can be found [here][rclone].
+- **Small (KB–100s MB):** `fsspec/gcsfs` in Python (great for quick reads/writes and xarray/zarr I/O).
+- **Medium/Large (GBs+):** `rclone` (robust, resumable, ideal for bucket↔bucket or local↔bucket syncing).
+- **Direct GCS users:** `gsutil` via the GCloud SDK is available if you’re already in that ecosystem.
 
-- GCloud SDK. One can interact with Google Cloud storage directly using the Google Cloud SDK and Command Line Interface. Please consult the [Install Instructions](https://cloud.google.com/sdk/docs/install) for more guidance.
+## Deleting Data
 
-- [fsspec](https://filesystem-spec.readthedocs.io/en/latest/) (and its submodules [gcsfs](https://gcsfs.readthedocs.io/en/latest/) and [s3fs](https://s3fs.readthedocs.io/en/latest/)) provide filesystem-like access to local, remote, and embedded file systems from within a python session. Fsspec is also used by xarray under the hood and so integrates easily with normal coding workflows (and tools like Dask).
+Cleaning up data is an essential part of the lifecycle. Regularly removing unneeded files helps conserve storage resources and control costs for the Hub.
 
-    - `fsspec` can be used to transfer small amounts of data to google cloud storage or OSN. If you have more than a few hundred MB's, it is worth using Rclone
-    - `fsspec` should be installed by default on the **Base Pangeo Notebook** environment on the JupyterHub. If you are working locally, you can install it with `pip or conda/mamba`. ex: `pip install fsspec`.
+!!! warning
 
-### Tool Selection
+    Depending on which cloud bucket you are working, make sure to double check which files you are deleting by inspecting the contents and only working in a subdirectory with your username (e.g. `gs://<leap-bucket>/<your-username>/some/project/structure`)
 
-**small**: KB's to 100's of MB
+You can remove single files by using a gcsfs/fsspec filessytem as above:
 
-**medium**: 1 to \<100GB
+```python
+import gcsfs
 
-**large**: >100GB
+fs = gcsfs.GCSFileSystem()  # equivalent to fsspec.fs('gs')
+fs.rm("leap-persistent/funky-user/file_to_delete.nc")
+```
 
-#### Move data from User Directory to GCS
+If you want to remove zarr stores (which are an ‘exploded’ data format, and thus represented by a folder structure) you have to recursively delete the store:
 
-- Data volume:
-    - small: `fsspec/gcsfs`
-    - medium: `rclone`
+`fs.rm("leap-scratch/funky-user/processed_store.zarr", recursive=True)`
 
-#### Move data from JupyterHub to OSN
+### Scratch vs. Persistent vs. OSN
 
-- If the data volume is:
-    - small: `rclone`
-    - medium: `rclone`
-
-#### Move data from Laptop/HPC to OSN
-
-- If the data volume is:
-    - small: `rclone`
-    - medium: `rclone`
-    - large: `rclone`
-
-(Insert links to Rclone and fsspec guides)
+- `gs://leap-scratch (scratch):` Auto-deletes after 7 days. You can also remove earlier via the methods above.
+- `gs://leap-persistent (persistent):` Manually delete what you no longer need to free space.
+- OSN pod: Coordinate deletions with the Data and Compute Team (open a request before removing large datasets).
