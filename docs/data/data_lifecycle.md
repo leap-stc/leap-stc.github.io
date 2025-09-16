@@ -4,7 +4,7 @@ This page is meant to serve as a high level reference to the data lifecycle. Ple
 
 ## Data ingestion
 
-Working on the JupyterHub often requires transferring whatever data you want to work with into the cloud. The term "data ingestion" refers to a reproducible way to download and transform data into performant formats like Zarr. Data in LEAP's cloud storage is available for the entire LEAP community and can be added to the [LEAP Data Catalog][leaps-data-catalog].
+Working on the JupyterHub often requires transferring whatever data you want to work with into the cloud. The term "data ingestion" refers to a reproducible way to download and transform data into performant formats like Zarr. Data in LEAP's cloud storage is available for the entire LEAP community and can be added to the [LEAP Data Catalog][leap-data-catalog].
 
 The Data and Compute team can help with large or complicated data ingestion efforts. We organize such efforts in Github repositories called "feedstocks" that centralize knowledge for each request. Once you've verified that the data you need isn't available through the catalog:
 
@@ -27,11 +27,11 @@ LEAP scientists also have access to an HPC or external filesystem on which their
 
 If the data is located behind a firewall on an HPC center, the normal 'pull' based paradigm of our feedstocks will not work. In this case we have an option to 'push' the data to a special "inbox" bucket (`'leap-pangeo-inbox'`) on the OSN Pod. Once the data is in this accessible intermediate staging area, the process and tools documented on the [feedstock template](https://github.com/leap-stc/LEAP_template_feedstock) ought to work.
 
-The biggest barrier here is external authentication; see the [Authentication section][authentication]. Once authenticated, users can initiate a data transfer from their 'local' machine (laptop, server, or HPC Cluster) with the tools documented in [Data Tools](data-tools).
+The biggest barrier here is external authentication; see the [Authentication section][authentication]. Once authenticated, users can initiate a data transfer from their 'local' machine (laptop, server, or HPC Cluster) with the tools documented in [Data Tools][data-tools].
 
 ## Transferring Data (at a glance)
 
-Use this quick guide; full details and examples are in [Data Tools](data-tools).
+Use this quick guide; full details and examples are in [Data Tools][data-tools].
 
 - **Small (KB–100s MB):** `fsspec/gcsfs` in Python (great for quick reads/writes and xarray/zarr I/O).
 - **Medium/Large (GBs+):** `rclone` (robust, resumable, ideal for bucket↔bucket or local↔bucket syncing).

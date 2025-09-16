@@ -14,15 +14,16 @@ nav:
   - "index.md"
   - Introduction:
       - Introduction: introduction/index.md
-      - introduction/getting_started.md
       - introduction/what_is_the_hub.md
+      - introduction/getting_started.md
+
   - Data:
       - Data: data/index.md
       - File Formats: data/file_formats.md
-      - Locations: data/data_locations.md
+      - Data Locations: data/data_locations.md
       - Data Lifecycle: data/data_lifecycle.md
       - Data Tools: data/data_tools.md
-      - LEAP's Data Catalog: data/data_catalog.md
+      - LEAP Data Catalog: data/data_catalog.md
 
   - Compute:
       - Computing: compute/index.md
@@ -31,7 +32,7 @@ nav:
           - Access via Browser: compute/hub_browser_access.md
           - Access VSCode inside Hub: compute/vscode_inside_hub.md
           - Access via VSCode: compute/vs_code_to_hub.md
-      - Dask: compute/dask.md
+      - Dask Guide: compute/dask.md
       - compute/compute_scaling.md
       - compute/manage_software.md
       
@@ -45,8 +46,7 @@ nav:
       - reference/infrastructure_details.md      
 
   - Support:
-      - Support: support/index.md
-      - support/contact.md
+      - Contact: support/contact.md
       - FAQs:
         - support/signup_troubleshooting.md
         - support/hub_access_error.md

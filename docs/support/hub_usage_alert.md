@@ -2,7 +2,7 @@
 
 ## I received a warning about space on my User Directory
 
-If you get a Hub Usage Alert email, this means you are violating the User Directory storage limit. Remember that user directories are for scripts and notebooks not datasets! Users who persistently violate hub usage policies may get their cloud access temporarily restricted.
+If you get a Hub Usage Alert email, this means you are violating the user directory storage limit. Remember that user directories are for scripts and notebooks not datasets! Users who persistently violate hub usage policies may get their cloud access temporarily restricted.
 
 ## How do I manage my disk space?
 

@@ -1,4 +1,4 @@
-# LEAP's data catalog
+# LEAP Data Catalog
 
 LEAP maintains a data catalog at [https://catalog.leap.columbia.edu](https://catalog.leap.columbia.edu).
 
@@ -6,7 +6,7 @@ The catalog includes data that's been ingested from public sources as well as da
 
 ## Data accessability
 
-[LEAP data][where-data-lives] is either stored on a Google cloud account (GCS) or on an Open-Storage-Network (OSN) pod. Data hosted on GCS is only accessible through the LEAP authenticated [Jupyter-hub][leap-jupyter-hub]. Data hosted on the OSN pod is publicly accessible and has no egress cost.
+[LEAP data][where-data-lives] is either stored on a Google Cloud Storage (GCS) or on an Open Storage Network (OSN) pod. Data hosted on GCS is only accessible through the LEAP authenticated [Jupyter-hub][what-is-leap-jupyterhub]. Data hosted on the OSN pod is publicly accessible and has no egress cost.
 
 ## Data Viewer
 

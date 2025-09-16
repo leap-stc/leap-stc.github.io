@@ -1,6 +1,6 @@
 # Contact
 
-The preferred way to contact the Data & Compute Team is via the Slack Workspace **LEAP-NSF-STC**
+The preferred way to contact the Data & Compute Team is via the LEAP Slack Workspace. The steps to take are listed below:
 
 ## Ask a Question on the LEAP Slack Workspace
 
