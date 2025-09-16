@@ -3,8 +3,8 @@
 LEAP provides infrastructure support to [LEAP-Affiliated Courses](https://leap.columbia.edu/education/education-curriculum/).
 
 !!! note
-    If you are launching a new course that relies on the LEAP Infrastructure, please let us know: [leap@columbia.edu](mailto:leap@columbia.edu)
 
+    If you are launching a new course that relies on the LEAP Infrastructure, please let us know: [leap@columbia.edu](mailto:leap@columbia.edu)
 
 ## Preparing to teach
 
