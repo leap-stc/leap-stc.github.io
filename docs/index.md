@@ -13,7 +13,7 @@ LEAP-specific information as much as possible. The Pangeo community and the wide
 in figuring out how to accomplish specific tasks. You can always [ask for help][contact].
 
 - The [Introduction][overview-and-first-steps] explains what the resources are and how to gain access to them.
-- The [Data][data-overview] section explains where data lives and what data is publically available.
+- The [Data][data-overview] section explains where data lives and what data is publicaly available.
 - The [Compute][using-leaps-computing-resources] section explains how to leverage LEAP's computing resources to solve your problems
 - The [Education][teaching-classes] section is intended for people teaching classes, running bootcamps, etc.
 - The [Support][contact] section contains answers to frequently asked questions including how to get more help.
