@@ -1,6 +1,6 @@
-# File formats
+# File Formats
 
-This page explains some of the most common data formats used in the LEAP ecosystem. For guidance on *where data should be stored* and *how to move it into the right location*, see [Where Data Lives](data_locations) and [Data Tools](data_tools).
+This page explains some of the most common data formats used in the LEAP ecosystem. For guidance on *where data should be stored* and *how to move it into the right location*, see [Where Data Lives][where-data-lives] and [Data Tools][data-tools].
 
 ## Zarr
 

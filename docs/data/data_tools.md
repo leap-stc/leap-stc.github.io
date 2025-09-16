@@ -2,7 +2,7 @@
 
 There are many tools available to interact with cloud object storage. We currently have basic operations documented for three tools:
 
-- [rclone](https://rclone.org/) which provides a Command Line Interface to many different storage backends, see [here](../reference/data_transfer.md) for more details. Rclone is highly versatile and suits almost all use cases. Details on authentication and usage can be found [here][rclone].
+- [rclone](https://rclone.org/) which provides a Command Line Interface to many different storage backends, see [here][rclone] for more details. Rclone is highly versatile and suits almost all use cases. Details on authentication and usage can be found [here][rclone].
 
 - GCloud SDK. One can interact with Google Cloud storage directly using the Google Cloud SDK and Command Line Interface. Please consult the [Install Instructions](https://cloud.google.com/sdk/docs/install) for more guidance.
 
@@ -51,7 +51,7 @@ mamba install rclone -y
 ```
 
 Once installed, you can setup "remotes", which are storage locations that have credentials.
-You can view and modify the rclone config file to add remotes. Rclone will show you where this is located by running: `rclone config file`. Please consult our [Authentication guide](./authentication.md) for instructions on how to setup various remotes on rclone.
+You can view and modify the rclone config file to add remotes. Rclone will show you where this is located by running: `rclone config file`. Please consult our [Authentication guide][authentication] for instructions on how to setup various remotes on rclone.
 
 ```
 [leap-pubs]

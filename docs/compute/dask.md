@@ -1,4 +1,4 @@
-# Dask
+# Dask Guide
 
 Dask can be deployed on distributed infrastructure, such as an HPC system or a cloud computing system. There is a growing ecosystem of Dask deployment projects that facilitate easy deployment and scaling of Dask clusters on a wide variety of computing systems.
 

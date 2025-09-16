@@ -18,7 +18,7 @@ For most use cases, rclone gets the job done.
     1. We do not anonymous access, that ruins the whole purpose of granting access! Put `false` when prompted.
     1. object_acl specifies the default permissions for any new objects you upload to storage. We recommend choosing either 5 or 6. bucket_acl does not matter since you're unlikely to create any new cloud buckets.
     1. If you followed the steps above and generated Application Default Credentials, you can choose `true` (**which is NOT the default**) for the "env_auth" option, which tells rclone to get GCP IAM credentials from runtime or as needed. If your `gcloud auth login` session is valid, it will be used to authenticate rclone without much hassle! Especially if you are on an HPC without a web browser, this is the best option.
-1. Upon completion, you will have created or added to your rclone configuration file. To find out the location of your config file, you can run `rclone config file` (it is usually something like `$HOME/.config/rclone/rclone.conf`). If you see the remote that was just set up, you can now use rclone freely! See our [technical reference on rclone](./data_transfer.md) for guidance.
+1. Upon completion, you will have created or added to your rclone configuration file. To find out the location of your config file, you can run `rclone config file` (it is usually something like `$HOME/.config/rclone/rclone.conf`). If you see the remote that was just set up, you can now use rclone freely! See our [reference on rclone][rclone] for guidance.
 
 ## OSN Pod Authentication
 

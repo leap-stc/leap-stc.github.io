@@ -1,4 +1,4 @@
-# Compute scaling
+# Compute Scaling
 
 When launching a server on the LEAP JupyterHub, you'll be asked to select a compute configuration. This guide helps you choose the right **image** and **hardware resources (RAM and CPU/GPU)** for your workflow.
 
