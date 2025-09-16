@@ -1,8 +1,8 @@
 # Running Bootcamps
 
-Bootcamp materials in the [LEAP-Pangeo bootcamp repository](https://github.com/leap-stc/LEAP-bootcamps). Please add the materials you develop for your bootcamp to this repo as described below.
+Bootcamp materials in the [LEAP-Pangeo Bootcamp Repository](https://github.com/leap-stc/LEAP-bootcamps). Please add the materials you develop for your bootcamp to this repo as described below.
 
-## Preparing for the bootcamp
+## Preparing for Bootcamps
 
 **Past attendees have suggested that it is very helpful to have the instructor write code from scratch.**
 This ensures the following:

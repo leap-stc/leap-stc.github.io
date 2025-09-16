@@ -10,4 +10,5 @@ The preferred way to contact the Data & Compute Team is via the Slack Workspace 
 - If issue persists after trying previous solutions, then let us know by posting a new thread and tagging us at `@data-and-compute`!
 
 `leap-pangeo`: channel for non-technical support for LEAP-Pangeo (Questions pertaining to Hub access, Education, etc.)
+
 `technical_questions`: channel for community-wide support on technical issues

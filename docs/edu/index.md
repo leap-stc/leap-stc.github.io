@@ -1,4 +1,4 @@
-# Using LEAP resources for education
+# Using LEAP Resources for Education and Broadening Participation
 
 LEAP data and computing resources can be used to support
 

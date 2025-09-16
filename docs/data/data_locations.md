@@ -2,7 +2,7 @@
 
 Data can live in one of three main places:
 
-- [LEAP's Jupyter hub][leap-jupyter-hub], which includes:
+- [LEAP's JupyterHub][leap-jupyter-hub], which includes:
 
     - Shared "cloud buckets", one for data being actively processed and another for data with longer lifetimes.
     - User directories for very small amount of data and code used privately.

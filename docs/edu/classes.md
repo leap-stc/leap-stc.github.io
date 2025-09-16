@@ -1,14 +1,20 @@
-# Teaching classes with LEAP infrastructure
+# Teaching Classes
 
 LEAP provides infrastructure support to [LEAP-Affiliated Courses](https://leap.columbia.edu/education/education-curriculum/).
 
-If you are an instructor of a LEAP-Affiliated Course and want your students to the LEAP Jupyter-hub, contact the [Data & Compute Team][contact] at least 3 weeks before the class start date in order to coordinate efforts for onboarding.
+!!! note
+    If you are launching a new course that relies on the LEAP Infrastructure, please let us know: [leap@columbia.edu](mailto:leap@columbia.edu)
+
 
 ## Preparing to teach
 
+### Timing
+
+If you are an instructor of a LEAP-Affiliated Course and want your students to the LEAP Jupyter-hub, contact the [Data & Compute Team][contact] at least 3 weeks before the class start date in order to coordinate efforts for onboarding.
+
 ### Class Material
 
-We suggest that instructors and teaching assistants prepare class material directly on the hub as much as possible to ensure an identical experience for the students during the class.
+We suggest that instructors and teaching assistants prepare class material directly on the [hub](https://leap.2i2c.cloud/) as much as possible to ensure an identical experience for the students during the class.
 
 To develop, edit, and test class material, we suggest that instructors themselves apply for [membership](https://forms.gle/RpeaMZh5btTdZtzu8) under the **education** category and check out our [Getting Started][getting-started] guide.
 
