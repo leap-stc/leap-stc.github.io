@@ -1,0 +1,25 @@
+[project]
+name = "leap-stc-github-io"
+description = "Technical documentation site for the LEAP-STC"
+requires-python = ">=3.12"
+dynamic = ["version"]
+readme = "README.md"
+dependencies = [
+    "markdown-exec>=1.11.0",
+    "mkdocs>=1.6.1",
+    "mkdocs-autorefs>=1.4.2",
+    "mkdocs-click>=0.9.0",
+    "mkdocs-material>=9.6.16",
+    "pre-commit>=4.2.0",
+    "ruff>=0.12.5",
+]
+
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+docstring-code-format = true
