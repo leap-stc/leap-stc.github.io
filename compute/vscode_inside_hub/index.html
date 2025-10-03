@@ -12,26 +12,28 @@
         <meta name="author" content="LEAP Data and Compute Team">
       
       
-        <link rel="canonical" href="https://leap-stc.github.io/">
+        <link rel="canonical" href="https://leap-stc.github.io/compute/vscode_inside_hub/">
       
       
+        <link rel="prev" href="../hub_browser_access/">
       
-        <link rel="next" href="introduction/">
+      
+        <link rel="next" href="../vs_code_to_hub/">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
     
     
       
-        <title>Home - LEAP Technical Documentation</title>
+        <title>Access VSCode inside Hub - LEAP Technical Documentation</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.2a3383ac.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,11 +52,11 @@
       
     
     
-      <link rel="stylesheet" href="assets/_markdown_exec_pyodide.css">
+      <link rel="stylesheet" href="../../assets/_markdown_exec_pyodide.css">
     
-      <link rel="stylesheet" href="stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -80,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#accessing-the-leap-hub-via-vs-code-in-your-browser" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +100,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="https://leap.columbia.edu/" title="LEAP Technical Documentation" class="md-header__button md-logo" aria-label="LEAP Technical Documentation" data-md-component="logo">
       
-  <img src="assets/LEAP_globe.png" alt="logo">
+  <img src="../../assets/LEAP_globe.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -115,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Access VSCode inside Hub
             
           </span>
         </div>
@@ -225,11 +227,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -250,7 +250,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="introduction/" class="md-tabs__link">
+        <a href="../../introduction/" class="md-tabs__link">
           
   
   
@@ -272,7 +272,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="data/" class="md-tabs__link">
+        <a href="../../data/" class="md-tabs__link">
           
   
   
@@ -290,11 +290,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="compute/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   
@@ -316,7 +318,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="edu/" class="md-tabs__link">
+        <a href="../../edu/" class="md-tabs__link">
           
   
   
@@ -338,7 +340,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="reference/" class="md-tabs__link">
+        <a href="../../reference/" class="md-tabs__link">
           
   
   
@@ -360,7 +362,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="support/contact/" class="md-tabs__link">
+        <a href="../../support/contact/" class="md-tabs__link">
           
   
   
@@ -391,9 +393,7 @@
           
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -406,7 +406,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://leap.columbia.edu/" title="LEAP Technical Documentation" class="md-nav__button md-logo" aria-label="LEAP Technical Documentation" data-md-component="logo">
       
-  <img src="assets/LEAP_globe.png" alt="logo">
+  <img src="../../assets/LEAP_globe.png" alt="logo">
 
     </a>
     LEAP Technical Documentation
@@ -430,19 +430,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -453,7 +444,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -492,7 +482,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="introduction/" class="md-nav__link ">
+            <a href="../../introduction/" class="md-nav__link ">
               
   
   
@@ -527,7 +517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="introduction/what_is_the_hub/" class="md-nav__link">
+      <a href="../../introduction/what_is_the_hub/" class="md-nav__link">
         
   
   
@@ -550,7 +540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="introduction/getting_started/" class="md-nav__link">
+      <a href="../../introduction/getting_started/" class="md-nav__link">
         
   
   
@@ -613,7 +603,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="data/" class="md-nav__link ">
+            <a href="../../data/" class="md-nav__link ">
               
   
   
@@ -648,7 +638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="data/file_formats/" class="md-nav__link">
+      <a href="../../data/file_formats/" class="md-nav__link">
         
   
   
@@ -671,7 +661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="data/data_locations/" class="md-nav__link">
+      <a href="../../data/data_locations/" class="md-nav__link">
         
   
   
@@ -694,7 +684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="data/data_lifecycle/" class="md-nav__link">
+      <a href="../../data/data_lifecycle/" class="md-nav__link">
         
   
   
@@ -717,7 +707,7 @@
   
   
     <li class="md-nav__item">
-      <a href="data/data_tools/" class="md-nav__link">
+      <a href="../../data/data_tools/" class="md-nav__link">
         
   
   
@@ -740,7 +730,7 @@
   
   
     <li class="md-nav__item">
-      <a href="data/data_catalog/" class="md-nav__link">
+      <a href="../../data/data_catalog/" class="md-nav__link">
         
   
   
@@ -767,6 +757,8 @@
       
   
   
+    
+  
   
   
     
@@ -788,20 +780,23 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="compute/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -814,13 +809,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Compute
@@ -833,8 +828,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -851,18 +848,21 @@
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
             
   
   
@@ -875,7 +875,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             Hub Access
@@ -889,7 +889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="compute/hub_access/" class="md-nav__link">
+      <a href="../hub_access/" class="md-nav__link">
         
   
   
@@ -912,7 +912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="compute/hub_browser_access/" class="md-nav__link">
+      <a href="../hub_browser_access/" class="md-nav__link">
         
   
   
@@ -932,10 +932,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="compute/vscode_inside_hub/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Access VSCode inside Hub
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -946,6 +968,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-launch-vs-code-in-your-browser" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Launch VS Code in Your Browser
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tips
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Issues
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -958,7 +1027,7 @@
   
   
     <li class="md-nav__item">
-      <a href="compute/vs_code_to_hub/" class="md-nav__link">
+      <a href="../vs_code_to_hub/" class="md-nav__link">
         
   
   
@@ -989,7 +1058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="compute/dask/" class="md-nav__link">
+      <a href="../dask/" class="md-nav__link">
         
   
   
@@ -1012,7 +1081,7 @@
   
   
     <li class="md-nav__item">
-      <a href="compute/compute_scaling/" class="md-nav__link">
+      <a href="../compute_scaling/" class="md-nav__link">
         
   
   
@@ -1035,7 +1104,7 @@
   
   
     <li class="md-nav__item">
-      <a href="compute/manage_software/" class="md-nav__link">
+      <a href="../manage_software/" class="md-nav__link">
         
   
   
@@ -1092,7 +1161,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="edu/" class="md-nav__link ">
+            <a href="../../edu/" class="md-nav__link ">
               
   
   
@@ -1127,7 +1196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="edu/classes/" class="md-nav__link">
+      <a href="../../edu/classes/" class="md-nav__link">
         
   
   
@@ -1150,7 +1219,7 @@
   
   
     <li class="md-nav__item">
-      <a href="edu/bootcamps/" class="md-nav__link">
+      <a href="../../edu/bootcamps/" class="md-nav__link">
         
   
   
@@ -1207,7 +1276,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="reference/" class="md-nav__link ">
+            <a href="../../reference/" class="md-nav__link ">
               
   
   
@@ -1242,7 +1311,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/authentication/" class="md-nav__link">
+      <a href="../../reference/authentication/" class="md-nav__link">
         
   
   
@@ -1265,7 +1334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/infrastructure_details/" class="md-nav__link">
+      <a href="../../reference/infrastructure_details/" class="md-nav__link">
         
   
   
@@ -1344,7 +1413,7 @@
   
   
     <li class="md-nav__item">
-      <a href="support/contact/" class="md-nav__link">
+      <a href="../../support/contact/" class="md-nav__link">
         
   
   
@@ -1420,7 +1489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="support/signup_troubleshooting/" class="md-nav__link">
+      <a href="../../support/signup_troubleshooting/" class="md-nav__link">
         
   
   
@@ -1443,7 +1512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="support/hub_access_error/" class="md-nav__link">
+      <a href="../../support/hub_access_error/" class="md-nav__link">
         
   
   
@@ -1466,7 +1535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="support/dask_killed_workers/" class="md-nav__link">
+      <a href="../../support/dask_killed_workers/" class="md-nav__link">
         
   
   
@@ -1489,7 +1558,7 @@
   
   
     <li class="md-nav__item">
-      <a href="support/hub_usage_alert/" class="md-nav__link">
+      <a href="../../support/hub_usage_alert/" class="md-nav__link">
         
   
   
@@ -1528,8 +1597,6 @@
             
             
               
-                
-              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -1542,6 +1609,41 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-launch-vs-code-in-your-browser" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Launch VS Code in Your Browser
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tips
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Issues
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1553,26 +1655,60 @@
               <article class="md-content__inner md-typeset">
                 
                   
-  
-
 
 
   
   
 
 
-<p><img alt="Image title" src="assets/NSF_LEAP_joint_logo.svg" /></p>
-<h1 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>These pages detail the use of LEAP's computational and data resources, including LEAP Pangeo. They are focused on
-LEAP-specific information as much as possible. The Pangeo community and the wider internet may be useful
-in figuring out how to accomplish specific tasks. You can always <a class="autorefs autorefs-internal" title="Contact" href="support/contact/#contact">ask for help</a>.</p>
+<h1 id="accessing-the-leap-hub-via-vs-code-in-your-browser">Accessing the LEAP Hub via VS Code (in your browser)<a class="headerlink" href="#accessing-the-leap-hub-via-vs-code-in-your-browser" title="Permanent link">&para;</a></h1>
+<p>The LEAP JupyterHub includes a browser-based version of Visual Studio Code, allowing you to use a full-featured IDE directly in your web browser, without any local installations.</p>
+<p>This version of VS Code runs on the same remote server as your Jupyter kernel and filesystem — so any code or terminal work is happening <em>in the cloud</em>, on LEAP compute infrastructure.</p>
+<h2 id="how-to-launch-vs-code-in-your-browser">How to Launch VS Code in Your Browser<a class="headerlink" href="#how-to-launch-vs-code-in-your-browser" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>Log into the LEAP Hub</strong></p>
 <ul>
-<li>The <a class="autorefs autorefs-internal" title="Overview and First Steps" href="introduction/#overview-and-first-steps">Introduction</a> explains what the resources are and how to gain access to them.</li>
-<li>The <a class="autorefs autorefs-internal" title="Data Overview" href="data/#data-overview">Data</a> section explains where data lives and what data is publicaly available.</li>
-<li>The <a class="autorefs autorefs-internal" title="Using LEAP's computing resources" href="compute/#using-leaps-computing-resources">Compute</a> section explains how to leverage LEAP's computing resources to solve your problems</li>
-<li>The <a class="autorefs autorefs-internal" title="Teaching Classes" href="edu/classes/#teaching-classes">Education</a> section is intended for people teaching classes, running bootcamps, etc.</li>
-<li>The <a class="autorefs autorefs-internal" title="Contact" href="support/contact/#contact">Support</a> section contains answers to frequently asked questions including how to get more help.</li>
-<li>The <a class="autorefs autorefs-internal" title="Technical Details" href="reference/#technical-details">Reference</a> section contains nitty-gritty details.</li>
+<li>Go to the <a href="https://leap.2i2c.cloud/">LEAP JupyterHub</a> browser and sign in using your institutional credentials.</li>
+</ul>
+</li>
+<li>
+<p><strong>Start your server (if it's not already running)</strong></p>
+<ul>
+<li>Choose a server configuration and click <strong>Start</strong>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Click the VS Code Icon</strong></p>
+<ul>
+<li>Once your Jupyter environment launches, look in the <strong>Launcher</strong> tab</li>
+<li>Find and click the <strong>VS Code</strong> icon (it should look like the following screenshot).
+    <img alt="VsCode Icon" src="../../assets/vscode_extension.png" /></li>
+<li>This opens the in-browser VS Code interface in a new tab or within the same window.</li>
+</ul>
+</li>
+<li>
+<p><strong>Using VS Code in the Browser</strong></p>
+<ul>
+<li>You can open folders, edit files, and run terminals just like in the desktop app.</li>
+<li>Use the <strong>file explorer</strong> on the left to navigate your directory.</li>
+<li>Open a terminal: <code>Terminal</code> &gt; <code>New Terminal</code> (runs in the same environment as Jupyter).</li>
+<li>Start or open notebooks: click <code>.ipynb</code> files and they’ll open using the built-in Jupyter extension.</li>
+<li>Git features, syntax highlighting, search, multi-file editing, etc. are all supported.</li>
+</ul>
+</li>
+</ol>
+<h2 id="tips">Tips<a class="headerlink" href="#tips" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Python environment</strong>: Your Python interpreter is automatically set to the remote Hub environment.</li>
+<li><strong>Installing packages</strong>: Use the built-in terminal and <code>pip install</code> or <code>mamba install</code>. These packages be added to your base environment.</li>
+<li><strong>Save your work</strong>: Changes persist on the Hub’s file system — no need to worry about syncing with your local machine.</li>
+</ul>
+<h2 id="common-issues">Common Issues<a class="headerlink" href="#common-issues" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Missing extensions</strong>: Some VS Code Marketplace extensions may not be available. This is a limitation of the server-based VS Code.</li>
+<li><strong>Lag</strong>: If your internet connection is slow, performance may be less smooth than the desktop version.</li>
+<li><strong>VS Code doesn’t launch?</strong> Try restarting your Jupyter server, or clear your browser cache and reload.</li>
 </ul>
 
 
@@ -1581,13 +1717,8 @@ in figuring out how to accomplish specific tasks. You can always <a class="autor
 
 
 
-  
-  
 
 
-
-
-  
 
 
 
@@ -1633,12 +1764,12 @@ in figuring out how to accomplish specific tasks. You can always <a class="autor
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": ["content.code.annotate", "content.code.copy", "navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.indexes", "header.autohide", "search.suggest", "search.share"], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.code.copy", "navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.indexes", "header.autohide", "search.suggest", "search.share"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
-        <script src="assets/_markdown_exec_pyodide.js"></script>
+        <script src="../../assets/_markdown_exec_pyodide.js"></script>
       
     
   </body>

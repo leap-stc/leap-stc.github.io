@@ -12,26 +12,26 @@
         <meta name="author" content="LEAP Data and Compute Team">
       
       
-        <link rel="canonical" href="https://leap-stc.github.io/">
+        <link rel="canonical" href="https://leap-stc.github.io/support/hub_usage_alert/">
+      
+      
+        <link rel="prev" href="../dask_killed_workers/">
       
       
       
-        <link rel="next" href="introduction/">
-      
-      
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
     
     
       
-        <title>Home - LEAP Technical Documentation</title>
+        <title>Hub Usage Alert - LEAP Technical Documentation</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.2a3383ac.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,11 +50,11 @@
       
     
     
-      <link rel="stylesheet" href="assets/_markdown_exec_pyodide.css">
+      <link rel="stylesheet" href="../../assets/_markdown_exec_pyodide.css">
     
-      <link rel="stylesheet" href="stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#hub-usage-alert" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="https://leap.columbia.edu/" title="LEAP Technical Documentation" class="md-header__button md-logo" aria-label="LEAP Technical Documentation" data-md-component="logo">
       
-  <img src="assets/LEAP_globe.png" alt="logo">
+  <img src="../../assets/LEAP_globe.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Hub Usage Alert
             
           </span>
         </div>
@@ -225,11 +225,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -250,7 +248,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="introduction/" class="md-tabs__link">
+        <a href="../../introduction/" class="md-tabs__link">
           
   
   
@@ -272,7 +270,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="data/" class="md-tabs__link">
+        <a href="../../data/" class="md-tabs__link">
           
   
   
@@ -294,7 +292,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="compute/" class="md-tabs__link">
+        <a href="../../compute/" class="md-tabs__link">
           
   
   
@@ -316,7 +314,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="edu/" class="md-tabs__link">
+        <a href="../../edu/" class="md-tabs__link">
           
   
   
@@ -338,7 +336,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="reference/" class="md-tabs__link">
+        <a href="../../reference/" class="md-tabs__link">
           
   
   
@@ -356,11 +354,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="support/contact/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../contact/" class="md-tabs__link">
           
   
   
@@ -391,9 +391,7 @@
           
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -406,7 +404,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://leap.columbia.edu/" title="LEAP Technical Documentation" class="md-nav__button md-logo" aria-label="LEAP Technical Documentation" data-md-component="logo">
       
-  <img src="assets/LEAP_globe.png" alt="logo">
+  <img src="../../assets/LEAP_globe.png" alt="logo">
 
     </a>
     LEAP Technical Documentation
@@ -430,19 +428,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -453,7 +442,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -492,7 +480,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="introduction/" class="md-nav__link ">
+            <a href="../../introduction/" class="md-nav__link ">
               
   
   
@@ -527,7 +515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="introduction/what_is_the_hub/" class="md-nav__link">
+      <a href="../../introduction/what_is_the_hub/" class="md-nav__link">
         
   
   
@@ -550,7 +538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="introduction/getting_started/" class="md-nav__link">
+      <a href="../../introduction/getting_started/" class="md-nav__link">
         
   
   
@@ -613,7 +601,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="data/" class="md-nav__link ">
+            <a href="../../data/" class="md-nav__link ">
               
   
   
@@ -648,7 +636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="data/file_formats/" class="md-nav__link">
+      <a href="../../data/file_formats/" class="md-nav__link">
         
   
   
@@ -671,7 +659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="data/data_locations/" class="md-nav__link">
+      <a href="../../data/data_locations/" class="md-nav__link">
         
   
   
@@ -694,7 +682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="data/data_lifecycle/" class="md-nav__link">
+      <a href="../../data/data_lifecycle/" class="md-nav__link">
         
   
   
@@ -717,7 +705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="data/data_tools/" class="md-nav__link">
+      <a href="../../data/data_tools/" class="md-nav__link">
         
   
   
@@ -740,7 +728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="data/data_catalog/" class="md-nav__link">
+      <a href="../../data/data_catalog/" class="md-nav__link">
         
   
   
@@ -801,7 +789,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="compute/" class="md-nav__link ">
+            <a href="../../compute/" class="md-nav__link ">
               
   
   
@@ -889,7 +877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="compute/hub_access/" class="md-nav__link">
+      <a href="../../compute/hub_access/" class="md-nav__link">
         
   
   
@@ -912,7 +900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="compute/hub_browser_access/" class="md-nav__link">
+      <a href="../../compute/hub_browser_access/" class="md-nav__link">
         
   
   
@@ -935,7 +923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="compute/vscode_inside_hub/" class="md-nav__link">
+      <a href="../../compute/vscode_inside_hub/" class="md-nav__link">
         
   
   
@@ -958,7 +946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="compute/vs_code_to_hub/" class="md-nav__link">
+      <a href="../../compute/vs_code_to_hub/" class="md-nav__link">
         
   
   
@@ -989,7 +977,7 @@
   
   
     <li class="md-nav__item">
-      <a href="compute/dask/" class="md-nav__link">
+      <a href="../../compute/dask/" class="md-nav__link">
         
   
   
@@ -1012,7 +1000,7 @@
   
   
     <li class="md-nav__item">
-      <a href="compute/compute_scaling/" class="md-nav__link">
+      <a href="../../compute/compute_scaling/" class="md-nav__link">
         
   
   
@@ -1035,7 +1023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="compute/manage_software/" class="md-nav__link">
+      <a href="../../compute/manage_software/" class="md-nav__link">
         
   
   
@@ -1092,7 +1080,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="edu/" class="md-nav__link ">
+            <a href="../../edu/" class="md-nav__link ">
               
   
   
@@ -1127,7 +1115,7 @@
   
   
     <li class="md-nav__item">
-      <a href="edu/classes/" class="md-nav__link">
+      <a href="../../edu/classes/" class="md-nav__link">
         
   
   
@@ -1150,7 +1138,7 @@
   
   
     <li class="md-nav__item">
-      <a href="edu/bootcamps/" class="md-nav__link">
+      <a href="../../edu/bootcamps/" class="md-nav__link">
         
   
   
@@ -1207,7 +1195,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="reference/" class="md-nav__link ">
+            <a href="../../reference/" class="md-nav__link ">
               
   
   
@@ -1242,7 +1230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/authentication/" class="md-nav__link">
+      <a href="../../reference/authentication/" class="md-nav__link">
         
   
   
@@ -1265,7 +1253,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/infrastructure_details/" class="md-nav__link">
+      <a href="../../reference/infrastructure_details/" class="md-nav__link">
         
   
   
@@ -1292,8 +1280,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -1305,19 +1295,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
             
   
   
@@ -1330,7 +1323,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             Support
@@ -1344,7 +1337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="support/contact/" class="md-nav__link">
+      <a href="../contact/" class="md-nav__link">
         
   
   
@@ -1364,8 +1357,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -1382,18 +1377,21 @@
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
         
           
-          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="">
             
   
   
@@ -1406,7 +1404,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7_2">
             <span class="md-nav__icon md-icon"></span>
             FAQs
@@ -1420,7 +1418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="support/signup_troubleshooting/" class="md-nav__link">
+      <a href="../signup_troubleshooting/" class="md-nav__link">
         
   
   
@@ -1443,7 +1441,7 @@
   
   
     <li class="md-nav__item">
-      <a href="support/hub_access_error/" class="md-nav__link">
+      <a href="../hub_access_error/" class="md-nav__link">
         
   
   
@@ -1466,7 +1464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="support/dask_killed_workers/" class="md-nav__link">
+      <a href="../dask_killed_workers/" class="md-nav__link">
         
   
   
@@ -1486,10 +1484,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="support/hub_usage_alert/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Hub Usage Alert
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1500,6 +1520,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-received-a-warning-about-space-on-my-user-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      I received a warning about space on my User Directory
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-manage-my-disk-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do I manage my disk space?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1528,8 +1586,6 @@
             
             
               
-                
-              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -1542,6 +1598,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-received-a-warning-about-space-on-my-user-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      I received a warning about space on my User Directory
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-manage-my-disk-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do I manage my disk space?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1553,27 +1635,22 @@
               <article class="md-content__inner md-typeset">
                 
                   
-  
-
 
 
   
   
 
 
-<p><img alt="Image title" src="assets/NSF_LEAP_joint_logo.svg" /></p>
-<h1 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>These pages detail the use of LEAP's computational and data resources, including LEAP Pangeo. They are focused on
-LEAP-specific information as much as possible. The Pangeo community and the wider internet may be useful
-in figuring out how to accomplish specific tasks. You can always <a class="autorefs autorefs-internal" title="Contact" href="support/contact/#contact">ask for help</a>.</p>
+<h1 id="hub-usage-alert">Hub Usage Alert<a class="headerlink" href="#hub-usage-alert" title="Permanent link">&para;</a></h1>
+<h2 id="i-received-a-warning-about-space-on-my-user-directory">I received a warning about space on my User Directory<a class="headerlink" href="#i-received-a-warning-about-space-on-my-user-directory" title="Permanent link">&para;</a></h2>
+<p>If you get a Hub Usage Alert email, this means you are violating the user directory storage limit. Remember that user directories are for scripts and notebooks not datasets! Users who persistently violate hub usage policies may get their cloud access temporarily restricted.</p>
+<h2 id="how-do-i-manage-my-disk-space">How do I manage my disk space?<a class="headerlink" href="#how-do-i-manage-my-disk-space" title="Permanent link">&para;</a></h2>
 <ul>
-<li>The <a class="autorefs autorefs-internal" title="Overview and First Steps" href="introduction/#overview-and-first-steps">Introduction</a> explains what the resources are and how to gain access to them.</li>
-<li>The <a class="autorefs autorefs-internal" title="Data Overview" href="data/#data-overview">Data</a> section explains where data lives and what data is publicaly available.</li>
-<li>The <a class="autorefs autorefs-internal" title="Using LEAP's computing resources" href="compute/#using-leaps-computing-resources">Compute</a> section explains how to leverage LEAP's computing resources to solve your problems</li>
-<li>The <a class="autorefs autorefs-internal" title="Teaching Classes" href="edu/classes/#teaching-classes">Education</a> section is intended for people teaching classes, running bootcamps, etc.</li>
-<li>The <a class="autorefs autorefs-internal" title="Contact" href="support/contact/#contact">Support</a> section contains answers to frequently asked questions including how to get more help.</li>
-<li>The <a class="autorefs autorefs-internal" title="Technical Details" href="reference/#technical-details">Reference</a> section contains nitty-gritty details.</li>
+<li>To see which files and directories are taking up the bulk of your storage, run <code>du -h --max-depth=1 ~/ | sort -h</code> in Terminal. It will likely reveal cached files and small/medium size data files that can be removed without disrupting typical usage.</li>
+<li>Delete cached files, ipython checkpoints, and any other unwanted files.</li>
+<li>If you still require more storage, it is likely that you are storing downloaded data in your user directory. We recommend storing data in a LEAP cloud bucket or data catalog. For more information, please consult our <a class="autorefs autorefs-internal" title="Where Data Lives" href="../../data/data_locations/#where-data-lives">data locations</a>.</li>
 </ul>
+<p>Our goal is to accomodate all community members, so we are happy to assist users in relocating data. If you have any concerns, please reach out to the <a class="autorefs autorefs-internal" title="Contact" href="../contact/#contact">Data and Compute Team</a>.</p>
 
 
 
@@ -1581,13 +1658,8 @@ in figuring out how to accomplish specific tasks. You can always <a class="autor
 
 
 
-  
-  
 
 
-
-
-  
 
 
 
@@ -1633,12 +1705,12 @@ in figuring out how to accomplish specific tasks. You can always <a class="autor
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": ["content.code.annotate", "content.code.copy", "navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.indexes", "header.autohide", "search.suggest", "search.share"], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.code.copy", "navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.indexes", "header.autohide", "search.suggest", "search.share"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
-        <script src="assets/_markdown_exec_pyodide.js"></script>
+        <script src="../../assets/_markdown_exec_pyodide.js"></script>
       
     
   </body>

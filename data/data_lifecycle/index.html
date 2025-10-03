@@ -12,26 +12,28 @@
         <meta name="author" content="LEAP Data and Compute Team">
       
       
-        <link rel="canonical" href="https://leap-stc.github.io/">
+        <link rel="canonical" href="https://leap-stc.github.io/data/data_lifecycle/">
       
       
+        <link rel="prev" href="../data_locations/">
       
-        <link rel="next" href="introduction/">
+      
+        <link rel="next" href="../data_tools/">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
     
     
       
-        <title>Home - LEAP Technical Documentation</title>
+        <title>Data Lifecycle - LEAP Technical Documentation</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.2a3383ac.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,11 +52,11 @@
       
     
     
-      <link rel="stylesheet" href="assets/_markdown_exec_pyodide.css">
+      <link rel="stylesheet" href="../../assets/_markdown_exec_pyodide.css">
     
-      <link rel="stylesheet" href="stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -80,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#data-lifecycle" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +100,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="https://leap.columbia.edu/" title="LEAP Technical Documentation" class="md-header__button md-logo" aria-label="LEAP Technical Documentation" data-md-component="logo">
       
-  <img src="assets/LEAP_globe.png" alt="logo">
+  <img src="../../assets/LEAP_globe.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -115,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Data Lifecycle
             
           </span>
         </div>
@@ -225,11 +227,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -250,7 +250,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="introduction/" class="md-tabs__link">
+        <a href="../../introduction/" class="md-tabs__link">
           
   
   
@@ -268,11 +268,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="data/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   
@@ -294,7 +296,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="compute/" class="md-tabs__link">
+        <a href="../../compute/" class="md-tabs__link">
           
   
   
@@ -316,7 +318,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="edu/" class="md-tabs__link">
+        <a href="../../edu/" class="md-tabs__link">
           
   
   
@@ -338,7 +340,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="reference/" class="md-tabs__link">
+        <a href="../../reference/" class="md-tabs__link">
           
   
   
@@ -360,7 +362,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="support/contact/" class="md-tabs__link">
+        <a href="../../support/contact/" class="md-tabs__link">
           
   
   
@@ -391,9 +393,7 @@
           
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -406,7 +406,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://leap.columbia.edu/" title="LEAP Technical Documentation" class="md-nav__button md-logo" aria-label="LEAP Technical Documentation" data-md-component="logo">
       
-  <img src="assets/LEAP_globe.png" alt="logo">
+  <img src="../../assets/LEAP_globe.png" alt="logo">
 
     </a>
     LEAP Technical Documentation
@@ -430,19 +430,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -453,7 +444,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -492,7 +482,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="introduction/" class="md-nav__link ">
+            <a href="../../introduction/" class="md-nav__link ">
               
   
   
@@ -527,7 +517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="introduction/what_is_the_hub/" class="md-nav__link">
+      <a href="../../introduction/what_is_the_hub/" class="md-nav__link">
         
   
   
@@ -550,7 +540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="introduction/getting_started/" class="md-nav__link">
+      <a href="../../introduction/getting_started/" class="md-nav__link">
         
   
   
@@ -577,6 +567,8 @@
       
   
   
+    
+  
   
   
     
@@ -600,20 +592,23 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="data/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -626,13 +621,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Data
@@ -648,7 +643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="data/file_formats/" class="md-nav__link">
+      <a href="../file_formats/" class="md-nav__link">
         
   
   
@@ -671,7 +666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="data/data_locations/" class="md-nav__link">
+      <a href="../data_locations/" class="md-nav__link">
         
   
   
@@ -691,10 +686,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="data/data_lifecycle/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Data Lifecycle
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -705,6 +722,92 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#data-ingestion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data ingestion
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data ingestion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-migrating-public-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Migrating Public Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-migrating-hpc-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Migrating HPC Data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transferring-data-at-a-glance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transferring Data (at a glance)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deleting-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deleting Data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deleting Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scratch-vs-persistent-vs-osn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scratch vs. Persistent vs. OSN
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -717,7 +820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="data/data_tools/" class="md-nav__link">
+      <a href="../data_tools/" class="md-nav__link">
         
   
   
@@ -740,7 +843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="data/data_catalog/" class="md-nav__link">
+      <a href="../data_catalog/" class="md-nav__link">
         
   
   
@@ -801,7 +904,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="compute/" class="md-nav__link ">
+            <a href="../../compute/" class="md-nav__link ">
               
   
   
@@ -889,7 +992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="compute/hub_access/" class="md-nav__link">
+      <a href="../../compute/hub_access/" class="md-nav__link">
         
   
   
@@ -912,7 +1015,7 @@
   
   
     <li class="md-nav__item">
-      <a href="compute/hub_browser_access/" class="md-nav__link">
+      <a href="../../compute/hub_browser_access/" class="md-nav__link">
         
   
   
@@ -935,7 +1038,7 @@
   
   
     <li class="md-nav__item">
-      <a href="compute/vscode_inside_hub/" class="md-nav__link">
+      <a href="../../compute/vscode_inside_hub/" class="md-nav__link">
         
   
   
@@ -958,7 +1061,7 @@
   
   
     <li class="md-nav__item">
-      <a href="compute/vs_code_to_hub/" class="md-nav__link">
+      <a href="../../compute/vs_code_to_hub/" class="md-nav__link">
         
   
   
@@ -989,7 +1092,7 @@
   
   
     <li class="md-nav__item">
-      <a href="compute/dask/" class="md-nav__link">
+      <a href="../../compute/dask/" class="md-nav__link">
         
   
   
@@ -1012,7 +1115,7 @@
   
   
     <li class="md-nav__item">
-      <a href="compute/compute_scaling/" class="md-nav__link">
+      <a href="../../compute/compute_scaling/" class="md-nav__link">
         
   
   
@@ -1035,7 +1138,7 @@
   
   
     <li class="md-nav__item">
-      <a href="compute/manage_software/" class="md-nav__link">
+      <a href="../../compute/manage_software/" class="md-nav__link">
         
   
   
@@ -1092,7 +1195,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="edu/" class="md-nav__link ">
+            <a href="../../edu/" class="md-nav__link ">
               
   
   
@@ -1127,7 +1230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="edu/classes/" class="md-nav__link">
+      <a href="../../edu/classes/" class="md-nav__link">
         
   
   
@@ -1150,7 +1253,7 @@
   
   
     <li class="md-nav__item">
-      <a href="edu/bootcamps/" class="md-nav__link">
+      <a href="../../edu/bootcamps/" class="md-nav__link">
         
   
   
@@ -1207,7 +1310,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="reference/" class="md-nav__link ">
+            <a href="../../reference/" class="md-nav__link ">
               
   
   
@@ -1242,7 +1345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/authentication/" class="md-nav__link">
+      <a href="../../reference/authentication/" class="md-nav__link">
         
   
   
@@ -1265,7 +1368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/infrastructure_details/" class="md-nav__link">
+      <a href="../../reference/infrastructure_details/" class="md-nav__link">
         
   
   
@@ -1344,7 +1447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="support/contact/" class="md-nav__link">
+      <a href="../../support/contact/" class="md-nav__link">
         
   
   
@@ -1420,7 +1523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="support/signup_troubleshooting/" class="md-nav__link">
+      <a href="../../support/signup_troubleshooting/" class="md-nav__link">
         
   
   
@@ -1443,7 +1546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="support/hub_access_error/" class="md-nav__link">
+      <a href="../../support/hub_access_error/" class="md-nav__link">
         
   
   
@@ -1466,7 +1569,7 @@
   
   
     <li class="md-nav__item">
-      <a href="support/dask_killed_workers/" class="md-nav__link">
+      <a href="../../support/dask_killed_workers/" class="md-nav__link">
         
   
   
@@ -1489,7 +1592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="support/hub_usage_alert/" class="md-nav__link">
+      <a href="../../support/hub_usage_alert/" class="md-nav__link">
         
   
   
@@ -1528,8 +1631,6 @@
             
             
               
-                
-              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -1542,6 +1643,80 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#data-ingestion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data ingestion
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data ingestion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-migrating-public-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Migrating Public Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-migrating-hpc-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Migrating HPC Data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transferring-data-at-a-glance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transferring Data (at a glance)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deleting-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deleting Data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deleting Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scratch-vs-persistent-vs-osn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scratch vs. Persistent vs. OSN
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1553,26 +1728,56 @@
               <article class="md-content__inner md-typeset">
                 
                   
-  
-
 
 
   
   
 
 
-<p><img alt="Image title" src="assets/NSF_LEAP_joint_logo.svg" /></p>
-<h1 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>These pages detail the use of LEAP's computational and data resources, including LEAP Pangeo. They are focused on
-LEAP-specific information as much as possible. The Pangeo community and the wider internet may be useful
-in figuring out how to accomplish specific tasks. You can always <a class="autorefs autorefs-internal" title="Contact" href="support/contact/#contact">ask for help</a>.</p>
+<h1 id="data-lifecycle">Data Lifecycle<a class="headerlink" href="#data-lifecycle" title="Permanent link">&para;</a></h1>
+<p>This page is meant to serve as a high level reference to the data lifecycle. Please see also the overview of our primary <a class="autorefs autorefs-internal" title="Where Data Lives" href="../data_locations/#where-data-lives">storage locations</a> and their use cases. Troubleshooting of any issues will inevitably involve the specifics of your data. Questions can be addressed to the <a class="autorefs autorefs-internal" title="Contact" href="../../support/contact/#contact">Data and Compute Team</a>.</p>
+<h2 id="data-ingestion">Data ingestion<a class="headerlink" href="#data-ingestion" title="Permanent link">&para;</a></h2>
+<p>Working on the JupyterHub often requires transferring whatever data you want to work with into the cloud. The term "data ingestion" refers to a reproducible way to download and transform data into performant formats like Zarr. Data in LEAP's cloud storage is available for the entire LEAP community and can be added to the <a class="autorefs autorefs-internal" href="../data_catalog/#leap-data-catalog">LEAP Data Catalog</a>.</p>
+<p>The Data and Compute team can help with large or complicated data ingestion efforts. We organize such efforts in Github repositories called "feedstocks" that centralize knowledge for each request. Once you've verified that the data you need isn't available through the catalog:</p>
+<ol>
+<li>Let the LEAP community and the Data and Computation Team know about the new dataset via the <a href="https://github.com/leap-stc/data-management/issues">'leap-stc/data_management' issue tracker</a>. You should check existing issues with the tag <a href="https://github.com/leap-stc/data-management/issues?q=is%3Aissue+is%3Aopen+label%3Adataset">'dataset'</a> to see if somebody else might have already requested this particular dataset. If that is not the case you can add a new <a href="https://github.com/leap-stc/data-management/issues/new?assignees=&amp;labels=dataset&amp;projects=&amp;template=new_dataset.yaml&amp;title=New+Dataset+%5BDataset+Name%5D">dataset_request</a>.</li>
+<li>Use our <a href="https://github.com/leap-stc/LEAP_template_feedstock">feedstock template</a> to create a feedstock repository, holding the code and other information needed for ingestion, by following instructions in the README to get you started with either one of the above.</li>
+</ol>
+<p>Most tasks fall into one of two categories:</p>
+<h3 id="1-migrating-public-data">1. Migrating Public Data<a class="headerlink" href="#1-migrating-public-data" title="Permanent link">&para;</a></h3>
+<p>LEAP scientsts frequently want to work with publicly accessible data available in a data store like Zenodo, NASA, or NOAA. This is the use case for which much of our tooling is designed.</p>
+<p>If the data is available via HTTP, one powerful method to avoid duplication is to create a <em>Virtual Zarr Store</em> (see <a class="autorefs autorefs-internal" title="File Formats" href="../file_formats/#file-formats">file formats</a>).</p>
+<p>Sometimes, climate data is published online but not publicly accessible, i.e. it requires some sort of credentials / authorization to access. Even if this is the case, programmatic access is often supported by tooling from the data providers. For example, the Copernicus data ecosystem has their own API and dataset licenses. User-specific access credentials or tokens stored on user directories are not accessible to other members of the hub; they remain private. However, they can be viewed by LEAP Data and Compute admins; if this is a security issue, please consult us for alternative ingestion options.</p>
+<h3 id="2-migrating-hpc-data">2. Migrating HPC Data<a class="headerlink" href="#2-migrating-hpc-data" title="Permanent link">&para;</a></h3>
+<p>LEAP scientists also have access to an HPC or external filesystem on which their data is being generated. Such data might be ingested to allow collaboration with others in LEAP and/or to apply LEAP computational resources to analysis.</p>
+<p>If the data is located behind a firewall on an HPC center, the normal 'pull' based paradigm of our feedstocks will not work. In this case we have an option to 'push' the data to a special "inbox" bucket (<code>'leap-pangeo-inbox'</code>) on the OSN Pod. Once the data is in this accessible intermediate staging area, the process and tools documented on the <a href="https://github.com/leap-stc/LEAP_template_feedstock">feedstock template</a> ought to work.</p>
+<p>The biggest barrier here is external authentication; see the <a class="autorefs autorefs-internal" href="../../reference/authentication/#authentication">Authentication section</a>. Once authenticated, users can initiate a data transfer from their 'local' machine (laptop, server, or HPC Cluster) with the tools documented in <a class="autorefs autorefs-internal" href="../data_tools/#data-tools">Data Tools</a>.</p>
+<h2 id="transferring-data-at-a-glance">Transferring Data (at a glance)<a class="headerlink" href="#transferring-data-at-a-glance" title="Permanent link">&para;</a></h2>
+<p>Use this quick guide; full details and examples are in <a class="autorefs autorefs-internal" href="../data_tools/#data-tools">Data Tools</a>.</p>
 <ul>
-<li>The <a class="autorefs autorefs-internal" title="Overview and First Steps" href="introduction/#overview-and-first-steps">Introduction</a> explains what the resources are and how to gain access to them.</li>
-<li>The <a class="autorefs autorefs-internal" title="Data Overview" href="data/#data-overview">Data</a> section explains where data lives and what data is publicaly available.</li>
-<li>The <a class="autorefs autorefs-internal" title="Using LEAP's computing resources" href="compute/#using-leaps-computing-resources">Compute</a> section explains how to leverage LEAP's computing resources to solve your problems</li>
-<li>The <a class="autorefs autorefs-internal" title="Teaching Classes" href="edu/classes/#teaching-classes">Education</a> section is intended for people teaching classes, running bootcamps, etc.</li>
-<li>The <a class="autorefs autorefs-internal" title="Contact" href="support/contact/#contact">Support</a> section contains answers to frequently asked questions including how to get more help.</li>
-<li>The <a class="autorefs autorefs-internal" title="Technical Details" href="reference/#technical-details">Reference</a> section contains nitty-gritty details.</li>
+<li><strong>Small (KB–100s MB):</strong> <code>fsspec/gcsfs</code> in Python (great for quick reads/writes and xarray/zarr I/O).</li>
+<li><strong>Medium/Large (GBs+):</strong> <code>rclone</code> (robust, resumable, ideal for bucket↔bucket or local↔bucket syncing).</li>
+<li><strong>Direct GCS users:</strong> <code>gsutil</code> via the GCloud SDK is available if you’re already in that ecosystem.</li>
+</ul>
+<h2 id="deleting-data">Deleting Data<a class="headerlink" href="#deleting-data" title="Permanent link">&para;</a></h2>
+<p>Cleaning up data is an essential part of the lifecycle. Regularly removing unneeded files helps conserve storage resources and control costs for the Hub.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Depending on which cloud bucket you are working, make sure to double check which files you are deleting by inspecting the contents and only working in a subdirectory with your username (e.g. <code>gs://&lt;leap-bucket&gt;/&lt;your-username&gt;/some/project/structure</code>)</p>
+</div>
+<p>You can remove single files by using a gcsfs/fsspec filessytem as above:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">gcsfs</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">fs</span> <span class="o">=</span> <span class="n">gcsfs</span><span class="o">.</span><span class="n">GCSFileSystem</span><span class="p">()</span>  <span class="c1"># equivalent to fsspec.fs(&#39;gs&#39;)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">fs</span><span class="o">.</span><span class="n">rm</span><span class="p">(</span><span class="s2">&quot;leap-persistent/funky-user/file_to_delete.nc&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>If you want to remove zarr stores (which are an ‘exploded’ data format, and thus represented by a folder structure) you have to recursively delete the store:</p>
+<p><code>fs.rm("leap-scratch/funky-user/processed_store.zarr", recursive=True)</code></p>
+<h3 id="scratch-vs-persistent-vs-osn">Scratch vs. Persistent vs. OSN<a class="headerlink" href="#scratch-vs-persistent-vs-osn" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>gs://leap-scratch (scratch):</code> Auto-deletes after 7 days. You can also remove earlier via the methods above.</li>
+<li><code>gs://leap-persistent (persistent):</code> Manually delete what you no longer need to free space.</li>
+<li>OSN pod: Coordinate deletions with the Data and Compute Team (open a request before removing large datasets).</li>
 </ul>
 
 
@@ -1581,13 +1786,8 @@ in figuring out how to accomplish specific tasks. You can always <a class="autor
 
 
 
-  
-  
 
 
-
-
-  
 
 
 
@@ -1633,12 +1833,12 @@ in figuring out how to accomplish specific tasks. You can always <a class="autor
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": ["content.code.annotate", "content.code.copy", "navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.indexes", "header.autohide", "search.suggest", "search.share"], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.code.copy", "navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.indexes", "header.autohide", "search.suggest", "search.share"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
-        <script src="assets/_markdown_exec_pyodide.js"></script>
+        <script src="../../assets/_markdown_exec_pyodide.js"></script>
       
     
   </body>

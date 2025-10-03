@@ -12,26 +12,28 @@
         <meta name="author" content="LEAP Data and Compute Team">
       
       
-        <link rel="canonical" href="https://leap-stc.github.io/">
+        <link rel="canonical" href="https://leap-stc.github.io/data/data_locations/">
       
       
+        <link rel="prev" href="../file_formats/">
       
-        <link rel="next" href="introduction/">
+      
+        <link rel="next" href="../data_lifecycle/">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
     
     
       
-        <title>Home - LEAP Technical Documentation</title>
+        <title>Data Locations - LEAP Technical Documentation</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.2a3383ac.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,11 +52,11 @@
       
     
     
-      <link rel="stylesheet" href="assets/_markdown_exec_pyodide.css">
+      <link rel="stylesheet" href="../../assets/_markdown_exec_pyodide.css">
     
-      <link rel="stylesheet" href="stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -80,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#where-data-lives" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +100,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="https://leap.columbia.edu/" title="LEAP Technical Documentation" class="md-header__button md-logo" aria-label="LEAP Technical Documentation" data-md-component="logo">
       
-  <img src="assets/LEAP_globe.png" alt="logo">
+  <img src="../../assets/LEAP_globe.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -115,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Data Locations
             
           </span>
         </div>
@@ -225,11 +227,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -250,7 +250,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="introduction/" class="md-tabs__link">
+        <a href="../../introduction/" class="md-tabs__link">
           
   
   
@@ -268,11 +268,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="data/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   
@@ -294,7 +296,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="compute/" class="md-tabs__link">
+        <a href="../../compute/" class="md-tabs__link">
           
   
   
@@ -316,7 +318,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="edu/" class="md-tabs__link">
+        <a href="../../edu/" class="md-tabs__link">
           
   
   
@@ -338,7 +340,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="reference/" class="md-tabs__link">
+        <a href="../../reference/" class="md-tabs__link">
           
   
   
@@ -360,7 +362,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="support/contact/" class="md-tabs__link">
+        <a href="../../support/contact/" class="md-tabs__link">
           
   
   
@@ -391,9 +393,7 @@
           
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -406,7 +406,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://leap.columbia.edu/" title="LEAP Technical Documentation" class="md-nav__button md-logo" aria-label="LEAP Technical Documentation" data-md-component="logo">
       
-  <img src="assets/LEAP_globe.png" alt="logo">
+  <img src="../../assets/LEAP_globe.png" alt="logo">
 
     </a>
     LEAP Technical Documentation
@@ -430,19 +430,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -453,7 +444,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -492,7 +482,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="introduction/" class="md-nav__link ">
+            <a href="../../introduction/" class="md-nav__link ">
               
   
   
@@ -527,7 +517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="introduction/what_is_the_hub/" class="md-nav__link">
+      <a href="../../introduction/what_is_the_hub/" class="md-nav__link">
         
   
   
@@ -550,7 +540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="introduction/getting_started/" class="md-nav__link">
+      <a href="../../introduction/getting_started/" class="md-nav__link">
         
   
   
@@ -577,6 +567,8 @@
       
   
   
+    
+  
   
   
     
@@ -600,20 +592,23 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="data/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -626,13 +621,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Data
@@ -648,7 +643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="data/file_formats/" class="md-nav__link">
+      <a href="../file_formats/" class="md-nav__link">
         
   
   
@@ -668,10 +663,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="data/data_locations/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Data Locations
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -682,6 +699,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#leap-cloud-buckets" class="md-nav__link">
+    <span class="md-ellipsis">
+      LEAP Cloud Buckets
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#your-jupyterhub-user-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Your JupyterHub User Directory
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leap-cloud-buckets_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      LEAP Cloud Buckets
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -694,7 +758,7 @@
   
   
     <li class="md-nav__item">
-      <a href="data/data_lifecycle/" class="md-nav__link">
+      <a href="../data_lifecycle/" class="md-nav__link">
         
   
   
@@ -717,7 +781,7 @@
   
   
     <li class="md-nav__item">
-      <a href="data/data_tools/" class="md-nav__link">
+      <a href="../data_tools/" class="md-nav__link">
         
   
   
@@ -740,7 +804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="data/data_catalog/" class="md-nav__link">
+      <a href="../data_catalog/" class="md-nav__link">
         
   
   
@@ -801,7 +865,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="compute/" class="md-nav__link ">
+            <a href="../../compute/" class="md-nav__link ">
               
   
   
@@ -889,7 +953,7 @@
   
   
     <li class="md-nav__item">
-      <a href="compute/hub_access/" class="md-nav__link">
+      <a href="../../compute/hub_access/" class="md-nav__link">
         
   
   
@@ -912,7 +976,7 @@
   
   
     <li class="md-nav__item">
-      <a href="compute/hub_browser_access/" class="md-nav__link">
+      <a href="../../compute/hub_browser_access/" class="md-nav__link">
         
   
   
@@ -935,7 +999,7 @@
   
   
     <li class="md-nav__item">
-      <a href="compute/vscode_inside_hub/" class="md-nav__link">
+      <a href="../../compute/vscode_inside_hub/" class="md-nav__link">
         
   
   
@@ -958,7 +1022,7 @@
   
   
     <li class="md-nav__item">
-      <a href="compute/vs_code_to_hub/" class="md-nav__link">
+      <a href="../../compute/vs_code_to_hub/" class="md-nav__link">
         
   
   
@@ -989,7 +1053,7 @@
   
   
     <li class="md-nav__item">
-      <a href="compute/dask/" class="md-nav__link">
+      <a href="../../compute/dask/" class="md-nav__link">
         
   
   
@@ -1012,7 +1076,7 @@
   
   
     <li class="md-nav__item">
-      <a href="compute/compute_scaling/" class="md-nav__link">
+      <a href="../../compute/compute_scaling/" class="md-nav__link">
         
   
   
@@ -1035,7 +1099,7 @@
   
   
     <li class="md-nav__item">
-      <a href="compute/manage_software/" class="md-nav__link">
+      <a href="../../compute/manage_software/" class="md-nav__link">
         
   
   
@@ -1092,7 +1156,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="edu/" class="md-nav__link ">
+            <a href="../../edu/" class="md-nav__link ">
               
   
   
@@ -1127,7 +1191,7 @@
   
   
     <li class="md-nav__item">
-      <a href="edu/classes/" class="md-nav__link">
+      <a href="../../edu/classes/" class="md-nav__link">
         
   
   
@@ -1150,7 +1214,7 @@
   
   
     <li class="md-nav__item">
-      <a href="edu/bootcamps/" class="md-nav__link">
+      <a href="../../edu/bootcamps/" class="md-nav__link">
         
   
   
@@ -1207,7 +1271,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="reference/" class="md-nav__link ">
+            <a href="../../reference/" class="md-nav__link ">
               
   
   
@@ -1242,7 +1306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/authentication/" class="md-nav__link">
+      <a href="../../reference/authentication/" class="md-nav__link">
         
   
   
@@ -1265,7 +1329,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/infrastructure_details/" class="md-nav__link">
+      <a href="../../reference/infrastructure_details/" class="md-nav__link">
         
   
   
@@ -1344,7 +1408,7 @@
   
   
     <li class="md-nav__item">
-      <a href="support/contact/" class="md-nav__link">
+      <a href="../../support/contact/" class="md-nav__link">
         
   
   
@@ -1420,7 +1484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="support/signup_troubleshooting/" class="md-nav__link">
+      <a href="../../support/signup_troubleshooting/" class="md-nav__link">
         
   
   
@@ -1443,7 +1507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="support/hub_access_error/" class="md-nav__link">
+      <a href="../../support/hub_access_error/" class="md-nav__link">
         
   
   
@@ -1466,7 +1530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="support/dask_killed_workers/" class="md-nav__link">
+      <a href="../../support/dask_killed_workers/" class="md-nav__link">
         
   
   
@@ -1489,7 +1553,7 @@
   
   
     <li class="md-nav__item">
-      <a href="support/hub_usage_alert/" class="md-nav__link">
+      <a href="../../support/hub_usage_alert/" class="md-nav__link">
         
   
   
@@ -1528,8 +1592,6 @@
             
             
               
-                
-              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -1542,6 +1604,41 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#leap-cloud-buckets" class="md-nav__link">
+    <span class="md-ellipsis">
+      LEAP Cloud Buckets
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#your-jupyterhub-user-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Your JupyterHub User Directory
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leap-cloud-buckets_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      LEAP Cloud Buckets
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1553,26 +1650,137 @@
               <article class="md-content__inner md-typeset">
                 
                   
-  
-
 
 
   
   
 
 
-<p><img alt="Image title" src="assets/NSF_LEAP_joint_logo.svg" /></p>
-<h1 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>These pages detail the use of LEAP's computational and data resources, including LEAP Pangeo. They are focused on
-LEAP-specific information as much as possible. The Pangeo community and the wider internet may be useful
-in figuring out how to accomplish specific tasks. You can always <a class="autorefs autorefs-internal" title="Contact" href="support/contact/#contact">ask for help</a>.</p>
+<h1 id="where-data-lives">Where Data Lives<a class="headerlink" href="#where-data-lives" title="Permanent link">&para;</a></h1>
+<p>Data can live in one of three main places:</p>
 <ul>
-<li>The <a class="autorefs autorefs-internal" title="Overview and First Steps" href="introduction/#overview-and-first-steps">Introduction</a> explains what the resources are and how to gain access to them.</li>
-<li>The <a class="autorefs autorefs-internal" title="Data Overview" href="data/#data-overview">Data</a> section explains where data lives and what data is publicaly available.</li>
-<li>The <a class="autorefs autorefs-internal" title="Using LEAP's computing resources" href="compute/#using-leaps-computing-resources">Compute</a> section explains how to leverage LEAP's computing resources to solve your problems</li>
-<li>The <a class="autorefs autorefs-internal" title="Teaching Classes" href="edu/classes/#teaching-classes">Education</a> section is intended for people teaching classes, running bootcamps, etc.</li>
-<li>The <a class="autorefs autorefs-internal" title="Contact" href="support/contact/#contact">Support</a> section contains answers to frequently asked questions including how to get more help.</li>
-<li>The <a class="autorefs autorefs-internal" title="Technical Details" href="reference/#technical-details">Reference</a> section contains nitty-gritty details.</li>
+<li>
+<p><a class="autorefs autorefs-internal" title="What is LEAP JupyterHub?" href="../../introduction/what_is_the_hub/#what-is-leap-jupyterhub">LEAP's JupyterHub</a>, which includes:</p>
+<ul>
+<li>Shared "cloud buckets", one for data being actively processed and another for data with longer lifetimes.</li>
+<li>User directories for very small amount of data and code used privately.</li>
+</ul>
+</li>
+<li>
+<p>LEAP-owned cloud storage (our OSN pod, co-owned with the M2LINES project)</p>
+</li>
+<li>
+<p>External or HPC Filesystem (private, local)</p>
+</li>
+</ul>
+<p>As a very general guideline:</p>
+<ul>
+<li>
+<p>Data being <em>imported</em> might arrive from external sources (e.g. a large numerical simulation on an HPC system)</p>
+</li>
+<li>
+<p>Data being <em>processed</em> actively during analytical science workflows normally lives in the LEAP Cloud Buckets associated with the Hub.</p>
+</li>
+<li>
+<p>Data being <em>shared</em> with third parties normally lives in the OSN Pod, linked to the data catalog.</p>
+</li>
+</ul>
+<h2 id="leap-cloud-buckets">LEAP Cloud Buckets<a class="headerlink" href="#leap-cloud-buckets" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Google Cloud's costs are structured to make it free and easy to move data <em>into</em> the buckets, but there are high egress fees for taking data out of GCP Infrastructure. Taking data out means both writing from GCP to outside and reading from an external source like an HPC.</p>
+</div>
+<p>LEAP's JupyterHub provides users two cloud buckets in which to store data.</p>
+<ul>
+<li><code>gs://leap-scratch/</code> - Temporary Storage deleted after 7 days. Use this bucket for testing and storing large intermediate results. leap-scratch is also a great staging area to use while ingesting data to some other permanent location.</li>
+<li><code>gs://leap-persistent/</code> - Persistent Storage. Use this bucket for storing results you want to share with other members or access consistently from the Hub.</li>
+</ul>
+<p>Files stored on each of those buckets can be accessed by all LEAP members, so be conscious in the way you use these.</p>
+<ul>
+<li><strong>Do not put sensitive information (passwords, keys, personal data) into these buckets!</strong></li>
+<li><strong>When writing to buckets only ever write to your personal folder!</strong> Your personal folder is a combination of the bucketname and your github username (e.g. `gs://leap-persistent/your-user-name/').</li>
+</ul>
+<p>The JupyterHub is automatically authenticated to read from any of these buckets. See <a class="autorefs autorefs-internal" href="../../reference/authentication/#authentication">Authentication</a> for details on how to access buckets from 'outside' the JupyterHub.</p>
+<p><strong>GCS is where to put data if:</strong></p>
+<ul>
+<li>You want to move data from your JupyterHub home directory to the cloud.</li>
+<li>You don't need the data to be accessed outside of the JupyterHub.</li>
+<li>This data is a work-in-progress and might be regenerated or modified as you do your science.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use the LEAP GCS buckets when you are actively doing science using the JupyterHub. If you wish to share some kind of finished product with the world, it is best to "publish" the data by moving outside GCS into OSN or Zenodo.</p>
+</div>
+<h2 id="your-jupyterhub-user-directory">Your JupyterHub User Directory<a class="headerlink" href="#your-jupyterhub-user-directory" title="Permanent link">&para;</a></h2>
+<p>When you open your hub, you can navigate to the file browser and see all the files in your user directory</p>
+<p><img alt="User Directories" src="../../assets/user_directories.png" /></p>
+<p>Your user directory behaves like a typical UNIX filesystem. If you save a file from a notebook, you will see it appear in the file browser (you might have to wait a few seconds or press refresh). You can also use the terminal to navigate and manipulate files as you would on your local machine.</p>
+<p><img alt="Hub Terminal" src="../../assets/hub_terminal.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Unlike most systems, on a JupyterHub every user sees <code>'/home/jovyan'</code> as their root directory, but the functionality is similar. These are <em>your own files</em> and they cannot be seen/modified by anyone else (except admins).</p>
+</div>
+<p>Your home directory is intended only for notebooks, analysis scripts, and small datasets (&lt; 1 GB). Large datasets should stored in cloud buckets. Please try to keep your home directory size to 25GB. To check how much space you are using in your home directory open a terminal window on the hub and run <code>du -h --max-depth=1 ~/ | sort -h</code>.
+See the <a class="autorefs autorefs-internal" href="../../support/hub_usage_alert/#hub-usage-alert">Hub Usage Alert</a> for guidance on reducing storage.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Home directories have a hard limit of 100GB, which may decrease without warning.</p>
+</div>
+<h2 id="leap-cloud-buckets_1">LEAP Cloud Buckets<a class="headerlink" href="#leap-cloud-buckets_1" title="Permanent link">&para;</a></h2>
+<p>LEAP uses two Google Cloud buckets (leap-persistent and leap-scratch) and also has an allocation of storage on an Open Storage Network (OSN) pod.</p>
+<ol>
+<li>For "internal" use, i.e. during the research process, use the JupyterHub in conjunction with dedicated LEAP buckets in Google Cloud Storage (GCS).</li>
+<li>For publishing or sharing data externally (i.e. in conjunction with a released paper), we recommend pushing to OSN Pods.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A common workflow is for data to be private --&gt; get ingested to LEAP GCS --&gt; OSN Pods for publication.</p>
+</div>
+<h1 id="open-storage-network">Open Storage Network<a class="headerlink" href="#open-storage-network" title="Permanent link">&para;</a></h1>
+<p>The <a href="https://www.openstoragenetwork.org/">Open Storage Network</a> is distributed cloud storage for the research community. LEAP helped the M2LINES project buy a ~1 petabyte OSN pod. OSN allows s3-like cloud storage that has no egress fees, which means that you can share data with the public or outside colaborators without any cost per request! The downsides are that storage is large but finite, and that authentication is not as seamless as the GCS buckets.</p>
+<p>The pod is divided into projects and buckets. A project can have multiple buckets. There are currently 2 principal Projects on the Pod (as well as a shared bucket with the m2lines project):</p>
+<ul>
+<li><code>'leap-pangeo'</code>: Used for data ingestion across the m2lines and LEAP community<ul>
+<li>Buckets:<ul>
+<li><code>'leap-pangeo-inbox'</code>: <em>Write access can be shared with users who want to add data e.g. from an HPC center</em></li>
+<li><code>'leap-pangeo-manual'</code>: <strong>No write access for users</strong></li>
+<li><code>'leap-pangeo-pipeline'</code>: <strong>No write access for users</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>'leap'</code>: Used for project data and publications from the LEAP project<ul>
+<li>Buckets:<ul>
+<li><code>'leap-pubs'</code>: <strong>No write access for users</strong></li>
+<li>... various project buckets</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Data can be transferred from <code>leap-pangeo-inbox</code> to <code>leap-pangeo-manual</code> with <a href="https://github.com/leap-stc/data-management/actions/runs/11167922927/workflow">this rclone github action</a>.</p>
+<p>OSN is where data should live if if:</p>
+<ul>
+<li>You want your data to be publicly accessible outside of the Jupyter-Hub.</li>
+<li>You need to move data from your Jupyter-Hub home directory to more persistent storage.</li>
+</ul>
+<p>To migrate data to OSN, please contact the data-and-compute team on slack. They will contact the OSN pod admin and share bucket credentials for the <code>'leap-pangeo-inbox'</code> bucket. More details are provided under <a class="autorefs autorefs-internal" title="Authentication" href="../../reference/authentication/#authentication">authentication</a>.</p>
+<h2 id="summary-osn-vs-gcs">Summary - OSN vs GCS<a class="headerlink" href="#summary-osn-vs-gcs" title="Permanent link">&para;</a></h2>
+<p>GCS:</p>
+<ul>
+<li>You want to move data from your JupyterHub home directory to the cloud.</li>
+<li>You don't need the data to be accessed outside of the JupyterHub.</li>
+<li>This data is a work-in-progress and might be regenerated or modified.</li>
+</ul>
+<p>OSN:</p>
+<ul>
+<li>You want your data to be publicly accessible outside of the Jupyter-Hub.</li>
+<li>You need to move data from your Jupyter-Hub home directory to more persistent storage.</li>
+</ul>
+<h1 id="private-storage-hpc-or-external-filesystems">Private Storage - HPC or External Filesystems<a class="headerlink" href="#private-storage-hpc-or-external-filesystems" title="Permanent link">&para;</a></h1>
+<p>There are scenarios in which it probably does not make sense to migrate your data into the cloud!</p>
+<ul>
+<li>If you have a powerful HPC system that produces extremely large volumes (petabytes) of data for processing, the LEAP infrastructure is currently not equipped to handle this.</li>
 </ul>
 
 
@@ -1581,13 +1789,8 @@ in figuring out how to accomplish specific tasks. You can always <a class="autor
 
 
 
-  
-  
 
 
-
-
-  
 
 
 
@@ -1633,12 +1836,12 @@ in figuring out how to accomplish specific tasks. You can always <a class="autor
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": ["content.code.annotate", "content.code.copy", "navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.indexes", "header.autohide", "search.suggest", "search.share"], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.code.copy", "navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.indexes", "header.autohide", "search.suggest", "search.share"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
-        <script src="assets/_markdown_exec_pyodide.js"></script>
+        <script src="../../assets/_markdown_exec_pyodide.js"></script>
       
     
   </body>
