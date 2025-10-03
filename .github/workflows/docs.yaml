@@ -34,5 +34,5 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
-      # - name: Deploy docs
-      #   run: uv run mkdocs gh-deploy --force
+      - name: Deploy docs
+        run: uv run mkdocs gh-deploy --force
