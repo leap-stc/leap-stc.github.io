@@ -38,7 +38,7 @@ There are many tools available to interact with cloud object storage. We current
     - medium: `rclone`
     - large: `rclone`
 
-## Rclone
+## **Rclone**
 
 Rclone is an open-source command line tool for moving and syncing data. It can be very useful for moving data into or out of LEAP cloud buckets. There is a bit of a learning-curve, but it has [extensive docs](https://rclone.org/docs/). Please [reach out to us][contact] if you run into issues.
 
@@ -120,7 +120,7 @@ The rclone syntax for copying single files is slightly different then for multip
 
     Transfer speed is likely limited by the internet connection of your local machine.
 
-## fsspec/gcsfs
+## **fsspec/gcsfs**
 
 [fsspec](https://filesystem-spec.readthedocs.io/en/latest/) provides a unified Python interface to local and remote filesystems.
 
@@ -214,7 +214,7 @@ for root, _, files in os.walk(local_dir):
             shutil.copyfileobj(src, dst)
 ```
 
-## google-cloud-sdk
+## **google-cloud-sdk**
 
 [google-cloud-sdk](https://cloud.google.com/sdk/docs/) provides a quick to use CLI interface.
 
