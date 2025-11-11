@@ -2,7 +2,7 @@
 
 <div class="video-container">
   <iframe
-    src="https://www.youtube.com/watch?v=RKXWxtNqWKw&t=4s"
+    src="https://www.youtube-nocookie.com/embed/RKXWxtNqWKw?start=4"
     title="YouTube video"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
