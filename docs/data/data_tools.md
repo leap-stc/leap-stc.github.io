@@ -213,3 +213,61 @@ for root, _, files in os.walk(local_dir):
         with open(local_file, "rb") as src, fs.open(remote_file, "wb") as dst:
             shutil.copyfileobj(src, dst)
 ```
+
+## google-cloud-sdk
+
+[google-cloud-sdk](https://cloud.google.com/sdk/docs/) provides a quick to use CLI interface.
+
+### Installation
+
+google-cloud-sdk may already be available in the **Base Pangeo Notebook** environment on the JupyterHub.\
+If not, it can be installed as:
+
+```bash
+mamba install google-cloud-sdk
+```
+
+### Usage
+
+The commands follow a familiar Unix-like syntax
+
+**Writing a file to GCS:**
+
+```bash
+echo "hello world" | gcloud storage cp - gs://leap-scratch/your-username/test.txt
+```
+
+**Listing contents in GCS:**
+
+```bash
+gcloud storage ls gs://leap-scratch/your-username/
+```
+
+**Copying a single file:**
+
+```bash
+gcloud storage cp /home/jovyan/my_project/data.csv gs://leap-scratch/your-username/data.csv
+```
+
+**Copying an entire directory:**
+
+```bash
+gcloud storage cp -r /home/jovyan/my_project gs://leap-persistent/your-username/my_project
+```
+
+**Downloading from GCS:**
+
+```bash
+gcloud storage cp gs://leap-persistent/your-username/data.csv ./local_data.csv
+```
+
+**Removing files:**
+
+```bash
+gcloud storage rm gs://leap-scratch/your-username/test.txt
+```
+
+### When to Use gcloud vs fsspec
+
+- **gcloud storage**: Best for bulk transfers, command-line workflows, and moving large directories
+- **fsspec**: Best for programmatic access within Python code, direct integration with xarray/zarr/dask, and small file operations
