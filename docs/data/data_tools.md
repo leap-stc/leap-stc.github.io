@@ -221,7 +221,7 @@ for root, _, files in os.walk(local_dir):
 ### Installation
 
 google-cloud-sdk may already be available in the **Base Pangeo Notebook** environment on the JupyterHub.\
-If not, it can be installed as:
+If not, it can be installed in the terminal as:
 
 ```bash
 mamba install google-cloud-sdk
