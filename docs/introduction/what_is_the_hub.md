@@ -1,5 +1,17 @@
 # What is LEAP JupyterHub?
 
+<div class="video-container">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/RKXWxtNqWKw?start=4"
+    title="YouTube video"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
+
+<p class="video-caption"><strong>Note:</strong> This demo shows the M²LInES JupyterHub environment, which mirrors LEAP’s infrastructure, tools, and workflows.</p>
+
 LEAP's primary data and computational resources are available through the LEAP JupyterHub. The JupyterHub is a shared "cloud-based" computing environment running on cloud-based storage and compute resources.
 
 The hub is designed primarily around **interactive** use, however long running jobs are also possible.
