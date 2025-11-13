@@ -43,6 +43,7 @@ nav:
   - Reference:
       - Reference: reference/index.md
       - reference/authentication.md
+      - reference/Github-Tutorial.md
       - reference/infrastructure_details.md      
 
   - Support:
