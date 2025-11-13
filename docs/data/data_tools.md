@@ -1,15 +1,31 @@
 # Data Tools
 
-There are many tools available to interact with cloud object storage. We currently have basic operations documented for three tools:
+There are many tools available to interact with cloud object storage. The LEAP-Pangeo images currently support the following three tools:
 
-- [rclone](https://rclone.org/) which provides a Command Line Interface to many different storage backends, see [here][rclone] for more details. Rclone is highly versatile and suits almost all use cases. Details on authentication and usage can be found [here][rclone].
+- [rclone](https://rclone.org/):
 
-- GCloud SDK. One can interact with Google Cloud storage directly using the Google Cloud SDK and Command Line Interface. Please consult the [Install Instructions](https://cloud.google.com/sdk/docs/install) for more guidance.
+    - Command-Line tool that supports many storage backends
+    - Works well for **medium to very large** transfers
+    - Great for copying between cloud buckets
+    - Best for **GCS \<-> OSN** or **local \<-> cloud** operations
+    - Details on authentication and usage can be found [here][rclone]
 
-- [fsspec](https://filesystem-spec.readthedocs.io/en/latest/) (and its submodules [gcsfs](https://gcsfs.readthedocs.io/en/latest/) and [s3fs](https://s3fs.readthedocs.io/en/latest/)) provide filesystem-like access to local, remote, and embedded file systems from within a python session. Fsspec is also used by xarray under the hood and so integrates easily with normal coding workflows (and tools like Dask).
+- google-cloud-sdk (gcloud sdk):
 
-    - `fsspec` can be used to transfer small amounts of data to google cloud storage or OSN. If you have more than a few hundred MB's, it is worth using Rclone
-    - `fsspec` should be installed by default on the **Base Pangeo Notebook** environment on the JupyterHub. If you are working locally, you can install it with `pip or conda/mamba`. ex: `pip install fsspec`.
+    - Google's official Command-Line Interface for Google Cloud Storage (GCS)
+    - Very easy to use over rclone
+    - Best for **bulk uploads, quick uploads, moving large directories, and command-line workflows**
+    - Only works with GCS (not OSN)
+    - Details on installing gcloud sdk can be found [here](https://cloud.google.com/sdk/gcloud)
+
+- [fsspec](https://filesystem-spec.readthedocs.io/en/latest/) (and its submodules gcsfs and s3fs):
+
+    - Provides a Python-native, filesystem-like interface to local and cloud storage
+    - It's backends are used automatically by xarray, zarr, and dask, making it the most seamless way to read/write cloud directly from code
+        - [gcsfs](https://gcsfs.readthedocs.io/en/latest/) --> Google Cloud Storage
+        - [s3fs](https://s3fs.readthedocs.io/en/latest/) --> S3/OSN
+    - Best for **small file operations, direct integration with xarray/zarr/dask, programmatic access within Python code**
+    - Can install locally with `pip or conda/mamba` ex: `pip install fsspec`
 
 ## Tool Selection
 
@@ -19,32 +35,39 @@ There are many tools available to interact with cloud object storage. We current
 
 **large**: >100GB
 
-#### Move data from User Directory to GCS
+#### Move data from Laptop/HPC to GCS
 
 - Data volume:
-    - small: `fsspec/gcsfs`
-    - medium: `rclone`
+    - small: `fsspec/gcsfs` (if using Python) or `gcloud`
+    - medium: `rclone` or `gcloud`
+    - large: `rclone` or `gcloud`
 
-#### Move data from JupyterHub to OSN
+#### Move data from JupyterHub to GCS
 
-- If the data volume is:
-    - small: `rclone`
-    - medium: `rclone`
+- Data volume:
+    - small: `fsspec/gcsfs` or `gcloud`
+    - medium: `rclone` or `gcloud`
 
 #### Move data from Laptop/HPC to OSN
 
 - If the data volume is:
-    - small: `rclone`
+    - small: `rclone` (preferred) or `fsspec/s3fs`
     - medium: `rclone`
     - large: `rclone`
 
-## **Rclone**
+#### Move data from JupyterHub to OSN
+
+- If the data volume is:
+    - small: `rclone` or `fsspec/s3fs`
+    - medium: `rclone`
+
+## Rclone
 
 Rclone is an open-source command line tool for moving and syncing data. It can be very useful for moving data into or out of LEAP cloud buckets. There is a bit of a learning-curve, but it has [extensive docs](https://rclone.org/docs/). Please [reach out to us][contact] if you run into issues.
 
 ### Usage
 
-Rclone can be installed on the hub by typing in the Terminal:
+Rclone is available in LEAP-Pangeo Images but can be installed locally by typing in the Terminal:
 
 ```bash
 mamba install rclone -y
@@ -52,6 +75,18 @@ mamba install rclone -y
 
 Once installed, you can setup "remotes", which are storage locations that have credentials.
 You can view and modify the rclone config file to add remotes. Rclone will show you where this is located by running: `rclone config file`. Please consult our [Authentication guide][authentication] for instructions on how to setup various remotes on rclone.
+
+### GCS Remote
+
+```
+[leap-gcs]
+type = google cloud storage
+object_acl = bucketOwnerFullControl
+location = us
+env_auth = true
+```
+
+### OSN Remotes
 
 ```
 [leap-pubs]
@@ -69,12 +104,6 @@ access_key_id = <CONTACT DATA AND COMPUTE TEAM>
 secret_access_key = <CONTACT DATA AND COMPUTE TEAM>
 endpoint = https://nyu1.osn.mghpcc.org
 no_check_bucket = true
-
-[leap-gcs]
-type = google cloud storage
-object_acl = bucketOwnerFullControl
-location = us
-env_auth = true
 ```
 
 Details for the LEAP OSN pods are [here][open-storage-network].
@@ -131,7 +160,7 @@ fsspec integrates directly with scientific Python libraries like **xarray**, **z
 
 ### Installation
 
-fsspec and gcsfs should already be available in the **Base Pangeo Notebook** environment on the JupyterHub.\
+fsspec and gcsfs should already be available in the LEAP-Pangeo Images on the JupyterHub.
 If working locally, install with pip or conda/mamba:
 
 ```bash
@@ -192,7 +221,7 @@ with open(local_path, "rb") as src, fs.open(remote_path, "wb") as dst:
     shutil.copyfileobj(src, dst)
 ```
 
-Copy an entire directory (e.g., project folder):
+Copy an entire directory (e.g., project folder) to GCS:
 
 ```python
 import fsspec
@@ -220,7 +249,7 @@ for root, _, files in os.walk(local_dir):
 
 ### Installation
 
-google-cloud-sdk may already be available in the **Base Pangeo Notebook** environment on the JupyterHub.\
+google-cloud-sdk may already be available in the LEAP-Pangeo Images on the JupyterHub.
 If not, it can be installed in the terminal as:
 
 ```bash
@@ -231,43 +260,38 @@ mamba install google-cloud-sdk
 
 The commands follow a familiar Unix-like syntax
 
-**Writing a file to GCS:**
+Writing a file to GCS:
 
 ```bash
 echo "hello world" | gcloud storage cp - gs://leap-scratch/your-username/test.txt
 ```
 
-**Listing contents in GCS:**
+Listing contents in GCS:
 
 ```bash
 gcloud storage ls gs://leap-scratch/your-username/
 ```
 
-**Copying a single file:**
+Copying a single file:
 
 ```bash
 gcloud storage cp /home/jovyan/my_project/data.csv gs://leap-scratch/your-username/data.csv
 ```
 
-**Copying an entire directory:**
+Copying an entire directory:
 
 ```bash
 gcloud storage cp -r /home/jovyan/my_project gs://leap-persistent/your-username/my_project
 ```
 
-**Downloading from GCS:**
+Downloading from GCS:
 
 ```bash
 gcloud storage cp gs://leap-persistent/your-username/data.csv ./local_data.csv
 ```
 
-**Removing files:**
+Removing files:
 
 ```bash
 gcloud storage rm gs://leap-scratch/your-username/test.txt
 ```
-
-### When to Use gcloud vs fsspec
-
-- **gcloud storage**: Best for bulk transfers, command-line workflows, and moving large directories
-- **fsspec**: Best for programmatic access within Python code, direct integration with xarray/zarr/dask, and small file operations
