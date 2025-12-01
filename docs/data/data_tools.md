@@ -67,7 +67,7 @@ Rclone is an open-source command line tool for moving and syncing data. It can b
 
 ### Usage
 
-Rclone is available in LEAP-Pangeo Images but can be installed locally by typing in the Terminal:
+Rclone is available in LEAP-Pangeo Images but also can be installed locally by typing in the Terminal:
 
 ```bash
 mamba install rclone -y
