@@ -14,7 +14,7 @@ There are many tools available to interact with cloud object storage. The LEAP-P
 
     - Google's official Command-Line Interface for Google Cloud Storage (GCS)
     - Very easy to use over rclone
-    - Best for **bulk uploads, quick uploads, moving large directories, and command-line workflows**
+    - Best for **bulk uploads, quick uploads, and command-line workflows**
     - Only works with GCS (not OSN)
     - Details on installing gcloud sdk can be found [here](https://cloud.google.com/sdk/gcloud)
 
@@ -25,7 +25,6 @@ There are many tools available to interact with cloud object storage. The LEAP-P
         - [gcsfs](https://gcsfs.readthedocs.io/en/latest/) --> Google Cloud Storage
         - [s3fs](https://s3fs.readthedocs.io/en/latest/) --> S3/OSN
     - Best for **small file operations, direct integration with xarray/zarr/dask, programmatic access within Python code**
-    - Can install locally with `pip or conda/mamba` ex: `pip install fsspec`
 
 ## Tool Selection
 
@@ -160,7 +159,8 @@ fsspec integrates directly with scientific Python libraries like **xarray**, **z
 
 ### Installation
 
-fsspec and gcsfs should already be available in the LEAP-Pangeo Images on the JupyterHub.
+fsspec and gcsfs should already be available in the Base Pangeo Images on the JupyterHub.
+
 If working locally, install with pip or conda/mamba:
 
 ```bash
@@ -249,7 +249,7 @@ for root, _, files in os.walk(local_dir):
 
 ### Installation
 
-google-cloud-sdk may already be available in the LEAP-Pangeo Images on the JupyterHub.
+google-cloud-sdk may already be available in the Base Pangeo Images on the JupyterHub.
 If not, it can be installed in the terminal as:
 
 ```bash
