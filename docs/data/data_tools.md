@@ -186,15 +186,15 @@ OUTPUT_PATH = os.environ.get(
 fs = gcsfs.GCSFileSystem()
 ```
 
-Option 1: Write a Zarr Store directly to GCS
-Use this when your result is an xarray object or another format that supports direct Zarr output.
+- Option 1: Write a Zarr Store directly to GCS
+    Use this when your result is an xarray object or another format that supports direct Zarr output.
 
 ```python
 result.to_zarr(OUTPUT_PATH, mode="w")
 ```
 
-Option 2: Write a file-life object directly to GCS
-Use this for formats that can be written in a single pass, such as CSV, Parquet, or raw bytes.
+- Option 2: Write a file-life object directly to GCS
+    Use this for formats that can be written in a single pass, such as CSV, Parquet, or raw bytes.
 
 ```python
 with fs.open(OUTPUT_PATH, "wb") as f:
