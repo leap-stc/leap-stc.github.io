@@ -60,7 +60,7 @@ There are many tools available to interact with cloud object storage. The LEAP-P
     - small: `rclone` or `fsspec/s3fs`
     - medium: `rclone`
 
-## Rclone
+## **Rclone**
 
 Rclone is an open-source command line tool for moving and syncing data. It can be very useful for moving data into or out of LEAP cloud buckets. There is a bit of a learning-curve, but it has [extensive docs](https://rclone.org/docs/). Please [reach out to us][contact] if you run into issues.
 
@@ -171,20 +171,43 @@ mamba install fsspec gcsfs s3fs -c conda-forge
 
 ### Usage
 
-Writing to GCS:
+#### Writing to GCS:
+
+First set an output path to the GCS bucket and directory you want
 
 ```python
-import fsspec
+import os
+import gcsfs
 
-fs = fsspec.filesystem("gcs")  # uses gcsfs under the hood
-with fs.open("gs://leap-scratch/username/test.txt", "w") as f:
-    f.write("hello world")
+OUTPUT_PATH = os.environ.get(
+    "OUTPUT_PATH", "gs://leap-persistent/<github_username>/<output>"
+)
+
+fs = gcsfs.GCSFileSystem()
+```
+
+Option 1: Write a Zarr Store directly to GCS
+Use this when your result is an xarray object or another format that supports direct Zarr output.
+
+```python
+result.to_zarr(OUTPUT_PATH, mode="w")
+```
+
+Option 2: Write a file-life object directly to GCS
+Use this for formats that can be written in a single pass, such as CSV, Parquet, or raw bytes.
+
+```python
+with fs.open(OUTPUT_PATH, "wb") as f:
+    # examples:
+    df.to_csv(f, index=False)  # pandas CSV
+    df.to_parquet(f)  # pandas parquet
+    f.write(my_bytes)  # raw bytes
 ```
 
 Listing contents in GCS:
 `fs.ls("gs://leap-scratch/username/")`
 
-Writing to OSN (via S3 interface):
+#### Writing to OSN (via S3 interface):
 
 ```python
 import fsspec
