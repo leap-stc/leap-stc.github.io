@@ -63,10 +63,15 @@ We will need to create a JupyterHub token for authentication.
 We will set up our ssh config file to tell `ssh` how to connect to our JupyterHub. Add
 an entry that looks like this to the end of your `~/.ssh/config` file (create it if it does not exist).
 
+!!! note
+
+    If you are using **websocat v4+**, use `stdio:` instead of `asyncstdio:`. You can check your version with `websocat --version`. The `asyncstdio:` specifier was removed in websocat v4.
+
 ```
 Host leap.2i2c.cloud
+    HostName leap.2i2c.cloud
     User jovyan
-    ProxyCommand websocat --binary -H='Authorization: token <YOUR-JUPYTERHUB-TOKEN>' asyncstdio: wss://%h/user/<YOUR-JUPYTERHUB-USERNAME>/sshd/
+    ProxyCommand websocat --binary -H='Authorization: token <YOUR-JUPYTERHUB-TOKEN>' stdio: wss://%h/user/<YOUR-JUPYTERHUB-USERNAME>/sshd/
 ```
 
 replace:

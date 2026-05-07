@@ -1,18 +1,16 @@
 # Hub Access Overview
 
-There are multiple ways to access the JupyterHub depending on your workflow preferences. You can:
+There are two ways to access the JupyterHub depending on your workflow preferences. You can:
 
 - Access the Hub directly through a *web browser*
 - Connect to the Hub using *VSCode on your local machine*
-- Use a *VSCode interface inside JupyterLab* via a built-in extension
 
 This page can help you decide which method is right for you based on your workflow.
 
-| Method                     | Best For                                                 |
-| -------------------------- | -------------------------------------------------------- |
-| **Browser (JupyterLab)**   | New users, teaching, notebooks, simple experiments       |
-| **VS Code inside the Hub** | Repo + notebook workflows, richer IDE, no setup          |
-| **Local VS Code IDE**      | Power users who want full desktop performance & features |
+| Method                   | Best For                                                 |
+| ------------------------ | -------------------------------------------------------- |
+| **Browser (JupyterLab)** | New users, teaching, notebooks, simple experiments       |
+| **Local VS Code IDE**    | Power users who want full desktop performance & features |
 
 ## Method Comparison
 
@@ -39,30 +37,7 @@ This page can help you decide which method is right for you based on your workfl
 
 See installation instructions here: [Access via Web Browser](hub_browser_access.md)
 
-### 2. **VS Code Inside the Hub (browser-based VS Code extension)**
-
-**Pros**
-
-- Rich IDE in your browser tab
-- No SSH setup or config
-- Full access to your Hub environment (same kernel, filesystem, terminal)
-- Easier repo navigation, Git workflows, split views, terminal + notebooks side-by-side
-
-**Cons**
-
-- Some extensions may be disabled/unavailable
-- Slight lag in slower networks
-- Not as fully integrated as local VS Code
-
-**Use-cases**
-
-- Daily IDE-like workflows on Hub compute
-- Working with both notebooks and scripts in one place
-- Collaborative work on shared repos
-
-See installation instructions here: [Access VSCode inside the Hub](vscode_inside_hub.md)
-
-### 3. **Local VS Code IDE Connected to the Hub**
+### 2. **Local VS Code IDE Connected to the Hub**
 
 **Pros**
 
@@ -87,7 +62,7 @@ See installation instructions here: [Access via VSCode (external)](vs_code_to_hu
 
 ## Installing Packages & Environment Behavior
 
-| Behavior                               | Browser / VS Code in Hub                  | Local VS Code IDE                                     |
+| Behavior                               | Browser                                   | Local VS Code IDE                                     |
 | -------------------------------------- | ----------------------------------------- | ----------------------------------------------------- |
 | **Where packages install**             | On the Hub compute                        | Depends on interpreter—can be local or remote         |
 | **Persistence across server restarts** | Yes, if installed in `$HOME` or Conda env | Same, if using remote interpreter                     |
@@ -99,7 +74,7 @@ See installation instructions here: [Access via VSCode (external)](vs_code_to_hu
 
 ## Security & Data Movement
 
-- *Browser and in-Hub VS Code*: data stays on the Hub unless explicitly downloaded
+- *Browser*: data stays on the Hub unless explicitly downloaded
 - *Local VS Code IDE*: easier to accidentally sync data to your local machine or expose secrets via cached credentials
 
 !!! tip

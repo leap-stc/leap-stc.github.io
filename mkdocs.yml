@@ -30,7 +30,6 @@ nav:
       - Hub Access:
           - Overview: compute/hub_access.md
           - Access via Browser: compute/hub_browser_access.md
-          - Access VSCode inside Hub: compute/vscode_inside_hub.md
           - Access via VSCode: compute/vs_code_to_hub.md
       - Dask Guide: compute/dask.md
       - compute/compute_scaling.md
