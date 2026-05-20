@@ -2,14 +2,13 @@
 
 LEAP provides a managed batch job system for running long or resource-intensive Python scripts on Google Cloud Platform (GCP), without needing to set up infrastructure yourself.
 
-Batch jobs are defined in the [`leap-stc/LEAP-batch-jobs`](https://github.com/leap-stc/LEAP-batch-jobs) repository and run using SkyPilot and GitHub Actions.
+Batch jobs are defined in the [`leap-stc/LEAP-batch-jobs`](https://github.com/leap-stc/LEAP-batch-jobs) repository and run using SkyPilot and GitHub Actions. The `README.md` includes more in-depth instructions on how to run the batch job.
 
 ## When to use batch jobs
 
 Use batch jobs when your workload is too heavy for JupyterHub, such as:
 
 - Multi-hour or overnight compute jobs, including climatologies, model runs, or large aggregations
-- Jobs requiring more RAM than your JupyterHub server provides, with up to 256 GB available
 - Workloads that should run unattended and notify you when complete
 
 If your script runs comfortably in a notebook in under approximately 15 minutes, you probably do not need to use the batch job system.
@@ -44,5 +43,5 @@ Batch job outputs should be written to Google Cloud Storage, not local disk.
 Use paths such as:
 
 ````text
-gs://leap-scratch/<your_username>/```
+gs://leap-persistent/<your_username>/```
 ````
