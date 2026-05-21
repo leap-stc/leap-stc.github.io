@@ -71,7 +71,7 @@ def main():
 if __name__ == "__main__":
     main()
 ```
-
+ 
 !!! note
 
     Use `s3fs.S3Map` to wrap the path when writing Zarr stores, and always use bytes mode `("wb"/"rb")` for direct file writes to avoid MissingContentLength errors.
@@ -80,8 +80,8 @@ if __name__ == "__main__":
 
 ### Do not commit secrets
 
-`batch.py` and `config.yml` are public. Never hardcode tokens, API keys, passwords, or other secrets in these files.
+- `batch.py` and `config.yml` are public. Never hardcode tokens, API keys, passwords, or other secrets in these files.
 
-Secrets committed to the repository may be visible in both GitHub and SkyPilot logs.
+- Secrets committed to the repository may be visible in both GitHub and SkyPilot logs.
 
-If your job needs secrets, ask a maintainer to inject them at dispatch time using `job_env`.
+- If your job needs secrets, ask a maintainer to inject them at dispatch time using `job_env`.
