@@ -38,10 +38,10 @@ If your job needs secrets, ask a maintainer to inject them at dispatch time usin
 
 ### Write outputs to GCS
 
-Batch job outputs should be written to Google Cloud Storage, not local disk.
+Batch job outputs should be written to either GCP or OSN leap-pangeo-inbox, not local disk.
 
 Use paths such as:
 
-````text
-gs://leap-persistent/<your_username>/```
-````
+```text
+gs://leap-persistent/<your_username>/
+```
