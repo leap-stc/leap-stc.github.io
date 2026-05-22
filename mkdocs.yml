@@ -34,6 +34,7 @@ nav:
       - Dask Guide: compute/dask.md
       - compute/compute_scaling.md
       - compute/manage_software.md
+      - compute/skypilot.md
       
   - Education:
       - Education: edu/index.md
