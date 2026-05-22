@@ -71,7 +71,7 @@ def main():
 if __name__ == "__main__":
     main()
 ```
- 
+
 !!! note
 
     Use `s3fs.S3Map` to wrap the path when writing Zarr stores, and always use bytes mode `("wb"/"rb")` for direct file writes to avoid MissingContentLength errors.
