@@ -13,13 +13,14 @@ The website is located at <https://leap-stc.github.io/>.
 ## Developers Guide
 
 - Clone this repository or your fork
-- Install dependencies with `mamba env create -f environment.yml`
-- Build book with `jupyter-book build book/`
-- Inspect the book with e.g. `open book/_build/html/index.html` or start a small server by running `python -m http.server` in the `book/_build/html` directory, and navigate to `http://localhost:8000` in your webbrowser to see the webpage (this should show new changes upon refresh!).
+- Install dependencies with `mamba env create -f environment.yml && conda activate leap-docs`
+- Install Python packages with `uv sync`
+- Build docs with `mkdocs build`
+- Preview locally with `mkdocs serve` and navigate to `http://localhost:8000`
 
 ### Run linting locally
 
-```
+```bash
 pre-commit install
 pre-commit run --all-files 
 ```
