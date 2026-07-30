@@ -11,10 +11,10 @@
 
 ## LEAP-Pangeo Data Catalog
 
-|                                      |                                               |
-| ------------------------------------ | --------------------------------------------- |
-| **Catalog Address**                  | catalog.leap.columbia.edu                     |
-| **Management Repo**                  | <https://github.com/leap-stc/data-management> |
-| **Maintained in collaboration with** | [Carbonplan](https://carbonplan.org)          |
+|                                      |                                                                 |
+| ------------------------------------ | --------------------------------------------------------------- |
+| **Catalog Address**                  | [catalog.leap.columbia.edu](https://catalog.leap.columbia.edu/) |
+| **Management Repo**                  | <https://github.com/leap-stc/data-management>                   |
+| **Maintained in collaboration with** | [Carbonplan](https://carbonplan.org)                            |
 
 For more explanation about ingesting data and linking it into the catalog, see [Data Lifecycles][data-lifecycle].
