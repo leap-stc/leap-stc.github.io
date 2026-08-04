@@ -43,7 +43,7 @@ The first RAM figure matches the launcher dropdown (the node's total). The figur
 
 !!! note "A bigger GPU isn't always faster"
 
-    Start on the T4 and move up only when you hit a specific wall: you run out of GPU memory, or you need something the T4 can't do. The L4 comes with a smaller machine around it, so choosing it just to get "more GPU" can leave you slower than where you started.
+    Start on the T4 and move up only when you hit a specific wall like running out of GPU memory. The L4 comes with a smaller machine around it, so choosing it just to get "more GPU" can leave you slower than where you started.
 
 #### Data loading is often the bottleneck
 
