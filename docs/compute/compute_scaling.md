@@ -31,7 +31,7 @@ Use this for data exploration, lightweight model runs, or debugging.
 
 Selecting the **GPU** profile starts your container on a node with a **single** GPU attached. Multi-GPU servers are not offered on the hub. If you need data-parallel training across several GPUs, see [Batch Jobs](https://leap-stc.github.io/compute/skypilot/).
 
-Three GPU types are available from the **GPU type** dropdown:
+Three GPU types are available:
 
 | GPU type            | VRAM  | RAM (limit)    | CPUs | Google Cloud node | Who can select it                       |
 | ------------------- | ----- | -------------- | ---- | ----------------- | --------------------------------------- |
