@@ -29,9 +29,9 @@ Use this for data exploration, lightweight model runs, or debugging.
 
 ### GPU
 
-Selecting the **GPU** profile starts your container on a node with a **single** GPU attached. Multi-GPU servers are not offered on the hub. If you need data-parallel training across several GPUs, see [Batch Jobs](https://leap-stc.github.io/compute/skypilot/).
+Selecting the **GPU** profile starts your container on a node with a **single** GPU attached. Multi-GPU servers are not offered on the hub. If your workflow needs multiple GPUs, see [Batch Jobs](https://leap-stc.github.io/compute/skypilot/).
 
-Three GPU types are available:
+Three GPU types are available from the **GPU type** dropdown:
 
 | GPU type            | VRAM  | RAM (limit)    | CPUs | Google Cloud node | Who can select it                       |
 | ------------------- | ----- | -------------- | ---- | ----------------- | --------------------------------------- |
@@ -43,7 +43,7 @@ The first RAM figure matches the launcher dropdown (the node's total). The figur
 
 !!! note "A bigger GPU isn't always faster"
 
-    Start on the T4 and move up only when you hit a specific wall like running out of GPU memory. The L4 comes with a smaller machine around it, so choosing it just to get "more GPU" can leave you slower than where you started.
+    Start on the T4 and move up only when you hit a specific wall: you run out of GPU memory, or you need something the T4 can't do. The L4 comes with a smaller machine around it, so choosing it just to get "more GPU" can leave you slower than where you started.
 
 #### Data loading is often the bottleneck
 
@@ -56,12 +56,69 @@ Practical implications:
 - **Read along your chunk boundaries.** Random access across a Zarr store's chunk grid amplifies reads and starves the GPU regardless of which one you picked.
 - **Consider CPU-only for offline evaluation.** Scoring predictions, computing metrics, and plotting rarely benefit from a GPU.
 
+#### Example: diagnosing an idle GPU
+
+If training is slow and GPU utilization stays low, the GPU may be waiting for data. In Zarr workflows, mismatched chunking is a common cause.
+
+##### **Step 1: Check whether the GPU is actually busy**
+
+With training running, sample the GPU from a second terminal:
+
+```bash
+$ nvidia-smi --query-gpu=utilization.gpu,memory.used --format=csv -l 5
+
+utilization.gpu [%], memory.used [MiB]
+12 %, 3122 MiB
+9 %,  3122 MiB
+14 %, 3122 MiB
+```
+
+If utilization repeatedly stays in the low tens, the bottleneck is probably elsewhere. A larger GPU will not fix a data-loading bottleneck.
+
+##### **Step 2: Compare your chunking to how you read it**
+
+```python
+import xarray as xr
+
+ds = xr.open_zarr("gs://leap-persistent/<your-store>.zarr")
+ds.tas.encoding["chunks"]
+# → (500, 48, 48)
+```
+
+Here, each chunk contains 500 timesteps. Reading one random timestep may require fetching and decompressing the entire chunk: about 4.6 MB read for only 9 KB used.
+
+##### **Step 3: Read whole chunks, shuffle within them**
+
+Instead of a fresh chunk per sample:
+
+```python
+# ✗ 4.6 MB read for every 9 KB sample
+i = np.random.randint(ds.time.size)
+sample = ds.tas.isel(time=i, lat=slice(y0, y0 + 48), lon=slice(x0, x0 + 48))
+```
+
+Load a complete block and shuffle its timesteps in memory:
+
+```python
+# ✓ 4.6 MB read for 500 samples
+block = ds.tas.isel(
+    time=slice(t0, t0 + 500),
+    lat=slice(y0, y0 + 48),
+    lon=slice(x0, x0 + 48),
+).load()
+
+for i in np.random.permutation(block.sizes["time"]):
+    yield block.isel(time=i)
+```
+
+Run nvidia-smi again. If utilization increases, data loading was limiting the GPU. If the access pattern cannot be changed, consider rechunking the dataset with [Rechunker](https://rechunker.readthedocs.io/).
+
 #### Requesting access to the L4 and A100
 
-Both large GPUs are gated behind a GitHub team so these scarce, expensive nodes stay available to the researchers who need them.
+Both large GPUs are gated behind a GitHub team so these scarce, expensive nodes stay available to the researchers whose tasks can't be done with less expensive resources.
 
-1. Ask the LEAP Data and Compute Team (see [Contact](https://leap-stc.github.io/support/contact/)) to add your GitHub username to **`leap-stc:large-gpu`**. Include a short description of your workflow and why the T4 is not sufficient.
-1. Accept the GitHub team invitation.
+1. **Ask the LEAP Data and Compute Team** (see [Contact](https://leap-stc.github.io/support/contact/)) to add your GitHub username to **`leap-stc:large-gpu`**. Include a short description of your workflow and why the T4 is not sufficient.
+1. **Accept the GitHub team invitation.**
 1. **Log out of the hub and log back in.** Your team membership is read at login, so the new options will not appear until you re-authenticate.
 
 #### Availability and startup time
@@ -121,24 +178,28 @@ While GPU can accelerate certain workloads, it's not always the best choice:
 
 Here is a simplified guide on how to choose the appropriate image and compute configuration:
 
-| Scenario                                                   | Image                | Hardware                                          |
-| ---------------------------------------------------------- | -------------------- | ------------------------------------------------- |
-| Editing a notebook, small CSVs                             | Base Pangeo          | ~8 GB CPU                                         |
-| Plotting large NetCDF, visualizing model output            | Base Pangeo          | 16–64 GB CPU                                      |
-| Preprocessing large climate/satellite datasets             | Base Pangeo          | 64–128 GB CPU                                     |
-| Dask workloads, distributed workflows                      | Base Pangeo          | 32–128 GB CPU                                     |
-| Generating synthetic datasets or simulations               | Base Pangeo          | 16–128 GB CPU                                     |
-| Inference on small models                                  | PyTorch / TensorFlow | CPU                                               |
-| Debugging a training loop before a full run                | PyTorch / TensorFlow | **T4**                                            |
-| MLP or small CNN parameterizations, moderate batches       | PyTorch / TensorFlow | **T4**                                            |
-| Training a PyTorch or TensorFlow model                     | PyTorch / TensorFlow | **T4** to start                                   |
-| Code that needs bf16 or FP8                                | PyTorch / TensorFlow | **L4**                                            |
-| Training that runs out of GPU memory on the T4             | PyTorch / TensorFlow | **L4**, then **A100** if 24 GB is also short      |
-| High-throughput batch inference                            | PyTorch / TensorFlow | **L4**; T4 as a cheaper fallback                  |
-| Large or memory-hungry training; transformers; big batches | PyTorch / TensorFlow | **A100**                                          |
-| Fine-tuning pre-trained models                             | PyTorch / TensorFlow | **A100**; L4 only for small vision models or LoRA |
-| Heavy Zarr/cloud dataloading during training               | PyTorch / TensorFlow | **T4**; fix the I/O first                         |
-| Hyperparameter tuning / grid search                        | PyTorch / TensorFlow | Any GPU, or Devs Only                             |
+Most data exploration and preprocessing on the Hub does not require a GPU.
+
+| If you're...                     | For example                                                                    | Use                            |
+| -------------------------------- | ------------------------------------------------------------------------------ | ------------------------------ |
+| Writing or editing code          | Editing a notebook; working with small CSVs                                    | Base Pangeo, 8–16 GB memory    |
+| Exploring data or making figures | Inspecting a Zarr store; plotting large NetCDF files; visualizing model output | Base Pangeo, 16–64 GB memory   |
+| Building or regridding a dataset | Preprocessing CMIP or satellite output into a training dataset                 | Base Pangeo, 64–128 GB memory  |
+| Running a parallel Dask workload | Computing statistics across an ensemble; distributed workflows                 | Base Pangeo, 32–128 GB memory  |
+| Generating synthetic data        | Producing simulated fields or idealized test cases                             | Base Pangeo, 16–128 GB memory  |
+| Evaluating a model's output      | Scoring saved predictions; computing metrics; inference on very small models   | PyTorch / TensorFlow, CPU only |
+
+If you are training or running a neural network, use the PyTorch or TensorFlow image and select a GPU:
+
+| If you're...                          | For example                                                                                                                 | Use                                                            |
+| ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
+| Developing or training a small model  | Testing that a training loop runs end to end; training an MLP or small CNN subgrid parameterization at moderate batch sizes | **T4**                                                         |
+| Running a model over a large dataset  | Batch inference across a long simulation                                                                                    | **L4**; T4 as a cheaper fallback                               |
+| Using newer precision formats         | Your code requires bf16 or FP8                                                                                              | **L4**                                                         |
+| Running out of GPU memory             | Your workload raises `CUDA out of memory` at the required batch size                                                        | **L4**, then **A100** if the L4's 24 GB is insufficient        |
+| Training or fine-tuning a large model | Training a large transformer; full fine-tuning of a pre-trained model                                                       | **A100**                                                       |
+| Limited by data loading, not the GPU  | `nvidia-smi` shows the GPU idle while a Zarr dataloader feeds it                                                            | **T4** — and fix the I/O first                                 |
+| Running many training jobs at once    | A hyperparameter sweep or grid search                                                                                       | See [Batch Jobs](https://leap-stc.github.io/compute/skypilot/) |
 
 !!! tip
 
